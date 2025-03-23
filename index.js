@@ -60,7 +60,31 @@ let modos = cargarModos();
             process.exit(1);
         }
     }
+// Función para calcular uptime en formato legible
+function clockString(ms) {
+  const d = Math.floor(ms / 86400000);
+  const h = Math.floor(ms / 3600000) % 24;
+  const m = Math.floor(ms / 60000) % 60;
+  const s = Math.floor(ms / 1000) % 60;
+  return `${d}d ${h}h ${m}m ${s}s`;
+}
 
+// Función para actualizar la biografía del bot
+async function updateBio() {
+  if (!global.sock || !global.sock.user) return;
+  const uptime = clockString(process.uptime() * 1000);
+  const bio = `🇨🇴 TechFix-B᥆𝗍 |「🕒」Activo: ${uptime}`;
+
+  try {
+    await global.sock.updateProfileStatus(bio);
+    console.log(`✅ Biografía actualizada: ${bio}`);
+  } catch (error) {
+    console.error("❌ Error al actualizar la biografía:", error);
+  }
+}
+
+// Ejecutar cada 60 segundos
+setInterval(updateBio, 60000);
     async function startBot() {
         try {
             let { version } = await fetchLatestBaileysVersion();
@@ -82,21 +106,6 @@ let modos = cargarModos();
                     console.log(chalk.magenta("🔑 Código de vinculación: ") + chalk.yellow(code.match(/.{1,4}/g).join("-")));
                 }, 2000);
             }
-// Función para calcular el uptime en formato legible
-function clockString(ms) {
-  const d = Math.floor(ms / 86400000);
-  const h = Math.floor(ms / 3600000) % 24;
-  const m = Math.floor(ms / 60000) % 60;
-  const s = Math.floor(ms / 1000) % 60;
-  return `${d}d ${h}h ${m}m ${s}s`;
-}
-
-// Intervalo para actualizar la biografía del bot cada 60 segundos
-setInterval(async () => {
-  if (!global.conn || !global.conn.user) return;
-  const _uptime = process.uptime() * 1000;
-  const uptime = clockString(_uptime);
-  const bio = `🇨🇴 TechFix-B᥆𝗍 |「🕒」Aᥴ𝗍і᥎᥆: ${uptime}`;
             // Función para verificar si un usuario es administrador en un grupo
             async function isAdmin(sock, chatId, sender) {
                 try {
