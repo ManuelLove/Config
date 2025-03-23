@@ -60,31 +60,7 @@ let modos = cargarModos();
             process.exit(1);
         }
     }
-// Función para calcular uptime en formato legible
-function clockString(ms) {
-  const d = Math.floor(ms / 86400000);
-  const h = Math.floor(ms / 3600000) % 24;
-  const m = Math.floor(ms / 60000) % 60;
-  const s = Math.floor(ms / 1000) % 60;
-  return `${d}d ${h}h ${m}m ${s}s`;
-}
 
-// Función para actualizar la biografía del bot
-async function updateBio() {
-  if (!global.sock || !global.sock.user) return;
-  const uptime = clockString(process.uptime() * 1000);
-  const bio = `🇨🇴 TechFix-B᥆𝗍 |「🕒」Activo: ${uptime}`;
-
-  try {
-    await global.sock.updateProfileStatus(bio);
-    console.log(`✅ Biografía actualizada: ${bio}`);
-  } catch (error) {
-    console.error("❌ Error al actualizar la biografía:", error);
-  }
-}
-
-// Ejecutar cada 60 segundos
-setInterval(updateBio, 60000);
     async function startBot() {
         try {
             let { version } = await fetchLatestBaileysVersion();
@@ -475,6 +451,33 @@ sock.ev.on("messages.upsert", async (messageUpsert) => {
             setTimeout(startBot, 5000); // Intentar reconectar después de 5 segundos en caso de error
         }
     }
+
+
+// Función para calcular uptime en formato legible
+function clockString(ms) {
+  const d = Math.floor(ms / 86400000);
+  const h = Math.floor(ms / 3600000) % 24;
+  const m = Math.floor(ms / 60000) % 60;
+  const s = Math.floor(ms / 1000) % 60;
+  return `${d}d ${h}h ${m}m ${s}s`;
+}
+
+// Función para actualizar la biografía del bot
+async function updateBio() {
+  if (!global.sock || !global.sock.user) return;
+  const uptime = clockString(process.uptime() * 1000);
+  const bio = `🇨🇴 TechFix-B᥆𝗍 |「🕒」Activo: ${uptime}`;
+
+  try {
+    await global.sock.updateProfileStatus(bio);
+    console.log(`✅ Biografía actualizada: ${bio}`);
+  } catch (error) {
+    console.error("❌ Error al actualizar la biografía:", error);
+  }
+}
+
+// Ejecutar cada 60 segundos
+setInterval(updateBio, 60000);
 
     startBot();
 })();
