@@ -7637,7 +7637,11 @@ break;
 console.log('📌 Valor de typemenu:', typemenu);
 
 if (!typemenu || !['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 's10', 's11', 's12'].includes(typemenu)) {
-    console.log('⚠️ ERROR: typemenu tiene un valor inválido:', typemenu);
+    console.log("📨 Enviando menú para typemenu s1...");
+const imageBuffer = getRandomThumb3();
+if (!imageBuffer) {
+    console.log("⚠️ ERROR: No se pudo cargar la imagen.");
+}
     shoNhe.sendMessage(m.chat, { text: '⚠️ Error: El menú no está configurado correctamente. Revisa la variable typemenu.' });
     break;
 }
