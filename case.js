@@ -7924,7 +7924,7 @@ if (isUserRegistered(m.sender)) {
 									},
 									{
 										title: "🔥 OWNER MENU",
-										description: "Hanya OWNER👽 yang boleh menggunakan command ini",
+										description: "Hanya OWNER yang boleh menggunakan command ini",
 										id: ".ownermenu"
 									},
 									{
@@ -9002,32 +9002,8 @@ ${menuforu(prefix, simbols)}
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -9140,29 +9116,8 @@ ${menuforu(prefix, simbols)}
         {
             name: "cta_url",
             buttonParamsJson: JSON.stringify({
-                display_text: "IG SHO 🚨",
-                url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-            }),
-        },
-        {
-            name: "cta_url",
-            buttonParamsJson: JSON.stringify({
-                display_text: "IG NHE 🚨",
-                url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-            }),
-        },
-        {
-            name: "cta_url",
-            buttonParamsJson: JSON.stringify({
-                display_text: "TIKTOK NHE 👽",
-                url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-            }),
-        },
-        {
-            name: "cta_url",
-            buttonParamsJson: JSON.stringify({
-                display_text: "TIKTOK SHO 👽",
-                url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+                display_text: "ManuDiaz",
+                url: `https://`,
             }),
         },
     ];
@@ -9291,32 +9246,8 @@ break;
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -9560,32 +9491,8 @@ break;
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -9701,32 +9608,8 @@ break;
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -9932,32 +9815,8 @@ break;
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -10070,32 +9929,8 @@ break;
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -10209,32 +10044,8 @@ break;
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -10390,32 +10201,8 @@ break;
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -10601,32 +10388,8 @@ break;
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -10732,32 +10495,8 @@ break;
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
