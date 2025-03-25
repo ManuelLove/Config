@@ -7635,6 +7635,7 @@ break;
 			case 'shonheum':
 			case 'menu':
 console.log('📌 Valor de typemenu:', typemenu);
+console.log('📌 Valor de typemenu:', typemenu);
 			{
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
@@ -7781,6 +7782,11 @@ ${crown}`;
 				}*/
 				if (typemenu === 's1')
 
+        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
+        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
+        
     // Asegurar que se envía la imagen correctamente en todos los typemenu
     const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
     console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
@@ -8004,6 +8010,11 @@ if (isUserRegistered(m.sender)) {
 				}
 				else if (typemenu === 's2')
 
+        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
+        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
+        
     // Asegurar que se envía la imagen correctamente en todos los typemenu
     const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
     console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
@@ -8058,6 +8069,11 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's3')
 
+        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
+        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
+        
     // Asegurar que se envía la imagen correctamente en todos los typemenu
     const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
     console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
@@ -8126,6 +8142,11 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's4')
 
+        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
+        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
+        
     // Asegurar que se envía la imagen correctamente en todos los typemenu
     const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
     console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
@@ -8180,6 +8201,11 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's5')
 
+        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
+        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
+        
     // Asegurar que se envía la imagen correctamente en todos los typemenu
     const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
     console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
@@ -8235,6 +8261,11 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's6')
 
+        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
+        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
+        
     // Asegurar que se envía la imagen correctamente en todos los typemenu
     const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
     console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
@@ -8307,6 +8338,11 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's7')
 
+        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
+        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
+        
     // Asegurar que se envía la imagen correctamente en todos los typemenu
     const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
     console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
@@ -8382,6 +8418,11 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's8')
 
+        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
+        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
+        
     // Asegurar que se envía la imagen correctamente en todos los typemenu
     const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
     console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
@@ -8451,6 +8492,11 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's9')
 
+        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
+        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
+        
     // Asegurar que se envía la imagen correctamente en todos los typemenu
     const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
     console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
@@ -8529,6 +8575,11 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's10')
 
+        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
+        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
+        
     // Asegurar que se envía la imagen correctamente en todos los typemenu
     const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
     console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
@@ -8644,6 +8695,11 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's11')
 
+        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
+        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
+        
     // Asegurar que se envía la imagen correctamente en todos los typemenu
     const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
     console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
@@ -8780,6 +8836,11 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's12')
 
+        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
+        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
+        
     // Asegurar que se envía la imagen correctamente en todos los typemenu
     const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
     console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
