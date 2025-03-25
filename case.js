@@ -7778,7 +7778,7 @@ ${crown}`;
 						edit: key
 					});
 				}*/
-				if (typemenu === 's2')
+				if (typemenu === 's3')
 				{
 					
 // Fungsi untuk mengecek status registrasi pengguna
