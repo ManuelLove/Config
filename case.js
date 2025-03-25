@@ -7832,7 +7832,8 @@ if (isUserRegistered(m.sender)) {
 						pageCount: '999',
 						image:
 						{
-							image: getRandomThumb2(), // Pastikan file ini tersedia
+							  teks,
+        getRandomThumb2(), // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
@@ -12634,7 +12635,8 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 					pageCount: '999',
 					image:
 					{
-						image: getRandomThumb2(), // Pastikan file ini tersedia
+						  teks,
+        getRandomThumb2(), // Pastikan file ini tersedia
 						gifPlayback: true
 					},
 					caption: `${menu}`, // Teks menu
