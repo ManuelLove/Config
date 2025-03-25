@@ -7832,7 +7832,7 @@ if (isUserRegistered(m.sender)) {
 						pageCount: '999',
 						image:
 						{
-							url: getRandomThumb2() || "https://example.com/backup.jpg", // Pastikan file ini tersedia
+							url: getRandomThumb2(), // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
@@ -7844,7 +7844,7 @@ if (isUserRegistered(m.sender)) {
 							externalAdReply:
 							{
 								title: namabot,
-								body: descown,
+								body: descowner,
 								thumbnail: getRandomThumb3(),
 								mediaType: 1,
 								renderLargerThumbnail: true,
@@ -12634,7 +12634,7 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 					pageCount: '999',
 					image:
 					{
-						url: getRandomThumb2() || "https://example.com/backup.jpg", // Pastikan file ini tersedia
+						url: getRandomThumb2(), // Pastikan file ini tersedia
 						gifPlayback: true
 					},
 					caption: `${menu}`, // Teks menu
