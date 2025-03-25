@@ -7759,7 +7759,7 @@ ${formattedCommandList}
 │ ᴜᴘᴛɪᴍᴇ: ${runtime(os.uptime())}
 
 ${crown}`;
-				const lod = ["█▒▒▒▒▒▒▒▒▒▒▒ 10%", "████▒▒▒▒▒▒▒▒ 30%", "███████▒▒▒▒▒ 50%", "██████████▒▒ 80%", "████████████ 100%", `> *${c}MENAMPILKAN SIMPLE MENU${c}*`];
+				const lod = ["█▒▒▒▒▒▒▒▒▒▒▒ 10%", "████▒▒▒▒▒▒▒▒ 30%", "███████▒▒▒▒▒ 50%", "██████████▒▒ 80%", "████████████ 100%", `> *${c}MOSTRAR MENÚ SIMPLE${c}*`];
 				// Kirim pesan awal dan simpan key untuk diedit
 				const
 				{
@@ -7832,7 +7832,7 @@ if (isUserRegistered(m.sender)) {
 						pageCount: '999',
 						image:
 						{
-							url: getRandomThumb2(), // Pastikan file ini tersedia
+							image: getRandomThumb2(), // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
@@ -12634,7 +12634,7 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 					pageCount: '999',
 					image:
 					{
-						url: getRandomThumb2(), // Pastikan file ini tersedia
+						image: getRandomThumb2(), // Pastikan file ini tersedia
 						gifPlayback: true
 					},
 					caption: `${menu}`, // Teks menu
