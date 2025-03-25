@@ -7844,7 +7844,7 @@ if (isUserRegistered(m.sender)) {
 							externalAdReply:
 							{
 								title: namabot,
-								body: descowner,
+								body: namaBot,
 								thumbnail: getRandomThumb3(),
 								mediaType: 1,
 								renderLargerThumbnail: true,
