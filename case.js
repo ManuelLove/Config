@@ -7634,17 +7634,6 @@ break;
 			break
 			case 'shonheum':
 			case 'menu':
-console.log('📌 Valor de typemenu:', typemenu);
-
-if (!typemenu || !['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 's10', 's11', 's12'].includes(typemenu)) {
-    console.log("📨 Enviando menú para typemenu s1...");
-const imageBuffer = getRandomThumb3();
-if (!imageBuffer) {
-    console.log("⚠️ ERROR: No se pudo cargar la imagen.");
-}
-    shoNhe.sendMessage(m.chat, { text: '⚠️ Error: El menú no está configurado correctamente. Revisa la variable typemenu.' });
-    break;
-}
 			{
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
@@ -7790,6 +7779,12 @@ ${crown}`;
 					});
 				}*/
 				if (typemenu === 's1')
+
+console.log("📨 Enviando menú para typemenu s1...");
+const imageBuffer = getRandomThumb3();
+if (!imageBuffer) {
+    console.log("⚠️ ERROR: No se pudo cargar la imagen.");
+}
 				{
 					
 // Fungsi untuk mengecek status registrasi pengguna
@@ -8001,6 +7996,7 @@ if (isUserRegistered(m.sender)) {
 					// Tambahkan flowActions ke buttonMessage
 					buttonMessage.buttons.push(...flowActions);
 					// Kirim pesan
+console.log('✅ Ejecutando shoNhe.sendMessage()');
 					await shoNhe.sendMessage(m.chat, buttonMessage,
 					{
 						quoted: hw
@@ -8045,6 +8041,7 @@ ${formattedCommandList}
 ${menuforu(prefix, simbols)}
 
 > ${crown}`
+console.log('✅ Ejecutando shoNhe.sendMessage()');
 					shoNhe.sendMessage(m.chat,
 					{
 						image: getRandomThumb2(),
@@ -8094,6 +8091,7 @@ ${formattedCommandList}
 ${menuforu(prefix, simbols)}
 
 > ${crown}`
+console.log('✅ Ejecutando shoNhe.sendMessage()');
 					shoNhe.sendMessage(m.chat,
 					{
 						text: menuv3,
@@ -8155,6 +8153,7 @@ ${formattedCommandList}
 ${menuforu(prefix, simbols)}
 
 > ${crown}`
+console.log('✅ Ejecutando shoNhe.sendMessage()');
 					shoNhe.sendMessage(m.chat,
 					{
 						video: fs.readFileSync('./ShoNheMedia/video/sych.mp4'),
@@ -8203,6 +8202,7 @@ ${formattedCommandList}
 ${menuforu(prefix, simbols)}
 
 > ${crown}`
+console.log('✅ Ejecutando shoNhe.sendMessage()');
 					shoNhe.sendMessage(m.chat,
 					{
 						video: fs.readFileSync('./ShoNheMedia/video/sych.mp4'),
@@ -8319,6 +8319,7 @@ ${formattedCommandList}
 ${menuforu(prefix, simbols)}
 
 > ${crown}`
+console.log('✅ Ejecutando shoNhe.sendMessage()');
 					shoNhe.sendMessage(m.chat,
 					{
 						document:
@@ -8388,6 +8389,7 @@ ${formattedCommandList}
 ${menuforu(prefix, simbols)}
 
 > ${crown}`
+console.log('✅ Ejecutando shoNhe.sendMessage()');
 					shoNhe.sendMessage(m.chat,
 					{
 						video: fs.readFileSync('./ShoNheMedia/video/sych.mp4'),
@@ -8451,6 +8453,7 @@ ${formattedCommandList}
 ${menuforu(prefix, simbols)}
 
 > ${crown}`
+console.log('✅ Ejecutando shoNhe.sendMessage()');
 					shoNhe.sendMessage(m.chat,
 					{
 						video: fs.readFileSync('./ShoNheMedia/video/sych.mp4'),
@@ -8901,6 +8904,7 @@ ${menuforu(prefix, simbols)}
 					})
 				}
 				if (levelUpMessage) {
+console.log('✅ Ejecutando shoNhe.sendMessage()');
         await shoNhe.sendMessage(m.chat,
 				{
 					image: { url: levelUpMessage.image },
@@ -9020,6 +9024,7 @@ ${menuforu(prefix, simbols)}
 				// Kirim pesan dengan gambar dan tombol
 				sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, ytmenu, getRandomThumb3(), tombol, hw);
 				if (levelUpMessage) {
+console.log('✅ Ejecutando shoNhe.sendMessage()');
         await shoNhe.sendMessage(m.chat,
 				{
 					image: { url: levelUpMessage.image },
@@ -9136,6 +9141,7 @@ ${menuforu(prefix, simbols)}
     sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, ytmenu, getRandomThumb3(), tombol, hw);
     
     if (levelUpMessage) {
+console.log('✅ Ejecutando shoNhe.sendMessage()');
         await shoNhe.sendMessage(m.chat,
         {
             image: { url: levelUpMessage.image },
