@@ -7634,6 +7634,13 @@ break;
 			break
 			case 'shonheum':
 			case 'menu':
+console.log('📌 Valor de typemenu:', typemenu);
+
+if (!typemenu || !['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 's10', 's11', 's12'].includes(typemenu)) {
+    console.log('⚠️ ERROR: typemenu tiene un valor inválido:', typemenu);
+    shoNhe.sendMessage(m.chat, { text: '⚠️ Error: El menú no está configurado correctamente. Revisa la variable typemenu.' });
+    break;
+}
 			{
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
@@ -7833,24 +7840,25 @@ if (isUserRegistered(m.sender)) {
 						image:
 						{
 							url: getRandomThumb2(), // Pastikan file ini tersedia
-            gifPlayback: true
-        },
-        caption: `${shonhemenu}`, // Teks menu
-        contextInfo: {
-        mentionedJid: [m.sender],
-            forwardingScore: 999,
-            isForwarded: true,
-            externalAdReply: {
-                title: namabot,
-                body: descown,
-                thumbnail: getRandomThumb3(),
-                mediaType: 1,
-                renderLargerThumbnail: true,
-                previewType: 0,
-             
-                mediaUrl: gh,
-                sourceUrl: gh
-            }
+							gifPlayback: true
+						},
+						caption: `${shonhemenu}`, // Teks menu
+						contextInfo:
+						{
+							mentionedJid: [sender],
+							forwardingScore: 999,
+							isForwarded: true,
+							externalAdReply:
+							{
+								title: namabot,
+								body: descown,
+								thumbnail: getRandomThumb3(),
+								mediaType: 1,
+								renderLargerThumbnail: true,
+								previewType: 0,
+								mediaUrl: gh,
+								sourceUrl: gh
+							}
 						},
 						footer: isUserRegistered(m.sender) ? "© ShoNhe - Botz" : "ShoNhe - Bot Detecz",
 						buttons: buttons,
