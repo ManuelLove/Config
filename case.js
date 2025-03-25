@@ -7638,6 +7638,7 @@ console.log('📌 Valor de typemenu:', typemenu);
 console.log('📌 Valor de typemenu:', typemenu);
 console.log('📌 Valor de typemenu:', typemenu);
 console.log('📌 Valor de typemenu:', typemenu);
+console.log('📌 Valor de typemenu:', typemenu);
 			{
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
@@ -7784,6 +7785,13 @@ ${crown}`;
 				}*/
 				if (typemenu === 's1')
 
+        {
+            let imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg"; // Declaración válida
+            console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+
+            sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
+        }
+        
         const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg"; // Declaración única
         console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
         
