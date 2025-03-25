@@ -7779,7 +7779,7 @@ ${crown}`;
 					});
 				}*/
 				if (typemenu === 's1')
-				sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
+				sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, shonhemenu, imageBuffer, [], hw);
         
         {
             console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
