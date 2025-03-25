@@ -7778,7 +7778,7 @@ ${crown}`;
 						edit: key
 					});
 				}*/
-				if (typemenu === 's3')
+				if (typemenu === 's1')
 				{
 					
 // Fungsi untuk mengecek status registrasi pengguna
@@ -7833,25 +7833,24 @@ if (isUserRegistered(m.sender)) {
 						image:
 						{
 							url: getRandomThumb2(), // Pastikan file ini tersedia
-							gifPlayback: true
-						},
-						caption: `${shonhemenu}`, // Teks menu
-						contextInfo:
-						{
-							mentionedJid: [sender],
-							forwardingScore: 999,
-							isForwarded: true,
-							externalAdReply:
-							{
-								title: namabot,
-								body: descown,
-								thumbnail: getRandomThumb3(),
-								mediaType: 1,
-								renderLargerThumbnail: true,
-								previewType: 0,
-								mediaUrl: gh,
-								sourceUrl: gh
-							}
+            gifPlayback: true
+        },
+        caption: `${shomenu}`, // Teks menu
+        contextInfo: {
+        mentionedJid: [m.sender],
+            forwardingScore: 999,
+            isForwarded: true,
+            externalAdReply: {
+                title: namabot,
+                body: descown,
+                thumbnail: getRandomThumb3(),
+                mediaType: 1,
+                renderLargerThumbnail: true,
+                previewType: 0,
+             
+                mediaUrl: gh,
+                sourceUrl: gh
+            }
 						},
 						footer: isUserRegistered(m.sender) ? "© ShoNhe - Botz" : "ShoNhe - Bot Detecz",
 						buttons: buttons,
