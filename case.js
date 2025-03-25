@@ -7843,8 +7843,8 @@ if (isUserRegistered(m.sender)) {
 							isForwarded: true,
 							externalAdReply:
 							{
-								title: namaBot,
-								body: namabot,
+								title: namabot,
+								body: descown,
 								thumbnail: getRandomThumb3(),
 								mediaType: 1,
 								renderLargerThumbnail: true,
@@ -11041,7 +11041,7 @@ ${formattedCommandList}
 │    ${simbols} ${prefix}ceksaldo
 │    ${simbols} ${prefix}scriptnoenc
 └──────────────────╼.✗`
-				/*const reactEmojis = ["⏳", "🕛", "🕒", "🕕", "🕘", "🕛", randomEmoji];
+				const reactEmojis = ["⏳", "🕛", "🕒", "🕕", "🕘", "🕛", randomEmoji];
 				// Mengirimkan reaksi secara berurutan
 				for (const emoji of reactEmojis)
 				{
@@ -11053,7 +11053,7 @@ ${formattedCommandList}
 							key: m.key
 						}
 					});
-				}*/
+				}
 				let msg = generateWAMessageFromContent(m.chat,
 				{
 					viewOnceMessage:
