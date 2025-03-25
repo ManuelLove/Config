@@ -7843,8 +7843,8 @@ if (isUserRegistered(m.sender)) {
 							isForwarded: true,
 							externalAdReply:
 							{
-								title: namabot,
-								body: namaBot,
+								title: namaBot,
+								body: namabot,
 								thumbnail: getRandomThumb3(),
 								mediaType: 1,
 								renderLargerThumbnail: true,
