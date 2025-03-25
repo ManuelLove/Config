@@ -7778,17 +7778,8 @@ ${crown}`;
 						edit: key
 					});
 				}*/
-		console.log("Valor de typemenu:", typemenu);
-
-if (typemenu === 's1') {
-    // Código del menú s1
-} if (typemenu === 's2') {
-    // Código del menú s2
-} if (typemenu === 's3') {
-    // Código del menú s3
- {
-    shoNhe.sendMessage(m.chat, { text: "⚠️ Error: No se encontró un menú válido. Revisa la configuración." });
-}
+				if (typemenu === 's2')
+				{
 					
 // Fungsi untuk mengecek status registrasi pengguna
 function isUserRegistered(sender) {
