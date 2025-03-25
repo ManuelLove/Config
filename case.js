@@ -25585,7 +25585,7 @@ shoNhe.sendMessage(m.chat,
                         imageMessage: gopayImage
                     },
                     body: {
-                        text: `PAYMENT : GOPAY\n\nUSERNAME: ${namagopay}\nNOMOR: ${nomorgopay}`
+                        text: `PAGO: GOPAY\n\nNOMBRE DE USUARIO: ${namagopay}\nNOMBRE: ${nomorgopay}`
                     },
                     footer: {
                         text: `GOPAY 💶`
@@ -25609,7 +25609,7 @@ shoNhe.sendMessage(m.chat,
                         imageMessage: danaImage
                     },
                     body: {
-                        text: `PAYMENT : DANA\n\nUSERNAME: ${namadana}\nNOMOR: ${nomordana}`
+                        text: `PAGO: DANA\n\nNOMBRE DE USUARIO: ${namadana}\nNOMBRE: ${nomordana}`
                     },
                     footer: {
                         text: `DANA 💶`
@@ -25633,7 +25633,7 @@ shoNhe.sendMessage(m.chat,
                         imageMessage: ovoImage
                     },
                     body: {
-                        text: `PAYMENT : OVO\n\nUSERNAME: ${namaovo}\nNOMOR: ${nomorovo}`
+                        text: `PAGO: OVO\n\nNOMBRE DE USUARIO: ${namaovo}\nNOMBRE: ${nomorovo}`
                     },
                     footer: {
                         text: `OVO 💷`
@@ -25657,7 +25657,7 @@ shoNhe.sendMessage(m.chat,
                         imageMessage: shopepayImage
                     },
                     body: {
-                        text: `PAYMENT : SHOPEPAY\n\nUSERNAME: ${namashopepay}\nNOMOR: ${nomorshopepay}`
+                        text: `PAGO: SHOPEPAY\n\nNOMBRE DE USUARIO: ${namashopepay}\nNOMBRE: ${nomorshopepay}`
                     },
                     footer: {
                         text: `SHOPEPAY 💴`
@@ -25681,7 +25681,7 @@ shoNhe.sendMessage(m.chat,
                         imageMessage: seabankImage
                     },
                     body: {
-                        text: `PAYMENT : SEABANK\n\nUSERNAME: ${namaseabank}\nNOMOR: ${nomorseabank}`
+                        text: `PAGO: SEABANK\n\nNOMBRE DE USUARIO: ${namaseabank}\nNOMBRE: ${nomorseabank}`
                     },
                     footer: {
                         text: `SEABANK 🏦`
@@ -25705,7 +25705,7 @@ shoNhe.sendMessage(m.chat,
                         imageMessage: bcaImage
                     },
                     body: {
-                        text: `PAYMENT : BCA\n\nUSERNAME: ${namabca}\nNOMOR: ${nomorbca}`
+                        text: `PAGO: BCA\n\nNOMBRE DE USUARIO: ${namabca}\nNOMBRE: ${nomorbca}`
                     },
                     footer: {
                         text: `BCA 🏦`
@@ -25729,7 +25729,7 @@ shoNhe.sendMessage(m.chat,
                         imageMessage: danamonImage
                     },
                     body: {
-                        text: `PAYMENT : DANAMON\n\nUSERNAME: ${namadanamon}\nNOMOR: ${nomordanamon}`
+                        text: `PAGO: DANAMON\n\nNOMBRE DE USUARIO: ${namadanamon}\nNOMBRE: ${nomordanamon}}`
                     },
                     footer: {
                         text: `DANAMON 🏦`
@@ -25758,10 +25758,10 @@ shoNhe.sendMessage(m.chat,
                         },
                         interactiveMessage: proto.Message.InteractiveMessage.fromObject({
                             body: {
-                                text: "Berikut🪙 adalah💰 all💡 payment💸 owner💳"
+                                text: "Aquí🪙 está 💰 todo💡 pago💸 propietario💳"
                             },
                             footer: {
-                                text: `ALL PAYMENT`
+                                text: `TODO PAGO`
                             },
                             header: {
                                 hasMediaAttachment: false
