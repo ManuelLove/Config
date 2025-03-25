@@ -2758,34 +2758,34 @@ Keep your skills sharp and never stop evolving."
 			// +minutes+":"+sec;
 		}
 		// Sayying time
-		const timee = moment().tz('Asia/Jakarta').format('HH:mm:ss')
+		const timee = moment().tz('America/Bogota').format('HH:mm:ss')
 		if (timee < "23:59:00")
 		{
-			var waktuucapan = 'Selamat Malam 🌃'
+			var waktuucapan = 'Buenas noches 🌃'
 		}
 		if (timee < "19:00:00")
 		{
-			var waktuucapan = 'Selamat Petang 🌆'
+			var waktuucapan = 'Buenas tardes 🌆'
 		}
 		if (timee < "18:00:00")
 		{
-			var waktuucapan = 'Selamat Sore 🌅'
+			var waktuucapan = 'Tarde 🌅'
 		}
 		if (timee < "15:00:00")
 		{
-			var waktuucapan = 'Selamat Siang 🏙'
+			var waktuucapan = 'Buenas tardes 🏙'
 		}
 		if (timee < "10:00:00")
 		{
-			var waktuucapan = 'Selamat Pagi 🌄'
+			var waktuucapan = 'Buenos días 🌄'
 		}
 		if (timee < "05:00:00")
 		{
-			var waktuucapan = 'Selamat Subuh 🌉'
+			var waktuucapan = 'Madrugada 🌉'
 		}
 		if (timee < "03:00:00")
 		{
-			var waktuucapan = 'Tengah Malam 🌌'
+			var waktuucapan = 'Media noche 🌌'
 		}
 		const JwbTrue = (tebak, exp, tambahan) =>
 		{
