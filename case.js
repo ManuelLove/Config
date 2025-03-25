@@ -7634,15 +7634,6 @@ break;
 			break
 			case 'shonheum':
 			case 'menu':
-console.log('📌 Valor de typemenu:', typemenu);
-
-        let imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg"; // Declaración única
-        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-        console.log('📌 Valor de typemenu:', typemenu);
-console.log('📌 Valor de typemenu:', typemenu);
-console.log('📌 Valor de typemenu:', typemenu);
-console.log('📌 Valor de typemenu:', typemenu);
-console.log('📌 Valor de typemenu:', typemenu);
 			{
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
@@ -7788,38 +7779,13 @@ ${crown}`;
 					});
 				}*/
 				if (typemenu === 's1')
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
+				sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
         
         {
-            let imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg"; // Declaración válida
             console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
 
             sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
         }
-        
-        const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg"; // Declaración única
-        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-        
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        {
-            const imageBuffer = getRandomThumb3(); // Declaración dentro de un bloque válido
-            console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-            sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        }
-        
-        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
-        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        
-    // Asegurar que se envía la imagen correctamente en todos los typemenu
-    const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
-    console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
 				{
 					
 // Fungsi untuk mengecek status registrasi pengguna
@@ -8037,28 +8003,6 @@ if (isUserRegistered(m.sender)) {
 					});
 				}
 				else if (typemenu === 's2')
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        {
-            const imageBuffer = getRandomThumb3(); // Declaración dentro de un bloque válido
-            console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-            sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        }
-        
-        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
-        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        
-    // Asegurar que se envía la imagen correctamente en todos los typemenu
-    const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
-    console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
 				{
 					const menuv2 =
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8107,28 +8051,6 @@ ${menuforu(prefix, simbols)}
 					})
 				}
 				else if (typemenu === 's3')
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        {
-            const imageBuffer = getRandomThumb3(); // Declaración dentro de un bloque válido
-            console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-            sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        }
-        
-        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
-        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        
-    // Asegurar que se envía la imagen correctamente en todos los typemenu
-    const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
-    console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
 				{
 					const menuv3 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8191,28 +8113,6 @@ ${menuforu(prefix, simbols)}
 					})
 				}
 				else if (typemenu === 's4')
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        {
-            const imageBuffer = getRandomThumb3(); // Declaración dentro de un bloque válido
-            console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-            sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        }
-        
-        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
-        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        
-    // Asegurar que se envía la imagen correctamente en todos los typemenu
-    const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
-    console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
 				{
 					const menuv4 =
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8261,28 +8161,6 @@ ${menuforu(prefix, simbols)}
 					})
 				}
 				else if (typemenu === 's5')
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        {
-            const imageBuffer = getRandomThumb3(); // Declaración dentro de un bloque válido
-            console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-            sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        }
-        
-        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
-        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        
-    // Asegurar que se envía la imagen correctamente en todos los typemenu
-    const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
-    console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
 				{
 					const menuv5 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8332,28 +8210,6 @@ ${menuforu(prefix, simbols)}
 					})
 				}
 				else if (typemenu === 's6')
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        {
-            const imageBuffer = getRandomThumb3(); // Declaración dentro de un bloque válido
-            console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-            sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        }
-        
-        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
-        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        
-    // Asegurar que se envía la imagen correctamente en todos los typemenu
-    const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
-    console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
 				{
 					const menuv6 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8420,28 +8276,6 @@ ${menuforu(prefix, simbols)}
 					{})
 				}
 				else if (typemenu === 's7')
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        {
-            const imageBuffer = getRandomThumb3(); // Declaración dentro de un bloque válido
-            console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-            sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        }
-        
-        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
-        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        
-    // Asegurar que se envía la imagen correctamente en todos los typemenu
-    const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
-    console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
 				{
 					const menuv7 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8511,28 +8345,6 @@ ${menuforu(prefix, simbols)}
 					})
 				}
 				else if (typemenu === 's8')
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        {
-            const imageBuffer = getRandomThumb3(); // Declaración dentro de un bloque válido
-            console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-            sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        }
-        
-        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
-        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        
-    // Asegurar que se envía la imagen correctamente en todos los typemenu
-    const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
-    console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
 				{
 					const menuv8 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8596,28 +8408,6 @@ ${menuforu(prefix, simbols)}
 					})
 				}
 				else if (typemenu === 's9')
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        {
-            const imageBuffer = getRandomThumb3(); // Declaración dentro de un bloque válido
-            console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-            sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        }
-        
-        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
-        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        
-    // Asegurar que se envía la imagen correctamente en todos los typemenu
-    const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
-    console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
 				{
 					const menuv9 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8690,28 +8480,6 @@ ${menuforu(prefix, simbols)}
 					})
 				}
 				else if (typemenu === 's10')
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        {
-            const imageBuffer = getRandomThumb3(); // Declaración dentro de un bloque válido
-            console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-            sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        }
-        
-        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
-        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        
-    // Asegurar que se envía la imagen correctamente en todos los typemenu
-    const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
-    console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
 				{
 					const menuv10 =
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8821,28 +8589,6 @@ ${menuforu(prefix, simbols)}
 					})
 				}
 				else if (typemenu === 's11')
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        {
-            const imageBuffer = getRandomThumb3(); // Declaración dentro de un bloque válido
-            console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-            sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        }
-        
-        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
-        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        
-    // Asegurar que se envía la imagen correctamente en todos los typemenu
-    const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
-    console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
 				{
 					const menuv11 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8973,28 +8719,6 @@ ${menuforu(prefix, simbols)}
 					})
 				}
 				else if (typemenu === 's12')
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        
-        {
-            const imageBuffer = getRandomThumb3(); // Declaración dentro de un bloque válido
-            console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-            sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        }
-        
-        const imageBuffer = getRandomThumb3(); // Asegurar correcta declaración
-        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer || "https://example.com/backup.jpg", [], hw);
-        
-    // Asegurar que se envía la imagen correctamente en todos los typemenu
-    const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
-    console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
 				{
 					const menuv12 = 
 `${shomenu}`
