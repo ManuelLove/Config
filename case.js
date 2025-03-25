@@ -7759,7 +7759,7 @@ ${formattedCommandList}
 │ ᴜᴘᴛɪᴍᴇ: ${runtime(os.uptime())}
 
 ${crown}`;
-				const lod = ["█▒▒▒▒▒▒▒▒▒▒▒ 10%", "████▒▒▒▒▒▒▒▒ 30%", "███████▒▒▒▒▒ 50%", "██████████▒▒ 80%", "████████████ 100%", `> *${c}MOSTRAR MENÚ SIMPLE${c}*`];
+				/*const lod = ["█▒▒▒▒▒▒▒▒▒▒▒ 10%", "████▒▒▒▒▒▒▒▒ 30%", "███████▒▒▒▒▒ 50%", "██████████▒▒ 80%", "████████████ 100%", `> *${c}MENAMPILKAN SIMPLE MENU${c}*`];
 				// Kirim pesan awal dan simpan key untuk diedit
 				const
 				{
@@ -7777,9 +7777,18 @@ ${crown}`;
 						text: lod[i],
 						edit: key
 					});
-				}
-				if (typemenu === 's1')
-				{
+				}*/
+		console.log("Valor de typemenu:", typemenu);
+
+if (typemenu === 's1') {
+    // Código del menú s1
+} else if (typemenu === 's2') {
+    // Código del menú s2
+} else if (typemenu === 's3') {
+    // Código del menú s3
+} else {
+    shoNhe.sendMessage(m.chat, { text: "⚠️ Error: No se encontró un menú válido. Revisa la configuración." });
+}
 					
 // Fungsi untuk mengecek status registrasi pengguna
 function isUserRegistered(sender) {
@@ -11041,7 +11050,7 @@ ${formattedCommandList}
 │    ${simbols} ${prefix}ceksaldo
 │    ${simbols} ${prefix}scriptnoenc
 └──────────────────╼.✗`
-				const reactEmojis = ["⏳", "🕛", "🕒", "🕕", "🕘", "🕛", randomEmoji];
+				/*const reactEmojis = ["⏳", "🕛", "🕒", "🕕", "🕘", "🕛", randomEmoji];
 				// Mengirimkan reaksi secara berurutan
 				for (const emoji of reactEmojis)
 				{
@@ -11053,7 +11062,7 @@ ${formattedCommandList}
 							key: m.key
 						}
 					});
-				}
+				}*/
 				let msg = generateWAMessageFromContent(m.chat,
 				{
 					viewOnceMessage:
