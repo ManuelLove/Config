@@ -7995,7 +7995,6 @@ if (isUserRegistered(m.sender)) {
 						quoted: hw
 					});
 				}
-} 				else if (typemenu === 's2')
 				else if (typemenu === 's2')
 				{
 					const menuv2 =
