@@ -8002,7 +8002,7 @@ if (isUserRegistered(m.sender)) {
 						quoted: hw
 					});
 				}
-				else if (typemenu === 's2')
+				if (typemenu === 's2')
 				{
 					const menuv2 =
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8050,7 +8050,7 @@ ${menuforu(prefix, simbols)}
 						quoted: hw
 					})
 				}
-				else if (typemenu === 's3')
+				if (typemenu === 's3')
 				{
 					const menuv3 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8112,7 +8112,7 @@ ${menuforu(prefix, simbols)}
 						quoted: hw
 					})
 				}
-				else if (typemenu === 's4')
+				if (typemenu === 's4')
 				{
 					const menuv4 =
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8160,7 +8160,7 @@ ${menuforu(prefix, simbols)}
 						quoted: hw
 					})
 				}
-				else if (typemenu === 's5')
+				if (typemenu === 's5')
 				{
 					const menuv5 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8209,7 +8209,7 @@ ${menuforu(prefix, simbols)}
 						quoted: hw
 					})
 				}
-				else if (typemenu === 's6')
+				if (typemenu === 's6')
 				{
 					const menuv6 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8275,7 +8275,7 @@ ${menuforu(prefix, simbols)}
 					},
 					{})
 				}
-				else if (typemenu === 's7')
+				if (typemenu === 's7')
 				{
 					const menuv7 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8344,7 +8344,7 @@ ${menuforu(prefix, simbols)}
 						quoted: hw
 					})
 				}
-				else if (typemenu === 's8')
+				if (typemenu === 's8')
 				{
 					const menuv8 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8407,7 +8407,7 @@ ${menuforu(prefix, simbols)}
 						quoted: m
 					})
 				}
-				else if (typemenu === 's9')
+				if (typemenu === 's9')
 				{
 					const menuv9 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8479,7 +8479,7 @@ ${menuforu(prefix, simbols)}
 						quoted: m
 					})
 				}
-				else if (typemenu === 's10')
+				if (typemenu === 's10')
 				{
 					const menuv10 =
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8588,7 +8588,7 @@ ${menuforu(prefix, simbols)}
 						messageId: msg.key.id
 					})
 				}
-				else if (typemenu === 's11')
+				if (typemenu === 's11')
 				{
 					const menuv11 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8718,7 +8718,7 @@ ${menuforu(prefix, simbols)}
 						messageId: msg.key.id
 					})
 				}
-				else if (typemenu === 's12')
+				if (typemenu === 's12')
 				{
 					const menuv12 = 
 `${shomenu}`
