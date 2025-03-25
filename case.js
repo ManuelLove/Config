@@ -25394,7 +25394,7 @@ shoNhe.sendMessage(m.chat,
 						},
 						body:
 						{
-							text: `━━━━━━ ✨ *${namabot}* ✨ ━━━━━━\n🔰 *OWNER RULES* 🔰\n🚫 Jangan spam\n🤝 Gunakan sopan\n📵 Hindari panggilan\n━━━━━━ 🌟 *Terima Kasih* 🌟 ━━━━━━`
+							text: `━━━━━━ ✨ *${namabot}* ✨ ━━━━━━\n🔰 *REGLAS DEL PROPIETARIO* 🔰\n🚫 No envíes spam\n🤝 Utilice la cortesía\n📵Evita llamadas\n━━━━━━ 🌟 *Gracias* 🌟 ━━━━━━`
 						},
 						footer:
 						{
@@ -25407,7 +25407,7 @@ shoNhe.sendMessage(m.chat,
 								"name": "cta_url",
 								"buttonParamsJson": JSON.stringify(
 								{
-									display_text: `Owner (𝙽𝙷𝙴𝙱𝚘𝚝𝚡)`, //ganti jadi (${namaowner})
+									display_text: `Owner (ManuDiaz)`, //ganti jadi (${namaowner})
 									url: `https://wa.me/+${owner}`
 								})
 							}]
@@ -25431,7 +25431,7 @@ shoNhe.sendMessage(m.chat,
 						},
 						body:
 						{
-							text: `━━━━━━ ✨ *${namabot}* ✨ ━━━━━━\n🔰 *BOT RULES* 🔰\n🚷 Tidak boleh spam\n💬 Tidak boleh berkata kasar\n📴 Tidak boleh call\n━━━━━━ 🔥 *Terima Kasih* 🔥 ━━━━━━`
+							text: `━━━━━━ ✨ *${namabot}* ✨ ━━━━━━\n🔰 *REGLAS DEL BOT* 🔰\n🚷 No puedo enviar spam\n💬 No puedo ser groseror\n📴 No puedo llamar\n━━━━━━ 🔥 *Gracias* 🔥 ━━━━━━`
 						},
 						footer:
 						{
@@ -25467,7 +25467,7 @@ shoNhe.sendMessage(m.chat,
 								{
 									body:
 									{
-										text: "━━━━━━ ✨ *${namabot}* ✨ ━━━━━━\n📱 *Kontak Owner dan Bot* 📱\nJika memerlukan bantuan atau ingin berdiskusi, silakan hubungi kontak berikut! ✨\n🔗 *JANGAN LUPA SUPPORT FOLLOW* 🔗\n👉 *@tngxaja*: www.instagram.com/tngxaja\n👉 *@sh0.ydaa*: www.instagram.com/sh0.ydaa\n\n💳 *Donasi Dapat Melalui Payment Berikut* 💳\n━━━━━━━━━━━━━━━━━━━━━━━\n💵 [GOPAY]: 088989971490\n💵 [DANA]: 0881027174423\n💵 [OVO]: 088989971490\n💵 [SHOPEEPAY]: 087848784409\n🏦 [BANK-BCA]: 1230903219\n🏦 [BANK-DANAMON]: 903684075934\n🏦 [BANK-SEABANK]: 901484264240\n━━━━━━━━━━━━━━━━━━━━━━━\n✨ *Semua pembayaran atas nama*: *_LINTANG PRATAMA_* ✨\n\n📌 *Catatan:* Terima kasih atas dukungan dan kepercayaan Anda! 🙏\n━━━━━━ 🔥 *Terima Kasih* 🔥 ━━━━━━"
+										text: "━━━━━━ ✨ *𝙏𝙚𝙘𝙝𝙁𝙞𝙭 🅥❸* ✨ \n━━━━━━\n📱 *Contacto del Owner y del Bot* 📱\nSi necesitas ayuda o quieres discutir algo, no dudes en contactarnos! ✨\n\n🔗 *¡NO OLVIDES SEGUIR Y APOYAR!* 🔗\n👉 *@ManuDiaz*: www.instagram.com/\n👉 *@TechFix-Bot*: www.instagram.com/\n\n━━━━━━━━━━━━━━━━━━━━━━━\n💳 *Métodos de Pago* 💳\n━━━━━━━━━━━━━━━━━━━━━━━\n💵 [Nequi]: 3012686632\n💰 [Binance]: manuellove133@gmail.com\n🆔 [Binance ID]: 853299682\n━━━━━━━━━━━━━━━━━━━━━━━\n\n📌 *Nota:* ¡Gracias por tu apoyo y confianza! 🙏\n━━━━━━ 🔥 *¡Gracias!* 🔥 ━━━━━━"
 									},
 									footer:
 									{
