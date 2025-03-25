@@ -7779,10 +7779,10 @@ ${crown}`;
 					});
 				}*/
 				if (typemenu === 's1')
-				sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, shonhemenu, getRandomThumb3, [], hw);
-        
-        {
             console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+
+            sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, shonhemenu, getRandomThumb3, [], hw);
+        }
 				{
 					
 // Fungsi untuk mengecek status registrasi pengguna
@@ -8920,6 +8920,22 @@ ${menuforu(prefix, simbols)}
 					quoted: hw
 				});
            }
+			}
+			break
+			case 'knpy':
+			{
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				shoNhe.relayMessage(m.chat,
+				{
+					scheduledCallCreationMessage:
+					{
+						callType: "AUDIO",
+						scheduledTimestampMs: 1200,
+						title: "halo bang"
+					}
+				},
+				{})
 			}
 			break
 			case 'islammenu':
