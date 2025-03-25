@@ -7779,13 +7779,10 @@ ${crown}`;
 					});
 				}*/
 				if (typemenu === 's1')
-				sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, shonhemenu, imageBuffer, [], hw);
+				sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, shonhemenu, getRandomThumb3, [], hw);
         
         {
             console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-            sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
-        }
 				{
 					
 // Fungsi untuk mengecek status registrasi pengguna
