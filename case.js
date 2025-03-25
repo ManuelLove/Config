@@ -7635,6 +7635,10 @@ break;
 			case 'shonheum':
 			case 'menu':
 console.log('📌 Valor de typemenu:', typemenu);
+
+        let imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg"; // Declaración única
+        console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+        console.log('📌 Valor de typemenu:', typemenu);
 console.log('📌 Valor de typemenu:', typemenu);
 console.log('📌 Valor de typemenu:', typemenu);
 console.log('📌 Valor de typemenu:', typemenu);
@@ -7785,6 +7789,8 @@ ${crown}`;
 				}*/
 				if (typemenu === 's1')
 
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
+        
         {
             let imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg"; // Declaración válida
             console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
@@ -8034,6 +8040,8 @@ if (isUserRegistered(m.sender)) {
 
         sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
         
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
+        
         {
             const imageBuffer = getRandomThumb3(); // Declaración dentro de un bloque válido
             console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
@@ -8100,6 +8108,8 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's3')
 
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
+        
         sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
         
         {
@@ -8184,6 +8194,8 @@ ${menuforu(prefix, simbols)}
 
         sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
         
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
+        
         {
             const imageBuffer = getRandomThumb3(); // Declaración dentro de un bloque válido
             console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
@@ -8250,6 +8262,8 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's5')
 
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
+        
         sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
         
         {
@@ -8319,6 +8333,8 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's6')
 
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
+        
         sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
         
         {
@@ -8405,6 +8421,8 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's7')
 
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
+        
         sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
         
         {
@@ -8496,6 +8514,8 @@ ${menuforu(prefix, simbols)}
 
         sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
         
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
+        
         {
             const imageBuffer = getRandomThumb3(); // Declaración dentro de un bloque válido
             console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
@@ -8577,6 +8597,8 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's9')
 
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
+        
         sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
         
         {
@@ -8669,6 +8691,8 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's10')
 
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
+        
         sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
         
         {
@@ -8798,6 +8822,8 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's11')
 
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
+        
         sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
         
         {
@@ -8948,6 +8974,8 @@ ${menuforu(prefix, simbols)}
 				}
 				else if (typemenu === 's12')
 
+        sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
+        
         sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
         
         {
