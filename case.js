@@ -8922,22 +8922,6 @@ ${menuforu(prefix, simbols)}
            }
 			}
 			break
-			case 'knpy':
-			{
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				shoNhe.relayMessage(m.chat,
-				{
-					scheduledCallCreationMessage:
-					{
-						callType: "AUDIO",
-						scheduledTimestampMs: 1200,
-						title: "halo bang"
-					}
-				},
-				{})
-			}
-			break
 			case 'islammenu':
 			{
 				updatePopularCommand(command);
