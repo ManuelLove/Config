@@ -7790,7 +7790,7 @@ if (!buttons) {
 
 // Agregar botones principales
 buttons.push(
-    {;
+    {
 if (isUserRegistered(m.sender)) {
     // Jika pengguna sudah terdaftar, tampilkan tombol OWNER dan ABOUT
         {
