@@ -7818,9 +7818,10 @@ if (isUserRegistered(m.sender)) {
                 displayText: "REGISTER 📝"
             },
             type: 1
-        }
-    ];
-  };
+	});
+				}
+;
+
     // Asegurar que la imagen se carga correctamente
     const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
     console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
