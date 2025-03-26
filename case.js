@@ -7675,7 +7675,6 @@ ${readmore}
 │  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
-│  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
 │  ⎘ ᴠᴇʀꜱɪᴏɴ: ${version}
 │  ⎘ sᴜᴘᴘᴏʀᴛᴇᴅ
 │    ${simbols} ${prefix}tqto
