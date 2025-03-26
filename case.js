@@ -7759,12 +7759,12 @@ ${crown}`;
 				const lod = ["█▒▒▒▒▒▒▒▒▒▒▒ 10%", "████▒▒▒▒▒▒▒▒ 30%", "███████▒▒▒▒▒ 50%", "██████████▒▒ 80%", "████████████ 100%", `> *${c}MOSTRAR MENÚ SIMPLE${c}*`];
 
     // Kirim pesan awal dan simpan key untuk diedit
-    const { key } = await sho.sendMessage(m.chat, { text: '⏳' });
+    const { key } = await shoNhe.sendMessage(m.chat, { text: '⏳' });
 
     // Proses loading dengan update pesan secara bertahap
     for (let i = 0; i < lod.length; i++) {
         await new Promise(resolve => setTimeout(resolve, 1000)); // Simulasi delay
-        await sho.sendMessage(m.chat, { text: lod[i], edit: key });
+        await shoNhe.sendMessage(m.chat, { text: lod[i], edit: key });
     }
         let buttons = [
         { buttonId: ".realown", buttonText: { displayText: "OWNER 🔥" }, type: 1 },
@@ -7856,7 +7856,7 @@ const flowActions = [
 buttonMessage.buttons.push(...flowActions);
 
 // Kirim pesan
-await sho.sendMessage(m.chat, buttonMessage, { quoted: hw });
+await shoNhe.sendMessage(m.chat, buttonMessage, { quoted: hw });
       }
       break
 			case 'knpy':
