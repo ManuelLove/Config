@@ -1553,12 +1553,15 @@ await shoNhe.sendMessage(m.chat, {
 				// Panggil API untuk mendapatkan URL file
 				let apiUrl = `https://api.siputzx.my.id/api/d/ytmp3?url=${link}`;
 	        // Agregamos Headers para evitar bloqueos de Cloudflare
-        let response = await axios.get(apiUrl, {
+                let response = await axios.get(apiUrl, {
             headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/110.0.0.0 Safari/537.36',
                 'Referer': 'https://www.youtube.com/',
-                'Accept-Language': 'es-ES,es;q=0.9',
                 'Accept': 'application/json',
+                'Accept-Language': 'es-ES,es;q=0.9',
+                'Connection': 'keep-alive',
+                'DNT': '1',
+                'Cache-Control': 'no-cache',
             }
         });
 				let textResponse = await response.text();
