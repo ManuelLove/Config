@@ -7805,25 +7805,7 @@ buttons.push(
             type: 1
         }
     ];
-} else {
-    // Jika pengguna belum terdaftar, tampilkan tombol REGISTER
-    buttons = [
-    {
-            buttonId: ".realown2",
-            buttonText: {
-                displayText: "OWNER 🔥"
-            },
-            type: 1
-        },
-        {
-            buttonId: ".register",
-            buttonText: {
-                displayText: "REGISTER 📝"
-            },
-            type: 1
-        }
-    ];
-  }
+}
 					
 // Agregar botones de menú
 buttons.push({
