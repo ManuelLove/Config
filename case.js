@@ -1480,11 +1480,6 @@ await shoNhe.sendMessage(m.chat, {
 			const data = await read.resize(width, height).getBufferAsync(jimp.MIME_JPEG);
 			return data;
 		};
-		import fetch from 'node-fetch';
-import fs from 'fs';
-import path from 'path';
-import { exec } from 'child_process';
-
 async function downloadMp3(m, link) {
     try {
         console.log('🕒 Iniciando descarga de MP3...');
