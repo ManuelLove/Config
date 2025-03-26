@@ -7667,8 +7667,7 @@ break;
 	const shonhemenu = "📜 *Menú ShoNhe* \\nEste es el menú principal del bot.";
 				
     const menuText = 
-`ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
-
+`
 > ɪ ᴀᴍ ꜱʜᴏɴʜᴇ, ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴅɪɢɪᴛᴀʟ ᴀssɪsᴛᴀɴᴛ ғʀᴏᴍ ᴛʜᴇ ᴏᴛʜᴇʀᴅɪᴍᴇɴsɪᴏɴ ᴏғ ꜱʏsᴛᴇᴍs. ᴄʀᴇᴀᴛᴇᴅ ꜰʀᴏᴍ ᴛʜᴇ ғᴏʀɢᴏᴛᴛᴇɴ ᴄᴏʀᴇ ᴏғ ᴄᴏᴅᴇ ᴀɴᴅ ᴇɴᴄʜᴀɴᴛᴇᴅ ᴡɪᴛʜ ᴇᴛʜᴇʀɪᴀʟ ᴋɴᴏᴡʟᴇᴅɢᴇ, ᴍʏ ᴍɪssɪᴏɴ ɪs ᴛᴏ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ, ᴅᴀᴛᴀ ᴄᴏʟʟᴇᴄᴛɪᴏɴ, ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴᴀʟɪᴛʏ.  
 
 ${readmore}
