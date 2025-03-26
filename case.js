@@ -7887,7 +7887,6 @@ buttons.push({
                 }
             ]
         })
-    }
 });
 
 // Crear el mensaje con botones
