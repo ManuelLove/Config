@@ -1537,23 +1537,15 @@ await shoNhe.sendMessage(m.chat, {
 				m.reply(`Error: ${err.message}`);
 			}
 		}
-		async function downloadMp3(link)
-		{
-			try
-			{
-				console.log('🕒 Memulai proses download MP3...');
-				shoNhe.sendMessage(m.chat,
-				{
-					react:
-					{
-						text: '⏳',
-						key: m.key
-					}
-				});
-				// Panggil API untuk mendapatkan URL file
-				let apiUrl = `https://api.siputzx.my.id/api/d/ytmp3?url=${link}`;
-	        // Agregamos Headers para evitar bloqueos de Cloudflare
-                let response = await axios.get(apiUrl, {
+const cloudscraper = require('cloudscraper');
+
+async function downloadMp3(link) {
+    try {
+        console.log('🕒 Memulai proses download MP3...');
+
+        const apiUrl = `https://api.siputzx.my.id/api/d/ytmp3?url=${link}`;
+
+        let response = await cloudscraper.get(apiUrl, {
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/110.0.0.0 Safari/537.36',
                 'Referer': 'https://www.youtube.com/',
@@ -1564,16 +1556,15 @@ await shoNhe.sendMessage(m.chat, {
                 'Cache-Control': 'no-cache',
             }
         });
-				let textResponse = await response.text();
-				let data;
-				try
-				{
-					data = JSON.parse(textResponse);
-				}
-				catch (err)
-				{
-					console.error('❌ Respons bukan JSON:', textResponse);
-					m.reply("Terjadi kesalahan pada API. Silakan coba lagi nanti.");
+
+        let data = JSON.parse(response);
+        console.log('📥 API Response:', data);
+        return data.data.dl;
+
+    } catch (error) {
+        console.error('❌ Terjadi kesalahan:', error.message);
+    }
+}
 					return;
 				}
 				console.log('📥 Respons diterima dari API:', data);
