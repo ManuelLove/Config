@@ -1480,60 +1480,154 @@ await shoNhe.sendMessage(m.chat, {
 			const data = await read.resize(width, height).getBufferAsync(jimp.MIME_JPEG);
 			return data;
 		};
-async function downloadMp3(m, link) {
-    try {
-        console.log('🕒 Iniciando descarga de MP3...');
-        shoNhe.sendMessage(m.chat, { react: { text: '⏳', key: m.key } });
-
-        let apiUrl = `https://api.siputzx.my.id/api/d/ytmp3?url=${link}`;
-        let response = await fetch(apiUrl);
-        let data = await response.json();
-
-        if (data.status && data.data.dl) {
-            let audioUrl = data.data.dl;
-            let titulo = data.data.title.replace(/[^a-zA-Z0-9]/g, "_") || 'audio'; // Limpiar caracteres especiales
-            let filePath = path.join('/tmp', `${titulo}.mp3`);
-            let convertedFilePath = path.join('/tmp', `fixed_${titulo}.mp3`);
-
-            // Descargar audio con fetch
-            let audioResponse = await fetch(audioUrl);
-            if (!audioResponse.ok) {
-                return shoNhe.sendMessage(m.chat, { text: "🚩 Error al descargar el archivo." });
-            }
-
-            let buffer = await audioResponse.arrayBuffer();
-            fs.writeFileSync(filePath, Buffer.from(buffer));
-
-            if (fs.existsSync(filePath)) {
-                console.log('⏳ Convirtiendo audio con ffmpeg...');
-                exec(`ffmpeg -i "${filePath}" -acodec libmp3lame -q:a 4 "${convertedFilePath}"`, async (error) => {
-                    if (error) {
-                        return shoNhe.sendMessage(m.chat, { text: "🚩 Error al convertir el audio." });
-                    }
-
-                    let audioBuffer = fs.readFileSync(convertedFilePath);
-                    await shoNhe.sendMessage(m.chat, {
-                        audio: audioBuffer,
-                        mimetype: 'audio/mpeg',
-                        fileName: `${titulo}.mp3`
-                    }, { quoted: m });
-
-                    // Eliminar archivos temporales
-                    fs.unlinkSync(filePath);
-                    fs.unlinkSync(convertedFilePath);
-                    console.log('✅ Proceso completado, archivo enviado.');
-                });
-            } else {
-                shoNhe.sendMessage(m.chat, { text: "🚩 Error: No se pudo guardar el archivo en el servidor." });
-            }
-        } else {
-            shoNhe.sendMessage(m.chat, { text: '🚩 Error: No se encontró un enlace de descarga válido.' });
-        }
-    } catch (err) {
-        console.error('❌ Error:', err.message);
-        shoNhe.sendMessage(m.chat, { text: `🚩 Error: ${err.message}` });
-    }
-}
+		async function downloadMp4(link)
+		{
+			try
+			{
+				console.log('🕒 Memulai proses download MP4...');
+				shoNhe.sendMessage(m.chat,
+				{
+					react:
+					{
+						text: '⏳',
+						key: m.key
+					}
+				});
+				// Fetch data dari API
+				let response = await fetch(`https://api.siputzx.my.id/api/d/ytmp4?url=${link}`);
+				let textResponse = await response.text();
+				// Validasi apakah respons adalah JSON
+				let data;
+				try
+				{
+					data = JSON.parse(textResponse);
+				}
+				catch (err)
+				{
+					console.error('❌ Respons bukan JSON:', textResponse);
+					m.reply("Terjadi kesalahan pada API. Silakan coba lagi nanti.");
+					return;
+				}
+				console.log('📥 Respons diterima dari API:', data);
+				if (data.status)
+				{
+					console.log('✅ Data valid, mengirim file video...');
+					shoNhe.sendMessage(m.chat,
+					{
+						video:
+						{
+							url: data.data.dl
+						},
+						caption: ''
+					},
+					{
+						quoted: m
+					});
+					console.log('✅ Proses selesai, file video berhasil dikirim.');
+				}
+				else
+				{
+					console.log('❌ Gagal mengambil video. URL tidak valid.');
+					m.reply("Gagal mengambil video. Silakan periksa URL.");
+				}
+			}
+			catch (err)
+			{
+				console.error('❌ Terjadi kesalahan:', err.message);
+				m.reply(`Error: ${err.message}`);
+			}
+		}
+		async function downloadMp3(link)
+		{
+			try
+			{
+				console.log('🕒 Memulai proses download MP3...');
+				shoNhe.sendMessage(m.chat,
+				{
+					react:
+					{
+						text: '⏳',
+						key: m.key
+					}
+				});
+				// Panggil API untuk mendapatkan URL file
+				let response = await fetch(`https://api.siputzx.my.id/api/d/ytmp3?url=${link}`);
+				let textResponse = await response.text();
+				let data;
+				try
+				{
+					data = JSON.parse(textResponse);
+				}
+				catch (err)
+				{
+					console.error('❌ Respons bukan JSON:', textResponse);
+					m.reply("Terjadi kesalahan pada API. Silakan coba lagi nanti.");
+					return;
+				}
+				console.log('📥 Respons diterima dari API:', data);
+				if (data.status && data.data.dl)
+				{
+					const fileUrl = data.data.dl;
+					const fileName = 'audio.mp3';
+					const fixedFileName = 'fixed_audio.mp3';
+					const filePath = path.join(__dirname, fileName);
+					const fixedFilePath = path.join(__dirname, fixedFileName);
+					// Unduh file audio
+					console.log('⏳ Mengunduh file audio...');
+					const writer = fs.createWriteStream(filePath);
+					const audioResponse = await axios(
+					{
+						url: fileUrl,
+						method: 'GET',
+						responseType: 'stream',
+					});
+					audioResponse.data.pipe(writer);
+					writer.on('finish', () =>
+					{
+						console.log('✅ File audio berhasil diunduh, memulai proses konversi...');
+						// Proses ulang file audio menggunakan ffmpeg
+						ffmpeg(filePath).toFormat('mp3') // Konversi ulang ke format MP3
+							.on('end', () =>
+							{
+								console.log('✅ File audio berhasil dikonversi.');
+								// Kirim file audio yang telah diperbaiki
+								shoNhe.sendMessage(m.chat,
+								{
+									audio: fs.readFileSync(fixedFilePath),
+									mimetype: 'audio/mpeg',
+									fileName: 'audio_fixed.mp3', // Nama file baru
+								},
+								{
+									quoted: m
+								});
+								// Hapus file sementara
+								fs.unlinkSync(filePath);
+								fs.unlinkSync(fixedFilePath);
+								console.log('✅ File audio berhasil dikirim dan file sementara dihapus.');
+							}).on('error', (err) =>
+							{
+								console.error('❌ Gagal mengonversi file audio:', err.message);
+								m.reply('Gagal memproses ulang file audio.');
+							}).save(fixedFilePath);
+					});
+					writer.on('error', (err) =>
+					{
+						console.error('❌ Gagal mengunduh file audio:', err.message);
+						m.reply('Gagal mengunduh file audio.');
+					});
+				}
+				else
+				{
+					console.log('❌ Gagal mengambil audio. URL tidak valid.');
+					m.reply("Gagal mengambil audio. Silakan periksa URL.");
+				}
+			}
+			catch (err)
+			{
+				console.error('❌ Terjadi kesalahan:', err.message);
+				m.reply(`Error: ${err.message}`);
+			}
+		}
 		if (!global.public)
 		{
 			if (!m.key.fromMe && !isShoNheOwn) return; // Abaikan jika bukan pesan bot atau owner
@@ -24031,88 +24125,113 @@ shoNhe.sendMessage(m.chat,
            }
 			}
 			break
-			case 'ytmp3':
-			{
-				if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly('Kirim perintah dengan link YouTube!\nContoh: .ytmp3 https://youtu.be/xxxx');
-				if (!isUrl(text)) return shoNherly('Link yang Anda kirim tidak valid!');
-				if (!(await firely(m, mess.waits))) return;
-				await downloadMp3(text); // Panggil fungsi downloadMp3
-				if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-			}
-			break
-			case 'ytmp4':
-			{
-				if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly('Kirim perintah dengan link YouTube!\nContoh: .ytmp4 https://youtu.be/xxxx');
-				if (!isUrl(text)) return shoNherly('Link yang Anda kirim tidak valid!');
-				if (!(await firely(m, mess.waits))) return;
-				await downloadMp4(text); // Panggil fungsi downloadMp4
-				if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-			}
-			break
+			case 'ytmp3': {
+    console.log("✅ Ejecutando ytmp3 con URL:", text);
+    if (!text) return m.reply("🔹 Debes proporcionar una URL de YouTube.");
+    if (!isUrl(text)) return m.reply("❌ URL no válida.");
+
+    m.reply("⌛ᴄᴀʀɢᴀɴᴅᴏ...\n▰▰▰▰▰▰▰▰▱"); // Mensaje de carga
+
+    try {
+        let response = await fetch(`https://api.siputzx.my.id/api/d/ytmp3?url=${text}`);
+        let data = await response.json();
+
+        if (data.status && data.data.dl) {
+            const fileUrl = data.data.dl;
+            const uniqueId = Date.now(); // Generar un ID único para cada descarga
+            const fileName = `audio_${uniqueId}.mp3`;
+            const fixedFileName = `fixed_audio_${uniqueId}.mp3`;
+            const filePath = `${__dirname}/${fileName}`;
+            const fixedFilePath = `${__dirname}/${fixedFileName}`;
+
+            console.log('⏳ Descargando archivo de audio...');
+            const writer = fs.createWriteStream(filePath);
+            const audioResponse = await axios({
+                url: fileUrl,
+                method: 'GET',
+                responseType: 'stream',
+            });
+            audioResponse.data.pipe(writer);
+
+            writer.on('finish', () => {
+                console.log('✅ Archivo descargado. Iniciando conversión...');
+
+                ffmpeg(filePath)
+                    .toFormat('mp3')
+                    .on('end', () => {
+                        console.log('✅ Conversión completada. Enviando archivo...');
+                        conn.sendMessage(m.chat, {
+                            audio: fs.readFileSync(fixedFilePath),
+                            mimetype: 'audio/mpeg',
+                            fileName: `audio_${uniqueId}.mp3`,
+                        }, { quoted: m });
+
+                        // Eliminar archivos después de enviarlos para evitar acumulación
+                        fs.unlinkSync(filePath);
+                        fs.unlinkSync(fixedFilePath);
+                    })
+                    .save(fixedFilePath);
+            });
+
+        } else {
+            m.reply("❌ Error al descargar el audio.");
+        }
+    } catch (err) {
+        console.error("❌ Error en ytmp3:", err);
+        m.reply("❌ Hubo un problema al procesar tu solicitud.");
+    }
+    console.log("✅ Comando ytmp3 finalizado.");
+}
+break
+
+case 'ytmp4': {
+    console.log("✅ Ejecutando ytmp4 con URL:", text);
+    if (!text) return m.reply("🔹 Debes proporcionar una URL de YouTube.");
+    if (!isUrl(text)) return m.reply("❌ URL no válida.");
+
+    m.reply("⌛ᴄᴀʀɢᴀɴᴅᴏ...\n▰▰▰▰▰▰▰▰▱"); // Mensaje de carga
+
+    try {
+        let response = await fetch(`https://api.siputzx.my.id/api/d/ytmp4?url=${text}`);
+        let data = await response.json();
+
+        if (data.status && data.data.dl) {
+            const fileUrl = data.data.dl;
+            const uniqueId = Date.now(); // Generar un ID único para cada descarga
+            const fileName = `video_${uniqueId}.mp4`;
+            const filePath = `${__dirname}/${fileName}`;
+
+            console.log('⏳ Descargando archivo de video...');
+            const writer = fs.createWriteStream(filePath);
+            const videoResponse = await axios({
+                url: fileUrl,
+                method: 'GET',
+                responseType: 'stream',
+            });
+            videoResponse.data.pipe(writer);
+
+            writer.on('finish', () => {
+                console.log('✅ Video descargado. Enviando archivo...');
+                conn.sendMessage(m.chat, {
+                    video: fs.readFileSync(filePath),
+                    mimetype: 'video/mp4',
+                    fileName: `video_${uniqueId}.mp4`,
+                }, { quoted: m });
+
+                // Eliminar archivo después de enviarlo
+                fs.unlinkSync(filePath);
+            });
+
+        } else {
+            m.reply("❌ Error al descargar el video.");
+        }
+    } catch (err) {
+        console.error("❌ Error en ytmp4:", err);
+        m.reply("❌ Hubo un problema al procesar tu solicitud.");
+    }
+    console.log("✅ Comando ytmp4 finalizado.");
+}
+break
 			case 'owner':
 			{
 				if (!isRegistered(m))
