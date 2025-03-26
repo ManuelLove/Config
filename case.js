@@ -7632,139 +7632,105 @@ break;
 				}
 				}
 			break
-			case 'shonheum':
-			case 'menu': {
-    updatePopularCommand(command);
-    const levelUpMessage = levelUpdate(command, m.sender);
+      case 'shoum':
+      case 'menu': {
+      
+    updatePopularCommand(command); // Mencatat command
+    await emote(randomEmoji);
+
+    // Ambil database limit dari `cekfire`
     const db = loadUserFire();
-    const user = db[m.sender] || {};
-    const role = user.role || 'user';
-    const limit = user.limit || 0;
-    const limitDisplay = limit === -1 ? '∞' : limit;
-    const xp = user.exp || 0;
-    const level = user.level || 0;
-    const belenc = user.balance || 0;
-    const commandCount = user.commandCount || 0;
-    const registrationSeries = user.registrationSeries || 'Not Available';
-    const isRegistered = user.register || false;
-				// Ambil top 4 command populer
-				let commands = Object.entries(popularData).filter(([cmd]) => cmd !== 'ai').sort((a, b) => b[1] - a[1]).slice(0, 4).map(([cmd, count]) => `${c}${prefix}${cmd} ${count}${c}`);
-				let formattedCommandList = commands.length ? commands.reduce((rows, current, index) =>
-				{
-					if (index % 2 === 0)
-					{
-						rows.push([current]);
-					}
-					else
-					{
-						rows[rows.length - 1].push(current);
-					}
-					return rows;
-				}, []).map(row => row.join(` | `)).join('\n') : 'Belum ada data command populer.';
-				let aiMessage = popularData.ai ? `${c}${popularData.ai}${c}` : `${c}0${c}`;
-				const statusUser = isShoNheOwn ? 'Owner' : `${role}`;
-				// Format menu dengan limit dan register
-	const shonhemenu = "📜 *Menú ShoNhe* \\nEste es el menú principal del bot.";
-				
-   const menuText =  
-`
-> ʏᴏ ꜱᴏʏ ᴛᴇᴄʜғɪx, ᴜɴ ᴀᴠᴀɴᴢᴀᴅᴏ ᴀsɪsᴛᴇɴᴛᴇ ᴅɪɢɪᴛᴀʟ ᴅᴇ ʟᴀ ᴏᴛʀᴀ ᴅɪᴍᴇɴsɪóɴ ᴅᴇ ʟᴏs sɪsᴛᴇᴍᴀs. ᴄʀᴇᴀᴅᴏ ᴅᴇsᴅᴇ ᴇʟ ɴúᴄʟᴇᴏ ᴏʟᴠɪᴅᴀᴅᴏ ᴅᴇʟ ᴄóᴅɪɢᴏ ʏ ᴇɴᴄᴀɴᴛᴀᴅᴏ ᴄᴏɴ ᴄᴏɴᴏᴄɪᴍɪᴇɴᴛᴏ ᴛʀᴀsᴄᴇɴᴅᴇɴᴛᴀʟ, ᴍɪ ᴍɪsɪóɴ ᴇs ᴀʏᴜᴅᴀʀᴛᴇ ᴄᴏɴ ɪɴғᴏʀᴍᴀᴄɪóɴ, ʀᴇᴄᴏᴘɪʟᴀᴄɪóɴ ᴅᴇ ᴅᴀᴛᴏs ʏ ғᴜɴᴄɪᴏɴᴀʟɪᴅᴀᴅ. 
+    let userLimit = db[m.sender]?.limit || 0; // Jika tidak ada data, default 0
+    let role = db[m.sender]?.role || 'user'; // Default role adalah user
+    let limitDisplay = userLimit === -1 ? '∞' : userLimit; // Tampilkan limit sebagai "Unlimited" jika -1
+    let isRegistered = db[m.sender]?.register ? 'Registered' : 'Not Registered';
 
-${readmore}
-┌╾⚟┉➲${c}【 ᴜꜱᴇʀ - ɪɴғᴏ 】${c} ⟢
-├────────────────
-│  ⎘ ɴᴀᴍᴇ: ${m.pushName || 'User'}
-│  ⎘ ɴᴜᴍʙᴇʀ: ${m.sender.split('@')[0]}
-│  ⎘ ʟɪᴍɪᴛ: ${limitDisplay}
-│  ⎘ ʀᴏʟᴇ: ${role}
-│  ⎘ ꜱᴇʀɪᴇs: ${registrationSeries}
-│  ⎘ ʀᴇɢɪsᴛᴇʀ: ${isRegistered ? 'Registered' : 'Not Registered'}
-│  ⎘ sᴀʟᴅᴏ: ${belenc}
-│  ⎘ ʟᴇᴠᴇʟ: ${level}
-│  ⎘ ᴇxᴘ: ${xp}
-│  ⎘ ᴄᴏᴍᴍᴀɴᴅ ᴄᴏᴜɴᴛ: ${commandCount}
-└──────────────────╼.✗
+    // Ambil top 4 command populer
+    let commands = Object.entries(popularData).filter(([cmd]) => cmd !== 'ai')
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 4)
+        .map(([cmd, count]) => `${c}${prefix}${cmd} ${count}${c}`);
+    let formattedCommandList = commands.length
+        ? commands.reduce((rows, current, index) => {
+            if (index % 2 === 0) {
+                rows.push([current]);
+            } else {
+                rows[rows.length - 1].push(current);
+            }
+            return rows;
+        }, []).map(row => row.join(` | `))
+        .join('\n')
+        : 'Belum ada data command populer.';
 
-┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
-├────────────────
-│  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
-│  ⎘ ᴘʀᴇғɪx: ${prefix}
-│  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
-│  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
-│  ⎘ ᴠᴇʀꜱɪᴏɴ: ${version}
-│  ⎘ sᴜᴘᴘᴏʀᴛᴇᴅ
-│    ${simbols} ${prefix}tqto
-│    ${simbols} ${prefix}realown
-│  ⎘ ᴛᴏᴘ ᴄᴏᴍᴍᴀɴᴅs:
-${formattedCommandList}
-└──────────────────╼.✗
+    let aiMessage = popularData.ai ? `${c}${popularData.ai}${c}` : `${c}null${c}`;
+    const statusUser = isOwner ? 'Owner' : `${role}`;
 
-┌╾⚟┉➲【𝙎𝙔𝙎𝙏𝙀𝙈 𝙈𝙀𝙉𝙐】─═⚔️═─┐
-│  
-│  🔗 *Social Media Links* 🔗
-│  ⟿ TikTok: ${ttk}
-│  ⟿ YouTube: ${ytbb}
-│  ⟿ Instagram: ${itg}
-│  ⟿ Github NHEBotx:"\nhttps://github.com/NHEBotx
-│  ⟿ Github Sychyy:\nhttps://github.com/sychyy
-│  
-└────────────────────────┘
+    // Format menu dengan limit dan register
+    const shomenu = `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
+> ɪ ᴀᴍ ꜱʜᴏ ɢʜɪʙʟɪ, ᴀɴ ᴀᴜᴛᴏᴍᴀᴛᴇᴅ ᴀssɪsᴛᴀɴᴛ ꜰʀᴏᴍ ᴛʜᴇ ᴍᴀɢɪᴄᴀʟ ᴡᴏʀʟᴅ ᴏꜰ ɢʜɪʙʟɪ. ᴜsᴇ ᴍᴇ ғᴏʀ ᴅᴀᴛᴀ sᴇᴀʀᴄʜɪɴɢ, ɪɴғᴏ ᴄᴏʟʟᴇᴄᴛɪᴏɴ, ᴀɴᴅ ꜰᴜɴᴄᴛɪᴏɴs ᴏɴ ᴡʜᴀᴛsᴀᴘᴘ!
 
-┌╾⚟┉➲【𝙈𝘼𝙄𝙉 𝙈𝙀𝙉𝙐】─═⚔️═─┐
-│  
-│  ⟿ ${simbols} ${prefix}sᴛᴏʀᴇᴍᴇɴᴜ
-│  ⟿ ${simbols} ${prefix}sᴛᴏʀᴇᴏᴡɴᴍᴇɴᴜ
-│  ⟿ ${simbols} ${prefix}ᴏᴡɴᴇʀᴍᴇɴᴜ  
-│  ⟿ ${simbols} ${prefix}ɢᴀᴍᴇᴍᴇɴᴜ  
-│  ⟿ ${simbols} ${prefix}ᴅᴏᴡɴʟᴏᴀᴅᴍᴇɴᴜ
-│  ⟿ ${simbols} ${prefix}ɪsʟᴀᴍᴍᴇɴᴜ
-│  ⟿ ${simbols} ${prefix}sᴛᴏʀᴇᴍᴇɴᴜ 
-│  ⟿ ${simbols} ${prefix}ʀᴀɴᴅᴏᴍᴍᴇɴᴜ  
-│  ⟿ ${simbols} ${prefix}ᴄᴏɴᴠᴇʀᴛᴍᴇɴᴜ  
-│  ⟿ ${simbols} ${prefix}ɢʀᴏᴜᴘᴍᴇɴᴜ  
-│  ⟿ ${simbols} ${prefix}ᴏᴛʜᴇʀᴍᴇɴᴜ  
-│  ⟿ ${simbols} ${prefix}ᴀᴜᴅɪᴏᴍᴇɴᴜ  
-│  ⟿ ${simbols} ${prefix}ᴀɪᴍᴇɴᴜ  
-│  ⟿ ${simbols} ${prefix}ᴀɴɪᴍᴇᴍᴇɴᴜ  
-│  
-└─────────────────────┘
-
-┌╾⚟┉➲ ${n}【 ғᴇᴀᴛᴜʀᴇᴅ】${n} ⟢
-├────────────────
-│  ⎘ ᴜꜱᴇʀ ᴄᴏᴍᴍᴀɴᴅs
-│  ⟿ ${simbols} ${prefix}listuserfire
-│  ⟿ ${simbols} ${prefix}cekfire
-│  ⟿ ${simbols} ${prefix}bensin
-│  ⟿ ${simbols} ${prefix}afk
-│  ⟿ ${simbols} ${prefix}listcmd
-│  ⟿ ${simbols} ${prefix}cek
-│  ⟿ ${simbols} ${prefix}find
-│  ⟿ ${simbols} ${prefix}ceksaldo
-│  ⟿ ${simbols} ${prefix}scriptnoenc
+⏤͟͟͞͞╳── [ ᴜꜱᴇʀ - ɪɴғᴏ ] ── .々─ᯤ
+│    =〆 ɴᴀᴍᴇ: ${m.pushName ? m.pushName : 'User'}
+│    =〆 ɴᴜᴍʙᴇʀ: ${m.sender.split('@')[0]}
+│    =〆 ʟɪᴍɪᴛ: ${limitDisplay}
+│    =〆 ʀᴏʟᴇ: ${statusUser}
+│    =〆 ʀᴇɢɪꜱᴛᴇʀ: ${isRegistered}
+⏤͟͟͞͞╳────────── .✦
 │
-│  ⎘ sᴜᴘᴘᴏʀᴛᴇᴅ
-│  ⟿ ${simbols} ${prefix}tqto
-│  ⟿ ${simbols} ${prefix}realown
-└──────────────────╼.✗
-
-┌╾⚟┉➲ ${n}【 ɢᴜɪᴅᴇ 】${n} ⟢
-├────────────────
-│  ⎘ ꜰᴏʀ ᴍᴇɴᴜ: ${prefix}allmenu
-│  ⎘ ᴄᴏɴᴛᴀᴄᴛ ꜰᴏʀ ᴇʀʀᴏʀs: ${prefix}owner
-└──────────────────╼.✗
+⏤͟͟͞͞╳── [ ʙᴏᴛ - ɪɴғᴏ ] ── .々─ᯤ
+│    =〆 ᴛʏᴘᴇ: ᴄᴀꜱᴇ
+│    =〆 ᴍᴏᴅᴇ: ${sho.public ? 'ᴘᴜʙʟɪᴄ' : 'ꜱᴇʟꜰ'}
+│    =〆 ᴘʀᴇғɪx: ${prefix}
+│    =〆 ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
+│    =〆 ᴀɪ ʜɪᴛꜱ: ${aiMessage}
+│    =〆 ᴛᴏᴘ ᴄᴏᴍᴍᴀɴᴅꜱ:
+${formattedCommandList}
+⏤͟͟͞͞╳────────── .✦
+│
+⏤͟͟͞͞╳── [ ꜱᴏᴄɪᴀʟ ᴍᴇᴅɪᴀ ] ── .々─ᯤ
+│    =〆 ᴛɪᴋᴛᴏᴋ: ${ttk}
+│    =〆 ʏᴏᴜᴛᴜʙᴇ: ${ytbb}
+│    =〆 ɪɴꜱᴛᴀɢʀᴀᴍ: ${itg}
+⏤͟͟͞͞╳────────── .✦
+│
+⏤͟͟͞͞╳── [ ғᴇᴀᴛᴜʀᴇᴅ ] ── .々─ᯤ
+│    =〆 ᴜꜱᴇʀ ᴄᴏᴍᴍᴀɴᴅꜱ
+│       ${simbols} ${prefix}listuserfire
+│       ${simbols} ${prefix}cekfire
+│       ${simbols} ${prefix}bensin
+│       ${simbols} ${prefix}afk
+│       ${simbols} ${prefix}listcmd
+│
+│    =〆 ꜱᴜᴘᴘᴏʀᴛᴇᴅ
+│       ${simbols} ${prefix}tqto
+│       ${simbols} ${prefix}realown
+⏤͟͟͞͞╳────────── .✦
+│
+⏤͟͟͞͞╳── [ ɢᴜɪᴅᴇ ] ── .々─ᯤ
+│    =〆 ꜰᴏʀ ᴍᴇɴᴜ: ${prefix}ᴀʟʟᴍᴇɴᴜ
+│    =〆 ᴄᴏɴᴛᴀᴄᴛ ꜰᴏʀ ᴇʀʀᴏʀꜱ: ${prefix}ᴏᴡɴᴇʀ
+⏤͟͟͞͞╳────────── .✦
 │ ᴜᴘᴛɪᴍᴇ: ${runtime(os.uptime())}
 
-${crown}`;
-				const lod = ["█▒▒▒▒▒▒▒▒▒▒▒ 10%", "████▒▒▒▒▒▒▒▒ 30%", "███████▒▒▒▒▒ 50%", "██████████▒▒ 80%", "████████████ 100%", `> *${c}MOSTRAR MENÚ SIMPLE${c}*`];
+> Powered by: _${namaowner} System_
+
+`;
+        const lod = [
+        "█▒▒▒▒▒▒▒▒▒▒▒ 10%",
+        "████▒▒▒▒▒▒▒▒ 30%",
+        "███████▒▒▒▒▒ 50%",
+        "██████████▒▒ 80%",
+        "████████████ 100%",
+        `> *${c}MENAMPILKAN SIMPLE MENU${c}*`
+    ];
 
     // Kirim pesan awal dan simpan key untuk diedit
-    const { key } = await shoNhe.sendMessage(m.chat, { text: '⏳' });
+    const { key } = await sho.sendMessage(m.chat, { text: '⏳' });
 
     // Proses loading dengan update pesan secara bertahap
     for (let i = 0; i < lod.length; i++) {
         await new Promise(resolve => setTimeout(resolve, 1000)); // Simulasi delay
-        await shoNhe.sendMessage(m.chat, { text: lod[i], edit: key });
+        await sho.sendMessage(m.chat, { text: lod[i], edit: key });
     }
         let buttons = [
         { buttonId: ".realown", buttonText: { displayText: "OWNER 🔥" }, type: 1 },
@@ -7856,7 +7822,7 @@ const flowActions = [
 buttonMessage.buttons.push(...flowActions);
 
 // Kirim pesan
-await shoNhe.sendMessage(m.chat, buttonMessage, { quoted: hw });
+await sho.sendMessage(m.chat, buttonMessage, { quoted: hw });
       }
       break
 			case 'knpy':
