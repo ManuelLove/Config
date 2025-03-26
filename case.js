@@ -7648,7 +7648,23 @@ break;
     const registrationSeries = user.registrationSeries || 'Not Available';
     const isRegistered = user.register || false;
     const statusUser = isShoNheOwn ? 'Owner' : `${role}`;
-
+				// Ambil top 4 command populer
+				let commands = Object.entries(popularData).filter(([cmd]) => cmd !== 'ai').sort((a, b) => b[1] - a[1]).slice(0, 4).map(([cmd, count]) => `${c}${prefix}${cmd} ${count}${c}`);
+				let formattedCommandList = commands.length ? commands.reduce((rows, current, index) =>
+				{
+					if (index % 2 === 0)
+					{
+						rows.push([current]);
+					}
+					else
+					{
+						rows[rows.length - 1].push(current);
+					}
+					return rows;
+				}, []).map(row => row.join(` | `)).join('\n') : 'Belum ada data command populer.';
+				let aiMessage = popularData.ai ? `${c}${popularData.ai}${c}` : `${c}0${c}`;
+				const statusUser = isShoNheOwn ? 'Owner' : `${role}`;
+				// Format menu dengan limit dan register
     const menuText = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
 
@@ -7675,10 +7691,13 @@ ${readmore}
 │  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
+│  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
 │  ⎘ ᴠᴇʀꜱɪᴏɴ: ${version}
 │  ⎘ sᴜᴘᴘᴏʀᴛᴇᴅ
 │    ${simbols} ${prefix}tqto
 │    ${simbols} ${prefix}realown
+│  ⎘ ᴛᴏᴘ ᴄᴏᴍᴍᴀɴᴅs:
+${formattedCommandList}
 └──────────────────╼.✗
 
 ┌╾⚟┉➲【𝙎𝙔𝙎𝙏𝙀𝙈 𝙈𝙀𝙉𝙐】─═⚔️═─┐
@@ -7813,6 +7832,7 @@ if (isUserRegistered(m.sender)) {
 							url: getRandomThumb2(), // Pastikan file ini tersedia
 							gifPlayback: true
 						},
+						caption: `${shonhemenu}`, // Teks menu
 						contextInfo:
 						{
 							mentionedJid: [sender],
