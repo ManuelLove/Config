@@ -7804,8 +7804,7 @@ buttons.push(
             },
             type: 1
         }
-    ];
-}
+    );
 					
 // Agregar botones de menú
 buttons.push({
