@@ -1551,7 +1551,7 @@ await shoNhe.sendMessage(m.chat, {
 					}
 				});
 				// Panggil API untuk mendapatkan URL file
-				let response = await fetch(`https://api.siputzx.my.id/api/d/ytmp3?url=${link}`);
+				let apiUrl = `https://api.siputzx.my.id/api/d/ytmp3?url=${link}`;
 	        // Agregamos Headers para evitar bloqueos de Cloudflare
         let response = await axios.get(apiUrl, {
             headers: {
