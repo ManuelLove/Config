@@ -7821,9 +7821,41 @@ if (isUserRegistered(m.sender)) {
         }
     ];
   }
-// Definir shonhemenu antes de usarlo
-const shonhemenu = "📜 *Menú ShoNhe* \nEste es el menú principal del bot.";
-const flowActions = [
+					let buttonMessage = {
+						document: global.forpdf,
+						fileName: waktuucapan,
+						mimetype: 'application/pdf',
+						fileLength: '100000000000000',
+						pageCount: '999',
+						image:
+						{
+							url: getRandomThumb2(), // Pastikan file ini tersedia
+							gifPlayback: true
+						},
+						caption: `${shonhemenu}`, // Teks menu
+						contextInfo:
+						{
+							mentionedJid: [sender],
+							forwardingScore: 999,
+							isForwarded: true,
+							externalAdReply:
+							{
+								title: namabot,
+								body: descown,
+								thumbnail: getRandomThumb3(),
+								mediaType: 1,
+								renderLargerThumbnail: true,
+								previewType: 0,
+								mediaUrl: gh,
+								sourceUrl: gh
+							}
+						},
+						footer: isUserRegistered(m.sender) ? "© ShoNhe - Botz" : "ShoNhe - Bot Detecz",
+						buttons: buttons,
+						viewOnce: true,
+						headerType: 4
+					};
+					const flowActions = [
 					{
 						buttonId: 'action',
 						buttonText:
@@ -7961,35 +7993,7 @@ const flowActions = [
 					});
 				}
 ;
-let buttonMessage = {
-    document: global.forpdf,
-    fileName: "Menu ShoNhe",
-    mimetype: 'application/pdf',
-    image: {
-        url: getRandomThumb2(),
-        gifPlayback: true
-    },
-    caption: shonhemenu, // Ahora está definido correctamente
-    contextInfo: {
-        mentionedJid: [sender],
-        forwardingScore: 999,
-        isForwarded: true,
-        externalAdReply: {
-            title: namabot,
-            body: descown,
-            thumbnail: getRandomThumb3(),
-            mediaType: 1,
-            renderLargerThumbnail: true,
-            previewType: 0,
-            mediaUrl: gh,
-            sourceUrl: gh
-        }
-    },
-    footer: isUserRegistered(m.sender) ? "© ShoNhe - Botz" : "ShoNhe - Bot Detecz",
-    buttons: buttons,
-    viewOnce: true,
-    headerType: 4
-};
+
     // Asegurar que la imagen se carga correctamente
     const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
     console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
