@@ -1540,7 +1540,7 @@ await shoNhe.sendMessage(m.chat, {
 async function downloadMp3(m, link) {
     try {
         console.log('🕒 Iniciando descarga de MP3...');
-        shoNhe.sendMessage(m.chat, { react: { text: '⏳', key: m.key } });
+        await shoNhe.sendMessage(m.chat, { react: { text: '⏳', key: m.key } });
 
         let apiUrl = `https://api.siputzx.my.id/api/d/ytmp3?url=${link}`;
 
