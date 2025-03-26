@@ -7647,7 +7647,6 @@ break;
     const commandCount = user.commandCount || 0;
     const registrationSeries = user.registrationSeries || 'Not Available';
     const isRegistered = user.register || false;
-    const statusUser = isShoNheOwn ? 'Owner' : `${role}`;
 				// Ambil top 4 command populer
 				let commands = Object.entries(popularData).filter(([cmd]) => cmd !== 'ai').sort((a, b) => b[1] - a[1]).slice(0, 4).map(([cmd, count]) => `${c}${prefix}${cmd} ${count}${c}`);
 				let formattedCommandList = commands.length ? commands.reduce((rows, current, index) =>
