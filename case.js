@@ -7664,6 +7664,8 @@ break;
 				let aiMessage = popularData.ai ? `${c}${popularData.ai}${c}` : `${c}0${c}`;
 				const statusUser = isShoNheOwn ? 'Owner' : `${role}`;
 				// Format menu dengan limit dan register
+	const shonhemenu = "📜 *Menú ShoNhe* \\nEste es el menú principal del bot.";
+				
     const menuText = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
 
@@ -7831,7 +7833,7 @@ if (isUserRegistered(m.sender)) {
 							url: getRandomThumb2(), // Pastikan file ini tersedia
 							gifPlayback: true
 						},
-						caption: `${menu}`, // Teks menu
+						caption: `${shonhemenu}`, // Teks menu
 						contextInfo:
 						{
 							mentionedJid: [sender],
