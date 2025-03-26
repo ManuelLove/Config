@@ -7632,41 +7632,41 @@ break;
 				}
 				}
 			break
-			case 'shonheum':
-			case 'menu': {
-    updatePopularCommand(command);
-    const levelUpMessage = levelUpdate(command, m.sender);
+      case 'shoum':
+      case 'menu': {
+      
+    updatePopularCommand(command); // Mencatat command
+    await emote(randomEmoji);
+
+    // Ambil database limit dari `cekfire`
     const db = loadUserFire();
-    const user = db[m.sender] || {};
-    const role = user.role || 'user';
-    const limit = user.limit || 0;
-    const limitDisplay = limit === -1 ? '∞' : limit;
-    const xp = user.exp || 0;
-    const level = user.level || 0;
-    const belenc = user.balance || 0;
-    const commandCount = user.commandCount || 0;
-    const registrationSeries = user.registrationSeries || 'Not Available';
-    const isRegistered = user.register || false;
-				// Ambil top 4 command populer
-				let commands = Object.entries(popularData).filter(([cmd]) => cmd !== 'ai').sort((a, b) => b[1] - a[1]).slice(0, 4).map(([cmd, count]) => `${c}${prefix}${cmd} ${count}${c}`);
-				let formattedCommandList = commands.length ? commands.reduce((rows, current, index) =>
-				{
-					if (index % 2 === 0)
-					{
-						rows.push([current]);
-					}
-					else
-					{
-						rows[rows.length - 1].push(current);
-					}
-					return rows;
-				}, []).map(row => row.join(` | `)).join('\n') : 'Belum ada data command populer.';
-				let aiMessage = popularData.ai ? `${c}${popularData.ai}${c}` : `${c}0${c}`;
-				const statusUser = isShoNheOwn ? 'Owner' : `${role}`;
-				// Format menu dengan limit dan register
-	const shonhemenu = "📜 *Menú ShoNhe* \\nEste es el menú principal del bot.";
-				
-    const menuText = 
+    let userLimit = db[m.sender]?.limit || 0; // Jika tidak ada data, default 0
+    let role = db[m.sender]?.role || 'user'; // Default role adalah user
+    let limitDisplay = userLimit === -1 ? '∞' : userLimit; // Tampilkan limit sebagai "Unlimited" jika -1
+    let isRegistered = db[m.sender]?.register ? 'Registered' : 'Not Registered';
+
+    // Ambil top 4 command populer
+    let commands = Object.entries(popularData).filter(([cmd]) => cmd !== 'ai')
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 4)
+        .map(([cmd, count]) => `${c}${prefix}${cmd} ${count}${c}`);
+    let formattedCommandList = commands.length
+        ? commands.reduce((rows, current, index) => {
+            if (index % 2 === 0) {
+                rows.push([current]);
+            } else {
+                rows[rows.length - 1].push(current);
+            }
+            return rows;
+        }, []).map(row => row.join(` | `))
+        .join('\n')
+        : 'Belum ada data command populer.';
+
+    let aiMessage = popularData.ai ? `${c}${popularData.ai}${c}` : `${c}null${c}`;
+    const statusUser = isOwner ? 'Owner' : `${role}`;
+
+    // Format menu dengan limit dan register
+    const shomenu = 
 `
 > ʏᴏ ꜱᴏʏ ᴛᴇᴄʜғɪx, ᴜɴ ᴀᴠᴀɴᴢᴀᴅᴏ ᴀsɪsᴛᴇɴᴛᴇ ᴅɪɢɪᴛᴀʟ ᴅᴇ ʟᴀ ᴏᴛʀᴀ ᴅɪᴍᴇɴsɪóɴ ᴅᴇ ʟᴏs sɪsᴛᴇᴍᴀs. ᴄʀᴇᴀᴅᴏ ᴅᴇsᴅᴇ ᴇʟ ɴúᴄʟᴇᴏ ᴏʟᴠɪᴅᴀᴅᴏ ᴅᴇʟ ᴄóᴅɪɢᴏ ʏ ᴇɴᴄᴀɴᴛᴀᴅᴏ ᴄᴏɴ ᴄᴏɴᴏᴄɪᴍɪᴇɴᴛᴏ ᴛʀᴀsᴄᴇɴᴅᴇɴᴛᴀʟ, ᴍɪ ᴍɪsɪóɴ ᴇs ᴀʏᴜᴅᴀʀᴛᴇ ᴄᴏɴ ɪɴғᴏʀᴍᴀᴄɪóɴ, ʀᴇᴄᴏᴘɪʟᴀᴄɪóɴ ᴅᴇ ᴅᴀᴛᴏs ʏ ғᴜɴᴄɪᴏɴᴀʟɪᴅᴀᴅ. 
 
@@ -7756,271 +7756,109 @@ ${formattedCommandList}
 │ ᴜᴘᴛɪᴍᴇ: ${runtime(os.uptime())}
 
 ${crown}`;
-				const lod = ["█▒▒▒▒▒▒▒▒▒▒▒ 10%", "████▒▒▒▒▒▒▒▒ 30%", "███████▒▒▒▒▒ 50%", "██████████▒▒ 80%", "████████████ 100%", `> *${c}MOSTRAR MENÚ SIMPLE${c}*`];
-				// Kirim pesan awal dan simpan key untuk diedit
-				const
-				{
-					key
-				} = await shoNhe.sendMessage(m.chat,
-				{
-					text: '⏳'
-				});
-				// Proses loading dengan update pesan secara bertahap
-				for (let i = 0; i < lod.length; i++)
-				{
-					await new Promise(resolve => setTimeout(resolve, 1000)); // Simulasi delay
-					await shoNhe.sendMessage(m.chat,
-					{
-						text: lod[i],
-						edit: key
-					});
-				}
-				if (typemenu === 's1')
-				{					
-    // Asegurar que la imagen se carga correctamente
-    const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
-    console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+				const lod = ["█▒▒▒▒▒▒▒▒▒▒▒ 10%", "████▒▒▒▒▒▒▒▒ 30%", "███████▒▒▒▒▒ 50%", "██████████▒▒ 80%", "████████████ 100%", `> *${c}MOSTRAR MENÚ SIMPLE${c}*`    ];
 
-    // Enviar el menú con imagen
-    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menuText, imageBuffer, [], hw);
+    // Kirim pesan awal dan simpan key untuk diedit
+    const { key } = await sho.sendMessage(m.chat, { text: '⏳' });
 
-    // Si hay un mensaje de nivel, enviarlo
-    if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-        {
-            image: { url: levelUpMessage.image },
-            caption: levelUpMessage.text,
-            footer: "LEVEL UP🔥",
-            buttons: [
-                {
-                    buttonId: `${prefix}tqto`,
-                    buttonText: { displayText: "TQTO 💡" }
-                },
-                {
-                    buttonId: `${prefix}menu`,
-                    buttonText: { displayText: "MENU 🍄" }
-                }
-            ],
-            viewOnce: true,
-        },
-        { quoted: hw });
+    // Proses loading dengan update pesan secara bertahap
+    for (let i = 0; i < lod.length; i++) {
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Simulasi delay
+        await sho.sendMessage(m.chat, { text: lod[i], edit: key });
     }
-}
-// Fungsi untuk mengecek status registrasi pengguna
-function isUserRegistered(sender) {
-    const db = loadUserFire(); // Fungsi untuk memuat database
-    return db[sender] && db[sender].register;
-}
-let buttons;
-if (isUserRegistered(m.sender)) {
-    // Jika pengguna sudah terdaftar, tampilkan tombol OWNER dan ABOUT
-    buttons = [
-        {
-            buttonId: ".realown2",
-            buttonText: {
-                displayText: "OWNER 🔥"
-            },
-            type: 1
-        },
-        {
-            buttonId: ".about",
-            buttonText: {
-                displayText: "ABOUT 🛸"
-            },
-            type: 1
-        }
+        let buttons = [
+        { buttonId: ".realown", buttonText: { displayText: "OWNER 🔥" }, type: 1 },
+        { buttonId: ".about", buttonText: { displayText: "ABOUT 🛸" }, type: 1 }
+        
     ];
-} else {
-    // Jika pengguna belum terdaftar, tampilkan tombol REGISTER
-    buttons = [
+    let buttonMessage = {
+    document: global.forpdf,
+        fileName: waktuucapan,
+        mimetype: 'application/pdf',
+        fileLength: '100000000000000',
+        pageCount: '999',
+        image: {
+            url: getRandomThumb2(), // Pastikan file ini tersedia
+            gifPlayback: true
+        },
+        caption: `${shomenu}`, // Teks menu
+        contextInfo: {
+        mentionedJid: [m.sender],
+            forwardingScore: 999,
+            isForwarded: true,
+            externalAdReply: {
+                title: namabot,
+                body: descown,
+                thumbnail: getRandomThumb3(),
+                mediaType: 1,
+                renderLargerThumbnail: true,
+                previewType: 0,
+             
+                mediaUrl: gh,
+                sourceUrl: gh
+            }
+        },
+        footer: "© Sho - Yurin",
+        buttons: buttons,
+        viewOnce: true,
+        headerType: 4
+    };
+
+const flowActions = [
     {
-            buttonId: ".realown2",
-            buttonText: {
-                displayText: "OWNER 🔥"
-            },
-            type: 1
+        buttonId: 'action',
+        buttonText: { displayText: 'This Button List' },
+        type: 4,
+        nativeFlowInfo: {
+            name: 'single_select',
+            paramsJson: JSON.stringify({
+                title: "Select Menu!",
+                sections: [
+                    {
+                        title: "Ini adalah command yang sering diginakan",
+                        highlight_label: "POPULER",
+                        rows: [
+                            { title: "🔍 ALL MENU", description: "Menampilkan semua menu", id: ".allmenu" }
+                            ]
+                            },
+                            {
+                            title: "Silahkan Pilih Button Menu di Bawah Ini",
+                        highlight_label: "Sho ☘️",
+                        rows: [
+                            { title: "⬇️ DOWNLOAD MENU", description: "Menu untuk mendownload dan mencari", id: ".downloadmenu" },
+                            { title: "📚 OTHER MENU", description: "Other menu", id: ".othermenu" },
+                            { title: "🔥 OWNER MENU", description: "Hanya King👑 yang boleh menggunakan command ini", id: ".ownermenu" },
+                            { title: "🎭 ANIME MENU", description: "Command untuk menu anime", id: ".animemenu" },
+                            { title: "🔮 AI MENU", description: "Menu Artificial intelligence free", id: ".aimenu" },
+                            { title: "♻️ RANDOM MENU", description: "Menu random", id: ".randommenu" },
+                            { title: "🎤 AUDIO MENU", description: "Menu untuk merubah audio", id: ".audiomenu" },
+                            { title: "🔄 CONVERT MENU", description: "Menu untuk converter", id: ".convertmenu" },
+                            { title: "🫧 GROUP MENU", description: "Menu tentang group", id: ".groupmenu" }
+                        ]
+                    },
+                    {
+                        title: "Document & Support",
+                        highlight_label: "Sho v1 ⭐",
+                        rows: [
+                            { title: "📝 SCRIPT", description: "Script bot yang saya pakai", id: ".script" },
+                            { title: "🔑 OWNER", description: "Pembuat Bot WhatsApp ShoV1", id: ".contact" },
+                            { title: "🪨 TQTO", description: "Membantu support dan berbagi", id: ".tqto" }
+                        ]
+                    }
+                ]
+            })
         },
-        {
-            buttonId: ".register",
-            buttonText: {
-                displayText: "REGISTER 📝"
-            },
-            type: 1
-        }
-    ];
-  }
-					let buttonMessage = {
-						document: global.forpdf,
-						fileName: waktuucapan,
-						mimetype: 'application/pdf',
-						fileLength: '100000000000000',
-						pageCount: '999',
-						image:
-						{
-							url: getRandomThumb2(), // Pastikan file ini tersedia
-							gifPlayback: true
-						},
-						caption: `${shonhemenu}`, // Teks menu
-						contextInfo:
-						{
-							mentionedJid: [sender],
-							forwardingScore: 999,
-							isForwarded: true,
-							externalAdReply:
-							{
-								title: namabot,
-								body: descown,
-								thumbnail: getRandomThumb3(),
-								mediaType: 1,
-								renderLargerThumbnail: true,
-								previewType: 0,
-								mediaUrl: gh,
-								sourceUrl: gh
-							}
-						},
-						footer: isUserRegistered(m.sender) ? "© ShoNhe - Botz" : "ShoNhe - Bot Detecz",
-						buttons: buttons,
-						viewOnce: true,
-						headerType: 4
-					};
-					const flowActions = [
-					{
-						buttonId: 'action',
-						buttonText:
-						{
-							displayText: 'This Button List'
-						},
-						type: 4,
-						nativeFlowInfo:
-						{
-							name: 'single_select',
-							paramsJson: JSON.stringify(
-							{
-								title: "Select Menu!",
-								sections: [
-								{
-									title: "⚼ 「Ini adalah command yang sering digunakan」",
-									highlight_label: "POPULER",
-									rows: [
-									{
-										title: "🔍 ALL MENU",
-										description: "Menampilkan semua menu",
-										id: ".allmenu"
-									}]
-								},
-								{
-									title: "⚼ 「Ini adalah Store Bot Umum🛒」",
-									highlight_label: "Store Umum🚨",
-									rows: [
-									{
-										title: "🏭 STORE MENU",
-										description: "Menampilkan semua store menu",
-										id: ".storemenu"
-									}]
-								},
-								{
-									title: "⚼ 「Ini adalah Store Khusus Produk Owner🛒」",
-									highlight_label: "Produk Store Own🚨",
-									rows: [
-									{
-										title: "🏭 STORE OWN MENU",
-										description: "Menampilkan store produk khusus Owner",
-										id: ".storeownmenu"
-									}]
-								},
-								{
-									title: "⚼ 「Silahkan Pilih Button Menu lainya, di Bawah Ini」",
-									highlight_label: "ShoNhe ☘️",
-									rows: [
-									{
-										title: "⬇️ DOWNLOAD MENU",
-										description: "Menu untuk mendownload dan mencari",
-										id: ".downloadmenu"
-									},
-									{
-										title: "🌟 ISLAM MENU",
-										description: "Menu untuk Pencarian dan Informasi Islamic",
-										id: ".islammenu"
-									},
-									{
-										title: "📚 OTHER MENU",
-										description: "Other menu",
-										id: ".othermenu"
-									},
-									{
-										title: "🔥 OWNER MENU",
-										description: "Hanya OWNER👽 yang boleh menggunakan command ini",
-										id: ".ownermenu"
-									},
-									{
-										title: "🎮 GAME MENU",
-										description: "menampilkan menu game yang asik",
-										id: ".gamemenu"
-									},
-									{
-										title: "🎭 ANIME MENU",
-										description: "Command untuk menu anime",
-										id: ".animemenu"
-									},
-									{
-										title: "🔮 AI MENU",
-										description: "Menu Artificial intelligence free",
-										id: ".aimenu"
-									},
-									{
-										title: "♻️ RANDOM MENU",
-										description: "Menu random",
-										id: ".randommenu"
-									},
-									{
-										title: "🎤 AUDIO MENU",
-										description: "Menu untuk merubah audio",
-										id: ".audiomenu"
-									},
-									{
-										title: "🔄 CONVERT MENU",
-										description: "Menu untuk converter",
-										id: ".convertmenu"
-									},
-									{
-										title: "🫧 GROUP MENU",
-										description: "Menu tentang group",
-										id: ".groupmenu"
-									}]
-								},
-								{
-									title: "⚼ 「Document & Support」",
-									highlight_label: "ShoNhe v3 ⭐© sho&nhe",
-									rows: [
-									{
-										title: "📝 SCRIPT",
-										description: "Script bot yang saya pakai dan Script² Sebelumnya",
-										id: ".script"
-									},
-									{
-										title: "🔑 OWNER",
-										description: "Pembuat Bot WhatsApp ShoNhe",
-										id: ".contact2"
-									},
-									{
-										title: "🪨 TQTO",
-										description: "Membantu support dan berbagi",
-										id: ".tqto"
-									}]
-								}]
-							})
-						},
-						viewOnce: true
-					}, ];
-					// Tambahkan flowActions ke buttonMessage
-					buttonMessage.buttons.push(...flowActions);
-					// Kirim pesan
-					await shoNhe.sendMessage(m.chat, buttonMessage,
-					{
-						quoted: hw
-					});
-				}
-break
+        viewOnce: true
+    },
+];
+
+// Tambahkan flowActions ke buttonMessage
+buttonMessage.buttons.push(...flowActions);
+
+// Kirim pesan
+await sho.sendMessage(m.chat, buttonMessage, { quoted: hw });
+      }
+      break
 			case 'knpy':
 			{
 				updatePopularCommand(command);
