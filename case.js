@@ -1480,74 +1480,63 @@ await shoNhe.sendMessage(m.chat, {
 			const data = await read.resize(width, height).getBufferAsync(jimp.MIME_JPEG);
 			return data;
 		};
-		async function downloadMp3(link) {
+		import fetch from 'node-fetch';
+import fs from 'fs';
+import path from 'path';
+import { exec } from 'child_process';
+
+async function downloadMp3(m, link) {
     try {
-        console.log('🕒 Iniciando proceso de descarga de MP3...');
-        shoNhe.sendMessage(m.chat, {
-            react: { text: '⏳', key: m.key }
-        });
+        console.log('🕒 Iniciando descarga de MP3...');
+        shoNhe.sendMessage(m.chat, { react: { text: '⏳', key: m.key } });
 
         let apiUrl = `https://api.siputzx.my.id/api/d/ytmp3?url=${link}`;
         let response = await fetch(apiUrl);
-        let textResponse = await response.text();
-
-        // Verificar si la respuesta es JSON válida
-        if (!textResponse.startsWith('{')) {
-            console.error('❌ La API devolvió HTML en vez de JSON:', textResponse);
-            m.reply("🚩 La API está devolviendo datos inválidos. Intente más tarde.");
-            return;
-        }
-
-        let data = JSON.parse(textResponse);
-        console.log('📥 Respuesta recibida de la API:', data);
+        let data = await response.json();
 
         if (data.status && data.data.dl) {
-            let fileUrl = data.data.dl;
-            let fileName = 'audio.mp3';
-            let fixedFileName = 'fixed_audio.mp3';
-            let filePath = `/tmp/${fileName}`;
-            let fixedFilePath = `/tmp/${fixedFileName}`;
+            let audioUrl = data.data.dl;
+            let titulo = data.data.title.replace(/[^a-zA-Z0-9]/g, "_") || 'audio'; // Limpiar caracteres especiales
+            let filePath = path.join('/tmp', `${titulo}.mp3`);
+            let convertedFilePath = path.join('/tmp', `fixed_${titulo}.mp3`);
 
-            // Descargar el archivo correctamente
-            console.log('⏳ Descargando archivo de audio...');
-            let audioResponse = await fetch(fileUrl);
+            // Descargar audio con fetch
+            let audioResponse = await fetch(audioUrl);
             if (!audioResponse.ok) {
-                console.error('❌ Error al descargar el archivo de audio.');
-                m.reply('🚩 Error al descargar el archivo de audio.');
-                return;
+                return shoNhe.sendMessage(m.chat, { text: "🚩 Error al descargar el archivo." });
             }
 
             let buffer = await audioResponse.arrayBuffer();
             fs.writeFileSync(filePath, Buffer.from(buffer));
 
-            console.log('✅ Archivo descargado, iniciando conversión con ffmpeg...');
-            exec(`ffmpeg -i "${filePath}" -acodec libmp3lame -q:a 4 "${fixedFilePath}"`, async (error) => {
-                if (error) {
-                    console.error('❌ Error al convertir el audio:', error.message);
-                    m.reply("🚩 Error al convertir el archivo de audio.");
-                    return;
-                }
+            if (fs.existsSync(filePath)) {
+                console.log('⏳ Convirtiendo audio con ffmpeg...');
+                exec(`ffmpeg -i "${filePath}" -acodec libmp3lame -q:a 4 "${convertedFilePath}"`, async (error) => {
+                    if (error) {
+                        return shoNhe.sendMessage(m.chat, { text: "🚩 Error al convertir el audio." });
+                    }
 
-                console.log('✅ Conversión completada. Enviando archivo...');
-                let audioBuffer = fs.readFileSync(fixedFilePath);
-                await shoNhe.sendMessage(m.chat, {
-                    audio: audioBuffer,
-                    mimetype: 'audio/mpeg',
-                    fileName: 'audio_fixed.mp3',
-                }, { quoted: m });
+                    let audioBuffer = fs.readFileSync(convertedFilePath);
+                    await shoNhe.sendMessage(m.chat, {
+                        audio: audioBuffer,
+                        mimetype: 'audio/mpeg',
+                        fileName: `${titulo}.mp3`
+                    }, { quoted: m });
 
-                // Eliminar archivos temporales
-                fs.unlinkSync(filePath);
-                fs.unlinkSync(fixedFilePath);
-                console.log('✅ Archivo enviado y archivos temporales eliminados.');
-            });
+                    // Eliminar archivos temporales
+                    fs.unlinkSync(filePath);
+                    fs.unlinkSync(convertedFilePath);
+                    console.log('✅ Proceso completado, archivo enviado.');
+                });
+            } else {
+                shoNhe.sendMessage(m.chat, { text: "🚩 Error: No se pudo guardar el archivo en el servidor." });
+            }
         } else {
-            console.log('❌ Error: No se encontró un enlace de descarga válido.');
-            m.reply("🚩 No se encontró un enlace de descarga válido.");
+            shoNhe.sendMessage(m.chat, { text: '🚩 Error: No se encontró un enlace de descarga válido.' });
         }
     } catch (err) {
         console.error('❌ Error:', err.message);
-        m.reply(`🚩 Error: ${err.message}`);
+        shoNhe.sendMessage(m.chat, { text: `🚩 Error: ${err.message}` });
     }
 }
 		if (!global.public)
