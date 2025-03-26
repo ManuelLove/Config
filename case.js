@@ -7632,40 +7632,40 @@ break;
 				}
 				}
 			break
-      case 'shoum':
-      case 'menu': {
-      
-    updatePopularCommand(command); // Mencatat command
-    await emote(randomEmoji);
-
-    // Ambil database limit dari `cekfire`
+			case 'shonheum':
+			case 'menu': {
+    updatePopularCommand(command);
+    const levelUpMessage = levelUpdate(command, m.sender);
     const db = loadUserFire();
-    let userLimit = db[m.sender]?.limit || 0; // Jika tidak ada data, default 0
-    let role = db[m.sender]?.role || 'user'; // Default role adalah user
-    let limitDisplay = userLimit === -1 ? '∞' : userLimit; // Tampilkan limit sebagai "Unlimited" jika -1
-    let isRegistered = db[m.sender]?.register ? 'Registered' : 'Not Registered';
-
-    // Ambil top 4 command populer
-    let commands = Object.entries(popularData).filter(([cmd]) => cmd !== 'ai')
-        .sort((a, b) => b[1] - a[1])
-        .slice(0, 4)
-        .map(([cmd, count]) => `${c}${prefix}${cmd} ${count}${c}`);
-    let formattedCommandList = commands.length
-        ? commands.reduce((rows, current, index) => {
-            if (index % 2 === 0) {
-                rows.push([current]);
-            } else {
-                rows[rows.length - 1].push(current);
-            }
-            return rows;
-        }, []).map(row => row.join(` | `))
-        .join('\n')
-        : 'Belum ada data command populer.';
-
-    let aiMessage = popularData.ai ? `${c}${popularData.ai}${c}` : `${c}null${c}`;
-    const statusUser = isShoNheOwn ? 'Owner' : `${role}`;
-
-    // Format menu dengan limit dan register
+    const user = db[m.sender] || {};
+    const role = user.role || 'user';
+    const limit = user.limit || 0;
+    const limitDisplay = limit === -1 ? '∞' : limit;
+    const xp = user.exp || 0;
+    const level = user.level || 0;
+    const belenc = user.balance || 0;
+    const commandCount = user.commandCount || 0;
+    const registrationSeries = user.registrationSeries || 'Not Available';
+    const isRegistered = user.register || false;
+				// Ambil top 4 command populer
+				let commands = Object.entries(popularData).filter(([cmd]) => cmd !== 'ai').sort((a, b) => b[1] - a[1]).slice(0, 4).map(([cmd, count]) => `${c}${prefix}${cmd} ${count}${c}`);
+				let formattedCommandList = commands.length ? commands.reduce((rows, current, index) =>
+				{
+					if (index % 2 === 0)
+					{
+						rows.push([current]);
+					}
+					else
+					{
+						rows[rows.length - 1].push(current);
+					}
+					return rows;
+				}, []).map(row => row.join(` | `)).join('\n') : 'Belum ada data command populer.';
+				let aiMessage = popularData.ai ? `${c}${popularData.ai}${c}` : `${c}0${c}`;
+				const statusUser = isShoNheOwn ? 'Owner' : `${role}`;
+				// Format menu dengan limit dan register
+	const shonhemenu = "📜 *Menú ShoNhe* \\nEste es el menú principal del bot.";
+				
     const shomenu = 
 `
 > ʏᴏ ꜱᴏʏ ᴛᴇᴄʜғɪx, ᴜɴ ᴀᴠᴀɴᴢᴀᴅᴏ ᴀsɪsᴛᴇɴᴛᴇ ᴅɪɢɪᴛᴀʟ ᴅᴇ ʟᴀ ᴏᴛʀᴀ ᴅɪᴍᴇɴsɪóɴ ᴅᴇ ʟᴏs sɪsᴛᴇᴍᴀs. ᴄʀᴇᴀᴅᴏ ᴅᴇsᴅᴇ ᴇʟ ɴúᴄʟᴇᴏ ᴏʟᴠɪᴅᴀᴅᴏ ᴅᴇʟ ᴄóᴅɪɢᴏ ʏ ᴇɴᴄᴀɴᴛᴀᴅᴏ ᴄᴏɴ ᴄᴏɴᴏᴄɪᴍɪᴇɴᴛᴏ ᴛʀᴀsᴄᴇɴᴅᴇɴᴛᴀʟ, ᴍɪ ᴍɪsɪóɴ ᴇs ᴀʏᴜᴅᴀʀᴛᴇ ᴄᴏɴ ɪɴғᴏʀᴍᴀᴄɪóɴ, ʀᴇᴄᴏᴘɪʟᴀᴄɪóɴ ᴅᴇ ᴅᴀᴛᴏs ʏ ғᴜɴᴄɪᴏɴᴀʟɪᴅᴀᴅ. 
