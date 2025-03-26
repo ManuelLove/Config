@@ -7952,7 +7952,7 @@ await shoNhe.sendMessage(m.chat, buttonMessage, { quoted: hw });
         { quoted: hw });
     }
 }
-break
+break;
 			case 'knpy':
 			{
 				updatePopularCommand(command);
