@@ -7779,10 +7779,6 @@ ${crown}`;
 					});
 				}*/
 				if (typemenu === 's1')
-            console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
-            sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, shonhemenu, getRandomThumb3, [], hw);
-        }
 				{
 					
 // Fungsi untuk mengecek status registrasi pengguna
@@ -7999,7 +7995,7 @@ if (isUserRegistered(m.sender)) {
 						quoted: hw
 					});
 				}
-				if (typemenu === 's2')
+				else if (typemenu === 's2')
 				{
 					const menuv2 =
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8047,7 +8043,7 @@ ${menuforu(prefix, simbols)}
 						quoted: hw
 					})
 				}
-				if (typemenu === 's3')
+				else if (typemenu === 's3')
 				{
 					const menuv3 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8109,7 +8105,7 @@ ${menuforu(prefix, simbols)}
 						quoted: hw
 					})
 				}
-				if (typemenu === 's4')
+				else if (typemenu === 's4')
 				{
 					const menuv4 =
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8157,7 +8153,7 @@ ${menuforu(prefix, simbols)}
 						quoted: hw
 					})
 				}
-				if (typemenu === 's5')
+				else if (typemenu === 's5')
 				{
 					const menuv5 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8206,7 +8202,7 @@ ${menuforu(prefix, simbols)}
 						quoted: hw
 					})
 				}
-				if (typemenu === 's6')
+				else if (typemenu === 's6')
 				{
 					const menuv6 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8272,7 +8268,7 @@ ${menuforu(prefix, simbols)}
 					},
 					{})
 				}
-				if (typemenu === 's7')
+				else if (typemenu === 's7')
 				{
 					const menuv7 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8341,7 +8337,7 @@ ${menuforu(prefix, simbols)}
 						quoted: hw
 					})
 				}
-				if (typemenu === 's8')
+				else if (typemenu === 's8')
 				{
 					const menuv8 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8404,7 +8400,7 @@ ${menuforu(prefix, simbols)}
 						quoted: m
 					})
 				}
-				if (typemenu === 's9')
+				else if (typemenu === 's9')
 				{
 					const menuv9 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8476,7 +8472,7 @@ ${menuforu(prefix, simbols)}
 						quoted: m
 					})
 				}
-				if (typemenu === 's10')
+				else if (typemenu === 's10')
 				{
 					const menuv10 =
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8585,7 +8581,7 @@ ${menuforu(prefix, simbols)}
 						messageId: msg.key.id
 					})
 				}
-				if (typemenu === 's11')
+				else if (typemenu === 's11')
 				{
 					const menuv11 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
@@ -8715,7 +8711,7 @@ ${menuforu(prefix, simbols)}
 						messageId: msg.key.id
 					})
 				}
-				if (typemenu === 's12')
+				else if (typemenu === 's12')
 				{
 					const menuv12 = 
 `${shomenu}`
