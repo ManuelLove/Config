@@ -1487,6 +1487,12 @@ await shoNhe.sendMessage(m.chat, {
             let response = await fetch(url);
             let textResponse = await response.text();
 
+            // Si la respuesta parece ser HTML, la API no funciona correctamente
+            if (textResponse.startsWith("<!DOCTYPE html") || textResponse.startsWith("<html")) {
+                console.error(`❌ La API devolvió HTML en vez de JSON (posible error en la API).`);
+                return null;
+            }
+
             // Intentamos parsear la respuesta como JSON
             let data = JSON.parse(textResponse);
             return data; // Si todo va bien, retornamos los datos
@@ -1500,24 +1506,6 @@ await shoNhe.sendMessage(m.chat, {
                 return null; // Retorna null si la API sigue fallando
             }
         }
-    }
-}
-
-async function downloadMp4(link) {
-    console.log('🕒 Iniciando descarga de MP4...');
-    let apiUrl = `https://api.siputzx.my.id/api/d/ytmp4?url=${link}`;
-    
-    let data = await fetchWithRetry(apiUrl);
-    
-    if (data && data.status) {
-        console.log('✅ Video encontrado, enviando...');
-        shoNhe.sendMessage(m.chat, {
-            video: { url: data.data.dl },
-            caption: ''
-        }, { quoted: m });
-    } else {
-        console.log('❌ No se pudo descargar el video.');
-        m.reply("No se pudo obtener el video. Intenta con otro enlace.");
     }
 }
 
@@ -1535,7 +1523,7 @@ async function downloadMp3(link) {
         }, { quoted: m });
     } else {
         console.log('❌ No se pudo descargar el audio.');
-        m.reply("No se pudo obtener el audio. Intenta con otro enlace.");
+        m.reply("No se pudo obtener el audio. La API puede estar caída o bloqueada.");
     }
 }
 		if (!global.public)
