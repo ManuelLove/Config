@@ -7823,24 +7823,7 @@ if (isUserRegistered(m.sender)) {
   }
 // Definir shonhemenu antes de usarlo
 const shonhemenu = "📜 *Menú ShoNhe* \nEste es el menú principal del bot.";
-
-let buttonMessage = {
-    document: global.forpdf,
-    fileName: "Menu ShoNhe",
-    mimetype: 'application/pdf',
-    image: {
-        url: getRandomThumb2(),
-        gifPlayback: true
-    },
-    caption: shonhemenu,
-    footer: "© ShoNhe - Botz",
-    buttons: flowActions, // Asegurar que los botones estén en un array válido
-    viewOnce: true,
-    headerType: 4
-};
-
-await shoNhe.sendMessage(m.chat, buttonMessage, { quoted: hw });
-					const flowActions = [
+const flowActions = [
 					{
 						buttonId: 'action',
 						buttonText:
@@ -7978,7 +7961,23 @@ await shoNhe.sendMessage(m.chat, buttonMessage, { quoted: hw });
 					});
 				}
 ;
+let buttonMessage = {
+    document: global.forpdf,
+    fileName: "Menu ShoNhe",
+    mimetype: 'application/pdf',
+    image: {
+        url: getRandomThumb2(),
+        gifPlayback: true
+    },
+    caption: shonhemenu,
+    footer: "© ShoNhe - Botz",
+    buttons: flowActions, // Asegurar que los botones estén en un array válido
+    viewOnce: true,
+    headerType: 4
+};
 
+await shoNhe.sendMessage(m.chat, buttonMessage, { quoted: hw });
+					
     // Asegurar que la imagen se carga correctamente
     const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
     console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
