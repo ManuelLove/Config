@@ -1480,154 +1480,64 @@ await shoNhe.sendMessage(m.chat, {
 			const data = await read.resize(width, height).getBufferAsync(jimp.MIME_JPEG);
 			return data;
 		};
-		async function downloadMp4(link)
-		{
-			try
-			{
-				console.log('🕒 Memulai proses download MP4...');
-				shoNhe.sendMessage(m.chat,
-				{
-					react:
-					{
-						text: '⏳',
-						key: m.key
-					}
-				});
-				// Fetch data dari API
-				let response = await fetch(`https://api.siputzx.my.id/api/d/ytmp4?url=${link}`);
-				let textResponse = await response.text();
-				// Validasi apakah respons adalah JSON
-				let data;
-				try
-				{
-					data = JSON.parse(textResponse);
-				}
-				catch (err)
-				{
-					console.error('❌ Respons bukan JSON:', textResponse);
-					m.reply("Terjadi kesalahan pada API. Silakan coba lagi nanti.");
-					return;
-				}
-				console.log('📥 Respons diterima dari API:', data);
-				if (data.status)
-				{
-					console.log('✅ Data valid, mengirim file video...');
-					shoNhe.sendMessage(m.chat,
-					{
-						video:
-						{
-							url: data.data.dl
-						},
-						caption: ''
-					},
-					{
-						quoted: m
-					});
-					console.log('✅ Proses selesai, file video berhasil dikirim.');
-				}
-				else
-				{
-					console.log('❌ Gagal mengambil video. URL tidak valid.');
-					m.reply("Gagal mengambil video. Silakan periksa URL.");
-				}
-			}
-			catch (err)
-			{
-				console.error('❌ Terjadi kesalahan:', err.message);
-				m.reply(`Error: ${err.message}`);
-			}
-		}
-		async function downloadMp3(link)
-		{
-			try
-			{
-				console.log('🕒 Memulai proses download MP3...');
-				shoNhe.sendMessage(m.chat,
-				{
-					react:
-					{
-						text: '⏳',
-						key: m.key
-					}
-				});
-				// Panggil API untuk mendapatkan URL file
-				let response = await fetch(`https://api.siputzx.my.id/api/d/ytmp3?url=${link}`);
-				let textResponse = await response.text();
-				let data;
-				try
-				{
-					data = JSON.parse(textResponse);
-				}
-				catch (err)
-				{
-					console.error('❌ Respons bukan JSON:', textResponse);
-					m.reply("Terjadi kesalahan pada API. Silakan coba lagi nanti.");
-					return;
-				}
-				console.log('📥 Respons diterima dari API:', data);
-				if (data.status && data.data.dl)
-				{
-					const fileUrl = data.data.dl;
-					const fileName = 'audio.mp3';
-					const fixedFileName = 'fixed_audio.mp3';
-					const filePath = path.join(__dirname, fileName);
-					const fixedFilePath = path.join(__dirname, fixedFileName);
-					// Unduh file audio
-					console.log('⏳ Mengunduh file audio...');
-					const writer = fs.createWriteStream(filePath);
-					const audioResponse = await axios(
-					{
-						url: fileUrl,
-						method: 'GET',
-						responseType: 'stream',
-					});
-					audioResponse.data.pipe(writer);
-					writer.on('finish', () =>
-					{
-						console.log('✅ File audio berhasil diunduh, memulai proses konversi...');
-						// Proses ulang file audio menggunakan ffmpeg
-						ffmpeg(filePath).toFormat('mp3') // Konversi ulang ke format MP3
-							.on('end', () =>
-							{
-								console.log('✅ File audio berhasil dikonversi.');
-								// Kirim file audio yang telah diperbaiki
-								shoNhe.sendMessage(m.chat,
-								{
-									audio: fs.readFileSync(fixedFilePath),
-									mimetype: 'audio/mpeg',
-									fileName: 'audio_fixed.mp3', // Nama file baru
-								},
-								{
-									quoted: m
-								});
-								// Hapus file sementara
-								fs.unlinkSync(filePath);
-								fs.unlinkSync(fixedFilePath);
-								console.log('✅ File audio berhasil dikirim dan file sementara dihapus.');
-							}).on('error', (err) =>
-							{
-								console.error('❌ Gagal mengonversi file audio:', err.message);
-								m.reply('Gagal memproses ulang file audio.');
-							}).save(fixedFilePath);
-					});
-					writer.on('error', (err) =>
-					{
-						console.error('❌ Gagal mengunduh file audio:', err.message);
-						m.reply('Gagal mengunduh file audio.');
-					});
-				}
-				else
-				{
-					console.log('❌ Gagal mengambil audio. URL tidak valid.');
-					m.reply("Gagal mengambil audio. Silakan periksa URL.");
-				}
-			}
-			catch (err)
-			{
-				console.error('❌ Terjadi kesalahan:', err.message);
-				m.reply(`Error: ${err.message}`);
-			}
-		}
+		async function fetchWithRetry(url, retries = 3, delay = 3000) {
+    for (let attempt = 1; attempt <= retries; attempt++) {
+        try {
+            console.log(`🔄 Intento ${attempt} de ${retries}: ${url}`);
+            let response = await fetch(url);
+            let textResponse = await response.text();
+
+            // Intentamos parsear la respuesta como JSON
+            let data = JSON.parse(textResponse);
+            return data; // Si todo va bien, retornamos los datos
+        } catch (err) {
+            console.error(`❌ Error en intento ${attempt}:`, err.message);
+            if (attempt < retries) {
+                console.log(`⏳ Reintentando en ${delay / 1000} segundos...`);
+                await new Promise(resolve => setTimeout(resolve, delay));
+            } else {
+                console.log("❌ Se agotaron los intentos. No se pudo obtener respuesta.");
+                return null; // Retorna null si la API sigue fallando
+            }
+        }
+    }
+}
+
+async function downloadMp4(link) {
+    console.log('🕒 Iniciando descarga de MP4...');
+    let apiUrl = `https://api.siputzx.my.id/api/d/ytmp4?url=${link}`;
+    
+    let data = await fetchWithRetry(apiUrl);
+    
+    if (data && data.status) {
+        console.log('✅ Video encontrado, enviando...');
+        shoNhe.sendMessage(m.chat, {
+            video: { url: data.data.dl },
+            caption: ''
+        }, { quoted: m });
+    } else {
+        console.log('❌ No se pudo descargar el video.');
+        m.reply("No se pudo obtener el video. Intenta con otro enlace.");
+    }
+}
+
+async function downloadMp3(link) {
+    console.log('🕒 Iniciando descarga de MP3...');
+    let apiUrl = `https://api.siputzx.my.id/api/d/ytmp3?url=${link}`;
+
+    let data = await fetchWithRetry(apiUrl);
+
+    if (data && data.status && data.data.dl) {
+        console.log('✅ Audio encontrado, enviando...');
+        shoNhe.sendMessage(m.chat, {
+            audio: { url: data.data.dl },
+            mimetype: 'audio/mpeg'
+        }, { quoted: m });
+    } else {
+        console.log('❌ No se pudo descargar el audio.');
+        m.reply("No se pudo obtener el audio. Intenta con otro enlace.");
+    }
+}
 		if (!global.public)
 		{
 			if (!m.key.fromMe && !isShoNheOwn) return; // Abaikan jika bukan pesan bot atau owner
