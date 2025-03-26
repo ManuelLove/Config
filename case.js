@@ -1480,50 +1480,74 @@ await shoNhe.sendMessage(m.chat, {
 			const data = await read.resize(width, height).getBufferAsync(jimp.MIME_JPEG);
 			return data;
 		};
-		async function fetchWithRetry(url, retries = 3, delay = 3000) {
-    for (let attempt = 1; attempt <= retries; attempt++) {
-        try {
-            console.log(`🔄 Intento ${attempt} de ${retries}: ${url}`);
-            let response = await fetch(url);
-            let textResponse = await response.text();
-
-            // Si la respuesta parece ser HTML, la API no funciona correctamente
-            if (textResponse.startsWith("<!DOCTYPE html") || textResponse.startsWith("<html")) {
-                console.error(`❌ La API devolvió HTML en vez de JSON (posible error en la API).`);
-                return null;
-            }
-
-            // Intentamos parsear la respuesta como JSON
-            let data = JSON.parse(textResponse);
-            return data; // Si todo va bien, retornamos los datos
-        } catch (err) {
-            console.error(`❌ Error en intento ${attempt}:`, err.message);
-            if (attempt < retries) {
-                console.log(`⏳ Reintentando en ${delay / 1000} segundos...`);
-                await new Promise(resolve => setTimeout(resolve, delay));
-            } else {
-                console.log("❌ Se agotaron los intentos. No se pudo obtener respuesta.");
-                return null; // Retorna null si la API sigue fallando
-            }
-        }
-    }
-}
-
-async function downloadMp3(link) {
-    console.log('🕒 Iniciando descarga de MP3...');
-    let apiUrl = `https://api.siputzx.my.id/api/d/ytmp3?url=${link}`;
-
-    let data = await fetchWithRetry(apiUrl);
-
-    if (data && data.status && data.data.dl) {
-        console.log('✅ Audio encontrado, enviando...');
+		async function downloadMp3(link) {
+    try {
+        console.log('🕒 Iniciando proceso de descarga de MP3...');
         shoNhe.sendMessage(m.chat, {
-            audio: { url: data.data.dl },
-            mimetype: 'audio/mpeg'
-        }, { quoted: m });
-    } else {
-        console.log('❌ No se pudo descargar el audio.');
-        m.reply("No se pudo obtener el audio. La API puede estar caída o bloqueada.");
+            react: { text: '⏳', key: m.key }
+        });
+
+        let apiUrl = `https://api.siputzx.my.id/api/d/ytmp3?url=${link}`;
+        let response = await fetch(apiUrl);
+        let textResponse = await response.text();
+
+        // Verificar si la respuesta es JSON válida
+        if (!textResponse.startsWith('{')) {
+            console.error('❌ La API devolvió HTML en vez de JSON:', textResponse);
+            m.reply("🚩 La API está devolviendo datos inválidos. Intente más tarde.");
+            return;
+        }
+
+        let data = JSON.parse(textResponse);
+        console.log('📥 Respuesta recibida de la API:', data);
+
+        if (data.status && data.data.dl) {
+            let fileUrl = data.data.dl;
+            let fileName = 'audio.mp3';
+            let fixedFileName = 'fixed_audio.mp3';
+            let filePath = `/tmp/${fileName}`;
+            let fixedFilePath = `/tmp/${fixedFileName}`;
+
+            // Descargar el archivo correctamente
+            console.log('⏳ Descargando archivo de audio...');
+            let audioResponse = await fetch(fileUrl);
+            if (!audioResponse.ok) {
+                console.error('❌ Error al descargar el archivo de audio.');
+                m.reply('🚩 Error al descargar el archivo de audio.');
+                return;
+            }
+
+            let buffer = await audioResponse.arrayBuffer();
+            fs.writeFileSync(filePath, Buffer.from(buffer));
+
+            console.log('✅ Archivo descargado, iniciando conversión con ffmpeg...');
+            exec(`ffmpeg -i "${filePath}" -acodec libmp3lame -q:a 4 "${fixedFilePath}"`, async (error) => {
+                if (error) {
+                    console.error('❌ Error al convertir el audio:', error.message);
+                    m.reply("🚩 Error al convertir el archivo de audio.");
+                    return;
+                }
+
+                console.log('✅ Conversión completada. Enviando archivo...');
+                let audioBuffer = fs.readFileSync(fixedFilePath);
+                await shoNhe.sendMessage(m.chat, {
+                    audio: audioBuffer,
+                    mimetype: 'audio/mpeg',
+                    fileName: 'audio_fixed.mp3',
+                }, { quoted: m });
+
+                // Eliminar archivos temporales
+                fs.unlinkSync(filePath);
+                fs.unlinkSync(fixedFilePath);
+                console.log('✅ Archivo enviado y archivos temporales eliminados.');
+            });
+        } else {
+            console.log('❌ Error: No se encontró un enlace de descarga válido.');
+            m.reply("🚩 No se encontró un enlace de descarga válido.");
+        }
+    } catch (err) {
+        console.error('❌ Error:', err.message);
+        m.reply(`🚩 Error: ${err.message}`);
     }
 }
 		if (!global.public)
