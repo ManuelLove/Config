@@ -1556,15 +1556,16 @@ async function downloadMp3(link) {
                 'Cache-Control': 'no-cache',
             }
         });
-
-        let data = JSON.parse(response);
-        console.log('📥 API Response:', data);
-        return data.data.dl;
-
-    } catch (error) {
-        console.error('❌ Terjadi kesalahan:', error.message);
-    }
-}
+				let textResponse = await response.text();
+				let data;
+				try
+				{
+					data = JSON.parse(textResponse);
+				}
+				catch (err)
+				{
+					console.error('❌ Respons bukan JSON:', textResponse);
+					m.reply("Terjadi kesalahan pada API. Silakan coba lagi nanti.");
 					return;
 				}
 				console.log('📥 Respons diterima dari API:', data);
