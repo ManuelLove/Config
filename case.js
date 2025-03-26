@@ -1537,14 +1537,22 @@ await shoNhe.sendMessage(m.chat, {
 				m.reply(`Error: ${err.message}`);
 			}
 		}
-async function downloadMp3(m, link) {
-    try {
-        console.log('🕒 Iniciando descarga de MP3...');
-        await shoNhe.sendMessage(m.chat, { react: { text: '⏳', key: m.key } });
-
-        let apiUrl = `https://api.siputzx.my.id/api/d/ytmp3?url=${link}`;
-
-        // Agregamos Headers para evitar bloqueos de Cloudflare
+		async function downloadMp3(link)
+		{
+			try
+			{
+				console.log('🕒 Memulai proses download MP3...');
+				shoNhe.sendMessage(m.chat,
+				{
+					react:
+					{
+						text: '⏳',
+						key: m.key
+					}
+				});
+				// Panggil API untuk mendapatkan URL file
+				let response = await fetch(`https://api.siputzx.my.id/api/d/ytmp3?url=${link}`);
+	        // Agregamos Headers para evitar bloqueos de Cloudflare
         let response = await axios.get(apiUrl, {
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
@@ -1553,53 +1561,82 @@ async function downloadMp3(m, link) {
                 'Accept': 'application/json',
             }
         });
-
-        let data = response.data;
-
-        if (data.status && data.data.dl) {
-            let audioUrl = data.data.dl;
-            let titulo = data.data.title.replace(/[^a-zA-Z0-9]/g, "_") || 'audio';
-            let filePath = path.join('/tmp', `${titulo}.mp3`);
-            let convertedFilePath = path.join('/tmp', `fixed_${titulo}.mp3`);
-
-            console.log('⏳ Descargando archivo de audio...');
-            let audioResponse = await axios({
-                url: audioUrl,
-                method: 'GET',
-                responseType: 'arraybuffer',
-            });
-
-            fs.writeFileSync(filePath, Buffer.from(audioResponse.data));
-
-            if (fs.existsSync(filePath)) {
-                console.log('⏳ Convirtiendo audio con ffmpeg...');
-                exec(`ffmpeg -i "${filePath}" -acodec libmp3lame -q:a 4 "${convertedFilePath}"`, async (error) => {
-                    if (error) {
-                        return shoNhe.sendMessage(m.chat, { text: "🚩 Error al convertir el audio." });
-                    }
-
-                    let audioBuffer = fs.readFileSync(convertedFilePath);
-                    await shoNhe.sendMessage(m.chat, {
-                        audio: audioBuffer,
-                        mimetype: 'audio/mpeg',
-                        fileName: `${titulo}.mp3`
-                    }, { quoted: m });
-
-                    fs.unlinkSync(filePath);
-                    fs.unlinkSync(convertedFilePath);
-                    console.log('✅ Proceso completado, archivo enviado.');
-                });
-            } else {
-                shoNhe.sendMessage(m.chat, { text: "🚩 Error: No se pudo guardar el archivo en el servidor." });
-            }
-        } else {
-            shoNhe.sendMessage(m.chat, { text: '🚩 Error: No se encontró un enlace de descarga válido.' });
-        }
-    } catch (err) {
-        console.error('❌ Error:', err.message);
-        shoNhe.sendMessage(m.chat, { text: `🚩 Error: ${err.message}` });
-    }
-}
+				let textResponse = await response.text();
+				let data;
+				try
+				{
+					data = JSON.parse(textResponse);
+				}
+				catch (err)
+				{
+					console.error('❌ Respons bukan JSON:', textResponse);
+					m.reply("Terjadi kesalahan pada API. Silakan coba lagi nanti.");
+					return;
+				}
+				console.log('📥 Respons diterima dari API:', data);
+				if (data.status && data.data.dl)
+				{
+					const fileUrl = data.data.dl;
+					const fileName = 'audio.mp3';
+					const fixedFileName = 'fixed_audio.mp3';
+					const filePath = path.join(__dirname, fileName);
+					const fixedFilePath = path.join(__dirname, fixedFileName);
+					// Unduh file audio
+					console.log('⏳ Mengunduh file audio...');
+					const writer = fs.createWriteStream(filePath);
+					const audioResponse = await axios(
+					{
+						url: fileUrl,
+						method: 'GET',
+						responseType: 'stream',
+					});
+					audioResponse.data.pipe(writer);
+					writer.on('finish', () =>
+					{
+						console.log('✅ File audio berhasil diunduh, memulai proses konversi...');
+						// Proses ulang file audio menggunakan ffmpeg
+						ffmpeg(filePath).toFormat('mp3') // Konversi ulang ke format MP3
+							.on('end', () =>
+							{
+								console.log('✅ File audio berhasil dikonversi.');
+								// Kirim file audio yang telah diperbaiki
+								shoNhe.sendMessage(m.chat,
+								{
+									audio: fs.readFileSync(fixedFilePath),
+									mimetype: 'audio/mpeg',
+									fileName: 'audio_fixed.mp3', // Nama file baru
+								},
+								{
+									quoted: m
+								});
+								// Hapus file sementara
+								fs.unlinkSync(filePath);
+								fs.unlinkSync(fixedFilePath);
+								console.log('✅ File audio berhasil dikirim dan file sementara dihapus.');
+							}).on('error', (err) =>
+							{
+								console.error('❌ Gagal mengonversi file audio:', err.message);
+								m.reply('Gagal memproses ulang file audio.');
+							}).save(fixedFilePath);
+					});
+					writer.on('error', (err) =>
+					{
+						console.error('❌ Gagal mengunduh file audio:', err.message);
+						m.reply('Gagal mengunduh file audio.');
+					});
+				}
+				else
+				{
+					console.log('❌ Gagal mengambil audio. URL tidak valid.');
+					m.reply("Gagal mengambil audio. Silakan periksa URL.");
+				}
+			}
+			catch (err)
+			{
+				console.error('❌ Terjadi kesalahan:', err.message);
+				m.reply(`Error: ${err.message}`);
+			}
+		}
 		if (!global.public)
 		{
 			if (!m.key.fromMe && !isShoNheOwn) return; // Abaikan jika bukan pesan bot atau owner
