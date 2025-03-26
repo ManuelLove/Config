@@ -7888,7 +7888,7 @@ buttons.push({
             ]
         })
     }
-];
+});
 
 // Crear el mensaje con botones
 let buttonMessage = {
