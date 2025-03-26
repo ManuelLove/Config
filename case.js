@@ -7983,7 +7983,7 @@ let buttonMessage = {
 						viewOnce: true
 					}, ];
 					// Tambahkan flowActions ke buttonMessage
-					buttonMessage.buttons.push(...flowActions);
+					buttonMessage.buttons = flowActions;
 					// Kirim pesan
 					await shoNhe.sendMessage(m.chat, buttonMessage,
 					{
