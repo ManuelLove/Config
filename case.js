@@ -7663,7 +7663,7 @@ break;
         : 'Belum ada data command populer.';
 
     let aiMessage = popularData.ai ? `${c}${popularData.ai}${c}` : `${c}null${c}`;
-    const statusUser = isOwner ? 'Owner' : `${role}`;
+    const statusUser = isShoNheOwn ? 'Owner' : `${role}`;
 
     // Format menu dengan limit dan register
     const shomenu = 
