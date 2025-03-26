@@ -7819,7 +7819,6 @@ if (isUserRegistered(m.sender)) {
             },
             type: 1
 	}
-				}
 ;
 
     // Asegurar que la imagen se carga correctamente
