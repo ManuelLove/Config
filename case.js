@@ -1537,25 +1537,21 @@ await shoNhe.sendMessage(m.chat, {
 				m.reply(`Error: ${err.message}`);
 			}
 		}
-const cloudscraper = require('cloudscraper');
-
-async function downloadMp3(link) {
-    try {
-        console.log('🕒 Memulai proses download MP3...');
-
-        const apiUrl = `https://api.siputzx.my.id/api/d/ytmp3?url=${link}`;
-
-        let response = await cloudscraper.get(apiUrl, {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/110.0.0.0 Safari/537.36',
-                'Referer': 'https://www.youtube.com/',
-                'Accept': 'application/json',
-                'Accept-Language': 'es-ES,es;q=0.9',
-                'Connection': 'keep-alive',
-                'DNT': '1',
-                'Cache-Control': 'no-cache',
-            }
-        });
+		async function downloadMp3(link)
+		{
+			try
+			{
+				console.log('🕒 Memulai proses download MP3...');
+				shoNhe.sendMessage(m.chat,
+				{
+					react:
+					{
+						text: '⏳',
+						key: m.key
+					}
+				});
+				// Panggil API untuk mendapatkan URL file
+				let response = await fetch(`https://api.siputzx.my.id/api/d/ytmp3?url=${link}`);
 				let textResponse = await response.text();
 				let data;
 				try
