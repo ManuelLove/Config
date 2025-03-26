@@ -7831,7 +7831,7 @@ if (isUserRegistered(m.sender)) {
 							url: getRandomThumb2(), // Pastikan file ini tersedia
 							gifPlayback: true
 						},
-						caption: `${shonhemenu}`, // Teks menu
+						caption: `${shonheum}`, // Teks menu
 						contextInfo:
 						{
 							mentionedJid: [sender],
