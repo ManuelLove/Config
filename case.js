@@ -7832,27 +7832,14 @@ let buttonMessage = {
         url: getRandomThumb2(),
         gifPlayback: true
     },
-    caption: shonhemenu, // Ahora está definido correctamente
-    contextInfo: {
-        mentionedJid: [sender],
-        forwardingScore: 999,
-        isForwarded: true,
-        externalAdReply: {
-            title: namabot,
-            body: descown,
-            thumbnail: getRandomThumb3(),
-            mediaType: 1,
-            renderLargerThumbnail: true,
-            previewType: 0,
-            mediaUrl: gh,
-            sourceUrl: gh
-        }
-    },
-    footer: isUserRegistered(m.sender) ? "© ShoNhe - Botz" : "ShoNhe - Bot Detecz",
-    buttons: buttons,
+    caption: shonhemenu,
+    footer: "© ShoNhe - Botz",
+    buttons: flowActions, // Asegurar que los botones estén en un array válido
     viewOnce: true,
     headerType: 4
 };
+
+await shoNhe.sendMessage(m.chat, buttonMessage, { quoted: hw });
 					const flowActions = [
 					{
 						buttonId: 'action',
