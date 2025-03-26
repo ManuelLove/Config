@@ -7783,10 +7783,16 @@ function isUserRegistered(sender) {
     const db = loadUserFire(); // Fungsi untuk memuat database
     return db[sender] && db[sender].register;
 }
-let buttons;
+// Si 'buttons' ya existe, solo agrégale los nuevos botones
+if (!buttons) {
+    var buttons = [];
+}
+
+// Agregar botones principales
+buttons.push(
+    {;
 if (isUserRegistered(m.sender)) {
     // Jika pengguna sudah terdaftar, tampilkan tombol OWNER dan ABOUT
-    buttons = [
         {
             buttonId: ".realown2",
             buttonText: {
@@ -7818,7 +7824,127 @@ if (isUserRegistered(m.sender)) {
                 displayText: "REGISTER 📝"
             },
             type: 1
-	}
+        }
+    ];
+  }
+					
+// Agregar botones de menú
+buttons.push({
+        name: "single_select",
+        buttonParamsJson: JSON.stringify({
+            title: "Select Menu!",
+            sections: [
+                {
+                    title: "⚼ Menús Principales",
+                    highlight_label: "Menús Bot",
+                    rows: [
+                        {
+                            title: "📜 ALL MENU",
+                            description: "Ver todos los comandos disponibles",
+                            id: ".allmenu"
+                        },
+                        {
+                            title: "🎮 GAME MENU",
+                            description: "Ver comandos de juegos",
+                            id: ".gamemenu"
+                        },
+                        {
+                            title: "⬇️ DOWNLOAD MENU",
+                            description: "Descargar música y videos",
+                            id: ".downloadmenu"
+                        },
+                        {
+                            title: "🔥 OWNER MENU",
+                            description: "Opciones exclusivas para el dueño",
+                            id: ".ownermenu"
+                        }
+                    ]
+                },
+                {
+                    title: "⚼ Opciones Adicionales",
+                    highlight_label: "Más Funciones",
+                    rows: [
+                        {
+                            title: "🔮 AI MENU",
+                            description: "Usa inteligencia artificial",
+                            id: ".aimenu"
+                        },
+                        {
+                            title: "📚 OTHER MENU",
+                            description: "Ver otros comandos",
+                            id: ".othermenu"
+                        },
+                        {
+                            title: "🎭 ANIME MENU",
+                            description: "Comandos de anime",
+                            id: ".animemenu"
+                        },
+                        {
+                            title: "🔄 CONVERT MENU",
+                            description: "Convertir formatos de archivos",
+                            id: ".convertmenu"
+                        }
+                    ]
+                },
+                {
+                    title: "⚼ Soporte & Información",
+                    highlight_label: "Soporte Técnico",
+                    rows: [
+                        {
+                            title: "📝 SCRIPT",
+                            description: "Código del bot y actualizaciones",
+                            id: ".script"
+                        },
+                        {
+                            title: "🔑 OWNER",
+                            description: "Contactar con el creador",
+                            id: ".contact2"
+                        },
+                        {
+                            title: "🪨 TQTO",
+                            description: "Créditos y agradecimientos",
+                            id: ".tqto"
+                        }
+                    ]
+                }
+            ]
+        })
+    }
+];
+
+// Crear el mensaje con botones
+let buttonMessage = {
+    document: global.forpdf,
+    fileName: "Menú ShoNhe",
+    mimetype: 'application/pdf',
+    image: {
+        url: getRandomThumb2(),
+        gifPlayback: true
+    },
+    caption: shonhemenu,
+    contextInfo: {
+        mentionedJid: [sender],
+        forwardingScore: 999,
+        isForwarded: true,
+        externalAdReply: {
+            title: namabot,
+            body: descown,
+            thumbnail: getRandomThumb3(),
+            mediaType: 1,
+            renderLargerThumbnail: true,
+            previewType: 0,
+            mediaUrl: gh,
+            sourceUrl: gh
+        }
+    },
+    footer: "© ShoNhe - Botz",
+    buttons: buttons,
+    viewOnce: true,
+    headerType: 4
+};
+
+// Enviar el mensaje con botones
+await shoNhe.sendMessage(m.chat, buttonMessage, { quoted: hw });
 
     // Asegurar que la imagen se carga correctamente
     const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
