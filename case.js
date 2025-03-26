@@ -7818,7 +7818,7 @@ if (isUserRegistered(m.sender)) {
                 displayText: "REGISTER 📝"
             },
             type: 1
-	};
+	}
 				}
 ;
 
