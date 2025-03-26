@@ -7821,8 +7821,13 @@ if (isUserRegistered(m.sender)) {
         }
     ];
   }
-buttons = [...buttons, ...nuevoArrayDeBotones]; = [
-    {
+// Si ya existe 'buttons', solo agrégale los nuevos botones
+if (!buttons) {
+    var buttons = [];
+}
+
+// Agregar nuevos botones al array existente
+buttons.push({
         name: "single_select",
         buttonParamsJson: JSON.stringify({
             title: "Select Menu!",
