@@ -7821,7 +7821,7 @@ if (isUserRegistered(m.sender)) {
         }
     ];
   }
-const buttons = [
+buttons = [...buttons, ...nuevoArrayDeBotones]; = [
     {
         name: "single_select",
         buttonParamsJson: JSON.stringify({
