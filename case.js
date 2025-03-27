@@ -7844,8 +7844,8 @@ if (isUserRegistered(m.sender)) {
 							externalAdReply:
 							{
 								title: namabot,
-								body: descown,
-								url: 'https://i.ibb.co/LDBMFzgv/file.png',
+								body: namaowner,
+								thumbnail: getRandomThumb3(),
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
@@ -8094,7 +8094,7 @@ ${menuforu(prefix, simbols)}
 								showAdAttribution: true,
 								title: namabot,
 								body: namaowner,
-								url: 'https://i.ibb.co/LDBMFzgv/file.png',
+								thumbnail: getRandomThumb3(),
 								sourceUrl: wagc,
 								mediaType: 1,
 								renderLargerThumbnail: true
@@ -8389,7 +8389,7 @@ ${menuforu(prefix, simbols)}
 							{
 								title: namabot,
 								body: namaowner,
-								url: 'https://i.ibb.co/LDBMFzgv/file.png',
+								thumbnail: getRandomThumb3(),
 								sourceUrl: ``,
 								mediaType: 1,
 								renderLargerThumbnail: true
@@ -8461,7 +8461,7 @@ ${menuforu(prefix, simbols)}
 								showAdAttribution: true,
 								title: namaowner,
 								body: namabot,
-								url: 'https://i.ibb.co/LDBMFzgv/file.png',
+								thumbnail: getRandomThumb3(),
 								sourceUrl: gh,
 								mediaType: 1,
 								renderLargerThumbnail: true
