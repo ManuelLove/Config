@@ -7833,7 +7833,7 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 						fileLength: '100000000000000',
 						pageCount: '999',
 						image: {
-            url: `https://pomf2.lain.la/f/0wwphe6p.jpg`, // Pastikan file ini tersedia
+            url: `https://i.ibb.co/tTCHsX02/shoNhe.jpg`, // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
@@ -7846,7 +7846,7 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 							{
 								title: namabot,
 								body: descown,
-								thumbnailUrl: `https://pomf2.lain.la/f/0wwphe6p.jpg`, // Gambar thumbnail
+								thumbnailUrl: `https://i.ibb.co/tTCHsX02/shoNhe.jpg`, // Gambar thumbnail
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
