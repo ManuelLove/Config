@@ -7843,14 +7843,14 @@ if (isUserRegistered(m.sender)) {
 							isForwarded: true,
 							externalAdReply:
 							{
-body: namaBot,
-										showAdAttribution: true,
-										thumbnail: getRandomThumb3(),
-										mediaType: 1,
-										previewType: 0,
-										renderLargerThumbnail: true,
-										mediaUrl: gh,
-										sourceUrl: gh,
+								title: namabot,
+								body: descown,
+								thumbnail: 'https://i.ibb.co/LDBMFzgv/file.png',
+								mediaType: 1,
+								renderLargerThumbnail: true,
+								previewType: 0,
+								mediaUrl: gh,
+								sourceUrl: gh,
 							}
 						},
 						footer: isUserRegistered(m.sender) ? "© ShoNhe - Botz" : "ShoNhe - Bot Detecz",
