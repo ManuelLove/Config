@@ -11,7 +11,7 @@ global.namabot = "𝙏𝙚𝙘𝙝𝙁𝙞𝙭 🅥❸"
 global.nomerOwner = "573012686632"
 global.nomorOwner = ['573012686632']
 global.botnum = ['573009545316']
-global.namaDeveloper = "TT:ohhinitngxy " //jangn diubh bng pelisss
+global.namaDeveloper = "TT:ManuDiaz " //jangn diubh bng pelisss
 global.packname = "𝙏𝙚𝙘𝙝𝙁𝙞𝙭 🅥❸"
 global.namach = "🚀 TechFix Botz"
 global.descown = "𝙏𝙚𝙘𝙝𝙁𝙞𝙭 🅥❸ ©𝙱𝚢 𝙼𝚊𝚗𝚞𝙳𝚒𝚊𝚣 "
@@ -43,7 +43,7 @@ global.nomorbca = "1230903219" // NO REKENING BANK BCA (klo gak ada kosongin cuo
 global.namabca = "Lintang Pratama Aditya K"
 global.nomordanamon = "903684075934" //NO REKENING BANK DANAMON (klo gak ada kosongin cuok
 global.namadanamon = "Lintang Pratama Aditya K"
-global.ttk = "syncheya & ohhinitngxy"
+global.ttk = "TechFix"
 global.themeemoji = "🔥"
 global.typereply = "s4" //s1 - s5
 global.typemenu = "s1" //s1 - s12
@@ -51,11 +51,11 @@ global.tmn = fs.readFileSync("./ShoNheMedia/image/tmenu.jpg")
 global.tekspushkon = ""
 global.tekspushkonv3 = ""
 global.tekspushkonv4 = ""
-global.saluran = "120363383347233294@newsletter"
-global.idsaluran = "120363383347233294@newsletter"
-global.gh = "https://github.com/NHEBotx"
-global.wagc = 'https://chat.whatsapp.com/GQ5Gp0eSeDS6dPBYeHE6kf'
-global.wach = "https://whatsapp.com/channel/0029Vb0v3F71yT264EejzJ3e"
+global.saluran = "12036338334723329@newsletter"
+global.idsaluran = "12036338334723329@newsletter"
+global.gh = "https://github.com/"
+global.wagc = 'https://chat.whatsapp.com/'
+global.wach = "https://whatsapp.com/"
 global.ibbKey = "e73afc3e94477852c77e41a41572fa8d"
 // Apikey
 global.APIs = {
@@ -68,25 +68,25 @@ global.thum = fs.readFileSync("./storage/image.png")
 global.imqris = fs.readFileSync ("./storage/qris.png")
 //
 global.mess = {
-    admins: "⛔ *[AKSES DITOLAK]* ────\n🚨 *PERINGATAN SISTEM* 🚨\n❌ *Identitas Tidak Terverifikasi!*\n\n📡 Hanya ADMIN yang memiliki akses eksekusi perintah ini.\n🔐 *Tingkat Otorisasi: RENDAH*\n\n🛑 *Akses Anda Telah Diblokir!*",
+    admins: "⛔ *[ACCESO DENEGADO]* ────\n🚨 *ADVERTENCIA DEL SISTEMA* 🚨\n❌ *¡Identidad no verificada!*\n\n📡 Solo ADMIN tiene acceso de ejecución a este comando.\n🔐 *Nivel de autorización: BAJO*\n\n🛑 *¡Su acceso ha sido bloqueado!*",
     
-    owners: "🚫 *[AKSES ILEGAL]* ────\n⚠️ *INTRUSION DETECTED* ⚠️\n🕵️‍♂️ *Upaya eksekusi perintah oleh entitas tak dikenal!*\n\n🔑 *Hanya pemilik sistem yang memiliki otoritas penuh!*\n🛡️ *Akses Ditolak Secara Permanen!*",
+    owners: "🚫 *[ACCESO ILEGAL]* ────\n⚠️ *INTRUSIÓN DETECTADA* ⚠️\n🕵️‍♂️ *¡Intento de ejecución de comando por parte de una entidad desconocida!*\n\n🔑 *¡Solo el propietario del sistema tiene plena autoridad!*\n🛡️ *¡Acceso denegado permanentemente!*",
     
-    dones: "✅ *[OPRASI SELESAI]* ────\n💾 *Data berhasil diproses dengan akurasi tinggi.*\n📊 *Status: 100% SUCCESS*\n\n🔄 *Mengalihkan ke misi berikutnya...*",
+    dones: "✅ *[OPRACIÓN COMPLETA]* ────\n💾 *Datos procesados ​​exitosamente con alta precisión.*\n📊 *Estado: 100% ÉXITO*\n\n🔄 *Pasando a la siguiente misión...*",
     
-    abots: "🤖 *[ERROR SISTEM]* ────\n💢 *Kegagalan Otorisasi!*\n🛠️ *Bot tidak memiliki hak akses sebagai admin!*\n\n🛑 *Tingkatkan kredensial atau hubungi pemilik sistem!*",
+    abots: "🤖 *[ERROR DEL SISTEMA]* ────\n💢 *¡Error de autorización!*\n🛠️ *¡El robot no tiene privilegios de administrador!*\n\n🛑 *¡Actualice las credenciales o comuníquese con el propietario del sistema!*",
     
-    groups: "📂 *[OPERASI TIDAK VALID]* ────\n🚧 *Komando ini hanya diizinkan dalam jaringan GRUP.*\n\n🖥️ *Silakan gunakan di ruang komunikasi yang tepat!*",
+    groups: "📂 *[OPERACIÓN NO VÁLIDA]* ────\n🚧 *Este comando solo está permitido en redes de GRUPO.*\n\n🖥️ *¡Utilízalo en el espacio de comunicación adecuado!*",
     
-    privates: "🔒 *[ZONA AMAN]* ────\n🕵️ *Komando ini bersifat PRIVAT dan hanya bisa digunakan dalam komunikasi langsung!*\n\n⚠️ *Hindari penyalahgunaan informasi rahasia!*",
+    privates: "🔒 *[ZONA SEGURA]* ────\n🕵️ *¡Este comando es PRIVADO y solo se puede usar en comunicación directa!*\n\n⚠️ *¡Evita el uso indebido de información confidencial!*",
     
-    vips: "🛑 *[AKSES TERBATAS]* ────\n🎟️ *Mode VIP Diperlukan!*\n💎 *Hanya pengguna ELITE yang dapat menggunakan fitur ini!*\n\n📡 *Silakan tingkatkan status Anda untuk membuka akses premium.*",
+    vips: "🛑 *[ACCESO LIMITADO]* ────\n🎟️ *¡Se requiere modo VIP!*\n💎 *¡Solo los usuarios ELITE pueden usar esta función!*\n\n📡 *Actualiza tu estado para desbloquear el acceso premium.*",
     
-    waits: "⌛ *[PROSES BERLANGSUNG]* ────\n⚙️ *Mengakses database...\n📡 Memproses perintah...\n🔄 Verifikasi enkripsi...*\n\n💠 *Mohon tunggu...*",
+    waits: "⌛ *[PROCESO EN CURSO]* ────\n⚙️ *Accediendo a la base de datos...\n📡 Procesando comando...\n🔄 Verificación de cifrado...*\n\n💠 *Por favor espere...*",
     
-    bands: "⚠️ *[PERINGATAN SISTEM]* ────\n❌ *Entitas Terblokir!*\n🛑 *Akses ditolak oleh pemilik sistem!*\n\n🚫 *Upaya lebih lanjut akan ditandai sebagai ancaman!*",
+    bands: "⚠️ *[ADVERTENCIA DEL SISTEMA]* ────\n❌ *¡Entidad bloqueada!*\n🛑 *¡Acceso denegado por el propietario del sistema!*\n\n🚫 *¡Los intentos posteriores se marcarán como amenazas!*",
     
-    regis: "⚠️ *[ALARM SISTEM]* ────\n🔍 *Entitas Tak Terdaftar Terdeteksi!*\n📝 *Silakan lakukan registrasi untuk mendapatkan akses penuh.*\n\n📎 *Klik tombol di bawah untuk mendaftar!*"
+    regis: "⚠️ *[ALARMA DEL SISTEMA]* ────\n🔍 *¡Entidad no registrada detectada!*\n📝 *Regístrese para obtener acceso completo.*\n\n📎 *¡Haga clic en el botón a continuación para registrarse!*"
 }
 global.pterodactylkey = {
     domain: "",
