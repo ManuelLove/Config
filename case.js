@@ -7839,16 +7839,15 @@ if (isUserRegistered(m.sender)) {
 							mentionedJid: [sender],
 							forwardingScore: 999,
 							isForwarded: true,
-							externalAdReply:
-							{
-								title: namabot,
-								body: descown,
-								url: 'https://i.ibb.co/pBHG8DmN/file.jpg',
-								mediaType: 1,
-								renderLargerThumbnail: true,
-								previewType: 0,
-								mediaUrl: gh,
-								sourceUrl: gh,
+							externalAdReply: {
+    title: namabot,
+    body: descown,
+    thumbnailUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg',
+    mediaType: 1,
+    renderLargerThumbnail: true,
+    previewType: 0,
+    mediaUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg',
+    sourceUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg'
 							}
 						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
