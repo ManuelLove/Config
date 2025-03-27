@@ -7833,7 +7833,7 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 						fileLength: '100000000000000',
 						pageCount: '999',
 						image: {
-            url: getRandomThumb2(), // Pastikan file ini tersedia
+            url: getRandomThumb3(), // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
@@ -7841,7 +7841,7 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 								{
 									forwardingScore: 245,
 									isForwarded: true,
-									mentionedJid: [sender],
+									mentionedJid: [m.sender],
 									forwardedNewsletterMessageInfo:
 									{
 										newsletterName: `© ShoNhe Botz`,
