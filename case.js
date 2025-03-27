@@ -19355,22 +19355,22 @@ break;
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				shoNhe.enhancer = shoNhe.enhancer ? shoNhe.enhancer :
 				{};
-				if (m.sender in shoNhe.enhancer) return shoNherly(`Masih ada proses yang belum diselesaikan, mohon tunggu sampai proses selesai.`)
+				if (m.sender in shoNhe.enhancer) return shoNherly(`Todavía hay procesos que no se han completado, por favor espere hasta que se complete el proceso.`)
 				let query = m.quoted ? m.quoted : m;
 				let mime = (query.msg || query).mimetype || query.mediaType || "";
-				if (!mime) return shoNherly(`Kirim/Balas Gambar Dengan Caption ${prefix + command}`)
-				if (!/image\/(jpe?g|png)/.test(mime)) return shoNherly(`Media tidak support!`)
+				if (!mime) return shoNherly(`Enviar/Responder a imágenes con título ${prefix + command}`)
+				if (!/image\/(jpe?g|png)/.test(mime)) return shoNherly(`¡Los medios no son compatibles!`)
 				shoNhe.enhancer[m.sender] = true;
 				try
 				{
 					if (!(await firely(m, mess.waits))) return;
 					let media = await quoted.download();
-					let proses = await remini(media, "enhance");
-					await shoNherly('Gambar berhasil ditingkatkan kualitasnya! ✅');
+					let proses = await remini(media, "mejorar");
+					await shoNherly('¡La calidad de la imagen se ha mejorado con éxito! ✅');
 					shoNhe.sendMessage(m.chat,
 					{
 						image: proses,
-						caption: "sudah bang"
+						caption: "lo he hecho hermano"
 					},
 					{
 						quoted: m
@@ -19379,7 +19379,7 @@ break;
 				catch (err)
 				{
 					console.log(err);
-					shoNherly('Terjadi kesalahan pada server.');
+					shoNherly('Se produjo un error en el servidor.');
 				}
 				delete shoNhe.enhancer[m.sender];
 				if (levelUpMessage) {
@@ -19422,7 +19422,7 @@ break;
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isGroup) return shoNherly(mess.groups);
 				if (!isShoNheOwn && !isAdmins) return shoNherly(mess.admins);
-				if (!text) return shoNherly(example("pesannya"));
+				if (!text) return shoNherly(example("el mensaje"));
 				// Fetch group metadata to ensure participants are available
 				let metadata = await shoNhe.groupMetadata(m.chat);
 				let member = metadata.participants.map(v => v.id);
@@ -19488,15 +19488,15 @@ break;
 							for (let i of res)
 							{
 								let invv = await shoNhe.groupInviteCode(m.chat);
-								if (i.status == 408) return shoNherly('Oh no, sepertinya user baru saja keluar dari grup ini! 😔');
-								if (i.status == 401) return shoNherly('Aduh, usernya kayaknya ngeblok bot ini deh! 😢');
-								if (i.status == 409) return shoNherly('Wah, user ini udah masuk grup! 🎉');
-								if (i.status == 500) return shoNherly('Maaf, grup ini sudah penuh! 😞');
+								if (i.status == 408) return shoNherly('¡Oh no, parece que el usuario acaba de abandonar este grupo! 😔');
+								if (i.status == 401) return shoNherly('¡Ay, el usuario parece haber bloqueado este bot! 😢');
+								if (i.status == 409) return shoNherly('¡Vaya, este usuario se ha unido al grupo! 🎉');
+								if (i.status == 500) return shoNherly('Lo sentimos, ¡este grupo está lleno! 😞');
 								if (i.status == 403)
 								{
 									await shoNhe.sendMessage(m.chat,
 									{
-										text: `@${numbersOnly.split('@')[0]} Gak bisa ditambahin nih\n\nKarena targetnya private banget! 😅\n\nTapi, undangannya bakal dikirim ke\n-> wa.me/${numbersOnly.replace(/\D/g, '')}\nLewat chat pribadi ya!`,
+										text: `@${numbersOnly.split('@')[0]} no puedo agregar esto\n\n¡La arena objetivo es realmente privada! 😅\n\nSin embargo, la invitación será enviada a\n-> wa.me/${numbersOnly.replace(/\D/g, '')}\nPor chat privado, ¡vale!`,
 										mentions: [numbersOnly]
 									},
 									{
@@ -19504,24 +19504,24 @@ break;
 									});
 									await shoNhe.sendMessage(`${numbersOnly ? numbersOnly : creator}`,
 									{
-										text: `${'https://chat.whatsapp.com/' + invv}\n------------------------------------------------------\n\nAdmin: wa.me/${m.sender}\nUndang kamu ke grup ini\nAyo masuk kalau mau ya! 🙇`,
+										text: `${'https://chat.whatsapp.com/' + invv}\n------------------------------------------------------\n\nAdmin: wa.me/${m.sender}\nInvitarte a este grupo\nEntra si quieres, ¿vale? 🙇`,
 										detectLink: true,
 										mentions: [numbersOnly]
 									},
 									{
 										quoted: hw
-									}).catch((err) => shoNherly('Gagal kirim undangan! 😔'));
+									}).catch((err) => shoNherly('¡No se pudo enviar la invitación! 😔'));
 								}
 								else
 								{
-									shoNherly('udah bg');
+									shoNherly('eso es todo');
 								}
 							}
 						});
 					}
 					catch (e)
 					{
-						shoNherly('Gagal nambahin usernya nih, ada yang salah! 😢');
+						shoNherly('No se pudo agregar el usuario, ¡algo anda mal! 😢');
 					}
 				}
 				if (levelUpMessage) {
@@ -19563,7 +19563,7 @@ break;
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly('Mana text yg mau diubah menjadi audio?')
+				if (!text) return shoNherly('¿Dónde está el texto que quieres convertir a audio?')
 				let
 				{
 					tts
