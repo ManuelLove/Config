@@ -7838,20 +7838,26 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 						},
 						caption: `${shonhemenu}`, // Teks menu
 						contextInfo:
-						{
-							mentionedJid: [m.sender],
-							forwardingScore: 999,
-							isForwarded: true,
-							externalAdReply:
-							{
-								title: namabot,
-								body: descown,
-								thumbnailUrl: `https://pomf2.lain.la/f/o4udz8hb.jpg`, // Gambar thumbnail
-								mediaType: 1,
-								renderLargerThumbnail: true,
-								previewType: 0,
-								mediaUrl: gh,
-								sourceUrl: gh,
+								{
+									forwardingScore: 245,
+									isForwarded: true,
+									mentionedJid: [m.sender],
+									forwardedNewsletterMessageInfo:
+									{
+										newsletterName: `© ShoNhe Botz`,
+										newsletterJid: idsaluran
+									},
+									externalAdReply:
+									{
+										title: `${waktuucapan} ${m.pushName ? m.pushName : 'Temen ShoNhe'} 👋🏻`,
+										body: namaBot,
+										showAdAttribution: true,
+										thumbnail: getRandomThumb3(),
+										mediaType: 1,
+										previewType: 0,
+										renderLargerThumbnail: true,
+										mediaUrl: gh,
+										sourceUrl: gh,
 							}
 						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
