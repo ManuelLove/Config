@@ -7845,7 +7845,7 @@ if (isUserRegistered(m.sender)) {
 							{
 								title: namabot,
 								body: descown,
-								sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, menu, getRandomThumb3(), tombol, hw);
+								thumbnail: getRandomThumb2(),
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
