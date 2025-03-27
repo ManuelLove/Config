@@ -7759,7 +7759,7 @@ ${formattedCommandList}
 │ ᴜᴘᴛɪᴍᴇ: ${runtime(os.uptime())}
 
 ${crown}`;
-				const lod = ["█▒▒▒▒▒▒▒▒▒▒▒ 10%", "████▒▒▒▒▒▒▒▒ 30%", "███████▒▒▒▒▒ 50%", "██████████▒▒ 80%", "████████████ 100%", `> *${c}MOSTRAR MENÚ SIMPLE${c}*`];
+				/*const lod = ["█▒▒▒▒▒▒▒▒▒▒▒ 10%", "████▒▒▒▒▒▒▒▒ 30%", "███████▒▒▒▒▒ 50%", "██████████▒▒ 80%", "████████████ 100%", `> *${c}MOSTRAR MENÚ SIMPLE${c}*`];
 				// Kirim pesan awal dan simpan key untuk diedit
 				const
 				{
@@ -7777,7 +7777,7 @@ ${crown}`;
 						text: lod[i],
 						edit: key
 					});
-				}
+				}*/
 				if (typemenu === 's1')
 				{
 					
@@ -7830,8 +7830,7 @@ if (isUserRegistered(m.sender)) {
 						mimetype: 'application/pdf',
 						fileLength: '100000000000000',
 						pageCount: '999',
-						image: {
-            url: fs.readFileSync('./src/thum2/shoNhe.jpg'), // Pastikan file ini tersedia
+						image: fs.readFileSync(getRandomThumb2()), // Carga la imagen en formato Buffer// Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
@@ -7844,7 +7843,7 @@ if (isUserRegistered(m.sender)) {
 							{
 								title: namabot,
 								body: descown,
-								thumbnail: fs.readFileSync('./src/thum3/shoNhe.jpg'),
+								thumbnail: getRandomThumb3(),
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
