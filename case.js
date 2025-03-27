@@ -7844,7 +7844,7 @@ if (isUserRegistered(m.sender)) {
 							{
 								title: namabot,
 								body: descown,
-								thumbnail: './src/thum3/shoNhe.jpg',
+								thumbnail: getRandomThumb3(),
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
