@@ -636,6 +636,9 @@ module.exports = shoNhe = async (shoNhe, m, msg, chatUpdate, store) => {
 		const budy = (typeof m.text === 'string') ? m.text : '';
 		const prefixRegex = /^[°zZ#$@*+,.?=''():√%!¢£¥€π¤ΠΦ_&><™©®Δ^βα~¦|/\\©^]/;
 		const prefix = prefixRegex.test(body) ? body.match(prefixRegex)[0] : '.';
+if (variable && typeof variable === 'string' && variable.startsWith('algo')) {
+    // Código que se ejecuta si la variable es válida
+}
 		const isCmd = body.startsWith(prefix);
 		const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
 		const args = body.trim().split(/ +/).slice(1)
