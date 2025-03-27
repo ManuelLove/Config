@@ -7825,29 +7825,36 @@ if (isUserRegistered(m.sender)) {
     ];
   }
 					let buttonMessage = {
-						document: global.forpdf,
-						fileName: waktuucapan,
-						mimetype: 'application/pdf',
-						fileLength: '100000000000000',
-						pageCount: '999',
-						image: {
-    url: 'https://i.ibb.co/pBHG8DmN/file.jpg',
-						},
-						caption: `${shonhemenu}`, // Teks menu
-						contextInfo:
-						{
-							mentionedJid: [sender],
-							forwardingScore: 999,
-							isForwarded: true,
-							externalAdReply: {
-    title: namabot,
-    body: descown,
-    thumbnailUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg',
-    mediaType: 1,
-    renderLargerThumbnail: true,
-    previewType: 0,
-    mediaUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg',
-    sourceUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg'
+    fileName: waktuucapan,
+    mimetype: 'application/pdf',
+    fileLength: '100000000000000',
+    pageCount: '999',
+    caption: `${shonhemenu}`,
+    contextInfo: {
+        mentionedJid: [sender],
+        forwardingScore: 999,
+        isForwarded: true,
+        externalAdReply: {
+            title: namabot,
+            body: descown,
+            thumbnailUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg', // Miniatura
+            mediaType: 1,
+            renderLargerThumbnail: true,
+            previewType: 0,
+            mediaUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg',
+            sourceUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg'
+        }
+    }
+};
+
+// Enviar la imagen por separado
+let imageMessage = {
+    image: { url: 'https://i.ibb.co/pBHG8DmN/file.jpg' },
+    caption: "Aquí está tu imagen"
+};
+
+await conn.sendMessage(m.chat, imageMessage, { quoted: m });
+await conn.sendMessage(m.chat, buttonMessage, { quoted: m });
 							}
 						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
