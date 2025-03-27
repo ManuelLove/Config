@@ -7836,21 +7836,19 @@ if (isUserRegistered(m.sender)) {
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
-						contextInfo:
-						{
-							mentionedJid: [sender],
-							forwardingScore: 999,
-							isForwarded: true,
-							externalAdReply:
-							{
-								title: namabot,
-								body: descown,
-								thumbnailUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg',
-								mediaType: 1,
-								renderLargerThumbnail: true,
-								previewType: 0,
-								mediaUrl: gh,
-								sourceUrl: gh,
+						contextInfo: {
+    mentionedJid: [sender],
+    forwardingScore: 999,
+    isForwarded: true,
+    externalAdReply: {
+        title: namabot,
+        body: descown,
+        thumbnailUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg', // Imagen en miniatura
+        mediaType: 1,
+        renderLargerThumbnail: true,
+        previewType: 0,
+        mediaUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg', // Asegurar que apunte a la imagen
+        sourceUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg' // Asegurar que apunte a la imagen
 							}
 						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
