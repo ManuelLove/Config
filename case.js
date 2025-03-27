@@ -7872,115 +7872,115 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 							name: 'single_select',
 							paramsJson: JSON.stringify(
 							{
-								title: "Select Menu!",
+								title: "¡Seleccione Menú!",
 								sections: [
 								{
-									title: "⚼ 「Ini adalah command yang sering digunakan」",
-									highlight_label: "POPULER",
+									title: "⚼ 「Este es un comando de uso frecuente」",
+									highlight_label: "POPULAR",
 									rows: [
 									{
-										title: "🔍 ALL MENU",
-										description: "Menampilkan semua menu",
+										title: "🔍 TODO EL MENÚ",
+										description: "Muestra todos los menús",
 										id: ".allmenu"
 									}]
 								},
 								{
-									title: "⚼ 「Ini adalah Store Bot Umum🛒」",
-									highlight_label: "Store Umum🚨",
+									title: "⚼ 「Este es un robot de tienda general🛒」",
+									highlight_label: "Tienda general🚨",
 									rows: [
 									{
-										title: "🏭 STORE MENU",
-										description: "Menampilkan semua store menu",
+										title: "🏭 MENÚ DE LA TIENDA",
+										description: "Muestra todos los menús de la tienda",
 										id: ".storemenu"
 									}]
 								},
 								{
-									title: "⚼ 「Ini adalah Store Khusus Produk Owner🛒」",
-									highlight_label: "Produk Store Own🚨",
+									title: "⚼ 「Esta es una tienda especial para productos del propietario🛒」",
+									highlight_label: "Almacenar productos propios🚨",
 									rows: [
 									{
-										title: "🏭 STORE OWN MENU",
-										description: "Menampilkan store produk khusus Owner",
+										title: "🏭 TIENDA PROPIO MENÚ",
+										description: "Muestra la tienda de productos especiales del propietario.",
 										id: ".storeownmenu"
 									}]
 								},
 								{
-									title: "⚼ 「Silahkan Pilih Button Menu lainya, di Bawah Ini」",
-									highlight_label: "ShoNhe ☘️",
+									title: "⚼ 「Seleccione los otros botones del menú a continuación」",
+									highlight_label: "TechFix ☘️",
 									rows: [
 									{
-										title: "⬇️ DOWNLOAD MENU",
-										description: "Menu untuk mendownload dan mencari",
+										title: "⬇️ DESCARGAR MENÚ",
+										description: "Menú para descargar y buscar",
 										id: ".downloadmenu"
 									},
 									{
-										title: "🌟 ISLAM MENU",
-										description: "Menu untuk Pencarian dan Informasi Islamic",
+										title: "🌟 MENÚ ISLÁMICO",
+										description: "Menú de búsqueda e información islámica",
 										id: ".islammenu"
 									},
 									{
-										title: "📚 OTHER MENU",
-										description: "Other menu",
+										title: "📚 OTRO MENÚ",
+										description: "Otromenú",
 										id: ".othermenu"
 									},
 									{
-										title: "🔥 OWNER MENU",
-										description: "Hanya OWNER👽 yang boleh menggunakan command ini",
+										title: "🔥 MENÚ DEL PROPIETARIOU",
+										description: "Sólo el PROPIETARIO👽 puede usar este comando",
 										id: ".ownermenu"
 									},
 									{
-										title: "🎮 GAME MENU",
-										description: "menampilkan menu game yang asik",
+										title: "🎮 MENÚ DE JUEGO",
+										description: "muestra un menú de juego genial",
 										id: ".gamemenu"
 									},
 									{
-										title: "🎭 ANIME MENU",
-										description: "Command untuk menu anime",
+										title: "🎭 MENÚ DE ANIME",
+										description: "Comando para menú anime",
 										id: ".animemenu"
 									},
 									{
-										title: "🔮 AI MENU",
-										description: "Menu Artificial intelligence free",
+										title: "🔮 MENU AI",
+										description: "Menú Inteligencia artificial gratis",
 										id: ".aimenu"
 									},
 									{
-										title: "♻️ RANDOM MENU",
-										description: "Menu random",
+										title: "♻️ MENÚ ALEATORIO",
+										description: "Menú aleatorio",
 										id: ".randommenu"
 									},
 									{
-										title: "🎤 AUDIO MENU",
-										description: "Menu untuk merubah audio",
+										title: "🎤 MENÚ DE SONIDO",
+										description: "Menú para cambiar audio",
 										id: ".audiomenu"
 									},
 									{
-										title: "🔄 CONVERT MENU",
-										description: "Menu untuk converter",
+										title: "🔄 MENÚ CONVERTIR",
+										description: "Menú para convertidores",
 										id: ".convertmenu"
 									},
 									{
-										title: "🫧 GROUP MENU",
-										description: "Menu tentang group",
+										title: "🫧 MENÚ DE GRUPO",
+										description: "Menú sobre grupos",
 										id: ".groupmenu"
 									}]
 								},
 								{
-									title: "⚼ 「Document & Support」",
-									highlight_label: "ShoNhe v3 ⭐© sho&nhe",
+									title: "⚼ 「Documento & soporte」",
+									highlight_label: "TechFix v3 ⭐© Manu&Diaz",
 									rows: [
 									{
-										title: "📝 SCRIPT",
-										description: "Script bot yang saya pakai dan Script² Sebelumnya",
+										title: "📝 GUION",
+										description: "El script del bot que uso y el Script² anterior",
 										id: ".script"
 									},
 									{
-										title: "🔑 OWNER",
-										description: "Pembuat Bot WhatsApp ShoNhe",
+										title: "🔑 DUEÑ@",
+										description: "Creador de bots de WhatsApp TechFix",
 										id: ".contact2"
 									},
 									{
 										title: "🪨 TQTO",
-										description: "Membantu support dan berbagi",
+										description: "Ayuda apoya y comparte",
 										id: ".tqto"
 									}]
 								}]
