@@ -7860,47 +7860,78 @@ const flowActions = [
         buttonText: { displayText: 'This Button List' },
         type: 4,
         nativeFlowInfo: {
-            name: 'single_select',
-            paramsJson: JSON.stringify({
-                title: "Select Menu!",
-                sections: [
-                    {
-                        title: "Ini adalah command yang sering diginakan",
-                        highlight_label: "POPULER",
-                        rows: [
-                            { title: "🔍 ALL MENU", description: "Menampilkan semua menu", id: ".allmenu" }
-                            ]
-                            },
-                            {
-                            title: "Silahkan Pilih Button Menu di Bawah Ini",
-                        highlight_label: "Sho ☘️",
-                        rows: [
-                            { title: "⬇️ DOWNLOAD MENU", description: "Menu untuk mendownload dan mencari", id: ".downloadmenu" },
-                            { title: "📚 OTHER MENU", description: "Other menu", id: ".othermenu" },
-                            { title: "🔥 OWNER MENU", description: "Hanya King👑 yang boleh menggunakan command ini", id: ".ownermenu" },
-                            { title: "🎭 ANIME MENU", description: "Command untuk menu anime", id: ".animemenu" },
-                            { title: "🔮 AI MENU", description: "Menu Artificial intelligence free", id: ".aimenu" },
-                            { title: "♻️ RANDOM MENU", description: "Menu random", id: ".randommenu" },
-                            { title: "🎤 AUDIO MENU", description: "Menu untuk merubah audio", id: ".audiomenu" },
-                            { title: "🔄 CONVERT MENU", description: "Menu untuk converter", id: ".convertmenu" },
-                            { title: "🫧 GROUP MENU", description: "Menu tentang group", id: ".groupmenu" }
-                        ]
-                    },
-                    {
-                        title: "Document & Support",
-                        highlight_label: "Sho v1 ⭐",
-                        rows: [
-                            { title: "📝 SCRIPT", description: "Script bot yang saya pakai", id: ".script" },
-                            { title: "🔑 OWNER", description: "Pembuat Bot WhatsApp ShoV1", id: ".contact" },
-                            { title: "🪨 TQTO", description: "Membantu support dan berbagi", id: ".tqto" }
-                        ]
-                    }
-                ]
-            })
-        },
-        viewOnce: true
-    },
-];
+"name": "single_select",
+						"buttonParamsJson": `{
+							"title": "Click Here ⎙",
+							"sections": [
+								{
+									"title": "Download Audio 🎧",
+									"rows": [
+										{
+											"header": "Kualitas Rendah (64kbps) 🐣",
+											"title": "Audio (64kbps) - Hemat Kuota",
+											"id": ".ytmp3c ${url} 1"
+										},
+										{
+											"header": "Kualitas Standar (128kbps) 🎵",
+											"title": "Audio (128kbps) - Oke untuk dengerin",
+											"id": ".ytmp3c ${url} 2"
+										},
+										{
+											"header": "Kualitas Bagus (192kbps) 🎶",
+											"title": "Audio (192kbps) - Lebih jelas!",
+											"id": ".ytmp3c ${url} 3"
+										},
+										{
+											"header": "Kualitas Tinggi (256kbps) 🎼",
+											"title": "Audio (256kbps) - Keren dan jernih",
+											"id": ".ytmp3c ${url} 4"
+										},
+										{
+											"header": "Kualitas Ultra (320kbps) 🎧",
+											"title": "Audio (320kbps) - Super HD!",
+											"id": ".ytmp3c ${url} 5"
+										}
+									]
+								},
+								{
+									"title": "Download Video 🎥",
+									"rows": [
+										{
+											"header": "Resolusi Rendah (144p) 🐾",
+											"title": "Video (144p) - Hemat Data",
+											"id": ".ytmp4c ${url} 1"
+										},
+										{
+											"header": "Resolusi Menengah (240p) 📱",
+											"title": "Video (240p) - Cukup Jelas",
+											"id": ".ytmp4c ${url} 2"
+										},
+										{
+											"header": "Resolusi Standar (360p) 🎬",
+											"title": "Video (360p) - Oke lah untuk nonton",
+											"id": ".ytmp4c ${url} 3"
+										},
+										{
+											"header": "Resolusi Tinggi (480p) 📺",
+											"title": "Video (480p) - Cukup Jernih",
+											"id": ".ytmp4c ${url} 4"
+										},
+										{
+											"header": "Resolusi HD (720p) 🌟",
+											"title": "Video (720p) - HD, mantap!",
+											"id": ".ytmp4c ${url} 5"
+										},
+										{
+											"header": "Resolusi Full HD (1080p) 💎",
+											"title": "Video (1080p) - Full HD, wow!",
+											"id": ".ytmp4c ${url} 6"
+										}
+									]
+								}
+							]
+						}`
+					}];
 					// Tambahkan flowActions ke buttonMessage
 					buttonMessage.buttons.push(...flowActions);
 					// Kirim pesan
