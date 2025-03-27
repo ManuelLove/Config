@@ -7853,7 +7853,7 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 								previewType: 0,
 								mediaUrl: gh,
 								sourceUrl: gh,
-							}
+							};
 						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
 						buttons: buttons,
