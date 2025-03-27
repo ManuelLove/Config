@@ -7844,7 +7844,7 @@ if (isUserRegistered(m.sender)) {
 							{
 								title: namabot,
 								body: descown,
-								thumbnail: getRandomThumb2(),
+								thumbnail: fs.readFileSync('./src/thum3/shoNhe.jpg'),
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
