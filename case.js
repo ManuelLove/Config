@@ -7825,27 +7825,32 @@ if (isUserRegistered(m.sender)) {
     ];
   }
 					let buttonMessage = {
-    document: global.forpdf,
-    fileName: waktuucapan,
-    mimetype: 'application/pdf',
-    fileLength: '100000000000000',
-    pageCount: '999',
-    caption: `${shonhemenu}`, // Título del mensaje
-    contextInfo:
-    {
-        mentionedJid: [sender],
-        forwardingScore: 999,
-        isForwarded: true,
-        externalAdReply:
-        {
-            title: namabot,
-            body: descown,
-            thumbnailurl: 'https://i.ibb.co/pBHG8DmN/file.jpg',
-            mediaType: 1,
-            renderLargerThumbnail: true,
-            previewType: 0,
-            mediaUrl: gh,
-            sourceUrl: gh,
+						document: global.forpdf,
+						fileName: waktuucapan,
+						mimetype: 'application/pdf',
+						fileLength: '100000000000000',
+						pageCount: '999',
+						image:
+						{
+							image: fs.readFileSync(getRandomThumb2()), // Carga la imagen en formato Buffer// Pastikan file ini tersedia
+							gifPlayback: true
+						},
+						caption: `${shonhemenu}`, // Teks menu
+						contextInfo:
+						{
+							mentionedJid: [sender],
+							forwardingScore: 999,
+							isForwarded: true,
+							externalAdReply:
+							{
+								title: namabot,
+								body: descown,
+								url: 'https://i.ibb.co/pBHG8DmN/file.jpg',
+								mediaType: 1,
+								renderLargerThumbnail: true,
+								previewType: 0,
+								mediaUrl: gh,
+								sourceUrl: gh,
 							}
 						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
