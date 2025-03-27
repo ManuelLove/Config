@@ -7780,7 +7780,11 @@ ${crown}`;
 				}*/
 				if (typemenu === 's1')
 				{
-					
+const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
+    console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
+
+    // Enviar el menú con imagen
+    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, shonhemenu, imageBuffer, [], hw);					
 // Fungsi untuk mengecek status registrasi pengguna
 function isUserRegistered(sender) {
     const db = loadUserFire(); // Fungsi untuk memuat database
@@ -7845,7 +7849,7 @@ if (isUserRegistered(m.sender)) {
 							{
 								title: namabot,
 								body: descown,
-								thumbnail: getRandomThumb2(),
+								thumbnail: getRandomThumb3(),
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
