@@ -7826,6 +7826,8 @@ if (isUserRegistered(m.sender)) {
   }
 console.log('Ruta de getRandomThumb2:', getRandomThumb2());
 console.log('Ruta de getRandomThumb3:', getRandomThumb3());
+const thumbBuffer = getRandomThumb3();
+const thumbnail = `data:image/jpeg;base64,${thumbBuffer.toString("base64")}`;
 					let buttonMessage = {
 						document: global.forpdf,
 						fileName: waktuucapan,
@@ -7842,17 +7844,16 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 							mentionedJid: [m.sender],
 							forwardingScore: 999,
 							isForwarded: true,
-							externalAdReply:
-							{
-								title: namabot,
-								body: descown,
-								thumbnail: getRandomThumb3(),
-								mediaType: 1,
-								renderLargerThumbnail: true,
-								previewType: 0,
-								mediaUrl: gh,
-								sourceUrl: gh,
-							}
+							externalAdReply: {
+    title: namabot,
+    body: descown,
+    thumbnail: thumbnail, // Ahora usa la imagen en base64
+    mediaType: 1,
+    renderLargerThumbnail: true,
+    previewType: 0,
+    mediaUrl: gh,
+    sourceUrl: gh,
+}
 						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
 						buttons: buttons,
