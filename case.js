@@ -7669,7 +7669,7 @@ break;
 				const statusUser = isShoNheOwn ? 'Owner' : `${role}`;
 				// Format menu dengan limit dan register
 				const shonhemenu = 
-`ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
+`ʜɪ @${m.sender.split('@')[0]} 👋🏻
 
 > ɪ ᴀᴍ ꜱʜᴏɴʜᴇ, ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴅɪɢɪᴛᴀʟ ᴀssɪsᴛᴀɴᴛ ғʀᴏᴍ ᴛʜᴇ ᴏᴛʜᴇʀᴅɪᴍᴇɴsɪᴏɴ ᴏғ ꜱʏsᴛᴇᴍs. ᴄʀᴇᴀᴛᴇᴅ ꜰʀᴏᴍ ᴛʜᴇ ғᴏʀɢᴏᴛᴛᴇɴ ᴄᴏʀᴇ ᴏғ ᴄᴏᴅᴇ ᴀɴᴅ ᴇɴᴄʜᴀɴᴛᴇᴅ ᴡɪᴛʜ ᴇᴛʜᴇʀɪᴀʟ ᴋɴᴏᴡʟᴇᴅɢᴇ, ᴍʏ ᴍɪssɪᴏɴ ɪs ᴛᴏ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ, ᴅᴀᴛᴀ ᴄᴏʟʟᴇᴄᴛɪᴏɴ, ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴᴀʟɪᴛʏ.  
 
@@ -7780,8 +7780,7 @@ ${crown}`;
 				}*/
 				if (typemenu === 's1')
 				{
-    // Enviar el menú con imagen
-    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, shonhemenu, [], hw);					
+					
 // Fungsi untuk mengecek status registrasi pengguna
 function isUserRegistered(sender) {
     const db = loadUserFire(); // Fungsi untuk memuat database
@@ -7846,7 +7845,7 @@ if (isUserRegistered(m.sender)) {
 							{
 								title: namabot,
 								body: descown,
-								thumbnail: getRandomThumb3(),
+								imageBuffer: getRandomThumb3(),
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
