@@ -7781,7 +7781,7 @@ ${crown}`;
 				if (typemenu === 's1')
 				{
     // Enviar el menú con imagen
-    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, shonhemenu, imageBuffer, [], hw);					
+    sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, shonhemenu, [], hw);					
 // Fungsi untuk mengecek status registrasi pengguna
 function isUserRegistered(sender) {
     const db = loadUserFire(); // Fungsi untuk memuat database
