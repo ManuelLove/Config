@@ -7780,9 +7780,6 @@ ${crown}`;
 				}*/
 				if (typemenu === 's1')
 				{
-const imageBuffer = getRandomThumb3() || "https://example.com/backup.jpg";
-    console.log("📸 Imagen seleccionada para el menú:", imageBuffer ? "Sí" : "No");
-
     // Enviar el menú con imagen
     sendButtonImage(m.chat, `ʜɪ @${m.sender.split('@')[0]} 👋🏻,`, shonhemenu, imageBuffer, [], hw);					
 // Fungsi untuk mengecek status registrasi pengguna
