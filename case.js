@@ -7851,8 +7851,6 @@ if (isUserRegistered(m.sender)) {
         }
     ];
   }
-console.log('Ruta de getRandomThumb2:', getRandomThumb2());
-console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 					let buttonMessage = {
 						document: global.forpdf,
 						fileName: waktuucapan,
@@ -7866,7 +7864,7 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 						caption: `${shonhemenu}`, // Teks menu
 						contextInfo:
 						{
-							mentionedJid: [m.sender],
+							mentionedJid: [sender],
 							forwardingScore: 999,
 							isForwarded: true,
 							externalAdReply:
