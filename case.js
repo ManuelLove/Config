@@ -7832,7 +7832,6 @@ if (isUserRegistered(m.sender)) {
 						pageCount: '999',
 						image: {
     url: 'https://i.ibb.co/pBHG8DmN/file.jpg',
-    gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
 						contextInfo:
