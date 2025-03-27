@@ -7855,8 +7855,6 @@ let imageMessage = {
 
 await conn.sendMessage(m.chat, imageMessage, { quoted: m });
 await conn.sendMessage(m.chat, buttonMessage, { quoted: m });
-							}
-						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
 						buttons: buttons,
 						viewOnce: true,
