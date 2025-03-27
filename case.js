@@ -7830,11 +7830,10 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 						document: global.forpdf,
 						fileName: waktuucapan,
 						mimetype: 'application/pdf',
-						fileLength: '100000',
-						pageCount: '10',
-						image: {  
-    url: getRandomThumb2() || 'https://example.com/default.jpg',
- // Pastikan file ini tersedia
+						fileLength: '100000000000000',
+						pageCount: '999',
+						image: {
+            url: getRandomThumb2(), // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
@@ -7847,7 +7846,7 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 							{
 								title: namabot,
 								body: descown,
-								thumbnail: getRandomThumb3() || 'https://example.com/default.jpg',
+								thumbnail: "https://via.placeholder.com/300"
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
