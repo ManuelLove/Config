@@ -7831,7 +7831,7 @@ if (isUserRegistered(m.sender)) {
     fileLength: '100000000000000',
     pageCount: '999',
     image: {
-        url: 'https://i.imgur.com/QGVGnLV.jpeg', // Imagen desde un enlace
+        url: 'https://imgur.com/QGVGnLV', // Imagen desde un enlace
         gifPlayback: true
     },
     caption: `${shonhemenu}`, // Título del mensaje
@@ -7842,7 +7842,7 @@ if (isUserRegistered(m.sender)) {
         externalAdReply: {
             title: namabot,
             body: descown,
-            url: 'https://i.imgur.com/QGVGnLV.jpeg', // Asegura que la imagen también se usa aquí si es necesario
+            url: 'https://imgur.com/QGVGnLV', // Asegura que la imagen también se usa aquí si es necesario
             mediaType: 1,
             renderLargerThumbnail: true,
             previewType: 0,
