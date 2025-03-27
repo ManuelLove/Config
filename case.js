@@ -1711,50 +1711,50 @@ function levelUpdate(command, sender) {
         levelUpMessage = {
             text: 
 `┌────────────────────────────────────┐  
-│                         ██░░ SYSTEM UPDATE ░░██                    │  
+│                         ██░░ ACTUALIZACIÓN DEL SISTEMA ░░██                    │  
 └────────────────────────────────────┘
 
-🔓 [ACCESS GRANTED]  
->> User leveling system initiated...  
->> Loading user profile...  
->> Scanning database integrity... ✅  
+🔓 [ACCESO CONCEDIDO]  
+>> Sistema de nivelación de usuarios iniciado...  
+>> Cargando perfil de usuario...  
+>> Escaneando la integridad de la base de datos.... ✅  
 
 ────────────────────────────────────────
-🛡️ *LEVEL-UP NOTIFICATION*  
+🛡️ *NOTIFICACIÓN DE SUBIDA DE NIVEL*  
 ────────────────────────────────────────
-🎉 *CONGRATULATIONS, AGENT!*  
-📈 You've climbed the ranks to:  
-   LEVEL: *${user.level - 1} ➡️ ${user.level}*  
+🎉 *¡FELICIDADES, AGENTE!*  
+📈 Has subido de rango para:  
+   NIVEL: *${user.level - 1} ➡️ ${user.level}*  
 
 ────────────────────────────────────────
-📊 *USER DATABASE REPORT*  
+📊 *INFORME DE BASE DE DATOS DE USUARIOS*  
 ────────────────────────────────────────
-📂 *Name*        : *${m.pushName || 'Unknown'}*  
-📂 *Number*      : *${sender.split('@')[0]}*  
-📂 *Current Level*: *${user.level}*  
-📂 *Experience*  : *${user.exp}/${user.expTarget}*  
-📂 *Commands Used*: *${user.commandCount}*  
+📂 *Nombre*        : *${m.pushName || 'Unknown'}*  
+📂 *Número*      : *${sender.split('@')[0]}*  
+📂 *Nivel actual*: *${user.level}*  
+📂 *Experiencia*  : *${user.exp}/${user.expTarget}*  
+📂 *Comandos utilizados*: *${user.commandCount}*  
 📂 *Balance*     : *Rp${user.balance}*  
-📂 *Role*        : *${user.role || 'Regular User'}*  
+📂 *Rol*        : *${user.role || 'Regular User'}*  
 
 ────────────────────────────────────────
-⚡ *MISSION UPDATE*  
+⚡ *ACTUALIZACIÓN DE LA MISIÓN*  
 ────────────────────────────────────────
-"Welcome to a new level, Agent. The grid awaits.  
-Keep your skills sharp and never stop evolving."  
+"Bienvenido a un nuevo nivel, Agente. La red espera.  
+Mantén tus habilidades afiladas y nunca dejes de evolucionar."  
 
 ────────────────────────────────────────
-💻 *HYPERLINK SYSTEM STATUS*  
+💻 *ESTADO DEL SISTEMA DE HIPERVÍNCULO*  
 ────────────────────────────────────────
-[🟢] TRACE ATTEMPTS: BLOCKED  
-[🟢] FIREWALL INTEGRITY: 100%  
-[🟢] DATA ENCRYPTION: ACTIVE  
+[🟢] INTENTOS DE RASTREO: BLOQUEADOS  
+[🟢] INTEGRIDAD DEL CORTAFUEGOS: 100%  
+[🟢] CIFRADO DE DATOS: ACTIVO  
 ────────────────────────────────────────
 
->> System will auto-logoff in 10 seconds...  
->> LOGOFF CANCELED by user request.  
+>> El sistema cerrará sesión automáticamente en 10 segundos...  
+>> CERRAR SESIÓN CANCELADO por solicitud del usuario.  
 
-🔻 *END TRANSMISSION* 🔻`,
+🔻 *FIN DE LA TRANSMISIÓN* 🔻`,
             image: levelImage
         };
     }
@@ -1779,7 +1779,7 @@ Keep your skills sharp and never stop evolving."
 			// Tambah saldo pengguna
 			db[sender].balance += amount;
 			saveUserFire(db);
-			return `✅ Saldo sebesar Rp${amount} telah ditambahkan ke ${sender.split('@')[0]}.\n💰 Saldo sekarang: Rp${db[sender].balance}`;
+			return `✅ Saldo de Rp${amount} ha sido añadido a ${sender.split('@')[0]}.\n💰 Saldo actual: Rp${db[sender].balance}`;
 		}
 		// Fungsi untuk mendaftarkan user
 		function registerUser(sender, role = 'user')
@@ -1793,17 +1793,17 @@ Keep your skills sharp and never stop evolving."
 					limit: role === 'owner' ? -1 : role === 'vip' ? 1000 : 100
 				};
 				saveUserFire(db);
-				return `🎉 Anda berhasil terdaftar sebagai ${role} dengan limit ${db[sender].limit}!`;
+				return `🎉 Te has registrado exitosamente como ${role} con limites ${db[sender].limit}!`;
 			}
 			else if (!db[sender].register)
 			{
 				db[sender].register = true;
 				saveUserFire(db);
-				return `✅ Registrasi berhasil diaktifkan.`;
+				return `✅ El registro se ha activado con éxito.`;
 			}
 			else
 			{
-				return `⚠️ Anda sudah terdaftar sebelumnya.`;
+				return `⚠️ Ya te has registrado antes.`;
 			}
 		}
 		// Fungsi untuk mengecek status user
@@ -1812,9 +1812,9 @@ Keep your skills sharp and never stop evolving."
 			const db = loadUserFire();
 			if (!db[sender])
 			{
-				return `⚠️ Anda belum terdaftar. Silakan daftar terlebih dahulu.`;
+				return `⚠️ Aún no estás registrado. Por favor regístrese primero.`;
 			}
-			return `ℹ️ Status Anda:\n- Role: ${db[sender].role}\n- Limit: ${db[sender].limit}\n- Register: ${db[sender].register}`;
+			return `ℹ️ Tu estado:\n- Rol: ${db[sender].role}\n- Límites: ${db[sender].limit}\n- Registro: ${db[sender].register}`;
 		}
 		// Baca database user fire
 		function loadUserFire()
@@ -1850,7 +1850,7 @@ Keep your skills sharp and never stop evolving."
 				const remainingTime = cooldown - (now - lastClaim);
 				const hours = Math.floor(remainingTime / (60 * 60 * 1000));
 				const minutes = Math.floor((remainingTime % (60 * 60 * 1000)) / (60 * 1000));
-				reply(`⏳ Anda sudah klaim. Coba lagi dalam ${hours} jam ${minutes} menit.`);
+				reply(`⏳ Ya has reclamado. Inténtalo de nuevo dentro ${hours} En punto ${minutes} minuto.`);
 				return;
 			}
 			// Tambahkan limit berdasarkan role
@@ -1858,7 +1858,7 @@ Keep your skills sharp and never stop evolving."
 			db[sender].limit += reward;
 			db[sender].lastClaim = now;
 			saveUserFire(db);
-			reply(`🎉 Anda berhasil klaim limit harian!\n🔥 Anda mendapatkan: ${reward}\n🔥 Total limit Anda: ${db[sender].limit}`);
+			reply(`🎉 ¡Has reclamado con éxito tu límite diario!\n🔥 obtienes: ${reward}\n🔥 Tu límite total: ${db[sender].limit}`);
 		}
 
 		function getFireThumbnail(limit)
@@ -1946,7 +1946,7 @@ Keep your skills sharp and never stop evolving."
 			// Cek limit sebelum melanjutkan
 			if (userLimit <= 0 && db[sender].role !== 'owner')
 			{
-				reply('🔥 Limit Anda sudah habis. Silakan klaim limit atau tingkatkan role Anda.');
+				reply('🔥 Tu límite se ha agotado. Por favor reclama el límite o aumenta tu rol.');
 				return false;
 			}
 			// Kurangi limit jika bukan owner
@@ -1959,13 +1959,13 @@ Keep your skills sharp and never stop evolving."
 			const thumbnail = getFireThumbnail(userLimit); // Mendapatkan thumbnail sesuai limit
 			shoNhe.sendMessage(m.chat,
 			{
-				text: teks + `\n🔥 Limit tersisa: ${db[sender].limit}`,
+				text: teks + `\n🔥 Límite restante: ${db[sender].limit}`,
 				contextInfo:
 				{
 					externalAdReply:
 					{
-						title: `🔥 Fire Limit`,
-						body: `🔥 Anda mengurangi ${reduction} limit.`,
+						title: `🔥 Límite de fuego`,
+						body: `🔥 tu restas ${reduction} límite.`,
 						previewType: "PHOTO",
 						thumbnail: thumbnail,
 						sourceUrl: 'https://wa.me/6288989971490'
@@ -1985,13 +1985,13 @@ Keep your skills sharp and never stop evolving."
 			const thumbnailUrl = getFireThumbnail(userLimit);
 			shoNhe.sendMessage(m.chat,
 			{
-				text: teks + `\n🔥 Anda tidak memiliki limit tersisa.`,
+				text: teks + `\n🔥 No te queda límite.`,
 				contextInfo:
 				{
 					externalAdReply:
 					{
-						title: `🔥 Fire Limit`,
-						body: `🔥 Your Fire Limits: ${userLimit}`,
+						title: `🔥 Límite de fuego`,
+						body: `🔥 Tus límites de fuego: ${userLimit}`,
 						previewType: "PHOTO",
 						thumbnail: thumbnailUrl,
 						sourceUrl: `https://whatsapp.com/channel/0029Vb0v3F71yT264EejzJ3e`
@@ -2088,7 +2088,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				liveLocationMessage:
 				{
-					caption: `© DaTngxz"S`,
+					caption: `© Manu"S`,
 					jpegThumbnail: ""
 				}
 			},
@@ -2135,7 +2135,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				liveLocationMessage:
 				{
-					caption: `Always Use Termux⚡`,
+					caption: `Utilice siempre Termux⚡`,
 					jpegThumbnail: ""
 				}
 			},
@@ -2445,7 +2445,7 @@ Keep your skills sharp and never stop evolving."
 				'contactMessage':
 				{
 					'displayName': namaowner,
-					'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${namaowner},;;;\nFN:${namaowner}\nitem1.TEL;waid=916909137213:916909137213\nitem1.X-ABLabel:Mobile\nEND:VCARD`,
+					'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${namaowner},;;;\nFN:${namaowner}\nitem1.TEL;waid=573012686632:573012686632\nitem1.X-ABLabel:Mobile\nEND:VCARD`,
 					'jpegThumbnail': getRandomThumb2(),
 					thumbnail: getRandomThumb2(),
 					sendEphemeral: true
@@ -7924,7 +7924,7 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 										id: ".othermenu"
 									},
 									{
-										title: "🔥 MENÚ DEL PROPIETARIOU",
+										title: "🔥 MENÚ DEL PROPIETARIO",
 										description: "Sólo el PROPIETARIO👽 puede usar este comando",
 										id: ".ownermenu"
 									},
