@@ -7846,8 +7846,8 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
             mediaType: 1,
             renderLargerThumbnail: true,
             previewType: 0,
-            mediaUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg',
-            sourceUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg',
+            mediaUrl: img,
+            sourceUrl: img,
         }
 						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
