@@ -7831,7 +7831,7 @@ if (isUserRegistered(m.sender)) {
     fileLength: '100000000000000',
     pageCount: '999',
     image: {
-        url: 'https://i.ibb.co/pBHG8DmN/file.jpg', // Imagen desde un enlace
+        url: 'https://i.imgur.com/QGVGnLV.jpeg', // Imagen desde un enlace
         gifPlayback: true
     },
     caption: `${shonhemenu}`, // Título del mensaje
@@ -7842,7 +7842,7 @@ if (isUserRegistered(m.sender)) {
         externalAdReply: {
             title: namabot,
             body: descown,
-            url: 'https://i.ibb.co/pBHG8DmN/file.jpg', // Asegura que la imagen también se usa aquí si es necesario
+            url: 'https://i.imgur.com/QGVGnLV.jpeg', // Asegura que la imagen también se usa aquí si es necesario
             mediaType: 1,
             renderLargerThumbnail: true,
             previewType: 0,
