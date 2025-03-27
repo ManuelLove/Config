@@ -7833,7 +7833,7 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 						fileLength: '100000000000000',
 						pageCount: '999',
 						image: {
-            url: `https://pomf2.lain.la/f/sdzl7dc2.jpg`, // Pastikan file ini tersedia
+            url: `https://i.ibb.co/pBHG8DmN/file.jpg`, // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
