@@ -7824,8 +7824,6 @@ if (isUserRegistered(m.sender)) {
         }
     ];
   }
-  const thumbBuffer = getRandomThumb3();
-const thumbnail = `data:image/jpeg;base64,${thumbBuffer.toString("base64")}`;
 console.log('Ruta de getRandomThumb2:', getRandomThumb2());
 console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 					let buttonMessage = {
@@ -7841,14 +7839,14 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 						caption: `${shonhemenu}`, // Teks menu
 						contextInfo:
 						{
-							mentionedJid: [sender],
+							mentionedJid: [m.sender],
 							forwardingScore: 999,
 							isForwarded: true,
 							externalAdReply:
 							{
 								title: namabot,
 								body: descown,
-								thumbnail: getRandomThumb3(),
+								thumbnail: "https://via.placeholder.com/300",
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
