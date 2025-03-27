@@ -7844,13 +7844,13 @@ if (isUserRegistered(m.sender)) {
 							externalAdReply:
 							{
 								title: namabot,
-								body: namaowner,
+								body: descown,
 								thumbnail: getRandomThumb3(),
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
 								mediaUrl: gh,
-								sourceUrl: gh
+								sourceUrl: gh,
 							}
 						},
 						footer: isUserRegistered(m.sender) ? "© ShoNhe - Botz" : "ShoNhe - Bot Detecz",
