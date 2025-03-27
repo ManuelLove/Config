@@ -7841,7 +7841,7 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 								{
 									forwardingScore: 245,
 									isForwarded: true,
-									mentionedJid: [m.sender],
+									mentionedJid: [sender],
 									forwardedNewsletterMessageInfo:
 									{
 										newsletterName: `© ShoNhe Botz`,
