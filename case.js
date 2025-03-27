@@ -7821,169 +7821,86 @@ if (isUserRegistered(m.sender)) {
         }
     ];
   }
-					let buttonMessage = {
-						document: global.forpdf,
-						fileName: waktuucapan,
-						mimetype: 'application/pdf',
-						fileLength: '100000000000000',
-						pageCount: '999',
-						image:
-						{
-							url: getRandomThumb2(), // Pastikan file ini tersedia
-							gifPlayback: true
-						},
-						caption: `${shonhemenu}`, // Teks menu
-						contextInfo:
-						{
-							mentionedJid: [sender],
-							forwardingScore: 999,
-							isForwarded: true,
-							externalAdReply:
-							{
-								title: namabot,
-								body: descown,
-								thumbnail: getRandomThumb3(),
-								mediaType: 1,
-								renderLargerThumbnail: true,
-								previewType: 0,
-								mediaUrl: gh,
-								sourceUrl: gh
-							}
-						},
-						footer: isUserRegistered(m.sender) ? "© ShoNhe - Botz" : "ShoNhe - Bot Detecz",
-						buttons: buttons,
-						viewOnce: true,
-						headerType: 4
-					};
-					const flowActions = [
-					{
-						buttonId: 'action',
-						buttonText:
-						{
-							displayText: 'This Button List'
-						},
-						type: 4,
-						nativeFlowInfo:
-						{
-							name: 'single_select',
-							paramsJson: JSON.stringify(
-							{
-								title: "Select Menu!",
-								sections: [
-								{
-									title: "⚼ 「Ini adalah command yang sering digunakan」",
-									highlight_label: "POPULER",
-									rows: [
-									{
-										title: "🔍 ALL MENU",
-										description: "Menampilkan semua menu",
-										id: ".allmenu"
-									}]
-								},
-								{
-									title: "⚼ 「Ini adalah Store Bot Umum🛒」",
-									highlight_label: "Store Umum🚨",
-									rows: [
-									{
-										title: "🏭 STORE MENU",
-										description: "Menampilkan semua store menu",
-										id: ".storemenu"
-									}]
-								},
-								{
-									title: "⚼ 「Ini adalah Store Khusus Produk Owner🛒」",
-									highlight_label: "Produk Store Own🚨",
-									rows: [
-									{
-										title: "🏭 STORE OWN MENU",
-										description: "Menampilkan store produk khusus Owner",
-										id: ".storeownmenu"
-									}]
-								},
-								{
-									title: "⚼ 「Silahkan Pilih Button Menu lainya, di Bawah Ini」",
-									highlight_label: "ShoNhe ☘️",
-									rows: [
-									{
-										title: "⬇️ DOWNLOAD MENU",
-										description: "Menu untuk mendownload dan mencari",
-										id: ".downloadmenu"
-									},
-									{
-										title: "🌟 ISLAM MENU",
-										description: "Menu untuk Pencarian dan Informasi Islamic",
-										id: ".islammenu"
-									},
-									{
-										title: "📚 OTHER MENU",
-										description: "Other menu",
-										id: ".othermenu"
-									},
-									{
-										title: "🔥 OWNER MENU",
-										description: "Hanya OWNER👽 yang boleh menggunakan command ini",
-										id: ".ownermenu"
-									},
-									{
-										title: "🎮 GAME MENU",
-										description: "menampilkan menu game yang asik",
-										id: ".gamemenu"
-									},
-									{
-										title: "🎭 ANIME MENU",
-										description: "Command untuk menu anime",
-										id: ".animemenu"
-									},
-									{
-										title: "🔮 AI MENU",
-										description: "Menu Artificial intelligence free",
-										id: ".aimenu"
-									},
-									{
-										title: "♻️ RANDOM MENU",
-										description: "Menu random",
-										id: ".randommenu"
-									},
-									{
-										title: "🎤 AUDIO MENU",
-										description: "Menu untuk merubah audio",
-										id: ".audiomenu"
-									},
-									{
-										title: "🔄 CONVERT MENU",
-										description: "Menu untuk converter",
-										id: ".convertmenu"
-									},
-									{
-										title: "🫧 GROUP MENU",
-										description: "Menu tentang group",
-										id: ".groupmenu"
-									}]
-								},
-								{
-									title: "⚼ 「Document & Support」",
-									highlight_label: "ShoNhe v3 ⭐© sho&nhe",
-									rows: [
-									{
-										title: "📝 SCRIPT",
-										description: "Script bot yang saya pakai dan Script² Sebelumnya",
-										id: ".script"
-									},
-									{
-										title: "🔑 OWNER",
-										description: "Pembuat Bot WhatsApp ShoNhe",
-										id: ".contact2"
-									},
-									{
-										title: "🪨 TQTO",
-										description: "Membantu support dan berbagi",
-										id: ".tqto"
-									}]
-								}]
-							})
-						},
-						viewOnce: true
-					}, ];
+					    let buttonMessage = {
+    document: global.forpdf,
+        fileName: waktuucapan,
+        mimetype: 'application/pdf',
+        fileLength: '100000000000000',
+        pageCount: '999',
+        image: {
+            url: getRandomThumb2(), // Pastikan file ini tersedia
+            gifPlayback: true
+        },
+        caption: `${shomenu}`, // Teks menu
+        contextInfo: {
+        mentionedJid: [m.sender],
+            forwardingScore: 999,
+            isForwarded: true,
+            externalAdReply: {
+                title: namabot,
+                body: descown,
+                thumbnail: getRandomThumb3(),
+                mediaType: 1,
+                renderLargerThumbnail: true,
+                previewType: 0,
+             
+                mediaUrl: gh,
+                sourceUrl: gh
+            }
+        },
+        footer: "© Sho - Yurin",
+        buttons: buttons,
+        viewOnce: true,
+        headerType: 4
+    };
+
+const flowActions = [
+    {
+        buttonId: 'action',
+        buttonText: { displayText: 'This Button List' },
+        type: 4,
+        nativeFlowInfo: {
+            name: 'single_select',
+            paramsJson: JSON.stringify({
+                title: "Select Menu!",
+                sections: [
+                    {
+                        title: "Ini adalah command yang sering diginakan",
+                        highlight_label: "POPULER",
+                        rows: [
+                            { title: "🔍 ALL MENU", description: "Menampilkan semua menu", id: ".allmenu" }
+                            ]
+                            },
+                            {
+                            title: "Silahkan Pilih Button Menu di Bawah Ini",
+                        highlight_label: "Sho ☘️",
+                        rows: [
+                            { title: "⬇️ DOWNLOAD MENU", description: "Menu untuk mendownload dan mencari", id: ".downloadmenu" },
+                            { title: "📚 OTHER MENU", description: "Other menu", id: ".othermenu" },
+                            { title: "🔥 OWNER MENU", description: "Hanya King👑 yang boleh menggunakan command ini", id: ".ownermenu" },
+                            { title: "🎭 ANIME MENU", description: "Command untuk menu anime", id: ".animemenu" },
+                            { title: "🔮 AI MENU", description: "Menu Artificial intelligence free", id: ".aimenu" },
+                            { title: "♻️ RANDOM MENU", description: "Menu random", id: ".randommenu" },
+                            { title: "🎤 AUDIO MENU", description: "Menu untuk merubah audio", id: ".audiomenu" },
+                            { title: "🔄 CONVERT MENU", description: "Menu untuk converter", id: ".convertmenu" },
+                            { title: "🫧 GROUP MENU", description: "Menu tentang group", id: ".groupmenu" }
+                        ]
+                    },
+                    {
+                        title: "Document & Support",
+                        highlight_label: "Sho v1 ⭐",
+                        rows: [
+                            { title: "📝 SCRIPT", description: "Script bot yang saya pakai", id: ".script" },
+                            { title: "🔑 OWNER", description: "Pembuat Bot WhatsApp ShoV1", id: ".contact" },
+                            { title: "🪨 TQTO", description: "Membantu support dan berbagi", id: ".tqto" }
+                        ]
+                    }
+                ]
+            })
+        },
+        viewOnce: true
+    },
+];
 					// Tambahkan flowActions ke buttonMessage
 					buttonMessage.buttons.push(...flowActions);
 					// Kirim pesan
