@@ -7846,8 +7846,12 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 							{
 								title: namabot,
 								body: descown,
-								thumbnailUrl: `https://pomf2.lain.la/f/sdzl7dc2.jpg`, // Gambar thumbnail
-								sourceUrl: wagc
+								thumbnailurl: `https://pomf2.lain.la/f/sdzl7dc2.jpg`, 
+								mediaType: 1,
+								renderLargerThumbnail: true,
+								previewType: 0,
+								mediaUrl: gh,
+								sourceUrl: gh,
 							}
 						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
