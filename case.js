@@ -7842,10 +7842,17 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 							mentionedJid: [m.sender],
 							forwardingScore: 999,
 							isForwarded: true,
-							externalAdReply: {
+							const thumbBuffer = getRandomThumb3(); // Obtiene el Buffer
+
+// Verifica si es un Buffer válido antes de convertirlo
+const thumbnail = (thumbBuffer && Buffer.isBuffer(thumbBuffer))
+    ? `data:image/jpeg;base64,${thumbBuffer.toString("base64")}`
+    : "https://via.placeholder.com/300"; // Usa una imagen predeterminada si falla
+
+externalAdReply: {
     title: namabot,
     body: descown,
-    thumbnail: `data:image/jpeg;base64,${getRandomThumb3().toString("base64")}`, // Conversión directa
+    thumbnail: thumbnail, // Usa la variable validada
     mediaType: 1,
     renderLargerThumbnail: true,
     previewType: 0,
