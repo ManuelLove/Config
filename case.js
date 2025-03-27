@@ -7827,28 +7827,32 @@ if (isUserRegistered(m.sender)) {
 console.log('Ruta de getRandomThumb2:', getRandomThumb2());
 console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 					let buttonMessage = {
-    document: global.forpdf,
-    fileName: waktuucapan,
-    mimetype: 'application/pdf',
-    fileLength: '100000000000000',
-    pageCount: '999',
-    caption: `${shonhemenu}`, // Título del mensaje
-    contextInfo:
-    {
-        mentionedJid: [sender],
-        forwardingScore: 999,
-        isForwarded: true,
-        externalAdReply:
-        {
-            title: namabot,
-            body: descown,
-            url: 'https://github.com/ManuelLove/Config/raw/refs/heads/main/shoNhe_buffer.js',
-            mediaType: 1,
-            renderLargerThumbnail: true,
-            previewType: 0,
-            mediaUrl: gh,
-            sourceUrl: gh,
-        }
+						document: global.forpdf,
+						fileName: waktuucapan,
+						mimetype: 'application/pdf',
+						fileLength: '100000000000000',
+						pageCount: '999',
+						image: {
+            url: getRandomThumb2(), // Pastikan file ini tersedia
+							gifPlayback: true
+						},
+						caption: `${shonhemenu}`, // Teks menu
+						contextInfo:
+						{
+							mentionedJid: [m.sender],
+							forwardingScore: 999,
+							isForwarded: true,
+							externalAdReply:
+							{
+								title: namabot,
+								body: descown,
+								thumbnail: url: 'https://i.ibb.co/pBHG8DmN/file.jpg', 
+								mediaType: 1,
+								renderLargerThumbnail: true,
+								previewType: 0,
+								mediaUrl: gh,
+								sourceUrl: gh,
+							}
 						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
 						buttons: buttons,
