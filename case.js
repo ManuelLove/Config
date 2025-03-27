@@ -7840,16 +7840,15 @@ if (isUserRegistered(m.sender)) {
             forwardingScore: 999,
             isForwarded: true,
             externalAdReply: {
-                title: namabot,
-                body: descown,
-                thumbnail: getRandomThumb3(),
-                mediaType: 1,
-                renderLargerThumbnail: true,
-                previewType: 0,
-             
-                mediaUrl: gh,
-                sourceUrl: gh
-            }
+    title: namabot,
+    body: descown,
+    thumbnailUrl: 'https://i.imgur.com/6Y8FMAh.jpg', // Imagen desde Internet
+    mediaType: 1,
+    renderLargerThumbnail: true,
+    previewType: 0,
+    mediaUrl: gh,
+    sourceUrl: gh
+}
         },
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
 						buttons: buttons,
