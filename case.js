@@ -7784,14 +7784,14 @@ ${crown}`;
 // Fungsi untuk mengecek status registrasi pengguna
 function isUserRegistered(sender) {
     const db = loadUserFire(); // Fungsi untuk memuat database
-    return db[m.sender] && db[m.sender].register;
+    return db[sender] && db[sender].register;
 }
 let buttons;
 if (isUserRegistered(m.sender)) {
     // Jika pengguna sudah terdaftar, tampilkan tombol OWNER dan ABOUT
     buttons = [
         {
-            buttonId: ".realown2",
+            buttonId: ".realown",
             buttonText: {
                 displayText: "OWNER 🔥"
             },
@@ -7809,7 +7809,7 @@ if (isUserRegistered(m.sender)) {
     // Jika pengguna belum terdaftar, tampilkan tombol REGISTER
     buttons = [
     {
-            buttonId: ".realown2",
+            buttonId: ".realown",
             buttonText: {
                 displayText: "OWNER 🔥"
             },
@@ -7838,7 +7838,7 @@ if (isUserRegistered(m.sender)) {
 						caption: `${shonhemenu}`, // Teks menu
 						contextInfo:
 						{
-							mentionedJid: [m.sender],
+							mentionedJid: [sender],
 							forwardingScore: 999,
 							isForwarded: true,
 							externalAdReply:
@@ -8450,7 +8450,7 @@ ${menuforu(prefix, simbols)}
 							mentionedJid: [m.sender],
 							forwardingScore: 999,
 							isForwarded: true,
-							mentionedJid: [m.sender],
+							mentionedJid: [sender],
 							forwardedNewsletterMessageInfo:
 							{
 								newsletterName: namaowner,
