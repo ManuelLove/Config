@@ -7824,13 +7824,15 @@ if (isUserRegistered(m.sender)) {
         }
     ];
   }
+console.log('Ruta de getRandomThumb2:', getRandomThumb2());
+console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 					let buttonMessage = {
 						document: global.forpdf,
 						fileName: waktuucapan,
 						mimetype: 'application/pdf',
 						fileLength: '100000000000000',
 						pageCount: '999',
-						image: fs.readFileSync(getRandomThumb2()), // Carga la imagen en formato Buffer// Pastikan file ini tersedia
+						thumbnail: getRandomThumb2(), // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
