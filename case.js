@@ -7782,9 +7782,9 @@ ${crown}`;
 				{
 					
 // Fungsi untuk mengecek status registrasi pengguna
-function isUserRegistered(sender) {
+function isUserRegistered(m.sender) {
     const db = loadUserFire(); // Fungsi untuk memuat database
-    return db[sender] && db[sender].register;
+    return db[m.sender] && db[m.sender].register;
 }
 let buttons;
 if (isUserRegistered(m.sender)) {
@@ -7838,7 +7838,7 @@ if (isUserRegistered(m.sender)) {
 						caption: `${shonhemenu}`, // Teks menu
 						contextInfo:
 						{
-							mentionedJid: [sender],
+							mentionedJid: [m.sender],
 							forwardingScore: 999,
 							isForwarded: true,
 							externalAdReply:
@@ -8450,7 +8450,7 @@ ${menuforu(prefix, simbols)}
 							mentionedJid: [m.sender],
 							forwardingScore: 999,
 							isForwarded: true,
-							mentionedJid: [sender],
+							mentionedJid: [m.sender],
 							forwardedNewsletterMessageInfo:
 							{
 								newsletterName: namaowner,
