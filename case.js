@@ -7845,7 +7845,7 @@ if (isUserRegistered(m.sender)) {
 							{
 								title: namabot,
 								body: descown,
-								image: { url: 'https://i.ibb.co/pBHG8DmN/file.jpg' }
+								thumbnailUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg',
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
