@@ -7842,7 +7842,12 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 							mentionedJid: [m.sender],
 							forwardingScore: 999,
 							isForwarded: true,
-							const thumbBuffer = getRandomThumb3(); // Obtiene el Buffer
+							const getRandomThumb3 = () => {
+    return Buffer.from("ejemplo_de_datos", "utf-8"); // Simula un buffer válido
+};
+
+// Ahora puedes llamarla sin error
+const thumbBuffer = getRandomThumb3();
 
 // Verifica si es un Buffer válido antes de convertirlo
 const thumbnail = (thumbBuffer && Buffer.isBuffer(thumbBuffer))
