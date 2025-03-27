@@ -7827,7 +7827,7 @@ if (isUserRegistered(m.sender)) {
 						fileLength: '100000000000000',
 						pageCount: '999',
 						image: {
-            url: getRandomThumb2(), // Pastikan file ini tersedia
+            url: getRandomThumb3(), // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
@@ -7840,7 +7840,7 @@ if (isUserRegistered(m.sender)) {
 							{
 								title: namabot,
 								body: descown,
-								thumbnail: getRandomThumb3(),
+								thumbnail: getRandomThumb2(),
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
