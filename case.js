@@ -1285,14 +1285,18 @@ await shoNhe.sendMessage(m.chat, {
 			return thumbList3.map(thumb => `Nama: ${thumb.name}`).join('\n');
 		};
 		// **Fungsi: Mengambil thumbnail secara acak**
-		const getRandomThumb2 = () => {
-    const thumbList2 = readThumbList2();
-    if (thumbList2.length === 0) {
-        return defaultThumbnailPath2; // Devuelve la ruta como string
-    }
-    const randomFile2 = thumbList2[Math.floor(Math.random() * thumbList2.length)];
-    return randomFile2.path; // Devuelve la ruta en lugar de un Buffer
-};
+		const getRandomThumb3 = () =>
+		{
+			const thumbList3 = readThumbList3();
+			if (thumbList3.length === 0)
+			{
+				// Jika folder kosong, gunakan default thumbnail
+				console.log('Tidak ada thumbnail, menggunakan default');
+				return fs.readFileSync(defaultThumbnailPath3);
+			}
+			const randomFile3 = thumbList3[Math.floor(Math.random() * thumbList3.length)];
+			console.log(`Memilih thumbnail acak: ${randomFile3.name}`);
+			return fs.readFileSync(randomFile3.path); // Return Buffer thumbnail
 		};
 		async function sendRegister(shoNhe, m, prefix, namabot)
 		{
@@ -7828,7 +7832,7 @@ if (isUserRegistered(m.sender)) {
 						pageCount: '999',
 						image:
 						{
-							image: fs.readFileSync(getRandomThumb2()), // Carga la imagen en formato Buffer// Pastikan file ini tersedia
+							image: getRandomThumb2(), // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
