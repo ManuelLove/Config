@@ -7824,6 +7824,8 @@ if (isUserRegistered(m.sender)) {
         }
     ];
   }
+  const thumbBuffer = getRandomThumb3();
+const thumbnail = `data:image/jpeg;base64,${thumbBuffer.toString("base64")}`;
 console.log('Ruta de getRandomThumb2:', getRandomThumb2());
 console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 					let buttonMessage = {
@@ -7846,8 +7848,7 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 							{
 								title: namabot,
 								body: descown,
-								const thumb3 = getRandomThumb3();
-const thumbnail = typeof thumb3 === "string" ? thumb3 : "https://example.com/default.jpg";
+								thumbnail: "https://via.placeholder.com/300",
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
