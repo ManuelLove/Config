@@ -7847,7 +7847,7 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 							{
 								title: namabot,
 								body: descown,
-								thumbnail: getRandomThumb3(),
+								thumbnail: getRandomThumb3() || 'https://example.com/default.jpg',
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
