@@ -7831,7 +7831,7 @@ if (isUserRegistered(m.sender)) {
 						fileLength: '100000000000000',
 						pageCount: '999',
 						image: {
-            url: fs.readFileSync('./src/thum3/shoNhe.jpg'), // Pastikan file ini tersedia
+            url: fs.readFileSync('./src/thum2/shoNhe.jpg'), // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
