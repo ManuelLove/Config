@@ -20914,19 +20914,19 @@ break;
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly(`Example : ${prefix + command} story wa anime`);
+				if (!text) return shoNherly(`Ejemplo : ${prefix + command} historia de anime`);
 				try
 				{
 					// Cari hasil di YouTube menggunakan API
 					let search = await yts(text);
-					if (!search.all.length) return shoNherly("Tidak ada hasil pencarian ditemukan!");
+					if (!search.all.length) return shoNherly("¡No se encontraron resultados de búsqueda!");
 					if (!(await firely(m, mess.waits))) return;
 					// Batasi hasil pencarian ke 10 item teratas dan siapkan carousel card
 					const carouselCards = await Promise.all(search.all.slice(0, 10).map(async (video, index) => (
 					{
 						header:
 						{
-							title: `Hasil ${index + 1}`,
+							title: `Resultados ${index + 1}`,
 							hasMediaAttachment: true,
 							imageMessage: (await generateWAMessageContent(
 							{
@@ -20941,29 +20941,33 @@ break;
 						},
 						body:
 						{
-							text: `🎥 *Judul:* ${video.title}\n👁 *Views:* ${video.views}\n⏱ *Durasi:* ${video.timestamp}\n📆 *Diupload:* ${video.ago}\n📝 *Url:* ${video.url}`
+							text: `🎥 *Título:* ${video.title}\n👁 *Vistas:* ${video.views}\n⏱ *Duración:* ${video.timestamp}\n📆 *Subido:* ${video.ago}\n📝 *URL:* ${video.url}`
 						},
 						footer:
 						{
-							text: `Klik tombol di bawah untuk melihat atau salin tautan.`
+							text: `Haga clic en el botón a continuación para copiar el enlace.`
 						},
 						nativeFlowMessage:
 						{
-							buttons: [
+						buttons: [
+						{
+							buttonId: `${prefix}ytmp3 ${video.url}`,
+							buttonText:
 							{
-								"name": "cta_url",
-								"buttonParamsJson": JSON.stringify(
-								{
-									"display_text": "LIHAT VIDEO 🎬",
-									"url": `${video.url}`
-								})
-							},
+								displayText: "MUSICA 🎵"
+							}
+						},
+						{
+							buttonId: `${prefix}ytmp4 ${video.url}`,
+							buttonText:
 							{
-								"name": "cta_copy",
-								"buttonParamsJson": JSON.stringify(
-								{
-									"display_text": "SALIN URL 📝",
-									"copy_code": `${video.url}`
+								displayText: "VIDEO 🎥"
+							}
+						}],
+						viewOnce: true,
+					},
+					{
+						quoted: hw
 								})
 							}]
 						}
@@ -20985,11 +20989,11 @@ break;
 								{
 									body:
 									{
-										text: `🔎 *Hasil pencarian YouTube untuk:* _${text}_`
+										text: `🔎 *Resultados de búsqueda de YouTube para:* _${text}_`
 									},
 									footer:
 									{
-										text: `YouTube Bot by ShoNhe`
+										text: `YouTube Bot by ManuDiaz`
 									},
 									header:
 									{
@@ -21012,10 +21016,10 @@ break;
 				}
 				catch (e)
 				{
-					console.error("Kesalahan saat memproses permintaan YouTube Search:", e);
+					console.error("Error al procesar la solicitud de búsqueda de YouTube:", e);
 					await shoNhe.sendMessage(m.chat,
 					{
-						text: "❌ Terjadi kesalahan saat memproses pencarian YouTube. Silakan coba lagi."
+						text: "❌ Se produjo un error al procesar una búsqueda en YouTube. Por favor inténtalo de nuevo."
 					},
 					{
 						quoted: hw
@@ -26774,16 +26778,16 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly(`Contoh: ${prefix + command} judul lagu`);
+				if (!text) return shoNherly(`Ejemplo: ${prefix + command} título de la canción`);
 				try
 				{
 					// Cari hasil di YouTube menggunakan API
 					let search = await yts(text);
-					if (!search.all.length) return shoNherly("❌ Tidak ada hasil pencarian ditemukan!");
+					if (!search.all.length) return shoNherly("❌ ¡No se encontraron resultados de búsqueda!");
 					if (!(await firely(m, mess.waits))) return;
 					// Ambil hanya hasil pertama
 					let video = search.all[0];
-					let message = `🎥 *Judul:* ${video.title}\n👁 *Views:* ${video.views}\n⏱ *Durasi:* ${video.timestamp}\n📆 *Diupload:* ${video.ago}\n🔗 *URL:* ${video.url}`;
+					let message = `🎥 *Título:* ${video.title}\n👁 *Vistas:* ${video.views}\n⏱ *Duración:* ${video.timestamp}\n📆 *Subido:* ${video.ago}\n🔗 *URL:* ${video.url}`;
 					// Kirim pesan dengan dua tombol (YTMP3 dan YTMP4)
 					await shoNhe.sendMessage(m.chat,
 					{
@@ -26798,14 +26802,14 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 							buttonId: `${prefix}ytmp3 ${video.url}`,
 							buttonText:
 							{
-								displayText: "YTMP3 🎵"
+								displayText: "MUSICA 🎵"
 							}
 						},
 						{
 							buttonId: `${prefix}ytmp4 ${video.url}`,
 							buttonText:
 							{
-								displayText: "YTMP4 🎥"
+								displayText: "VIDEO 🎥"
 							}
 						}],
 						viewOnce: true,
