@@ -7843,18 +7843,8 @@ if (isUserRegistered(m.sender)) {
             previewType: 0,
             mediaUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg',
             sourceUrl: 'https://i.ibb.co/pBHG8DmN/file.jpg'
-        }
-    }
-};
-
-// Enviar la imagen por separado
-let imageMessage = {
-    image: { url: 'https://i.ibb.co/pBHG8DmN/file.jpg' },
-    caption: "Aquí está tu imagen"
-};
-
-await conn.sendMessage(m.chat, imageMessage, { quoted: m });
-await conn.sendMessage(m.chat, buttonMessage, { quoted: m });
+							}
+						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
 						buttons: buttons,
 						viewOnce: true,
