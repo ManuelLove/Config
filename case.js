@@ -7686,7 +7686,7 @@ case 'menu':
         caption += `💡 *Si necesitas ayuda, usa el comando .help*\n\n`;
         caption += `🛠️ *Opciones Disponibles:*`;
 
-        await sendButtonImage(m.chat, '', caption, { url: 'https://example.com/menu-image.jpg' }, button, m);
+        await sendButtonImage(m.chat, '', caption, { url: 'https://i.ibb.co/LDBMFzgv/file.png' }, button, m);
     } catch (error) {
         console.log("Error en el menú:", error);
     }
