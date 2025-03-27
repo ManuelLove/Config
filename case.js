@@ -7846,7 +7846,7 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 							{
 								title: namabot,
 								body: descown,
-								thumbnailUrl: `https://i.ibb.co/pBHG8DmN/file.jpg`, // Gambar thumbnail
+								thumbnailUrl: `https://pomf2.lain.la/f/eyeifjcz.jpg`, // Gambar thumbnail
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
