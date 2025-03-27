@@ -7846,7 +7846,8 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 							{
 								title: namabot,
 								body: descown,
-								thumbnail: "https://via.placeholder.com/300",
+								const thumb3 = getRandomThumb3();
+const thumbnail = typeof thumb3 === "string" ? thumb3 : "https://example.com/default.jpg";
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
