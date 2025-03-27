@@ -501,7 +501,7 @@ const getContacts2 = async () =>
 {
 	try
 	{
-		const response = await axios.get('https://raw.githubusercontent.com/sychyy/sychyy/refs/heads/main/owners22.json');
+		const response = await axios.get('https://raw.githubusercontent.com/ManuelLove/Config/refs/heads/main/contact.json');
 		return response.data;
 	}
 	catch (error)
@@ -808,7 +808,7 @@ END:VCARD`
 		{
 			if (new Date() * 1 - setbio.status > 60000)
 			{
-				const uptimeQuotes = [`⏳ Uptime: ${runtime(os.uptime())}`, `💻 shoNhe Botz: Udah jalan ${runtime(os.uptime())}`, `📅 ${moment().format('dddd, DD MMM YYYY')}`, `⚡ Bot tetep hidup, gak pernah tidur!`];
+				const uptimeQuotes = [`⏳ tiempo de actividad: ${runtime(os.uptime())}`, `💻 TechFix Botz: esta en camino ${runtime(os.uptime())}`, `📅 ${moment().format('dddd, DD MMM YYYY')}`, `⚡ ¡El Bot permanece vivo, nunca duerme!`];
 				const randomUptimeQuote = uptimeQuotes[Math.floor(Math.random() * uptimeQuotes.length)];
 				await shoNhe.updateProfileStatus(randomUptimeQuote);
 				setbio.status = new Date() * 1;
@@ -816,7 +816,7 @@ END:VCARD`
 		}
 		else
 		{
-			const motivationQuotes = [`💪 Semangat terus, lo hebat!`, `🌟 Jangan mau kalah, terus gas!`, `🔥 Jangan nyerah, sukses udah deket!`, `🚀 Ayo gas pol, capai mimpi lo!`, `⚡ Bangun pagi, yuk semangat!`];
+			const motivationQuotes = [`💪 ¡Sigue con el entusiasmo, eres genial!`, `🌟 ¡No quiero perder, sigue acelerando!`, `🔥 ¡No te rindas, el éxito está cerca!`, `🚀 ¡Vamos gas pol, consigue tus sueños!`, `⚡ ¡Levántate temprano, emocionémonos!`];
 			const randomMotivationQuote = motivationQuotes[Math.floor(Math.random() * motivationQuotes.length)];
 			await shoNhe.updateProfileStatus(randomMotivationQuote);
 		}
