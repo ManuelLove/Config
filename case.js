@@ -25553,64 +25553,68 @@ shoNhe.sendMessage(m.chat,
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				shoNherly(`┌──┤ *SYSTEM: shoNhe* ├──┐
+				shoNherly(`┌──┤ *SISTEMA: TechFix* ├──┐
 
-🔐 *Access Level:* TOP SECRET  
-🛠️ *Project Code:* #shoNhe_V3
+🔐 *Nivel de Acceso:* ULTRA SECRETO
+🛠️ *Código del Proyecto:* #TechFix_V3
 
-🧠 *Genesis:*  
-shoNhe adalah fusi dua kekuatan besar. Ini adalah manifestasi kolaborasi antara *Sho* dan *Nhe*, dua entitas yang berasal dari jalur yang berbeda namun menyatu dalam satu misi.
+🧠 *Génesis:*
+TechFix es la fusión de dos grandes fuerzas. Es la manifestación de la colaboración entre *TechFix* y *Ansi*, dos entidades que provienen de caminos distintos pero que se han unido en una misma misión.
 
-⚙️ *Node A - Sho:*  
-Diciptakan oleh *Yuda*, arsitek awal yang merancang blueprint utama dari infrastruktur ini. Sho membawa visi dan fundamental yang tak tergoyahkan.
+⚙️ *Nodo A - TechFix:*
+Creado por *Yuda*, el arquitecto original que diseñó la estructura base de esta infraestructura. TechFix aporta la visión y los fundamentos inquebrantables.
 
-⚙️ *Node B - Nhe:*  
-*Tngx*, elemen yang tiba-tiba masuk ke dalam jaringan, membawa perubahan signifikan dalam evolusi sistem. Sekarang, Nhe menjadi komponen esensial yang menggerakkan operasi inti.
+⚙️ *Nodo B - Ansi:*
+*Tngx*, un elemento inesperado que irrumpió en la red, provocando un cambio drástico en la evolución del sistema. Ahora, Ansi es un componente esencial que impulsa las operaciones principales.
 
-🌐 *Unified System Status:*  
-Kolaborasi ini menciptakan sebuah jaringan yang bergerak secara simultan, menghadirkan kekuatan baru yang tak terdeteksi namun berpengaruh besar dalam ekosistem teknologi.
+🌐 *Estado del Sistema Unificado:*
+Esta colaboración ha dado origen a una red que opera de manera simultánea, liberando un poder invisible pero de gran impacto en el ecosistema tecnológico.
 
-💻 *shoNhe is now ACTIVE.*  
-Sistem ini terus berkembang, siap untuk menembus batas dan mengubah paradigma teknologi selamanya.
+💻 *TechFix está ahora ACTIVO.*
+El sistema sigue evolucionando, listo para romper barreras y transformar el paradigma tecnológico para siempre.
 
-࿇ *❓ENTITAS*
-❕Asal Usul Misteri Dua Entitas: Sho dan Nhe
+࿇ *❓ENTIDADES*
+❕El Misterioso Origen de TechFix y Ansi
 
-Di balik layar dunia digital, tersembunyi dua entitas misterius yang tidak pernah terhubung di permukaan—Sho dan Nhe. Keduanya datang dari dimensi yang berbeda, latar belakang yang tidak diketahui oleh kebanyakan orang, namun keduanya memiliki satu kesamaan: kekuatan untuk meretas batasan teknologi yang ada.
+En las sombras del mundo digital, existen dos entidades enigmáticas que nunca se habían cruzado en la superficie: TechFix y Ansi. Ambos provienen de dimensiones desconocidas, con pasados que escapan al conocimiento de la mayoría, pero comparten una habilidad singular: la capacidad de traspasar los límites tecnológicos existentes.
 
-*_Sho: Sang Pembawa Cahaya_*
+*TechFix: El Portador de la Luz*
 
-Sho adalah sosok misterius yang muncul dari jaringan gelap di kedalaman arsitektur siber. Tidak banyak yang diketahui tentang asal-usulnya, selain bahwa dia dikenal sebagai Yuda, sang pencipta algoritma tersembunyi yang mampu membuka potensi penuh dari setiap sistem yang tersentuh olehnya. Ia beroperasi di balik bayangan, menguasai sistem dari dalam, dengan metode yang begitu canggih hingga ia dijuluki "Pembawa Cahaya" karena mampu menerangi sistem-sistem tertutup yang tak bisa ditembus orang lain.
+TechFix es una figura enigmática que emergió desde las profundidades de la arquitectura cibernética. Poco se sabe sobre su origen, salvo que alguna vez fue conocido como Yuda, el creador de un algoritmo oculto capaz de desbloquear el máximo potencial de cualquier sistema que tocara. Operando desde las sombras, TechFix domina las estructuras desde su núcleo, utilizando técnicas tan avanzadas que se ganó el título de "El Portador de la Luz", por su capacidad de iluminar y acceder a sistemas cerrados que nadie más podía penetrar.
 
-Beberapa mengatakan bahwa Yuda pernah bekerja untuk organisasi teknologi besar, sebelum menghilang tanpa jejak. Muncul kembali sebagai Sho, ia memutuskan untuk tidak lagi terikat pada dunia permukaan, melainkan merancang dasar bagi sesuatu yang lebih besar, yang akan melampaui batas-batas teknologi saat ini.
+Algunos afirman que Yuda trabajó para organizaciones tecnológicas de alto nivel antes de desaparecer sin dejar rastro. Reapareciendo como TechFix, decidió desvincularse del mundo visible y sentar las bases de algo mucho más grande, un proyecto que trasciende los límites tecnológicos actuales.
 
-*_Nhe: Sang Manipulator Dimensi_*
+*Ansi: El Manipulador de Dimensiones*
 
-Di sisi lain, Nhe, atau dikenal sebagai Tngx, adalah sosok yang misterius dan tidak terprediksi. Tidak ada yang tahu pasti darimana Nhe berasal, tetapi ia disebut-sebut memiliki kemampuan untuk "memanipulasi dimensi"—istilah yang digunakan oleh mereka yang pernah bersinggungan dengan kehadirannya. Keberadaannya terdeteksi dalam jeda-jeda kecil dalam jaringan global, mampu meretas masuk melalui celah yang tidak dapat dilihat oleh perangkat biasa.
+En el otro extremo, Ansi, también conocido como Tngx, es una entidad aún más misteriosa e impredecible. Su origen es un enigma, pero aquellos que han percibido su presencia lo describen como alguien capaz de "manipular dimensiones", un término usado por quienes han sido testigos de su influencia en los sistemas.
 
-Nhe muncul tiba-tiba dalam hidup Sho ketika sebuah serangan besar terjadi di jaringan yang dikuasainya. Alih-alih merusak, Nhe justru memodifikasi sistem tersebut hingga lebih stabil dan aman daripada sebelumnya. Melihat bakat yang tak biasa ini, Sho akhirnya menyadari bahwa keberadaan Nhe bukanlah kebetulan—melainkan sebuah takdir yang mempertemukan dua kekuatan untuk sesuatu yang lebih besar.
+Ansi no es visible para los métodos convencionales. Se desplaza por los intervalos imperceptibles dentro de la red global, accediendo a través de grietas que los dispositivos comunes no pueden detectar.
 
-*_Pertemuan yang Tak Terduga dan Awal Kolaborasi_*
+La llegada de Ansi a la vida de TechFix no fue planeada. Durante un ataque masivo a la red de TechFix, Ansi apareció sin previo aviso. Pero en lugar de destruir, estabilizó el sistema y lo reforzó con una seguridad que jamás había existido. Fue en ese momento cuando TechFix entendió que Ansi no era un enemigo, sino una fuerza destinada a cruzarse en su camino.
 
-Suatu hari, sebuah jaringan rahasia yang dikenal hanya oleh sedikit orang diretas oleh entitas yang tak terlihat. Dalam satu momen yang menentukan, Sho menyadari bahwa jaringan tersebut sedang dimainkan oleh seorang ahli yang tak dikenal. Namun, alih-alih bertempur, kedua entitas saling mengenali kemampuan satu sama lain. Sho, yang dikenal karena kekuatan arsitekturnya, dan Nhe, yang mampu melebur dengan sistem apapun tanpa jejak, akhirnya sepakat untuk berkolaborasi.
+*Un Encuentro Inesperado y el Inicio de la Colaboración*
 
-Keduanya sepakat untuk menciptakan sesuatu yang lebih besar—proyek rahasia yang kemudian dikenal sebagai shoNhe. Sebuah nama yang mencerminkan harmoni dan kekuatan yang lahir dari persatuan dua entitas. Proyek ini bukan hanya sistem biasa; shoNhe adalah platform evolusioner yang mampu mengintegrasikan kecerdasan buatan, algoritma kompleks, dan jaringan yang tak terlihat, dengan tujuan untuk membentuk masa depan teknologi.
+En un rincón secreto de la red, solo accesible para unos pocos, una entidad desconocida logró irrumpir. TechFix, al detectar la intrusión, se preparó para un enfrentamiento digital. Pero en un giro inesperado, los dos reconocieron sus habilidades mutuas.
 
-*_Perjalanan Menuju Proyek Besar: shoNhe_*
+TechFix, el maestro de la arquitectura digital, y Ansi, el espectro que podía fusionarse con cualquier sistema sin dejar rastro, llegaron a un acuerdo. Decidieron unir fuerzas en un proyecto que superara cualquier tecnología existente: el nacimiento de TechFix, una sinergia entre dos poderes opuestos pero complementarios.
 
-Kolaborasi Sho dan Nhe melampaui ekspektasi keduanya. Awalnya mereka berfokus pada penciptaan sistem yang dapat memecahkan masalah-masalah besar di jaringan siber: dari keamanan, enkripsi, hingga kecerdasan buatan yang lebih maju. Namun, seiring waktu, visi mereka berkembang menjadi lebih besar. Mereka mulai membangun platform yang dapat memanipulasi data dalam dimensi baru, menciptakan cara-cara baru untuk berinteraksi dengan teknologi yang sebelumnya tidak terbayangkan.
+*El Camino hacia un Proyecto Revolucionario: TechFix*
 
-Sho memberikan dasar teknis yang kokoh: ia merancang arsitektur di mana setiap elemen dari shoNhe dapat diakses dan diolah tanpa diketahui oleh dunia luar. Sementara itu, Nhe memberikan kemampuan uniknya untuk mengaburkan jejak, menciptakan sistem yang tidak dapat dilacak, namun sepenuhnya terintegrasi dan dapat dioperasikan secara efisien.
+La colaboración de TechFix y Ansi superó todas sus expectativas. Lo que comenzó como una red diseñada para resolver problemas de ciberseguridad, encriptación y automatización, pronto evolucionó en algo más ambicioso. Descubrieron cómo manipular datos en dimensiones desconocidas, redefiniendo la interacción con la tecnología de formas que nadie había imaginado antes.
 
-Di balik layar, mereka berdua mulai menarik para ahli dari seluruh dunia, orang-orang yang sama misteriusnya dengan mereka. Melalui jaringan tersembunyi yang hanya dapat diakses melalui protokol rahasia, mereka membentuk kelompok elit yang bekerja dalam bayang-bayang, memperkuat shoNhe dengan ide-ide revolusioner.
+TechFix proporcionó la base estructural: una arquitectura inquebrantable y oculta a la vista del mundo. Ansi, por su parte, le otorgó el poder de camuflarse, de integrarse en el sistema sin ser detectado, creando un mecanismo que operaba en las sombras con máxima eficiencia.
 
-*_shoNhe: Lebih dari Sekadar Teknologi_*
+A medida que su trabajo avanzaba, otros expertos comenzaron a unirse. Desde distintos rincones del planeta, individuos con habilidades extraordinarias fueron atraídos por la visión de TechFix. A través de canales encriptados y accesos restringidos, formaron un grupo de élite, cada uno contribuyendo con innovaciones revolucionarias.
 
-Setelah bertahun-tahun mengembangkan platform tersebut, shoNhe tidak lagi hanya menjadi proyek pribadi dua entitas ini. shoNhe berubah menjadi entitas tersendiri, sebuah jaringan otonom yang terus berkembang dengan sendirinya, di bawah pengawasan Sho dan Nhe. Setiap aspek dari shoNhe dirancang untuk belajar, beradaptasi, dan mengatasi tantangan teknologi yang semakin kompleks.
+*TechFix: Más que una Tecnología*
 
-Kini, shoNhe telah menjadi legenda urban di kalangan elit siber. Beberapa percaya bahwa platform ini mampu menembus dimensi baru dalam kecerdasan buatan, sementara yang lain menganggap shoNhe sebagai sistem yang tak terdeteksi yang mampu mengendalikan aspek-aspek dunia maya secara tak terlihat. Tapi hanya Sho dan Nhe yang mengetahui kebenarannya—bahwa shoNhe adalah hasil dari perjalanan panjang, kolaborasi, dan kejeniusan dua entitas yang berbeda namun bersatu.
+Después de años de perfeccionamiento, TechFix dejó de ser solo un proyecto secreto entre TechFix y Ansi. Se convirtió en una entidad independiente, un sistema autónomo capaz de evolucionar por sí mismo, aprendiendo, adaptándose y desafiando los límites tecnológicos.
 
-Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyiapkan rencana besar di balik layar, tanpa ada yang tahu ke mana mereka akan membawa dunia teknologi selanjutnya.
+Hoy en día, TechFix es considerado una leyenda en los círculos más exclusivos de la ciberseguridad. Algunos creen que es la llave para la inteligencia artificial de la próxima era, mientras que otros lo describen como una red fantasma con acceso absoluto a los sistemas del mundo.
+
+Sin embargo, solo TechFix y Ansi conocen la verdad: TechFix es el resultado de años de exploración, alianza y genialidad.
+
+Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarrollando la siguiente fase de su plan. Nadie sabe qué será lo próximo, pero una cosa es segura: el futuro de la tecnología está en sus manos.
 
 └──────────────────────┘`);
 				if (levelUpMessage) {
