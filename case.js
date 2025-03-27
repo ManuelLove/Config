@@ -586,17 +586,34 @@ module.exports = shoNhe = async (shoNhe, m, msg, chatUpdate, store) => {
 		let _chats = type === "conversation" && m.message.conversation ? m.message.conversation : type == "imageMessage" && m.message.imageMessage.caption ? m.message.imageMessage.caption : type == "videoMessage" && m.message.videoMessage.caption ? m.message.videoMessage.caption : type == "extendedTextMessage" && m.message.extendedTextMessage.text ? m.message.extendedTextMessage.text : type == "buttonsResponseMessage" && m.message[type].selectedButtonId ? m.message[type].selectedButtonId : type == "stickerMessage" && getCmd(m.message[type].fileSha256.toString("base64")) !== null && getCmd(m.message[type].fileSha256.toString("base64")) !== undefined ? getCmd(m.message[type].fileSha256.toString("base64")) : "";
 		const cmd = (type === 'conversation') ? m.message.conversation : (type == 'imageMessage') ? m.message.imageMessage.caption : (type == 'videoMessage') ? m.message.videoMessage.caption : (type == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (type == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (type == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (type === 'interactiveResponseMessage') ? JSON.parse(m.message.interactiveResponseMessage.nativeFlowResponseMessage.paramsJson).id : (type == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (type === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : (type == 'stickerMessage') && (getCmd(m.message.stickerMessage.fileSha256.toString('hex')) !== null && getCmd(m.message.stickerMessage.fileSha256.toString('base64')) !== undefined) ? getCmd(m.message.stickerMessage.fileSha256.toString('base64')) : "".slice(1).trim().split(/ +/).shift().toLowerCase()
 		const from = m.key.remoteJid
-		if (typeof body === 'undefined') {
-    var body = (m.mtype === 'interactiveResponseMessage') ? JSON.parse(m.message.interactiveResponseMessage.nativeFlowResponseMessage.paramsJson).id :
-               (m.mtype === 'conversation') ? m.message.conversation :
-               (m.mtype == 'imageMessage') ? m.message.imageMessage.caption :
-               (m.mtype == 'videoMessage') ? m.message.videoMessage.caption :
-               (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text :
-               (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId :
-               (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId :
-               (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId :
-               (m.mtype == 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) :
-               (type == 'stickerMessage' && getCmd(m.message.stickerMessage.fileSha256.toString('base64')) !== null && getCmd(m.message.stickerMessage.fileSha256.toString('base64')) !== undefined) ? getCmd(m.message.stickerMessage.fileSha256.toString('base64')) : "";
+		let body = "";
+
+if (m.mtype === 'interactiveResponseMessage' && m.message.interactiveResponseMessage?.nativeFlowResponseMessage?.paramsJson) {
+    body = JSON.parse(m.message.interactiveResponseMessage.nativeFlowResponseMessage.paramsJson).id;
+} else if (m.mtype === 'conversation') {
+    body = m.message.conversation;
+} else if (m.mtype === 'imageMessage') {
+    body = m.message.imageMessage?.caption || "";
+} else if (m.mtype === 'videoMessage') {
+    body = m.message.videoMessage?.caption || "";
+} else if (m.mtype === 'extendedTextMessage') {
+    body = m.message.extendedTextMessage?.text || "";
+} else if (m.mtype === 'buttonsResponseMessage') {
+    body = m.message.buttonsResponseMessage?.selectedButtonId || "";
+} else if (m.mtype === 'listResponseMessage') {
+    body = m.message.listResponseMessage?.singleSelectReply?.selectedRowId || "";
+} else if (m.mtype === 'templateButtonReplyMessage') {
+    body = m.message.templateButtonReplyMessage?.selectedId || "";
+} else if (m.mtype === 'messageContextInfo') {
+    body = m.message.buttonsResponseMessage?.selectedButtonId || 
+           m.message.listResponseMessage?.singleSelectReply?.selectedRowId || 
+           m.text || "";
+} else if (m.mtype === 'stickerMessage') {
+    const cmd = getCmd(m.message.stickerMessage?.fileSha256?.toString('base64'));
+    if (cmd !== null && cmd !== undefined) {
+        body = cmd;
+    }
+}
 		//==================[ TEMPAT CONST LIB ]=====================\\
 		const { videyScraper } = require('./lib/scp/scraper');
 		const
