@@ -7833,8 +7833,8 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 						fileLength: '100000',
 						pageCount: '10',
 						image: {  
-    url: getRandomThumb2() || 'https://example.com/default.jpg'
-} // Pastikan file ini tersedia
+    url: getRandomThumb2() || 'https://example.com/default.jpg',
+ // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
