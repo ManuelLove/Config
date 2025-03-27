@@ -7826,8 +7826,6 @@ if (isUserRegistered(m.sender)) {
   }
 console.log('Ruta de getRandomThumb2:', getRandomThumb2());
 console.log('Ruta de getRandomThumb3:', getRandomThumb3());
-const thumbBuffer = getRandomThumb3();
-const thumbnail = `data:image/jpeg;base64,${thumbBuffer.toString("base64")}`;
 					let buttonMessage = {
 						document: global.forpdf,
 						fileName: waktuucapan,
@@ -7847,7 +7845,7 @@ const thumbnail = `data:image/jpeg;base64,${thumbBuffer.toString("base64")}`;
 							externalAdReply: {
     title: namabot,
     body: descown,
-    thumbnail: thumbnail, // Ahora usa la imagen en base64
+    thumbnail: `data:image/jpeg;base64,${getRandomThumb3().toString("base64")}`, // Conversión directa
     mediaType: 1,
     renderLargerThumbnail: true,
     previewType: 0,
