@@ -7839,7 +7839,7 @@ if (isUserRegistered(m.sender)) {
             externalAdReply: {
                 title: namabot,
                 body: descown,
-                thumbnail: getRandomThumb3(),
+                url: 'https://i.ibb.co/LDBMFzgv/file.png',
                 mediaType: 1,
                 renderLargerThumbnail: true,
                 previewType: 0,
