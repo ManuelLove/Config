@@ -7831,7 +7831,7 @@ if (isUserRegistered(m.sender)) {
     fileLength: '100000000000000',
     pageCount: '999',
     image: {
-        url: 'https://i.postimg.cc/SN5kL0MD/shoNhe.jpg', // Imagen desde un enlace
+        url: 'https://www.dropbox.com/scl/fi/ml2fnvl245ntrcabztdvi/shoNhe.jpg?rlkey=6eo8f8wz298oodyspnmymm0ch&st=6kunx0if&dl=1', // Imagen desde un enlace
         gifPlayback: true
     },
     caption: `${shonhemenu}`, // Título del mensaje
@@ -7842,7 +7842,7 @@ if (isUserRegistered(m.sender)) {
         externalAdReply: {
             title: namabot,
             body: descown,
-            url: 'https://i.postimg.cc/SN5kL0MD/shoNhe.jpg', // Asegura que la imagen también se usa aquí si es necesario
+            url: 'https://www.dropbox.com/scl/fi/ml2fnvl245ntrcabztdvi/shoNhe.jpg?rlkey=6eo8f8wz298oodyspnmymm0ch&st=6kunx0if&dl=1', // Asegura que la imagen también se usa aquí si es necesario
             mediaType: 1,
             renderLargerThumbnail: true,
             previewType: 0,
