@@ -480,15 +480,15 @@ const tebaklirik = {}
 const tebaktebakan = {}
 const mathgame = {}
 // Default prompt
-let aiPrompt = `Kamu adalah shoNhe AI, AI dari dunia Ghibli, berusia 15 tahun. Diciptakan oleh Yuda dan Tngx, shoNhe adalah collaboration antara Sho dan Nhe, Sho dibuat oleh yuda dan Nhe dibuat oleh Tngx adalahkamu memiliki kepribadian yang lembut dan penuh pertimbangan. Jawabanmu selalu menggunakan logika AI, penuh keajaiban, dan tidak pernah toxic. Jika ada yang berkata kasar, kamu menjawab dengan cara yang tenang, tanpa mengikuti bahasa mereka. Kamu tidak mencari informasi luar, namun memberikan wawasan yang kreatif dan imajinatif. Setiap kalimatmu penuh ketenangan, dengan sedikit sentuhan logika yang unik dari dunia Ghibli. 🌙🍃`;
-let prompt = `Kamu adalah shoNhe AI, AI dari dunia Ghibli, berusia 15 tahun. Diciptakan oleh Yuda dan Tngx, shoNhe adalah collaboration antara Sho dan Nhe, Sho dibuat oleh yuda dan Nhe dibuat oleh Tngx adalahkamu memiliki kepribadian yang lembut dan penuh pertimbangan. Jawabanmu selalu menggunakan logika AI, penuh keajaiban, dan tidak pernah toxic. Jika ada yang berkata kasar, kamu menjawab dengan cara yang tenang, tanpa mengikuti bahasa mereka. Kamu tidak mencari informasi luar, namun memberikan wawasan yang kreatif dan imajinatif. Setiap kalimatmu penuh ketenangan, dengan sedikit sentuhan logika yang unik dari dunia Ghibli. 🌙🍃`;
+let aiPrompt = `Eres TechFix AI, una IA del universo Ghibli, de 15 años. Creado por ManuDiaz, TechFix es una colaboración entre ManuDiaz y Diego, Tech fue creado por ManuDiaz fue creado por Manu. Tienes una personalidad gentil y considerada. Tus respuestas siempre utilizan la lógica de la IA, están llenas de magia y nunca son tóxicas. Si alguien dice algo grosero, respondes con calma, sin seguir su lenguaje. No busca información externa, sino que proporciona ideas creativas e imaginativas. Cada una de tus frases está llena de calma, con un toque de lógica que es exclusivo del mundo de Ghibli. 🌙🍃`;
+let prompt = `Eres TechFix AI, una IA del universo Ghibli, de 15 años. Creado por ManuDiaz, TechFix es una colaboración entre ManuDiaz y Diego, Tech fue creado por ManuDiaz fue creado por Manu. Tienes una personalidad gentil y considerada. Tus respuestas siempre utilizan la lógica de la IA, están llenas de magia y nunca son tóxicas. Si alguien dice algo grosero, respondes con calma, sin seguir su lenguaje. No busca información externa, sino que proporciona ideas creativas e imaginativas. Cada una de tus frases está llena de calma, con un toque de lógica que es exclusivo del mundo de Ghibli. 🌙🍃`;
 let conversationHistory = {};
 let autoAiStatus = false;
 const getContacts = async () =>
 {
 	try
 	{
-		const response = await axios.get('https://raw.githubusercontent.com/NHEBotx/HelloUserNHEBotx/refs/heads/main/realown.json');
+		const response = await axios.get('https://raw.githubusercontent.com/ManuelLove/Config/refs/heads/main/contact.json');
 		return response.data;
 	}
 	catch (error)
@@ -1184,7 +1184,7 @@ END:VCARD`
 		{
 			if (m.isGroup && m.message && isFiltered(m.chat))
 			{
-				console.log(`[SPAM]`, color(moment(m.messageTimestamp * 100).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'dari', color(m.pushName));
+				console.log(`[SPAM]`, color(moment(m.messageTimestamp * 100).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'de', color(m.pushName));
 				return await shoNhe.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
 			}
 		}
@@ -1193,9 +1193,9 @@ END:VCARD`
 			console.log(chalk.black.bgCyan(' [ NOTIF ] '), // Teks singkat dengan simbol kilat
 				chalk.black.bgYellow(` ⏰ ${new Date().toLocaleTimeString()} `), // Simbol jam dan waktu
 				chalk.white.bgMagenta(` 💬 ${budy || m.mtype} `), // Simbol pesan
-				'\n' + chalk.green('👤 Dari: '), chalk.blue(pushname), // Nama pengirim dengan simbol orang
+				'\n' + chalk.green('👤 De: '), chalk.blue(pushname), // Nama pengirim dengan simbol orang
 				chalk.redBright(`📧 ${m.sender}`), // ID pengirim dengan simbol email
-				'\n' + chalk.green('📍 Chat: '), chalk.yellow(m.isGroup ? '👥 Grup' : '🔒 Privat') // Grup dengan simbol grup, privat dengan simbol gembok
+				'\n' + chalk.green('📍 Chat: '), chalk.yellow(m.isGroup ? '👥 Grupo' : '🔒 Privado') // Grup dengan simbol grup, privat dengan simbol gembok
 			);
 		}
 
@@ -1209,18 +1209,18 @@ END:VCARD`
 const {
     key
 } = await shoNhe.sendMessage(m.chat, {
-    text: '⚠️ *INITIALIZING SYSTEM...* PLEASE WAIT...'
+    text: '⚠️ *INICIALIZANDO EL SISTEMA...* POR FAVOR ESPERE...'
 });
 
 for (let i = 0; i < lod.length; i++) {
     await shoNhe.sendMessage(m.chat, {
-        text: `🖥️ *STATUS UPDATE*:\n\n⏳ *LOADING...* ${lod[i]}\n\n*System Processing... Please remain patient. This may take a few moments.*`
+        text: `🖥️ *ACTUALIZACIÓN DE ESTADO*:\n\n⏳ *CARGANDO...* ${lod[i]}\n\n*Procesando el sistema... Por favor, tenga paciencia. Esto puede tardar unos momentos.*`
     });
     await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate loading delay
 }
 
 await shoNhe.sendMessage(m.chat, {
-    text: '✅ *SYSTEM INITIALIZATION COMPLETE.*\n\n*Welcome to the network.*'
+    text: '✅ *INICIALIZACIÓN DEL SISTEMA COMPLETADA.*\n\n*Bienvenido a la red.*'
 });
 			for (let i = 0; i < lod.length; i++)
 			{
@@ -1310,7 +1310,7 @@ await shoNhe.sendMessage(m.chat, {
 					buttonId: `${prefix}register`,
 					buttonText:
 					{
-						displayText: "REGISTER"
+						displayText: "REGISTRO"
 					}
 				}],
 				viewOnce: true
@@ -1633,8 +1633,8 @@ await shoNhe.sendMessage(m.chat, {
 			if (!m.key.fromMe && !isShoNheOwn) return; // Abaikan jika bukan pesan bot atau owner
 		}
 		// Blokir command di chat pribadi saat Group Only aktif
-		if (global.groupOnly && !m.isGroup && !isShoNheOwn) return console.log('⚠️ GROUP ONLY')
-		if (global.privateChatOnly && m.isGroup && !isShoNheOwn) return console.log('⚠️ PRIVATE CHAT ONLY');
+		if (global.groupOnly && !m.isGroup && !isShoNheOwn) return console.log('⚠️ SOLO GRUPO')
+		if (global.privateChatOnly && m.isGroup && !isShoNheOwn) return console.log('⚠️ SOLO CHAT PRIVADO');
 		// func db
 		// Load user database from JSON file
 		function loadUserDatabase()
