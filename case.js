@@ -7827,43 +7827,28 @@ if (isUserRegistered(m.sender)) {
 console.log('Ruta de getRandomThumb2:', getRandomThumb2());
 console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 					let buttonMessage = {
-						document: global.forpdf,
-						fileName: waktuucapan,
-						mimetype: 'application/pdf',
-						fileLength: '100000000000000',
-						pageCount: '999',
-						image: {
-            url: getRandomThumb2(), // Pastikan file ini tersedia
-							gifPlayback: true
-						},
-						caption: `${shonhemenu}`, // Teks menu
-						contextInfo:
-						{
-							mentionedJid: [m.sender],
-							forwardingScore: 999,
-							isForwarded: true,
-							const getRandomThumb3 = () => {
-    return Buffer.from("ejemplo_de_datos", "utf-8"); // Simula un buffer válido
-};
-
-// Ahora puedes llamarla sin error
-const thumbBuffer = getRandomThumb3();
-
-// Verifica si es un Buffer válido antes de convertirlo
-const thumbnail = (thumbBuffer && Buffer.isBuffer(thumbBuffer))
-    ? `data:image/jpeg;base64,${thumbBuffer.toString("base64")}`
-    : "https://via.placeholder.com/300"; // Usa una imagen predeterminada si falla
-
-externalAdReply: {
-    title: namabot,
-    body: descown,
-    thumbnail: thumbnail, // Usa la variable validada
-    mediaType: 1,
-    renderLargerThumbnail: true,
-    previewType: 0,
-    mediaUrl: gh,
-    sourceUrl: gh,
-}
+    document: global.forpdf,
+    fileName: waktuucapan,
+    mimetype: 'application/pdf',
+    fileLength: '100000000000000',
+    pageCount: '999',
+    caption: `${shonhemenu}`, // Título del mensaje
+    contextInfo:
+    {
+        mentionedJid: [sender],
+        forwardingScore: 999,
+        isForwarded: true,
+        externalAdReply:
+        {
+            title: namabot,
+            body: descown,
+            url: 'https://i.ibb.co/pBHG8DmN/file.jpg',
+            mediaType: 1,
+            renderLargerThumbnail: true,
+            previewType: 0,
+            mediaUrl: gh,
+            sourceUrl: gh,
+        }
 						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
 						buttons: buttons,
