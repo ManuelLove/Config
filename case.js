@@ -7823,12 +7823,12 @@ if (isUserRegistered(m.sender)) {
   }
 					    let buttonMessage = {
     document: global.forpdf,
-        fileName: waktuucapan,
-        mimetype: 'application/pdf',
-        fileLength: '100000000000000',
-        pageCount: '999',
-        image: {
-            url: i.ibb.co/LDBMFzgv/file.png, // Pastikan file ini tersedia
+    fileName: waktuucapan,
+    mimetype: 'application/pdf',
+    fileLength: '100000000000000',
+    pageCount: '999',
+    image: {
+        url: 'https://i.ibb.co/LDBMFzgv/file.png', // Pastikan file ini tersedia
             gifPlayback: true
         },
         caption: `${shonhemenu}`, // Teks menu
