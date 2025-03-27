@@ -7833,7 +7833,7 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 						fileLength: '100000000000000',
 						pageCount: '999',
 						image: {
-            url: getRandomThumb2(), // Pastikan file ini tersedia
+            url: 'https://i.ibb.co/pBHG8DmN/file.jpg', // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
@@ -7846,7 +7846,8 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 							{
 								title: namabot,
 								body: descown,
-								thumbnailurl: 'https://i.ibb.co/pBHG8DmN/file.jpg', 
+								thumbnail: {
+            url: 'https://i.ibb.co/pBHG8DmN/file.jpg',
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
