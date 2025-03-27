@@ -7931,7 +7931,6 @@ const flowActions = [
 								}
 							]
 						}`
-        viewOnce: true
     },
 ];
 					// Tambahkan flowActions ke buttonMessage
