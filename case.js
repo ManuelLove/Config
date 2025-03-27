@@ -7849,7 +7849,7 @@ if (isUserRegistered(m.sender)) {
 								renderLargerThumbnail: true,
 								previewType: 0,
 								mediaUrl: gh,
-								sourceUrl: gh,
+								sourceUrl: gh
 							}
 						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
