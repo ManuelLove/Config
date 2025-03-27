@@ -7635,7 +7635,7 @@ break;
 			case 'shonheum':
 			case 'menu':
 			{
-				/*updatePopularCommand(command);*/
+				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				await emote(randomEmoji);
 				// Ambil database limit dari `cekfire`
