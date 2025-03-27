@@ -7860,7 +7860,7 @@ const flowActions = [
         buttonText: { displayText: 'This Button List' },
         type: 4,
         nativeFlowInfo: {
-"name": "single_select",
+ 						"name": "single_select",
 						"buttonParamsJson": `{
 							"title": "Click Here ⎙",
 							"sections": [
@@ -7931,7 +7931,25 @@ const flowActions = [
 								}
 							]
 						}`
-    },
+					}];
+					let caption = `*${title}*\n\n`;
+					caption += `*🎶 Jenis*: Play\n`;
+					caption += `*📌 ID*: ${videoId}\n`;
+					caption += `*⏱️ Durasi*: ${duration}\n`;
+					caption += `*🕒 Diunggah*: ${ago}\n`;
+					caption += `*🔗 Link*: ${url}\n\n`;
+					caption += `_*Pilih jenis download yang kamu butuhin... pilih yang paling pas buat kamu ya!*_`;
+					await sendButtonImage(m.chat, '', caption,
+					{
+						url: image
+					}, button, m)
+				}
+				catch (error)
+				{
+					console.log(error);
+				}
+			}
+			db.data.users[m.sender].limit -= 1;
 					// Tambahkan flowActions ke buttonMessage
 					buttonMessage.buttons.push(...flowActions);
 					// Kirim pesan
