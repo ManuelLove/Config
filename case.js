@@ -7833,7 +7833,7 @@ if (isUserRegistered(m.sender)) {
 						pageCount: '999',
 						image:
 						{
-							imageBuffer: getRandomThumb2(), // Pastikan file ini tersedia
+							image: getRandomThumb2(), // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
