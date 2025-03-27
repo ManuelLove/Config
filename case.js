@@ -11088,7 +11088,7 @@ ${formattedCommandList}
 										"jpegThumbnail": fs.readFileSync("./urpdf2.jpg"), //Format gambar harus 300x300 (jika beda tidak akan keluar
 										"fileLength": 120000,
 										"mediaKey": "SkHeALp42Ch7DGb6nuV6p7hxL+V9yjh9s9t3Ox8a72o=",
-										"fileName": `© ShoNhe Botz`,
+										"fileName": `© TechFix Botz`,
 										"directPath": "/v/t62.7119-24/30129597_829817659174206_6300413901737393729_n.enc?ccb=11-4&oh=01_Q5AaIA5MAdyMQOjp8l42SnRy_8qjz9O8JH8vgPee1nIdko51&oe=66595EB9&_nc_sid=5e03e0",
 										"contactVcard": true,
 										"mediaKeyTimestamp": "1658703206"
@@ -11118,7 +11118,7 @@ ${formattedCommandList}
 									mentionedJid: [m.sender],
 									forwardedNewsletterMessageInfo:
 									{
-										newsletterName: `© ShoNhe Botz`,
+										newsletterName: `© TechFix Botz`,
 										newsletterJid: idsaluran
 									},
 									externalAdReply:
@@ -17018,7 +17018,7 @@ break
 								externalAdReply:
 								{
 									title: 'Anichin Search',
-									body: 'Powered by ShoNhe Botz',
+									body: 'Powered by TechFix Botz',
 									thumbnail: await getBuffer(result.data[0].image),
 									sourceUrl: result.data[0].link
 								}
@@ -20222,15 +20222,15 @@ break;
 				if (!isBotAdmins) return shoNherly(mess.abots);
 				if (args[0] === 'close')
 				{
-					await shoNhe.groupSettingUpdate(m.chat, 'announcement').then(() => shoNherly('✅ Grup berhasil ditutup, hanya admin yang bisa mengirim pesan sekarang! 🔒')).catch((err) => shoNherly(`⚠️ Gagal menutup grup: ${err}`));
+					await shoNhe.groupSettingUpdate(m.chat, 'announcement').then(() => shoNherly('✅ El grupo se cerró con éxito, ¡ahora solo los administradores pueden enviar mensajes! 🔒')).catch((err) => shoNherly(`⚠️ No se pudo cerrar el grupo: ${err}`));
 				}
 				else if (args[0] === 'open')
 				{
-					await shoNhe.groupSettingUpdate(m.chat, 'not_announcement').then(() => shoNherly('✅ Grup berhasil dibuka, semua anggota bisa mengirim pesan sekarang! 🔓')).catch((err) => shoNherly(`⚠️ Gagal membuka grup: ${err}`));
+					await shoNhe.groupSettingUpdate(m.chat, 'not_announcement').then(() => shoNherly('✅ ¡El grupo se abrió correctamente, todos los miembros pueden enviar mensajes ahora! 🔓')).catch((err) => shoNherly(`⚠️ No se pudo abrir el grupo: ${err}`));
 				}
 				else
 				{
-					botsett = `⚙️ SETTINGS YOUR GROUP`
+					botsett = `⚙️ CONFIGURACIÓN DE SU GRUPO`
 					let msg = generateWAMessageFromContent(m.chat,
 					{
 						viewOnceMessage:
@@ -20264,7 +20264,7 @@ break;
 											"jpegThumbnail": fs.readFileSync("./ShoNheMedia/image/owner.jpg"), //Format gambar harus 300x300 (jika beda tidak akan keluar
 											"fileLength": 120000,
 											"mediaKey": "SkHeALp42Ch7DGb6nuV6p7hxL+V9yjh9s9t3Ox8a72o=",
-											"fileName": `GROUP SETTINGS`,
+											"fileName": `AJUSTES DE GRUPO`,
 											"directPath": "/v/t62.7119-24/30129597_829817659174206_6300413901737393729_n.enc?ccb=11-4&oh=01_Q5AaIA5MAdyMQOjp8l42SnRy_8qjz9O8JH8vgPee1nIdko51&oe=66595EB9&_nc_sid=5e03e0",
 											"contactVcard": true,
 											"mediaKeyTimestamp": "1658703206"
@@ -20276,77 +20276,77 @@ break;
 										{
 											"name": "single_select",
 											"buttonParamsJson": `{
-												"title": "Group Settings",
+												"title": "Configuración de grupo",
 												"sections": [{
-													"title": "Select Settimgs",
+													"title": "Seleccione Configuración",
 													"rows": [{
-														"title": "⭐OPEN GROUP",
-														"description": "Bot akan membuka grup",
+														"title": "⭐GRUPO ABIERTO",
+														"description": "El bot abrirá el grupo",
 														"id": "${prefix}grup open"
 													},
 													{
-														"title": "🌕 CLOSE GROUP",
-														"description": "Bot akan menutup grup",
+														"title": "🌕 GRUPO CERRADO",
+														"description": "El bot cerrará el grupo",
 														"id": "${prefix}grup close"
 													},
 													{
-														"title": "⚡ WELCOME ON",
-														"description": "Bot akan bot akan mengirim pesan welcome grup",
+														"title": "⚡ BIENVENIDO ON",
+														"description": "El bot enviará un mensaje de bienvenida al grupo",
 														"id": "${prefix}welkom on"
 													},
 													{
-														"title": "🍄 WELCOME OFF",
-														"description": "Bot akan mematikan welcome grup",
+														"title": "🍄 BIENVENIDO OFF",
+														"description": "El bot desactivarán la bienvenida grupo",
 														"id": "${prefix}welkom off"
 													},
 													{
-														"title": "⚓ GROUP-EVENT ON",
-														"description": "Bot akan memberi pesan ketika mengganti sesuatu",
+														"title": "⚓ EVENTO DE GRUPO ON",
+														"description": "El bot dará un mensaje al cambiar algo",
 														"id": "${prefix}groupevent on"
 													},
 													{
-														"title": "🪨 GROUP-EVENT OFF",
-														"description": "Bot akan mematikan groupevent",
+														"title": "🪨 EVENTO DE GRUPO OFF",
+														"description": "El bot matará el evento grupal",
 														"id": "${prefix}groupevent off"
 													},
 													{
-														"title": "🛸 ADMIN-EVENT ON",
-														"description": "Bot akan menyalakan adminevent grup",
+														"title": "🛸 EVENTO ADMIN ON",
+														"description": "El bot activará el evento de administración del grupo",
 														"id": "${prefix}adminevent on"
 													},
 													{
-														"title": "📝 ADMIN-EVENT OFF",
-														"description": "Bot akan mematikan adminvent",
+														"title": "📝 EVENTO ADMIN OFF",
+														"description": "El bot matará a admin evento",
 														"id": "${prefix}adminevent off"
 													},
 													{
 														"title": "🤖 ANTI SPAM ON",
-														"description": "Bot akan menyalakan antispam grup",
+														"description": "El bot activará el antispam del grupo",
 														"id": "${prefix}antispam true"
 													},
 													{
 														"title": "🔧 ANTI SPAM OFF",
-														"description": "Bot akan mematikan antispam",
+														"description": "El bot desactivará el antispam",
 														"id": "${prefix}antispam false"
 													},
 													{
 														"title": "🔥 ANTILINK ON",
-														"description": "Bot akan menyalakan antilink",
+														"description": "El bot activará el antienlace,
 														"id": "${prefix}antilink true"
 													},
 													{
 														"title": "💣 ANTILINK OFF",
-														"description": "Bot akan mematikan antilink",
+														"description": "El bot desactivará el antienlaces",
 														"id": "${prefix}antilink false"
 													},
 													{
 														"title": "🪡 ANTILINKGC ON",
-														"description": "Bot akan menyalakan antilink grup",
+														"description": "El bot activará los antienlaces grupales",
 														"id": "${prefix}antilinkgc true"
 													},
 													{
 														"title": "📛 ANTILINKGC OFF",
-														"description": "Bot akan mematikan antilink group",
+														"description": "El bot desactivará los grupos antivínculos",
 														"id": "${prefix}antilinkgc false"
 													}]
 												}]
@@ -20360,7 +20360,7 @@ break;
 										mentionedJid: [m.sender],
 										forwardedNewsletterMessageInfo:
 										{
-											newsletterName: `© ShoNhe Botz`,
+											newsletterName: `© TechFix Botz`,
 											newsletterJid: idsaluran
 										},
 										externalAdReply:
@@ -22405,7 +22405,7 @@ break;
            }
 			}
 			break
-			case 'sewa': {
+			case 'alquilar': {
 			if (!isRegistered(m))
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
@@ -22413,58 +22413,69 @@ break;
 				updatePopularCommand(command);
 			const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 const seww =
-`┌◇🔒 *SEWA BOT WHATSAPP* 🔒◇┐
+`┌◇🔒 *ALQUILAR BOT PARA WHATSAPPP* 🔒◇┐
 
-⚙️ *Kenapa shoNhe Botz Harus Disewa?*:
-   💻 Kecerdasan buatan tak terdeteksi
-   🔐 Data Anda aman dengan enkripsi tingkat lanjut
-   ⚡ Respon cepat dan otomatis untuk berbagai kebutuhan
-   🛠️ Fitur kustomisasi yang dapat disesuaikan untuk setiap pengguna
+⚙️ *¿Por qué deberías alquilar TechFix Bot?*:
+💻 Inteligencia artificial indetectable
+🔐 Tus datos están seguros con cifrado de alto nivel
+⚡ Respuesta rápida y automatizada para diversas necesidades
+🛠️ Funciones personalizables adaptadas a cada usuario
 
-💼 *Paket Sewa yang Tersedia*:
+💼 *Planes de Alquiler Disponibles*:
 
-📌  *3 Hari*  = Rp 2.000  
-   » Akses penuh selama 72 jam untuk mencoba semua fitur.
+📌 *3 Días* = P$ 2.000
+» Acceso completo por 72 horas para probar todas las funciones.
 
-📌  *1 Minggu*  = Rp 5.000  
-   » Cocok untuk acara atau eksperimen singkat.
+📌 *1 Semana* = P$ 5.000
+» Ideal para eventos o pruebas temporales.
 
-📌  *2 Minggu*  = Rp 10.000  
-   » Ideal untuk operasi jangka menengah, event panjang, atau bisnis sementara.
+📌 *2 Semanas* = P$ 10.000
+» Perfecto para operaciones de mediano plazo, eventos largos o negocios temporales.
 
-📌  *1 Bulan*  = Rp 25.000  
-   » Paket optimal untuk kebutuhan grup dan bisnis jangka panjang dengan fitur lanjutan.
+📌 *1 Mes* = P$ 25.000
+» Plan óptimo para grupos y negocios a largo plazo con funciones avanzadas.
 
-🌐 *Fitur Langka Lebih dari 500+ perintah* :
-   - 🔍 *Auto-Responder 24/7* - Sistem respons otomatis yang terus aktif.
-   - 💽 *Media Downloader* - Unduh media secara langsung dari platform apapun.
-   - 🔄 *Statistik Grup* - Analisis mendalam tentang aktivitas grup.
-   - 🎮 *Game Hack & Trivia* - Permainan seru dan interaktif dalam grup.
-   - 🔊 *Audio Converter & Tools* - Ubah audio dan akses alat bantu tambahan.
-   - 🤖 *AI Assist* - Bot yang terus belajar dari setiap interaksi.
+🌐 *Más de 500+ funciones exclusivas*:
 
-⚠️ *Instruksi Keamanan*:
-   Untuk menjaga kerahasiaan, hubungi Owner hanya melalui saluran yang ditentukan. Penyewaan dilakukan secara rahasia dan aman.
+🔍 *Auto-Responder 24/7* - Sistema de respuesta automática siempre activo.
 
-📞 *Kontak Owner*:
-   - WhatsApp: wa.me/6288989971490
-   - Email: tngxpoolunik@gmail.com
-   - Instagram: www.instagram.com/tngxaja
+💽 *Descargador de Medios* - Descarga contenido directamente desde cualquier plataforma.
+
+🔄 *Estadísticas de Grupo* - Análisis detallado de la actividad grupal.
+
+🎮 *Juegos, Hacks y Trivia* - Juegos interactivos y divertidos dentro del grupo.
+
+🔊 *Conversor y Herramientas de Audio* - Modifica audios y accede a herramientas adicionales.
+
+🤖 *Asistente de IA* - Un bot que aprende con cada interacción.
+
+
+⚠️ *Instrucciones de Seguridad*:
+Para garantizar la privacidad, contacta al propietario solo a través de los canales oficiales. El alquiler se gestiona de manera confidencial y segura.
+
+📞 *Contacto del Propietario*:
+
+   - WhatsApp: wa.me/573012686632
+
+   - Email: manuellove133@gmail.com
+
+   - Instagram: www.instagram.com/
+
 
 └───◇🔒━━━━━━🔒◇───┘
 
-⚡ *shoNhe - Di Balik Bayangan, Kami Bergerak* ⚡`
+⚡ TechFix - En las Sombras, Nos Movemos ⚡`
 shoNhe.sendMessage(m.chat,
 				{
 					image: getRandomThumb3(),
 					caption: seww,
-					footer: "SEWA BOT🔥",
+					footer: "ALQUILAR BOTS🔥",
 					buttons: [
 					{
 						buttonId: `${prefix}payment`,
 						buttonText:
 						{
-							displayText: "PAYMENT 💶"
+							displayText: "PAGOS 💶"
 						}
 					},
 					{
@@ -22808,7 +22819,7 @@ shoNhe.sendMessage(m.chat,
 									mentionedJid: [m.sender],
 									forwardedNewsletterMessageInfo:
 									{
-										newsletterName: `© shoNhe Botz`,
+										newsletterName: `© TechFix Botz`,
 										newsletterJid: idsaluran
 									},
 									externalAdReply:
