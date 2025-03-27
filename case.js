@@ -7932,7 +7932,6 @@ const flowActions = [
 							]
 						}`
     },
-;
 					// Tambahkan flowActions ke buttonMessage
 					buttonMessage.buttons.push(...flowActions);
 					// Kirim pesan
