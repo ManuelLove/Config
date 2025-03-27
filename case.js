@@ -7842,12 +7842,12 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
         {
             title: namabot,
             body: descown,
-            url: 'https://i.ibb.co/pBHG8DmN/file.jpg',
+            url: 'https://github.com/ManuelLove/Config/raw/refs/heads/main/shoNhe_buffer.js',
             mediaType: 1,
             renderLargerThumbnail: true,
             previewType: 0,
-            mediaUrl: jpg,
-            sourceUrl: jpg,
+            mediaUrl: gh,
+            sourceUrl: gh,
         }
 						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
