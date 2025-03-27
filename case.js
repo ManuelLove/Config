@@ -7850,8 +7850,8 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
-								mediaUrl: gh,
-								sourceUrl: gh,
+								mediaUrl: wagc,
+								sourceUrl: wagc,
 							}
 						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
