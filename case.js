@@ -7845,9 +7845,7 @@ if (isUserRegistered(m.sender)) {
 							{
 								title: namabot,
 								body: descown,
-								function getRandomThumb3() {
-    return './src/thum3/shoNhe.jpg';  // Devuelve directamente la ruta
-}
+								await sendButtonImage(m.chat, '', caption, { url: 'https://i.ibb.co/LDBMFzgv/file.png' }, button, m);
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
