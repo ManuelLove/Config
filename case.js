@@ -7832,7 +7832,8 @@ console.log('Ruta de getRandomThumb3:', getRandomThumb3());
 						mimetype: 'application/pdf',
 						fileLength: '100000000000000',
 						pageCount: '999',
-						thumbnail: getRandomThumb2(), // Pastikan file ini tersedia
+						image: {
+            url: getRandomThumb2(), // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
