@@ -7782,7 +7782,7 @@ ${crown}`;
 				{
 					
 // Fungsi untuk mengecek status registrasi pengguna
-function isUserRegistered(m.sender) {
+function isUserRegistered(sender) {
     const db = loadUserFire(); // Fungsi untuk memuat database
     return db[m.sender] && db[m.sender].register;
 }
