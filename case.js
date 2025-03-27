@@ -1285,19 +1285,17 @@ await shoNhe.sendMessage(m.chat, {
 			return thumbList3.map(thumb => `Nama: ${thumb.name}`).join('\n');
 		};
 		// **Fungsi: Mengambil thumbnail secara acak**
-		const getRandomThumb3 = () =>
-		{
-			const thumbList3 = readThumbList3();
-			if (thumbList3.length === 0)
-			{
-				// Jika folder kosong, gunakan default thumbnail
-				console.log('Tidak ada thumbnail, menggunakan default');
-				return fs.readFileSync(defaultThumbnailPath3);
-			}
-			const randomFile3 = thumbList3[Math.floor(Math.random() * thumbList3.length)];
-			console.log(`Memilih thumbnail acak: ${randomFile3.name}`);
-			return fs.readFileSync(randomFile3.path); // Return Buffer thumbnail
-		};
+const getRandomThumb3 = () => {
+  const thumbList3 = readThumbList3();
+  if (thumbList3.length === 0) {
+    // Jika folder kosong, gunakan default thumbnail
+    console.log('Tidak ada thumbnail, menggunakan default');
+    return fs.readFileSync(defaultThumbnailPath3);
+  }
+  const randomFile3 = thumbList3[Math.floor(Math.random() * thumbList3.length)];
+  console.log(`Memilih thumbnail acak: ${randomFile3.name}`);
+  return fs.readFileSync(randomFile3.path); // Return Buffer thumbnail
+};
 		async function sendRegister(shoNhe, m, prefix, namabot)
 		{
 			await shoNhe.sendMessage(m.chat,
@@ -2062,17 +2060,15 @@ Keep your skills sharp and never stop evolving."
 			return thumbList2.map(thumb => `Nama: ${thumb.name}`).join('\n');
 		};
 		// **Fungsi: Mengambil thumbnail secara acak**
-		const getRandomThumb2 = () =>
-		{
-			const thumbList2 = readThumbList2();
-			if (thumbList2.length === 0)
-			{
-				// Jika folder kosong, gunakan default thumbnail
-				return fs.readFileSync(defaultThumbnailPath2);
-			}
-			const randomFile2 = thumbList2[Math.floor(Math.random() * thumbList2.length)];
-			return fs.readFileSync(randomFile2.path); // Return Buffer thumbnail
-		};
+		const getRandomThumb2 = () => {
+  const thumbList2 = readThumbList2();
+  if (thumbList2.length === 0) {
+    // Jika folder kosong, gunakan default thumbnail
+    return fs.readFileSync(defaultThumbnailPath2);
+  }
+  const randomFile2 = thumbList2[Math.floor(Math.random() * thumbList2.length)];
+  return fs.readFileSync(randomFile2.path); // Return Buffer thumbnail
+};
 		//===================[ FUNCTION REPLY ]=====================\\
 		const aifake = {
 			key:
@@ -7825,32 +7821,33 @@ if (isUserRegistered(m.sender)) {
     ];
   }
 					let buttonMessage = {
-    document: global.forpdf,
-        fileName: waktuucapan,
-        mimetype: 'application/pdf',
-        fileLength: '100000000000000',
-        pageCount: '999',
-        image: {
+						document: global.forpdf,
+						fileName: waktuucapan,
+						mimetype: 'application/pdf',
+						fileLength: '100000000000000',
+						pageCount: '999',
+						image: {
             url: getRandomThumb2(), // Pastikan file ini tersedia
-            gifPlayback: true
-        },
-        caption: `${shonhemenu}`, // Teks menu
-        contextInfo: {
-        mentionedJid: [m.sender],
-            forwardingScore: 999,
-            isForwarded: true,
-            externalAdReply: {
-                title: namabot,
-                body: descown,
-                thumbnailurl: 'https://i.ibb.co/pBHG8DmN/file.jpg',
-                mediaType: 1,
-                renderLargerThumbnail: true,
-                previewType: 0,
-             
-                mediaUrl: gh,
-                sourceUrl: gh
-            }
-        },
+							gifPlayback: true
+						},
+						caption: `${shonhemenu}`, // Teks menu
+						contextInfo:
+						{
+							mentionedJid: [sender],
+							forwardingScore: 999,
+							isForwarded: true,
+							externalAdReply:
+							{
+								title: namabot,
+								body: descown,
+								thumbnail: getRandomThumb3(),
+								mediaType: 1,
+								renderLargerThumbnail: true,
+								previewType: 0,
+								mediaUrl: gh,
+								sourceUrl: gh,
+							}
+						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
 						buttons: buttons,
 						viewOnce: true,
