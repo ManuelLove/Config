@@ -7759,7 +7759,7 @@ ${formattedCommandList}
 │ ᴜᴘᴛɪᴍᴇ: ${runtime(os.uptime())}
 
 ${crown}`;
-				/*const lod = ["█▒▒▒▒▒▒▒▒▒▒▒ 10%", "████▒▒▒▒▒▒▒▒ 30%", "███████▒▒▒▒▒ 50%", "██████████▒▒ 80%", "████████████ 100%", `> *${c}MENAMPILKAN SIMPLE MENU${c}*`];
+				const lod = ["█▒▒▒▒▒▒▒▒▒▒▒ 10%", "████▒▒▒▒▒▒▒▒ 30%", "███████▒▒▒▒▒ 50%", "██████████▒▒ 80%", "████████████ 100%", `> *${c}MENAMPILKAN SIMPLE MENU${c}*`];
 				// Kirim pesan awal dan simpan key untuk diedit
 				const
 				{
@@ -7777,7 +7777,7 @@ ${crown}`;
 						text: lod[i],
 						edit: key
 					});
-				}*/					
+				}					
 // Fungsi untuk mengecek status registrasi pengguna
 function isUserRegistered(sender) {
     const db = loadUserFire(); // Fungsi untuk memuat database
