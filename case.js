@@ -7848,9 +7848,8 @@ if (isUserRegistered(m.sender)) {
             previewType: 0,
             mediaUrl: gh,
             sourceUrl: gh,
-        }
-    }
-};
+							}
+						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
 						buttons: buttons,
 						viewOnce: true,
