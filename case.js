@@ -7845,7 +7845,7 @@ if (isUserRegistered(m.sender)) {
 							{
 								title: namabot,
 								body: descown,
-								thumbnail: getRandomThumb2(),
+								url: 'https://i.ibb.co/pBHG8DmN/file.jpg',
 								mediaType: 1,
 								renderLargerThumbnail: true,
 								previewType: 0,
@@ -7853,7 +7853,7 @@ if (isUserRegistered(m.sender)) {
 								sourceUrl: gh,
 							}
 						},
-						footer: isUserRegistered(m.sender) ? "© ShoNhe - Botz" : "ShoNhe - Bot Detecz",
+						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
 						buttons: buttons,
 						viewOnce: true,
 						headerType: 4
