@@ -7831,13 +7831,13 @@ if (isUserRegistered(m.sender)) {
 						fileLength: '100000000000000',
 						pageCount: '999',
 						image: {
-            url: 'https://i.ibb.co/pBHG8DmN/file.jpg', // Pastikan file ini tersedia
+            url: getRandomThumb2(), // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
 						contextInfo:
 						{
-							mentionedJid: [sender],
+							mentionedJid: [m.sender],
 							forwardingScore: 999,
 							isForwarded: true,
 							externalAdReply:
