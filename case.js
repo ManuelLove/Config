@@ -7525,31 +7525,31 @@ break;
 				if (!isGroup) return shoNherly(mess.groups); // Cek apakah perintah dijalankan di grup
 				if (isAfkOn) return; // Cek apakah pengguna sudah dalam mode AFK
 				// Tentukan alasan AFK
-				let reason = text ? text : 'Lagi BAB bjir';
+				let reason = text ? text : 'Otra vez defecando';
 				// Tambahkan pengguna ke daftar AFK
 				addAfkUser(m.sender, Date.now(), reason, afk);
 				// Kirim pesan konfirmasi dengan mention
-				shoNhe.sendTextWithMentions(m.chat, `🌙 *AFK MODE AKTIF!* 🌙  
+				shoNhe.sendTextWithMentions(m.chat, `🌙 *¡MODO AFK ACTIVADO!* 🌙  
 
-👤 *Pengguna*: @${m.sender.split('@')[0]}  
-💬 *Status*: Saat ini sedang *AFK*!  
+👤 *Usuario*: @${m.sender.split('@')[0]}  
+💬 *Estado*: ¡Actualmente *AFK*!  
 
-📌 *Alasan*:  
-- ${reason || 'Tidak dijelaskan, mungkin rahasia besar.'}  
+📌 *Razón*:  
+- ${reason || 'No explicado, probablemente alto secreto.'}  
 
-⏳ *Durasi AFK*:  
-- Sistem mendeteksi bahwa pengguna telah meninggalkan tugas.  
+⏳ *Duración AFK*:  
+- El sistema detecta que el usuario ha abandonado la tarea.  
 
-🔒 *Catatan Sistem*:  
-- "Gausah balik bang, awokwok. Tapi kalau serius, jangan lama-lama ya!"  
+🔒 *Nota del sistema*:  
+- "No vuelvas, hermano. Pero si hablas en serio, ¡no tardes mucho!"  
 
-🔍 *PENGAWASAN*:  
-- Sistem mencatat semua aktivitas terkait pengguna ini.  
-- Hindari gangguan lebih lanjut sampai status AFK berakhir.  
+🔍 *SUPERVISIÓN*:  
+- El sistema registra todas las actividades relacionadas con este usuario.  
+- Evite más interrupciones hasta que finalice el estado AFK.  
 
-📡 *INFO*:  
-- Status ini akan diperbarui jika pengguna kembali aktif.  
-- Pastikan untuk melanjutkan tugas atau berinteraksi setelah kembali.`, fvideo);
+📡 *INFORMACIÓN*:  
+- Este estado se actualizará si el usuario vuelve a estar activo.  
+- Asegúrate de continuar la tarea o interactuar después de regresar.`, fvideo);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -7588,7 +7588,7 @@ break;
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Logika fitur jika sudah terdaftar
-				reply('🎉 Selamat! Anda bisa menggunakan fitur ini.');
+				reply('🎉 ¡Felicidades! Puede utilizar esta función.');
 				}
 			break
 			
@@ -7709,8 +7709,8 @@ ${formattedCommandList}
 │  ⟿ TikTok: ${ttk}
 │  ⟿ YouTube: ${ytbb}
 │  ⟿ Instagram: ${itg}
-│  ⟿ Github NHEBotx:"\nhttps://github.com/NHEBotx
-│  ⟿ Github Sychyy:\nhttps://github.com/sychyy
+│  ⟿ Github :"\nhttps://
+│  ⟿ Github :\nhttps://
 │  
 └────────────────────────┘
 
@@ -7759,7 +7759,7 @@ ${formattedCommandList}
 │ ᴜᴘᴛɪᴍᴇ: ${runtime(os.uptime())}
 
 ${crown}`;
-				/*const lod = ["█▒▒▒▒▒▒▒▒▒▒▒ 10%", "████▒▒▒▒▒▒▒▒ 30%", "███████▒▒▒▒▒ 50%", "██████████▒▒ 80%", "████████████ 100%", `> *${c}MENAMPILKAN SIMPLE MENU${c}*`];
+				const lod = ["█▒▒▒▒▒▒▒▒▒▒▒ 10%", "████▒▒▒▒▒▒▒▒ 30%", "███████▒▒▒▒▒ 50%", "██████████▒▒ 80%", "████████████ 100%", `> *${c}MOSTRAR MENÚ SIMPLE${c}*`];
 				// Kirim pesan awal dan simpan key untuk diedit
 				const
 				{
@@ -7777,7 +7777,7 @@ ${crown}`;
 						text: lod[i],
 						edit: key
 					});
-				}*/
+				}
 				if (typemenu === 's1')
 				{
 					
@@ -7825,29 +7825,31 @@ if (isUserRegistered(m.sender)) {
     ];
   }
 					let buttonMessage = {
-    document: global.forpdf,
-    fileName: waktuucapan,
-    mimetype: 'application/pdf',
-    fileLength: '100000000000000',
-    pageCount: '999',
-    image: {
-        url: 'https://www.dropbox.com/scl/fi/ml2fnvl245ntrcabztdvi/shoNhe.jpg?rlkey=6eo8f8wz298oodyspnmymm0ch&st=6kunx0if&dl=1', // Imagen desde un enlace
-        gifPlayback: true
-    },
-    caption: `${shonhemenu}`, // Título del mensaje
-    contextInfo: {
-        mentionedJid: [sender],
-        forwardingScore: 999,
-        isForwarded: true,
-        externalAdReply: {
-            title: namabot,
-            body: descown,
-            url: 'https://www.dropbox.com/scl/fi/ml2fnvl245ntrcabztdvi/shoNhe.jpg?rlkey=6eo8f8wz298oodyspnmymm0ch&st=6kunx0if&dl=1', // Asegura que la imagen también se usa aquí si es necesario
-            mediaType: 1,
-            renderLargerThumbnail: true,
-            previewType: 0,
-            mediaUrl: gh,
-            sourceUrl: gh,
+						document: global.forpdf,
+						fileName: waktuucapan,
+						mimetype: 'application/pdf',
+						fileLength: '100000000000000',
+						pageCount: '999',
+						image: {
+            url: getRandomThumb2(), // Pastikan file ini tersedia
+							gifPlayback: true
+						},
+						caption: `${shonhemenu}`, // Teks menu
+						contextInfo:
+						{
+							mentionedJid: [sender],
+							forwardingScore: 999,
+							isForwarded: true,
+							externalAdReply:
+							{
+								title: namabot,
+								body: descown,
+								thumbnail: fs.readFileSync('./src/thum3/shoNhe.jpg'),
+								mediaType: 1,
+								renderLargerThumbnail: true,
+								previewType: 0,
+								mediaUrl: gh,
+								sourceUrl: gh,
 							}
 						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
