@@ -7842,7 +7842,7 @@ if (isUserRegistered(m.sender)) {
             externalAdReply: {
                 title: namabot,
                 body: descown,
-                thumbnail: getRandomThumb3(),
+                thumbnailurl: 'https://i.ibb.co/pBHG8DmN/file.jpg',
                 mediaType: 1,
                 renderLargerThumbnail: true,
                 previewType: 0,
