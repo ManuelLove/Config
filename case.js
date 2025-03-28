@@ -26390,45 +26390,28 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				if (!text) return shoNherly(`Example: ${prefix + command} https://open.spotify.com/track/0JiVRyTJcJnmlwCZ854K4p`);
 				if (!isUrl(args[0]) || !args[0].includes('open.spotify.com/track')) return shoNherly('Url Invalid!');
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					// Fetching data from the API
-					let res = await fetch(`https://api.siputzx.my.id/api/d/spotify?url=${text}`);
-					let json = await res.json();
-					if (!json.status) return shoNherly('Error: Unable to fetch data from the API.');
-					let { title, artis, image, download } = json.data;
-					// Sending audio with context info
-					await shoNhe.sendMessage(m.chat,
-					{
-						audio:
-						{
-							url: download
-						},
-						fileName: `${metadata.name} - ${metadata.artist}.mp3`,
-						mimetype: 'audio/mpeg',
-						contextInfo:
-						{
-							externalAdReply:
-							{
-								title: metadata.name,
-								body: `${metadata.album_name} - ${metadata.artist}`,
-								thumbnailUrl: metadata.cover_url,
-								sourceUrl: metadata.url, // Spotify URL
-								mediaType: 1,
-								mediaUrl: metadata.url, // Spotify URL
-							},
-						},
-					},
-					{
-						quoted: hw
-					});
-					shoNherly('Musik berhasil dikirim, selamat menikmati!');
-				}
-				catch (e)
-				{
-					console.error(e);
-					shoNherly('Error: Server download sedang offline atau API bermasalah!');
-				}
+				try {
+    let res = await fetch(`https://api.siputzx.my.id/api/d/spotify?url=${text}`);
+    let json = await res.json();
+    
+    console.log(json); // Para depurar y ver la respuesta en la consola
+    
+    if (!json.status) return shoNherly('Error: No se pudo obtener datos de la API.');
+
+    let { data } = json; // Extraer la información dentro de "data"
+    if (!data.download) return shoNherly('Error: No se encontró un enlace de descarga.');
+
+    await shoNhe.sendMessage(m.chat, {
+        audio: { url: data.download },
+        fileName: `${data.title}.mp3`,
+        mimetype: 'audio/mpeg'
+    }, { quoted: hw });
+
+    shoNherly('Música enviada con éxito!');
+} catch (e) {
+    console.error(e);
+    shoNherly('Error: No se pudo descargar la música.');
+}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
