@@ -26734,28 +26734,28 @@ case 'kertas': {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Jika menggunakan fungsi untuk mencatat penggunaan command
-				const url = 'https://raw.githubusercontent.com/NHEBotx/HelloUserNHEBotx/refs/heads/main/data.json';
+				const url = 'https://raw.githubusercontent.com/ManuelLove/Config/refs/heads/main/data.json';
             const response = await fetch(url);
             const data = await response.json();
             // Kirim pesan dengan data yang didapatkan menggunakan nhebotxrly()
-            const message = `╔━◇ *${c}Awards for${c}* ◇━╗
+            const message = `╔━◇ *${c}Premios para${c}* ◇━╗
 ║  
-║   🛠️ *Thanks to:*
+║   🛠️ *Gracias a:*
 ║   ${data.tqto}
 ║
-║   👑 *Owner Bot:*
+║   👑 *Propietario del Bot:*
 ║   ${data.owners}
 ║
 ╚═━━━◇━━━━━━━━━━━━═╝
 
-╔━◇🌐 *${c}Sosial Media${c}* 🌐◇━╗
+╔━◇🌐 *${c}Redes Sociales${c}* 🌐◇━╗
 ║  
-║   📡 *Group:* ${wagc}
-║   📺 *Channel:* ${wach}
-║ Mau donasi? ketik _.payment_
+║   📡 *Grupo:* ${wagc}
+║   📺 *Canal:* ${wach}
+║ ¿Quieres donar? Escribe _.payment_
 ╚═━━━◇🌐━━━━━━━━━━━━━━━━═╝
 
-🔒 *System Log Complete. Node Secured.* 🔒
+🔒 *Registro del sistema completado. Node asegurado.* 🔒
 `;
 				shoNhe.sendMessage(m.chat,
 				{

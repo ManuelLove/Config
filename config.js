@@ -82,7 +82,7 @@ global.mess = {
     
     vips: "🛑 *[ACCESO LIMITADO]* ────\n🎟️ *¡Se requiere modo VIP!*\n💎 *¡Solo los usuarios ELITE pueden usar esta función!*\n\n📡 *Actualiza tu estado para desbloquear el acceso premium.*",
     
-    waits: "⌛ *[PROCESO EN CURSO]* ────\n⚙️ *Accediendo a la base de datos...\n📡 Procesando comando...\n🔄 Verificación de cifrado...*\n\n💠 *Por favor espere...*",
+    waits: "⌛ *[PROCESO EN CURSO]* ────\n⚙️ *Accediendo a la base de datos...*\n📡 *Procesando comando...*\n🔄 *Verificación de cifrado...*\n\n💠 *Por favor espere...*",
     
     bands: "⚠️ *[ADVERTENCIA DEL SISTEMA]* ────\n❌ *¡Entidad bloqueada!*\n🛑 *¡Acceso denegado por el propietario del sistema!*\n\n🚫 *¡Los intentos posteriores se marcarán como amenazas!*",
     
