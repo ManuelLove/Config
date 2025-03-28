@@ -12954,7 +12954,7 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				const db = loadUserFire();
 				const user = db[m.sender];
-				shoNherly(`🎉 Selamat! Kode seri Anda adalah *${user.registrationSeries}*.\nGunakan ini untuk klaim hadiah di event-event tertentu!`);
+				shoNherly(`🎉 ¡Feliz! Su código de serie es *${user.registrationSeries}*.\n¡Utilízalo para reclamar premios en ciertos eventos!`);
 				}
 			break
 			case 'tesload':
@@ -12969,18 +12969,18 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 const {
     key
 } = await shoNhe.sendMessage(m.chat, {
-    text: '⚠️ *INITIALIZING SYSTEM...* PLEASE WAIT...'
+    text: '⚠️ *INICIALIZANDO SISTEMA...* ESPERE POR FAVOR...'
 });
 
 for (let i = 0; i < lod.length; i++) {
     await shoNhe.sendMessage(m.chat, {
-        text: `🖥️ *STATUS UPDATE*:\n\n⏳ *LOADING...* ${lod[i]}\n\n*System Processing... Please remain patient. This may take a few moments.*`
+        text: `🖥️ *ACTUALIZACIÓN DE ESTADO*:\n\n⏳ *CARGANDO...* ${lod[i]}\n\n*Procesando el sistema... Por favor, tenga paciencia. Esto puede tardar unos momentos..*`
     });
     await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate loading delay
 }
 
 await shoNhe.sendMessage(m.chat, {
-    text: '✅ *SYSTEM INITIALIZATION COMPLETE.*\n\n*Welcome to the network.*'
+    text: '✅ *INICIALIZACIÓN DEL SISTEMA COMPLETADA.*\n\n*Bienvenido a la red.*'
 });
 				// Proses loading dengan update pesan secara bertahap
 				for (let i = 0; i < lod.length; i++)
@@ -12995,11 +12995,11 @@ await shoNhe.sendMessage(m.chat, {
 				// Setelah semua update selesai, edit menjadi "Loading selesai"
 				await shoNhe.sendMessage(m.chat,
 				{
-					text: '✅ Loading selesai!',
+					text: '✅ ¡Carga completa!',
 					edit: key
 				});
 				// Kirim pesan lain setelah loading selesai
-				shoNherly('Proses loading telah selesai!');
+				shoNherly('¡El proceso de carga se ha completado!'');
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
