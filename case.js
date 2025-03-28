@@ -12355,7 +12355,7 @@ ${formattedCommandList}
 				// Role owner (unlimited fire)
 				if (userRole === 'owner')
 				{
-					return shoNherly('Lah ngapain king? Fire lu aja unli🗿');
+					return shoNherly('¿Qué haces rey? Solo te despido hasta 🗿');
 				}
 				// Cek apakah pengguna sudah klaim dalam seminggu terakhir
 				if (currentTime - user.lastClaim < oneWeek)
@@ -12364,7 +12364,7 @@ ${formattedCommandList}
 					const days = Math.floor(remainingTime / (24 * 60 * 60 * 1000));
 					const hours = Math.floor((remainingTime % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
 					const minutes = Math.floor((remainingTime % (60 * 60 * 1000)) / (60 * 1000));
-					return shoNherly(`⚠️ Anda sudah klaim minggu ini. Coba lagi dalam ${days} hari, ${hours} jam, dan ${minutes} menit.`);
+					return shoNherly(`⚠️ Ya has reclamado esta semana. Inténtalo de nuevo en ${days} días, ${hours} horas y ${minutes} minutos.`);
 				}
 				// Cek keberuntungan berdasarkan seri
 				let reward;
@@ -12373,19 +12373,19 @@ ${formattedCommandList}
 				if (/^[Aa]/.test(userSeries))
 				{
 					reward = 150;
-					message = `🎉 Keberuntungan berpihak pada Anda! Seri unik Anda (${userSeries}) mendapatkan ${reward} limit!`;
+					message = `🎉 ¡La suerte está de tu lado! Tu serie única (${userSeries}) ha obtenido ${reward} límite.`;
 				}
 				// Seri yang berawalan angka mendapatkan 500 limit
 				else if (/^\d/.test(userSeries))
 				{
 					reward = 150;
-					message = `🎉 Seri angka Anda (${userSeries}) mendapatkan ${reward} limit!`;
+					message = `🎉 Tu serie de números (${userSeries}) ha obtenido ${reward} límite.`;
 				}
 				// Seri lainnya mendapatkan limit acak antara 1-20
 				else
 				{
 					reward = Math.floor(Math.random() * 20) + 1; // Limit acak 1-20
-					message = `🔥 Anda mendapatkan ${reward} limit dari seri unik Anda (${userSeries}).`;
+					message = `🔥 Has obtenido ${reward} límite de tu serie única (${userSeries}).`;
 				}
 				// Update limit dan waktu klaim pengguna
 				user.limit += reward;
@@ -12403,7 +12403,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan teks yang ingin dijadikan input untuk AI.\n\nContoh: deepseek Apa kabar?');
+				if (!text) return shoNherly('⚠️ Por favor, ingresa el texto que deseas usar como entrada para la IA.\n\nEjemplo: deepseek ¿Cómo estás?');
 				try
 				{
 					// Panggil API dengan input dari pengguna
@@ -12415,13 +12415,13 @@ ${formattedCommandList}
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
