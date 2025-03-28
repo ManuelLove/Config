@@ -12999,7 +12999,7 @@ await shoNhe.sendMessage(m.chat, {
 					edit: key
 				});
 				// Kirim pesan lain setelah loading selesai
-				shoNherly('¡El proceso de carga se ha completado!'');
+				shoNherly('¡El proceso de carga se ha completado!');
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
