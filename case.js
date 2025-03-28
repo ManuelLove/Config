@@ -26407,7 +26407,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
         mimetype: 'audio/mpeg'
     }, { quoted: hw });
 
-    shoNherly('Música enviada con éxito!');
+    shoNherly('Música enviada correctamente, ¡disfrútala!');
 } catch (e) {
     console.error(e);
     shoNherly('Error: No se pudo descargar la música.');
