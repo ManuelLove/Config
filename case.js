@@ -20949,19 +20949,19 @@ break;
 						},
 						nativeFlowMessage:
 						{
-						buttons: [
-						{
-							buttonId: `${prefix}ytmp3 ${video.url}`,
-							buttonText:
+							buttons: [
 							{
-								displayText: "MUSICA 🎵"
-							}
-						},
-						{
-							buttonId: `${prefix}ytmp4 ${video.url}`,
-							buttonText:
-							{
-								displayText: "VIDEO 🎥"
+            "name": "cta_copy",
+            "buttonParamsJson": JSON.stringify({
+            "display_text": "🎵MUSICA🎵",
+            "copy_code": `${prefix}ytmp3 ${video.url}`
+            })
+          },
+          {
+            "name": "cta_copy",
+            "buttonParamsJson": JSON.stringify({
+            "display_text": "📺VIDEO📺",
+            "copy_code": `${prefix}ytmp4 ${video.url}`
 								})
 							}]
 						}
