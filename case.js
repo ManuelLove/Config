@@ -25638,7 +25638,7 @@ shoNhe.sendMessage(m.chat,
 TechFix es la fusión de dos grandes fuerzas. Es la manifestación de la colaboración entre *TechFix* y *Ansi*, dos entidades que provienen de caminos distintos pero que se han unido en una misma misión.
 
 ⚙️ *Nodo A - TechFix:*
-Creado por *Yuda*, el arquitecto original que diseñó la estructura base de esta infraestructura. TechFix aporta la visión y los fundamentos inquebrantables.
+Creado por *Manu*, el arquitecto original que diseñó la estructura base de esta infraestructura. TechFix aporta la visión y los fundamentos inquebrantables.
 
 ⚙️ *Nodo B - Ansi:*
 *Tngx*, un elemento inesperado que irrumpió en la red, provocando un cambio drástico en la evolución del sistema. Ahora, Ansi es un componente esencial que impulsa las operaciones principales.
@@ -25656,9 +25656,9 @@ En las sombras del mundo digital, existen dos entidades enigmáticas que nunca s
 
 *TechFix: El Portador de la Luz*
 
-TechFix es una figura enigmática que emergió desde las profundidades de la arquitectura cibernética. Poco se sabe sobre su origen, salvo que alguna vez fue conocido como Yuda, el creador de un algoritmo oculto capaz de desbloquear el máximo potencial de cualquier sistema que tocara. Operando desde las sombras, TechFix domina las estructuras desde su núcleo, utilizando técnicas tan avanzadas que se ganó el título de "El Portador de la Luz", por su capacidad de iluminar y acceder a sistemas cerrados que nadie más podía penetrar.
+TechFix es una figura enigmática que emergió desde las profundidades de la arquitectura cibernética. Poco se sabe sobre su origen, salvo que alguna vez fue conocido como Manu, el creador de un algoritmo oculto capaz de desbloquear el máximo potencial de cualquier sistema que tocara. Operando desde las sombras, TechFix domina las estructuras desde su núcleo, utilizando técnicas tan avanzadas que se ganó el título de "El Portador de la Luz", por su capacidad de iluminar y acceder a sistemas cerrados que nadie más podía penetrar.
 
-Algunos afirman que Yuda trabajó para organizaciones tecnológicas de alto nivel antes de desaparecer sin dejar rastro. Reapareciendo como TechFix, decidió desvincularse del mundo visible y sentar las bases de algo mucho más grande, un proyecto que trasciende los límites tecnológicos actuales.
+Algunos afirman que Manu trabajó para organizaciones tecnológicas de alto nivel antes de desaparecer sin dejar rastro. Reapareciendo como TechFix, decidió desvincularse del mundo visible y sentar las bases de algo mucho más grande, un proyecto que trasciende los límites tecnológicos actuales.
 
 *Ansi: El Manipulador de Dimensiones*
 
