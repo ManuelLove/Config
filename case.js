@@ -22221,7 +22221,7 @@ break;
 				if (db[sender] && db[sender].register)
 				{
 					// Jika pengguna sudah terdaftar
-					shoNherly(`⚠️ Anda sudah terdaftar sebelumnya.\n\n📜 Informasi Anda:\n- Role: ${db[sender].role}\n- Limit: ${db[sender].limit}\n- Seri: ${db[sender].registrationSeries}\n- Level: ${db[sender].level}\n- Exp: ${db[sender].exp}/${db[sender].expTarget}\n- Command Count: ${db[sender].commandCount}`);
+					shoNherly(`⚠️ Ya te has registrado antes.\n\n📜 Tu información:\n- Rol: ${db[sender].role}\n- Limite: ${db[sender].limit}\n- Serie: ${db[sender].registrationSeries}\n- Nivel: ${db[sender].level}\n- Exp: ${db[sender].exp}/${db[sender].expTarget}\n- Recuento de comandos: ${db[sender].commandCount}`);
 				}
 				else
 				{
@@ -22242,7 +22242,7 @@ break;
 						balance: 0 // Saldo awal
 					};
 					saveUserFire(db); // Simpan data pengguna ke database
-					shoNherly(`🎉 Registrasi berhasil!\n\n📜 Informasi Anda:\n- Role: ${role}\n- Limit: ${limit}\n- Seri: ${registrationSeries}\n- Level: 0\n- Exp: 0/10\n- Command Count: 0\n- Saldo: 0`);
+					shoNherly(`🎉 ¡Registro exitoso!\n\n📜 Tu información:\n- Rol: ${role}\n- Limite: ${limit}\n- Serie: ${registrationSeries}\n- Nivel: 0\n- Exp: 0/10\n- Recuento de comandos: 0\n- Saldo: 0`);
 				}
 			}
 			break;
