@@ -26270,65 +26270,126 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
            }
 			}
 			break
-			case 'suit':
-			{
-				if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				const userChoice = text.toLowerCase();
-				const choices = ['batu', 'gunting', 'kertas'];
-				const botChoice = choices[Math.floor(Math.random() * choices.length)];
-				if (!choices.includes(userChoice))
-				{
-					return shoNherly('🧠 Pilih antara *batu*, *gunting*, atau *kertas* ya, Kak!');
-				}
-				let hasil = '';
-				if (userChoice === botChoice)
-				{
-					hasil = `🤝 Seri! Kita sama-sama pilih *${botChoice}*`;
-				}
-				else if (
-					(userChoice === 'batu' && botChoice === 'gunting') || (userChoice === 'gunting' && botChoice === 'kertas') || (userChoice === 'kertas' && botChoice === 'batu'))
-				{
-					hasil = `🎉 Kakak menang! Aku pilih *${botChoice}*`;
-				}
-				else
-				{
-					hasil = `😢 Aku menang! Aku pilih *${botChoice}*`;
-				}
-				shoNherly(hasil);
-				if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-			}
-			break
+			case 'suit': {
+    if (!m.isGroup) return m.reply('Este comando solo está disponible en grupos.');
+
+    if (!isRegistered(m)) {
+        return sendRegister(shoNhe, m, prefix, namabot);
+    }
+    
+    updatePopularCommand(command); // Registrar uso del comando
+
+    let user = db.data.users[m.sender];
+    if (!user) {
+        db.data.users[m.sender] = {
+            exp: 0,
+            level: 0,
+            expTarget: 10,
+            balance: 0,
+            commandCount: 0
+        };
+        user = db.data.users[m.sender];
+    }
+
+    user.commandCount += 1; // Aumenta el conteo de comandos usados
+
+    this.suit = this.suit || {};
+    let room = Object.values(this.suit).find(room => room.id && room.status && [room.p, room.p2].includes(m.sender));
+
+    if (room) {
+        let win = '';
+        let tie = false;
+
+        if (m.sender == room.p2 && /^(aceptar|acepta|yes|si)$/i.test(m.text) && m.isGroup && room.status == 'wait') {
+            room.status = 'play';
+            room.asal = m.chat;
+            clearTimeout(room.waktu);
+
+            m.reply(`🎮 ¡El juego ha comenzado!\nAmbos jugadores recibirán un mensaje privado para elegir su opción.`);
+
+            let opciones = `Selecciona una opción:\n- Piedra 🪨\n- Papel 📄\n- Tijera ✂️\n\nResponde con tu elección.`;
+
+            if (!room.pilih) this.sendMessage(room.p, { text: opciones }, { quoted: m });
+            if (!room.pilih2) this.sendMessage(room.p2, { text: opciones }, { quoted: m });
+
+            room.waktu_milih = setTimeout(() => {
+                let mensajeCancelado = `⚠️ ¡El juego se canceló porque no se eligió una opción a tiempo!`;
+                this.sendMessage(m.chat, { text: mensajeCancelado }, { quoted: m });
+                delete this.suit[room.id];
+            }, room.timeout);
+        }
+
+        let jugador1 = m.sender == room.p;
+        let jugador2 = m.sender == room.p2;
+        let opcionesJuego = /^(piedra|papel|tijera)$/i;
+
+        if (jugador1 && opcionesJuego.test(m.text) && !room.pilih && !m.isGroup) {
+            room.pilih = m.text.toLowerCase();
+            m.reply(`✅ Has elegido ${room.pilih}. Espera el resultado en el grupo.`);
+            if (!room.pilih2) this.sendMessage(room.p2, { text: `Tu oponente ha elegido. Es tu turno de elegir.` });
+        }
+
+        if (jugador2 && opcionesJuego.test(m.text) && !room.pilih2 && !m.isGroup) {
+            room.pilih2 = m.text.toLowerCase();
+            m.reply(`✅ Has elegido ${room.pilih2}. Espera el resultado en el grupo.`);
+            if (!room.pilih) this.sendMessage(room.p, { text: `Tu oponente ha elegido. Es tu turno de elegir.` });
+        }
+
+        if (room.pilih && room.pilih2) {
+            clearTimeout(room.waktu_milih);
+
+            let reglas = {
+                piedra: "tijera",
+                tijera: "papel",
+                papel: "piedra"
+            };
+
+            if (room.pilih === room.pilih2) {
+                tie = true;
+            } else if (reglas[room.pilih] === room.pilih2) {
+                win = room.p;
+            } else {
+                win = room.p2;
+            }
+
+            let expGanada = 10;
+            let mensajeResultado = `🥳 ¡Resultado del juego!\n\n`;
+
+            mensajeResultado += `👤 ${room.p} eligió *${room.pilih}*\n👤 ${room.p2} eligió *${room.pilih2}*\n\n`;
+
+            if (tie) {
+                mensajeResultado += `⚖️ ¡Empate! Ambos jugadores reciben ${expGanada / 2} XP.`;
+                db.data.users[room.p].exp += expGanada / 2;
+                db.data.users[room.p2].exp += expGanada / 2;
+            } else {
+                mensajeResultado += `🎉 *¡Felicidades @${win.split`@`[0]}!* Has ganado ${expGanada} XP.`;
+                db.data.users[win].exp += expGanada;
+            }
+
+            // Comprobar si hay subida de nivel
+            [room.p, room.p2].forEach(player => {
+                if (db.data.users[player].exp >= db.data.users[player].expTarget) {
+                    db.data.users[player].level += 1;
+                    db.data.users[player].expTarget += 20;
+                    this.sendMessage(player, {
+                        text: `🎉 ¡Subiste de nivel! Ahora eres nivel ${db.data.users[player].level}.`,
+                        footer: "LEVEL UP🔥",
+                        buttons: [
+                            { buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+                            { buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+                        ],
+                        viewOnce: true,
+                    }, { quoted: m });
+                }
+            });
+
+            this.sendMessage(room.asal, { text: mensajeResultado, mentions: [room.p, room.p2] });
+
+            delete this.suit[room.id];
+        }
+    }
+    break;
+}
 			case 'delete':
 			case 'del':
 			case 'd':
