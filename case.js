@@ -1992,10 +1992,10 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 					externalAdReply:
 					{
 						title: `🔥 Límite de fuego`,
-						body: `🔥 tu restas ${reduction} límite.`,
+						body: `🔥 te restan ${reduction} límite.`,
 						previewType: "PHOTO",
 						thumbnail: thumbnail,
-						sourceUrl: 'https://wa.me/6288989971490'
+						sourceUrl: 'https://wa.me/573012686632'
 					}
 				}
 			},
@@ -11126,7 +11126,7 @@ ${formattedCommandList}
 										"name": "cta_url",
 										"buttonParamsJson": `{
       "display_text": "KING👑",
-      "url": "https://wa.me/6288989971490"
+      "url": "https://wa.me/573012686632"
     }`
 									}],
 								}),
