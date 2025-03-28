@@ -26160,31 +26160,31 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				if (!isGroup) return shoNherly(mess.groups);
 				if (!isAdmins) return shoNherly(mess.admins);
 				if (!isBotAdmins) return shoNherly(mess.abots);
-				if (args[1] == "detik")
+				if (args[1] == "segundo")
 				{
 					var timer = args[0] * `1000`;
 				}
-				else if (args[1] == "menit")
+				else if (args[1] == "minuto")
 				{
 					var timer = args[0] * `60000`;
 				}
-				else if (args[1] == "jam")
+				else if (args[1] == "hora")
 				{
 					var timer = args[0] * `3600000`;
 				}
-				else if (args[1] == "hari")
+				else if (args[1] == "dia")
 				{
 					var timer = args[0] * `86400000`;
 				}
 				else
 				{
-					return shoNherly("*pilih:*\ndetik\nmenit\njam\n\n*contoh*\n10 detik");
+					return shoNherly("*elige:*\nsegundos\nminutos\nhoras\n\n*ejemplo*\n10 segundos");
 				}
-				shoNherly(`Close time grup ${q} dimulai dari sekarang`);
+				shoNherly(`El tiempo de cierre del grupo ${q} comienza desde ahora`);
 				setTimeout(() =>
 				{
 					var nomor = m.participant;
-					const close = `*Tepat waktu* grup ditutup oleh admin\nsekarang hanya admin yang dapat mengirim pesan`;
+					const close = `*Puntual* el grupo ha sido cerrado por el administrador\nahora solo los administradores pueden enviar mensajes`;
 					shoNhe.groupSettingUpdate(from, "announcement");
 					shoNherly(close);
 				}, timer);
@@ -26520,31 +26520,31 @@ case 'kertas': {
 				if (!isGroup) return shoNherly(mess.groups);
 				if (!isAdmins) return shoNherly(mess.admins);
 				if (!isBotAdmins) return shoNherly(mess.abots);
-				if (args[1] == "detik")
+				if (args[1] == "segundo")
 				{
 					var timer = args[0] * `1000`;
 				}
-				else if (args[1] == "menit")
+				else if (args[1] == "minuto")
 				{
 					var timer = args[0] * `60000`;
 				}
-				else if (args[1] == "jam")
+				else if (args[1] == "hora")
 				{
 					var timer = args[0] * `3600000`;
 				}
-				else if (args[1] == "hari")
+				else if (args[1] == "dia")
 				{
 					var timer = args[0] * `86400000`;
 				}
 				else
 				{
-					return shoNherly("*pilih:*\ndetik\nmenit\njam\n\n*contoh*\n10 detik");
+					return shoNherly("*elige:*\nsegundos\nminutos\nhoras\n\n*ejemplo*\n10 segundos");
 				}
-				shoNherly(`Open time grup ${q} dimulai dari sekarang`);
+				shoNherly(`El tiempo de apertura del grupo ${q} comienza desde ahora`);
 				setTimeout(() =>
 				{
 					var nomor = m.participant;
-					const open = `*Tepat waktu* grup dibuka oleh admin\n sekarang member dapat mengirim pesan`;
+					const open = `*Puntual* el grupo ha sido abierto por el administrador\n ahora los miembros pueden enviar mensajes`;
 					shoNhe.groupSettingUpdate(from, "not_announcement");
 					shoNherly(open);
 				}, timer);
