@@ -26276,6 +26276,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
     }
 
     updatePopularCommand(command);
+    global.boomRooms = global.boomRooms || {};
     let user = db.data.users[m.sender];
     if (!user) {
         db.data.users[m.sender] = {
