@@ -7562,7 +7562,7 @@ break;
 - El sistema detecta que el usuario ha abandonado la tarea.  
 
 🔒 *Nota del sistema*:  
-- "No vuelvas, hermano. Pero si hablas en serio, ¡no tardes mucho!"  
+- No vuelvas, hermano. Pero si hablas en serio, ¡no tardes mucho!  
 
 🔍 *SUPERVISIÓN*:  
 - El sistema registra todas las actividades relacionadas con este usuario.  
