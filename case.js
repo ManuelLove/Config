@@ -20962,12 +20962,6 @@ break;
 							buttonText:
 							{
 								displayText: "VIDEO 🎥"
-							}
-						}],
-						viewOnce: true,
-					},
-					{
-						quoted: hw
 								})
 							}]
 						}
