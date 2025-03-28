@@ -16423,21 +16423,21 @@ break
 					const userList = Object.entries(db).map(([key, value]) =>
 					{
 						const userNumber = key.split('@')[0]; // Mengambil nomor saja
-						return `Nomor: ${userNumber}\n- Role: ${value.role}\n- Register: ${value.register}\n- Limit: ${value.limit}`;
+						return `Número: ${userNumber}\n- Rol: ${value.role}\n- Registro: ${value.register}\n- Limite: ${value.limit}`;
 					}).join('\n\n');
 					if (userList)
 					{
-						reply(`📋 *Daftar Pengguna Terdaftar:*\n\n${userList}`);
+						reply(`📋 *Lista de Usuarios Registrados:*\n\n${userList}`);
 					}
 					else
 					{
-						reply('⚠️ Tidak ada pengguna yang terdaftar.');
+						reply('⚠️ Ningún usuario registrado.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					reply('⚠️ Terjadi kesalahan saat memproses data.');
+					reply('⚠️ Se produjo un error al procesar los datos.');
 				}
 				}
 			break
