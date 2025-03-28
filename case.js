@@ -26393,14 +26393,10 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				try
 				{
 					// Fetching data from the API
-					let res = await fetch(`https://archive-ui.tanakadomp.biz.id/download/spotify?url=${text}`);
+					let res = await fetch(`https://api.siputzx.my.id/api/d/spotify?url=${text}`);
 					let json = await res.json();
 					if (!json.status) return shoNherly('Error: Unable to fetch data from the API.');
-					let
-					{
-						metadata,
-						download
-					} = json;
+					let { title, artis, image, download } = json.data;
 					// Sending audio with context info
 					await shoNhe.sendMessage(m.chat,
 					{
