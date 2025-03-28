@@ -2253,8 +2253,8 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 					mentionedJid: [m.sender],
 					"externalAdReply":
 					{
-						"title": `shoNhe BY DATNGXZ'S`,
-						"body": `© DaTngxz'S`,
+						"title": `TechFix BY MANUDIA'Z`,
+						"body": `© TechFix'S`,
 						"previewType": "PHOTO",
 						"thumbnail": getRandomThumb2(),
 						"sourceUrl": gh
