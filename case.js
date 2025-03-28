@@ -22764,7 +22764,7 @@ shoNhe.sendMessage(m.chat,
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				const teksnyo = "⚙️ BOT SETTINGS\nPilih fitur dibawah ini untuk mengatur\n💬typing\n🎤recording\n👁️‍🗨️autoviewsw\n🔇anticall\n📝setbio\n📖autoread"
+				const teksnyo = "⚙️ CONFIGURACIÓN DEL BOT\nElige una función a continuación para configurar\n💬escribiendo\n🎤grabando\n👁️‍🗨️vistas automáticas\n🔇anti-llamadas\n📝establecer biografía\n📖lectura automática"
 				let msg = generateWAMessageFromContent(m.chat,
 				{
 					viewOnceMessage:
@@ -22809,69 +22809,69 @@ shoNhe.sendMessage(m.chat,
 									buttons: [
 									{
 										"name": "single_select",
-										"buttonParamsJson": `{
-												"title": "Settings",
-												"sections": [{
-													"title": "Select Settings",
-													"rows": [{
-														"title": "💬 AUTOTYPING ON",
-														"description": "Bot akan mengaktifkan auto typing",
-														"id": "${prefix}autotypingon"
-													},
-													{
-														"title": "💬 AUTOTYPING OFF",
-														"description": "Bot akan mematikan auto typing",
-														"id": "${prefix}autotypingoff"
-													},
-													{
-														"title": "🎤 AUTOVN ON",
-														"description": "Mengaktifkan fitur autovn",
-														"id": "${prefix}autovnon"
-													},
-													{
-														"title": "🎤AUTOVN OFF",
-														"description": "Mematikan fitur autovn",
-														"id": "${prefix}autovnoff"
-													},
-													{
-														"title": "👁️‍🗨️ SW-VIEW ON",
-														"description": "Bot akan mengaktifkan autoswview",
-														"id": "${prefix}autoswview on"
-													},
-													{
-														"title": "👁️‍🗨️ SW-VIEW OFF",
-														"description": "Bot akan mematikan autoswview",
-														"id": "${prefix}autoswview off"
-													},
-													{
-														"title": "🔇 ANTI-CALL ON",
-														"description": "Mengaktifkan fitur anticall",
-														"id": "${prefix}anticall on"
-													},
-													{
-														"title": "🔇 ANTI-CALL OFF",
-														"description": "Mematikan fitur anticall",
-														"id": "${prefix}anticall off"
-													},
-													{
-														"title": "📝AUTOBIO ON",
-														"description": "Mengaktifkan fitur autobio",
-														"id": "${prefix}autobio on"
-													},
-													{
-														"title": "📝 AUTOBIO OFF",
-														"description": "Mematikan fitur autobio",
-														"id": "${prefix}autobio off"
-													},
-													{
-														"title": "📖 AUTOREAD ON",
-														"description": "Mengaktifkan fitur autoread",
-														"id": "${prefix}autoread true"
-													},
-													{
-														"title": "📖 AUTOREAD OFF",
-														"description": "Mematikan fitur autoread",
-														"id": "${prefix}autoread false"
+"buttonParamsJson": `{
+    "title": "Configuración",
+    "sections": [{
+        "title": "Seleccionar Configuración",
+        "rows": [{
+            "title": "💬 AUTOTYPING ON",
+            "description": "El bot activará la escritura automática",
+            "id": "${prefix}autotypingon"
+        },
+        {
+            "title": "💬 AUTOTYPING OFF",
+            "description": "El bot desactivará la escritura automática",
+            "id": "${prefix}autotypingoff"
+        },
+        {
+            "title": "🎤 AUTOVN ON",
+            "description": "Activar la función de notas de voz automáticas",
+            "id": "${prefix}autovnon"
+        },
+        {
+            "title": "🎤 AUTOVN OFF",
+            "description": "Desactivar la función de notas de voz automáticas",
+            "id": "${prefix}autovnoff"
+        },
+        {
+            "title": "👁️‍🗨️ SW-VIEW ON",
+            "description": "El bot activará la vista automática de estados",
+            "id": "${prefix}autoswview on"
+        },
+        {
+            "title": "👁️‍🗨️ SW-VIEW OFF",
+            "description": "El bot desactivará la vista automática de estados",
+            "id": "${prefix}autoswview off"
+        },
+        {
+            "title": "🔇 ANTI-CALL ON",
+            "description": "Activar la función de bloqueo de llamadas",
+            "id": "${prefix}anticall on"
+        },
+        {
+            "title": "🔇 ANTI-CALL OFF",
+            "description": "Desactivar la función de bloqueo de llamadas",
+            "id": "${prefix}anticall off"
+        },
+        {
+            "title": "📝 AUTOBIO ON",
+            "description": "Activar la función de biografía automática",
+            "id": "${prefix}autobio on"
+        },
+        {
+            "title": "📝 AUTOBIO OFF",
+            "description": "Desactivar la función de biografía automática",
+            "id": "${prefix}autobio off"
+        },
+        {
+            "title": "📖 AUTOREAD ON",
+            "description": "Activar la función de lectura automática",
+            "id": "${prefix}autoread true"
+        },
+        {
+            "title": "📖 AUTOREAD OFF",
+            "description": "Desactivar la función de lectura automática",
+            "id": "${prefix}autoread false"
 													}]
 												}]
 											}`
