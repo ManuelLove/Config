@@ -19441,7 +19441,7 @@ break;
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isGroup) return shoNherly(mess.groups);
 				if (!isShoNheOwn && !isAdmins) return shoNherly(mess.admins);
-				if (!text) return shoNherly(example("el mensaje"));
+				if (!text) return shoNherly("Debes escribir un mensaje.");
 				// Fetch group metadata to ensure participants are available
 				let metadata = await shoNhe.groupMetadata(m.chat);
 				let member = metadata.participants.map(v => v.id);
