@@ -1532,7 +1532,7 @@ await shoNhe.sendMessage(m.chat, {
 				catch (err)
 				{
 					console.error('❌ Respons bukan JSON:', textResponse);
-					m.reply("Terjadi kesalahan pada API. Silakan coba lagi nanti.");
+					m.reply("Se produjo un error en la API. Por favor inténtalo de nuevo más tarde..");
 					return;
 				}
 				console.log('📥 Respons diterima dari API:', data);
@@ -1555,7 +1555,7 @@ await shoNhe.sendMessage(m.chat, {
 				else
 				{
 					console.log('❌ Gagal mengambil video. URL tidak valid.');
-					m.reply("Gagal mengambil video. Silakan periksa URL.");
+					m.reply("No se pudo grabar el video. Por favor revisa la URL.");
 				}
 			}
 			catch (err)
@@ -1588,7 +1588,7 @@ await shoNhe.sendMessage(m.chat, {
 				catch (err)
 				{
 					console.error('❌ Respons bukan JSON:', textResponse);
-					m.reply("Terjadi kesalahan pada API. Silakan coba lagi nanti.");
+					m.reply("Se produjo un error en la API. Por favor inténtalo de nuevo más tarde.");
 					return;
 				}
 				console.log('📥 Respons diterima dari API:', data);
@@ -1634,19 +1634,19 @@ await shoNhe.sendMessage(m.chat, {
 							}).on('error', (err) =>
 							{
 								console.error('❌ Gagal mengonversi file audio:', err.message);
-								m.reply('Gagal memproses ulang file audio.');
+								m.reply('No se pudo reprocesar el archivo de audio.');
 							}).save(fixedFilePath);
 					});
 					writer.on('error', (err) =>
 					{
 						console.error('❌ Gagal mengunduh file audio:', err.message);
-						m.reply('Gagal mengunduh file audio.');
+						m.reply('No se pudo descargar el archivo de audio.');
 					});
 				}
 				else
 				{
 					console.log('❌ Gagal mengambil audio. URL tidak valid.');
-					m.reply("Gagal mengambil audio. Silakan periksa URL.");
+					m.reply("No se pudo recuperar el audio. Por favor revisa la URL.");
 				}
 			}
 			catch (err)
