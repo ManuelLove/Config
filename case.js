@@ -26270,6 +26270,47 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
            }
 			}
 			break
+			case 'boom': {
+    if (!isRegistered(m)) {
+        return sendRegister(shoNhe, m, prefix, namabot);
+    }
+
+    updatePopularCommand(command);
+    let user = db.data.users[m.sender];
+    if (!user) {
+        db.data.users[m.sender] = {
+            exp: 0,
+            level: 0,
+            expTarget: 10,
+            balance: 0,
+            commandCount: 0
+        };
+        user = db.data.users[m.sender];
+    }
+
+    user.commandCount += 1; // Incrementa el contador de comandos
+
+    if (boom[m.sender]) return m.reply('⚠️ ¡Aún tienes una partida en curso! Termina esa antes de empezar otra.');
+
+    boom[m.sender] = {
+        petak: [0, 0, 0, 2, 0, 2, 0, 2, 0, 0].sort(() => Math.random() - 0.5),
+        board: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'],
+        bomb: 3,
+        lolos: 7,
+        pick: 0,
+        nyawa: ['❤️', '❤️', '❤️'],
+        waktu: setTimeout(() => {
+            if (boom[m.sender]) {
+                m.reply(`⏳ *Tiempo de juego agotado!* La partida ha sido cancelada.`);
+                delete boom[m.sender]; 
+            }
+        }, 160000) // 160 segundos = 2 min 40 seg
+    };
+
+    m.reply(`*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n🔹 *Elige un número del 1 al 10*\n🔸 *Evita las bombas!* \n\n🧨 Bombas restantes: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
+
+}
+break;
 			case 'suit': {
     if (!isRegistered(m)) {
         return sendRegister(shoNhe, m, prefix, namabot);
