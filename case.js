@@ -1877,7 +1877,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				const remainingTime = cooldown - (now - lastClaim);
 				const hours = Math.floor(remainingTime / (60 * 60 * 1000));
 				const minutes = Math.floor((remainingTime % (60 * 60 * 1000)) / (60 * 1000));
-				reply(`⏳ Ya has reclamado. Inténtalo de nuevo dentro ${hours} En punto ${minutes} minuto.`);
+				reply(`⏳ Ya has reclamado. Inténtalo de nuevo dentro ${hours} Hora ${minutes} minuto.`);
 				return;
 			}
 			// Tambahkan limit berdasarkan role
@@ -3664,30 +3664,30 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				let anu = ms(getTime)
 				afk.splice(getAfkPosition(m.sender, afk), 1)
 				fs.writeFileSync('./database/afk.json', JSON.stringify(afk))
-				shoNhe.sendTextWithMentions(m.chat, `⚠️ *SISTEM ALERT: KONDISI PENGGUNA* ⚠️  
+				shoNhe.sendTextWithMentions(m.chat, `⚠️ *SISTEMA DE ALERTA: CONDICIÓN DE USUARIO* ⚠️  
 
-Weiss @${m.sender.split('@')[0]}, masih sehat lu bro? Sistem mendeteksi status AFK-mu.  
+User @${m.sender.split('@')[0]}, ¿Todavía estás sano bro? El sistema detecta su estado AFK.  
 
-[📌] *ALASAN*:  
-- ${getReason || 'Tidak ada alasan yang diberikan'}  
+[📌] *RAZÓN*:  
+- ${getReason || 'No se da ninguna razón'}  
 
-[⏳] *DURASI*:  
-- ${anu.hours || 0} Jam, ${anu.minutes || 0} Menit, ${anu.seconds || 0} Detik  
+[⏳] *DURACIÓN*:  
+- ${anu.hours || 0} Hora, ${anu.minutes || 0} Minuto, ${anu.seconds || 0} Segundo  
 
-[🛠️] *INSTRUKSI*:  
-- Jika ada kendala, segera perbarui statusmu.  
-- Hindari menunda terlalu lama, sistem selalu memantau.  
+[🛠️] *INSTRUCCIÓN*: 
+- Si hay problemas, actualice inmediatamente su estado. 
+- Evite demoras demasiado, el sistema siempre está monitoreando.  
 
-[🔍] *LOG SISTEM*:  
-- Status ini telah tercatat dalam log protokol.  
-- Jangan abaikan pesan ini untuk menjaga kredibilitas aktivitasmu.  
+[🔍] *REGISTRO DEL SISTEMA*: 
+- Este estado ha quedado registrado en el registro de protocolo. 
+- No ignores este mensaje para mantener la credibilidad de tu actividad..  
 
-[⚡] *TIPS*:  
-- “Waktu terus berjalan, gunakan dengan bijak. Jangan biarkan dunia virtual mengalahkanmu.”  
+[⚡] *CONSEJO*: 
+- "El tiempo se acaba, úsalo sabiamente. No dejes que el mundo virtual te gane.”  
 
-📡 *STATUS SISTEM*:  
-- Pemantauan berjalan secara real-time.  
-- Sistem tetap terhubung hingga kamu kembali aktif.`, fvideo)
+📡 *ESTADO DEL SISTEMA*: 
+- Monitoreo de ejecución en tiempo real. 
+- El sistema permanece conectado hasta que esté activo nuevamente.`, fvideo)
 			}
 		}
 		//==================[ BUTTON MESSAGE ]======================\\
