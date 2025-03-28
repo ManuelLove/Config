@@ -26270,13 +26270,14 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
            }
 			}
 			break
-		// Definir boom como objeto global
-global.boom = global.boom || {};
+		case 'boom': {
+    if (!global.boom) global.boom = {}; // Asegurar que la variable global esté definida
 
-case 'boom': {
-    if (boom[m.sender]) return m.reply('⚠️ ¡Aún tienes una partida en curso! Termina esa antes de empezar otra.');
+    if (global.boom[m.sender]) {
+        return m.reply('⚠️ ¡Aún tienes una partida en curso! Termina esa antes de empezar otra.');
+    }
 
-    boom[m.sender] = {
+    global.boom[m.sender] = {
         petak: [0, 0, 0, 2, 0, 2, 0, 2, 0, 0].sort(() => Math.random() - 0.5),
         board: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'],
         bomb: 3,
@@ -26284,49 +26285,61 @@ case 'boom': {
         pick: 0,
         nyawa: ['❤️', '❤️', '❤️'],
         waktu: setTimeout(() => {
-            if (boom[m.sender]) {
-                m.reply(`⏳ *Tiempo agotado!* La partida ha terminado.`);
-                delete boom[m.sender];
+            if (global.boom[m.sender]) {
+                m.reply(`⏳ *Tiempo de ${command} agotado!*`);
+                delete global.boom[m.sender]; // Asegurar que la partida se borre si expira el tiempo
             }
         }, 160000)
     };
-    
-    m.reply(`*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n🔹 *Elige un número del 1 al 10*\n🔸 *Evita las bombas!* \n\n🧨 Bombas restantes: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
+
+    m.reply(`*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${global.boom[m.sender].board.join("")}\n\n🔹 *Elige un número del 1 al 10*\n🔸 *Evita las bombas!* \n\n🧨 Bombas restantes: ${global.boom[m.sender].bomb}\n❤️ Vidas: ${global.boom[m.sender].nyawa.join("")}`);
 }
 break;
 
-// Manejar la elección del usuario
-if (boom[m.sender]) {
-    let choice = parseInt(m.text);
-    
+// DETECTAR RESPUESTA DEL JUGADOR
+if (global.boom[m.sender]) {
+    let choice = parseInt(m.text); // Convertir la elección a número
+
     if (isNaN(choice) || choice < 1 || choice > 10) {
-        return m.reply('❌ Por favor elige un número del 1 al 10.');
+        return m.reply('⚠️ *Por favor elige un número entre 1 y 10.*');
     }
 
-    let index = choice - 1;
-    
-    if (boom[m.sender].board[index] === '💥' || boom[m.sender].board[index] === '✅') {
-        return m.reply('⚠️ Ya elegiste ese número. ¡Elige otro!');
+    let game = global.boom[m.sender];
+
+    if (game.board[choice - 1] === '💥' || game.board[choice - 1] === '✅') {
+        return m.reply('⚠️ *Ese número ya fue elegido. Elige otro.*');
     }
 
-    if (boom[m.sender].petak[index] === 2) {
-        boom[m.sender].nyawa.pop();
-        boom[m.sender].bomb -= 1;
-        boom[m.sender].board[index] = '💥';
-        m.reply(`💣 *¡BOOM!* Perdiste una vida.\n\n🔹 *Elige otro número*\n🧨 Bombas restantes: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
+    let resultado = game.petak[choice - 1]; // 0 = seguro, 2 = bomba
+    game.pick++;
+
+    if (resultado === 2) {
+        game.nyawa.pop(); // Pierde una vida
+        game.bomb--;
+        game.board[choice - 1] = '💥'; // Marcar bomba en el tablero
+
+        if (game.nyawa.length === 0) {
+            m.reply(`💥 *¡BOOM! Perdiste todas tus vidas.*\n\n🔚 *Juego terminado.*`);
+            delete global.boom[m.sender]; // Borrar la partida
+            return;
+        }
+
+        m.reply(`💥 *¡BOOM! Has pisado una bomba.*\n\n🧨 Bombas restantes: ${game.bomb}\n❤️ Vidas: ${game.nyawa.join("")}`);
     } else {
-        boom[m.sender].lolos -= 1;
-        boom[m.sender].board[index] = '✅';
-        m.reply(`🎉 *¡Seguro!* Seguiste con vida.\n\n🔹 *Elige otro número*\n🧨 Bombas restantes: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
+        game.lolos--;
+        game.board[choice - 1] = '✅'; // Marcar casilla segura
+
+        if (game.lolos === 0) {
+            m.reply(`🎉 *¡Felicidades! Lograste evitar todas las bombas.*\n\n🏆 *Has ganado el juego.*`);
+            delete global.boom[m.sender]; // Borrar la partida
+            return;
+        }
+
+        m.reply(`✅ *Seguro! Sigue jugando.*\n\n🧨 Bombas restantes: ${game.bomb}\n❤️ Vidas: ${game.nyawa.join("")}`);
     }
 
-    if (boom[m.sender].nyawa.length === 0) {
-        m.reply(`💀 *¡Perdiste!* Todas tus vidas se acabaron. Intenta de nuevo.`);
-        delete boom[m.sender];
-    } else if (boom[m.sender].lolos === 0) {
-        m.reply(`🎊 *¡Ganaste!* Lograste evitar todas las bombas. 🎉`);
-        delete boom[m.sender];
-    }
+    // Mostrar tablero actualizado
+    m.reply(`*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${game.board.join("")}\n\n🔹 *Elige un número del 1 al 10*`);
 }
 			case 'suit': {
     if (!isRegistered(m)) {
