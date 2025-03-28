@@ -1,4 +1,3 @@
-global.boom = global.boom || {}; // Inicializa la variable si no existe
 // CREATOR : YUDA & TNGX
 // TQTO? DI COMMAND TQTO
 // BIG THX TO : GALANGz, TNGXAJA[Nhe], ORANG TUA, ALLAH, PENYEDIA REST API, PENYEDIA BASE AWAL
@@ -26271,59 +26270,6 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
            }
 			}
 			break
-		case 'boom': {
-    if (boom[m.sender]) return m.reply('⚠️ ¡Aún tienes una partida en curso! Termina esa antes de empezar otra.');
-
-    boom[m.sender] = {
-        petak: [0, 0, 0, 2, 0, 2, 0, 2, 0, 0].sort(() => Math.random() - 0.5),
-        board: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'],
-        bomb: 3,
-        lolos: 7,
-        pick: 0,
-        nyawa: ['❤️', '❤️', '❤️'],
-        waktu: setTimeout(() => {
-            if (boom[m.sender]) {
-                m.reply(`_⏳ Tiempo de ${command} agotado_`);
-                delete boom[m.sender]; // 🔥 Elimina la partida si el usuario no responde a tiempo
-            }
-        }, 160000) // 160 segundos (2 min 40 seg)
-    };
-    
-    m.reply(`*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n🔹 *Elige un número del 1 al 10*\n🔸 *Evita las bombas!* \n\n🧨 Bombas restantes: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
-}
-break;
-if (boom[m.sender]) { 
-    let pick = parseInt(m.text); // Convierte el mensaje a número
-
-    if (isNaN(pick) || pick < 1 || pick > 10) {
-        return m.reply("⚠️ *Por favor elige un número entre 1 y 10.*");
-    }
-
-    let index = pick - 1;
-    if (boom[m.sender].petak[index] === 2) {
-        boom[m.sender].bomb--;
-        boom[m.sender].nyawa.pop(); // Quita una vida
-
-        if (boom[m.sender].bomb === 0 || boom[m.sender].nyawa.length === 0) {
-            m.reply("💥 ¡Boom! Perdiste todas tus vidas. Fin del juego.");
-            delete boom[m.sender]; // Borra el juego
-            return;
-        }
-
-        m.reply(`💥 ¡Bomba! Perdiste una vida. ❤️ Vidas restantes: ${boom[m.sender].nyawa.join("")}`);
-    } else {
-        boom[m.sender].lolos--;
-        boom[m.sender].board[index] = '✅';
-
-        if (boom[m.sender].lolos === 0) {
-            m.reply("🎉 ¡Felicidades! Has ganado el juego BOOM.");
-            delete boom[m.sender]; // Borra el juego
-            return;
-        }
-
-        m.reply(`✅ ¡Seguro! Sigue eligiendo.\n\n${boom[m.sender].board.join("")}`);
-    }
-}
 			case 'suit': {
     if (!isRegistered(m)) {
         return sendRegister(shoNhe, m, prefix, namabot);
