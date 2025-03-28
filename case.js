@@ -27367,7 +27367,7 @@ case 'kertas': {
 				});
 				if (!text)
 				{
-					const warnn = "⚙️ Pilih mode bot di bawah ini:";
+					const warnn = "⚙️ Seleccione el modo bot a continuación:";
 					let msg = generateWAMessageFromContent(m.chat,
 					{
 						viewOnceMessage:
