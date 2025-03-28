@@ -26271,124 +26271,135 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			}
 			break
 			case 'suit': {
-    if (!m.isGroup) return m.reply('Este comando solo está disponible en grupos.');
-
     if (!isRegistered(m)) {
         return sendRegister(shoNhe, m, prefix, namabot);
     }
-    
     updatePopularCommand(command);
 
-    let user = db.data.users[m.sender];
-    if (!user) {
-        db.data.users[m.sender] = {
-            exp: 0,
-            level: 0,
-            expTarget: 10,
-            balance: 0,
-            commandCount: 0
+    global.suitRooms = global.suitRooms || {};
+
+    const args = text.split(" ");
+    let opponent = m.mentionedJid ? m.mentionedJid[0] : null;
+
+    if (!opponent) {
+        // **Jugar contra el bot**
+        const userChoice = text.toLowerCase();
+        const choices = ['batu', 'gunting', 'kertas'];
+        const botChoice = choices[Math.floor(Math.random() * choices.length)];
+
+        if (!choices.includes(userChoice)) {
+            return shoNherly('🧠 Pilih antara *batu*, *gunting*, atau *kertas* ya, Kak!');
+        }
+
+        let hasil = '';
+        if (userChoice === botChoice) {
+            hasil = `🤝 Seri! Kita sama-sama pilih *${botChoice}*`;
+        } else if (
+            (userChoice === 'batu' && botChoice === 'gunting') || 
+            (userChoice === 'gunting' && botChoice === 'kertas') || 
+            (userChoice === 'kertas' && botChoice === 'batu')) {
+            hasil = `🎉 Kakak menang! Aku pilih *${botChoice}*`;
+        } else {
+            hasil = `😢 Aku menang! Aku pilih *${botChoice}*`;
+        }
+
+        shoNherly(hasil);
+    } else {
+        // **Jugar contra otro usuario**
+        if (opponent === m.sender) return m.reply("❌ No puedes jugar contra ti mismo.");
+        if (global.suitRooms[m.chat]) return m.reply("⚠️ Ya hay un juego en progreso en este chat.");
+
+        global.suitRooms[m.chat] = {
+            id: m.chat,
+            p1: m.sender,
+            p2: opponent,
+            status: "wait",
+            choices: {},
         };
-        user = db.data.users[m.sender];
+
+        m.reply(`🎮 *¡Juego de Piedra, Papel o Tijera!* 🎮\n\n👤 *${m.sender.split("@")[0]}* ha retado a *${opponent.split("@")[0]}*.\n\n🔰 @${opponent.split("@")[0]}, responde con *Aceptar* para comenzar.`);
+
+        setTimeout(() => {
+            if (global.suitRooms[m.chat] && global.suitRooms[m.chat].status === "wait") {
+                m.reply("⚠️ El reto ha expirado por falta de respuesta.");
+                delete global.suitRooms[m.chat];
+            }
+        }, 30000); // 30 segundos para aceptar
+    }
+    break;
+}
+
+// **Aceptar el reto**
+case 'aceptar': {
+    if (!global.suitRooms[m.chat] || global.suitRooms[m.chat].status !== "wait") {
+        return m.reply("❌ No hay un reto activo en este chat.");
     }
 
-    user.commandCount += 1;
+    let room = global.suitRooms[m.chat];
 
-    global.suitRooms = global.suitRooms || {};  // Asegurar que la variable está definida
+    if (m.sender !== room.p2) return m.reply("❌ Solo el jugador retado puede aceptar.");
 
-    let room = Object.values(global.suitRooms).find(room => 
-        room.id && room.status && [room.p, room.p2].includes(m.sender));
+    room.status = "play";
 
-    if (room) {
-        let win = '';
-        let tie = false;
+    m.reply(`✅ ¡El juego ha comenzado!\nAmbos jugadores, envíen su elección: *batu*, *gunting* o *kertas*.`);
 
-        if (m.sender == room.p2 && /^(aceptar|acepta|yes|si)$/i.test(m.text) && m.isGroup && room.status == 'wait') {
-            room.status = 'play';
-            room.asal = m.chat;
-            clearTimeout(room.waktu);
-
-            m.reply(`🎮 ¡El juego ha comenzado!\nAmbos jugadores recibirán un mensaje privado para elegir su opción.`);
-
-            let opciones = `Selecciona una opción:\n- Piedra 🪨\n- Papel 📄\n- Tijera ✂️\n\nResponde con tu elección.`;
-
-            if (!room.pilih) this.sendMessage(room.p, { text: opciones }, { quoted: m });
-            if (!room.pilih2) this.sendMessage(room.p2, { text: opciones }, { quoted: m });
-
-            room.waktu_milih = setTimeout(() => {
-                let mensajeCancelado = `⚠️ ¡El juego se canceló porque no se eligió una opción a tiempo!`;
-                this.sendMessage(m.chat, { text: mensajeCancelado }, { quoted: m });
-                delete global.suitRooms[room.id];
-            }, room.timeout);
+    setTimeout(() => {
+        if (global.suitRooms[m.chat] && Object.keys(room.choices).length < 2) {
+            m.reply("⚠️ El juego ha sido cancelado porque uno o ambos jugadores no eligieron a tiempo.");
+            delete global.suitRooms[m.chat];
         }
+    }, 30000); // 30 segundos para elegir
+    break;
+}
 
-        let jugador1 = m.sender == room.p;
-        let jugador2 = m.sender == room.p2;
-        let opcionesJuego = /^(piedra|papel|tijera)$/i;
+// **Elegir opción**
+case 'batu':
+case 'gunting':
+case 'kertas': {
+    if (!global.suitRooms[m.chat] || global.suitRooms[m.chat].status !== "play") {
+        return;
+    }
 
-        if (jugador1 && opcionesJuego.test(m.text) && !room.pilih && !m.isGroup) {
-            room.pilih = m.text.toLowerCase();
-            m.reply(`✅ Has elegido ${room.pilih}. Espera el resultado en el grupo.`);
-            if (!room.pilih2) this.sendMessage(room.p2, { text: `Tu oponente ha elegido. Es tu turno de elegir.` });
-        }
+    let room = global.suitRooms[m.chat];
+    if (![room.p1, room.p2].includes(m.sender)) return;
 
-        if (jugador2 && opcionesJuego.test(m.text) && !room.pilih2 && !m.isGroup) {
-            room.pilih2 = m.text.toLowerCase();
-            m.reply(`✅ Has elegido ${room.pilih2}. Espera el resultado en el grupo.`);
-            if (!room.pilih) this.sendMessage(room.p, { text: `Tu oponente ha elegido. Es tu turno de elegir.` });
-        }
+    if (room.choices[m.sender]) return m.reply("❌ Ya elegiste tu opción.");
 
-        if (room.pilih && room.pilih2) {
-            clearTimeout(room.waktu_milih);
+    room.choices[m.sender] = command; // Guardamos su elección
 
-            let reglas = {
-                piedra: "tijera",
-                tijera: "papel",
-                papel: "piedra"
-            };
+    if (Object.keys(room.choices).length === 2) {
+        // Ambos eligieron, resolvemos el juego
+        let p1Choice = room.choices[room.p1];
+        let p2Choice = room.choices[room.p2];
 
-            if (room.pilih === room.pilih2) {
-                tie = true;
-            } else if (reglas[room.pilih] === room.pilih2) {
-                win = room.p;
+        let winner = null;
+        let tie = p1Choice === p2Choice;
+
+        if (!tie) {
+            if (
+                (p1Choice === 'batu' && p2Choice === 'gunting') ||
+                (p1Choice === 'gunting' && p2Choice === 'kertas') ||
+                (p1Choice === 'kertas' && p2Choice === 'batu')
+            ) {
+                winner = room.p1;
             } else {
-                win = room.p2;
+                winner = room.p2;
             }
-
-            let expGanada = 10;
-            let mensajeResultado = `🥳 ¡Resultado del juego!\n\n`;
-
-            mensajeResultado += `👤 ${room.p} eligió *${room.pilih}*\n👤 ${room.p2} eligió *${room.pilih2}*\n\n`;
-
-            if (tie) {
-                mensajeResultado += `⚖️ ¡Empate! Ambos jugadores reciben ${expGanada / 2} XP.`;
-                db.data.users[room.p].exp += expGanada / 2;
-                db.data.users[room.p2].exp += expGanada / 2;
-            } else {
-                mensajeResultado += `🎉 *¡Felicidades @${win.split`@`[0]}!* Has ganado ${expGanada} XP.`;
-                db.data.users[win].exp += expGanada;
-            }
-
-            // Comprobar si hay subida de nivel
-            [room.p, room.p2].forEach(player => {
-                if (db.data.users[player].exp >= db.data.users[player].expTarget) {
-                    db.data.users[player].level += 1;
-                    db.data.users[player].expTarget += 20;
-                    this.sendMessage(player, {
-                        text: `🎉 ¡Subiste de nivel! Ahora eres nivel ${db.data.users[player].level}.`,
-                        footer: "LEVEL UP🔥",
-                        buttons: [
-                            { buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
-                            { buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
-                        ],
-                        viewOnce: true,
-                    }, { quoted: m });
-                }
-            });
-
-            this.sendMessage(room.asal, { text: mensajeResultado, mentions: [room.p, room.p2] });
-
-            delete global.suitRooms[room.id];
         }
+
+        let mensaje = `🎮 *Resultado del Juego*\n\n👤 ${room.p1} eligió *${p1Choice}*\n👤 ${room.p2} eligió *${p2Choice}*\n\n`;
+
+        if (tie) {
+            mensaje += "⚖️ ¡Empate!";
+        } else {
+            mensaje += `🏆 ¡Felicidades @${winner.split("@")[0]}! Ganaste.`;
+            db.data.users[winner].exp += 10; // Recompensa XP
+        }
+
+        m.reply(mensaje, { mentions: [room.p1, room.p2] });
+        delete global.suitRooms[m.chat];
+    } else {
+        m.reply("✅ Elección guardada. Esperando al otro jugador...");
     }
     break;
 }
