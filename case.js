@@ -26293,7 +26293,11 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 
     user.commandCount += 1; // Aumenta el conteo de comandos usados
 
-    this.suit = this.suit || {};
+    // 🔥 Solución al problema del objeto 'suit'
+    if (!this.suit) {
+        this.suit = {};
+    }
+
     let room = Object.values(this.suit).find(room => room.id && room.status && [room.p, room.p2].includes(m.sender));
 
     if (room) {
