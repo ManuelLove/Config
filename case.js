@@ -26292,6 +26292,38 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
     m.reply(`*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n🔹 *Elige un número del 1 al 10*\n🔸 *Evita las bombas!* \n\n🧨 Bombas restantes: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
 }
 break;
+if (boom[m.sender]) { 
+    let pick = parseInt(m.text); // Convierte el mensaje a número
+
+    if (isNaN(pick) || pick < 1 || pick > 10) {
+        return m.reply("⚠️ *Por favor elige un número entre 1 y 10.*");
+    }
+
+    let index = pick - 1;
+    if (boom[m.sender].petak[index] === 2) {
+        boom[m.sender].bomb--;
+        boom[m.sender].nyawa.pop(); // Quita una vida
+
+        if (boom[m.sender].bomb === 0 || boom[m.sender].nyawa.length === 0) {
+            m.reply("💥 ¡Boom! Perdiste todas tus vidas. Fin del juego.");
+            delete boom[m.sender]; // Borra el juego
+            return;
+        }
+
+        m.reply(`💥 ¡Bomba! Perdiste una vida. ❤️ Vidas restantes: ${boom[m.sender].nyawa.join("")}`);
+    } else {
+        boom[m.sender].lolos--;
+        boom[m.sender].board[index] = '✅';
+
+        if (boom[m.sender].lolos === 0) {
+            m.reply("🎉 ¡Felicidades! Has ganado el juego BOOM.");
+            delete boom[m.sender]; // Borra el juego
+            return;
+        }
+
+        m.reply(`✅ ¡Seguro! Sigue eligiendo.\n\n${boom[m.sender].board.join("")}`);
+    }
+}
 			case 'suit': {
     if (!isRegistered(m)) {
         return sendRegister(shoNhe, m, prefix, namabot);
@@ -28473,46 +28505,6 @@ case 'kertas': {
            }
 			}
 			break
-		if (boom[m.sender]) {
-    let choice = m.text.trim(); // Limpia espacios
-    if (!/^\d+$/.test(choice)) return; // Ignora si no es un número
-    choice = parseInt(choice);
-
-    if (choice < 1 || choice > 10) {
-        return m.reply('❌ Por favor elige un número entre 1 y 10.');
-    }
-
-    let game = boom[m.sender];
-
-    if (game.board[choice - 1] === '💥' || game.board[choice - 1] === '✅') {
-        return m.reply('⚠️ ¡Ese número ya fue elegido!');
-    }
-
-    game.pick++;
-
-    if (game.petak[choice - 1] === 2) { // Si es una bomba
-        game.nyawa.pop(); // Pierde una vida
-        game.board[choice - 1] = '💥';
-        game.bomb--;
-
-        if (game.nyawa.length === 0) { // Si pierde todas las vidas
-            delete boom[m.sender];
-            return m.reply(`💥 ¡BOOM! Perdiste todas tus vidas.\n\n🧨 Bombas encontradas: ${3 - game.bomb}/3`);
-        }
-    } else { // Si es seguro
-        game.lolos--;
-        game.board[choice - 1] = '✅';
-    }
-
-    let status = `*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${game.board.join("")}\n\n🔹 *Elige un número del 1 al 10*\n🔸 *Evita las bombas!* \n\n🧨 Bombas restantes: ${game.bomb}\n❤️ Vidas: ${game.nyawa.join("")}`;
-    
-    if (game.lolos === 0) { // Si evitó todas las bombas
-        delete boom[m.sender];
-        return m.reply(`🎉 ¡Felicidades! Lograste evitar todas las bombas.`);
-    }
-
-    return m.reply(status);
-}
 			//===========[ YANG UDAH SUPPORT MKSH YH ]=============\\
 			/*
 			       •       #SCBOTWATERMUX #TERMUXNEVERDIE🔥   
