@@ -7457,67 +7457,61 @@ break;
 
     try {
         // Informasi harga dan fitur script
-        let teksPesan = `🔷 *SCRIPT SHO V4 & ShoNhe V5 MASIH DALAM PENGEMBANGAN* 🔷\n\n`;
-        teksPesan += `📜 *SC ShoNhe V3:* \n`;
-        teksPesan += `> °SC sebagian kami Enc\n`;
-        teksPesan += `> °Mau Yang No Enc? List di bawah:\n\n`;
+        let teksPesan = `🔷 *SCRIPT Ansi V4 y TechFix V5 AÚN EN DESARROLLO* 🔷\n\n`;
+        teksPesan += `📜 *SC TechFix V3:* \n`;
+        teksPesan += `> °Nuestro SC parcial Enc\n`;
+        teksPesan += `> °¿Quieres el Enc No? Lista a continuación:\n\n`;
 
-        teksPesan += `📌 *[List No Enc🧾] [Free Update SC Version]*\n`;
-        teksPesan += `- 💰 25K NO ENC, Free update SC (5 Slot Terbatas) ⚠️ Perpanjang Update setiap SC 10K/Update\n`;
-        teksPesan += `- 💰 45K NO ENC, Free Update Berlangganan SC FREE UPDATE V3-V6. *45K cukup bayar sekali, tanpa perpanjangan!*\n\n`;
+        teksPesan += `📌 *[List No Enc🧾] [Actualización gratuita de la versión SC]*\n`;
+        teksPesan += `- 💰 25K SIN ENC, actualización SC gratuita (5 espacios limitados) ⚠️ Ampliar actualización cada SC 10K/Actualización\n`;
+        teksPesan += `- 💰 45K SIN ENC, actualización gratuita Suscríbase a SC FREE UPDATE V3-V6. *¡45K solo paga una vez, sin extensión!*\n\n`;
 
-        teksPesan += `🎖️ *Awards for:* 🎖️\n`;
-        teksPesan += `╔◇ *Thanks to* ◇━╗\n`;
-        teksPesan += `║   🛠️ *Developer & Contributor:*\n`;
-        teksPesan += `> ©YurRin's (Dev)\n`;
-        teksPesan += `> ©Tngxaja (IdeCreator)\n`;
-        teksPesan += `> ©Zoi\n`;
-        teksPesan += `> ©Ruri\n`;
-        teksPesan += `> ©HenriqueX\n`;
-        teksPesan += `> ©Puguh (Exce Test)\n`;
-        teksPesan += `> ©Rico (Share)\n`;
-        teksPesan += `> Penyumbang Apikey\n`;
+        teksPesan += `🎖️ *Premios por:* 🎖️\n`;
+        teksPesan += `╔◇ *Gracias a* ◇━╗\n`;
+        teksPesan += `║   🛠️ *Desarrollador y colaborador:*\n`;
+        teksPesan += `> ©ManuDiaz'OFC (Dev)\n`;
+        teksPesan += `> Colaborador de Apikey\n`;
         teksPesan += `╚═━━━◇━━━━━━━━═╝\n\n`;
 
-        teksPesan += `🌐 *Sosial Media* 🌐\n`;
-        teksPesan += `╔━◇📡 *Group WhatsApp:* ◇━╗\n`;
-        teksPesan += `║ 📡 *Join Group:* [Klik di sini](https://chat.whatsapp.com/GQ5Gp0eSeDS6dPBYeHE6kf)\n`;
-        teksPesan += `║ 📺 *Channel Update SC:* [Klik di sini](https://whatsapp.com/channel/0029Vb0v3F71yT264EejzJ3e)\n`;
+        teksPesan += `🌐 *Redes Sociales* 🌐\n`;
+        teksPesan += `╔━◇📡 *Grupos de whatsapp:* ◇━╗\n`;
+        teksPesan += `║ 📡 *Unirse al grupo:* [TechFix-OFC](https://chat.whatsapp.com/)\n`;
+        teksPesan += `║ 📺 *Canal de actualización SC:* [Legado](https://whatsapp.com/)\n`;
         teksPesan += `╚═━━━◇🌐━━━━━━━━═╝\n\n`;
 
-        teksPesan += `🔒 *System Log Complete. Node Secured.* 🔒\n\n`;
-        teksPesan += `𝙎𝙝𝙤𝙉𝙝𝙚 🅥❸ *_And Development_*\n`;
+        teksPesan += `🔒 *Registro del sistema completo. Node Asegurados.* 🔒\n\n`;
+        teksPesan += `𝙏𝙚𝙘𝙝𝙁𝙞𝙭 🅥❸ *_And Development_*\n`;
 
         // Tombol untuk akses script
         const tombol = [
             {
                 name: "cta_url",
                 buttonParamsJson: JSON.stringify({
-                    display_text: "📜 SC SHO V1",
-                    url: `https://drive.google.com/file/d/1Fd9wBs2CL-drQUcyNKGRDlxV3ka3JC3c/view`,
+                    display_text: "📜 SC Tech V1",
+                    url: `https://drive.google.com/`,
                 }),
             },
             {
                 name: "cta_url",
                 buttonParamsJson: JSON.stringify({
-                    display_text: "📜 SC SHO V2",
-                    url: `https://drive.google.com/file/d/1IIswM2e1Hay6WxBP7c9y4NzHEn8dedac/view?usp=drivesdk`,
+                    display_text: "📜 SC Tech V2",
+                    url: `https://drive.google.com`,
                 }),
             },
             {
                 name: "cta_url",
                 buttonParamsJson: JSON.stringify({
-                    display_text: "📜 SC ShoNhe V3",
-                    url: `https://youtube.com/@sychyy00`,
+                    display_text: "📜 SC TechFix V3",
+                    url: `https://youtube.com/`,
                 }),
             }
         ];
 
         // Kirim pesan dengan gambar dan tombol
-        sendButtonImage(m.chat, "🔥 Script ShoNhe V3", teksPesan, getRandomThumb2(), tombol, hw);
+        sendButtonImage(m.chat, "🔥 Script TechFix V3", teksPesan, getRandomThumb2(), tombol, hw);
 
     } catch (error) {
-        console.error("❌ Terjadi kesalahan saat menangani perintah 'script':", error);
+        console.error("❌ Se produjo un error al manejar el comando 'script':", error);
     }
 
     // Level Up System
