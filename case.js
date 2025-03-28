@@ -12524,17 +12524,17 @@ ${formattedCommandList}
 					global.privateChatOnly = true;
 					global.public = true;
 					global.groupOnly = false;
-					shoNherly('✅ Mode Private Chat Only telah diaktifkan.\n❌ Mode Group telah dinonaktifkan');
+					shoNherly('✅ Se ha activado el modo Solo chat privado.\n❌ El modo de grupo ha sido deshabilitado');
 				}
 				else if (status === 'off')
 				{
 					global.privateChatOnly = false;
 					global.public = true;
-					shoNherly('❌ Mode Private Chat Only telah dinonaktifkan.\n✅ Mode public telah diaktifkan');
+					shoNherly('❌ El modo Solo chat privado ha sido deshabilitado.\n✅ El modo público ha sido activado');
 				}
 				else
 				{
-					shoNherly('❌ Gunakan: privatechatonly [on/off]');
+					shoNherly('❌ Usar: privatechatonly [on/off]');
 				}
 				break;
 			case 'dreamshaper':
@@ -21812,7 +21812,7 @@ break;
 					let defaultCaption = "🐬 Media ini dikirim melalui sistem otomatis ShoNhe! ⭐"
 					if (/image/.test(mime))
 					{
-						shoNhe.sendMessage('120363383347233294@newsletter',
+						shoNhe.sendMessage('12036338334723329@newsletter',
 						{
 							image: media,
 							caption: text ? text : defaultCaption
@@ -21821,7 +21821,7 @@ break;
 					}
 					else if (/video/.test(mime))
 					{
-						shoNhe.sendMessage('120363383347233294@newsletter',
+						shoNhe.sendMessage('12036338334723329@newsletter',
 						{
 							video: media,
 							caption: text ? text : defaultCaption
@@ -21830,7 +21830,7 @@ break;
 					}
 					else if (/audio/.test(mime))
 					{
-						shoNhe.sendMessage('120363383347233294@newsletter',
+						shoNhe.sendMessage('12036338334723329@newsletter',
 						{
 							audio: media,
 							mimetype: mime,
@@ -21840,7 +21840,7 @@ break;
 					}
 					else if (/text/.test(mime) || text)
 					{
-						shoNhe.sendMessage('120363383347233294@newsletter',
+						shoNhe.sendMessage('12036338334723329@newsletter',
 						{
 							text: text ? text : defaultCaption
 						})
@@ -21928,7 +21928,7 @@ break;
 							image: media,
 							caption: text ? text : defaultCaption,
 						};
-						shoNhe.sendMessage('120363383347233294@newsletter', repshow,
+						shoNhe.sendMessage('12036338334723329@newsletter', repshow,
 						{
 							quoted: hw
 						});
@@ -21961,7 +21961,7 @@ break;
 							caption: text ? text : defaultCaption,
 							mimetype: mime,
 						};
-						shoNhe.sendMessage('120363383347233294@newsletter', repshow,
+						shoNhe.sendMessage('12036338334723329@newsletter', repshow,
 						{
 							quoted: hw
 						});
@@ -21994,7 +21994,7 @@ break;
 							mimetype: mime,
 							ptt: true, // Ubah ke true jika ingin dikirim sebagai pesan suara
 						};
-						shoNhe.sendMessage('120363383347233294@newsletter', repshow,
+						shoNhe.sendMessage('12036338334723329@newsletter', repshow,
 						{
 							quoted: hw
 						});
@@ -22025,7 +22025,7 @@ break;
 							},
 							text: text ? text : defaultCaption,
 						};
-						shoNhe.sendMessage('120363383347233294@newsletter', repshow,
+						shoNhe.sendMessage('12036338334723329@newsletter', repshow,
 						{
 							quoted: hw
 						});
@@ -26975,7 +26975,7 @@ case 'kertas': {
 									isForwarded: true,
 									forwardedNewsletterMessageInfo:
 									{
-										newsletterJid: '120363383347233294@newsletter',
+										newsletterJid: '12036338334723329@newsletter',
 										newsletterName: namaowner,
 										serverMessageId: 143
 									}
@@ -27259,7 +27259,7 @@ case 'kertas': {
 									isForwarded: true,
 									forwardedNewsletterMessageInfo:
 									{
-										newsletterJid: '120363383347233294@newsletter',
+										newsletterJid: '12036338334723329@newsletter',
 										newsletterName: namaowner,
 										serverMessageId: 143
 									}
@@ -27402,39 +27402,39 @@ case 'kertas': {
 										buttons: [
 										{
 											"name": "single_select",
-											"buttonParamsJson": `{
-												"title": "🪀 Bot Mode",
-												"sections": [{
-													"title": "Select Mode",
-													"rows": [{
-														"title": "🚀 PUBLIC MODE",
-														"description": "Bot akan membalas semua pesan",
-														"id": "${prefix}mode public"
-													},
-													{
-														"title": "🚀 SELF MODE",
-														"description": "Bot tidak akan membalas semua chat yang ada",
-														"id": "${prefix}mode self"
-													},
-													{
-														"title": "🛸 MODE GROUP ON",
-														"description": "Bot hanya akan membalas pesan group",
-														"id": "${prefix}groupon"
-													},
-													{
-														"title": "🛸 MODE GROUP OFF",
-														"description": "bot akan membalas semua pesan yang ada",
-														"id": "${prefix}groupoff"
-													},
-													{
-														"title": "✈️ MODE PRIVATE ON",
-														"description": "Bot hanya akan membalas pesan yang bersifat private chat",
-														"id": "${prefix}privatechatonly on"
-													},
-													{
-														"title": "✈️ MODE PRIVATE OFF",
-														"description": "bot akan membalas semua pesan yang bersifat private chat",
-														"id": "${prefix}privatechatonly off"
+"buttonParamsJson": `{
+    "title": "🪀 Modo Bot",
+    "sections": [{
+        "title": "Seleccionar Modo",
+        "rows": [{
+            "title": "🚀 MODO PÚBLICO",
+            "description": "El bot responderá a todos los mensajes",
+            "id": "${prefix}mode public"
+        },
+        {
+            "title": "🚀 MODO INDIVIDUAL",
+            "description": "El bot no responderá a ningún chat",
+            "id": "${prefix}mode self"
+        },
+        {
+            "title": "🛸 MODO GRUPO ACTIVADO",
+            "description": "El bot solo responderá a los mensajes en grupos",
+            "id": "${prefix}groupon"
+        },
+        {
+            "title": "🛸 MODO GRUPO DESACTIVADO",
+            "description": "El bot responderá a todos los mensajes",
+            "id": "${prefix}groupoff"
+        },
+        {
+            "title": "✈️ MODO PRIVADO ACTIVADO",
+            "description": "El bot solo responderá a mensajes privados",
+            "id": "${prefix}privatechatonly on"
+        },
+        {
+            "title": "✈️ MODO PRIVADO DESACTIVADO",
+            "description": "El bot responderá a todos los mensajes privados",
+            "id": "${prefix}privatechatonly off"
 													}]
 												}]
 											}`
@@ -27447,7 +27447,7 @@ case 'kertas': {
 										isForwarded: true,
 										forwardedNewsletterMessageInfo:
 										{
-											newsletterJid: '120363383347233294@newsletter',
+											newsletterJid: '12036338334723329@newsletter',
 											newsletterName: namaowner,
 											serverMessageId: 143
 										}
@@ -27468,7 +27468,7 @@ case 'kertas': {
 					global.public = false;
 					shoNhe.sendMessage(from,
 					{
-						text: '✅ Bot sekarang dalam mode *SELF*. Hanya pemilik yang dapat menggunakan bot.'
+						text: '✅ El bot ahora está en modo *SELF*. Sólo el propietario puede utilizar el bot.'
 					});
 				}
 				else if (text.toLowerCase() === 'public')
@@ -27476,14 +27476,14 @@ case 'kertas': {
 					global.public = true;
 					shoNhe.sendMessage(from,
 					{
-						text: '✅ Bot sekarang dalam mode *PUBLIC*. Semua orang dapat menggunakan bot.'
+						text: '✅ El bot ahora está en modo *PÚBLICO*. Todos pueden utilizar el bot.'
 					});
 				}
 				else
 				{
 					shoNhe.sendMessage(from,
 					{
-						text: '❌ Mode tidak valid! Gunakan *self* atau *public*.'
+						text: '❌ ¡Modo no válido! Utilice *self* o *public*.'
 					});
 				}
 				if (levelUpMessage) {
@@ -27525,11 +27525,11 @@ case 'kertas': {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners)
-				if (global.groupOnly) return shoNherly('⚠️ Mode Group Only sudah aktif.')
+				if (global.groupOnly) return shoNherly('⚠️ El modo Sólo grupo está activo.')
 				global.groupOnly = true
 				global.privateChatOnly = false
 				global.public = true // Nonaktifkan mode public
-				shoNherly('✅ Mode Group Only diaktifkan!\n❌ Mode Private dimatikan.')
+				shoNherly('✅ ¡Modo Sólo Grupo activado!\n❌ El modo privado está desactivado.')
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -27569,10 +27569,10 @@ case 'kertas': {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners)
-				if (!global.groupOnly) return shoNherly('⚠️ Mode Group Only sudah nonaktif.')
+				if (!global.groupOnly) return shoNherly('⚠️ El modo Solo grupo está deshabilitado.')
 				global.groupOnly = false
 				global.public = true // Aktifkan kembali mode public
-				shoNherly('❌ Mode Group Only dimatikan!\n✅ Mode Public diaktifkan.')
+				shoNherly('❌ ¡El modo Sólo grupo está deshabilitado!\n✅ El modo público está activado.')
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
