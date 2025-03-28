@@ -26293,12 +26293,11 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
     };
 
     m.reply(`*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${global.boom[m.sender].board.join("")}\n\n🔹 *Elige un número del 1 al 10*\n🔸 *Evita las bombas!* \n\n🧨 Bombas restantes: ${global.boom[m.sender].bomb}\n❤️ Vidas: ${global.boom[m.sender].nyawa.join("")}`);
-
+    
     break;
 }
 
-// DETECTAR RESPUESTA DEL JUGADOR
-default:
+case 'numero': { // Agregar un case para detectar respuestas numéricas
     if (global.boom && global.boom[m.sender]) {
         let choice = parseInt(m.text.trim()); // Convertir la elección a número
 
@@ -26344,6 +26343,7 @@ default:
         m.reply(`*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${game.board.join("")}\n\n🔹 *Elige un número del 1 al 10*`);
     }
     break;
+}
 			case 'suit': {
     if (!isRegistered(m)) {
         return sendRegister(shoNhe, m, prefix, namabot);
