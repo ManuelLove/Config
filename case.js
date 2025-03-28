@@ -26277,7 +26277,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
         return sendRegister(shoNhe, m, prefix, namabot);
     }
     
-    updatePopularCommand(command); // Registrar uso del comando
+    updatePopularCommand(command);
 
     let user = db.data.users[m.sender];
     if (!user) {
@@ -26291,14 +26291,12 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
         user = db.data.users[m.sender];
     }
 
-    user.commandCount += 1; // Aumenta el conteo de comandos usados
+    user.commandCount += 1;
 
-    // 🔥 Solución al problema del objeto 'suit'
-    if (!this.suit) {
-        this.suit = {};
-    }
+    global.suitRooms = global.suitRooms || {};  // Asegurar que la variable está definida
 
-    let room = Object.values(this.suit).find(room => room.id && room.status && [room.p, room.p2].includes(m.sender));
+    let room = Object.values(global.suitRooms).find(room => 
+        room.id && room.status && [room.p, room.p2].includes(m.sender));
 
     if (room) {
         let win = '';
@@ -26319,7 +26317,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
             room.waktu_milih = setTimeout(() => {
                 let mensajeCancelado = `⚠️ ¡El juego se canceló porque no se eligió una opción a tiempo!`;
                 this.sendMessage(m.chat, { text: mensajeCancelado }, { quoted: m });
-                delete this.suit[room.id];
+                delete global.suitRooms[room.id];
             }, room.timeout);
         }
 
@@ -26389,7 +26387,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 
             this.sendMessage(room.asal, { text: mensajeResultado, mentions: [room.p, room.p2] });
 
-            delete this.suit[room.id];
+            delete global.suitRooms[room.id];
         }
     }
     break;
