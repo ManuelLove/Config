@@ -22798,7 +22798,7 @@ shoNhe.sendMessage(m.chat,
 										"jpegThumbnail": fs.readFileSync("./ShoNheMedia/image/owner.jpg"), //Format gambar harus 300x300 (jika beda tidak akan keluar
 										"fileLength": 120000,
 										"mediaKey": "SkHeALp42Ch7DGb6nuV6p7hxL+V9yjh9s9t3Ox8a72o=",
-										"fileName": `GROUP SETTINGS`,
+										"fileName": `AJUSTES DE GRUPO`,
 										"directPath": "/v/t62.7119-24/30129597_829817659174206_6300413901737393729_n.enc?ccb=11-4&oh=01_Q5AaIA5MAdyMQOjp8l42SnRy_8qjz9O8JH8vgPee1nIdko51&oe=66595EB9&_nc_sid=5e03e0",
 										"contactVcard": true,
 										"mediaKeyTimestamp": "1658703206"
@@ -22889,7 +22889,7 @@ shoNhe.sendMessage(m.chat,
 									},
 									externalAdReply:
 									{
-										title: `BOT SETTING 🔧`,
+										title: `CONFIGURACIÓN DEL BOT 🔧`,
 										body: "",
 										showAdAttribution: true,
 										thumbnail: fs.readFileSync("./ShoNheMedia/image/sett.png"),
