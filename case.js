@@ -4158,43 +4158,43 @@ case 'deleteprodukown': {
 break;
 case 'storeownmenu': {
     let teks = `┏━━━━━━━━━━━━━━━━━━━━━━━┓\n`;
-    teks += `┃  👑  *OWNER STORE*  👑  ┃\n`;
-    teks += `┗━━━━━━━━━━━━━━━━━━━━━━━┛\n\n`;
+teks += `┃  👑  *TIENDA DEL PROPIETARIO*  👑  ┃\n`;
+teks += `┗━━━━━━━━━━━━━━━━━━━━━━━┛\n\n`;
 
-    teks += `⚡ *PANDUAN PENGGUNAAN:*\n`;
-    teks += `📌 Gunakan perintah di bawah untuk mengelola produk toko pemilik.\n`;
-    teks += `📌 Simbol < > menandakan input yang wajib diisi.\n\n`;
+teks += `⚡ *GUÍA DE USO:*\n`;
+teks += `📌 Utilice los comandos a continuación para gestionar los productos de la tienda del propietario.\n`;
+teks += `📌 El símbolo < > indica que el campo es obligatorio.\n\n`;
 
-    teks += `⚡ *COMMANDS:*\n`;
-    teks += `📍 *Tambah Produk:*\n`;
-    teks += `   ➤ \`.addprodukown <nama>|<harga>|<deskripsi>\`\n`;
-    teks += `📍 *Lihat Produk:*\n`;
-    teks += `   ➤ \`.listprodukown\`\n`;
-    teks += `📍 *Beli Produk:*\n`;
-    teks += `   ➤ \`.buyprodukown <nama_produk>\`\n`;
-    teks += `📍 *Update Produk:*\n`;
-    teks += `   ➤ \`.updateprodukown <nama>|<harga>|<deskripsi>\`\n`;
-    teks += `📍 *Hapus Produk:*\n`;
-    teks += `   ➤ \`.deleteprodukown\` (pilih dari daftar interaktif)\n\n`;
+teks += `⚡ *COMANDOS:*\n`;
+teks += `📍 *Agregar Producto:*\n`;
+teks += `   ➤ \`.addprodukown <nombre>|<precio>|<descripción>\`\n`;
+teks += `📍 *Ver Productos:*\n`;
+teks += `   ➤ \`.listprodukown\`\n`;
+teks += `📍 *Comprar Producto:*\n`;
+teks += `   ➤ \`.buyprodukown <nombre_producto>\`\n`;
+teks += `📍 *Actualizar Producto:*\n`;
+teks += `   ➤ \`.updateprodukown <nombre>|<precio>|<descripción>\`\n`;
+teks += `📍 *Eliminar Producto:*\n`;
+teks += `   ➤ \`.deleteprodukown\` (elige desde la lista interactiva)\n\n`;
 
     let button = [{
         "name": "single_select",
         "buttonParamsJson": JSON.stringify({
-            "title": "👑 OWNER STORE ACTIONS",
-            "sections": [
-                {
-                    "title": "Pembelian Produk",
-                    "rows": [
-                        {"header": "📜 Daftar Produk", "title": "Lihat Produk", "id": "listprodukown"},
-                        {"header": "🛒 Beli Produk", "title": "Beli Produk", "id": "buyprodukown"}
-                    ]
-                },
-                {
-                    "title": "Kelola Produk",
-                    "rows": [
-                        {"header": "➕ Tambah Produk", "title": "Tambah Produk", "id": "addprodukown"},
-                        {"header": "✏️ Update Produk", "title": "Update Produk", "id": "updateprodukown"},
-                        {"header": "❌ Hapus Produk", "title": "Hapus Produk", "id": "deleteprodukown"}
+            "title": "👑 ACCIONES DE LA TIENDA DEL PROPIETARIO",
+"sections": [
+    {
+        "title": "Compra de Productos",
+        "rows": [
+            {"header": "📜 Lista de Productos", "title": "Ver Productos", "id": "listprodukown"},
+            {"header": "🛒 Comprar Producto", "title": "Comprar Producto", "id": "buyprodukown"}
+        ]
+    },
+    {
+        "title": "Gestionar Productos",
+        "rows": [
+            {"header": "➕ Agregar Producto", "title": "Agregar Producto", "id": "addprodukown"},
+            {"header": "✏️ Actualizar Producto", "title": "Actualizar Producto", "id": "updateprodukown"},
+            {"header": "❌ Eliminar Producto", "title": "Eliminar Producto", "id": "deleteprodukown"}
                     ]
                 }
             ]
@@ -4205,61 +4205,61 @@ case 'storeownmenu': {
 }
 break;
 case 'storemenu': {
-    let teks = `╔══════════════════════╗\n`;
-    teks += `║  ✨ *STORE MENU* ✨  ║\n`;
-    teks += `╚══════════════════════╝\n\n`;
+    let teks = `╔══════════════════════╗\n`;  
+teks += `║  ✨ *MENÚ DE TIENDA* ✨  ║\n`;  
+teks += `╚══════════════════════╝\n\n`;  
 
-    teks += `📢 *PANDUAN PENGGUNAAN:*\n`;
-    teks += `📌 Gunakan perintah di bawah untuk mengelola produk.\n`;
-    teks += `📌 Simbol < > menandakan input yang wajib diisi.\n\n`;
+teks += `📢 *GUÍA DE USO:*\n`;  
+teks += `📌 Usa los comandos a continuación para gestionar productos.\n`;  
+teks += `📌 Los símbolos < > indican los campos obligatorios.\n\n`;  
 
-    teks += `💎 *MENU PRODUK UMUM:*\n`;
-    teks += `━━━━━━━━━━━━━━━━━━━━━━\n`;
-    teks += `📍 *Tambah Produk:*\n`;
-    teks += `   ➤ \`.addproduk <nama>|<harga>|<deskripsi>\`\n`;
-    teks += `📍 *Lihat Produk:*\n`;
-    teks += `   ➤ \`.listproduk\`\n`;
-    teks += `📍 *Beli Produk:*\n`;
-    teks += `   ➤ \`.buyproduk <nama_produk>\`\n`;
-    teks += `📍 *Update Produk:*\n`;
-    teks += `   ➤ \`.updateproduk <nama>|<harga>|<deskripsi>\`\n`;
-    teks += `📍 *Hapus Produk:*\n`;
-    teks += `   ➤ \`.deleteproduk\` (pilih dari daftar interaktif)\n\n`;
+teks += `💎 *MENÚ DE PRODUCTOS GENERALES:*\n`;  
+teks += `━━━━━━━━━━━━━━━━━━━━━━\n`;  
+teks += `📍 *Añadir Producto:*\n`;  
+teks += `   ➤ \`.addproduk <nombre>|<precio>|<descripción>\`\n`;  
+teks += `📍 *Ver Productos:*\n`;  
+teks += `   ➤ \`.listproduk\`\n`;  
+teks += `📍 *Comprar Producto:*\n`;  
+teks += `   ➤ \`.buyproduk <nombre_producto>\`\n`;  
+teks += `📍 *Actualizar Producto:*\n`;  
+teks += `   ➤ \`.updateproduk <nombre>|<precio>|<descripción>\`\n`;  
+teks += `📍 *Eliminar Producto:*\n`;  
+teks += `   ➤ \`.deleteproduk\` (seleccionar de la lista interactiva)\n\n`;  
 
-    // **Tambahan Menu Produk Owner**
-    teks += `👑 *MENU PRODUK OWNER (KHUSUS ADMIN & OWNER):*\n`;
-    teks += `━━━━━━━━━━━━━━━━━━━━━━\n`;
-    teks += `📍 *Lihat Produk Owner:*\n`;
-    teks += `   ➤ \`.listprodukown\`\n`;
-    teks += `📍 *Beli Produk Owner:*\n`;
-    teks += `   ➤ \`.buyprodukown <nama_produk>\`\n`;
+// **Menú Adicional para Propietarios**  
+teks += `👑 *MENÚ DE PRODUCTOS PARA PROPIETARIOS (SOLO ADMIN & OWNER):*\n`;  
+teks += `━━━━━━━━━━━━━━━━━━━━━━\n`;  
+teks += `📍 *Ver Productos de Propietarios:*\n`;  
+teks += `   ➤ \`.listprodukown\`\n`;  
+teks += `📍 *Comprar Producto de Propietario:*\n`;  
+teks += `   ➤ \`.buyprodukown <nombre_producto>\`\n`;
 
     let button = [{
         "name": "single_select",
         "buttonParamsJson": JSON.stringify({
-            "title": "✨ STORE ACTIONS ✨",
-            "sections": [
-                {
-                    "title": "📦 Kelola Produk Umum",
-                    "rows": [
-                        {"header": "➕ Tambah Produk", "title": "Tambah Produk", "id": "addproduk"},
-                        {"header": "✏️ Update Produk", "title": "Update Produk", "id": "updateproduk"},
-                        {"header": "❌ Hapus Produk", "title": "Hapus Produk", "id": "deleteproduk"}
-                    ]
-                },
-                {
-                    "title": "🛒 Pembelian Produk Umum",
-                    "rows": [
-                        {"header": "📜 Daftar Produk", "title": "Lihat Produk", "id": "listproduk"},
-                        {"header": "🛒 Beli Produk", "title": "Beli Produk", "id": "buyproduk"}
-                    ]
-                },
-                {
-                    "title": "💰 Pembelian Produk Owner",
-                    "rows": [
-                        {"header": "📜 Daftar Produk Owner", "title": "Lihat Produk", "id": "listprodukown"},
-                        {"header": "🛒 Beli Produk Owner", "title": "Beli Produk", "id": "buyprodukown"},
-                        {"header": "🏭 store Owner", "title": "Store settings khusus Produk Owner", "id": "storeownmenu"}
+    "title": "✨ ACCIONES DE TIENDA ✨",
+    "sections": [
+        {
+            "title": "📦 Gestionar Productos Generales",
+            "rows": [
+                {"header": "➕ Agregar Producto", "title": "Añadir Producto", "id": "addproduk"},
+                {"header": "✏️ Actualizar Producto", "title": "Actualizar Producto", "id": "updateproduk"},
+                {"header": "❌ Eliminar Producto", "title": "Eliminar Producto", "id": "deleteproduk"}
+            ]
+        },
+        {
+            "title": "🛒 Compra de Productos Generales",
+            "rows": [
+                {"header": "📜 Lista de Productos", "title": "Ver Productos", "id": "listproduk"},
+                {"header": "🛒 Comprar Producto", "title": "Comprar Producto", "id": "buyproduk"}
+            ]
+        },
+        {
+            "title": "💰 Compra de Productos del Propietario",
+            "rows": [
+                {"header": "📜 Lista de Productos del Propietario", "title": "Ver Productos", "id": "listprodukown"},
+                {"header": "🛒 Comprar Producto del Propietario", "title": "Comprar Producto", "id": "buyprodukown"},
+                {"header": "🏭 Tienda del Propietario", "title": "Configuración de tienda exclusiva para Productos del Propietario", "id": "storeownmenu"}
                     ]
                 }
             ]
@@ -4279,10 +4279,10 @@ case 'addproduk': {
     const args = text.trim().split('|');
     const namaProduk = args[0]?.trim() || null;
     const hargaProduk = parseInt(args[1]?.trim()) || null;
-    const deskripsiProduk = args[2]?.trim() || 'Deskripsi tidak tersedia';
+    const deskripsiProduk = args[2]?.trim() || 'Descripción no disponible';
 
     if (!namaProduk || isNaN(hargaProduk)) {
-        return shoNherly('❌ Format salah. Gunakan format: .addproduk <nama>|<harga>|<deskripsi>');
+        return shoNherly('❌ Formato incorrecto. Utilice el formato: .addproduct <nombre>|<precio>|<descripción>');
     }
 
     const listStorePath = './database/listStore.json';
@@ -4295,7 +4295,7 @@ case 'addproduk': {
             listStore = fileContent ? JSON.parse(fileContent) : {};
         } catch (error) {
             console.error('❌ Error membaca JSON:', error);
-            return shoNherly('❌ Terjadi kesalahan saat membaca file produk.');
+            return shoNherly('❌ Se produjo un error al leer el archivo del producto.');
         }
     }
 
@@ -4305,7 +4305,7 @@ case 'addproduk': {
     // Periksa apakah produk sudah ada
     const produkExist = listStore[m.chat].produk.some(p => p.name.toLowerCase() === namaProduk.toLowerCase());
     if (produkExist) {
-        return shoNherly(`❌ Produk *${namaProduk}* sudah ada! Gunakan nama lain.`);
+        return shoNherly(`❌ ¡El producto *${namaProduk}* ya existe! Usa otro nombre.`);
     }
 
     // Tambahkan produk baru ke dalam daftar
@@ -4318,10 +4318,10 @@ case 'addproduk': {
     // Simpan ke file
     try {
         fs.writeFileSync(listStorePath, JSON.stringify(listStore, null, 2), 'utf8');
-        shoNherly(`✅ Produk *${namaProduk}* berhasil ditambahkan dengan harga Rp${hargaProduk}.`);
+        shoNherly(`✅ El producto *${namaProduk}* se ha añadido con éxito por un precio de Rp${hargaProduk}.`);
     } catch (error) {
         console.error('❌ Error saat menyimpan JSON:', error);
-        shoNherly('❌ Terjadi kesalahan saat menyimpan produk baru.');
+        shoNherly('❌ Se produjo un error al guardar un nuevo producto.');
     }
 }
 break;
@@ -4340,36 +4340,37 @@ case 'deleteproduk': {
             listStore = fileContent.trim() === '' ? {} : JSON.parse(fileContent);
         } catch (error) {
             console.error('❌ Error membaca JSON:', error);
-            return shoNherly('❌ Terjadi kesalahan saat membaca file produk.');
+            return shoNherly('❌ Se produjo un error al leer el archivo del producto.');
         }
     } else {
-        return shoNherly('❌ Database produk tidak ditemukan.');
+        return shoNherly('❌ Base de datos del producto no encontrada.');
     }
 
     if (!listStore[m.chat] || !Array.isArray(listStore[m.chat].produk) || listStore[m.chat].produk.length === 0) {
-        return shoNherly('❌ Tidak ada produk yang tersedia untuk dihapus.');
+        return shoNherly('❌ No hay productos disponibles para eliminar.');
     }
 
     // Jika tidak ada input produk, tampilkan daftar produk dengan tombol interaktif yang langsung menghapus
     if (!text) {
-        let teks = "🗑️ *Pilih Produk untuk Dihapus*\n\n";
-        listStore[m.chat].produk.forEach((p, i) => {
-            teks += `📌 *${i + 1}. ${p.name}*\n`;
-            teks += `💰 Harga: Rp${p.price}\n`;
-            teks += `📄 Deskripsi: ${p.description}\n\n`;
+        let teks = "🗑️ *Selecciona un Producto para Eliminar*\n\n";
+listStore[m.chat].produk.forEach((p, i) => {
+    teks += `📌 *${i + 1}. ${p.name}*\n`;
+    teks += `💰 Precio: Rp${p.price}\n`;
+    teks += `📄 Descripción: ${p.description}\n\n`;
         });
 
         let button = [{
             "name": "single_select",
             "buttonParamsJson": JSON.stringify({
-                "title": "🗑️ HAPUS PRODUK",
-                "sections": [{
-                    "title": "Klik Produk untuk Menghapus",
-                    "rows": listStore[m.chat].produk.map(p => ({
-                        "header": p.name,
-                        "title": `Hapus ${p.name}`,
-                        "description": "Tekan untuk langsung menghapus",
-                        "id": `deleteproduk ${p.name}`
+                {
+    "title": "🗑️ ELIMINAR PRODUCTO",
+    "sections": [{
+        "title": "Haz clic en un producto para eliminarlo",
+        "rows": listStore[m.chat].produk.map(p => ({
+            "header": p.name,
+            "title": `Eliminar ${p.name}`,
+            "description": "Presiona para eliminar inmediatamente",
+            "id": `deleteproduk ${p.name}`
                     }))
                 }]
             })
@@ -4383,7 +4384,7 @@ case 'deleteproduk': {
     const namaProduk = text.trim().toLowerCase();
     const index = listStore[m.chat].produk.findIndex(p => p.name.toLowerCase() === namaProduk);
 
-    if (index === -1) return shoNherly(`❌ Produk *${namaProduk}* tidak ditemukan.`);
+    if (index === -1) return shoNherly(`❌ El producto *${namaProduk}* no se encontró.`);
 
     // Hapus produk dari array
     const deletedProduct = listStore[m.chat].produk.splice(index, 1)[0];
@@ -4391,10 +4392,10 @@ case 'deleteproduk': {
     // Simpan perubahan ke file
     try {
         await fs.promises.writeFile(listStorePath, JSON.stringify(listStore, null, 2), 'utf8');
-        shoNherly(`✅ Produk *${deletedProduct.name}* berhasil dihapus.`);
+        shoNherly(`✅ El producto *${deletedProduct.name}* se ha eliminado con éxito.`);
     } catch (error) {
         console.error('❌ Error saat menyimpan JSON:', error);
-        shoNherly('❌ Terjadi kesalahan saat menghapus produk.');
+        shoNherly('❌ Se produjo un error al eliminar el producto.');
     }
 }
 break;
@@ -4409,24 +4410,24 @@ case 'buyprodukown': {
             produkDB = JSON.parse(fileContent);
         } catch (error) {
             console.error('❌ Gagal membaca produk owner:', error);
-            return shoNherly('❌ Gagal memuat data produk owner. Silakan coba lagi nanti.');
+            return shoNherly('❌ No se pudieron cargar los datos del producto del propietario. Por favor inténtalo de nuevo más tarde.');
         }
     } else {
-        return shoNherly('❌ Database produk owner tidak ditemukan.');
+        return shoNherly('❌ No se encontró la base de datos del propietario del producto.');
     }
 
     // Validasi ketersediaan produk dalam grup
     if (!produkDB[m.chat]?.produk?.length) {
-        return shoNherly('❌ Tidak ada produk yang tersedia di toko owner.');
+        return shoNherly('❌ No hay productos disponibles en la tienda del propietario.');
     }
 
     // Jika tidak ada argumen, tampilkan daftar produk
     if (args.length === 0) {
-        let teks = "🛒 *DAFTAR PRODUK OWNER*\n\n";
-        produkDB[m.chat].produk.forEach((p, i) => {
-            teks += `${i + 1}. *${p.name}*\n`;
-            teks += `   💵 Harga: Rp${p.price}\n`;
-            teks += `   📜 Deskripsi: ${p.description}\n\n`;
+        let teks = "🛒 *LISTA DE PRODUCTOS DEL PROPIETARIO*\n\n";
+produkDB[m.chat].produk.forEach((p, i) => {
+    teks += `${i + 1}. *${p.name}*\n`;
+    teks += `   💵 Precio: Rp${p.price}\n`;
+    teks += `   📜 Descripción: ${p.description}\n\n`;
         });
 
         const buttons = produkDB[m.chat].produk.map(p => ({
@@ -4444,9 +4445,9 @@ case 'buyprodukown': {
             [{
                 "name": "single_select",
                 "buttonParamsJson": JSON.stringify({
-                    "title": "PILIH PRODUK OWNER",
+                    "title": "SELECCIONAR PRODUCTOS DEL PROPIETARIO",
                     "sections": [{ 
-                        "title": "PRODUK TERSEDIA", 
+                        "title": "PRODUCTO DISPONIBLE", 
                         "rows": buttons 
                     }]
                 })
@@ -4462,28 +4463,28 @@ case 'buyprodukown': {
         p.name.toLowerCase() === namaProduk
     );
 
-    if (!produk) return shoNherly('❌ Produk tidak ditemukan. Pastikan nama produk sesuai.');
+    if (!produk) return shoNherly('❌ Producto no encontrado. Asegúrese de que el nombre del producto coincida.');
 
     // Tampilkan detail pembelian
-    let teks = "📦 *DETAIL PEMBELIAN*\n";
-    teks += "────────────────────────\n";
-    teks += `🔖 *Nama Produk:* ${produk.name}\n`;
-    teks += `💰 *Harga:* Rp${produk.price}\n`;
-    teks += `📜 *Deskripsi:* ${produk.description}\n\n`;
+    let teks = "📦 *DETALLE DE COMPRA*\n";
+teks += "────────────────────────\n";
+teks += `🔖 *Nombre del Producto:* ${produk.name}\n`;
+teks += `💰 *Precio:* Rp${produk.price}\n`;
+teks += `📜 *Descripción:* ${produk.description}\n\n`;
 
-    // Daftar metode pembayaran
-    teks += "💳 *METODE PEMBAYARAN*\n";
-    teks += "────────────────────────\n";
-    teks += `1. DANA        : ${global.nomordana} (${global.namadana})\n`;
-    teks += `2. OVO         : ${global.nomorovo} (${global.namaovo})\n`;
-    teks += `3. GoPay       : ${global.nomorgopay} (${global.namagopay})\n`;
-    teks += `4. ShopeePay   : ${global.nomorshopepay} (${global.namashopepay})\n`;
-    teks += `5. Seabank     : ${global.nomorseabank} (${global.namaseabank})\n`;
-    teks += `6. BCA         : ${global.nomorbca} (${global.namabca})\n`;
-    teks += `7. Danamon     : ${global.nomordanamon} (${global.namadanamon})\n`;
-    teks += `8. QRIS        : Scan kode QR (tanpa admin)\n`;
-    teks += "────────────────────────\n\n";
-    teks += "⚠️ *Silakan lakukan pembayaran dalam 15 menit untuk menghindari pembatalan otomatis.*";
+// Lista de métodos de pago
+teks += "💳 *MÉTODOS DE PAGO*\n";
+teks += "────────────────────────\n";
+teks += `1. DANA        : ${global.nomordana} (${global.namadana})\n`;
+teks += `2. OVO         : ${global.nomorovo} (${global.namaovo})\n`;
+teks += `3. GoPay       : ${global.nomorgopay} (${global.namagopay})\n`;
+teks += `4. ShopeePay   : ${global.nomorshopepay} (${global.namashopepay})\n`;
+teks += `5. Seabank     : ${global.nomorseabank} (${global.namaseabank})\n`;
+teks += `6. BCA         : ${global.nomorbca} (${global.namabca})\n`;
+teks += `7. Danamon     : ${global.nomordanamon} (${global.namadanamon})\n`;
+teks += `8. QRIS        : Escanea el código QR (sin comisión)\n`;
+teks += "────────────────────────\n\n";
+teks += "⚠️ *Realiza el pago en un máximo de 15 minutos para evitar la cancelación automática.*";
 
     // Tombol metode pembayaran
     const paymentButtons = [
@@ -4505,7 +4506,7 @@ case 'buyprodukown': {
         [{
             "name": "single_select",
             "buttonParamsJson": JSON.stringify({
-                "title": "PILIH METODE PEMBAYARAN",
+                "title": "SELECCIONAR FORMA DE PAGO",
                 "sections": [{
                     "title": "Transfer/QRIS",
                     "rows": paymentButtons
@@ -4527,24 +4528,24 @@ case 'buyproduk': {
             listStore = JSON.parse(fileContent);
         } catch (error) {
             console.error('❌ Gagal membaca listStore:', error);
-            return shoNherly('❌ Gagal memuat data produk. Silakan coba lagi nanti.');
+            return shoNherly('❌ No se pudieron cargar los datos del producto. Por favor inténtalo de nuevo más tarde.');
         }
     } else {
-        return shoNherly('❌ Database produk tidak ditemukan.');
+        return shoNherly('❌ Base de datos del producto no encontrada.');
     }
 
     // Validasi ketersediaan produk dalam grup
     if (!listStore[m.chat]?.produk?.length) {
-        return shoNherly('❌ Tidak ada produk yang tersedia di grup ini.');
+        return shoNherly('❌ No hay productos disponibles en este grupo.');
     }
 
     // Jika tidak ada argumen, tampilkan daftar produk
     if (args.length === 0) {
-        let teks = "🛒 *DAFTAR PRODUK TERSEDIA*\n\n";
-        listStore[m.chat].produk.forEach((p, i) => {
-            teks += `${i + 1}. *${p.name}*\n`;
-            teks += `   💵 Harga: Rp${p.price}\n`;
-            teks += `   📜 Deskripsi: ${p.description}\n\n`;
+        let teks = "🛒 *LISTA DE PRODUCTOS DISPONIBLES*\n\n";
+listStore[m.chat].produk.forEach((p, i) => {
+    teks += `${i + 1}. *${p.name}*\n`;
+    teks += `   💵 Precio: Rp${p.price}\n`;
+    teks += `   📜 Descripción: ${p.description}\n\n`;
         });
 
         const buttons = listStore[m.chat].produk.map(p => ({
@@ -4562,9 +4563,9 @@ case 'buyproduk': {
             [{
                 "name": "single_select",
                 "buttonParamsJson": JSON.stringify({
-                    "title": "PILIH PRODUK",
+                    "title": "SELECCIONAR PRODUCTO",
                     "sections": [{ 
-                        "title": "PRODUK TERSEDIA", 
+                        "title": "PRODUCTO DISPONIBLE", 
                         "rows": buttons 
                     }]
                 })
@@ -4580,28 +4581,28 @@ case 'buyproduk': {
         p.name.toLowerCase() === namaProduk
     );
 
-    if (!produk) return shoNherly('❌ Produk tidak ditemukan. Pastikan nama produk sesuai.');
+    if (!produk) return shoNherly('❌ Producto no encontrado. Asegúrese de que el nombre del producto coincida.');
 
     // Tampilkan detail pembelian
-    let teks = "📦 *DETAIL PEMBELIAN*\n";
-    teks += "────────────────────────\n";
-    teks += `🔖 *Nama Produk:* ${produk.name}\n`;
-    teks += `💰 *Harga:* Rp${produk.price}\n`;
-    teks += `📜 *Deskripsi:* ${produk.description}\n\n`;
+    let teks = "📦 *DETALLES DE COMPRA*\n";
+teks += "────────────────────────\n";
+teks += `🔖 *Nombre del Producto:* ${produk.name}\n`;
+teks += `💰 *Precio:* Rp${produk.price}\n`;
+teks += `📜 *Descripción:* ${produk.description}\n\n`;
 
-    // Daftar metode pembayaran
-    teks += "💳 *METODE PEMBAYARAN*\n";
-    teks += "────────────────────────\n";
-    teks += `1. DANA        : ${global.nomordana} (${global.namadana})\n`;
-    teks += `2. OVO         : ${global.nomorovo} (${global.namaovo})\n`;
-    teks += `3. GoPay       : ${global.nomorgopay} (${global.namagopay})\n`;
-    teks += `4. ShopeePay   : ${global.nomorshopepay} (${global.namashopepay})\n`;
-    teks += `5. Seabank     : ${global.nomorseabank} (${global.namaseabank})\n`;
-    teks += `6. BCA         : ${global.nomorbca} (${global.namabca})\n`;
-    teks += `7. Danamon     : ${global.nomordanamon} (${global.namadanamon})\n`;
-    teks += `8. QRIS        : Scan kode QR (tanpa admin)\n`;
-    teks += "────────────────────────\n\n";
-    teks += "⚠️ *Silakan lakukan pembayaran dalam 15 menit untuk menghindari pembatalan otomatis.*";
+// Lista de métodos de pago
+teks += "💳 *MÉTODOS DE PAGO*\n";
+teks += "────────────────────────\n";
+teks += `1. DANA        : ${global.nomordana} (${global.namadana})\n`;
+teks += `2. OVO         : ${global.nomorovo} (${global.namaovo})\n`;
+teks += `3. GoPay       : ${global.nomorgopay} (${global.namagopay})\n`;
+teks += `4. ShopeePay   : ${global.nomorshopepay} (${global.namashopepay})\n`;
+teks += `5. Seabank     : ${global.nomorseabank} (${global.namaseabank})\n`;
+teks += `6. BCA         : ${global.nomorbca} (${global.namabca})\n`;
+teks += `7. Danamon     : ${global.nomordanamon} (${global.namadanamon})\n`;
+teks += `8. QRIS        : Escanea el código QR (sin administrador)\n`;
+teks += "────────────────────────\n\n";
+teks += "⚠️ *Realice el pago dentro de 15 minutos para evitar la cancelación automática.*";
 
     // Tombol metode pembayaran
     const paymentButtons = [
@@ -4623,7 +4624,7 @@ case 'buyproduk': {
         [{
             "name": "single_select",
             "buttonParamsJson": JSON.stringify({
-                "title": "PILIH METODE PEMBAYARAN",
+                "title": "SELECCIONAR FORMA DE PAGO",
                 "sections": [{
                     "title": "Transfer/QRIS",
                     "rows": paymentButtons
@@ -4646,7 +4647,7 @@ case 'addqris': {
 
     try {
         if (!m.quoted || !/image/.test(m.quoted.mtype)) {
-            return shoNherly('❌ Harap reply gambar QRIS yang ingin diunggah.');
+            return shoNherly('❌ Responda a la imagen QRIS que desea cargar.');
         }
 
         // Menambahkan pesan loading ⏳
@@ -4674,7 +4675,7 @@ case 'addqris': {
 
         // Ambil URL hasil upload
         if (!response.data.success) {
-            return shoNherly('❌ Gagal mengunggah QRIS. Coba lagi.');
+            return shoNherly('❌ No se pudo cargar QRIS. Intentar otra vez.');
         }
 
         let qrisURL = response.data.data.url;
@@ -4683,7 +4684,7 @@ case 'addqris': {
         fs.writeFileSync('./database/qris.json', JSON.stringify({ url: qrisURL }, null, 2));
 
         // Kirim URL QRIS ke pengguna
-        shoNherly(`✅ QRIS berhasil diunggah!\n🔗 *URL:* ${qrisURL}`);
+        shoNherly(`✅ ¡QRIS se cargó exitosamente!\n🔗 *URL:* ${qrisURL}`);
 
         if (levelUpMessage) {
             await shoNhe.sendMessage(m.chat, {
@@ -4705,7 +4706,7 @@ case 'addqris': {
         }
     } catch (error) {
         console.error('❌ Gagal mengunggah QRIS:', error);
-        shoNherly('❌ Terjadi kesalahan saat mengunggah QRIS.');
+        shoNherly('❌ Se produjo un error al cargar QRIS.');
     }
 }
 break;
