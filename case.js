@@ -1364,8 +1364,8 @@ await shoNhe.sendMessage(m.chat, {
 				{
 					product:
 					{
-						title: `Hai👋🏻.\nBOT BY\nshoNhe's`,
-						description: `${m.pushName ? m.pushName : 'Temen shoNhe'} order`,
+						title: `Hola👋🏻.\nBOT BY\nTechFix's`,
+						description: `${m.pushName ? m.pushName : 'Amigo de TechFix'} order`,
 						currencyCode: "IDR",
 						priceAmount1000: "1000000000000",
 						retailerId: `shoNheNotStore`,
@@ -1392,8 +1392,8 @@ await shoNhe.sendMessage(m.chat, {
 				{
 					product:
 					{
-						title: `Hai ${m.pushName ? m.pushName : 'Temen shoNhe'} 👋🏻, BUY YA`,
-						description: `${m.pushName ? m.pushName : 'Temen shoNhe'} order`,
+						title: `Hola ${m.pushName ? m.pushName : 'Amigo de TechFix'} 👋🏻, COMPRAR SI`,
+						description: `${m.pushName ? m.pushName : 'Amigo de TechFix'} order`,
 						currencyCode: "IDR",
 						priceAmount1000: "10000000",
 						retailerId: `shoNheID`,
@@ -2689,8 +2689,8 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 						mentionedJid: [m.sender],
 						"externalAdReply":
 						{
-							"title": `BOT BY DaTngxz'S`,
-							"body": `© DaTngxz'S`,
+							"title": `BOT BY TechFix'S`,
+							"body": `© ManuDia'z`,
 							"previewType": "PHOTO",
 							"thumbnail": getRandomThumb2(),
 							"sourceUrl": gh
@@ -12615,18 +12615,17 @@ ${formattedCommandList}
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				let menu = `*_👋🏻 *Hello! I am Langz Bot Version 9999.*  
-Ready products like nokos, and many more! Designed with precision and care, I ensure your experience is seamless and efficient.  
+				let menu = `*_👋🏻 *¡Hola! Soy TechFix Bot versión 9999.* ¡Productos listos como nokos y muchos más! Diseñado con precisión y cuidado, me aseguro de que su experiencia sea fluida y eficiente.  
 
 ╭───❐ *I N F O R M A S I* ❐───✧  
-├ 📜 *Bot Name* : Langz 
-├ 👨‍💻 *Owner* : Galang  
+├ 📜 *Bot Name* : TechFix 
+├ 👨‍💻 *Owner* : Manu  
 ├ 🌐 *Version* : 9999  
 ├ 🛒 *Product* : Nokos  
 ╰─────────────────────✧  
 
 💡 *Feel free to explore all my features using the menu provided!*  
-🔰 Powered by Galangz _*`;
+🔰 Powered by ManuDiaz _*`;
 				// Tombol utama
 				let buttons = [
 				{
@@ -12674,7 +12673,7 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 							sourceUrl: gh
 						}
 					},
-					footer: "© Langz",
+					footer: "© TechFix",
 					buttons: buttons,
 					viewOnce: true,
 					headerType: 4
@@ -12685,7 +12684,7 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 					buttonId: 'action',
 					buttonText:
 					{
-						displayText: 'This Button List'
+						displayText: 'Esta lista de botones'
 					},
 					type: 4,
 					nativeFlowInfo:
@@ -12693,41 +12692,41 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 						name: 'single_select',
 						paramsJson: JSON.stringify(
 						{
-							title: "Select Menu!",
+							title: "¡Seleccione Menú!",
 							sections: [
 							{
-								title: "Silahkan Pilih Button Menu di Bawah Ini",
-								highlight_label: "Powered by Galangz",
+								title: "Seleccione el botón de menú a continuación",
+								highlight_label: "Powered by ManuDiaz",
 								rows: [
 								{
-									title: " All Menu",
-									description: " Semua Menu",
-									id: ".allmenuu"
-								},
-								{
-									title: " Owner",
-									description: " Info Owner",
-									id: ".pepek"
-								},
-								{
-									title: " Produk",
-									description: " Produk Info",
-									id: ".produk"
-								},
-								{
-									title: " Donasi",
-									description: " Donasi Dong",
-									id: ".donasi"
-								},
-								{
-									title: " Group Menu",
-									description: " Menu Group",
-									id: ".grupmenu"
-								},
-								{
-									title: " Setting Bot",
-									description: " Pengaturan Bot",
-									id: ".bot byy"
+        "title": "📜 Todos los Menús",
+        "description": "Ver todos los menús",
+        "id": ".allmenuu"
+    },
+    {
+        "title": "👑 Propietario",
+        "description": "Información del propietario",
+        "id": ".pepek"
+    },
+    {
+        "title": "🛒 Productos",
+        "description": "Información de productos",
+        "id": ".produk"
+    },
+    {
+        "title": "💰 Donaciones",
+        "description": "Apoya con una donación",
+        "id": ".donasi"
+    },
+    {
+        "title": "👥 Menú de Grupo",
+        "description": "Opciones para grupos",
+        "id": ".grupmenu"
+    },
+    {
+        "title": "⚙️ Configuración del Bot",
+        "description": "Ajustes y configuraciones",
+        "id": ".bot byy"
 								}]
 							}]
 						})
@@ -24679,7 +24678,7 @@ shoNhe.sendMessage(m.chat,
 					let stickerBuffer = await shoNhe.sendVideoAsSticker(m.chat, videoBuffer, m,
 					{
 						packname: "Stiker By",
-						author: "shoNhe - Botz",
+						author: "TechFix - Botz",
 					});
 					console.log("Stiker berhasil dibuat:", stickerBuffer);
 				}
@@ -27030,14 +27029,14 @@ case 'kertas': {
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!text)
 				{
-					console.log('Teks URL TikTok tidak ditemukan.');
-					return shoNherly(`Example: ${prefix + command} url_tiktok`);
+					console.log('No se encontró el texto de la URL de TikTok.');
+					return shoNherly(`Ejemplo: ${prefix + command} url_tiktok`);
 				}
 				const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com)/;
 				if (!tiktokRegex.test(text))
 				{
 					console.log('URL tidak valid, tidak mengandung hasil dari TikTok.');
-					return shoNherly('URL Tidak Mengandung Result Dari TikTok!');
+					return shoNherly('¡La URL no contiene resultados de TikTok!');
 				}
 				if (!(await firely(m, mess.waits))) return;
 				try
@@ -27047,7 +27046,7 @@ case 'kertas': {
 					if (!hasil || !hasil.data || hasil.data.length === 0)
 					{
 						console.log('Tidak ada gambar atau media yang ditemukan.');
-						return shoNherly('Tidak ada foto yang ditemukan!');
+						return shoNherly('¡No se encontraron fotos!');
 					}
 					// Buat carousel card untuk setiap gambar
 					const carouselCards = await Promise.all(hasil.data.map(async (item, index) =>
@@ -27070,11 +27069,11 @@ case 'kertas': {
 							},
 							body:
 							{
-								text: `Foto ${index + 1} dari TikTok`,
+								text: `Foto ${index + 1} de TikTok`,
 							},
 							footer:
 							{
-								text: "Klik tombol untuk melihat lebih detail",
+								text: "Haga clic en el botón para ver más detalles",
 							},
 							nativeFlowMessage:
 							{
@@ -27083,7 +27082,7 @@ case 'kertas': {
 									name: "cta_url",
 									buttonParamsJson: JSON.stringify(
 									{
-										display_text: "Lihat di TikTok",
+										display_text: "Compruébalo en TikTok",
 										url: text,
 									}),
 								},
@@ -27091,7 +27090,7 @@ case 'kertas': {
 									name: "cta_url",
 									buttonParamsJson: JSON.stringify(
 									{
-										display_text: "Unduh Foto",
+										display_text: "Descargar fotos",
 										url: item.url,
 									}),
 								}],
@@ -27115,11 +27114,11 @@ case 'kertas': {
 								{
 									body:
 									{
-										text: `Hasil foto dari TikTok: ${text}`
+										text: `Resultados de fotos de TikTok: ${text}`
 									},
 									footer:
 									{
-										text: "TikTok Slide Bot by shoNhe"
+										text: "Diapositivas de TikTok Bot by TechFix"
 									},
 									header:
 									{
@@ -27144,7 +27143,7 @@ case 'kertas': {
 				catch (e)
 				{
 					console.error('Gagal mengunduh atau membuat carousel:', e);
-					shoNherly('Gagal memproses permintaan Anda. Silakan coba lagi.');
+					shoNherly('No se pudo procesar su solicitud. Por favor inténtalo de nuevo.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
