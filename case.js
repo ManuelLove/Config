@@ -12624,8 +12624,8 @@ ${formattedCommandList}
 ├ 🛒 *Product* : Nokos  
 ╰─────────────────────✧  
 
-💡 *Feel free to explore all my features using the menu provided!*  
-🔰 Powered by ManuDiaz _*`;
+💡 *¡Siéntete libre de explorar todas mis funciones usando el menú proporcionado!*  
+🔰 *_Powered by ManuDiaz_*`;
 				// Tombol utama
 				let buttons = [
 				{
