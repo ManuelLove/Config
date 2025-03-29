@@ -22700,8 +22700,8 @@ shoNhe.sendMessage(m.chat,
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!/video|audio/.test(mime)) return shoNherly(`Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`)
-				shoNherly('sek dilit');
+				if (!/video|audio/.test(mime)) return shoNherly(`Enviar/Responder vídeo/audio que desea convertir en audio con subtítulos ${prefix + command}`)
+				shoNherly('sexo anal');
 				// Emoji yang akan digunakan
 				const reactEmojis = ["⏳", "🕛", "🕒", "🕕", "🕘", "🕛", "✅"];
 				// Mengirimkan reaksi secara berurutan
@@ -24403,8 +24403,8 @@ shoNhe.sendMessage(m.chat,
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!/webp|video/.test(mime)) return shoNherly(`Reply Video/Stiker dengan caption *${prefix + command}*`);
-				shoNherly('sek dilit');
+				if (!/webp|video/.test(mime)) return shoNherly(`Responder vídeo/sticker con título *${prefix + command}*`);
+				shoNherly('sexo anal');
 				// Emoji yang akan digunakan
 				const reactEmojis = ["⏳", "🕛", "🕒", "🕕", "🕘", "🕛", "✅"];
 				// Mengirimkan reaksi secara berurutan
@@ -24423,13 +24423,13 @@ shoNhe.sendMessage(m.chat,
 				let media = await shoNhe.downloadAndSaveMediaMessage(qmsg, filename); // Menyertakan nama file yang valid
 				if (!media)
 				{
-					return shoNherly('Gagal mengunduh media!');
+					return shoNherly('¡No se pudo descargar el medio!');
 				}
 				let ran = `./database/sampah/${getRandom('.gif')}`;
 				exec(`convert ${media} ${ran}`, (err) =>
 				{
 					fs.unlinkSync(media);
-					if (err) return shoNherly('Gagal mengonversi stiker❗');
+					if (err) return shoNherly('No se pudo convertir la sticker❗');
 					let buffer = fs.readFileSync(ran);
 					shoNhe.sendMessage(m.chat,
 					{
@@ -24477,13 +24477,13 @@ shoNhe.sendMessage(m.chat,
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return angryshoNhe(`Contoh : ${prefix + command} Hai kak`)
+				if (!text) return angryshoNhe(`Ejemplo : ${prefix + command} hola hermana`)
 				if (!(await firely(m, mess.waits))) return;
 				try {
 					const buffer = await getBuffer(`https://siputzx-bart.hf.space/?q=${encodeURIComponent(text)}`)
 					shoNhe.sendImageAsSticker(m.chat, buffer, m, { packname: namabot, author: namaowner })
 				} catch (err) {
-					RepshoNheError('Terjadi kesalahan saat membuat stiker gambar. 😞');
+					RepshoNheError('Se produjo un error al crear una sticker de imagen. 😞');
 				}
 				if (levelUpMessage)
 				{
