@@ -24887,7 +24887,7 @@ shoNhe.sendMessage(m.chat,
 						// Ambil URL hasil
 						let url = response.data.data.url;
 						// Kirim URL ke pengguna
-						shoNherly(`Berhasil diunggah!\nURL: ${url}`);
+						shoNherly(`¡Subido exitosamente!\nURL: ${url}`);
 					}
 					else
 					{
@@ -24897,7 +24897,7 @@ shoNhe.sendMessage(m.chat,
 				catch (e)
 				{
 					console.error(e);
-					shoNherly('Terjadi kesalahan saat mengunggah file!');
+					shoNherly('¡Se produjo un error al cargar el archivo!');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
