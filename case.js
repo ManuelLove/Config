@@ -19822,7 +19822,7 @@ break;
 							fs.unlinkSync(ran)
 						})
 					}
-					else shoNherly(`Reply to the audio you want to change with a caption *${prefix + command}*`)
+					else shoNherly(`Responde al audio que quieres cambiar con un subtítulo *${prefix + command}*`)
 				}
 				catch (e)
 				{
