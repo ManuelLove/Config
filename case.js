@@ -4362,7 +4362,6 @@ listStore[m.chat].produk.forEach((p, i) => {
         let button = [{
             "name": "single_select",
             "buttonParamsJson": JSON.stringify({
-                {
     "title": "🗑️ ELIMINAR PRODUCTO",
     "sections": [{
         "title": "Haz clic en un producto para eliminarlo",
