@@ -24253,7 +24253,7 @@ shoNhe.sendMessage(m.chat,
 				{
 					document: audio,
 					mimetype: 'audio/mpeg',
-					fileName: `Convert By Sych Bot.mp3`
+					fileName: `Convert By TechFix Bot.mp3`
 				},
 				{
 					quoted: m
