@@ -6007,35 +6007,36 @@ break;
 				// Informasi level, exp, dan lainnya
 				const info = 
 `╔══════════════════════╗  
-║  🌟 *PROFIL LEVEL ANDA* 🌟  ║  
+║  🌟 *TU PERFIL DE NIVEL* 🌟  ║  
 ╚══════════════════════╝  
 
-📛 *Nama*       : ${m.pushName || 'Tidak diketahui'}  
-📱 *Nomor*      : ${m.sender.split('@')[0]}  
+📛 *Nombre*       : ${m.pushName || 'Desconocido'}  
+📱 *Número*      : ${m.sender.split('@')[0]}  
 
 ╭─────────•✧✧✧•─────────╮  
-🎮 *Level*      : ${user.level || 0}  
+🎮 *Nivel*      : ${user.level || 0}  
 ✨ *Exp*        : ${user.exp || 0}/${user.expTarget || 10}  
 💰 *Saldo*      : Rp${user.balance || 0}  
-📊 *Command*    : ${user.commandCount || 0}  
-💎 *Role*       : ${user.role || 'user'}  
+📊 *Comandos*   : ${user.commandCount || 0}  
+💎 *Rol*        : ${user.role || 'Usuario'}  
 ╰─────────•✧✧✧•─────────╯  
 
 ╔════════════════════════╗  
-║             📢 *INFORMASI*             
+║             📢 *INFORMACIÓN*             
 ╠════════════════════════╣  
-║ ➤ *Pencapaian*: Anda telah melewati      
-║    ${user.level - 1 || 0} tingkat menuju      
-║    level ${user.level || 0}. Teruslah   
-║    berkarya dan tingkatkan skill Anda! 
+║ ➤ *Logros*: Has superado      
+║    ${user.level - 1 || 0} niveles y ahora      
+║    estás en el nivel ${user.level || 0}.   
+║    ¡Sigue progresando y mejora   
+║    tus habilidades! 
 ║                                         
-║ ➤ *Tips*: "Setiap langkah kecil        
-║    membawa Anda lebih dekat ke         
-║    puncak keberhasilan."                
+║ ➤ *Consejo*: "Cada pequeño        
+║    paso te acerca más         
+║    a la cima del éxito."                
 ╚════════════════════════╝  
 
-📡 *Sistem Catatan*:  
-"Data Anda telah diperbarui secara real-time. Teruslah aktif dan eksplorasi lebih banyak fitur!"`;
+📡 *Registro del sistema*:  
+"Tu información se ha actualizado en tiempo real. ¡Sigue activo y explora más funciones!"`;
 				try {
     await shoNhe.sendMessage(m.chat, {
         image: { url: levelImage },
