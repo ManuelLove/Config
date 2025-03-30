@@ -3626,34 +3626,34 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 					let getReason2 = getAfkReason(getId2, afk)
 					let getTimee = Date.now() - getAfkTime(getId2, afk)
 					let anu2 = ms(getTimee)
-					shoNherly(`⚠️ *SISTEM PEMBERITAHUAN AFK* ⚠️  
+					shoNherly(`⚠️ *SISTEMA DE NOTIFICACIÓN AFK* ⚠️  
 
-[⚠️] *STATUS PENGGUNA*:  
-- Pengguna sedang *AFK*! Hindari mengganggu atau men-tag untuk sementara waktu.  
+[⚠️] *ESTADO DEL USUARIO*:  
+- El usuario está *AFK*! Evita molestarlo o mencionarlo por ahora.  
 
-[📌] *ALASAN*:  
-- ${getReason2 || 'Tidak disebutkan'}  
+[📌] *RAZÓN*:  
+- ${getReason2 || 'No especificado'}  
 
-[⏳] *DURASI SEJAK AFK*:  
-- ${anu2.hours || 0} Jam, ${anu2.minutes || 0} Menit, ${anu2.seconds || 0} Detik  
+[⏳] *DURACIÓN DESDE AFK*:  
+- ${anu2.hours || 0} Horas, ${anu2.minutes || 0} Minutos, ${anu2.seconds || 0} Segundos  
 
-[🛡️] *CATATAN PENTING*:  
-- Pesan ini dikirim oleh sistem otomatis.  
-- Data aktivitas tercatat secara real-time.  
-- Setiap pelanggaran akan ditinjau lebih lanjut.  
+[🛡️] *NOTA IMPORTANTE*:  
+- Este mensaje ha sido enviado por un sistema automático.  
+- Los datos de actividad se registran en tiempo real.  
+- Cualquier infracción será revisada posteriormente.  
 
-[💻] *TIPS SISTEM*:  
-- Untuk informasi lebih lanjut, tunggu hingga pengguna kembali aktif.  
-- Gunakan fitur pencarian atau bantuan jika membutuhkan.  
+[💻] *CONSEJOS DEL SISTEMA*:  
+- Para más información, espera a que el usuario vuelva a estar activo.  
+- Usa la función de búsqueda o ayuda si la necesitas.  
 
-🔍 *PEMANTAUAN SISTEM*:  
-- Status pengguna dipantau dalam dimensi sistem.  
-- Tidak ada aktivitas yang luput dari log kami.  
-- Tetap ikuti protokol interaksi yang berlaku.  
+🔍 *MONITOREO DEL SISTEMA*:  
+- El estado del usuario se monitorea dentro del sistema.  
+- Ninguna actividad pasa desapercibida en nuestros registros.  
+- Sigue los protocolos de interacción establecidos.  
 
-📡 *SISTEM AKTIF*:  
-- Data diperbarui dalam waktu nyata.  
-- Tetap terhubung untuk pemberitahuan lebih lanjut.`)
+📡 *SISTEMA ACTIVO*:  
+- Los datos se actualizan en tiempo real.  
+- Mantente conectado para más notificaciones.`)
 				}
 			}
 			if (checkAfkUser(m.sender, afk))
@@ -3664,30 +3664,30 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				let anu = ms(getTime)
 				afk.splice(getAfkPosition(m.sender, afk), 1)
 				fs.writeFileSync('./database/afk.json', JSON.stringify(afk))
-				shoNhe.sendTextWithMentions(m.chat, `⚠️ *SISTEMA DE ALERTA: CONDICIÓN DE USUARIO* ⚠️  
+				shoNhe.sendTextWithMentions(m.chat, `⚠️ *ALERTA DEL SISTEMA: ESTADO DEL USUARIO* ⚠️  
 
-User @${m.sender.split('@')[0]}, ¿Todavía estás sano bro? El sistema detecta su estado AFK.  
+User @${m.sender.split('@')[0]}, ¿sigues bien, bro? El sistema ha detectado tu estado AFK.  
 
 [📌] *RAZÓN*:  
-- ${getReason || 'No se da ninguna razón'}  
+- ${getReason || 'No se ha proporcionado ninguna razón'}  
 
 [⏳] *DURACIÓN*:  
-- ${anu.hours || 0} Hora, ${anu.minutes || 0} Minuto, ${anu.seconds || 0} Segundo  
+- ${anu.hours || 0} Horas, ${anu.minutes || 0} Minutos, ${anu.seconds || 0} Segundos  
 
-[🛠️] *INSTRUCCIÓN*: 
-- Si hay problemas, actualice inmediatamente su estado. 
-- Evite demoras demasiado, el sistema siempre está monitoreando.  
+[🛠️] *INSTRUCCIONES*:  
+- Si hay algún problema, actualiza tu estado lo antes posible.  
+- Evita tardar demasiado, el sistema siempre está monitoreando.  
 
-[🔍] *REGISTRO DEL SISTEMA*: 
-- Este estado ha quedado registrado en el registro de protocolo. 
-- No ignores este mensaje para mantener la credibilidad de tu actividad..  
+[🔍] *REGISTRO DEL SISTEMA*:  
+- Este estado ha sido registrado en el protocolo de logs.  
+- No ignores este mensaje para mantener la credibilidad de tu actividad.  
 
-[⚡] *CONSEJO*: 
-- "El tiempo se acaba, úsalo sabiamente. No dejes que el mundo virtual te gane.”  
+[⚡] *CONSEJO*:  
+- “El tiempo sigue corriendo, úsalo sabiamente. No dejes que el mundo virtual te supere.”  
 
-📡 *ESTADO DEL SISTEMA*: 
-- Monitoreo de ejecución en tiempo real. 
-- El sistema permanece conectado hasta que esté activo nuevamente.`, fvideo)
+📡 *ESTADO DEL SISTEMA*:  
+- Monitoreo en tiempo real activo.  
+- El sistema permanecerá conectado hasta que vuelvas a estar activo.`, fvideo)
 			}
 		}
 		//==================[ BUTTON MESSAGE ]======================\\
@@ -4075,6 +4075,125 @@ User @${m.sender.split('@')[0]}, ¿Todavía estás sano bro? El sistema detecta 
     }
 }
 break;
+case 'menurpg': {
+  try {
+    // Reacción inicial (opcional)
+    await sock.sendMessage(msg.key.remoteJid, {
+      react: { text: "⚔️", key: msg.key }
+    });
+
+    const chatId = msg.key.remoteJid;
+
+    // Construcción del mensaje (tu texto de menú)
+    const captionText = `╔═════════════════╗  
+║   𝘼𝙕𝙐𝙍𝘼 𝙐𝙇𝙏𝙍𝘼 2.0 𝘽𝙊𝙏   ║  
+╚═════════════════╝  
+
+✦ 𝐁𝐈𝐄𝐍𝐕𝐄𝐍𝐈𝐃𝐎 𝐀𝐋 𝐌𝐄𝐍𝐔 𝐑𝐏𝐆 ✦  
+━━━━━━━━━━━━━━━━━━  
+➤ 𝗣𝗥𝗘𝗙𝗜𝗝𝗢 𝗔𝗖𝗧𝗨𝗔𝗟: ${global.prefix}  
+➤ 𝗣𝗔𝗥𝗔 𝗘𝗠𝗣𝗘𝗭𝗔𝗥, 𝗨𝗦𝗔:  
+${global.prefix}rpg <nombre> <edad>  
+Así te registras  
+━━━━━━━━━━━━━━━━━━  
+
+📌 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗗𝗘 𝗨𝗦𝗨𝗔𝗥𝗜𝗢𝗦  
+(Sube de nivel y de top)  
+➤ ${global.prefix}nivel  
+➤ ${global.prefix}picar  
+➤ ${global.prefix}minar  
+➤ ${global.prefix}minar2  
+➤ ${global.prefix}work  
+➤ ${global.prefix}crime  
+➤ ${global.prefix}robar  
+➤ ${global.prefix}cofre  
+➤ ${global.prefix}claim  
+➤ ${global.prefix}batallauser  
+➤ ${global.prefix}hospital  
+➤ ${global.prefix}hosp  
+
+📌 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗗𝗘 𝗣𝗘𝗥𝗦𝗢𝗡𝗔𝗝𝗘𝗦  
+(Sube de nivel a tu personaje y top)  
+➤ ${global.prefix}luchar  
+➤ ${global.prefix}poder  
+➤ ${global.prefix}volar  
+➤ ${global.prefix}otromundo  
+➤ ${global.prefix}otrouniverso  
+➤ ${global.prefix}mododios  
+➤ ${global.prefix}mododiablo  
+➤ ${global.prefix}podermaximo  
+➤ ${global.prefix}enemigos  
+➤ ${global.prefix}nivelper  
+➤ ${global.prefix}per  
+➤ ${global.prefix}bolasdeldragon  
+➤ ${global.prefix}vender  
+➤ ${global.prefix}quitarventa  
+➤ ${global.prefix}batallaanime  
+➤ ${global.prefix}comprar  
+➤ ${global.prefix}tiendaper
+➤ ${global.prefix}alaventa
+
+📌 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗗𝗘 𝗠𝗔𝗦𝗖𝗢𝗧𝗔𝗦  
+(Sube de nivel a tu mascota y top)  
+➤ ${global.prefix}daragua  
+➤ ${global.prefix}darcariño  
+➤ ${global.prefix}darcomida  
+➤ ${global.prefix}presumir  
+➤ ${global.prefix}cazar  
+➤ ${global.prefix}entrenar  
+➤ ${global.prefix}pasear  
+➤ ${global.prefix}supermascota  
+➤ ${global.prefix}mascota  
+➤ ${global.prefix}curar  
+➤ ${global.prefix}nivelmascota  
+➤ ${global.prefix}batallamascota  
+➤ ${global.prefix}compra  
+➤ ${global.prefix}tiendamascotas  
+
+📌 𝗢𝗧𝗥𝗢𝗦 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦  
+➤ ${global.prefix}addmascota  
+➤ ${global.prefix}addper  
+➤ ${global.prefix}deleteuser  
+➤ ${global.prefix}deleteper  
+➤ ${global.prefix}deletemascota  
+➤ ${global.prefix}totalper
+➤ ${global.prefix}tran
+➤ ${global.prefix}transferir
+
+📌 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗗𝗘 𝗧𝗢𝗣  
+➤ ${global.prefix}topuser  
+➤ ${global.prefix}topmascotas  
+➤ ${global.prefix}topper  
+
+━━━━━━━━━━━━━━━━━━  
+𝗗𝗘𝗦𝗔𝗥𝗥𝗢𝗟𝗟𝗔𝗗𝗢 𝗣𝗢𝗥: russell xz
+
+╭────────────────╮  
+│ 𝘼𝙕𝙐𝙍𝘼 𝙐𝙇𝙏𝙍𝘼 2.0 𝘽𝙊𝙏 │  
+╰────────────────╯`;
+
+    // Descarga el MP4 con axios
+    const { data: bufferVideo } = await axios.get(
+      "https://cdn.dorratz.com/files/1741474416069.mp4", 
+      { responseType: 'arraybuffer' }
+    );
+
+    // Enviar el "video" como si fuera GIF
+    await sock.sendMessage(chatId, {
+      video: bufferVideo,
+      caption: captionText,
+      gifPlayback: true,
+      mimetype: "video/mp4"
+    }, { quoted: msg });
+
+  } catch (error) {
+    console.error("❌ Error en el comando menurpg:", error);
+    await sock.sendMessage(msg.key.remoteJid, {
+      text: "❌ Ocurrió un error al mostrar el menú RPG. Inténtalo de nuevo."
+    }, { quoted: msg });
+  }
+  break;
+}
 case 'listprodukown': {
     const path = './database/produkown.json';
 
