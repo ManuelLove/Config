@@ -24298,7 +24298,7 @@ shoNhe.sendMessage(m.chat,
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				shoNherly(`restarting ${global.namabot}`)
+				shoNherly(`reiniciando ${global.namabot}`)
 				shoNherly(mess.dones)
 				await sleep(3000)
 				process.exit()
