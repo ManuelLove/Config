@@ -26159,15 +26159,15 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				if (!isGroup) return shoNherly(mess.groups);
 				if (!isAdmins) return shoNherly(mess.admins);
 				if (!isBotAdmins) return shoNherly(mess.abots);
-				if (args[1] == "segundo")
+				if (args[1] == "segundos")
 				{
 					var timer = args[0] * `1000`;
 				}
-				else if (args[1] == "minuto")
+				else if (args[1] == "minutos")
 				{
 					var timer = args[0] * `60000`;
 				}
-				else if (args[1] == "hora")
+				else if (args[1] == "horas")
 				{
 					var timer = args[0] * `3600000`;
 				}
@@ -26519,15 +26519,15 @@ case 'kertas': {
 				if (!isGroup) return shoNherly(mess.groups);
 				if (!isAdmins) return shoNherly(mess.admins);
 				if (!isBotAdmins) return shoNherly(mess.abots);
-				if (args[1] == "segundo")
+				if (args[1] == "segundos")
 				{
 					var timer = args[0] * `1000`;
 				}
-				else if (args[1] == "minuto")
+				else if (args[1] == "minutos")
 				{
 					var timer = args[0] * `60000`;
 				}
-				else if (args[1] == "hora")
+				else if (args[1] == "horas")
 				{
 					var timer = args[0] * `3600000`;
 				}
