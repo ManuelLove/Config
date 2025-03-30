@@ -26415,7 +26415,7 @@ case 'kertas': {
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!m.quoted) return shoNherly('Reply pesan yang mau di delete')
+				if (!m.quoted) return shoNherly('Responde al mensaje que deseas eliminar')
 				await shoNhe.sendMessage(m.chat,
 				{
 					delete:
