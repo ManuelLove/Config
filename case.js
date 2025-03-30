@@ -20342,77 +20342,77 @@ break;
 										{
 											"name": "single_select",
 											"buttonParamsJson": `{
-												"title": "Configuración de grupo",
+												"title": "Group Settings",
 												"sections": [{
-													"title": "Seleccione Configuración",
+													"title": "Select Settimgs",
 													"rows": [{
-														"title": "⭐GRUPO ABIERTO",
-														"description": "El bot abrirá el grupo",
+														"title": "⭐OPEN GROUP",
+														"description": "Bot akan membuka grup",
 														"id": "${prefix}grup open"
 													},
 													{
-														"title": "🌕 GRUPO CERRADO",
-														"description": "El bot cerrará el grupo",
+														"title": "🌕 CLOSE GROUP",
+														"description": "Bot akan menutup grup",
 														"id": "${prefix}grup close"
 													},
 													{
-														"title": "⚡ BIENVENIDO ON",
-														"description": "El bot enviará un mensaje de bienvenida al grupo",
+														"title": "⚡ WELCOME ON",
+														"description": "Bot akan bot akan mengirim pesan welcome grup",
 														"id": "${prefix}welkom on"
 													},
 													{
-														"title": "🍄 BIENVENIDO OFF",
-														"description": "El bot desactivarán la bienvenida grupo",
+														"title": "🍄 WELCOME OFF",
+														"description": "Bot akan mematikan welcome grup",
 														"id": "${prefix}welkom off"
 													},
 													{
-														"title": "⚓ EVENTO DE GRUPO ON",
-														"description": "El bot dará un mensaje al cambiar algo",
+														"title": "⚓ GROUP-EVENT ON",
+														"description": "Bot akan memberi pesan ketika mengganti sesuatu",
 														"id": "${prefix}groupevent on"
 													},
 													{
-														"title": "🪨 EVENTO DE GRUPO OFF",
-														"description": "El bot matará el evento grupal",
+														"title": "🪨 GROUP-EVENT OFF",
+														"description": "Bot akan mematikan groupevent",
 														"id": "${prefix}groupevent off"
 													},
 													{
-														"title": "🛸 EVENTO ADMIN ON",
-														"description": "El bot activará el evento de administración del grupo",
+														"title": "🛸 ADMIN-EVENT ON",
+														"description": "Bot akan menyalakan adminevent grup",
 														"id": "${prefix}adminevent on"
 													},
 													{
-														"title": "📝 EVENTO ADMIN OFF",
-														"description": "El bot matará a admin evento",
+														"title": "📝 ADMIN-EVENT OFF",
+														"description": "Bot akan mematikan adminvent",
 														"id": "${prefix}adminevent off"
 													},
 													{
 														"title": "🤖 ANTI SPAM ON",
-														"description": "El bot activará el antispam del grupo",
+														"description": "Bot akan menyalakan antispam grup",
 														"id": "${prefix}antispam true"
 													},
 													{
 														"title": "🔧 ANTI SPAM OFF",
-														"description": "El bot desactivará el antispam",
+														"description": "Bot akan mematikan antispam",
 														"id": "${prefix}antispam false"
 													},
 													{
 														"title": "🔥 ANTILINK ON",
-														"description": "El bot activará el antienlace,
+														"description": "Bot akan menyalakan antilink",
 														"id": "${prefix}antilink true"
 													},
 													{
 														"title": "💣 ANTILINK OFF",
-														"description": "El bot desactivará el antienlaces",
+														"description": "Bot akan mematikan antilink",
 														"id": "${prefix}antilink false"
 													},
 													{
 														"title": "🪡 ANTILINKGC ON",
-														"description": "El bot activará los antienlaces grupales",
+														"description": "Bot akan menyalakan antilink grup",
 														"id": "${prefix}antilinkgc true"
 													},
 													{
 														"title": "📛 ANTILINKGC OFF",
-														"description": "El bot desactivará los grupos antivínculos",
+														"description": "Bot akan mematikan antilink group",
 														"id": "${prefix}antilinkgc false"
 													}]
 												}]
