@@ -26462,8 +26462,8 @@ case 'kertas': {
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly(`Example: ${prefix + command} https://open.spotify.com/track/0JiVRyTJcJnmlwCZ854K4p`);
-				if (!isUrl(args[0]) || !args[0].includes('open.spotify.com/track')) return shoNherly('Url Invalid!');
+				if (!text) return shoNherly(`Ejemplo: ${prefix + command} https://open.spotify.com/track/0JiVRyTJcJnmlwCZ854K4p`);
+				if (!isUrl(args[0]) || !args[0].includes('open.spotify.com/track')) return shoNherly('¡URL no válida!');
 				if (!(await firely(m, mess.waits))) return;
 				try {
     let res = await fetch(`https://api.siputzx.my.id/api/d/spotify?url=${text}`);
