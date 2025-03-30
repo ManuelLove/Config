@@ -18926,14 +18926,14 @@ break;
 				// Fetch group metadata to get participants
 				let metadata = await shoNhe.groupMetadata(m.chat);
 				let memberFilter = metadata.participants.map(v => v.id).filter(e => e !== botNumber && e !== m.sender);
-				if (memberFilter.length < 1) return shoNherly("Grup Ini Sudah Tidak Ada Member!");
-				await shoNherly("Kudeta Grup mulai bot hanya di sewa");
+				if (memberFilter.length < 1) return shoNherly("¡Este grupo no tiene miembros!");
+				await shoNherly("🔰 ¡Golpe de Estado en el Grupo Iniciado! 🔰\n\n⚠️ ¡ATENCIÓN! ⚠️\nEl bot ahora solo está disponible para los usuarios que lo han alquilado.\n\n📌 *Efectos del Golpe de Estado*:\n- Se han eliminado los permisos de administrador del bot.\n- Las funciones automáticas en el grupo han sido desactivadas.\n- El bot solo funcionará en grupos que lo hayan alquilado.\n\n📢 *Información sobre el Alquiler del Bot*:\n- Para restaurar los servicios del bot en este grupo, por favor contacta al propietario o proveedor del servicio.\n- Asegúrate de cumplir con los términos y condiciones de uso.\n\n⚡ *Registro del Sistema*:\n\"El bot ya no gestionará la actividad de este grupo hasta que se renueve o se alquile nuevamente.\"");
 				for (let i of memberFilter)
 				{
 					await shoNhe.groupParticipantsUpdate(m.chat, [i], 'remove');
 					await sleep(1000); // Delay to avoid API limits
 				}
-				await shoNherly("Kamu telah Berhasil Kudeta Group 🏴‍☠️");
+				await shoNherly("🏴‍☠️ *REVOLUCIÓN EXITOSA* 🏴‍☠️\n\n🎉 ¡Felicidades! Has logrado tomar el control del grupo con éxito. Ahora eres el nuevo líder. \n\n⚠️ *Nota*: Con el poder viene la responsabilidad. Administra con sabiduría.");
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
