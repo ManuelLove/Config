@@ -4075,125 +4075,6 @@ User @${m.sender.split('@')[0]}, ¿sigues bien, bro? El sistema ha detectado tu 
     }
 }
 break;
-case 'menurpg': {
-  try {
-    // Reacción inicial (opcional)
-    await sock.sendMessage(msg.key.remoteJid, {
-      react: { text: "⚔️", key: msg.key }
-    });
-
-    const chatId = msg.key.remoteJid;
-
-    // Construcción del mensaje (tu texto de menú)
-    const captionText = `╔═════════════════╗  
-║   𝘼𝙕𝙐𝙍𝘼 𝙐𝙇𝙏𝙍𝘼 2.0 𝘽𝙊𝙏   ║  
-╚═════════════════╝  
-
-✦ 𝐁𝐈𝐄𝐍𝐕𝐄𝐍𝐈𝐃𝐎 𝐀𝐋 𝐌𝐄𝐍𝐔 𝐑𝐏𝐆 ✦  
-━━━━━━━━━━━━━━━━━━  
-➤ 𝗣𝗥𝗘𝗙𝗜𝗝𝗢 𝗔𝗖𝗧𝗨𝗔𝗟: ${global.prefix}  
-➤ 𝗣𝗔𝗥𝗔 𝗘𝗠𝗣𝗘𝗭𝗔𝗥, 𝗨𝗦𝗔:  
-${global.prefix}rpg <nombre> <edad>  
-Así te registras  
-━━━━━━━━━━━━━━━━━━  
-
-📌 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗗𝗘 𝗨𝗦𝗨𝗔𝗥𝗜𝗢𝗦  
-(Sube de nivel y de top)  
-➤ ${global.prefix}nivel  
-➤ ${global.prefix}picar  
-➤ ${global.prefix}minar  
-➤ ${global.prefix}minar2  
-➤ ${global.prefix}work  
-➤ ${global.prefix}crime  
-➤ ${global.prefix}robar  
-➤ ${global.prefix}cofre  
-➤ ${global.prefix}claim  
-➤ ${global.prefix}batallauser  
-➤ ${global.prefix}hospital  
-➤ ${global.prefix}hosp  
-
-📌 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗗𝗘 𝗣𝗘𝗥𝗦𝗢𝗡𝗔𝗝𝗘𝗦  
-(Sube de nivel a tu personaje y top)  
-➤ ${global.prefix}luchar  
-➤ ${global.prefix}poder  
-➤ ${global.prefix}volar  
-➤ ${global.prefix}otromundo  
-➤ ${global.prefix}otrouniverso  
-➤ ${global.prefix}mododios  
-➤ ${global.prefix}mododiablo  
-➤ ${global.prefix}podermaximo  
-➤ ${global.prefix}enemigos  
-➤ ${global.prefix}nivelper  
-➤ ${global.prefix}per  
-➤ ${global.prefix}bolasdeldragon  
-➤ ${global.prefix}vender  
-➤ ${global.prefix}quitarventa  
-➤ ${global.prefix}batallaanime  
-➤ ${global.prefix}comprar  
-➤ ${global.prefix}tiendaper
-➤ ${global.prefix}alaventa
-
-📌 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗗𝗘 𝗠𝗔𝗦𝗖𝗢𝗧𝗔𝗦  
-(Sube de nivel a tu mascota y top)  
-➤ ${global.prefix}daragua  
-➤ ${global.prefix}darcariño  
-➤ ${global.prefix}darcomida  
-➤ ${global.prefix}presumir  
-➤ ${global.prefix}cazar  
-➤ ${global.prefix}entrenar  
-➤ ${global.prefix}pasear  
-➤ ${global.prefix}supermascota  
-➤ ${global.prefix}mascota  
-➤ ${global.prefix}curar  
-➤ ${global.prefix}nivelmascota  
-➤ ${global.prefix}batallamascota  
-➤ ${global.prefix}compra  
-➤ ${global.prefix}tiendamascotas  
-
-📌 𝗢𝗧𝗥𝗢𝗦 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦  
-➤ ${global.prefix}addmascota  
-➤ ${global.prefix}addper  
-➤ ${global.prefix}deleteuser  
-➤ ${global.prefix}deleteper  
-➤ ${global.prefix}deletemascota  
-➤ ${global.prefix}totalper
-➤ ${global.prefix}tran
-➤ ${global.prefix}transferir
-
-📌 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗗𝗘 𝗧𝗢𝗣  
-➤ ${global.prefix}topuser  
-➤ ${global.prefix}topmascotas  
-➤ ${global.prefix}topper  
-
-━━━━━━━━━━━━━━━━━━  
-𝗗𝗘𝗦𝗔𝗥𝗥𝗢𝗟𝗟𝗔𝗗𝗢 𝗣𝗢𝗥: russell xz
-
-╭────────────────╮  
-│ 𝘼𝙕𝙐𝙍𝘼 𝙐𝙇𝙏𝙍𝘼 2.0 𝘽𝙊𝙏 │  
-╰────────────────╯`;
-
-    // Descarga el MP4 con axios
-    const { data: bufferVideo } = await axios.get(
-      "https://cdn.dorratz.com/files/1741474416069.mp4", 
-      { responseType: 'arraybuffer' }
-    );
-
-    // Enviar el "video" como si fuera GIF
-    await sock.sendMessage(chatId, {
-      video: bufferVideo,
-      caption: captionText,
-      gifPlayback: true,
-      mimetype: "video/mp4"
-    }, { quoted: msg });
-
-  } catch (error) {
-    console.error("❌ Error en el comando menurpg:", error);
-    await sock.sendMessage(msg.key.remoteJid, {
-      text: "❌ Ocurrió un error al mostrar el menú RPG. Inténtalo de nuevo."
-    }, { quoted: msg });
-  }
-  break;
-}
 case 'listprodukown': {
     const path = './database/produkown.json';
 
@@ -7672,24 +7553,24 @@ break;
 				shoNhe.sendTextWithMentions(m.chat, `🌙 *¡MODO AFK ACTIVADO!* 🌙  
 
 👤 *Usuario*: @${m.sender.split('@')[0]}  
-💬 *Estado*: ¡Actualmente *AFK*!  
+💬 *Estado*: Actualmente *AFK*!  
 
 📌 *Razón*:  
-- ${reason || 'No explicado, probablemente alto secreto.'}  
+- ${reason || 'No especificada, tal vez un gran secreto.'}  
 
 ⏳ *Duración AFK*:  
-- El sistema detecta que el usuario ha abandonado la tarea.  
+- El sistema ha detectado que el usuario ha dejado sus tareas.  
 
-🔒 *Nota del sistema*:  
-- No vuelvas, hermano. Pero si hablas en serio, ¡no tardes mucho!  
+🔒 *Nota del Sistema*:  
+- "No vuelvas, bro, jajaja. Pero en serio, no tardes demasiado."  
 
 🔍 *SUPERVISIÓN*:  
-- El sistema registra todas las actividades relacionadas con este usuario.  
-- Evite más interrupciones hasta que finalice el estado AFK.  
+- El sistema registra toda la actividad relacionada con este usuario.  
+- Evita interrumpir hasta que termine el estado AFK.  
 
-📡 *INFORMACIÓN*:  
-- Este estado se actualizará si el usuario vuelve a estar activo.  
-- Asegúrate de continuar la tarea o interactuar después de regresar.`, fvideo);
+📡 *INFO*:  
+- Este estado se actualizará cuando el usuario vuelva a estar activo.  
+- Asegúrate de continuar con tus tareas o interactuar al regresar.`, fvideo);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
