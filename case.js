@@ -835,7 +835,7 @@ END:VCARD`
 		{
 			if (new Date() * 1 - setbio.status > 60000)
 			{
-				const uptimeQuotes = [`⏳ tiempo de actividad: ${runtime(os.uptime())}`, `💻 TechFix Botz: esta en camino ${runtime(os.uptime())}`, `📅 ${moment().format('dddd, DD MMM YYYY')}`, `⚡ ¡El Bot permanece vivo, nunca duerme!`];
+				const uptimeQuotes = [`⏳ Online ✅: ${runtime(os.uptime())}`, `💻 TechFix Botz: Activa 🟢 ${runtime(os.uptime())}`, `📅 ${moment().format('dddd, DD MMM YYYY')}`, `⚡ ¡El Bot permanece activo, nunca duerme!`];
 				const randomUptimeQuote = uptimeQuotes[Math.floor(Math.random() * uptimeQuotes.length)];
 				await shoNhe.updateProfileStatus(randomUptimeQuote);
 				setbio.status = new Date() * 1;
@@ -16292,7 +16292,7 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (args.length < 2) return shoNherly(`⚠️ Usar formato:\n\n.upfire @user/jid jumlah\n\nContoh:\n.upfire @user 100\n.upfire 6288888888888 100`);
+				if (args.length < 2) return shoNherly(`⚠️ Usar formato:\n\n.upfire @user/cantidad de dinero\n\nEjemplo:\n.upfire @user 100\n.upfire 6288888888888 100`);
 				let target;
 				let jumlah = parseInt(args[1]);
 				// Cek apakah menggunakan tag atau nomor
@@ -16306,9 +16306,9 @@ break
 				}
 				else
 				{
-					return shoNherly('⚠️ Masukkan nomor atau tag user yang valid!');
+					return shoNherly('⚠️ ¡Ingrese un número de usuario o etiqueta válidos!');
 				}
-				if (isNaN(jumlah) || jumlah <= 0) return shoNherly('⚠️ Masukkan jumlah limit yang valid!');
+				if (isNaN(jumlah) || jumlah <= 0) return shoNherly('⚠️ ¡Ingrese un monto límite válido!');
 				const db = loadUserFire();
 				// Tambahkan limit
 				if (!db[target])
@@ -16323,7 +16323,7 @@ break
 					db[target].limit += jumlah;
 				}
 				saveUserFire(db);
-				shoNherly(`✅ Berhasil menambahkan ${jumlah} limit untuk @${target.split('@')[0]}`,
+				shoNherly(`✅ Agregado exitosamente ${jumlah} límite para @${target.split('@')[0]}`,
 				{
 					mentions: [target]
 				});
@@ -16365,13 +16365,13 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (m.mentionedJid.length === 0) return shoNherly(`⚠️ Tag user yang ingin direset limitnya!\n\nContoh: .delfire @user`);
+				if (m.mentionedJid.length === 0) return shoNherly(`⚠️ ¡Etiqueta al usuario cuyo límite quieres restablecer!\n\nEjemplo: .delfire @user`);
 				let target = m.mentionedJid[0];
 				const db = loadUserFire();
-				if (!db[target]) return shoNherly(`⚠️ User belum memiliki data limit!`);
+				if (!db[target]) return shoNherly(`⚠️ ¡El usuario aún no tiene límite de datos!`);
 				db[target].limit = 0;
 				saveUserFire(db);
-				shoNherly(`✅ Limit user @${target.split('@')[0]} berhasil direset ke 0!`,
+				shoNherly(`✅ Limite user @${target.split('@')[0]} ¡Restablecido exitosamente a 0!`,
 				{
 					mentions: [target]
 				});
@@ -16483,7 +16483,7 @@ break
 					const userNumber = args[0]; // Mengambil nomor pengguna dari input
 					if (!userNumber)
 					{
-						reply('⚠️ Masukkan nomor pengguna yang ingin dihapus.\n\nContoh: deluser 628123456789');
+						reply('⚠️ Ingrese el número de usuario que desea eliminar.\n\nEjemplo: deluser 628123456789');
 						break;
 					}
 					const db = loadUserFire();
@@ -16492,17 +16492,17 @@ break
 					{
 						delete db[userId];
 						saveUserFire(db);
-						reply(`✅ Pengguna dengan nomor *${userNumber}* berhasil dihapus.`);
+						reply(`✅ Usuario por número *${userNumber}* eliminado con éxito.`);
 					}
 					else
 					{
-						reply(`⚠️ Pengguna dengan nomor *${userNumber}* tidak ditemukan.`);
+						reply(`⚠️ Usuario por número *${userNumber}* extraviado.`);
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					reply('⚠️ Terjadi kesalahan saat menghapus pengguna.');
+					reply('⚠️ Se produjo un error al eliminar al usuario.');
 				}
 				}
 			break
@@ -16578,7 +16578,7 @@ break
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners)
 				let [poll, opt] = text.split("|")
-				if (text.split("|") < 2) return await shoNherly(`Sebutkan pertanyaan dan minimal 2 pilihan\nContoh: ${prefix}poll Siapa admin terbaik?|yod,Asep,Doge...`)
+				if (text.split("|") < 2) return await shoNherly(`Plantee la pregunta y al menos 2 opciones\nEjemplo: ${prefix}poll ¿Quién es el mejor administrador?|Manu,Nagum,Baedak...`)
 				let options = []
 				for (let i of opt.split(','))
 				{
@@ -16622,14 +16622,14 @@ break
 				// Cek apakah user sudah terdaftar di database
 				if (!db[target])
 				{
-					return shoNhe.sendTextWithMentions(m.chat, `🔥 User @${target.split('@')[0]} belum memiliki limit.`, fgclink)
+					return shoNhe.sendTextWithMentions(m.chat, `🔥 User @${target.split('@')[0]} aún no tiene límite.`, fgclink)
 				}
 				let role = db[target].role;
 				let limit = db[target].limit;
-				let message = `🔥 *Cek Fire Limit*\n\n`;
+				let message = `🔥 *Cek Fuego Limite*\n\n`;
 				message += `👤 User: @${target.split('@')[0]}\n`;
-				message += `📛 Role: ${role}\n`;
-				message += `🔥 Sisa Limit: ${limit === -1 ? '∞' : limit}\n`;
+				message += `📛 Rol: ${role}\n`;
+				message += `🔥 Límite restante: ${limit === -1 ? '∞' : limit}\n`;
 				shoNhe.sendTextWithMentions(m.chat, message, fgclink)
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -16668,7 +16668,7 @@ break
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				shoNherly('anjay baru kah bangg??')
+				shoNherly('¿Anjay es nuevo, hermano?')
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -16706,7 +16706,7 @@ break
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly(`🎬 *Judul film atau serialnya mana, Kak?*\n\nContoh:\n${prefix}${command} Inception`);
+				if (!text) return shoNherly(`🎬 *¿Cuál es el título de la película o serie, hermana?*\n\nEjemplo:\n${prefix}${command} Comienzo`);
 				try
 				{
 					if (!(await firely(m, mess.waits))) return;
@@ -16716,25 +16716,25 @@ break
 					} = await axios.get(`http://www.omdbapi.com/?apikey=742b2d09&t=${encodeURIComponent(text)}&plot=full`);
 					if (data.Response === 'False')
 					{
-						return shoNherly(`❌ *Film atau serial tidak ditemukan!* Coba cek lagi judulnya ya, Kak.`);
+						return shoNherly(`❌ *¡No se encontraron películas ni series!* Por favor, revisa el título nuevamente, hermana.`);
 					}
-					let imdbInfo = `🎬 *Judul:* ${data.Title}\n`;
-					imdbInfo += `📅 *Tahun:* ${data.Year}\n`;
-					imdbInfo += `⭐ *Rating:* ${data.Rated}\n`;
-					imdbInfo += `📆 *Rilis:* ${data.Released}\n`;
-					imdbInfo += `⏳ *Durasi:* ${data.Runtime}\n`;
-					imdbInfo += `🌀 *Genre:* ${data.Genre}\n`;
-					imdbInfo += `👨‍💼 *Sutradara:* ${data.Director}\n`;
-					imdbInfo += `✍️ *Penulis:* ${data.Writer}\n`;
-					imdbInfo += `👥 *Aktor:* ${data.Actors}\n`;
-					imdbInfo += `📖 *Plot:* ${data.Plot}\n`;
-					imdbInfo += `🌐 *Bahasa:* ${data.Language}\n`;
-					imdbInfo += `🌍 *Negara:* ${data.Country}\n`;
-					imdbInfo += `🏆 *Penghargaan:* ${data.Awards}\n`;
-					imdbInfo += `💵 *Box Office:* ${data.BoxOffice || '-'}\n`;
-					imdbInfo += `🏙️ *Produksi:* ${data.Production || '-'}\n`;
-					imdbInfo += `🌟 *IMDb Rating:* ${data.imdbRating}\n`;
-					imdbInfo += `✅ *IMDb Votes:* ${data.imdbVotes}\n`;
+					let imdbInfo = `🎬 *Título:* ${data.Title}\n`;
+					imdbInfo += `📅 *Año:* ${data.Year}\n`;
+					imdbInfo += `⭐ *Calificaciones:* ${data.Rated}\n`;
+					imdbInfo += `📆 *Lanzamiento:* ${data.Released}\n`;
+					imdbInfo += `⏳ *Duración:* ${data.Runtime}\n`;
+					imdbInfo += `🌀 *Género:* ${data.Genre}\n`;
+					imdbInfo += `👨‍💼 *Director:* ${data.Director}\n`;
+					imdbInfo += `✍️ *Escritor:* ${data.Writer}\n`;
+					imdbInfo += `👥 *Actor:* ${data.Actors}\n`;
+					imdbInfo += `📖 *Trama:* ${data.Plot}\n`;
+					imdbInfo += `🌐 *Idioma:* ${data.Language}\n`;
+					imdbInfo += `🌍 *País:* ${data.Country}\n`;
+					imdbInfo += `🏆 *Premios:* ${data.Awards}\n`;
+					imdbInfo += `💵 *Taquilla:* ${data.BoxOffice || '-'}\n`;
+					imdbInfo += `🏙️ *Producción:* ${data.Production || '-'}\n`;
+					imdbInfo += `🌟 *Calificación de IMDb:* ${data.imdbRating}\n`;
+					imdbInfo += `✅ *Votos de IMDb:* ${data.imdbVotes}\n`;
 					await shoNhe.sendMessage(m.chat,
 					{
 						image:
@@ -16746,12 +16746,12 @@ break
 					{
 						quoted: m
 					});
-					shoNherly(`✅ *Berhasil menampilkan informasi film!*`);
+					shoNherly(`✅ *¡Información de la película mostrada con éxito!*`);
 				}
 				catch (err)
 				{
 					console.error(err);
-					shoNherly(`❌ *Terjadi kesalahan saat mencari film!* 😭\n${err.message || err}`);
+					shoNherly(`❌ *¡Ocurrió un error al buscar la película!* 😭\n${err.message || err}`);
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
