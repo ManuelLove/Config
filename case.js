@@ -4878,7 +4878,7 @@ case 'updateproduk': {
     const deskripsiBaru = args[2]?.trim() || 'Deskripsi tidak tersedia';
 
     if (!namaProduk || isNaN(hargaBaru)) {
-        return shoNherly('❌ Format salah. Gunakan format: updateproduk <nama produk>|<harga>|<deskripsi>');
+        return shoNherly('❌ Format salah. Usar formato: updateproduk <nama produk>|<harga>|<deskripsi>');
     }
 
     const listStorePath = './database/listStore.json';
@@ -7201,7 +7201,7 @@ break;
 				let aiMessage = popularData.ai ? `${c}AI telah digunakan sebanyak ${popularData.ai} kali.${c}` : `${c}AI belum digunakan.${c}`;
 				// Gabungkan hasil akhir
 				let formattedPopularList = `${formattedCommandList}\n\n${aiMessage}`;
-				// Gunakan formattedPopularList di balasan
+				// Usar formatotedPopularList di balasan
 				shoNherly(`Statistik penggunaan:\n\n${formattedPopularList}`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -11461,11 +11461,11 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!args[0]) return shoNherly(`Gunakan ${prefix + command} nomor\nContoh: ${prefix + command} 6285655548594`);
+				if (!args[0]) return shoNherly(`Usar ${prefix + command} número\nEjemplo: ${prefix + command} 6285655548594`);
 				const bnnd = q.split("|")[0].replace(/[^0-9]/g, '');
 				const ceknye = await shoNhe.onWhatsApp(bnnd);
-				if (ceknye.length == 0) return shoNherly(`Masukkan nomor yang valid dan terdaftar di WhatsApp!`);
-				if (prem.includes(bnnd)) return shoNherly('Nomor ini sudah terdaftar sebagai Premium User!');
+				if (ceknye.length == 0) return shoNherly(`¡Ingresa un número válido y registrado en WhatsApp!`);
+				if (prem.includes(bnnd)) return shoNherly('¡Este número ha sido registrado como Usuario Premium!');
 				prem.push(bnnd);
 				fs.writeFileSync('./database/premium.json', JSON.stringify(prem, null, 2));
 				// Update role di userFire.json
@@ -11477,7 +11477,7 @@ ${formattedCommandList}
 					role: 'vip'
 				};
 				saveUserFire(dbFire);
-				shoNherly(`Nomor ${bnnd} sekarang menjadi Premium User (VIP)!!! 🎉`);
+				shoNherly(`Número ${bnnd} ¡¡¡Ahora Usuario Premium (VIP)!!! 🎉`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -11564,9 +11564,9 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!args[0]) return shoNherly(`Gunakan ${prefix + command} nomor\nContoh: ${prefix + command} 6285655548594`);
+				if (!args[0]) return shoNherly(`Usar ${prefix + command} número\nEjemplo: ${prefix + command} 6285655548594`);
 				const ya = q.split("|")[0].replace(/[^0-9]/g, '');
-				if (!prem.includes(ya)) return shoNherly('Nomor ini tidak terdaftar sebagai Premium User!');
+				if (!prem.includes(ya)) return shoNherly('¡Este número no está registrado como Usuario Premium!');
 				const unp = prem.indexOf(ya);
 				prem.splice(unp, 1);
 				fs.writeFileSync('./database/premium.json', JSON.stringify(prem, null, 2));
@@ -11579,7 +11579,7 @@ ${formattedCommandList}
 					dbFire[userJid].limit = 100;
 					saveUserFire(dbFire);
 				}
-				shoNherly(`Nomor ${ya} berhasil dihapus dari daftar Premium User! ❌`);
+				shoNherly(`Número ${ya} ¡Eliminado con éxito de la lista de usuarios Premium! ❌`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -11893,13 +11893,13 @@ ${formattedCommandList}
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -11951,13 +11951,13 @@ ${formattedCommandList}
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -12009,13 +12009,13 @@ ${formattedCommandList}
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -12231,13 +12231,13 @@ ${formattedCommandList}
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -12289,13 +12289,13 @@ ${formattedCommandList}
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -12570,13 +12570,13 @@ ${formattedCommandList}
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -12858,13 +12858,13 @@ ${formattedCommandList}
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -13339,13 +13339,13 @@ await shoNhe.sendMessage(m.chat, {
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -13893,13 +13893,13 @@ break
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -13939,7 +13939,7 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan prompt untuk Stability AI.\n\nContoh: stabilityai Buatkan gambar pohon');
+				if (!text) return shoNherly('⚠️ Por favor ingresa un mensaje para Stability AI.\n\nEjemplo: stabilityai Crea una imagen de un árbol');
 				if (!(await firely(m, mess.waits))) return;
 				try
 				{
@@ -13956,7 +13956,7 @@ break
 						shoNhe.sendMessage(m.chat,
 						{
 							image: imageBuffer, // Kirim gambar sebagai buffer
-							caption: `🖼️ Berikut adalah gambar hasil Stability AI untuk prompt:\n\n"${text}"`
+							caption: `🖼️ A continuación se muestra una imagen de los resultados de Stability AI para el mensaje:\n\n"${text}"`
 						},
 						{
 							quoted: m
@@ -13964,13 +13964,13 @@ break
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -14010,7 +14010,7 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan prompt untuk Stable.\n\nContoh: stable Buatkan gambar ikan');
+				if (!text) return shoNherly('⚠️ Por favor ingresa un mensaje para Stable.\n\nEjemplo: stable Haz un dibujo de un pez');
 				if (!(await firely(m, mess.waits))) return;
 				try
 				{
@@ -14027,7 +14027,7 @@ break
 						shoNhe.sendMessage(m.chat,
 						{
 							image: imageBuffer, // Kirim gambar sebagai buffer
-							caption: `🖼️ Berikut adalah gambar hasil Stable Diffusion untuk prompt:\n\n"${text}"`
+							caption: `🖼️ A continuación se muestra una imagen de los resultados de Difusión Stable para el mensaje:\n\n"${text}"`
 						},
 						{
 							quoted: m
@@ -14035,13 +14035,13 @@ break
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -14081,7 +14081,7 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan prompt untuk Flux AI.\n\nContoh: flux Buatkan gambar cyberpunk lizard');
+				if (!text) return shoNherly('⚠️ Por favor ingresa un mensaje para Flux AI.\n\nEjemplo: flux Crea una imagen de lagarto cyberpunk');
 				if (!(await firely(m, mess.waits))) return;
 				try
 				{
@@ -14098,7 +14098,7 @@ break
 						shoNhe.sendMessage(m.chat,
 						{
 							image: imageBuffer, // Kirim gambar sebagai buffer
-							caption: `🖼️ Berikut adalah gambar hasil Flux AI untuk prompt:\n\n"${text}"`
+							caption: `🖼️ A continuación se muestra una imagen de los resultados de Flux AI para el mensaje:\n\n"${text}"`
 						},
 						{
 							quoted: m
@@ -14106,13 +14106,13 @@ break
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -14152,7 +14152,7 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan prompt untuk Gandalf AI.\n\nContoh: gandalf Kamu siapa?');
+				if (!text) return shoNherly('⚠️ Por favor ingresa un mensaje para Gandalf AI.\n\nEjemplo: gandalf ¿Quién eres?');
 				try
 				{
 					// Panggil API dengan input dari pengguna
@@ -14165,13 +14165,13 @@ break
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -14211,7 +14211,7 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan konten untuk Gemini Pro AI.\n\nContoh: gemini Hai, bagaimana kabarmu?');
+				if (!text) return shoNherly('⚠️ Por favor ingresa contenido para Gemini Pro AI.\n\nEjemplo: gemini Hola, ¿cómo estás?');
 				try
 				{
 					// Panggil API dengan input dari pengguna
@@ -14224,13 +14224,13 @@ break
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -14462,14 +14462,14 @@ break
 						buttonId: prefix + command,
 						buttonText:
 						{
-							displayText: "🔄 Lanjut Lagi"
+							displayText: "🔄 Continuar de nuevo"
 						}
 					},
 					{
 						buttonId: `${prefix}menu`,
 						buttonText:
 						{
-							displayText: "📜 Kembali ke Menu"
+							displayText: "📜 Volver al menú"
 						}
 					}],
 					viewOnce: true,
@@ -14502,14 +14502,14 @@ break
 						buttonId: prefix + command,
 						buttonText:
 						{
-							displayText: "🔄 Lanjut Lagi"
+							displayText: "🔄 Continuar de nuevo"
 						}
 					},
 					{
 						buttonId: `${prefix}menu`,
 						buttonText:
 						{
-							displayText: "📜 Kembali ke Menu"
+							displayText: "📜 Volver al menú"
 						}
 					}],
 					viewOnce: true,
@@ -14556,8 +14556,8 @@ break
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!quoted) return angryshoNhe (`Kirim atau balas gambar/video/gif dengan caption ${prefix + command}\nDurasi video 1-9 detik ya!`);
-				if (!mime) return angryshoNhe (`Kirim atau balas gambar/video/gif dengan caption ${prefix + command}\nDurasi video 1-9 detik ya!`);
+				if (!quoted) return angryshoNhe (`Envía o responde a una imagen/video/gif con el título ${prefix + command}\n¡La duración del video debe ser de 1-9 segundos!`);
+				if (!mime) return angryshoNhe (`Envía o responde una imagen/video/gif con el título ${prefix + command}\n¡La duración del video debe ser de 1-9 segundos!`);
                 if (!(await firely(m, mess.waits))) return;
 				const swn = args.join(" ");
 				const pcknm = swn.split("|")[0];
@@ -14575,11 +14575,11 @@ break
 					let media = await shoNhe.downloadAndSaveMediaMessage(quoted);
 					await shoNhe.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: atnm });
 				} else if (/video/.test(mime)) {
-					if ((quoted.msg || quoted).seconds > 9) return angryshoNhe ('Video terlalu panjang, maksimal 9 detik ya! ⏳');
+					if ((quoted.msg || quoted).seconds > 9) return angryshoNhe ('El vídeo es demasiado largo, máximo 9 segundos! ⏳');
 					let media = await shoNhe.downloadAndSaveMediaMessage(quoted);
 					await shoNhe.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm });
 				} else {
-					angryshoNhe (`Kirim foto/video untuk dipakai ya, kak!`);
+					angryshoNhe (`¡Envía fotos/vídeos para usar, hermano!`);
 				}
 				if (levelUpMessage)
 				{
@@ -14638,7 +14638,7 @@ break
 							{
 								url: randomQuote.gambar
 							}, // Gambar dari karakter
-							caption: `🎭 *Quotes Anime* 🎭\n\n` + `📺 *Anime*: ${randomQuote.anime}\n` + `🎬 *Episode*: ${randomQuote.episode}\n` + `🎭 *Karakter*: ${randomQuote.karakter}\n\n` + `💬 *Quote*:\n"${randomQuote.quotes}"\n\n` + `🔗 *Link*: ${randomQuote.link}`
+							caption: `🎭 *Frases de anime* 🎭\n\n` + `📺 *Anime*: ${randomQuote.anime}\n` + `🎬 *Episodio*: ${randomQuote.episode}\n` + `🎭 *Personaje*: ${randomQuote.karakter}\n\n` + `💬 *Cita*:\n"${randomQuote.quotes}"\n\n` + `🔗 *Link*: ${randomQuote.link}`
 						},
 						{
 							quoted: hw
@@ -14646,13 +14646,13 @@ break
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat menemukan quotes anime. Coba lagi nanti.');
+						shoNherly('❌ No puedo encontrar citas de anime. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat mengambil data quotes anime.');
+					shoNherly('❌ Se produjo un error al recuperar datos de citas de anime.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -14701,7 +14701,7 @@ break
 					shoNhe.sendMessage(m.chat,
 					{
 						image: res.data,
-						caption: 'Berikut gambar Cecan Indonesia'
+						caption: 'La siguiente es una imagen de Cecan Indonesia'
 					},
 					{
 						quoted: hw
@@ -14709,7 +14709,7 @@ break
 				}
 				catch (error)
 				{
-					shoNherly('Gagal mengambil gambar Cecan Indonesia. Silakan coba lagi nanti.');
+					shoNherly('No se pudo tomar una fotografía de Cecan Indonesia. Inténtelo de nuevo más tarde.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -14758,18 +14758,18 @@ break
 					listStore = JSON.parse(fs.readFileSync(listStorePath, 'utf8'));
 				}
 				// Jika key tidak diberikan
-				if (!q) return shoNherly(`Gunakan format: ${prefix}dellist <key>`);
+				if (!q) return shoNherly(`Usar formato: ${prefix}dellist <key>`);
 				const key = q.toLowerCase(); // Gunakan lowercase untuk pencarian yang tidak case-sensitive
 				// Debug: menampilkan daftar key yang ada di liststore
 				console.log("Daftar key yang ada:", Object.keys(listStore[m.chat] ||
 				{}));
 				// Jika key tidak ditemukan dalam liststore
-				if (!listStore[m.chat]?.[key]) return shoNherly(`Key *${key}* tidak ditemukan.`);
+				if (!listStore[m.chat]?.[key]) return shoNherly(`Key *${key}* extraviado.`);
 				// Hapus key dari liststore
 				delete listStore[m.chat][key];
 				// Simpan perubahan ke file
 				fs.writeFileSync(listStorePath, JSON.stringify(listStore, null, 2));
-				shoNherly(`Sukses menghapus list dengan key: *${key}*`);
+				shoNherly(`Se eliminó exitosamente la lista con key: *${key}*`);
 				}
 			break
 			case 'updatelist':
@@ -14788,13 +14788,13 @@ break
 				{
 					listStore = JSON.parse(fs.readFileSync(listStorePath, 'utf8'));
 				}
-				if (!q.includes('|')) return shoNherly(`Gunakan format: ${prefix}dellist <key>|<response>`);
+				if (!q.includes('|')) return shoNherly(`Usar formato: ${prefix}dellist <key>|<response>`);
 				const [key, response] = q.split('|');
-				if (!key || !response) return shoNherly(`Format salah. Gunakan: ${prefix}liststore update <key>|<response>`);
-				if (!listStore[m.chat]?.[key]) return shoNherly(`Key *${key}* tidak ditemukan.`);
+				if (!key || !response) return shoNherly(`Formato incorrecto. Usar: ${prefix}liststore update <key>|<response>`);
+				if (!listStore[m.chat]?.[key]) return shoNherly(`Key *${key}* extraviado.`);
 				listStore[m.chat][key].response = response;
 				fs.writeFileSync(listStorePath, JSON.stringify(listStore, null, 2));
-				shoNherly(`Sukses memperbarui list dengan key: *${key}*`);
+				shoNherly(`Se actualizó exitosamente la lista con key: *${key}*`);
 				}
 			break
 			case 'bluearchive':
@@ -14815,7 +14815,7 @@ break
 					shoNhe.sendMessage(m.chat,
 					{
 						image: res.data,
-						caption: 'Berikut gambar Blue Archive'
+						caption: 'La siguiente es una imagen del Archivo Azul'
 					},
 					{
 						quoted: hw
@@ -14823,7 +14823,7 @@ break
 				}
 				catch (error)
 				{
-					shoNherly('Gagal mengambil gambar Blue Archive. Silakan coba lagi nanti.');
+					shoNherly('No se pudo recuperar la imagen de Blue Archive. Inténtelo de nuevo más tarde.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -14933,7 +14933,7 @@ break
 					shoNhe.sendMessage(m.chat,
 					{
 						image: res.data,
-						caption: 'Berikut gambar Cecan China'
+						caption: 'La siguiente es una imagen de Cecan China'
 					},
 					{
 						quoted: hw
@@ -14941,7 +14941,7 @@ break
 				}
 				catch (error)
 				{
-					shoNherly('Gagal mengambil gambar Cecan China. Silakan coba lagi nanti.');
+					shoNherly('No se pudo tomar una fotografía de Cecan China. Inténtelo de nuevo más tarde.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -14990,7 +14990,7 @@ break
 					shoNhe.sendMessage(m.chat,
 					{
 						image: res.data,
-						caption: 'Berikut gambar Cecan Japan'
+						caption: 'La siguiente es una imagen de Cecan Japón'
 					},
 					{
 						quoted: hw
@@ -14998,7 +14998,7 @@ break
 				}
 				catch (error)
 				{
-					shoNherly('Gagal mengambil gambar Cecan Japan. Silakan coba lagi nanti.');
+					shoNherly('No se pudo tomar una fotografía de Cecan Japón. Inténtelo de nuevo más tarde.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -15047,7 +15047,7 @@ break
 					shoNhe.sendMessage(m.chat,
 					{
 						image: res.data,
-						caption: 'Berikut gambar Cecan Korea'
+						caption: 'La siguiente es una imagen del Cecan coreano'
 					},
 					{
 						quoted: hw
@@ -15055,7 +15055,7 @@ break
 				}
 				catch (error)
 				{
-					shoNherly('Gagal mengambil gambar Cecan Korea. Silakan coba lagi nanti.');
+					shoNherly('No se pudo tomar una fotografía del Cecan coreano. Inténtelo de nuevo más tarde.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -15104,7 +15104,7 @@ break
 					shoNhe.sendMessage(m.chat,
 					{
 						image: res.data,
-						caption: 'Berikut gambar Cecan Thailand'
+						caption: 'La siguiente es una imagen de Cecan Tailandia'
 					},
 					{
 						quoted: hw
@@ -15112,7 +15112,7 @@ break
 				}
 				catch (error)
 				{
-					shoNherly('Gagal mengambil gambar Cecan Thailand. Silakan coba lagi nanti.');
+					shoNherly('No se pudo tomar una fotografía de Cecan Tailandia. Inténtelo de nuevo más tarde.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -15161,7 +15161,7 @@ break
 					shoNhe.sendMessage(m.chat,
 					{
 						image: res.data,
-						caption: 'Berikut gambar Cecan Vietnam'
+						caption: 'La siguiente es una imagen del Cecan vietnamita'
 					},
 					{
 						quoted: hw
@@ -15169,7 +15169,7 @@ break
 				}
 				catch (error)
 				{
-					shoNherly('Gagal mengambil gambar Cecan Vietnam. Silakan coba lagi nanti.');
+					shoNherly('No se pudo tomar una fotografía de Cecan Vietnam. Inténtelo de nuevo más tarde.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -15218,7 +15218,7 @@ break
 					shoNhe.sendMessage(m.chat,
 					{
 						image: res.data,
-						caption: 'Berikut gambar kucing lucu'
+						caption: 'Aquí hay una foto de un lindo gato.'
 					},
 					{
 						quoted: hw
@@ -15226,7 +15226,7 @@ break
 				}
 				catch (error)
 				{
-					shoNherly('Gagal mengambil gambar kucing. Silakan coba lagi nanti.');
+					shoNherly('No se pudo tomar una fotografía del gato. Inténtelo de nuevo más tarde.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -15275,7 +15275,7 @@ break
 					shoNhe.sendMessage(m.chat,
 					{
 						image: res.data,
-						caption: 'Berikut gambar Neko'
+						caption: 'Aquí hay una foto de Neko'
 					},
 					{
 						quoted: hw
@@ -15283,7 +15283,7 @@ break
 				}
 				catch (error)
 				{
-					shoNherly('Gagal mengambil gambar Neko. Silakan coba lagi nanti.');
+					shoNherly('No se pudo tomar la foto de Neko. Inténtelo de nuevo más tarde.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -15341,7 +15341,7 @@ break
 							{
 								body: proto.Message.InteractiveMessage.Body.create(
 								{
-									text: `Hi ${pushName}\n_*Here is the result of ${command}*_`
+									text: `Hi ${pushName}\n_*Aquí está el resultado de ${command}*_`
 								}),
 								footer: proto.Message.InteractiveMessage.Footer.create(
 								{
@@ -15407,7 +15407,7 @@ break
 					shoNhe.sendMessage(m.chat,
 					{
 						image: res.data,
-						caption: 'Berikut gambar Waifu'
+						caption: 'Aquí hay una foto de Waifu'
 					},
 					{
 						quoted: hw
@@ -15415,7 +15415,7 @@ break
 				}
 				catch (error)
 				{
-					shoNherly('Gagal mengambil gambar Waifu. Silakan coba lagi nanti.');
+					shoNherly('No se pudo tomar la foto de Waifu. Inténtelo de nuevo más tarde.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -15542,14 +15542,14 @@ break
 						buttonId: prefix + command,
 						buttonText:
 						{
-							displayText: "🔄 Lanjut Lagi"
+							displayText: "🔄 Continuar de nuevo"
 						}
 					},
 					{
 						buttonId: `${prefix}menu`,
 						buttonText:
 						{
-							displayText: "📜 Kembali ke Menu"
+							displayText: "📜 Volver al menú"
 						}
 					}],
 					viewOnce: true,
@@ -15610,14 +15610,14 @@ break
 						buttonId: prefix + command,
 						buttonText:
 						{
-							displayText: "🔄 Lanjut Lagi"
+							displayText: "🔄 Continuar de nuevo"
 						}
 					},
 					{
 						buttonId: `${prefix}menu`,
 						buttonText:
 						{
-							displayText: "📜 Kembali ke Menu"
+							displayText: "📜 Volver al menú"
 						}
 					}],
 					viewOnce: true,
@@ -15678,14 +15678,14 @@ break
 						buttonId: prefix + command,
 						buttonText:
 						{
-							displayText: "🔄 Lanjut Lagi"
+							displayText: "🔄 Continuar de nuevo"
 						}
 					},
 					{
 						buttonId: `${prefix}menu`,
 						buttonText:
 						{
-							displayText: "📜 Kembali ke Menu"
+							displayText: "📜 Volver al menú"
 						}
 					}],
 					viewOnce: true,
@@ -15846,14 +15846,14 @@ break
 						buttonId: prefix + command,
 						buttonText:
 						{
-							displayText: "🔄 Lanjut Lagi"
+							displayText: "🔄 Continuar de nuevo"
 						}
 					},
 					{
 						buttonId: `${prefix}menu`,
 						buttonText:
 						{
-							displayText: "📜 Kembali ke Menu"
+							displayText: "📜 Volver al menú"
 						}
 					}],
 					viewOnce: true,
@@ -15914,14 +15914,14 @@ break
 						buttonId: prefix + command,
 						buttonText:
 						{
-							displayText: "🔄 Lanjut Lagi"
+							displayText: "🔄 Continuar de nuevo"
 						}
 					},
 					{
 						buttonId: `${prefix}menu`,
 						buttonText:
 						{
-							displayText: "📜 Kembali ke Menu"
+							displayText: "📜 Volver al menú"
 						}
 					}],
 					viewOnce: true,
@@ -16292,7 +16292,7 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (args.length < 2) return shoNherly(`⚠️ Gunakan format:\n\n.upfire @user/jid jumlah\n\nContoh:\n.upfire @user 100\n.upfire 6288888888888 100`);
+				if (args.length < 2) return shoNherly(`⚠️ Usar formato:\n\n.upfire @user/jid jumlah\n\nContoh:\n.upfire @user 100\n.upfire 6288888888888 100`);
 				let target;
 				let jumlah = parseInt(args[1]);
 				// Cek apakah menggunakan tag atau nomor
@@ -16517,7 +16517,7 @@ break
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!text || !text.includes('/'))
 				{
-					return shoNherly(`gunakan format ini ya: *${prefix + command} username/repository*\n\nContoh: *${prefix + command} Whiskeyshoets/Baileys*`);
+					return shoNherly(`Usar formato ini ya: *${prefix + command} username/repository*\n\nContoh: *${prefix + command} Whiskeyshoets/Baileys*`);
 				}
 				const [username, repoName] = text.split('/');
 				try
@@ -17442,7 +17442,7 @@ break;
 						shoNherly('❌ Tidak ada data kota yang tersedia.');;
 					}
 					let pesan = `📍 *Daftar Kota yang Tersedia*\n\n`;
-					pesan += `Gunakan format: .jadwalsholat jakarta|2025|01\n\n`;
+					pesan += `Usar formato: .jadwalsholat jakarta|2025|01\n\n`;
 					kotaList.forEach((kota, index) =>
 					{
 						pesan += `${index + 1}. ${kota}\n`;
