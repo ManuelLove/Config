@@ -20500,12 +20500,12 @@ break;
 				if (args[0] === 'on')
 				{
 					global.welcome = true
-					shoNherly(`${command} is enabled`)
+					shoNherly(`${command} está habilitado`)
 				}
 				else if (args[0] === 'off')
 				{
 					global.welcome = false
-					shoNherly(`${command} is disabled`)
+					shoNherly(`${command} esta deshabilitado`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
