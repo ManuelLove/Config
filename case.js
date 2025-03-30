@@ -20342,78 +20342,80 @@ break;
 										{
 											"name": "single_select",
 											"buttonParamsJson": `{
-												"title": "Group Settings",
-												"sections": [{
-													"title": "Select Settimgs",
-													"rows": [{
-														"title": "⭐OPEN GROUP",
-														"description": "Bot akan membuka grup",
-														"id": "${prefix}grup open"
-													},
-													{
-														"title": "🌕 CLOSE GROUP",
-														"description": "Bot akan menutup grup",
-														"id": "${prefix}grup close"
-													},
-													{
-														"title": "⚡ WELCOME ON",
-														"description": "Bot akan bot akan mengirim pesan welcome grup",
-														"id": "${prefix}welkom on"
-													},
-													{
-														"title": "🍄 WELCOME OFF",
-														"description": "Bot akan mematikan welcome grup",
-														"id": "${prefix}welkom off"
-													},
-													{
-														"title": "⚓ GROUP-EVENT ON",
-														"description": "Bot akan memberi pesan ketika mengganti sesuatu",
-														"id": "${prefix}groupevent on"
-													},
-													{
-														"title": "🪨 GROUP-EVENT OFF",
-														"description": "Bot akan mematikan groupevent",
-														"id": "${prefix}groupevent off"
-													},
-													{
-														"title": "🛸 ADMIN-EVENT ON",
-														"description": "Bot akan menyalakan adminevent grup",
-														"id": "${prefix}adminevent on"
-													},
-													{
-														"title": "📝 ADMIN-EVENT OFF",
-														"description": "Bot akan mematikan adminvent",
-														"id": "${prefix}adminevent off"
-													},
-													{
-														"title": "🤖 ANTI SPAM ON",
-														"description": "Bot akan menyalakan antispam grup",
-														"id": "${prefix}antispam true"
-													},
-													{
-														"title": "🔧 ANTI SPAM OFF",
-														"description": "Bot akan mematikan antispam",
-														"id": "${prefix}antispam false"
-													},
-													{
-														"title": "🔥 ANTILINK ON",
-														"description": "Bot akan menyalakan antilink",
-														"id": "${prefix}antilink true"
-													},
-													{
-														"title": "💣 ANTILINK OFF",
-														"description": "Bot akan mematikan antilink",
-														"id": "${prefix}antilink false"
-													},
-													{
-														"title": "🪡 ANTILINKGC ON",
-														"description": "Bot akan menyalakan antilink grup",
-														"id": "${prefix}antilinkgc true"
-													},
-													{
-														"title": "📛 ANTILINKGC OFF",
-														"description": "Bot akan mematikan antilink group",
-														"id": "${prefix}antilinkgc false"
+												"title": "Configuración del Grupo",
+  "sections": [
+    {
+      "title": "Selecciona Configuración",
+      "rows": [
+        {
+          "title": "⭐ ABRIR GRUPO",
+          "description": "El bot abrirá el grupo",
+          "id": "${prefix}grup open"
+        },
+        {
+          "title": "🌕 CERRAR GRUPO",
+          "description": "El bot cerrará el grupo",
+          "id": "${prefix}grup close"
+        },
+        {
+          "title": "⚡ BIENVENIDA ACTIVADA",
+          "description": "El bot enviará mensajes de bienvenida en el grupo",
+          "id": "${prefix}welkom on"
+        },
+        {
+          "title": "🍄 BIENVENIDA DESACTIVADA",
+          "description": "El bot desactivará los mensajes de bienvenida",
+          "id": "${prefix}welkom off"
+        },
+        {
+          "title": "⚓ EVENTO DE GRUPO ACTIVADO",
+          "description": "El bot enviará mensajes cuando se realicen cambios",
+          "id": "${prefix}groupevent on"
+        },
+        {
+          "title": "🪨 EVENTO DE GRUPO DESACTIVADO",
+          "description": "El bot desactivará los eventos del grupo",
+          "id": "${prefix}groupevent off"
+        },
+        {
+          "title": "🛸 EVENTO ADMIN ACTIVADO",
+          "description": "El bot activará los eventos de administradores",
+          "id": "${prefix}adminevent on"
+        },
+        {
+          "title": "📝 EVENTO ADMIN DESACTIVADO",
+          "description": "El bot desactivará los eventos de administradores",
+          "id": "${prefix}adminevent off"
+        },
+        {
+          "title": "🤖 ANTI-SPAM ACTIVADO",
+          "description": "El bot activará el anti-spam en el grupo",
+          "id": "${prefix}antispam true"
+        },
+        {
+          "title": "🔧 ANTI-SPAM DESACTIVADO",
+          "description": "El bot desactivará el anti-spam",
+          "id": "${prefix}antispam false"
+        },
+        {
+          "title": "🔥 ANTI-ENLACES ACTIVADO",
+          "description": "El bot activará el anti-enlaces",
+          "id": "${prefix}antilink true"
+        },
+        {
+          "title": "💣 ANTI-ENLACES DESACTIVADO",
+          "description": "El bot desactivará el anti-enlaces",
+          "id": "${prefix}antilink false"
+        },
+        {
+          "title": "🪡 ANTI-ENLACES DE GRUPOS ACTIVADO",
+          "description": "El bot activará la protección contra enlaces de grupos",
+          "id": "${prefix}antilinkgc true"
+        },
+        {
+          "title": "📛 ANTI-ENLACES DE GRUPOS DESACTIVADO",
+          "description": "El bot desactivará la protección contra enlaces de grupos",
+          "id": "${prefix}antilinkgc false"
 													}]
 												}]
 											}`
@@ -20431,7 +20433,7 @@ break;
 										},
 										externalAdReply:
 										{
-											title: `GROUP 🔧`,
+											title: `GRUPO 🔧`,
 											body: "",
 											showAdAttribution: true,
 											thumbnail: fs.readFileSync("./ShoNheMedia/image/sett.png"),
