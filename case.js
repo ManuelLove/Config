@@ -11517,12 +11517,12 @@ ${formattedCommandList}
 				if (args[0] === 'true')
 				{
 					db.data.chats[m.chat].antispam = true
-					shoNherly(`${command} is enabled`)
+					shoNherly(`${command} is activado`)
 				}
 				else if (args[0] === 'false')
 				{
 					db.data.chats[m.chat].antispam = false
-					shoNherly(`${command} is disabled`)
+					shoNherly(`${command} is desactivado`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -16448,10 +16448,10 @@ break
 				if (args.length < 1) return shoNherly('true/false?')
 				if (args[0] === 'true') {
 					db.data.chats[m.chat].antilink = true
-					shoNherly(`${command} is enabled`)
+					shoNherly(`${command} is activado`)
 				} else if (args[0] === 'false') {
 					db.data.chats[m.chat].antilink = false
-					shoNherly(`${command} is disabled`)
+					shoNherly(`${command} is desactivado`)
 				}
 			}
 			break;
@@ -16463,10 +16463,10 @@ break
 				if (args.length < 1) return shoNherly('true/false?')
 				if (args[0] === 'true') {
 					db.data.chats[m.chat].antilinkgc = true
-					shoNherly(`${command} is enabled`)
+					shoNherly(`${command} is activado`)
 				} else if (args[0] === 'false') {
 					db.data.chats[m.chat].antilinkgc = false
-					shoNherly(`${command} is disabled`)
+					shoNherly(`${command} is desactivado`)
 				}
 			}
 			break;
@@ -19073,7 +19073,7 @@ break;
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
 				await shoNhe.removeProfilePicture(shoNhe.user.id)
-				shoNherly('udah bro')
+				shoNherly('eso es todo hermano')
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -19268,13 +19268,13 @@ break;
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!text) return shoNherly('Nama thumbnail yang ingin dihapus?');
+				if (!text) return shoNherly('¿El nombre de la miniatura que deseas eliminar?');
 				const thumbList = readThumbList();
 				const index = thumbList.findIndex(thumb => thumb.name === text.toLowerCase());
-				if (index === -1) return shoNherly(`Thumbnail dengan nama '${text}' tidak ditemukan.`);
+				if (index === -1) return shoNherly(`No se encontró la miniatura con el nombre '${text}'.`);
 				thumbList.splice(index, 1);
 				writeThumbList(thumbList);
-				shoNherly(`Thumbnail dengan nama '${text}' berhasil dihapus.`);
+				shoNherly(`La miniatura con el nombre '${text}' se eliminó correctamente.`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -19315,7 +19315,7 @@ break;
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (isQuotedSticker)
 				{
-					if (!q) return shoNherly(`Penggunaan : ${command} cmdnya dan tag stickernya`);
+					if (!q) return shoNherly(`Uso: ${command} cmd y etiqueta de sticker`);
 					if (!(await firely(m, mess.waits))) return;
 					var kodenya = m.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.fileSha256.toString("base64");
 					addCmd(kodenya, q);
@@ -19331,7 +19331,7 @@ break;
 				}
 				else
 				{
-					shoNherly("tag stickenya");
+					shoNherly("etiqueta de sticker");
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -19495,7 +19495,7 @@ break;
 				if (!isBotAdmins) return shoNherly(mess.abots);
 				if (!text && !m.quoted)
 				{
-					shoNherly(`Example: ${prefix + command} 62xxx`);
+					shoNherly(`Ejemplo: ${prefix + command} 62xxx`);
 				}
 				else
 				{
@@ -19642,7 +19642,7 @@ break;
 				}
 				else
 				{
-					if (!m.quoted && (!text || !args[1])) return shoNherly(`Kirim/reply text dengan caption ${prefix + command}`)
+					if (!m.quoted && (!text || !args[1])) return shoNherly(`Envía/responde un texto con un título ${prefix + command}`)
 					let lang = args[0] ? args[0] : 'id'
 					let teks = args[1] ? args.slice(1).join(' ') : m.quoted.text
 					try
@@ -19652,11 +19652,12 @@ break;
 							to: lang,
 							autoCorrect: true
 						})
-						shoNherly(`To : ${lang}\n${hasil[0]}`)
+						shoNherly(`A : ${lang}\n${hasil[0]}`)
 					}
 					catch (e)
 					{
-						shoNherly(`Lang *${lang}* Tidak Di temukan!\nSilahkan lihat list, ${prefix + command} list`)
+						shoNherly(`⚠️ Idioma *${lang}* no encontrado!  
+Por favor, consulta la lista con: ${prefix + command} list`)
 					}
 				}
 				if (levelUpMessage) {
@@ -19701,7 +19702,7 @@ break;
 				if (!isBotAdmins) return shoNherly(mess.abots);
 				let blockwwwww = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.m.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
 				await shoNhe.groupParticipantsUpdate(m.chat, [blockwwwww], 'promote')
-				shoNherly('rampung bro')
+				shoNherly('terminado hermano')
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -19872,12 +19873,12 @@ break;
 				if (args[0] === 'on')
 				{
 					global.autoswview = true
-					shoNherly(`${command} is enabled`)
+					shoNherly(`${command} is activado`)
 				}
 				else if (args[0] === 'off')
 				{
 					global.autoswview = false
-					shoNherly(`${command} is disabled`)
+					shoNherly(`${command} is desactivado`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -19921,12 +19922,12 @@ break;
 				if (args[0] === 'on')
 				{
 					global.anticall = true
-					shoNherly(`${command} is enabled`)
+					shoNherly(`${command} is activado`)
 				}
 				else if (args[0] === 'off')
 				{
 					global.anticall = false
-					shoNherly(`${command} is disabled`)
+					shoNherly(`${command} is desactivado`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -19963,7 +19964,7 @@ break;
 				if (!isBotAdmins) return shoNherly(mess.abots);
 				let blockwww = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.m.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
 				await shoNhe.groupParticipantsUpdate(m.chat, [blockwww], 'remove')
-				shoNherly('udah di kick ya')
+				shoNherly('Ha sido pateado, ¿vale?')
 				break;
 			case 'adminevent':
 			{
@@ -19979,12 +19980,12 @@ break;
 				if (args[0] === 'on')
 				{
 					global.adminevent = true
-					shoNherly(`${command} is enabled`)
+					shoNherly(`${command} is activado`)
 				}
 				else if (args[0] === 'off')
 				{
 					global.adminevent = false
-					shoNherly(`${command} is disabled`)
+					shoNherly(`${command} is desactivado`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -20029,12 +20030,12 @@ break;
 				if (args[0] === 'on')
 				{
 					global.groupevent = true
-					shoNherly(`${command} is enabled`)
+					shoNherly(`${command} is activado`)
 				}
 				else if (args[0] === 'off')
 				{
 					global.groupevent = false
-					shoNherly(`${command} is disabled`)
+					shoNherly(`${command} is desactivado`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -20066,7 +20067,7 @@ break;
 			}
 			break;
 			case "delcmd":
-				if (!isQuotedSticker) return shoNherly(`Penggunaan : ${command} tagsticker`);
+				if (!isQuotedSticker) return shoNherly(`Uso: ${command} etiqueta de sticker`);
 				if (!(await firely(m, mess.waits))) return;
 				var kodenya = m.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.fileSha256.toString("base64");
 				_scommand.splice(getCommandPosition(kodenya), 1);
@@ -20092,12 +20093,12 @@ break;
 				if (!isShoNheOwn) return shoNherly(mess.owners);
 				if (!text)
 				{
-					return shoNherly(`Uhm, cara pakainya : ${prefix + command} Sekolah Menjadi Anime, Kak! 😊`);
+					return shoNherly(`Uhm, así es cómo se usa: ${prefix + command} Escuela Convertida en Anime, ¡Hermano! 😊`);
 				}
 				await emote('⏱️');
 				let cret = await shoNhe.groupCreate(text, []);
 				let response = await shoNhe.groupInviteCode(cret.id);
-				let caption = `Buka tautan ini untuk bergabung ke grup WhatsApp saya, Kak: https://chat.whatsapp.com/${response}`.trim();
+				let caption = `Abre este enlace para unirte a mi grupo de WhatsApp, hermano/a: https://chat.whatsapp.com/${response}`.trim();
 				await emote('✅');
 				shoNhe.sendMessage(m.chat,
 				{
@@ -20110,7 +20111,7 @@ break;
 						{
 							showAdAttribution: true,
 							title: cret.subject,
-							body: `Undangan chat grup`,
+							body: `Invitación de chat grupo`,
 							thumbnail: getRandomThumb3(),
 							sourceUrl: `https://chat.whatsapp.com/${response}`,
 							mediaType: 1,
