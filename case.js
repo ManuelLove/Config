@@ -9310,13 +9310,13 @@ break;
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!args[0]) return shoNherly(`Gunakan ${prefix + command} nomor\nContoh: ${prefix + command} 6285655548594`);
+				if (!args[0]) return shoNherly(`Usar ${prefix + command} número\nEjemplo: ${prefix + command} 6285655548594`);
 				bnnd = q.split("|")[0].replace(/[^0-9]/g, '');
 				let ceknye = await shoNhe.onWhatsApp(bnnd);
-				if (ceknye.length == 0) return shoNherly(`Masukkan nomor yang valid dan terdaftar di WhatsApp!`);
+				if (ceknye.length == 0) return shoNherly(`¡Ingresa un número válido y registrado en WhatsApp!`);
 				owner.push(bnnd);
 				fs.writeFileSync('./owner.json', JSON.stringify(owner));
-				shoNherly(`Nomor ${bnnd} sekarang menjadi Owner!!! 🎉`);
+				shoNherly(`Número ${bnnd} ahora es Owner!!! 🎉`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -9355,12 +9355,12 @@ break;
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!args[0]) return shoNherly(`Gunakan ${prefix + command} nomor\nContoh: ${prefix + command} 6285655548594`);
+				if (!args[0]) return shoNherly(`Usar ${prefix + command} número\nEjemplo: ${prefix + command} 6285655548594`);
 				ya = q.split("|")[0].replace(/[^0-9]/g, '');
 				unp = owner.indexOf(ya);
 				owner.splice(unp, 1);
 				fs.writeFileSync('./src/data/role/owner.json', JSON.stringify(owner));
-				shoNherly(`Nomor ${ya} berhasil dihapus dari daftar owner! ❌`);
+				shoNherly(`Número ${ya} eliminado exitosamente de la lista owner! ❌`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
