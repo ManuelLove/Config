@@ -6866,7 +6866,7 @@ break;
 						delete siapaaku[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6878,7 +6878,7 @@ break;
 						delete tebakkalimat[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6890,7 +6890,7 @@ break;
 						delete tebakbendera[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6902,7 +6902,7 @@ break;
 						delete tebakkata[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6914,7 +6914,7 @@ break;
 						delete asahotak[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6926,7 +6926,7 @@ break;
 						delete lengkapikalimat[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6938,7 +6938,7 @@ break;
 						delete tebakgame[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6950,7 +6950,7 @@ break;
 						delete tebakhero[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6962,7 +6962,7 @@ break;
 						delete tebakff[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6974,7 +6974,7 @@ break;
 						delete tebakkabupaten[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6986,7 +6986,7 @@ break;
 						delete tebakjkt48[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6998,7 +6998,7 @@ break;
 						delete tebakhewan[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7010,7 +7010,7 @@ break;
 						delete tebakml[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7022,7 +7022,7 @@ break;
 						delete tebakchara[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7034,7 +7034,7 @@ break;
 						delete tebaklogo[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7046,7 +7046,7 @@ break;
 						delete tebakaplikasi[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7058,7 +7058,7 @@ break;
 						delete tebakkimia[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7070,7 +7070,7 @@ break;
 						delete tebaklirik[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7082,7 +7082,7 @@ break;
 						delete tebaktebakan[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7094,7 +7094,7 @@ break;
 						delete susunkata[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7106,7 +7106,7 @@ break;
 						delete caklontong[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7118,7 +7118,7 @@ break;
 						delete tebakgambar[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7130,7 +7130,7 @@ break;
 						delete tekateki[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
