@@ -19689,7 +19689,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
            }
 			}
 			break
-			case 'promote':
+			case 'asignar':
 			{
 				if (!isRegistered(m))
 				{
@@ -19701,7 +19701,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 				if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins);
 				if (!isBotAdmins) return shoNherly(mess.abots);
 				let blockwwwww = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.m.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-				await shoNhe.groupParticipantsUpdate(m.chat, [blockwwwww], 'promover')
+				await shoNhe.groupParticipantsUpdate(m.chat, [blockwwwww], 'promote')
 				shoNherly('terminado hermano')
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -19738,7 +19738,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 				if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins);
 				if (!isBotAdmins) return shoNherly(mess.abots);
 				let blockwwwwwa = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.m.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-				await shoNhe.groupParticipantsUpdate(m.chat, [blockwwwwwa], 'quitar')
+				await shoNhe.groupParticipantsUpdate(m.chat, [blockwwwwwa], 'demote')
 				shoNherly(mess.dones)
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
