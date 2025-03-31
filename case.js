@@ -2816,7 +2816,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 		}
 		const JwbTrue = (tebak, exp, tambahan) =>
 		{
-			let teks = `*🎮 ${tebak} 🎮*\n\nKiw Kiww Bener 🎉\n+expFire ${exp}` + tambahan
+			let teks = `*🎮 ${tebak} 🎮*\n\n¡Genial, acertaste! 🎉\n+expFire ${exp}` + tambahan
 			const context = {
 				text: teks,
 				contextInfo:
@@ -2831,7 +2831,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 					},
 					externalAdReply:
 					{
-						title: `Jawaban Benar 🥳`,
+						title: `Respuesta Correcta 🥳`,
 						body: tebak,
 						previewType: "PHOTO",
 						thumbnail: fs.readFileSync("./ShoNheMedia/image/corr.png"),
@@ -2846,7 +2846,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 		}
 		const waktuHabis = (jawaban) =>
 		{
-			let teks = `Kroco, Waktu Abis🥳\n\n*Jawaban:*\n${jawaban}`
+			let teks = `Novato, Tiempo Agotado 🥳\n\n*Respuesta:*\n${jawaban}`
 			const context = {
 				text: teks,
 				contextInfo:
@@ -2861,8 +2861,8 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 					},
 					externalAdReply:
 					{
-						title: `Waktu Habis ⏰`,
-						body: "Dasar Kroco",
+						title: `Tiempo Agotado ⏰`,
+						body: "Básico Novato",
 						previewType: "PHOTO",
 						thumbnailUrl: `https://telegra.ph/file/030ebfc99f9cb5be7e8cb.png`,
 						sourceUrl: wagc
@@ -2883,11 +2883,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakgame[m.chat][2]
-					JwbTrue("Tebak Game", tebakgame[m.chat][2], `\n\nKirim perintah .tebakgame\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina el Juego", tebakgame[m.chat][2], `\n\nEnvía el comando .tebakgame\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakgame[m.chat][3])
 					delete tebakgame[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -2900,11 +2900,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakhero[m.chat][2]
-					JwbTrue("Tebak Hero", tebakhero[m.chat][2], `\n\nKirim perintah .tebakhero\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina el Héroe", tebakhero[m.chat][2], `\n\nEnvía el comando .tebakhero\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakhero[m.chat][3])
 					delete tebakhero[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -2917,11 +2917,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakff[m.chat][2]
-					JwbTrue("Tebak Free Fire", tebakff[m.chat][2], `\n\nKirim perintah .tebakff\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina Free Fire", tebakff[m.chat][2], `\n\nEnvía el comando .tebakff\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakff[m.chat][3])
 					delete tebakff[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -2934,11 +2934,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakkabupaten[m.chat][2]
-					JwbTrue("Tebak Kabupaten", tebakkabupaten[m.chat][2], `\n\nKirim perintah .tebakkabupaten\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina el Distrito", tebakkabupaten[m.chat][2], `\n\nEnvía el comando .tebakkabupaten\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakkabupaten[m.chat][3])
 					delete tebakkabupaten[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -2951,11 +2951,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakjkt48[m.chat][2]
-					JwbTrue("Tebak JKT48", tebakjkt48[m.chat][2], `\n\nKirim perintah .tebakjkt48\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina JKT48", tebakjkt48[m.chat][2], `\n\nEnvía el comando .tebakjkt48\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakjkt48[m.chat][3])
 					delete tebakjkt48[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -2968,11 +2968,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakhewan[m.chat][2]
-					JwbTrue("Tebak Hewan", tebakhewan[m.chat][2], `\n\nKirim perintah .tebakhewan\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina el Animal", tebakhewan[m.chat][2], `\n\nEnvía el comando .tebakhewan\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakhewan[m.chat][3])
 					delete tebakhewan[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -2985,11 +2985,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakml[m.chat][2]
-					JwbTrue("Tebak Sound ML", tebakml[m.chat][2], `\n\nKirim perintah .tebakml\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina el Sonido ML", tebakml[m.chat][2], `\n\nEnvía el comando .tebakml\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakml[m.chat][3])
 					delete tebakml[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3002,11 +3002,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakchara[m.chat][2]
-					JwbTrue("Tebak Anime", tebakchara[m.chat][2], `\n\nKirim perintah .tebakchara\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina el Anime", tebakchara[m.chat][2], `\n\nEnvía el comando .tebakchara\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakchara[m.chat][3])
 					delete tebakchara[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3019,11 +3019,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebaklogo[m.chat][2]
-					JwbTrue("Tebak Logo", tebaklogo[m.chat][2], `\n\nKirim perintah .tebaklogo\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina el Logo", tebaklogo[m.chat][2], `\n\nEnvía el comando .tebaklogo\npara jugar de nuevo 🎮`)
 					clearTimeout(tebaklogo[m.chat][3])
 					delete tebaklogo[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3036,11 +3036,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakaplikasi[m.chat][2]
-					JwbTrue("Tebak Aplikasi", tebakaplikasi[m.chat][2], `\n\nKirim perintah .tebakaplikasi\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina la Aplicación", tebakaplikasi[m.chat][2], `\n\nEnvía el comando .tebakaplikasi\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakaplikasi[m.chat][3])
 					delete tebakaplikasi[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3053,11 +3053,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakgambar[m.chat][2]
-					JwbTrue("Tebak Gambar", tebakgambar[m.chat][2], `\n\nKirim perintah .tebakgambar\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina la Imagen", tebakgambar[m.chat][2], `\n\nEnvía el comando .tebakgambar\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakgambar[m.chat][3])
 					delete tebakgambar[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3070,11 +3070,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakkata[m.chat][2]
-					JwbTrue("Tebak Kata", tebakkata[m.chat][2], `\n\nKirim perintah .tebakkata\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina la Palabra", tebakkata[m.chat][2], `\n\nEnvía el comando .tebakkata\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakkata[m.chat][3])
 					delete tebakkata[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3087,11 +3087,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += asahotak[m.chat][2]
-					JwbTrue("Asah Otak", asahotak[m.chat][2], `\n\nKirim perintah .asahotak\nuntuk bermain lagi 🎮`)
+					JwbTrue("Desafía tu Mente", asahotak[m.chat][2], `\n\nEnvía el comando .asahotak\npara jugar de nuevo 🎮`)
 					clearTimeout(asahotak[m.chat][3])
 					delete asahotak[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3104,11 +3104,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += lengkapikalimat[m.chat][2]
-					JwbTrue("Lengkapi Kalimat", lengkapikalimat[m.chat][2], `\n\nKirim perintah .lengkapikalimat\nuntuk bermain lagi 🎮`)
+					JwbTrue("Completa la Oración", lengkapikalimat[m.chat][2], `\n\nEnvía el comando .lengkapikalimat\npara jugar de nuevo 🎮`)
 					clearTimeout(lengkapikalimat[m.chat][3])
 					delete lengkapikalimat[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3121,11 +3121,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakbendera[m.chat][2]
-					JwbTrue("Tebak Bendera", tebakbendera[m.chat][2], `\n\nKirim perintah .tebakbendera\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina la Bandera", tebakbendera[m.chat][2], `\n\nEnvía el comando .tebakbendera\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakbendera[m.chat][3])
 					delete tebakbendera[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3138,11 +3138,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += caklontong[m.chat][2]
-					JwbTrue("Cak Lontong", caklontong[m.chat][2], `\n\nKirim perintah .caklontong\nuntuk bermain lagi 🎮`)
+					JwbTrue("El Reto del Humor", caklontong[m.chat][2], `\n\nEnvía el comando .caklontong\npara jugar de nuevo 🎮`)
 					clearTimeout(caklontong[m.chat][3])
 					delete caklontong[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3155,11 +3155,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += susunkata[m.chat][2]
-					JwbTrue("Susun Kata", susunkata[m.chat][2], `\n\nKirim perintah .susunkata\nuntuk bermain lagi 🎮`)
+					JwbTrue("Ordena las Palabras", susunkata[m.chat][2], `\n\nEnvía el comando .susunkata\npara jugar de nuevo 🎮`)
 					clearTimeout(susunkata[m.chat][3])
 					delete susunkata[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3172,11 +3172,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakkalimat[m.chat][2]
-					JwbTrue("Tebak Kalimat", tebakkalimat[m.chat][2], `\n\nKirim perintah .tebakkalimat\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina la Oración", tebakkalimat[m.chat][2], `\n\nEnvía el comando .tebakkalimat\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakkalimat[m.chat][3])
 					delete tebakkalimat[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3189,11 +3189,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += siapaaku[m.chat][2]
-					JwbTrue("Tebak Siapa", siapaaku[m.chat][2], `\n\nKirim perintah .tebaksiapa\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina Quién", siapaaku[m.chat][2], `\n\nEnvía el comando .siapaaku\npara jugar de nuevo 🎮`)
 					clearTimeout(siapaaku[m.chat][3])
 					delete siapaaku[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3206,11 +3206,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tekateki[m.chat][2]
-					JwbTrue("Teka Teki", tekateki[m.chat][2], `\n\nKirim perintah .tekateki\nuntuk bermain lagi 🎮`)
+					JwbTrue("Rompecabezas", tekateki[m.chat][2], `\n\nEnvía el comando .tekateki\npara jugar de nuevo 🎮`)
 					clearTimeout(tekateki[m.chat][3])
 					delete tekateki[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3223,11 +3223,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakkimia[m.chat][2]
-					JwbTrue("Teka Kimia", tebakkimia[m.chat][2], `\n\nKirim perintah .tebakkimia\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina la Química", tebakkimia[m.chat][2], `\n\nEnvía el comando .tebakkimia\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakkimia[m.chat][3])
 					delete tebakkimia[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3240,11 +3240,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebaklirik[m.chat][2]
-					JwbTrue("Teka Lirik", tebaklirik[m.chat][2], `\n\nKirim perintah .tebaklirik\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina la Letra", tebaklirik[m.chat][2], `\n\nEnvía el comando .tebaklirik\npara jugar de nuevo 🎮`)
 					clearTimeout(tebaklirik[m.chat][3])
 					delete tebaklirik[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3257,11 +3257,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebaktebakan[m.chat][2]
-					JwbTrue("Teka Tebakan", tebaktebakan[m.chat][2], `\n\nKirim perintah .tebaktebakan\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina el Acertijo", tebaktebakan[m.chat][2], `\n\nEnvía el comando .tebaktebakan\npara jugar de nuevo 🎮`)
 					clearTimeout(tebaktebakan[m.chat][3])
 					delete tebaktebakan[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3271,7 +3271,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tekateki[gamejid][0]
@@ -3282,7 +3282,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: caklontong[gamejid][0]
@@ -3293,7 +3293,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: susunkata[gamejid][0]
@@ -3315,7 +3315,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebaktebakan[gamejid][0]
@@ -3326,7 +3326,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebaklirik[gamejid][0]
@@ -3337,7 +3337,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakkimia[gamejid][0]
@@ -3348,7 +3348,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: siapaaku[gamejid][0]
@@ -3359,7 +3359,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakkalimat[gamejid][0]
@@ -3370,7 +3370,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakbendera[gamejid][0]
@@ -3381,7 +3381,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakkata[gamejid][0]
@@ -3392,7 +3392,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: asahotak[gamejid][0]
@@ -3403,7 +3403,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: lengkapikalimat[gamejid][0]
@@ -3414,7 +3414,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakgame[gamejid][0]
@@ -3425,7 +3425,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakhero[gamejid][0]
@@ -3436,7 +3436,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakff[gamejid][0]
@@ -3447,7 +3447,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakkabupaten[gamejid][0]
@@ -3458,7 +3458,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakjkt48[gamejid][0]
@@ -3469,7 +3469,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakhewan[gamejid][0]
@@ -3480,7 +3480,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakml[gamejid][0]
@@ -3491,7 +3491,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakchara[gamejid][0]
@@ -3502,7 +3502,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebaklogo[gamejid][0]
@@ -3513,7 +3513,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakaplikasi[gamejid][0]
@@ -3524,7 +3524,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakgambar[gamejid][0]
