@@ -4945,7 +4945,7 @@ break;
 							{
 								url: result.img
 							},
-							caption: `Por favor responde la pregunta de arriba\n\nDescripción: ${result.deskripsi}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
+							caption: `Por favor responde la pregunta de arriba\n\nDescripción: ${result.deskripsi}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5082,7 +5082,7 @@ break;
 							{
 								url: result.img
 							},
-							caption: `¿La imagen de arriba es un juego?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
+							caption: `¿La imagen de arriba es un juego?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5153,7 +5153,7 @@ break;
 							{
 								url: result.img
 							},
-							caption: `¿La imagen de arriba es un héroe?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
+							caption: `¿La imagen de arriba es un héroe?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5226,7 +5226,7 @@ break;
 							{
 								url: result.gambar
 							}, // Perbaikan properti gambar
-							caption: `¿Qué personaje es este?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
+							caption: `¿Qué personaje es este?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5308,7 +5308,7 @@ break;
 							{
 								url: result.url
 							}, // Properti gambar
-							caption: `¿De qué distrito es este logo?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
+							caption: `¿De qué distrito es este logo?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5361,7 +5361,7 @@ break;
 							{
 								url: result.gambar
 							},
-							caption: `¿Cuál es el nombre de este miembro de JKT48?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
+							caption: `¿Cuál es el nombre de este miembro de JKT48?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5432,7 +5432,7 @@ break;
 							{
 								url: result.url
 							},
-							caption: `¿Qué animal es este?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
+							caption: `¿Qué animal es este?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5513,7 +5513,7 @@ break;
 					tebakml[m.chat] = [
 						await shoNhe.sendMessage(m.chat,
 						{
-							text: `¿Cuál es el nombre de este personaje?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
+							text: `¿Cuál es el nombre de este personaje?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: key
@@ -5592,7 +5592,7 @@ break;
 								{
 									url: result.image
 								},
-								caption: `¿Cuál es el nombre de este personaje?\n\nTiempo: 120 segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
+								caption: `¿Cuál es el nombre de este personaje?\n\nTiempo: 120 segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 							},
 							{
 								quoted: m
@@ -5671,7 +5671,7 @@ break;
 							{
 								url: result.image
 							},
-							caption: `*¿Qué logo es este?*\n\n${result.deskripsi}\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
+							caption: `*¿Qué logo es este?*\n\n${result.deskripsi}\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5742,7 +5742,7 @@ break;
 							{
 								url: result.image
 							},
-							caption: `¿La imagen de arriba es una aplicación?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
+							caption: `¿La imagen de arriba es una aplicación?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5807,7 +5807,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					tebakkata[m.chat] = [
-						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tebakkata[m.chat])
@@ -5868,7 +5868,7 @@ break;
 					let result = anu.data
 					console.log("Jawaban: " + result.jawaban)
 					asahotak[m.chat] = [
-						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (asahotak[m.chat])
@@ -5929,7 +5929,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					lengkapikalimat[m.chat] = [
-						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (lengkapikalimat[m.chat])
@@ -6153,7 +6153,7 @@ break;
 							{
 								url: result.img
 							},
-							caption: `¿La imagen de arriba es la bandera de un país?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
+							caption: `¿La imagen de arriba es la bandera de un país?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -6218,7 +6218,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					tebakkalimat[m.chat] = [
-						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tebakkalimat[m.chat])
@@ -6281,7 +6281,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					siapaaku[m.chat] = [
-						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (siapaaku[m.chat])
@@ -6342,7 +6342,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.unsur)
 					tebakkimia[m.chat] = [
-						await shoNhe.sendText(m.chat, `¿Qué significa el símbolo : *${result.lambang}*?\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `¿Qué significa el símbolo : *${result.lambang}*?\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tebakkimia[m.chat])
@@ -6403,7 +6403,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					tebaklirik[m.chat] = [
-						await shoNhe.sendText(m.chat, `¿Esta es la letra de la canción? : *${result.soal}*?\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `¿Esta es la letra de la canción? : *${result.soal}*?\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tebaklirik[m.chat])
@@ -6464,7 +6464,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					tebaktebakan[m.chat] = [
-						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tebaktebakan[m.chat])
@@ -6525,7 +6525,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					susunkata[m.chat] = [
-						await shoNhe.sendText(m.chat, `*Responde la siguiente pregunta :*\nPregunta: ${result.soal}\nTipo: ${result.tipe}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `*Responde la siguiente pregunta :*\nPregunta: ${result.soal}\nTipo: ${result.tipe}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (susunkata[m.chat])
@@ -6586,7 +6586,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					caklontong[m.chat] = [
-						await shoNhe.sendText(m.chat, `*Responde la siguiente pregunta :*\nPregunta: ${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `*Responde la siguiente pregunta :*\nPregunta: ${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (caklontong[m.chat])
@@ -6647,7 +6647,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					tekateki[m.chat] = [
-						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tekateki[m.chat])
@@ -6691,7 +6691,7 @@ break;
            }
 			}
 			break
-			case 'bantuan':
+			case 'ayuda':
 			{
 				if (!isRegistered(m))
 				{
@@ -6850,7 +6850,7 @@ break;
            }
 			}
 			break
-			case 'nyerah':
+			case 'rendirse':
 			{
 				if (!isRegistered(m))
 				{
