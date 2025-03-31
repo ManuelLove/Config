@@ -1,156 +1,3 @@
-		// TicTacToe
-		let room = Object.values(tictactoe).find(room => room.id && room.game && room.state && room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state == 'PLAYING')
-		if (room) {
-			let ok
-			let isWin = !1
-			let isTie = !1
-			let isSurrender = !1
-			if (!/^([1-9]|(me)?nyerah|surr?ender|off|skip)$/i.test(m.text)) return
-			isSurrender = !/^[1-9]$/.test(m.text)
-			if (m.sender !== room.game.currentTurn) {
-				if (!isSurrender) return !0
-			}
-			if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
-				m.reply({
-					'-3': 'Game telah berakhir',
-					'-2': 'Invalid',
-					'-1': 'Posisi Invalid',
-					0: 'Posisi Invalid',
-				}[ok])
-				return !0
-			}
-			if (m.sender === room.game.winner) isWin = true
-			else if (room.game.board === 511) isTie = true
-			let arr = room.game.render().map(v => {
-				return {
-					X: '❌',
-					O: '⭕',
-					1: '1️⃣',
-					2: '2️⃣',
-					3: '3️⃣',
-					4: '4️⃣',
-					5: '5️⃣',
-					6: '6️⃣',
-					7: '7️⃣',
-					8: '8️⃣',
-					9: '9️⃣',
-				}[v]
-			})
-			if (isSurrender) {
-				room.game._currentTurn = m.sender === room.game.playerX
-				isWin = true
-			}
-			let winner = isSurrender ? room.game.currentTurn : room.game.winner
-			if (isWin) {
-				db.users[m.sender].limit += 3
-				db.users[m.sender].uang += 3000
-			}
-			let str = `Room ID: ${room.id}\n\n${arr.slice(0, 3).join('')}\n${arr.slice(3, 6).join('')}\n${arr.slice(6).join('')}\n\n${isWin ? `@${winner.split('@')[0]} Menang!` : isTie ? `Game berakhir` : `Giliran ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}\n❌: @${room.game.playerX.split('@')[0]}\n⭕: @${room.game.playerO.split('@')[0]}\n\nKetik *nyerah* untuk menyerah dan mengakui kekalahan`
-			if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
-			room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-			function (room.x !== room.o) await shoNhe.sendMessage(room.x, { text: str, mentions: parseMention(str) }, { quoted: m })
-			await shoNhe.sendMessage(room.o, { text: str, mentions: parseMention(str) }, { quoted: m })
-			if (isTie || isWin) {
-				delete tictactoe[room.id]
-			}
-		}
-		
-		// Suit PvP
-		let roof = Object.values(suit).find(roof => roof.id && roof.status && [roof.p, roof.p2].includes(m.sender))
-		if (roof) {
-			let win = ''
-			let tie = false
-			if (m.sender == roof.p2 && /^(acc(ept)?|terima|gas|oke?|tolak|gamau|nanti|ga(k.)?bisa|y)/i.test(m.text) && m.isGroup && roof.status == 'wait') {
-				if (/^(tolak|gamau|nanti|n|ga(k.)?bisa)/i.test(m.text)) {
-					m.reply(`@${roof.p2.split`@`[0]} menolak suit,\nsuit dibatalkan`)
-					delete suit[roof.id]
-					return !0
-				}
-				roof.status = 'play';
-				roof.asal = m.chat;
-				clearTimeout(roof.waktu);
-				m.reply(`Suit telah dikirimkan ke chat\n\n@${roof.p.split`@`[0]} dan @${roof.p2.split`@`[0]}\n\nSilahkan pilih suit di chat masing-masing klik https://wa.me/${botNumber.split`@`[0]}`)
-				if (!roof.pilih) shoNhe.sendMessage(roof.p, { text: `Silahkan pilih \n\nBatu🗿\nKertas📄\nGunting✂️` }, { quoted: m })
-				if (!roof.pilih2) shoNhe.sendMessage(roof.p2, { text: `Silahkan pilih \n\nBatu🗿\nKertas📄\nGunting✂️` }, { quoted: m })
-				roof.waktu_milih = setTimeout(() => {
-					if (!roof.pilih && !roof.pilih2) m.reply(`Kedua pemain tidak niat main,\nSuit dibatalkan`)
-					else if (!roof.pilih || !roof.pilih2) {
-						win = !roof.pilih ? roof.p2 : roof.p
-						m.reply(`@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} tidak memilih suit, game berakhir`)
-					}
-					delete suit[roof.id]
-					return !0
-				}, roof.timeout)
-			}
-			let jwb = m.sender == roof.p
-			let jwb2 = m.sender == roof.p2
-			let g = /gunting/i
-			let b = /batu/i
-			let k = /kertas/i
-			let reg = /^(gunting|batu|kertas)/i;
-			
-			if (jwb && reg.test(m.text) && !roof.pilih && !m.isGroup) {
-				roof.pilih = reg.exec(m.text.toLowerCase())[0];
-				roof.text = m.text;
-				m.reply(`Kamu telah memilih ${m.text} ${!roof.pilih2 ? `\n\nMenunggu lawan memilih` : ''}`);
-				if (!roof.pilih2) shoNhe.sendMessage(roof.p2, { text: '_Lawan sudah memilih_\nSekarang giliran kamu' })
-			}
-			if (jwb2 && reg.test(m.text) && !roof.pilih2 && !m.isGroup) {
-				roof.pilih2 = reg.exec(m.text.toLowerCase())[0]
-				roof.text2 = m.text
-				m.reply(`Kamu telah memilih ${m.text} ${!roof.pilih ? `\n\nMenunggu lawan memilih` : ''}`)
-				if (!roof.pilih) shoNhe.sendMessage(roof.p, { text: '_Lawan sudah memilih_\nSekarang giliran kamu' })
-			}
-			let stage = roof.pilih
-			let stage2 = roof.pilih2
-			if (roof.pilih && roof.pilih2) {
-				clearTimeout(roof.waktu_milih)
-				if (b.test(stage) && g.test(stage2)) win = roof.p
-				else if (b.test(stage) && k.test(stage2)) win = roof.p2
-				else if (g.test(stage) && k.test(stage2)) win = roof.p
-				else if (g.test(stage) && b.test(stage2)) win = roof.p2
-				else if (k.test(stage) && b.test(stage2)) win = roof.p
-				else if (k.test(stage) && g.test(stage2)) win = roof.p2
-				else if (stage == stage2) tie = true
-				db.users[roof.p == win ? roof.p : roof.p2].limit += tie ? 0 : 3
-				db.users[roof.p == win ? roof.p : roof.p2].uang += tie ? 0 : 3000
-				shoNhe.sendMessage(roof.asal, { text: `_*Hasil Suit*_${tie ? '\nSERI' : ''}\n\n@${roof.p.split`@`[0]} (${roof.text}) ${tie ? '' : roof.p == win ? ` Menang \n` : ` Kalah \n`}\n@${roof.p2.split`@`[0]} (${roof.text2}) ${tie ? '' : roof.p2 == win ? ` Menang \n` : ` Kalah \n`}\n\nPemenang Mendapatkan\n*Hadiah :* Uang(3000) & Limit(3)`.trim(), mentions: [roof.p, roof.p2] }, { quoted: m })
-				delete suit[roof.id]
-			}
-		}
-		
-		// Tebak Bomb
-		let pilih = '🌀', bomb = '💣';
-		if (m.sender in tebakbom) {
-			if (!/^[1-9]|10$/i.test(body) && !isCmd && !isCreator) return !0;
-			if (tebakbom[m.sender].petak[parseInt(body) - 1] === 1) return !0;
-			if (tebakbom[m.sender].petak[parseInt(body) - 1] === 2) {
-				tebakbom[m.sender].board[parseInt(body) - 1] = bomb;
-				tebakbom[m.sender].pick++;
-				shoNhe.sendMessage(m.chat, { react: {text: '❌', key: m.key }})
-				tebakbom[m.sender].bomb--;
-				tebakbom[m.sender].nyawa.pop();
-				let brd = tebakbom[m.sender].board;
-				if (tebakbom[m.sender].nyawa.length < 1) {
-					await m.reply(`*GAME TELAH BERAKHIR*\nKamu terkena bomb\n\n ${brd.join('')}\n\n*Terpilih :* ${tebakbom[m.sender].pick}\n_Pengurangan Limit : 1_`);
-					shoNhe.sendMessage(m.chat, { react: { text: '😂', key: m.key }})
-					delete tebakbom[m.sender];
-				} else await m.reply(`*PILIH ANGKA*\n\nKamu terkena bomb\n ${brd.join('')}\n\nTerpilih: ${tebakbom[m.sender].pick}\nSisa nyawa: ${tebakbom[m.sender].nyawa}`);
-				return !0;
-			}
-			if (tebakbom[m.sender].petak[parseInt(body) - 1] === 0) {
-				tebakbom[m.sender].petak[parseInt(body) - 1] = 1;
-				tebakbom[m.sender].board[parseInt(body) - 1] = pilih;
-				tebakbom[m.sender].pick++;
-				tebakbom[m.sender].lolos--;
-				let brd = tebakbom[m.sender].board;
-				if (tebakbom[m.sender].lolos < 1) {
-					db.users[m.sender].uang += 6000
-					await m.reply(`*KAMU HEBAT ಠ⁠ᴥ⁠ಠ*\n\n${brd.join('')}\n\n*Terpilih :* ${tebakbom[m.sender].pick}\n*Sisa nyawa :* ${tebakbom[m.sender].nyawa}\n*Bomb :* ${tebakbom[m.sender].bomb}\nBonus Uang 💰 *+6000*`);
-					delete tebakbom[m.sender];
-				} else m.reply(`*PILIH ANGKA*\n\n${brd.join('')}\n\nTerpilih : ${tebakbom[m.sender].pick}\nSisa nyawa : ${tebakbom[m.sender].nyawa}\nBomb : ${tebakbom[m.sender].bomb}`)
-			}
-		}
 // CREATOR : YUDA & TNGX
 // TQTO? DI COMMAND TQTO
 // BIG THX TO : GALANGz, TNGXAJA[Nhe], ORANG TUA, ALLAH, PENYEDIA REST API, PENYEDIA BASE AWAL
@@ -26426,77 +26273,63 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
            }
 			}
 			break
-			case 'suitpvp': case 'suit': {
-				let poin = 10
-				let poin_lose = 10
-				let timeout = 60000
-				if (Object.values(suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.sender))) m.reply(`Selesaikan suit mu yang sebelumnya`)
-				if (m.mentionedJid[0] === m.sender) return m.reply(`Tidak bisa bermain dengan diri sendiri !`)
-				if (!m.mentionedJid[0]) return m.reply(`_Siapa yang ingin kamu tantang?_\nTag orangnya..\n\nContoh : ${prefix}suit @${owner[0]}`, m.chat, { mentions: [owner[1] + '@s.whatsapp.net'] })
-				if (Object.values(suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.mentionedJid[0]))) return m.reply(`Orang yang kamu tantang sedang bermain suit bersama orang lain :(`)
-				let id = 'suit_' + new Date() * 1
-				let caption = `_*SUIT PvP*_\n\n@${m.sender.split`@`[0]} menantang @${m.mentionedJid[0].split`@`[0]} untuk bermain suit\n\nSilahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
-				suit[id] = {
-					chat: m.reply(caption),
-					id: id,
-					p: m.sender,
-					p2: m.mentionedJid[0],
-					status: 'wait',
-					waktu: setTimeout(() => {
-						if (suit[id]) m.reply(`_Waktu suit habis_`)
-						delete suit[id]
-					}, 60000), poin, poin_lose, timeout
+			case 'suit':
+			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
 				}
-			}
-			break
-			case 'ttc': case 'ttt': case 'tictactoe': {
-				let TicTacToe = require('./lib/tictactoe');
-				if (Object.values(tictactoe).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return m.reply(`Kamu masih didalam game!\nKetik *${prefix}del${command}* Jika Ingin Mengakhiri sesi`);
-				let room = Object.values(tictactoe).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
-				if (room) {
-					m.reply('Partner ditemukan!')
-					room.o = m.chat
-					room.game.playerO = m.sender
-					room.state = 'PLAYING'
-					let arr = room.game.render().map(v => {
-						return {X: '❌',O: '⭕',1: '1️⃣',2: '2️⃣',3: '3️⃣',4: '4️⃣',5: '5️⃣',6: '6️⃣',7: '7️⃣',8: '8️⃣',9: '9️⃣'}[v]
-					})
-					let str = `Room ID: ${room.id}\n\n${arr.slice(0, 3).join('')}\n${arr.slice(3, 6).join('')}\n${arr.slice(6).join('')}\n\nMenunggu @${room.game.currentTurn.split('@')[0]}\n\nKetik *nyerah* untuk menyerah dan mengakui kekalahan`
-					if (room.x !== room.o) await shoNhe.sendMessage(room.x, { texr: str, mentions: parseMention(str) }, { quoted: m })
-					await shoNhe.sendMessage(room.o, { text: str, mentions: parseMention(str) }, { quoted: m })
-				} else {
-					room = {
-						id: 'tictactoe-' + (+new Date),
-						x: m.chat,
-						o: '',
-						game: new TicTacToe(m.sender, 'o'),
-						state: 'WAITING',
-						waktu: setTimeout(() => {
-							if (tictactoe[roomnya.id]) m.reply(`_Waktu ${command} habis_`)
-							delete tictactoe[roomnya.id]
-						}, 300000)
-					}
-					if (text) room.name = text
-					shoNhe.sendMessage(m.chat, { text: 'Menunggu partner' + (text ? ` mengetik command dibawah ini ${prefix}${command} ${text}` : ''), mentions: m.mentionedJid }, { quoted: m })
-					tictactoe[room.id] = room
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				const userChoice = text.toLowerCase();
+				const choices = ['batu', 'gunting', 'kertas'];
+				const botChoice = choices[Math.floor(Math.random() * choices.length)];
+				if (!choices.includes(userChoice))
+				{
+					return shoNherly('🧠 Pilih antara *batu*, *gunting*, atau *kertas* ya, Kak!');
 				}
-			}
-			break
-			case 'tebakbom': {
-				if (tebakbom[m.sender]) return m.reply('Masih Ada Sesi Yang Belum Diselesaikan!')
-				tebakbom[m.sender] = {
-					petak: [0, 0, 0, 2, 0, 2, 0, 2, 0, 0].sort(() => Math.random() - 0.5),
-					board: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'],
-					bomb: 3,
-					lolos: 7,
-					pick: 0,
-					nyawa: ['❤️', '❤️', '❤️'],
-					waktu: setTimeout(() => {
-						if (tebakbom[m.sender]) m.reply(`_Waktu ${command} habis_`)
-						delete tebakbom[m.sender];
-					}, 120000)
+				let hasil = '';
+				if (userChoice === botChoice)
+				{
+					hasil = `🤝 Seri! Kita sama-sama pilih *${botChoice}*`;
 				}
-				m.reply(`*TEBAK BOM*\n\n${tebakbom[m.sender].board.join("")}\n\nPilih lah nomor tersebut! dan jangan sampai terkena Bom!\nBomb : ${tebakbom[m.sender].bomb}\nNyawa : ${tebakbom[m.sender].nyawa.join("")}`);
+				else if (
+					(userChoice === 'batu' && botChoice === 'gunting') || (userChoice === 'gunting' && botChoice === 'kertas') || (userChoice === 'kertas' && botChoice === 'batu'))
+				{
+					hasil = `🎉 Kakak menang! Aku pilih *${botChoice}*`;
+				}
+				else
+				{
+					hasil = `😢 Aku menang! Aku pilih *${botChoice}*`;
+				}
+				shoNherly(hasil);
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
+				{
+					quoted: hw
+				});
+           }
 			}
 			break
 			case 'delete':
