@@ -26328,7 +26328,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 					tictactoe[room.id] = room
 				}
 			}
-			break
+			break;
 }
 			case 'delete':
 			case 'del':
