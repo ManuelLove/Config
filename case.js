@@ -26273,138 +26273,62 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
            }
 			}
 			break
-			case 'suit': {
-    if (!isRegistered(m)) {
-        return sendRegister(shoNhe, m, prefix, namabot);
-    }
-    updatePopularCommand(command);
-
-    global.suitRooms = global.suitRooms || {};
-
-    const args = text.split(" ");
-    let opponent = m.mentionedJid ? m.mentionedJid[0] : null;
-
-    if (!opponent) {
-        // **Jugar contra el bot**
-        const userChoice = text.toLowerCase();
-        const choices = ['batu', 'gunting', 'kertas'];
-        const botChoice = choices[Math.floor(Math.random() * choices.length)];
-
-        if (!choices.includes(userChoice)) {
-            return shoNherly('🧠 Pilih antara *batu*, *gunting*, atau *kertas* ya, Kak!');
-        }
-
-        let hasil = '';
-        if (userChoice === botChoice) {
-            hasil = `🤝 Seri! Kita sama-sama pilih *${botChoice}*`;
-        } else if (
-            (userChoice === 'batu' && botChoice === 'gunting') || 
-            (userChoice === 'gunting' && botChoice === 'kertas') || 
-            (userChoice === 'kertas' && botChoice === 'batu')) {
-            hasil = `🎉 Kakak menang! Aku pilih *${botChoice}*`;
-        } else {
-            hasil = `😢 Aku menang! Aku pilih *${botChoice}*`;
-        }
-
-        shoNherly(hasil);
-    } else {
-        // **Jugar contra otro usuario**
-        if (opponent === m.sender) return m.reply("❌ No puedes jugar contra ti mismo.");
-        if (global.suitRooms[m.chat]) return m.reply("⚠️ Ya hay un juego en progreso en este chat.");
-
-        global.suitRooms[m.chat] = {
-            id: m.chat,
-            p1: m.sender,
-            p2: opponent,
-            status: "wait",
-            choices: {},
-        };
-
-        m.reply(`🎮 *¡Juego de Piedra, Papel o Tijera!* 🎮\n\n👤 *${m.sender.split("@")[0]}* ha retado a *${opponent.split("@")[0]}*.\n\n🔰 @${opponent.split("@")[0]}, responde con *Aceptar* para comenzar.`);
-
-        setTimeout(() => {
-            if (global.suitRooms[m.chat] && global.suitRooms[m.chat].status === "wait") {
-                m.reply("⚠️ El reto ha expirado por falta de respuesta.");
-                delete global.suitRooms[m.chat];
-            }
-        }, 30000); // 30 segundos para aceptar
-    }
-    break;
-}
-
-// **Aceptar el reto**
-case 'aceptar': {
-    if (!global.suitRooms[m.chat] || global.suitRooms[m.chat].status !== "wait") {
-        return m.reply("❌ No hay un reto activo en este chat.");
-    }
-
-    let room = global.suitRooms[m.chat];
-
-    if (m.sender !== room.p2) return m.reply("❌ Solo el jugador retado puede aceptar.");
-
-    room.status = "play";
-
-    m.reply(`✅ ¡El juego ha comenzado!\nAmbos jugadores, envíen su elección: *batu*, *gunting* o *kertas*.`);
-
-    setTimeout(() => {
-        if (global.suitRooms[m.chat] && Object.keys(room.choices).length < 2) {
-            m.reply("⚠️ El juego ha sido cancelado porque uno o ambos jugadores no eligieron a tiempo.");
-            delete global.suitRooms[m.chat];
-        }
-    }, 30000); // 30 segundos para elegir
-    break;
-}
-
-// **Elegir opción**
-case 'batu':
-case 'gunting':
-case 'kertas': {
-    if (!global.suitRooms[m.chat] || global.suitRooms[m.chat].status !== "play") {
-        return;
-    }
-
-    let room = global.suitRooms[m.chat];
-    if (![room.p1, room.p2].includes(m.sender)) return;
-
-    if (room.choices[m.sender]) return m.reply("❌ Ya elegiste tu opción.");
-
-    room.choices[m.sender] = command; // Guardamos su elección
-
-    if (Object.keys(room.choices).length === 2) {
-        // Ambos eligieron, resolvemos el juego
-        let p1Choice = room.choices[room.p1];
-        let p2Choice = room.choices[room.p2];
-
-        let winner = null;
-        let tie = p1Choice === p2Choice;
-
-        if (!tie) {
-            if (
-                (p1Choice === 'batu' && p2Choice === 'gunting') ||
-                (p1Choice === 'gunting' && p2Choice === 'kertas') ||
-                (p1Choice === 'kertas' && p2Choice === 'batu')
-            ) {
-                winner = room.p1;
-            } else {
-                winner = room.p2;
-            }
-        }
-
-        let mensaje = `🎮 *Resultado del Juego*\n\n👤 ${room.p1} eligió *${p1Choice}*\n👤 ${room.p2} eligió *${p2Choice}*\n\n`;
-
-        if (tie) {
-            mensaje += "⚖️ ¡Empate!";
-        } else {
-            mensaje += `🏆 ¡Felicidades @${winner.split("@")[0]}! Ganaste.`;
-            db.data.users[winner].exp += 10; // Recompensa XP
-        }
-
-        m.reply(mensaje, { mentions: [room.p1, room.p2] });
-        delete global.suitRooms[m.chat];
-    } else {
-        m.reply("✅ Elección guardada. Esperando al otro jugador...");
-    }
-    break;
+			case 'suitpvp': case 'suit': {
+				let poin = 10
+				let poin_lose = 10
+				let timeout = 60000
+				if (Object.values(suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.sender))) m.reply(`Selesaikan suit mu yang sebelumnya`)
+				if (m.mentionedJid[0] === m.sender) return m.reply(`Tidak bisa bermain dengan diri sendiri !`)
+				if (!m.mentionedJid[0]) return m.reply(`_Siapa yang ingin kamu tantang?_\nTag orangnya..\n\nContoh : ${prefix}suit @${owner[0]}`, m.chat, { mentions: [owner[1] + '@s.whatsapp.net'] })
+				if (Object.values(suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.mentionedJid[0]))) return m.reply(`Orang yang kamu tantang sedang bermain suit bersama orang lain :(`)
+				let id = 'suit_' + new Date() * 1
+				let caption = `_*SUIT PvP*_\n\n@${m.sender.split`@`[0]} menantang @${m.mentionedJid[0].split`@`[0]} untuk bermain suit\n\nSilahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
+				suit[id] = {
+					chat: m.reply(caption),
+					id: id,
+					p: m.sender,
+					p2: m.mentionedJid[0],
+					status: 'wait',
+					waktu: setTimeout(() => {
+						if (suit[id]) m.reply(`_Waktu suit habis_`)
+						delete suit[id]
+					}, 60000), poin, poin_lose, timeout
+				}
+			}
+			break
+			case 'ttc': case 'ttt': case 'tictactoe': {
+				let TicTacToe = require('./lib/tictactoe');
+				if (Object.values(tictactoe).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return m.reply(`Kamu masih didalam game!\nKetik *${prefix}del${command}* Jika Ingin Mengakhiri sesi`);
+				let room = Object.values(tictactoe).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
+				if (room) {
+					m.reply('Partner ditemukan!')
+					room.o = m.chat
+					room.game.playerO = m.sender
+					room.state = 'PLAYING'
+					let arr = room.game.render().map(v => {
+						return {X: '❌',O: '⭕',1: '1️⃣',2: '2️⃣',3: '3️⃣',4: '4️⃣',5: '5️⃣',6: '6️⃣',7: '7️⃣',8: '8️⃣',9: '9️⃣'}[v]
+					})
+					let str = `Room ID: ${room.id}\n\n${arr.slice(0, 3).join('')}\n${arr.slice(3, 6).join('')}\n${arr.slice(6).join('')}\n\nMenunggu @${room.game.currentTurn.split('@')[0]}\n\nKetik *nyerah* untuk menyerah dan mengakui kekalahan`
+					if (room.x !== room.o) await naze.sendMessage(room.x, { texr: str, mentions: parseMention(str) }, { quoted: m })
+					await naze.sendMessage(room.o, { text: str, mentions: parseMention(str) }, { quoted: m })
+				} else {
+					room = {
+						id: 'tictactoe-' + (+new Date),
+						x: m.chat,
+						o: '',
+						game: new TicTacToe(m.sender, 'o'),
+						state: 'WAITING',
+						waktu: setTimeout(() => {
+							if (tictactoe[roomnya.id]) m.reply(`_Waktu ${command} habis_`)
+							delete tictactoe[roomnya.id]
+						}, 300000)
+					}
+					if (text) room.name = text
+					naze.sendMessage(m.chat, { text: 'Menunggu partner' + (text ? ` mengetik command dibawah ini ${prefix}${command} ${text}` : ''), mentions: m.mentionedJid }, { quoted: m })
+					tictactoe[room.id] = room
+				}
+			}
+			break
 }
 			case 'delete':
 			case 'del':
