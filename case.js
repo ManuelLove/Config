@@ -4945,7 +4945,7 @@ break;
 							{
 								url: result.img
 							},
-							caption: `Silahkan Jawab Soal Di Atas Ini\n\nDeskripsi : ${result.deskripsi}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `Por favor, responde la pregunta de arriba.\n\n📌 *Descripción*: ${result.deskripsi}\n⏳ *Tiempo*: ${(120000 / 1000).toFixed(2)} segundos\n\n🔹 _Escribe .nyerah para rendirte..._\n🔹 _Escribe .bantuan para obtener una pista..._`
 						},
 						{
 							quoted: m
@@ -11667,7 +11667,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!q) return shoNherly('Teksnya mana?');
+				if (!q) return shoNherly('¿Dónde está el texto?');
 				await shoNhe.sendMessage('status@broadcast',
 				{
 					text: q
@@ -11677,7 +11677,7 @@ ${formattedCommandList}
 					font: 3,
 					statusJidList: Object.keys(global.db.data.users)
 				});
-				shoNherly('Sukses kirim status teks!');
+				shoNherly('¡Estado del texto enviado exitosamente!');
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -11716,7 +11716,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!text) return shoNherly('Masukkan ID grup atau nomor kontak.');
+				if (!text) return shoNherly('Ingrese el ID del grupo o el número de contacto.');
 				const targetId = text.trim(); // ID grup atau nomor tujuan
 				const emptyMessage = '\n'.repeat(1000); // Membuat pesan kosong dengan 1000 baris
 				try
@@ -11725,12 +11725,12 @@ ${formattedCommandList}
 					{
 						text: emptyMessage
 					}); // Mengirimkan pesan
-					shoNherly(`Pesan kosong sebanyak 1000 baris berhasil dikirim ke ${targetId}.`);
+					shoNherly(`Se envió exitosamente un mensaje vacío de 1000 líneas a ${targetId}.`);
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('Gagal mengirim pesan kosong. Pastikan ID yang Anda masukkan benar.');
+					shoNherly('No se pudo enviar el mensaje vacío. Asegúrese de que la identificación que ingresó sea correcta.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -11776,15 +11776,15 @@ ${formattedCommandList}
 					// Unduh video dari pesan yang di-reply
 					var videosw = await shoNhe.downloadAndSaveMediaMessage(quoted);
 					// Dapatkan informasi default untuk caption
-					let fileSize = quoted.fileLength ? `${(quoted.fileLength / 1024 / 1024).toFixed(2)} MB` : 'Tidak diketahui';
-					let mediaType = mime || 'Tidak diketahui';
+					let fileSize = quoted.fileLength ? `${(quoted.fileLength / 1024 / 1024).toFixed(2)} MB` : 'Desconocido';
+					let mediaType = mime || 'Desconocido';
 					let sendTime = new Date().toLocaleString('id-ID',
 					{
 						timeZone: 'Asia/Jakarta'
 					});
 					let sender = `${m.pushName || namaowner}`;
 					// Buat caption default
-					let defaultCaption = `📁 *Ukuran File:* ${fileSize}\n` + `🎥 *Tipe Media:* ${mediaType}\n` + `⏰ *Waktu Dikirim:* ${sendTime}\n` + `👤 *Dikirim oleh:* ${sender}`;
+					let defaultCaption = `📁 *Tamaño de archivo:* ${fileSize}\n` + `🎥 *Tipo de medio:* ${mediaType}\n` + `⏰ *Hora de envío:* ${sendTime}\n` + `👤 *Enviado por:* ${sender}`;
 					// Kirim video ke status WhatsApp
 					await shoNhe.sendMessage('status@broadcast',
 					{
@@ -11797,11 +11797,11 @@ ${formattedCommandList}
 					{
 						statusJidList: Object.keys(global.db.data.users)
 					});
-					await shoNherly('✅ Video berhasil dikirim ke status WhatsApp dengan caption bawaan!');
+					await shoNherly('✅ ¡Video enviado exitosamente al estado de WhatsApp con título predeterminado!');
 				}
 				else
 				{
-					shoNherly('⚠️ Tolong reply ke video dulu ya, Cik! 🎥');
+					shoNherly('⚠️ ¡Por favor, responde primero al vídeo, Clip! 🎥');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -11840,10 +11840,10 @@ ${formattedCommandList}
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly('⚠️ Harap masukkan prompt yang ingin digunakan.\n\nContoh: setprompt Kamu adalah AI yang membantu pengguna.');
+				if (!text) return shoNherly('⚠️ Ingrese el mensaje que desea usar.\n\nEjemplo: setprompt Eres una IA que ayuda a los usuarios.');
 				if (!(await firely(m, mess.waits))) return;
 				aiPrompt = text;
-				shoNherly(`✅ Prompt berhasil diperbarui:\n\n${aiPrompt}`);
+				shoNherly(`✅ Aviso actualizado exitosamente:\n\n${aiPrompt}`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -11882,7 +11882,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case mengikuti nama API
-				if (!text) return shoNherly('⚠️ Harap masukkan teks yang ingin dijadikan input untuk AI.\n\nContoh: llama33 Apa itu teknologi AI?');
+				if (!text) return shoNherly('⚠️ Ingrese el texto que desea usar como entrada para IA.\n\nEjemplo: llama33 ¿Qué es la tecnología de IA?');
 				try
 				{
 					// Panggil API dengan prompt dan teks yang diberikan
@@ -11940,7 +11940,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan teks yang ingin dijadikan input untuk AI.\n\nContoh: meta-llama Apa kabar?');
+				if (!text) return shoNherly('⚠️ Ingresa el texto que deseas usar como entrada para la IA.\n\nEjemplo: meta-llama ¿Cómo estás?');
 				try
 				{
 					// Panggil API tanpa prompt
@@ -11998,7 +11998,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan teks yang ingin dijadikan input untuk AI.\n\nContoh: nous-hermes Hai, apa kabar?');
+				if (!text) return shoNherly('⚠️ Introduce el texto que deseas utilizar como entrada para la IA.\n\nEjemplo: nous-hermes Hola, ¿cómo estás?');
 				try
 				{
 					// Panggil API dengan parameter content
@@ -12055,7 +12055,7 @@ ${formattedCommandList}
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				const tecs = 'Keren king buttonnya simple wgwgg'
+				const tecs = 'El botón rey es genial, simple, guau.'
 				const textButtons = [
 				{
 					buttonId: `${prefix}info`,
@@ -12109,7 +12109,7 @@ ${formattedCommandList}
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				const olin = 'I love you broo🔥'
+				const olin = 'Te amo hermano🔥'
 				const ShoNhevid = fs.readFileSync("./ShoNheMedia/video/sych.mp4")
 				const vidButtons = [
 				{
@@ -12164,7 +12164,7 @@ ${formattedCommandList}
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				const sica = 'Halo aku adalah ShoNhe'
+				const sica = 'Hola soy TechFix'
 				const ShoNhegam = fs.readFileSync("./ShoNheMedia/image/bot.jpg")
 				const imgButtons = [
 				{
@@ -12220,7 +12220,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan teks yang ingin dijadikan input untuk AI.\n\nContoh: claudeai Apa kabar?');
+				if (!text) return shoNherly('⚠️ Por favor ingresa el texto que deseas usar como entrada para la IA.\n\nEjemplo: claudeai ¿Cómo estás?');
 				try
 				{
 					// Panggil API dengan input dari pengguna
@@ -12278,7 +12278,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan teks yang ingin dijadikan input untuk AI.\n\nContoh: dbrxai Apa kabar?');
+				if (!text) return shoNherly('⚠️ Ingrese el texto que desea usar como entrada para la IA.\n\nEjemplo: dbrxai ¿Cómo estás?');
 				try
 				{
 					// Panggil API dengan input dari pengguna
@@ -12547,7 +12547,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan prompt untuk membuat gambar.\n\nContoh: dreamshaper buatkan gambar kucing');
+				if (!text) return shoNherly('⚠️ Ingrese un mensaje para crear una imagen.\n\nEjemplo: Dreamshaper crea una imagen de gato');
 				if (!(await firely(m, mess.waits))) return;
 				try
 				{
@@ -12563,7 +12563,7 @@ ${formattedCommandList}
 						shoNhe.sendMessage(m.chat,
 						{
 							image: buffer,
-							caption: `Gambar berhasil dibuat berdasarkan prompt: "${text}"`
+							caption: `La imagen se creó correctamente según el mensaje: "${text}"`
 						},
 						{
 							quoted: m
@@ -12776,7 +12776,7 @@ ${formattedCommandList}
 						let media = await quoted.download();
 						// Unggah media ke Uguu.se untuk mendapatkan URL
 						let anu = await UguuSe(media);
-						if (!anu.url) throw 'Gagal mengunggah media ke Uguu.se!';
+						if (!anu.url) throw '¡Error al cargar medios en Uguu.se!';
 						// Kirim URL ke API Anda
 						let response = await fetch(`https://api.siputzx.my.id/api/ai/image2text?url=${anu.url}`);
 						let result = await response.json();
@@ -12790,23 +12790,23 @@ ${formattedCommandList}
 								to: 'id'
 							});
 							// Kirim hasil terjemahan ke pengguna
-							shoNherly(`*Hasil Deskripsi Gambar (Bahasa Indonesia):*\n\n${translatedText}`);
+							shoNherly(`*Imagen Descripción Resultados (indonesio):*\n\n${translatedText}`);
 						}
 						else
 						{
-							shoNherly('❌ Gagal mendapatkan deskripsi gambar dari API!');
+							shoNherly('❌ ¡No se pudo obtener la descripción de la imagen desde la API!');
 						}
 					}
 					else
 					{
-						shoNherly('⚠️ Kirim atau reply gambar yang ingin diubah menjadi teks!');
+						shoNherly('⚠️ ¡Envía o responde a la imagen que deseas convertir en texto!');
 					}
 				}
 				catch (e)
 				{
 					// Tangani error dan kirim pesan jika ada masalah
 					console.error(e);
-					shoNherly('❌ Terjadi kesalahan saat memproses gambar!');
+					shoNherly('❌ ¡Ocurrió un error al procesar la imagen!');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -12846,7 +12846,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan prompt untuk AI Venice.\n\nContoh: venice Hai, bagaimana kabarmu?');
+				if (!text) return shoNherly('⚠️ Por favor, introduce un mensaje para AI venice.\n\nEjemplo: venice Hola, ¿cómo estás?');
 				try
 				{
 					// Panggil API dengan prompt dari pengguna
@@ -12898,7 +12898,7 @@ ${formattedCommandList}
 			break
 			case 'addsaldo':
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (args.length < 2) return shoNherly('⚠️ Format salah! Gunakan: .addsaldo @tag/nomor jumlah');
+				if (args.length < 2) return shoNherly('⚠️ ¡Formato incorrecto! Uso: .addbalance @etiqueta/número cantidad');
 				let targetUser;
 				// Cek apakah pengguna mengetik dengan mention atau nomor HP
 				if (m.mentionedJid.length > 0)
@@ -12912,7 +12912,7 @@ ${formattedCommandList}
 				let amount = parseInt(args[1]);
 				if (isNaN(amount) || amount <= 0)
 				{
-					return shoNherly('⚠️ Masukkan jumlah saldo yang valid.');
+					return shoNherly('⚠️ Ingrese un monto de saldo válido.');
 				}
 				const result = addBalance(targetUser, amount, m.sender);
 				shoNherly(result);
@@ -12928,7 +12928,7 @@ ${formattedCommandList}
 				const series = args[0];
 				if (!series)
 				{
-					shoNherly(`⚠️ Harap masukkan kode seri.`);
+					shoNherly(`⚠️ Por favor ingrese el código de serie.`);
 					return;
 				}
 				const db = loadUserFire();
@@ -12936,11 +12936,11 @@ ${formattedCommandList}
 				if (userEntry)
 				{
 					const [sender, user] = userEntry;
-					shoNherly(`🎉 Pengguna ditemukan:\n- Nama: ${m.pushName || 'Tidak diketahui'}\n- Nomor: ${sender.split('@')[0]}\n- Role: ${user.role}\n- Limit: ${user.limit}\n- Seri: ${user.registrationSeries}`);
+					shoNherly(`🎉 Usuario encontrado:\n- Nombre: ${m.pushName || 'Desconocido'}\n- Número: ${sender.split('@')[0]}\n- Rol: ${user.role}\n- Limite: ${user.limit}\n- Serie: ${user.registrationSeries}`);
 				}
 				else
 				{
-					shoNherly(`⚠️ Tidak ada pengguna dengan kode seri tersebut.`);
+					shoNherly(`⚠️ No hay usuarios con ese código de serie.`);
 				}
 			}
 			break;
@@ -13327,7 +13327,7 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan konten untuk AI Latukam.\n\nContoh: latukam Hai, bagaimana kabarmu?');
+				if (!text) return shoNherly('⚠️ Por favor ingresa contenido para AI Latukam.\n\nEjemplo: latukam Hola, ¿cómo estás?');
 				try
 				{
 					// Panggil API dengan input dari pengguna
@@ -13386,15 +13386,15 @@ if (!isRegistered(m))
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-if (!text) return shoNherly(`Masukan nama nabi\nExample: kisahnabi adam`)
+if (!text) return shoNherly(`Ingrese el nombre del profeta\nEjemplo: historia del profeta Adán`)
 let url = await fetch(`https://raw.githubusercontent.com/ZeroChanBot/Api-Freee/a9da6483809a1fbf164cdf1dfbfc6a17f2814577/data/kisahNabi/${text}.json`)
 let kisah = await url.json().catch(_ => "Error")
 if (kisah == "Error") return shoNherly("*Not Found*")
 
-let hasil = `*👳 Nabi :* ${kisah.name}
-*- Tanggal Lahir :* ${kisah.thn_kelahiran}
-*- Tempat Lahir :* ${kisah.tmp}
-*- Usia :* ${kisah.usia}
+let hasil = `*👳 Profeta :* ${kisah.name}
+*- Fecha de nacimiento :* ${kisah.thn_kelahiran}
+*- Lugar de nacimientor :* ${kisah.tmp}
+*- Edad :* ${kisah.usia}
 
 *—————— \`[ K I S A H ]\` ——————*
 
@@ -13881,7 +13881,7 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan konten untuk API qwq.\n\nContoh: qwq Hai, bagaimana kabarmu?');
+				if (!text) return shoNherly('⚠️ Ingrese el contenido para la API qwq.\n\nEjemplo: qwq Hola, ¿cómo estás?');
 				try
 				{
 					// Panggil API dengan input dari pengguna
@@ -16872,7 +16872,7 @@ break
 				const url = args[0]; // Ambil URL dari argumen
 				if (!url)
 				{
-					reply('⚠️ Harap masukkan URL. Contoh: anichindtl https://anichin.forum/renegade-immortal-episode-69-subtitle-indonesia');
+					reply('⚠️ Por favor ingrese una URL. Ejemplo: anichintl https://anichin.forum/renegade-immortal-episode-69-subtitle-indonesia');
 				}
 				if (!(await firely(m, mess.waits))) return;
 				const apiUrl = `https://api.siputzx.my.id/api/anime/anichin-detail?url=${encodeURIComponent(url)}`;
@@ -16886,9 +16886,9 @@ break
 					} = response.data;
 					if (!status)
 					{
-						reply('⚠️ Gagal mengambil data.');
+						reply('⚠️ No se pudieron recuperar los datos.');
 					}
-					const detailText = `🎥 *Detail Anime*\n\n🎬 *Judul:* ${data.title}\n📅 *Rilis:* ${data.released}\n🌟 *Rating:* ${data.rating}\n🎭 *Genre:* ${data.genres.join(', ')}\n🏢 *Studio:* ${data.studio}\n📺 *Jaringan:* ${data.network}\n⏱ *Durasi:* ${data.duration}\n🌍 *Negara:* ${data.country}\n🔖 *Tipe:* ${data.type}\n📂 *Status:* ${data.status}\n📜 *Sinopsis:* ${data.synopsis || 'Tidak tersedia'}\n`;
+					const detailText = `🎥 *Detalles del anime*\n\n🎬 *Título:* ${data.title}\n📅 *Publicación:* ${data.released}\n🌟 *Calificaciones:* ${data.rating}\n🎭 *Género:* ${data.genres.join(', ')}\n🏢 *Estudio:* ${data.studio}\n📺 *Red:* ${data.network}\n⏱ *Duración:* ${data.duration}\n🌍 *País:* ${data.country}\n🔖 *Tipo:* ${data.type}\n📂 *Estado:* ${data.status}\n📜 *Sinopsis:* ${data.synopsis || 'No disponible'}\n`;
 					const success = shoNherly(detailText);
 					if (success)
 					{
@@ -16907,7 +16907,7 @@ break
 				}
 				catch (error)
 				{
-					reply(`❌ Terjadi kesalahan: ${error.message}`);
+					reply(`❌ hay un error: ${error.message}`);
 				}
 				}
 			break
@@ -16923,7 +16923,7 @@ break
 				const url = args[0]; // Ambil URL dari argumen
 				if (!url)
 				{
-					reply('⚠️ Harap masukkan URL. Contoh: anichindl https://anichin.forum/renegade-immortal-episode-69-subtitle-indonesia');
+					reply('⚠️ Por favor ingrese la URL. Ejemplo: anichindl https://anichin.forum/renegade-immortal-episode-69-subtitle-indonesia');
 				}
 				if (!(await firely(m, mess.waits))) return;
 				const apiUrl = `https://api.siputzx.my.id/api/anime/anichin-download?url=${encodeURIComponent(url)}`;
@@ -16937,12 +16937,12 @@ break
 					} = response.data;
 					if (!status)
 					{
-						reply('⚠️ Gagal mengambil data.');
+						reply('⚠️ No se pudieron recuperar los datos.');
 					}
-					let downloadLinks = '🔗 *Link Download*\n\n';
+					let downloadLinks = '🔗 *Enlace de descarga*\n\n';
 					data.forEach((item) =>
 					{
-						downloadLinks += `🎥 *Resolusi:* ${item.resolution}\n`;
+						downloadLinks += `🎥 *Resolución:* ${item.resolution}\n`;
 						item.links.forEach((link) =>
 						{
 							downloadLinks += `🌐 *Host:* ${link.host}\n🔗 ${link.link}\n\n`;
@@ -16956,7 +16956,7 @@ break
 				}
 				catch (error)
 				{
-					reply(`❌ Terjadi kesalahan: ${error.message}`);
+					reply(`❌ hay un error: ${error.message}`);
 				}
 				}
 			break
@@ -16971,7 +16971,7 @@ break
 				const url = args[0]; // Ambil URL dari argumen
 				if (!url)
 				{
-					reply('⚠️ Harap masukkan URL. Contoh: epsanichin https://anichin.forum/renegade-immortal');
+					reply('⚠️ Por favor ingrese la URL. Ejemplo: epsanichin https://anichin.forum/renegade-immortal');
 				}
 				if (!(await firely(m, mess.waits))) return;
 				const apiUrl = `https://api.siputzx.my.id/api/anime/anichin-episode?url=${encodeURIComponent(url)}`;
@@ -16985,12 +16985,12 @@ break
 					} = response.data;
 					if (!status)
 					{
-						reply('⚠️ Gagal mengambil data.');
+						reply('⚠️ No se pudieron recuperar los datos.');
 					}
-					let episodes = '🎬 *Daftar Episode*\n\n';
+					let episodes = '🎬 *Lista de episodios*\n\n';
 					data.forEach((episode) =>
 					{
-						episodes += `📼 *Episode:* ${episode.episodeNumber}\n🎞 *Judul:* ${episode.title}\n📅 *Rilis:* ${episode.releaseDate}\n🔗 *Tautan:* ${episode.link}\n\n`;
+						episodes += `📼 *Episodio:* ${episode.episodeNumber}\n🎞 *Título:* ${episode.title}\n📅 *Publicación:* ${episode.releaseDate}\n🔗 *Enlace:* ${episode.link}\n\n`;
 					});
 					const success = shoNherly(episodes);
 					if (success)
@@ -17000,7 +17000,7 @@ break
 				}
 				catch (error)
 				{
-					reply(`❌ Terjadi kesalahan: ${error.message}`);
+					reply(`❌ hay un error: ${error.message}`);
 				}
 				}
 			break
