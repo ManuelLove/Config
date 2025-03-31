@@ -4945,7 +4945,7 @@ break;
 							{
 								url: result.img
 							},
-							caption: `Por favor, responde la pregunta de arriba.\n\n📌 *Descripción*: ${result.deskripsi}\n⏳ *Tiempo*: ${(120000 / 1000).toFixed(2)} segundos\n\n🔹 _Escribe .nyerah para rendirte..._\n🔹 _Escribe .bantuan para obtener una pista..._`
+							caption: `Por favor responde la pregunta de arriba\n\nDescripción: ${result.deskripsi}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5001,7 +5001,7 @@ break;
 
     // Cek apakah pengguna sudah terdaftar
     if (!dbCheck[user]) {
-        return shoNherly('❌ Anda belum terdaftar. Silakan daftar terlebih dahulu.');
+        return shoNherly('❌ Aún no estás registrado. Por favor, regístrate primero.');
     }
 
     const biayaMain = 500; // Biaya untuk bermain jackpot
@@ -5013,7 +5013,7 @@ break;
 
     // Jika saldo tidak cukup untuk bermain
     if (saldoPengguna < biayaMain) {
-        return shoNherly(`❌ Saldo Anda tidak mencukupi untuk bermain. Dibutuhkan Rp${biayaMain}, saldo Anda saat ini: Rp${saldoPengguna}.`);
+        return shoNherly(`❌ Su saldo no es suficiente para jugar. Se requieren Rp${biayaMain}, su saldo actual es: Rp${saldoPengguna}.`);
     }
 
     // Kurangi saldo pengguna dengan biaya bermain
@@ -5034,15 +5034,15 @@ break;
 
     // Cek apakah semua simbol sama (pengguna memenangkan jackpot)
     if (result[0] === result[1] && result[1] === result[2]) {
-        teks += `🎉 SELAMAT! Anda memenangkan JACKPOT! 🎉\n`;
-        teks += `Hadiah: Rp${hadiahJackpot} saldo 💰`;
+        teks += `🎉 ¡FELICITACIONES! ¡Has ganado el JACKPOT! 🎉\n`;
+teks += `Premio: Rp${hadiahJackpot} saldo 💰`;
 
         // Tambahkan hadiah jackpot ke saldo pengguna
         saldoPengguna += hadiahJackpot;
 
     } else {
-        teks += `😢 Sayang sekali, Anda belum beruntung. Coba lagi nanti!`;
-        teks += `\nAnda mendapatkan Rp${hadiahPartisipasi} saldo sebagai hadiah partisipasi 🎁`;
+        teks += `😢 Qué pena, no has tenido suerte. ¡Intenta de nuevo más tarde!`;
+teks += `\nHas recibido Rp${hadiahPartisipasi} saldo como premio de participación 🎁`;
 
         // Tambahkan saldo partisipasi ke pengguna
         saldoPengguna += hadiahPartisipasi;
@@ -5053,7 +5053,7 @@ break;
     saveUserFire(dbCheck); // Fungsi untuk menyimpan data kembali ke penyimpanan
 
     // Tambahkan informasi sisa saldo setelah bermain
-    teks += `\n\n💰 Sisa saldo Anda setelah bermain: Rp${saldoPengguna}`;
+    teks += `\n\n💰 Saldo restante después de jugar: Rp${saldoPengguna}`;
 
     // Kirim hasil permainan ke pengguna
     await shoNherly(teks);
@@ -5082,7 +5082,7 @@ break;
 							{
 								url: result.img
 							},
-							caption: `Gambar diatas adalah game?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `¿La imagen de arriba es un juego?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5153,7 +5153,7 @@ break;
 							{
 								url: result.img
 							},
-							caption: `Gambar diatas adalah hero?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `¿La imagen de arriba es un héroe?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5226,7 +5226,7 @@ break;
 							{
 								url: result.gambar
 							}, // Perbaikan properti gambar
-							caption: `Karakter Apa Ini?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `¿Qué personaje es este?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5248,7 +5248,7 @@ break;
 					console.log("Error: " + error.message);
 					await shoNhe.sendMessage(m.chat,
 					{
-						text: "Terjadi kesalahan, coba lagi nanti."
+						text: "Se produjo un error, inténtelo nuevamente más tarde."
 					},
 					{
 						quoted: m
@@ -5308,7 +5308,7 @@ break;
 							{
 								url: result.url
 							}, // Properti gambar
-							caption: `Logo Kabupaten Manakah ini?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `¿De qué distrito es este logo?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5330,7 +5330,7 @@ break;
 					console.log("Error: " + error.message);
 					await shoNhe.sendMessage(m.chat,
 					{
-						text: "Terjadi kesalahan, coba lagi nanti."
+						text: "Se produjo un error, inténtelo nuevamente más tarde."
 					},
 					{
 						quoted: m
@@ -5361,7 +5361,7 @@ break;
 							{
 								url: result.gambar
 							},
-							caption: `Siapakah Nama Member JKT48 Ini?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `¿Cuál es el nombre de este miembro de JKT48?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5432,7 +5432,7 @@ break;
 							{
 								url: result.url
 							},
-							caption: `Hewan Apakah Ini?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `¿Qué animal es este?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5513,7 +5513,7 @@ break;
 					tebakml[m.chat] = [
 						await shoNhe.sendMessage(m.chat,
 						{
-							text: `Siapakah Nama Karakter Ini?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							text: `¿Cuál es el nombre de este personaje?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
 						},
 						{
 							quoted: key
@@ -5592,7 +5592,7 @@ break;
 								{
 									url: result.image
 								},
-								caption: `Siapakah Nama Karakter Ini?\n\nWaktu: 120 detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+								caption: `¿Cuál es el nombre de este personaje?\n\nTiempo: 120 segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
 							},
 							{
 								quoted: m
@@ -5671,7 +5671,7 @@ break;
 							{
 								url: result.image
 							},
-							caption: `*Logo Apa Ini?*\n\n${result.deskripsi}\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `*¿Qué logo es este?*\n\n${result.deskripsi}\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5742,7 +5742,7 @@ break;
 							{
 								url: result.image
 							},
-							caption: `Gambar diatas adalah aplikasi?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `¿La imagen de arriba es una aplicación?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5807,7 +5807,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					tebakkata[m.chat] = [
-						await shoNhe.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tebakkata[m.chat])
@@ -5868,7 +5868,7 @@ break;
 					let result = anu.data
 					console.log("Jawaban: " + result.jawaban)
 					asahotak[m.chat] = [
-						await shoNhe.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (asahotak[m.chat])
@@ -5929,7 +5929,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					lengkapikalimat[m.chat] = [
-						await shoNhe.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (lengkapikalimat[m.chat])
@@ -6088,9 +6088,9 @@ break;
 				let user = m.sender;
 				if (!dbCheck[user])
 				{
-					return shoNherly('❌ Anda belum terdaftar. Silakan daftar terlebih dahulu.');
+					return shoNherly('❌ Aún no estás registrado. Por favor regístrese primero.');
 				}
-				shoNherly(`💰 Saldo Anda saat ini: Rp${dbCheck[user].balance}`);
+				shoNherly(`💰 Su saldo actual: Rp${dbCheck[user].balance}`);
 				}
 			break
 			case 'scriptnoenc':
@@ -6107,7 +6107,7 @@ break;
 				// Periksa saldo pengguna
 				if (!db[sender] || db[sender].balance < hargaScript)
 				{
-					return shoNherly(`❌ Saldo Anda tidak cukup untuk membeli script no enc!\n\n` + `💰 Harga: Rp${hargaScript}\n` + `💸 Saldo Anda saat ini: Rp${db[sender]?.balance || 0}\n\n` + `Gunakan perintah *${prefix}owner* untuk membeli saldo.`);
+					return shoNherly(`❌ Tu saldo no es suficiente para comprar el script no enc!\n\n💰 Precio: Rp${hargaScript}\n💸 Tu saldo actual: Rp${db[sender]?.balance || 0}\n\nUsa el comando *${prefix}owner* para comprar saldo.`);
 				}
 				// Kurangi saldo jika mencukupi
 				db[sender].balance -= hargaScript;
@@ -6122,12 +6122,12 @@ break;
 					},
 					mimetype: 'application/zip',
 					fileName: 'shoNhev3.zip',
-					caption: `✅ Pembelian berhasil!\n🎉 Anda telah membeli script no enc.\n` + `💰 Sisa saldo Anda: Rp${db[sender].balance}`
+					caption: `✅ ¡Compra exitosa!\n🎉 Has comprado el script no enc.\n💰 Tu saldo restante: Rp${db[sender].balance}`
 				},
 				{
 					quoted: m
 				});
-				shoNherly('📂 File sedang dikirim, mohon tunggu sebentar.');
+				shoNherly('📂 El archivo se está enviando, espere un momento.');
 			}
 			break;
 			case 'tebakbendera':
@@ -6153,7 +6153,7 @@ break;
 							{
 								url: result.img
 							},
-							caption: `Gambar diatas adalah bendera negara?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `¿La imagen de arriba es la bandera de un país?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -6218,7 +6218,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					tebakkalimat[m.chat] = [
-						await shoNhe.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tebakkalimat[m.chat])
@@ -6281,7 +6281,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					siapaaku[m.chat] = [
-						await shoNhe.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (siapaaku[m.chat])
@@ -6342,7 +6342,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.unsur)
 					tebakkimia[m.chat] = [
-						await shoNhe.sendText(m.chat, `Apa Arti Dari Simbol : *${result.lambang}*?\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `¿Qué significa el símbolo : *${result.lambang}*?\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tebakkimia[m.chat])
@@ -6403,7 +6403,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					tebaklirik[m.chat] = [
-						await shoNhe.sendText(m.chat, `Ini Adalah Lirik Dari Lagu? : *${result.soal}*?\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `¿Esta es la letra de la canción? : *${result.soal}*?\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tebaklirik[m.chat])
@@ -6464,7 +6464,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					tebaktebakan[m.chat] = [
-						await shoNhe.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tebaktebakan[m.chat])
@@ -6525,7 +6525,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					susunkata[m.chat] = [
-						await shoNhe.sendText(m.chat, `*Jawablah Pertanyaan Berikut :*\nSoal : ${result.soal}\nTipe : ${result.tipe}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `*Responde la siguiente pregunta :*\nPregunta: ${result.soal}\nTipo: ${result.tipe}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (susunkata[m.chat])
@@ -6586,7 +6586,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					caklontong[m.chat] = [
-						await shoNhe.sendText(m.chat, `*Jawablah Pertanyaan Berikut :*\nSoal : ${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `*Responde la siguiente pregunta :*\nPregunta: ${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (caklontong[m.chat])
@@ -6647,7 +6647,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					tekateki[m.chat] = [
-						await shoNhe.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .nyerah para rendirte..._\n_Tecla .bantuan para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tekateki[m.chat])
@@ -7197,13 +7197,13 @@ break;
 						return rows;
 					}, []).map(row => row.join(` ${c}|${c} `)) // Gabungkan elemen dalam satu baris dengan " || "
 					.join('\n') // Gabungkan semua baris dengan newline
-					: 'Belum ada data command populer.';
+					: 'Aún no hay datos de comandos populares.';
 				// Tambahkan pesan untuk AI (jika diperlukan)
-				let aiMessage = popularData.ai ? `${c}AI telah digunakan sebanyak ${popularData.ai} kali.${c}` : `${c}AI belum digunakan.${c}`;
+				let aiMessage = popularData.ai ? `${c}AI ha sido utilizado ${popularData.ai} veces.${c}` : `${c}AI aún no ha sido utilizado.${c}`;
 				// Gabungkan hasil akhir
 				let formattedPopularList = `${formattedCommandList}\n\n${aiMessage}`;
 				// Usar formatotedPopularList di balasan
-				shoNherly(`Statistik penggunaan:\n\n${formattedPopularList}`);
+				shoNherly(`Estadísticas de uso:\n\n${formattedPopularList}`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
