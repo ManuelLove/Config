@@ -7197,13 +7197,13 @@ break;
 						return rows;
 					}, []).map(row => row.join(` ${c}|${c} `)) // Gabungkan elemen dalam satu baris dengan " || "
 					.join('\n') // Gabungkan semua baris dengan newline
-					: 'Aún no hay datos de comandos populares.';
+					: 'Belum ada data command populer.';
 				// Tambahkan pesan untuk AI (jika diperlukan)
-				let aiMessage = popularData.ai ? `${c}AI ha sido utilizado ${popularData.ai} veces.${c}` : `${c}AI aún no ha sido utilizado.${c}`;
+				let aiMessage = popularData.ai ? `${c}AI telah digunakan sebanyak ${popularData.ai} kali.${c}` : `${c}AI belum digunakan.${c}`;
 				// Gabungkan hasil akhir
 				let formattedPopularList = `${formattedCommandList}\n\n${aiMessage}`;
 				// Usar formatotedPopularList di balasan
-				shoNherly(`Estadísticas de uso:\n\n${formattedPopularList}`);
+				shoNherly(`Statistik penggunaan:\n\n${formattedPopularList}`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
