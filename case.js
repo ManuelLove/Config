@@ -12327,7 +12327,7 @@ ${formattedCommandList}
            }
 			}
 			break
-			case 'bensin':
+			case 'minar':
 			{
 				if (!isRegistered(m))
 				{
