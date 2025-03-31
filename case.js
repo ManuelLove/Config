@@ -22442,7 +22442,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				let timestamp = speed()
 				let latensi = speed() - timestamp
-				respon = `Kecepatan Respon ${latensi.toFixed(4)} _Second_`
+				respon = `Velocidad de respuesta ${latensi.toFixed(4)} _segundos_`
 				shoNherly(respon)
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
