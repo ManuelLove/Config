@@ -26329,6 +26329,23 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				}
 			}
 			break
+			case 'tebakbom': {
+				if (tebakbom[m.sender]) return m.reply('Masih Ada Sesi Yang Belum Diselesaikan!')
+				tebakbom[m.sender] = {
+					petak: [0, 0, 0, 2, 0, 2, 0, 2, 0, 0].sort(() => Math.random() - 0.5),
+					board: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'],
+					bomb: 3,
+					lolos: 7,
+					pick: 0,
+					nyawa: ['❤️', '❤️', '❤️'],
+					waktu: setTimeout(() => {
+						if (tebakbom[m.sender]) m.reply(`_Waktu ${command} habis_`)
+						delete tebakbom[m.sender];
+					}, 120000)
+				}
+				m.reply(`*TEBAK BOM*\n\n${tebakbom[m.sender].board.join("")}\n\nPilih lah nomor tersebut! dan jangan sampai terkena Bom!\nBomb : ${tebakbom[m.sender].bomb}\nNyawa : ${tebakbom[m.sender].nyawa.join("")}`);
+			}
+			break
 			case 'delete':
 			case 'del':
 			case 'd':
