@@ -26296,7 +26296,39 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				}
 			}
 			break
-}
+			case 'ttc': case 'ttt': case 'tictactoe': {
+				let TicTacToe = require('./lib/tictactoe');
+				if (Object.values(tictactoe).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return m.reply(`Kamu masih didalam game!\nKetik *${prefix}del${command}* Jika Ingin Mengakhiri sesi`);
+				let room = Object.values(tictactoe).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
+				if (room) {
+					m.reply('Partner ditemukan!')
+					room.o = m.chat
+					room.game.playerO = m.sender
+					room.state = 'PLAYING'
+					let arr = room.game.render().map(v => {
+						return {X: '❌',O: '⭕',1: '1️⃣',2: '2️⃣',3: '3️⃣',4: '4️⃣',5: '5️⃣',6: '6️⃣',7: '7️⃣',8: '8️⃣',9: '9️⃣'}[v]
+					})
+					let str = `Room ID: ${room.id}\n\n${arr.slice(0, 3).join('')}\n${arr.slice(3, 6).join('')}\n${arr.slice(6).join('')}\n\nMenunggu @${room.game.currentTurn.split('@')[0]}\n\nKetik *nyerah* untuk menyerah dan mengakui kekalahan`
+					if (room.x !== room.o) await naze.sendMessage(room.x, { texr: str, mentions: parseMention(str) }, { quoted: m })
+					await naze.sendMessage(room.o, { text: str, mentions: parseMention(str) }, { quoted: m })
+				} else {
+					room = {
+						id: 'tictactoe-' + (+new Date),
+						x: m.chat,
+						o: '',
+						game: new TicTacToe(m.sender, 'o'),
+						state: 'WAITING',
+						waktu: setTimeout(() => {
+							if (tictactoe[roomnya.id]) m.reply(`_Waktu ${command} habis_`)
+							delete tictactoe[roomnya.id]
+						}, 300000)
+					}
+					if (text) room.name = text
+					naze.sendMessage(m.chat, { text: 'Menunggu partner' + (text ? ` mengetik command dibawah ini ${prefix}${command} ${text}` : ''), mentions: m.mentionedJid }, { quoted: m })
+					tictactoe[room.id] = room
+				}
+			}
+			break
 			case 'delete':
 			case 'del':
 			case 'd':
