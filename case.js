@@ -1,3 +1,156 @@
+		// TicTacToe
+		let room = Object.values(tictactoe).find(room => room.id && room.game && room.state && room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state == 'PLAYING')
+		if (room) {
+			let ok
+			let isWin = !1
+			let isTie = !1
+			let isSurrender = !1
+			if (!/^([1-9]|(me)?nyerah|surr?ender|off|skip)$/i.test(m.text)) return
+			isSurrender = !/^[1-9]$/.test(m.text)
+			if (m.sender !== room.game.currentTurn) {
+				if (!isSurrender) return !0
+			}
+			if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
+				m.reply({
+					'-3': 'Game telah berakhir',
+					'-2': 'Invalid',
+					'-1': 'Posisi Invalid',
+					0: 'Posisi Invalid',
+				}[ok])
+				return !0
+			}
+			if (m.sender === room.game.winner) isWin = true
+			else if (room.game.board === 511) isTie = true
+			let arr = room.game.render().map(v => {
+				return {
+					X: '❌',
+					O: '⭕',
+					1: '1️⃣',
+					2: '2️⃣',
+					3: '3️⃣',
+					4: '4️⃣',
+					5: '5️⃣',
+					6: '6️⃣',
+					7: '7️⃣',
+					8: '8️⃣',
+					9: '9️⃣',
+				}[v]
+			})
+			if (isSurrender) {
+				room.game._currentTurn = m.sender === room.game.playerX
+				isWin = true
+			}
+			let winner = isSurrender ? room.game.currentTurn : room.game.winner
+			if (isWin) {
+				db.users[m.sender].limit += 3
+				db.users[m.sender].uang += 3000
+			}
+			let str = `Room ID: ${room.id}\n\n${arr.slice(0, 3).join('')}\n${arr.slice(3, 6).join('')}\n${arr.slice(6).join('')}\n\n${isWin ? `@${winner.split('@')[0]} Menang!` : isTie ? `Game berakhir` : `Giliran ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}\n❌: @${room.game.playerX.split('@')[0]}\n⭕: @${room.game.playerO.split('@')[0]}\n\nKetik *nyerah* untuk menyerah dan mengakui kekalahan`
+			if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
+			room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
+			if (room.x !== room.o) await naze.sendMessage(room.x, { text: str, mentions: parseMention(str) }, { quoted: m })
+			await naze.sendMessage(room.o, { text: str, mentions: parseMention(str) }, { quoted: m })
+			if (isTie || isWin) {
+				delete tictactoe[room.id]
+			}
+		}
+		
+		// Suit PvP
+		let roof = Object.values(suit).find(roof => roof.id && roof.status && [roof.p, roof.p2].includes(m.sender))
+		if (roof) {
+			let win = ''
+			let tie = false
+			if (m.sender == roof.p2 && /^(acc(ept)?|terima|gas|oke?|tolak|gamau|nanti|ga(k.)?bisa|y)/i.test(m.text) && m.isGroup && roof.status == 'wait') {
+				if (/^(tolak|gamau|nanti|n|ga(k.)?bisa)/i.test(m.text)) {
+					m.reply(`@${roof.p2.split`@`[0]} menolak suit,\nsuit dibatalkan`)
+					delete suit[roof.id]
+					return !0
+				}
+				roof.status = 'play';
+				roof.asal = m.chat;
+				clearTimeout(roof.waktu);
+				m.reply(`Suit telah dikirimkan ke chat\n\n@${roof.p.split`@`[0]} dan @${roof.p2.split`@`[0]}\n\nSilahkan pilih suit di chat masing-masing klik https://wa.me/${botNumber.split`@`[0]}`)
+				if (!roof.pilih) naze.sendMessage(roof.p, { text: `Silahkan pilih \n\nBatu🗿\nKertas📄\nGunting✂️` }, { quoted: m })
+				if (!roof.pilih2) naze.sendMessage(roof.p2, { text: `Silahkan pilih \n\nBatu🗿\nKertas📄\nGunting✂️` }, { quoted: m })
+				roof.waktu_milih = setTimeout(() => {
+					if (!roof.pilih && !roof.pilih2) m.reply(`Kedua pemain tidak niat main,\nSuit dibatalkan`)
+					else if (!roof.pilih || !roof.pilih2) {
+						win = !roof.pilih ? roof.p2 : roof.p
+						m.reply(`@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} tidak memilih suit, game berakhir`)
+					}
+					delete suit[roof.id]
+					return !0
+				}, roof.timeout)
+			}
+			let jwb = m.sender == roof.p
+			let jwb2 = m.sender == roof.p2
+			let g = /gunting/i
+			let b = /batu/i
+			let k = /kertas/i
+			let reg = /^(gunting|batu|kertas)/i;
+			
+			if (jwb && reg.test(m.text) && !roof.pilih && !m.isGroup) {
+				roof.pilih = reg.exec(m.text.toLowerCase())[0];
+				roof.text = m.text;
+				m.reply(`Kamu telah memilih ${m.text} ${!roof.pilih2 ? `\n\nMenunggu lawan memilih` : ''}`);
+				if (!roof.pilih2) naze.sendMessage(roof.p2, { text: '_Lawan sudah memilih_\nSekarang giliran kamu' })
+			}
+			if (jwb2 && reg.test(m.text) && !roof.pilih2 && !m.isGroup) {
+				roof.pilih2 = reg.exec(m.text.toLowerCase())[0]
+				roof.text2 = m.text
+				m.reply(`Kamu telah memilih ${m.text} ${!roof.pilih ? `\n\nMenunggu lawan memilih` : ''}`)
+				if (!roof.pilih) naze.sendMessage(roof.p, { text: '_Lawan sudah memilih_\nSekarang giliran kamu' })
+			}
+			let stage = roof.pilih
+			let stage2 = roof.pilih2
+			if (roof.pilih && roof.pilih2) {
+				clearTimeout(roof.waktu_milih)
+				if (b.test(stage) && g.test(stage2)) win = roof.p
+				else if (b.test(stage) && k.test(stage2)) win = roof.p2
+				else if (g.test(stage) && k.test(stage2)) win = roof.p
+				else if (g.test(stage) && b.test(stage2)) win = roof.p2
+				else if (k.test(stage) && b.test(stage2)) win = roof.p
+				else if (k.test(stage) && g.test(stage2)) win = roof.p2
+				else if (stage == stage2) tie = true
+				db.users[roof.p == win ? roof.p : roof.p2].limit += tie ? 0 : 3
+				db.users[roof.p == win ? roof.p : roof.p2].uang += tie ? 0 : 3000
+				naze.sendMessage(roof.asal, { text: `_*Hasil Suit*_${tie ? '\nSERI' : ''}\n\n@${roof.p.split`@`[0]} (${roof.text}) ${tie ? '' : roof.p == win ? ` Menang \n` : ` Kalah \n`}\n@${roof.p2.split`@`[0]} (${roof.text2}) ${tie ? '' : roof.p2 == win ? ` Menang \n` : ` Kalah \n`}\n\nPemenang Mendapatkan\n*Hadiah :* Uang(3000) & Limit(3)`.trim(), mentions: [roof.p, roof.p2] }, { quoted: m })
+				delete suit[roof.id]
+			}
+		}
+		
+		// Tebak Bomb
+		let pilih = '🌀', bomb = '💣';
+		if (m.sender in tebakbom) {
+			if (!/^[1-9]|10$/i.test(body) && !isCmd && !isCreator) return !0;
+			if (tebakbom[m.sender].petak[parseInt(body) - 1] === 1) return !0;
+			if (tebakbom[m.sender].petak[parseInt(body) - 1] === 2) {
+				tebakbom[m.sender].board[parseInt(body) - 1] = bomb;
+				tebakbom[m.sender].pick++;
+				naze.sendMessage(m.chat, { react: {text: '❌', key: m.key }})
+				tebakbom[m.sender].bomb--;
+				tebakbom[m.sender].nyawa.pop();
+				let brd = tebakbom[m.sender].board;
+				if (tebakbom[m.sender].nyawa.length < 1) {
+					await m.reply(`*GAME TELAH BERAKHIR*\nKamu terkena bomb\n\n ${brd.join('')}\n\n*Terpilih :* ${tebakbom[m.sender].pick}\n_Pengurangan Limit : 1_`);
+					naze.sendMessage(m.chat, { react: { text: '😂', key: m.key }})
+					delete tebakbom[m.sender];
+				} else await m.reply(`*PILIH ANGKA*\n\nKamu terkena bomb\n ${brd.join('')}\n\nTerpilih: ${tebakbom[m.sender].pick}\nSisa nyawa: ${tebakbom[m.sender].nyawa}`);
+				return !0;
+			}
+			if (tebakbom[m.sender].petak[parseInt(body) - 1] === 0) {
+				tebakbom[m.sender].petak[parseInt(body) - 1] = 1;
+				tebakbom[m.sender].board[parseInt(body) - 1] = pilih;
+				tebakbom[m.sender].pick++;
+				tebakbom[m.sender].lolos--;
+				let brd = tebakbom[m.sender].board;
+				if (tebakbom[m.sender].lolos < 1) {
+					db.users[m.sender].uang += 6000
+					await m.reply(`*KAMU HEBAT ಠ⁠ᴥ⁠ಠ*\n\n${brd.join('')}\n\n*Terpilih :* ${tebakbom[m.sender].pick}\n*Sisa nyawa :* ${tebakbom[m.sender].nyawa}\n*Bomb :* ${tebakbom[m.sender].bomb}\nBonus Uang 💰 *+6000*`);
+					delete tebakbom[m.sender];
+				} else m.reply(`*PILIH ANGKA*\n\n${brd.join('')}\n\nTerpilih : ${tebakbom[m.sender].pick}\nSisa nyawa : ${tebakbom[m.sender].nyawa}\nBomb : ${tebakbom[m.sender].bomb}`)
+			}
+		}
 // CREATOR : YUDA & TNGX
 // TQTO? DI COMMAND TQTO
 // BIG THX TO : GALANGz, TNGXAJA[Nhe], ORANG TUA, ALLAH, PENYEDIA REST API, PENYEDIA BASE AWAL
