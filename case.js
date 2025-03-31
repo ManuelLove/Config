@@ -4020,284 +4020,8 @@ User @${m.sender.split('@')[0]}, ¿sigues bien, bro? El sistema ha detectado tu 
 				});
 		}}*/
 		//=================[ TEMPAT CASE DI BAWAH INI ]=================\\
-		const fs = require('fs'); const db = JSON.parse(fs.readFileSync('./database/UserFire.json'));
-
-// Juegos let suit = db.game.suit || []; let tictactoe = db.game.tictactoe || []; let tebakbom = db.game.tebakbom || [];
-
-module.exports = naze = async (naze, m, chatUpdate, store, groupCache) => { try { await LoadDataBase(naze, m);
-
-const botNumber = await naze.decodeJid(naze.user.id);
-    const body = m.text;
-
-    // TicTacToe
-    let room = Object.values(tictactoe).find(room => [room.game.playerX, room.game.playerO].includes(m.sender) && room.state == 'PLAYING');
-    if (room) {
-        let isWin = false;
-        let isTie = false;
-        let isSurrender = /nyerah|surrender/i.test(body);
-        if (!isSurrender && !/^[1-9]$/.test(body)) return;
-        let move = isSurrender ? -1 : parseInt(body) - 1;
-        if (!isSurrender && room.game.turn(m.sender === room.game.playerO, move) < 1) return;
-        if (room.game.winner) isWin = true;
-        else if (room.game.board === 511) isTie = true;
-        if (isWin) db.users[m.sender].exp += 300;
-        let str = `TicTacToe Game\n${room.game.render().join('\n')}\n${isWin ? `@${room.game.winner} ganó!` : isTie ? `Empate` : `Turno de @${room.game.currentTurn}`}`;
-        await naze.sendMessage(m.chat, { text: str, mentions: [room.game.playerX, room.game.playerO] });
-        if (isWin || isTie) delete tictactoe[room.id];
-    }
-
-    // Suit PvP
-    let suitGame = suit.find(g => [g.p, g.p2].includes(m.sender));
-    if (suitGame) {
-        if (/batu|gunting|kertas/i.test(body)) {
-            suitGame[m.sender === suitGame.p ? 'choice1' : 'choice2'] = body;
-            if (suitGame.choice1 && suitGame.choice2) {
-                let result = getSuitWinner(suitGame.choice1, suitGame.choice2);
-                let winner = result === 'p1' ? suitGame.p : result === 'p2' ? suitGame.p2 : null;
-                if (winner) db.users[winner].exp += 300;
-                naze.sendMessage(m.chat, { text: `Resultado: ${winner ? `@${winner} ganó!` : 'Empate'}`, mentions: [suitGame.p, suitGame.p2] });
-                suit = suit.filter(g => g !== suitGame);
-            }
-        }
-    }
-
-    // Tebak Bom
-    let bombGame = tebakbom[m.sender];
-    if (bombGame) {
-        let choice = parseInt(body);
-        if (!choice || choice < 1 || choice > 10) return;
-        let hitBomb = bombGame.petak[choice - 1] === 1;
-        bombGame.petak[choice - 1] = hitBomb ? 2 : 1;
-        bombGame.pick++;
-        if (hitBomb) {
-            bombGame.lives--;
-            if (bombGame.lives === 0) {
-                naze.sendMessage(m.chat, { text: '¡Perdiste! 💥' });
-                delete tebakbom[m.sender];
-            } else {
-                naze.sendMessage(m.chat, { text: `💣 ¡Cuidado! Te quedan ${bombGame.lives} vidas.` });
-            }
-        } else if (bombGame.pick >= bombGame.safeSpots) {
-            db.users[m.sender].exp += 600;
-            naze.sendMessage(m.chat, { text: '¡Ganaste! 🎉' });
-            delete tebakbom[m.sender];
-        }
-    }
-} catch (e) {
-    console.error(e);
-}
-
-};
-
-function getSuitWinner(choice1, choice2) { if (choice1 === choice2) return 'tie'; if ((choice1 === 'batu' && choice2 === 'gunting') || (choice1 === 'gunting' && choice2 === 'kertas') || (choice1 === 'kertas' && choice2 === 'batu')) return 'p1'; return 'p2'; }
-
-
 		switch (command)
 		{
-		// Juego Suit PvP: Piedra, Papel o Tijeras
-  case 'suitpvp': {
-    // Se espera: .suitpvp <opción> donde opción puede ser: batu, kertas, gunting
-    const pilihan = ['batu', 'kertas', 'gunting'];
-    let pilihanUser = args[0] ? args[0].toLowerCase() : "";
-    if (!pilihan.includes(pilihanUser))
-      return m.reply("Silakan pilih salah satu: batu, kertas, gunting.");
-    
-    // Si no existe room suit, se crea una sala temporal para un duelo con bot o espera un oponente.
-    // Aquí se asume que si no hay sala para m.sender, se inicia un juego contra el bot.
-    let room = Object.values(db.game.suit || {}).find(r =>
-      r.id && r.status && [r.p, r.p2].includes(m.sender)
-    );
-    if (!room) {
-      // Inicia partida contra bot
-      let pilihanBot = pilihan[Math.floor(Math.random() * 3)];
-      let result;
-      if (pilihanUser === pilihanBot) result = "seri";
-      else if (
-        (pilihanUser === "batu" && pilihanBot === "gunting") ||
-        (pilihanUser === "gunting" && pilihanBot === "kertas") ||
-        (pilihanUser === "kertas" && pilihanBot === "batu")
-      ) result = "menang";
-      else result = "kalah";
-      if (result === "menang") {
-        // Misma logica para hadiah: tambahkan uang & limit
-        db.users[m.sender].uang = (db.users[m.sender].uang || 0) + 3000;
-        db.users[m.sender].limit = (db.users[m.sender].limit || 0) + 3;
-        m.reply(`Kamu memilih ${pilihanUser} dan bot memilih ${pilihanBot}.\nSelamat, kamu menang!\nHadiah: +3000 uang & +3 limit.\nSaldo sekarang: ${db.users[m.sender].uang}\nLimit: ${db.users[m.sender].limit}`);
-      } else if (result === "seri") {
-        m.reply(`Kamu memilih ${pilihanUser} dan bot memilih ${pilihanBot}.\nHasilnya seri, tidak ada hadiah.`);
-      } else {
-        // Jika kalah, potong sejumlah uang (misal 300)
-        db.users[m.sender].uang = Math.max(0, (db.users[m.sender].uang || 0) - 300);
-        m.reply(`Kamu memilih ${pilihanUser} dan bot memilih ${pilihanBot}.\nSayang, kamu kalah.\nPotongan: 300 uang.\nSaldo sekarang: ${db.users[m.sender].uang}`);
-      }
-      return;
-    } else {
-      // Jika ada room suit (misalnya, pemain lain telah menginisiasi permainan)
-      // Seperti: menunggu kedua pemain untuk memilih.
-      if (m.sender === room.p && !room.pilih) {
-        room.pilih = pilihanUser;
-        m.reply(`Kamu telah memilih ${pilihanUser}. Menunggu pilihan lawan...`);
-      } else if (m.sender === room.p2 && !room.pilih2) {
-        room.pilih2 = pilihanUser;
-        m.reply(`Kamu telah memilih ${pilihanUser}. Menunggu hasil...`);
-      }
-      // Jika kedua pilihan sudah ada, evaluasi hasil
-      if (room.pilih && room.pilih2) {
-        let pilihanP1 = room.pilih, pilihanP2 = room.pilih2;
-        let winner;
-        if (pilihanP1 === pilihanP2) {
-          m.reply(`Hasil suit:\nPemain 1: ${pilihanP1}\nPemain 2: ${pilihanP2}\nHasil: Seri.`);
-        } else if (
-          (pilihanP1 === "batu" && pilihanP2 === "gunting") ||
-          (pilihanP1 === "gunting" && pilihanP2 === "kertas") ||
-          (pilihanP1 === "kertas" && pilihanP2 === "batu")
-        ) {
-          winner = room.p;
-        } else {
-          winner = room.p2;
-        }
-        if (winner) {
-          db.users[winner].uang = (db.users[winner].uang || 0) + 3000;
-          db.users[winner].limit = (db.users[winner].limit || 0) + 3;
-          naze.sendMessage(room.asal, { text: `Hasil suit:\nPemain 1 (${room.p}): ${pilihanP1}\nPemain 2 (${room.p2}): ${pilihanP2}\nPemenang: ${winner}\nHadiah: +3000 uang & +3 limit.` }, { quoted: m });
-        }
-        delete db.game.suit[room.id];
-      }
-    }
-    break;
-  }
-
-  // Juego TicTacToe
-  case 'tictactoe': {
-    // Cari ruangan yang sedang berlangsung untuk m.sender
-    let room = Object.values(db.game.tictactoe || {}).find(r =>
-      r.id && r.game && r.state && r.id.startsWith('tictactoe') &&
-      [r.game.playerX, r.game.playerO].includes(m.sender) && r.state === 'PLAYING'
-    );
-    if (!room) return m.reply("Tidak ada permainan TicTacToe aktif untuk kamu. Mulai permainan baru dengan perintah yang sesuai.");
-    // Validasi input: harus angka 1-9 atau perintah menyerah (nyerah)
-    if (!/^([1-9]|(me)?nyerah|surr?ender|off|skip)$/i.test(m.text))
-      return;
-    let isSurrender = !/^[1-9]$/.test(m.text);
-    if (!isSurrender && m.sender !== room.game.currentTurn) return m.reply("Bukan giliran kamu.");
-    if (!isSurrender) {
-      let pos = parseInt(m.text) - 1;
-      let result = room.game.turn(m.sender === room.game.playerO, pos);
-      if (result < 1) {
-        m.reply({
-          '-3': 'Permainan telah berakhir',
-          '-2': 'Input tidak valid',
-          '-1': 'Posisi tidak valid',
-          0: 'Posisi tidak valid'
-        }[result]);
-        return;
-      }
-    } else {
-      // Jika menyerah, pemain yang menyerah dianggap kalah
-      room.game._currentTurn = m.sender === room.game.playerX;
-    }
-    let isWin = m.sender === room.game.winner;
-    let isTie = room.game.board === 511; // misal kondisi imbang
-    let boardArr = room.game.render().map(v => {
-      return {
-        X: '❌',
-        O: '⭕',
-        1: '1️⃣',
-        2: '2️⃣',
-        3: '3️⃣',
-        4: '4️⃣',
-        5: '5️⃣',
-        6: '6️⃣',
-        7: '7️⃣',
-        8: '8️⃣',
-        9: '9️⃣'
-      }[v];
-    });
-    if (isWin) {
-      // Hadiah untuk pemenang
-      db.users[m.sender].limit = (db.users[m.sender].limit || 0) + 3;
-      db.users[m.sender].uang = (db.users[m.sender].uang || 0) + 3000;
-    }
-    let pesan = `Room ID: ${room.id}\n\n${boardArr.slice(0, 3).join(' ')}\n${boardArr.slice(3, 6).join(' ')}\n${boardArr.slice(6).join(' ')}\n\n` +
-                (isWin ? `Pemenang: @${room.game.winner.split('@')[0]}` :
-                isTie ? "Permainan imbang" :
-                `Giliran: @${room.game.currentTurn.split('@')[0]}\nKetik angka 1-9 untuk memilih posisi atau 'nyerah' untuk menyerah.`);
-
-    // Kirim hasil ke kedua pemain
-    if (room.x !== room.o) await naze.sendMessage(room.x, { text: pesan, mentions: parseMention(pesan) }, { quoted: m });
-    await naze.sendMessage(room.o, { text: pesan, mentions: parseMention(pesan) }, { quoted: m });
-    if (isWin || isTie) delete db.game.tictactoe[room.id];
-    break;
-  }
-
-  // Juego Tebak Bomb (Tebak Bom)
-  case 'tebakbom': {
-    // Pastikan permainan sudah diinisialisasi untuk m.sender
-    if (!(m.sender in db.game.tebakbom)) {
-      // Inisialisasi permainan
-      db.game.tebakbom[m.sender] = {
-        board: Array(10).fill('⬜'),
-        petak: Array(10).fill(0), // 0 = belum dipilih, 2 = bom, 1 = aman
-        nyawa: Array(3).fill('❤️'),
-        bomb: 3,
-        pick: 0,
-        lolos: 5 // jumlah petak yang harus diambil untuk menang
-      };
-      // Acak posisi bom (misal, acak 3 petak)
-      let bomCount = 3;
-      while (bomCount > 0) {
-        let pos = Math.floor(Math.random() * 10);
-        if (db.game.tebakbom[m.sender].petak[pos] === 0) {
-          db.game.tebakbom[m.sender].petak[pos] = 2;
-          bomCount--;
-        }
-      }
-      m.reply("Permainan Tebak Bomb dimulai!\nPilih angka antara 1 hingga 10.");
-      return;
-    }
-    let game = db.game.tebakbom[m.sender];
-    let idx = parseInt(m.text) - 1;
-    if (isNaN(idx) || idx < 0 || idx > 9) return m.reply("Masukkan angka antara 1 hingga 10.");
-    // Cek jika sudah dipilih
-    if (game.petak[idx] === 1) return m.reply("Posisi ini sudah dipilih.");
-    if (game.petak[idx] === 2) {
-      // Terdeteksi bom
-      game.board[idx] = '💣';
-      game.pick++;
-      game.bomb--;
-      game.nyawa.pop();
-      if (game.nyawa.length < 1) {
-        m.reply(`GAME TELAH BERAKHIR\nKamu terkena bom.\nBoard: ${game.board.join(' ')}\nTotal petak terbuka: ${game.pick}\n(Perubahan: -1 limit)`);
-        // Misal, potong limit
-        db.users[m.sender].limit = Math.max(0, (db.users[m.sender].limit || 0) - 1);
-        delete db.game.tebakbom[m.sender];
-      } else {
-        m.reply(`Boom! Kamu terkena bom.\nBoard: ${game.board.join(' ')}\nTotal petak terbuka: ${game.pick}\nSisa nyawa: ${game.nyawa.join(' ')}`);
-      }
-    } else if (game.petak[idx] === 0) {
-      // Petak aman
-      game.petak[idx] = 1;
-      game.board[idx] = '🌀';
-      game.pick++;
-      game.lolos--;
-      if (game.lolos < 1) {
-        // Permainan menang, berikan bonus
-        db.users[m.sender].uang = (db.users[m.sender].uang || 0) + 6000;
-        m.reply(`Selamat, kamu berhasil menghindari bom!\nBoard: ${game.board.join(' ')}\nTotal petak terbuka: ${game.pick}\nBonus: +6000 uang`);
-        delete db.game.tebakbom[m.sender];
-      } else {
-        m.reply(`Pilih angka:\nBoard: ${game.board.join(' ')}\nTotal petak terbuka: ${game.pick}\nSisa nyawa: ${game.nyawa.join(' ')}\nBomb tersisa: ${game.bomb}`);
-      }
-    }
-    break;
-  }
-
-  // Si no ada perintah yang cocok
-  default: {
-    m.reply("Perintah tidak dikenali.");
-  }
-}
-// --- FIN: Integración de juegos en naze.js ---
 		case 'addprodukown': {
     if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins);
 
@@ -26549,6 +26273,139 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
            }
 			}
 			break
+			case 'suit': {
+    if (!isRegistered(m)) {
+        return sendRegister(shoNhe, m, prefix, namabot);
+    }
+    updatePopularCommand(command);
+
+    global.suitRooms = global.suitRooms || {};
+
+    const args = text.split(" ");
+    let opponent = m.mentionedJid ? m.mentionedJid[0] : null;
+
+    if (!opponent) {
+        // **Jugar contra el bot**
+        const userChoice = text.toLowerCase();
+        const choices = ['batu', 'gunting', 'kertas'];
+        const botChoice = choices[Math.floor(Math.random() * choices.length)];
+
+        if (!choices.includes(userChoice)) {
+            return shoNherly('🧠 Pilih antara *batu*, *gunting*, atau *kertas* ya, Kak!');
+        }
+
+        let hasil = '';
+        if (userChoice === botChoice) {
+            hasil = `🤝 Seri! Kita sama-sama pilih *${botChoice}*`;
+        } else if (
+            (userChoice === 'batu' && botChoice === 'gunting') || 
+            (userChoice === 'gunting' && botChoice === 'kertas') || 
+            (userChoice === 'kertas' && botChoice === 'batu')) {
+            hasil = `🎉 Kakak menang! Aku pilih *${botChoice}*`;
+        } else {
+            hasil = `😢 Aku menang! Aku pilih *${botChoice}*`;
+        }
+
+        shoNherly(hasil);
+    } else {
+        // **Jugar contra otro usuario**
+        if (opponent === m.sender) return m.reply("❌ No puedes jugar contra ti mismo.");
+        if (global.suitRooms[m.chat]) return m.reply("⚠️ Ya hay un juego en progreso en este chat.");
+
+        global.suitRooms[m.chat] = {
+            id: m.chat,
+            p1: m.sender,
+            p2: opponent,
+            status: "wait",
+            choices: {},
+        };
+
+        m.reply(`🎮 *¡Juego de Piedra, Papel o Tijera!* 🎮\n\n👤 *${m.sender.split("@")[0]}* ha retado a *${opponent.split("@")[0]}*.\n\n🔰 @${opponent.split("@")[0]}, responde con *Aceptar* para comenzar.`);
+
+        setTimeout(() => {
+            if (global.suitRooms[m.chat] && global.suitRooms[m.chat].status === "wait") {
+                m.reply("⚠️ El reto ha expirado por falta de respuesta.");
+                delete global.suitRooms[m.chat];
+            }
+        }, 30000); // 30 segundos para aceptar
+    }
+    break;
+}
+
+// **Aceptar el reto**
+case 'aceptar': {
+    if (!global.suitRooms[m.chat] || global.suitRooms[m.chat].status !== "wait") {
+        return m.reply("❌ No hay un reto activo en este chat.");
+    }
+
+    let room = global.suitRooms[m.chat];
+
+    if (m.sender !== room.p2) return m.reply("❌ Solo el jugador retado puede aceptar.");
+
+    room.status = "play";
+
+    m.reply(`✅ ¡El juego ha comenzado!\nAmbos jugadores, envíen su elección: *batu*, *gunting* o *kertas*.`);
+
+    setTimeout(() => {
+        if (global.suitRooms[m.chat] && Object.keys(room.choices).length < 2) {
+            m.reply("⚠️ El juego ha sido cancelado porque uno o ambos jugadores no eligieron a tiempo.");
+            delete global.suitRooms[m.chat];
+        }
+    }, 30000); // 30 segundos para elegir
+    break;
+}
+
+// **Elegir opción**
+case 'batu':
+case 'gunting':
+case 'kertas': {
+    if (!global.suitRooms[m.chat] || global.suitRooms[m.chat].status !== "play") {
+        return;
+    }
+
+    let room = global.suitRooms[m.chat];
+    if (![room.p1, room.p2].includes(m.sender)) return;
+
+    if (room.choices[m.sender]) return m.reply("❌ Ya elegiste tu opción.");
+
+    room.choices[m.sender] = command; // Guardamos su elección
+
+    if (Object.keys(room.choices).length === 2) {
+        // Ambos eligieron, resolvemos el juego
+        let p1Choice = room.choices[room.p1];
+        let p2Choice = room.choices[room.p2];
+
+        let winner = null;
+        let tie = p1Choice === p2Choice;
+
+        if (!tie) {
+            if (
+                (p1Choice === 'batu' && p2Choice === 'gunting') ||
+                (p1Choice === 'gunting' && p2Choice === 'kertas') ||
+                (p1Choice === 'kertas' && p2Choice === 'batu')
+            ) {
+                winner = room.p1;
+            } else {
+                winner = room.p2;
+            }
+        }
+
+        let mensaje = `🎮 *Resultado del Juego*\n\n👤 ${room.p1} eligió *${p1Choice}*\n👤 ${room.p2} eligió *${p2Choice}*\n\n`;
+
+        if (tie) {
+            mensaje += "⚖️ ¡Empate!";
+        } else {
+            mensaje += `🏆 ¡Felicidades @${winner.split("@")[0]}! Ganaste.`;
+            db.data.users[winner].exp += 10; // Recompensa XP
+        }
+
+        m.reply(mensaje, { mentions: [room.p1, room.p2] });
+        delete global.suitRooms[m.chat];
+    } else {
+        m.reply("✅ Elección guardada. Esperando al otro jugador...");
+    }
+    break;
+}
 			case 'delete':
 			case 'del':
 			case 'd':
