@@ -2864,7 +2864,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 						title: `Tiempo Agotado ⏰`,
 						body: "Básico Novato",
 						previewType: "PHOTO",
-						thumbnailUrl: `https://telegra.ph/file/030ebfc99f9cb5be7e8cb.png`,
+						thumbnailUrl: `https://i.ibb.co/qYJ6qnPY/030ebfc99f9cb5be7e8cb.png`,
 						sourceUrl: wagc
 					}
 				}
