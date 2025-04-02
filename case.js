@@ -7622,35 +7622,35 @@ break;
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!isShoNheOwn) return shoNherly('❌ Perintah ini hanya dapat digunakan oleh owner!');
+				if (!isShoNheOwn) return shoNherly('❌ ¡Este comando sólo puede ser utilizado por el owner!');
 				const option = text.toLowerCase();
 				if (option === 'on')
 				{
 					if (autoBio)
 					{
-						shoNherly('⚠️ Auto bio sudah aktif sebelumnya!');
+						shoNherly('⚠️ ¡La biografía automática ha estado activa antes!');
 					}
 					else
 					{
 						global.autoBio = true;
-						shoNherly('✅ Auto bio berhasil diaktifkan!');
+						shoNherly('✅ ¡Auto bio activado con éxito!');
 					}
 				}
 				else if (option === 'off')
 				{
 					if (!autoBio)
 					{
-						shoNherly('⚠️ Auto bio sudah dinonaktifkan sebelumnya!');
+						shoNherly('⚠️ ¡La biografía automática estaba desactivada anteriormente!');
 					}
 					else
 					{
 						global.autoBio = false;
-						shoNherly('✅ Auto bio berhasil dinonaktifkan!');
+						shoNherly('✅ ¡La biografía automática se deshabilitó con éxito!');
 					}
 				}
 				else
 				{
-					shoNherly(`⚠️ Gunakan perintah:\n${prefix}autobio on\n${prefix}autobio off`);
+					shoNherly(`⚠️ Utilice el comando:\n${prefix}autobio on\n${prefix}autobio off`);
 				}
 				}
 			break
@@ -7667,7 +7667,7 @@ break;
 				const isRegistered = user.register || false;
 				const role = user.role || 'user';
 				const limit = user.limit || 0;
-				const registrationSeries = user.registrationSeries || 'Not Available';
+				const registrationSeries = user.registrationSeries || 'No disponible';
 				const limitDisplay = limit === -1 ? '∞' : limit;
 				const xp = user.exp || 0;
 				const level = user.level || 0;
@@ -7686,7 +7686,7 @@ break;
 						rows[rows.length - 1].push(current);
 					}
 					return rows;
-				}, []).map(row => row.join(` | `)).join('\n') : 'Belum ada data command populer.';
+				}, []).map(row => row.join(` | `)).join('\n') : 'Aún no hay datos de comandos populares.';
 				let aiMessage = popularData.ai ? `${c}${popularData.ai}${c}` : `${c}0${c}`;
 				const statusUser = isShoNheOwn ? 'Owner' : `${role}`;
 				// Format menu dengan limit dan register
@@ -18206,8 +18206,8 @@ break;
 				console.log('📢 Memproses perintah IG Download...');
 				if (!text)
 				{
-					console.log('⚠️ Tidak ada URL yang diberikan.');
-					return shoNherly(`⚠️ Gunakan dengan cara: ${prefix + command} *url*\n\n🤔 *Contoh:*\n${prefix + command} https://www.instagram.com/reel/Cr5AXBQvBC1/`);
+					console.log('⚠️ No se proporcionó ninguna URL.');
+					return shoNherly(`⚠️ Usa el comando de la siguiente manera: ${prefix + command} *url*\n\n🤔 *Ejemplo:*\n${prefix + command} https://www.instagram.com/reel/Cr5AXBQvBC1/`);
 				}
 				if (!(await firely(m, mess.waits))) return;
 				// Mengambil angka setelah URL jika ada
@@ -18224,7 +18224,7 @@ break;
 					if (!anu.status || !anu.data || anu.data.length === 0)
 					{
 						console.log('❌ Data tidak ditemukan atau kosong.');
-						return shoNherly('❌ Konten tidak ditemukan. Pastikan tautannya benar!');
+						return shoNherly('❌ Contenido no encontrado. ¡Asegúrate de que el enlace sea correcto!');
 					}
 					console.log('✅ Data ditemukan! Proses pengiriman...');
 					let count = 0; // Untuk membatasi jumlah gambar/video yang dikirim
@@ -18275,7 +18275,7 @@ break;
 							await shoNhe.sendMessage(m.chat,
 							{
 								video: buffer,
-								caption: `🎥 *Instagram Video*\n🔗 [Link Asli](${text})`
+								caption: `🎥 *Instagram Video*\n🔗 [Enlace Original](${text})`
 							},
 							{
 								quoted: hw
@@ -18289,7 +18289,7 @@ break;
 							await shoNhe.sendMessage(m.chat,
 							{
 								image: buffer,
-								caption: `🖼️ *Instagram Photo*\n🔗 [Link Asli](${text})`
+								caption: `🖼️ *Instagram Foto*\n🔗 [Enlace Original](${text})`
 							},
 							{
 								quoted: hw
@@ -18299,19 +18299,19 @@ break;
 						else
 						{
 							console.log('❓ Jenis file tidak dikenali:', item.url);
-							shoNherly('⚠️ Jenis file tidak dikenali!');
+							shoNherly('⚠️ ¡Tipo de archivo no reconocido!');
 						}
 						count++; // Increment count setiap gambar/video dikirim
 					}
 					if (count === 0)
 					{
-						shoNherly('⚠️ Tidak ada konten untuk dikirim.');
+						shoNherly('⚠️ No hay contenido para enviar.');
 					}
 				}
 				catch (err)
 				{
 					console.error('❌ Error:', err);
-					shoNherly('❌ Terjadi kesalahan. Coba lagi nanti.');
+					shoNherly('❌ Hay un error. Vuelve a intentarlo más tarde.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
