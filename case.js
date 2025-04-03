@@ -22626,7 +22626,7 @@ shoNhe.sendMessage(m.chat,
            }
 }
 				break
-			case 'tiktok':
+case 'tiktok':
 			case 'tiktokdown':
 			case 'ttdown':
 			case 'ttdl':
@@ -22650,13 +22650,17 @@ shoNhe.sendMessage(m.chat,
 					const hasil = await tiktokDl(text);
 					console.log('Hasil dari tiktokDl:', JSON.stringify(hasil, null, 2));
 					if (!(await firely(m, mess.waits))) return; // Jika limit habis, proses berhenti di sini
-					if (!hasil.status) return shoNherly('Error al obtener el video.');
-        
-        // Obtener el enlace en HD sin marca de agua
-        let videoUrl = hasil.data.find(item => item.type === 'nowatermark_hd')?.url 
-                    || hasil.data.find(item => item.type === 'nowatermark')?.url;
-
-        if (!videoUrl) return shoNherly('No se pudo obtener la versión HD sin marca de agua.'},
+					if (hasil && hasil.data && hasil.data.length > 0)
+					{
+						let videoUrl = hasil.data.find(item => item.type === 'nowatermark_hd')?.url || hasil.data.find(item => item.type === 'nowatermark')?.url;
+						if (videoUrl)
+						{
+							await shoNhe.sendMessage(m.chat,
+							{
+								video:
+								{
+									url: videoUrl
+								},
 								caption: `*📍Title:* ${hasil.title}\n*⏳Duration:* ${hasil.duration}\n*🎃Author:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
 								footer: namabot,
 								buttons: [
