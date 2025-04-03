@@ -22626,8 +22626,39 @@ shoNhe.sendMessage(m.chat,
            }
 }
 				break
-case 'tiktok': case 'tiktokdown': case 'ttdown': case 'ttdl': case 'tt': case 'ttmp4': case 'ttvideo': case 'tiktokmp4': case 'tiktokvideo': { if (!isRegistered(m)) { return sendRegister(shoNhe, m, prefix, namabot); } updatePopularCommand(command); const levelUpMessage = levelUpdate(command, m.sender); if (!text) return shoNherly(Ejemplo: ${prefix + command} url_tiktok); const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com)/;
-				if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!'); try { const hasil = await tiktokDl(text); console.log('Hasil dari tiktokDl:', JSON.stringify(hasil, null, 2)); if (!hasil.status) return shoNherly('Error al obtener el video.'); let videoUrl = hasil.data.find(item => item.type === 'nowatermark_hd')?.url || hasil.data.find(item => item.type === 'nowatermark')?.url; if (!videoUrl) return shoNherly('No se pudo obtener la versión HD sin marca de agua.'); await shoNhe.sendMessage(m.chat, { video: { url: videoUrl }, caption: *📍Title:* ${hasil.title}\n*⏳Duration:* ${hasil.duration}\n*🎃Author:* ${hasil.author.nickname} (@${hasil.author.fullname}), footer: namabot, buttons: [ { buttonId: ${prefix}ttmp3 ${text}, buttonText: { displayText: "Tiktok Mp3🎶" } } ], viewOnce: true, }, { quoted: m }); } catch (error) { console.error(error); shoNherly('Ocurrió un error al descargar el video.'); } if (levelUpMessage) { await shoNhe.sendMessage(m.chat, { image: { url: levelUpMessage.image }, caption: levelUpMessage.text, footer: "LEVEL UP🔥", buttons: [ { buttonId: ${prefix}tqto, buttonText: { displayText: "TQTO 💡" } }, { buttonId: ${prefix}menu, buttonText: { displayText: "MENU 🍄" } } ], viewOnce: true, }, { quoted: m }); } break; }
+case 'tiktok': case 'tiktokdown': case 'ttdown': case 'ttdl': case 'tt': case 'ttmp4': case 'ttvideo': case 'tiktokmp4': case 'tiktokvideo': { 
+    if (!isRegistered(m)) { 
+        return sendRegister(shoNhe, m, prefix, namabot); 
+    } 
+    updatePopularCommand(command); 
+    const levelUpMessage = levelUpdate(command, m.sender); 
+    if (!text) return shoNherly(`Ejemplo: ${prefix + command} url_tiktok`); 
+
+    const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com)/; 
+    if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!'); 
+
+    try { 
+        const hasil = await tiktokDl(text); 
+        console.log('Hasil dari tiktokDl:', JSON.stringify(hasil, null, 2)); 
+        if (!(await firely(m, mess.waits))) return;
+        if (!hasil.status) return shoNherly('Error al obtener el video.');
+        
+        // Obtener el enlace en HD sin marca de agua
+        let videoUrl = hasil.data.find(item => item.type === 'nowatermark_hd')?.url 
+                    || hasil.data.find(item => item.type === 'nowatermark')?.url;
+
+        if (!videoUrl) return shoNherly('No se pudo obtener la versión HD sin marca de agua.');
+
+        // Enviar el video
+        await shoNhe.sendMessage(m.chat, { video: { url: videoUrl }, caption: hasil.title }, { quoted: m });
+
+    } catch (error) { 
+        console.error(error);
+        shoNherly('Ocurrió un error al descargar el video.');
+    } 
+    
+    break; // Asegura que el switch-case no continúe ejecutando otros casos
+}
 			case 'toaud':
 			case 'toaudio':
 			{
@@ -24517,6 +24548,7 @@ case 'tiktok': case 'tiktokdown': case 'ttdown': case 'ttdl': case 'tt': case 't
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				if (!(await firely(m, mess.waits))) return;
 				if (!text) return shoNherly(`Contoh : ${prefix + command} Hai kak`)
 				if (text.length > 250) return shoNherly(`Karakter terbatas, max 250!`)
 				const words = text.split(" ")
