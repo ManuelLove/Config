@@ -5736,22 +5736,27 @@ break;
            }
 			}
 			break;
-			case "boom":
-    if (!gameSessions[chatId]) {
-        gameSessions[chatId] = { number: 1, players: [] };
-        reply("¡El juego Boom ha comenzado! Di un número en orden, pero si es múltiplo o contiene 7, di 'Boom'.");
-    } else {
-        let currentNumber = gameSessions[chatId].number;
-        let isBoom = currentNumber % 7 === 0 || currentNumber.toString().includes("7");
-        if ((isBoom && text !== "Boom") || (!isBoom && text !== currentNumber.toString())) {
-            reply(`¡Error! El número correcto era: ${isBoom ? "Boom" : currentNumber}`);
-            delete gameSessions[chatId];
-        } else {
-            gameSessions[chatId].number++;
-            reply(`Siguiente número: ${gameSessions[chatId].number}`);
-        }
-    }
-    break;
+			case 'boom': {  
+    if (boom[m.sender]) return m.reply('¡Aún quedan sesiones sin terminar!')  
+  
+    boom[m.sender] = {  
+        petak: [0, 0, 0, 2, 0, 2, 0, 2, 0, 0].sort(() => Math.random() - 0.5),  
+        board: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'],  
+        bomb: 3,  
+        lolos: 7,  
+        pick: 0,  
+        nyawa: ['❤️', '❤️', '❤️'],  
+        waktu: setTimeout(() => {  
+            if (boom[m.sender]) {  
+                m.reply(`_⏳ Tiempo de ${command} agotado_`)  
+                delete boom[m.sender]; // 🔥 Asegurar que la partida se borre si expira el tiempo  
+            }  
+        }, 160000)  
+    }  
+      
+    m.reply(`*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n¡Elige un número! ¡Y no te dejes alcanzar por una bomba!\n\n🔸 Bombas: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);  
+}  
+break;
 			case 'tebaklogo':
 			case 'tebakaplikasi':
 			{
