@@ -22647,14 +22647,14 @@ case 'tiktokvideo':
     const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com|vt\.tiktok\.com)/;
     if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!');
 
-    // 🔹 FUNCIÓN PARA CONVERTIR ENLACES LARGOS A CORTOS
-    function convertToShortLink(url) {
-        let match = url.match(/\/video\/(\d+)/);
-        return match ? `https://vt.tiktok.com/${match[1]}` : url;
-    }
+// 🔹 FUNCIÓN PARA CONVERTIR ENLACES LARGOS A CORTOS
+function convertToShortLink(url) {
+    let match = url.match(/\/video\/(\d+)/);
+    return match ? `https://vt.tiktok.com/${match[1]}` : url;
+}
 
-    // 🔥 CONVERTIR URL LARGA A CORTA SIN MOSTRAR TEXTO EXTRA
-    text = convertToShortLink(text);
+// 🔥 CONVERTIR URL LARGA A CORTA SIN ERRORES
+let text = convertToShortLink(text);
 
     try {
         const hasil = await tiktokDl(text);
