@@ -5649,11 +5649,15 @@ break;
 			}
 			break;
 			case "boom":
-    if (!gameSessions[m.chat]) {
-        gameSessions[m.chat] = { number: 1 };
+    if (!global.gameSessions) {
+        global.gameSessions = {}; // Asegurar que la variable existe en el ámbito global
+    }
+
+    if (!global.gameSessions[m.chat]) {
+        global.gameSessions[m.chat] = { number: 1 };
         shoNhe.sendMessage(m.chat, { text: "¡El juego Boom ha comenzado! Envía un número en orden, pero si es múltiplo o contiene 7, di 'Boom'." });
     } else {
-        let currentNumber = gameSessions[m.chat].number;
+        let currentNumber = global.gameSessions[m.chat].number;
         let isBoom = currentNumber % 7 === 0 || currentNumber.toString().includes("7");
 
         console.log(`Número esperado: ${isBoom ? "Boom" : currentNumber}`);
@@ -5661,10 +5665,10 @@ break;
 
         if ((isBoom && body.toLowerCase() !== "boom") || (!isBoom && body !== currentNumber.toString())) {
             shoNhe.sendMessage(m.chat, { text: `❌ ¡Error! El número correcto era: ${isBoom ? "Boom" : currentNumber}` });
-            delete gameSessions[m.chat]; // Termina el juego en este chat
+            delete global.gameSessions[m.chat]; // Termina el juego en este chat
         } else {
-            gameSessions[m.chat].number++;
-            shoNhe.sendMessage(m.chat, { text: `✅ Correcto! Siguiente número: ${gameSessions[m.chat].number}` });
+            global.gameSessions[m.chat].number++;
+            shoNhe.sendMessage(m.chat, { text: `✅ Correcto! Siguiente número: ${global.gameSessions[m.chat].number}` });
         }
     }
     break;
