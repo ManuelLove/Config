@@ -22650,15 +22650,89 @@ case 'tiktok': case 'tiktokdown': case 'ttdown': case 'ttdl': case 'tt': case 't
         if (!videoUrl) return shoNherly('No se pudo obtener la versión HD sin marca de agua.');
 
         // Enviar el video
-        await shoNhe.sendMessage(m.chat, { video: { url: videoUrl }, caption: hasil.title }, { quoted: m });
-
-    } catch (error) { 
-        console.error(error);
-        shoNherly('Ocurrió un error al descargar el video.');
-    } 
-    
-    break; // Asegura que el switch-case no continúe ejecutando otros casos
-}
+        if (hasil && hasil.data && hasil.data.length > 0)
+					{
+						if (hasil.size_nowm)
+						{
+							await shoNhe.sendMessage(m.chat,
+							{
+								video:
+								{
+									url: hasil.data[1].url
+								},
+								caption: `*📍Title:* ${hasil.title}\n*⏳Duration:* ${hasil.duration}\n*🎃Author:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
+								footer: namabot,
+								buttons: [
+								{
+									buttonId: `${prefix}ttmp3 ${text}`,
+									buttonText:
+									{
+										displayText: "Tiktok Mp3🎶"
+									}
+								}],
+								viewOnce: true,
+							},
+							{
+								quoted: m
+							});
+						}
+						else
+						{
+							for (let i = 0; i < hasil.data.length; i++)
+							{
+								await shoNhe.sendMessage(m.chat,
+								{
+									video:
+									{
+										url: hasil.data[i].url
+									},
+									caption: `*🚀Video:* ${i + 1}`,
+								},
+								{
+									quoted: m
+								});
+							}
+						}
+					}
+					else
+					{
+						shoNherly('Data TikTok tidak ditemukan atau tidak valid!');
+					}
+				}
+				catch (e)
+				{
+					console.error('Error saat memproses URL TikTok:', e);
+					shoNherly('Gagal memproses URL! Detail error: ' + e.message);
+				}
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
+				{
+					quoted: hw
+				});
+           }
+			}
+			break
 			case 'toaud':
 			case 'toaudio':
 			{
