@@ -5651,27 +5651,30 @@ break;
            }
 			}
 			break;
-			case 'boom': {  
-    if (boom[m.sender]) return m.reply('¡Aún quedan sesiones sin terminar!')  
-  
-    boom[m.sender] = {  
-        petak: [0, 0, 0, 2, 0, 2, 0, 2, 0, 0].sort(() => Math.random() - 0.5),  
-        board: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'],  
-        bomb: 3,  
-        lolos: 7,  
-        pick: 0,  
-        nyawa: ['❤️', '❤️', '❤️'],  
-        waktu: setTimeout(() => {  
-            if (boom[m.sender]) {  
-                m.reply(`_⏳ Tiempo de ${command} agotado_`)  
-                delete boom[m.sender]; // 🔥 Asegurar que la partida se borre si expira el tiempo  
-            }  
-        }, 160000)  
-    }  
-      
-    m.reply(`*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n¡Elige un número! ¡Y no te dejes alcanzar por una bomba!\n\n🔸 Bombas: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);  
-}  
-break;
+			case 'boom': { if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot); updatePopularCommand(command);
+
+if (boom[m.sender]) return m.reply('¡Aún quedan sesiones sin terminar!');
+
+boom[m.sender] = {
+    petak: [0, 0, 0, 2, 0, 2, 0, 2, 0, 0].sort(() => Math.random() - 0.5),
+    board: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'],
+    bomb: 3,
+    lolos: 7,
+    pick: 0,
+    nyawa: ['❤️', '❤️', '❤️'],
+    waktu: setTimeout(() => {
+        if (boom[m.sender]) {
+            shoNhe.sendMessage(m.chat, { text: `_⏳ Tiempo de Boom agotado_` }, { quoted: m });
+            delete boom[m.sender];
+        }
+    }, 160000)
+};
+
+shoNhe.sendMessage(m.chat, {
+    text: `*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join(' ')}\n\n¡Elige un número! ¡Y no te dejes alcanzar por una bomba!\n\n🔸 Bombas: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join('')}`
+}, { quoted: m });
+
+} break; 
 if (m.sender in boom && !isCmd && /^[1-9]|10$/i.test(body)) { let selectedIndex = parseInt(body) - 1; if (boom[m.sender].petak[selectedIndex] === 2) { boom[m.sender].board[selectedIndex] = '💣'; boom[m.sender].nyawa.pop(); boom[m.sender].bomb--;
 
 if (boom[m.sender].nyawa.length < 1) {
