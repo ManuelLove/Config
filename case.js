@@ -409,7 +409,6 @@ const afk = JSON.parse(fs.readFileSync('./database/afk.json'));
 const {  
         Boom  
     } = require('@hapi/boom')  
-    const {  
 const hentai = require('./lib/scp/hentai');
 const
 {
