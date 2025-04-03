@@ -3372,7 +3372,7 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
         delete ahorcado[sender];
         return `😵 *¡PERDISTE!*\n\nLa palabra era: *"${palabra}"*`;
     }
-if (!mensaje.includes("_")) { let recompensa = isOwner ? 0 :
+
     if (!mensaje.includes("_")) {
         let recompensa = Math.floor(Math.random() * 500) + 100;
         global.db.data.users[sender].limit += recompensa;
