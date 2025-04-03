@@ -3269,46 +3269,52 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				else emote('❌');
 			}
 		}
-	if (m.sender in boom && !isCmd && /^\d{1,2}$/.test(body.trim())) { 
+	// Manejo de selección de casillas en BOOM
+if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) { 
     let selectedIndex = parseInt(body.trim()) - 1;
-    console.log(`Número ingresado: ${selectedIndex + 1}`);
 
     if (selectedIndex < 0 || selectedIndex > 9) return;
-    
-    if (boom[m.sender].petak[selectedIndex] === 2) {
-        boom[m.sender].board[selectedIndex] = '💣';
-        boom[m.sender].nyawa.pop();
-        boom[m.sender].bomb--;
 
-        if (boom[m.sender].nyawa.length < 1) {
-            let dineroPerdido = Math.floor(Math.random() * 500) + 200;
+    if (boom[m.sender].petak[selectedIndex] === 2) { 
+        boom[m.sender].board[selectedIndex] = '💣'; 
+        boom[m.sender].nyawa.pop(); 
+        boom[m.sender].bomb--; 
+
+        if (boom[m.sender].nyawa.length < 1) { 
+            let dineroPerdido = Math.floor(Math.random() * 500) + 200; 
             global.db.data.users[m.sender].money = Math.max(0, global.db.data.users[m.sender].money - dineroPerdido);
-            await shoNhe.sendMessage(m.chat, { 
-                text: `💥 *Fuiste alcanzado por una bomba*\n${boom[m.sender].board.join(' ')}\n\n⚠️ *Has perdido ${dineroPerdido} Dinero*\n\n🎮 Usa *${prefix}boom* para jugar de nuevo.` 
+            
+            shoNhe.sendMessage(m.chat, { 
+                text: `💥 *¡Boom! Perdiste!*\n${boom[m.sender].board.join(' ')}\n\n⚠️ *Perdiste ${dineroPerdido} Dinero*` 
+            }, { quoted: m }); 
+
+            clearTimeout(boom[m.sender].waktu); // Detener el timeout del juego
+            delete boom[m.sender]; // Eliminar la partida
+        } else { 
+            shoNhe.sendMessage(m.chat, { 
+                text: `💥 *Bomba encontrada!*\n${boom[m.sender].board.join(' ')}\n\n❤️ Vidas restantes: ${boom[m.sender].nyawa.length}` 
+            }, { quoted: m });
+        }
+    } else if (boom[m.sender].petak[selectedIndex] === 0) { 
+        boom[m.sender].board[selectedIndex] = '🌀'; 
+        boom[m.sender].lolos--; 
+        boom[m.sender].pick++; 
+
+        if (boom[m.sender].lolos < 1) { 
+            let dineroGanado = Math.floor(Math.random() * 1000) + 500; 
+            global.db.data.users[m.sender].money += dineroGanado; 
+            
+            shoNhe.sendMessage(m.chat, { 
+                text: `🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join(' ')}\n\n🏆 *Ganaste ${dineroGanado} Dinero*` 
             }, { quoted: m });
 
-            // 🔥 Asegurar que el juego se borre completamente
-            clearTimeout(boom[m.sender].waktu);
-            delete boom[m.sender];
-            return;
-        }
-    } else {
-        boom[m.sender].board[selectedIndex] = '🌀';
-        boom[m.sender].lolos--;
-        boom[m.sender].pick++;
-
-        if (boom[m.sender].lolos < 1) {
-            let dineroGanado = Math.floor(Math.random() * 1000) + 500;
-            global.db.data.users[m.sender].money += dineroGanado;
-            await shoNhe.sendMessage(m.chat, { 
-                text: `🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join(' ')}\n\n🎖 *Has ganado ${dineroGanado} Dinero*\n\n🎮 Usa *${prefix}boom* para jugar de nuevo.` 
-            }, { quoted: m });
-
-            // 🔥 Asegurar que el juego se borre completamente
-            clearTimeout(boom[m.sender].waktu);
-            delete boom[m.sender];
-            return;
-        }
+            clearTimeout(boom[m.sender].waktu); // Detener el timeout del juego
+            delete boom[m.sender]; // Eliminar la partida
+        } else { 
+            shoNhe.sendMessage(m.chat, { 
+                text: `✔️ *Casilla segura!*\n${boom[m.sender].board.join(' ')}\n\n❤️ Vidas: ${boom[m.sender].nyawa.length}` 
+            }, { quoted: m }); 
+        } 
     }
 }
 		async function cekgame(gamejid)
