@@ -3389,7 +3389,8 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
         shoNherly("🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
     }
 
-    delete ahorcado[m.sender];       
+    delete ahorcado[m.sender];
+           
     return `🎮 *AHORCADO*\n\n✍️ *Progreso:* ${mensaje}\n📉 Intentos restantes: *${intentos}*\n\n¡Escribe otra letra para continuar!`;
 }
 		async function cekgame(gamejid)
