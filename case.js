@@ -3390,7 +3390,8 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
     }
 
     delete ahorcado[m.sender];
-           
+return `🎉 *¡GANASTE!*\n\nPalabra correcta: *"${palabra}"*\n🏆 *Has ganado ${recompensa} límite*`;
+    }
     return `🎮 *AHORCADO*\n\n✍️ *Progreso:* ${mensaje}\n📉 Intentos restantes: *${intentos}*\n\n¡Escribe otra letra para continuar!`;
 }
 		async function cekgame(gamejid)
