@@ -22664,13 +22664,48 @@ case 'tiktokvideo':
         console.log('✅ Enviando video:', videoUrl);
 
         // Enviar el video por WhatsApp
-        await shoNhe.sendMessage(m.chat, {
-            video: { url: videoUrl },
-            caption: `🎥 *Título:* ${hasil.title}\n⏳ *Duración:* ${hasil.duration}s\n👤 *Autor:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
-            footer: namabot,
-            viewOnce: true
-        }, { quoted: m });
-
+        await shoNhe.sendMessage(m.chat,
+							{
+								video:
+								{
+									url: hasil.data[1].url
+								},
+								caption: `*📍Title:* ${hasil.title}\n*⏳Duration:* ${hasil.duration}\n*🎃Author:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
+								footer: namabot,
+								buttons: [
+								{
+									buttonId: `${prefix}ttmp3 ${text}`,
+									buttonText:
+									{
+										displayText: "Tiktok Mp3🎶"
+									}
+								}],
+								viewOnce: true,
+							},
+							{
+								quoted: m
+							});
+						}
+						else
+						{
+							for (let i = 0; i < hasil.data.length; i++)
+							{
+								await shoNhe.sendMessage(m.chat,
+								{
+									video:
+									{
+										url: hasil.data[i].url
+									},
+									caption: `*🚀Video:* ${i + 1}`,
+								},
+								{
+									quoted: m
+								});
+							}
+						}
+					}
+					else
+{
     } catch (e) {
         console.error('🚨 Error al descargar el video de TikTok:', e);
         shoNherly('⚠️ No se pudo procesar la URL de TikTok. Intenta con otro enlace.');
