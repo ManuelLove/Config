@@ -22656,7 +22656,7 @@ shoNhe.sendMessage(m.chat,
         let videoUrl = hasil.data.find(item => item.type === 'nowatermark_hd')?.url 
                     || hasil.data.find(item => item.type === 'nowatermark')?.url;
 
-        if (!videoUrl) return shoNherly('No se pudo obtener la versión HD sin marca de agua.');
+        if (!videoUrl) return shoNherly('No se pudo obtener la versión HD sin marca de agua.'},
 								caption: `*📍Title:* ${hasil.title}\n*⏳Duration:* ${hasil.duration}\n*🎃Author:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
 								footer: namabot,
 								buttons: [
