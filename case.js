@@ -22626,84 +22626,122 @@ shoNhe.sendMessage(m.chat,
            }
 }
 				break
-case 'tiktok':
-case 'tiktokdown':
-case 'ttdown':
-case 'ttdl':
-case 'tt':
-case 'ttmp4':
-case 'ttvideo':
-case 'tiktokmp4':
-case 'tiktokvideo':
-{
-    if (!isRegistered(m)) {
-        return sendRegister(shoNhe, m, prefix, namabot);
+			case 'tiktok':
+			case 'tiktokdown':
+			case 'ttdown':
+			case 'ttdl':
+			case 'tt':
+			case 'ttmp4':
+			case 'ttvideo':
+			case 'tiktokmp4':
+			case 'tiktokvideo':
+			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				if (!text) return shoNherly(`Ejemplo: ${prefix + command} url_tiktok`);
+				const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com)/;
+				if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!');
+			    // 🔹 FUNCIÓN PARA CONVERTIR ENLACES LARGOS A CORTOS
+    function convertToShortLink(url) {
+        let match = url.match(/\/video\/(\d+)/);
+        return match ? `https://vt.tiktok.com/${match[1]}` : url;
     }
-    updatePopularCommand(command);
-    const levelUpMessage = levelUpdate(command, m.sender);
 
-    if (!text) return shoNherly(`Ejemplo: ${prefix + command} url_tiktok`);
+    // 🔥 CONVERTIR URL LARGA A CORTA
+    let shortUrl = convertToShortLink(text);
+    console.log("✅ Enlace procesado:", shortUrl);
 
-    const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com|vt\.tiktok\.com)/;
-    if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!');
-
-// 🔹 FUNCIÓN PARA CONVERTIR ENLACE LARGO A CORTO
-function convertToShortLink(url) {
-    let match = url.match(/\/video\/(\d+)/);
-    return match ? `https://vt.tiktok.com/${match[1]}` : url;
-}
-
-// 🔥 CONVERTIR URL LARGA A CORTA
-let shortUrl = convertToShortLink(text).trim();
-console.log("✅ Enlace procesado antes de enviar:", shortUrl);
-
-// Espera 1s antes de llamar a tiktokDl()
-await new Promise(r => setTimeout(r, 1000));
-
-try {
-    const hasil = await tiktokDl(encodeURI(shortUrl));
-    console.log('🔍 Resultado de tiktokDl:', JSON.stringify(hasil, null, 2));
-
-    if (!hasil || !hasil.status || !hasil.data) return shoNherly('❌ No se pudo obtener el video de TikTok.');
-
-    let videoUrl = hasil.data.find(item => item.type === 'nowatermark_hd')?.url || 
-                   hasil.data.find(item => item.type === 'nowatermark')?.url;
-
-    if (!videoUrl) return shoNherly('⚠️ No se encontró un video en HD sin marca de agua.');
-
-    console.log('✅ Enviando video:', videoUrl);
-
-    await shoNhe.sendMessage(
-        m.chat, 
-        {
-            video: { url: videoUrl },
-            caption: `🎥 *Título:* ${hasil.title}\n🔗 *Enlace corto:* ${shortUrl}`,
-            footer: namabot,
-            buttons: [
-                { buttonId: `${prefix}ttmp3 ${text}`, buttonText: { displayText: "🎶 Tiktok Mp3" } }
-            ]
-        }, 
-        { quoted: m }
-    );
-
-} catch (e) {
-    console.error('🚨 Error al descargar el video de TikTok:', e);
-    shoNherly('⚠️ No se pudo procesar la URL de TikTok. Intenta con otro enlace.');
-}
-
-    if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat, {
-            image: { url: levelUpMessage.image },
-            caption: levelUpMessage.text,
-            footer: "🔥 LEVEL UP",
-            buttons: [
-                { buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
-                { buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
-            ]
-        }, { quoted: hw });
-    }
-}
-break;
+    try {
+        const hasil = await tiktokDl(shortUrl);
+					console.log('Hasil dari tiktokDl:', JSON.stringify(hasil, null, 2));
+					if (!(await firely(m, mess.waits))) return; // Jika limit habis, proses berhenti di sini
+					if (hasil && hasil.data && hasil.data.length > 0)
+					{
+						if (hasil.size_nowm)
+						{
+							await shoNhe.sendMessage(m.chat,
+							{
+								video:
+								{
+									url: hasil.data[1].url
+								},
+								caption: `*📍Title:* ${hasil.title}\n*⏳Duration:* ${hasil.duration}\n*🎃Author:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
+								footer: namabot,
+								buttons: [
+								{
+									buttonId: `${prefix}ttmp3 ${text}`,
+									buttonText:
+									{
+										displayText: "Tiktok Mp3🎶"
+									}
+								}],
+								viewOnce: true,
+							},
+							{
+								quoted: m
+							});
+						}
+						else
+						{
+							for (let i = 0; i < hasil.data.length; i++)
+							{
+								await shoNhe.sendMessage(m.chat,
+								{
+									video:
+									{
+										url: hasil.data[i].url
+									},
+									caption: `*🚀Video:* ${i + 1}`,
+								},
+								{
+									quoted: m
+								});
+							}
+						}
+					}
+					else
+					{
+						shoNherly('¡Datos de TikTok no encontrados o no válidos!');
+					}
+				}
+				catch (e)
+				{
+					console.error('Error saat memproses URL TikTok:', e);
+					shoNherly('¡No se pudo procesar la URL! Detalles del error: ' + e.message);
+				}
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
+				{
+					quoted: hw
+				});
+           }
+			}
+			break
 			case 'toaud':
 			case 'toaudio':
 			{
