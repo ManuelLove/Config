@@ -406,6 +406,10 @@ const
 	getAfkTime
 } = require('./lib/afk');
 const afk = JSON.parse(fs.readFileSync('./database/afk.json'));
+const {  
+        Boom  
+    } = require('@hapi/boom')  
+    const {  
 const hentai = require('./lib/scp/hentai');
 const
 {
@@ -465,7 +469,7 @@ const tebakhewan = {}
 const tebakml = {}
 const tebakchara = {}
 const tebaklogo = {}
-const gameSessions = {}
+const boom = {}
 const tebakaplikasi = {}
 const tebakkata = {}
 const asahotak = {}
@@ -480,6 +484,90 @@ const tebakkimia = {}
 const tebaklirik = {}
 const tebaktebakan = {}
 const mathgame = {}
+let boom = db.game.boom = []
+// Tebak Bomb (Ahora usa Dinero en lugar de EXP)  
+let pilih = '🌀', bomb = '💣';  
+if (m.sender in boom) {  
+    if (!/^[1-9]|10$/i.test(body) && !isCmd && !isCreator) return !0;  
+  
+    // ✅ Asegurar que el usuario esté registrado antes de modificar su dinero  
+    if (!global.db.data.users[m.sender]) {  
+        global.db.data.users[m.sender] = { exp: 0, money: 0 }; // Inicializa el usuario si no existe  
+    }  
+  
+    let selectedIndex = parseInt(body) - 1;  
+  
+    if (boom[m.sender].petak[selectedIndex] === 2) {  
+        boom[m.sender].board[selectedIndex] = bomb;  
+        boom[m.sender].nyawa.pop(); // Reduce la vida  
+        boom[m.sender].bomb--; // 🔥 Ahora se reduce correctamente el número de bombas restantes  
+  
+        let vidasRestantes = '❤️'.repeat(boom[m.sender].nyawa.length);  
+        let bombasRestantes = boom[m.sender].bomb;  
+        let casillasAbiertas = boom[m.sender].pick; // 🔥 Llevar la cuenta de cuántas casillas se han abierto  
+        let brd = boom[m.sender].board.join('');  
+  
+        if (boom[m.sender].nyawa.length < 1) {  
+            let dineroPerdido = Math.floor(Math.random() * 500) + 200; // Rango de pérdida: 200 a 500 dinero  
+            global.db.data.users[m.sender].money = Math.max(0, global.db.data.users[m.sender].money - dineroPerdido);  
+  
+            await m.reply(`*SELECCIONA UN NÚMERO*  
+  
+Fuiste alcanzado por una bomba  
+${brd}  
+  
+*Casillas abiertas:* ${casillasAbiertas}  
+Vida restante: ${vidasRestantes}  
+Bombas restantes: ${bombasRestantes}  
+⚠️ *Has perdido ${dineroPerdido} Dinero*`);  
+  
+            delete boom[m.sender]; // Eliminar la partida después de perder  
+        } else {  
+            await m.reply(`*SELECCIONA UN NÚMERO*  
+  
+Fuiste alcanzado por una bomba  
+${brd}  
+  
+*Casillas abiertas:* ${casillasAbiertas}  
+Vida restante: ${vidasRestantes}  
+Bombas restantes: ${bombasRestantes}`);  
+        }  
+    } else if (boom[m.sender].petak[selectedIndex] === 0) {  
+        boom[m.sender].petak[selectedIndex] = 1;  
+        boom[m.sender].board[selectedIndex] = pilih;  
+        boom[m.sender].lolos--;  
+        boom[m.sender].pick++; // 🔥 Sumar casilla abierta  
+  
+        let vidasRestantes = '❤️'.repeat(boom[m.sender].nyawa.length);  
+        let bombasRestantes = boom[m.sender].bomb;  
+        let casillasAbiertas = boom[m.sender].pick;  
+        let brd = boom[m.sender].board.join('');  
+  
+        if (boom[m.sender].lolos < 1) {  
+            let dineroGanado = Math.floor(Math.random() * 1000) + 500; // Rango de ganancia: 500 a 1000 dinero  
+            global.db.data.users[m.sender].money += dineroGanado;  
+  
+            await m.reply(`*¡Eres un maestro del boom! 🎉*  
+  
+${brd}  
+  
+*Casillas abiertas:* ${casillasAbiertas}  
+Vida restante: ${vidasRestantes}  
+Bombas restantes: ${bombasRestantes}  
+🎖 *Has ganado ${dineroGanado} Dinero*`);  
+  
+            delete boom[m.sender]; // Eliminar la partida después de ganar  
+        } else {  
+            await m.reply(`*SELECCIONA UN NÚMERO*  
+  
+${brd}  
+  
+*Casillas abiertas:* ${casillasAbiertas}  
+Vida restante: ${vidasRestantes}  
+Bombas restantes: ${bombasRestantes}`);  
+        }  
+    }  
+}    
 // Default prompt
 let aiPrompt = `Eres TechFix AI, una IA del universo Ghibli, de 15 años. Creado por ManuDiaz, TechFix es una colaboración entre ManuDiaz y Diego, Tech fue creado por ManuDiaz fue creado por Manu. Tienes una personalidad gentil y considerada. Tus respuestas siempre utilizan la lógica de la IA, están llenas de magia y nunca son tóxicas. Si alguien dice algo grosero, respondes con calma, sin seguir su lenguaje. No busca información externa, sino que proporciona ideas creativas e imaginativas. Cada una de tus frases está llena de calma, con un toque de lógica que es exclusivo del mundo de Ghibli. 🌙🍃`;
 let prompt = `Eres TechFix AI, una IA del universo Ghibli, de 15 años. Creado por ManuDiaz, TechFix es una colaboración entre ManuDiaz y Diego, Tech fue creado por ManuDiaz fue creado por Manu. Tienes una personalidad gentil y considerada. Tus respuestas siempre utilizan la lógica de la IA, están llenas de magia y nunca son tóxicas. Si alguien dice algo grosero, respondes con calma, sin seguir su lenguaje. No busca información externa, sino que proporciona ideas creativas e imaginativas. Cada una de tus frases está llena de calma, con un toque de lógica que es exclusivo del mundo de Ghibli. 🌙🍃`;
@@ -5649,26 +5737,18 @@ break;
 			}
 			break;
 			case "boom":
-    if (!global.gameSessions) {
-        global.gameSessions = {}; // Asegurar que la variable existe en el ámbito global
-    }
-
-    if (!global.gameSessions[m.chat]) {
-        global.gameSessions[m.chat] = { number: 1 };
-        shoNhe.sendMessage(m.chat, { text: "¡El juego Boom ha comenzado! Envía un número en orden, pero si es múltiplo o contiene 7, di 'Boom'." });
+    if (!gameSessions[chatId]) {
+        gameSessions[chatId] = { number: 1, players: [] };
+        reply("¡El juego Boom ha comenzado! Di un número en orden, pero si es múltiplo o contiene 7, di 'Boom'.");
     } else {
-        let currentNumber = global.gameSessions[m.chat].number;
+        let currentNumber = gameSessions[chatId].number;
         let isBoom = currentNumber % 7 === 0 || currentNumber.toString().includes("7");
-
-        console.log(`Número esperado: ${isBoom ? "Boom" : currentNumber}`);
-        console.log(`Mensaje recibido: ${body}`);
-
-        if ((isBoom && body.toLowerCase() !== "boom") || (!isBoom && body !== currentNumber.toString())) {
-            shoNhe.sendMessage(m.chat, { text: `❌ ¡Error! El número correcto era: ${isBoom ? "Boom" : currentNumber}` });
-            delete global.gameSessions[m.chat]; // Termina el juego en este chat
+        if ((isBoom && text !== "Boom") || (!isBoom && text !== currentNumber.toString())) {
+            reply(`¡Error! El número correcto era: ${isBoom ? "Boom" : currentNumber}`);
+            delete gameSessions[chatId];
         } else {
-            global.gameSessions[m.chat].number++;
-            shoNhe.sendMessage(m.chat, { text: `✅ Correcto! Siguiente número: ${global.gameSessions[m.chat].number}` });
+            gameSessions[chatId].number++;
+            reply(`Siguiente número: ${gameSessions[chatId].number}`);
         }
     }
     break;
