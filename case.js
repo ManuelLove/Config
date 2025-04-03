@@ -3355,7 +3355,18 @@ function elegirPalabraAleatoria() {
 function ocultarPalabra(palabra, letrasAdivinadas) {
     return palabra.split('').map(letra => letrasAdivinadas.includes(letra) ? letra : '_').join(' ');
 }
-function mostrarAhorcado(intentos) { const dibujo = [ " __", " |  |", intentos < 6 ? " |  😵" : " |", intentos < 5 ? " |  /" : intentos < 4 ? " |  /|" : intentos < 3 ? " |  /|\" : " |", intentos < 2 ? " |   /" : intentos < 1 ? " |   / \" : " |", "|" ]; return dibujo.join("\n"); }
+function mostrarAhorcado(intentos) {
+  const dibujo = [
+    " ____\n |  |\n |  😵\n |  /|\\\n |   / \\\n_|_",  // 0 intentos (ahorcado)
+    " ____\n |  |\n |  😵\n |  /|\\\n |   /\n_|_",   // 1 intento restante
+    " ____\n |  |\n |  😵\n |  /|\\\n |\n_|_",       // 2 intentos restantes
+    " ____\n |  |\n |  😵\n |  /|\n |\n_|_",       // 3 intentos restantes
+    " ____\n |  |\n |  😵\n |   |\n |\n_|_",       // 4 intentos restantes
+    " ____\n |  |\n |  😵\n |\n |\n_|_",           // 5 intentos restantes
+    " ____\n |  |\n |\n |\n |\n_|_"                // 6 intentos (juego inicia)
+  ];
+  return dibujo[intentos];
+}
 function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
     if (intentos === 0) {
         delete ahorcado[sender];
