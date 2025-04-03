@@ -24577,7 +24577,7 @@ shoNhe.sendMessage(m.chat,
 					for (let i = 0; i < words.length; i++)
 					{
 						const currentText = words.slice(0, i + 1).join(" ")
-						const res = await axios.get(`https://siputzx-bart.hf.space/?q=${encodeURIComponent(currentText)}`,
+						const res = await axios.get(`https://api.hiuraa.my.id/maker/bratvid?text=${encodeURIComponent(currentText)}`,
 						{
 							responseType: "arraybuffer"
 						}).catch((e) => e.response)
