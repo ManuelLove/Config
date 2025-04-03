@@ -22649,8 +22649,30 @@ case 'tiktok': case 'tiktokdown': case 'ttdown': case 'ttdl': case 'tt': case 't
 
         if (!videoUrl) return shoNherly('No se pudo obtener la versión HD sin marca de agua.');
 
-        // Enviar el video
-        await shoNhe.sendMessage(m.chat, { video: { url: videoUrl }, caption: hasil.title }, { quoted: m });
+        // Construir el mensaje con detalles del video
+        let messageText = `📹 *Título:* ${hasil.title}\n` +
+                          `⏳ *Duración:* ${hasil.duration}\n` +
+                          `👀 *Vistas:* ${hasil.stats.views}\n` +
+                          `❤️ *Likes:* ${hasil.stats.likes}\n` +
+                          `💬 *Comentarios:* ${hasil.stats.comment}\n` +
+                          `🔄 *Compartido:* ${hasil.stats.share}\n` +
+                          `🎵 *Sonido:* ${hasil.music_info.title} - ${hasil.music_info.author}\n\n` +
+                          `🔗 *Link:* ${text}`;
+
+        // Botón de descarga original (si lo tenías antes)
+        let buttons = [
+            { buttonId: `descargar ${videoUrl}`, buttonText: { displayText: "📥 Descargar" }, type: 1 }
+        ];
+
+        let buttonMessage = {
+            video: { url: videoUrl },
+            caption: messageText,
+            footer: "🔰 TikTok Downloader Bot",
+            buttons: buttons,
+            headerType: 5
+        };
+
+        await shoNhe.sendMessage(m.chat, buttonMessage, { quoted: m });
 
     } catch (error) { 
         console.error(error);
