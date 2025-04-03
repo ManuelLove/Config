@@ -484,85 +484,24 @@ const tebaklirik = {}
 const tebaktebakan = {}
 const mathgame = {}
 // Tebak Bomb (Ahora usa Dinero en lugar de EXP)  
-let pilih = '🌀', bomb = '💣';  
-if (m.sender in boom) {  
-    if (!/^[1-9]|10$/i.test(body) && !isCmd && !isCreator) return !0;  
-  
-    // ✅ Asegurar que el usuario esté registrado antes de modificar su dinero  
-    if (!global.db.data.users[m.sender]) {  
-        global.db.data.users[m.sender] = { exp: 0, money: 0 }; // Inicializa el usuario si no existe  
-    }  
-  
-    let selectedIndex = parseInt(body) - 1;  
-  
-    if (boom[m.sender].petak[selectedIndex] === 2) {  
-        boom[m.sender].board[selectedIndex] = bomb;  
-        boom[m.sender].nyawa.pop(); // Reduce la vida  
-        boom[m.sender].bomb--; // 🔥 Ahora se reduce correctamente el número de bombas restantes  
-  
-        let vidasRestantes = '❤️'.repeat(boom[m.sender].nyawa.length);  
-        let bombasRestantes = boom[m.sender].bomb;  
-        let casillasAbiertas = boom[m.sender].pick; // 🔥 Llevar la cuenta de cuántas casillas se han abierto  
-        let brd = boom[m.sender].board.join('');  
-  
-        if (boom[m.sender].nyawa.length < 1) {  
-            let dineroPerdido = Math.floor(Math.random() * 500) + 200; // Rango de pérdida: 200 a 500 dinero  
-            global.db.data.users[m.sender].money = Math.max(0, global.db.data.users[m.sender].money - dineroPerdido);  
-  
-            await shoNhe.sendMessage(`*SELECCIONA UN NÚMERO*  
-  
-Fuiste alcanzado por una bomba  
-${brd}  
-  
-*Casillas abiertas:* ${casillasAbiertas}  
-Vida restante: ${vidasRestantes}  
-Bombas restantes: ${bombasRestantes}  
-⚠️ *Has perdido ${dineroPerdido} Dinero*`);  
-  
-            delete boom[m.sender]; // Eliminar la partida después de perder  
-        } else {  
-            await shoNhe.sendMessage(`*SELECCIONA UN NÚMERO*  
-  
-Fuiste alcanzado por una bomba  
-${brd}  
-  
-*Casillas abiertas:* ${casillasAbiertas}  
-Vida restante: ${vidasRestantes}  
-Bombas restantes: ${bombasRestantes}`);  
-        }  
-    } else if (boom[m.sender].petak[selectedIndex] === 0) {  
-        boom[m.sender].petak[selectedIndex] = 1;  
-        boom[m.sender].board[selectedIndex] = pilih;  
-        boom[m.sender].lolos--;  
-        boom[m.sender].pick++; // 🔥 Sumar casilla abierta  
-  
-        let vidasRestantes = '❤️'.repeat(boom[m.sender].nyawa.length);  
-        let bombasRestantes = boom[m.sender].bomb;  
-        let casillasAbiertas = boom[m.sender].pick;  
-        let brd = boom[m.sender].board.join('');  
-  
-        if (boom[m.sender].lolos < 1) {  
-            let dineroGanado = Math.floor(Math.random() * 1000) + 500; // Rango de ganancia: 500 a 1000 dinero  
-            global.db.data.users[m.sender].money += dineroGanado;  
-  
-            await shoNhe.sendMessage(`*¡Eres un maestro del boom! 🎉*  
-  
-${brd}  
-  
-*Casillas abiertas:* ${casillasAbiertas}  
-Vida restante: ${vidasRestantes}  
-Bombas restantes: ${bombasRestantes}  
-🎖 *Has ganado ${dineroGanado} Dinero*`);  
-  
-            delete boom[m.sender]; // Eliminar la partida después de ganar  
-        } else {  
-            await shoNhe.sendMessage(`*SELECCIONA UN NÚMERO*  
-  
-${brd}  
-  
-*Casillas abiertas:* ${casillasAbiertas}  
-Vida restante: ${vidasRestantes}  
-Bombas restantes: ${bombasRestantes}`);  
+if (m.sender in boom && !isCmd && /^[1-9]|10$/i.test(body)) { let selectedIndex = parseInt(body) - 1; if (boom[m.sender].petak[selectedIndex] === 2) { boom[m.sender].board[selectedIndex] = '💣'; boom[m.sender].nyawa.pop(); boom[m.sender].bomb--;
+
+if (boom[m.sender].nyawa.length < 1) {
+        let dineroPerdido = Math.floor(Math.random() * 500) + 200;
+        global.db.data.users[m.sender].money = Math.max(0, global.db.data.users[m.sender].money - dineroPerdido);
+        shoNhe.sendMessage(m.chat, { text: `Fuiste alcanzado por una bomba\n${boom[m.sender].board.join(' ')}\n\n⚠️ *Has perdido ${dineroPerdido} Dinero*` }, { quoted: m });
+        delete boom[m.sender];
+    }
+} else {
+    boom[m.sender].board[selectedIndex] = '🌀';
+    boom[m.sender].lolos--;
+    boom[m.sender].pick++;
+    
+    if (boom[m.sender].lolos < 1) {
+        let dineroGanado = Math.floor(Math.random() * 1000) + 500;
+        global.db.data.users[m.sender].money += dineroGanado;
+        shoNhe.sendMessage(m.chat, { text: `🎉 ¡Ganaste!\n${boom[m.sender].board.join(' ')}\n\n🎖 *Has ganado ${dineroGanado} Dinero*` }, { quoted: m });
+        delete boom[m.sender];  
         }  
     }  
 }    
