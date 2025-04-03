@@ -5656,12 +5656,15 @@ break;
         let currentNumber = gameSessions[m.chat].number;
         let isBoom = currentNumber % 7 === 0 || currentNumber.toString().includes("7");
 
+        console.log(`Número esperado: ${isBoom ? "Boom" : currentNumber}`);
+        console.log(`Mensaje recibido: ${body}`);
+
         if ((isBoom && body.toLowerCase() !== "boom") || (!isBoom && body !== currentNumber.toString())) {
-            shoNhe.sendMessage(m.chat, { text: `¡Error! El número correcto era: ${isBoom ? "Boom" : currentNumber}` });
+            shoNhe.sendMessage(m.chat, { text: `❌ ¡Error! El número correcto era: ${isBoom ? "Boom" : currentNumber}` });
             delete gameSessions[m.chat]; // Termina el juego en este chat
         } else {
             gameSessions[m.chat].number++;
-            shoNhe.sendMessage(m.chat, { text: `Siguiente número: ${gameSessions[m.chat].number}` });
+            shoNhe.sendMessage(m.chat, { text: `✅ Correcto! Siguiente número: ${gameSessions[m.chat].number}` });
         }
     }
     break;
