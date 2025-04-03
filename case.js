@@ -3297,23 +3297,28 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
         boom[m.sender].pick++; 
 
         if (boom[m.sender].lolos < 1) { 
-            let limiteGanado = Math.floor(Math.random() * 15) + 7; // Gana entre 3 y 7 de límite
+    let limiteGanado = Math.floor(Math.random() * 15) + 7; // Gana entre 7 y 15 de límite
 
-            // Agregar límite usando el mismo método de .upfire
-            const db = loadUserFire();
-            if (!db[m.sender]) {
-                db[m.sender] = { limit: limiteGanado, role: 'user' };
-            } else {
-                db[m.sender].limit += limiteGanado;
-            }
-            saveUserFire(db);
+    // Cargar la base de datos
+    const db = loadUserFire();
+    const role = db[m.sender]?.role || 'user'; // Verificar el rol del usuario
 
-            shoNhe.sendMessage(m.chat, { 
-                text: `🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join('')}\n\n🏆 *Ganaste ${limiteGanado} límite*` 
-            }, { quoted: m });
+    if (role !== 'owner') { // Solo si NO es owner
+        if (!db[m.sender]) {
+            db[m.sender] = { limit: limiteGanado, role: 'user' };
+        } else {
+            db[m.sender].limit += limiteGanado;
+        }
+        saveUserFire(db);
 
-            clearTimeout(boom[m.sender].waktu);
-            delete boom[m.sender]; // Eliminar la partida
+        shoNherly(`🎉 *¡Ganaste!* Has recibido ${limiteGanado} límite.`, {
+            mentions: [m.sender]
+        });
+    } else {
+        shoNherly("❌ No puedes recibir recompensas por ser Owner.", { mentions: [m.sender] });
+    }
+
+    delete boom[m.sender];
         } else { 
             shoNhe.sendMessage(m.chat, { 
                 text: `✔️ *Casilla segura!*\n${boom[m.sender].board.join('')}\n\n❤️ Vidas: ${boom[m.sender].nyawa.length}` 
@@ -3343,9 +3348,9 @@ if (m.sender in ahorcado && m.text.length === 1 && /^[a-zA-Z]$/.test(m.text)) {
 }
 const palabras = [
   "gato", "perro", "elefante", "tigre", "ballena", "mariposa", "tortuga", 
-  "conejo", "rana", "pulpo", "ardilla", "jirafa", "cocodrilo", "pingüino", 
-  "delfín", "serpiente", "hámster", "mosquito", "abeja", "negro", "television", 
-  "computadora", "botsito", "reggaeton", "economía", "electrónica", "facebook", 
+  "conejo", "rana", "pulpo", "ardilla", "jirafa", "cocodrilo", "pinguino", 
+  "delfin", "serpiente", "hamster", "mosquito", "abeja", "negro", "television", 
+  "computadora", "botsito", "reggaeton", "economia", "electronica", "facebook", 
   "WhatsApp", "instagram", "tiktok", "presidente", "bot", "películas", "gata", "gatabot"
 ];
 function elegirPalabraAleatoria() {
@@ -3363,15 +3368,28 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
     }
 
     if (!mensaje.includes("_")) {
-        let recompensa = Math.floor(Math.random() * 5) + 2; // Límite aleatorio entre 2 y 5
-        const db = loadUserFire();
-            if (!db[m.sender]) {
-                db[m.sender] = { limit: recompensa, role: 'user' };
-            } else {
-                db[m.sender].limit += recompensa;
-            }
-            saveUserFire(db);
-        delete ahorcado[sender];
+    let recompensa = Math.floor(Math.random() * 15) + 7; // Límite aleatorio entre 7 y 15
+
+    // Cargar la base de datos
+    const db = loadUserFire();
+    const role = db[m.sender]?.role || 'user'; // Verificar el rol del usuario
+
+    if (role !== 'owner') { // Solo si NO es owner
+        if (!db[m.sender]) {
+            db[m.sender] = { limit: recompensa, role: 'user' };
+        } else {
+            db[m.sender].limit += recompensa;
+        }
+        saveUserFire(db);
+
+        shoNherly(`🎉 *¡FELICIDADES!* Ganaste *${recompensa} límite*.`, {
+            mentions: [m.sender]
+        });
+    } else {
+        shoNherly("❌ No puedes recibir recompensas por ser Owner.", { mentions: [m.sender] });
+    }
+
+    delete ahorcado[m.sender];
         return `🎉 *¡GANASTE!*\n\nPalabra correcta: *"${palabra}"*\n🏆 *Has ganado ${recompensa} límite*`;
     }
 
