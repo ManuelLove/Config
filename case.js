@@ -22647,48 +22647,49 @@ case 'tiktokvideo':
     const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com|vt\.tiktok\.com)/;
     if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!');
 
-    // 🔹 FUNCIÓN PARA CONVERTIR ENLACES LARGOS A CORTOS
-    function convertToShortLink(url) {
-        let match = url.match(/\/video\/(\d+)/);
-        return match ? `https://vt.tiktok.com/${match[1]}` : url;
-    }
+// 🔹 FUNCIÓN PARA CONVERTIR ENLACE LARGO A CORTO
+function convertToShortLink(url) {
+    let match = url.match(/\/video\/(\d+)/);
+    return match ? `https://vt.tiktok.com/${match[1]}` : url;
+}
 
-    // 🔥 CONVERTIR URL LARGA A CORTA
-    let shortUrl = convertToShortLink(text);
-    console.log("✅ Enlace procesado:", shortUrl);
+// 🔥 CONVERTIR URL LARGA A CORTA
+let shortUrl = convertToShortLink(text).trim();
+console.log("✅ Enlace procesado antes de enviar:", shortUrl);
 
-    try {
-        const hasil = await tiktokDl(shortUrl);
-        console.log('🔍 Resultado de tiktokDl:', JSON.stringify(hasil, null, 2));
-	if (!(await firely(m, mess.waits))) return;
-        if (!hasil || !hasil.status || !hasil.data) return shoNherly('❌ No se pudo obtener el video de TikTok.');
+// Espera 1s antes de llamar a tiktokDl()
+await new Promise(r => setTimeout(r, 1000));
 
-        let videoUrl = hasil.data.find(item => item.type === 'nowatermark_hd')?.url || 
-                       hasil.data.find(item => item.type === 'nowatermark')?.url;
+try {
+    const hasil = await tiktokDl(encodeURI(shortUrl));
+    console.log('🔍 Resultado de tiktokDl:', JSON.stringify(hasil, null, 2));
 
-        if (!videoUrl) return shoNherly('⚠️ No se encontró un video en HD sin marca de agua.');
+    if (!hasil || !hasil.status || !hasil.data) return shoNherly('❌ No se pudo obtener el video de TikTok.');
 
-        console.log('✅ Enviando video:', videoUrl);
+    let videoUrl = hasil.data.find(item => item.type === 'nowatermark_hd')?.url || 
+                   hasil.data.find(item => item.type === 'nowatermark')?.url;
 
-        await shoNhe.sendMessage(
-            m.chat, 
-            {
-                video: { url: videoUrl },
-                caption: `🎥 *Título:* ${hasil.title}\n⏳ *Duración:* ${hasil.duration}s\n👤 *Autor:* ${hasil.author.nickname} (@${hasil.author.fullname})\n🔗 *Enlace corto:* ${shortUrl}`,
-                footer: namabot,
-                buttons: [
-                    { buttonId: `${prefix}ttmp3 ${text}`, buttonText: { displayText: "🎶 Tiktok Mp3" } }
-                ],
-                mimetype: 'video/mp4',
-                fileName: `${hasil.title}.mp4`
-            }, 
-            { quoted: m }
-        );
+    if (!videoUrl) return shoNherly('⚠️ No se encontró un video en HD sin marca de agua.');
 
-    } catch (e) {
-        console.error('🚨 Error al descargar el video de TikTok:', e);
-        shoNherly('⚠️ No se pudo procesar la URL de TikTok. Intenta con otro enlace.');
-    }
+    console.log('✅ Enviando video:', videoUrl);
+
+    await shoNhe.sendMessage(
+        m.chat, 
+        {
+            video: { url: videoUrl },
+            caption: `🎥 *Título:* ${hasil.title}\n🔗 *Enlace corto:* ${shortUrl}`,
+            footer: namabot,
+            buttons: [
+                { buttonId: `${prefix}ttmp3 ${text}`, buttonText: { displayText: "🎶 Tiktok Mp3" } }
+            ]
+        }, 
+        { quoted: m }
+    );
+
+} catch (e) {
+    console.error('🚨 Error al descargar el video de TikTok:', e);
+    shoNherly('⚠️ No se pudo procesar la URL de TikTok. Intenta con otro enlace.');
+}
 
     if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat, {
