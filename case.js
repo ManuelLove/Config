@@ -5647,80 +5647,22 @@ break;
            }
 			}
 			break;
-			case 'boom': { if (boom[m.sender]) return m.reply('¡Aún quedan sesiones sin terminar!')
-
-boom[m.sender] = {
-    petak: [0, 0, 0, 2, 0, 2, 0, 2, 0, 0].sort(() => Math.random() - 0.5),
-    board: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'],
-    bomb: 3,
-    lolos: 7,
-    pick: 0,
-    nyawa: ['❤️', '❤️', '❤️'],
-    waktu: setTimeout(() => {
-        if (boom[m.sender]) {
-            m.reply(`_⏳ Tiempo de ${command} agotado_`)
-            delete boom[m.sender];
+			case "boom":
+    if (!gameSessions[chatId]) {
+        gameSessions[chatId] = { number: 1, players: [] };
+        reply("¡El juego Boom ha comenzado! Di un número en orden, pero si es múltiplo o contiene 7, di 'Boom'.");
+    } else {
+        let currentNumber = gameSessions[chatId].number;
+        let isBoom = currentNumber % 7 === 0 || currentNumber.toString().includes("7");
+        if ((isBoom && text !== "Boom") || (!isBoom && text !== currentNumber.toString())) {
+            reply(`¡Error! El número correcto era: ${isBoom ? "Boom" : currentNumber}`);
+            delete gameSessions[chatId];
+        } else {
+            gameSessions[chatId].number++;
+            reply(`Siguiente número: ${gameSessions[chatId].number}`);
         }
-    }, 160000)
-}
-
-m.reply(`*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join(" ")}\n\n¡Elige un número! ¡Y no te dejes alcanzar por una bomba!\n\n🔸 Bombas: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
-
-} break;
-
-if (m.sender in boom) { if (!/^[1-9]|10$/i.test(body) && !isCmd && !isCreator) return !0;
-
-if (!global.db.data.users[m.sender]) {
-    global.db.data.users[m.sender] = { exp: 0, money: 0 };
-}
-
-let selectedIndex = parseInt(body) - 1;
-
-if (boom[m.sender].petak[selectedIndex] === 2) {
-    boom[m.sender].board[selectedIndex] = '💣';
-    boom[m.sender].nyawa.pop();
-    boom[m.sender].bomb--;
-    let vidasRestantes = '❤️'.repeat(boom[m.sender].nyawa.length);
-    let bombasRestantes = boom[m.sender].bomb;
-    let casillasAbiertas = boom[m.sender].pick;
-    let brd = boom[m.sender].board.join(' ');
-
-    if (boom[m.sender].nyawa.length < 1) {
-        let dineroPerdido = Math.floor(Math.random() * 500) + 200;
-        global.db.data.users[m.sender].money = Math.max(0, global.db.data.users[m.sender].money - dineroPerdido);
-
-        m.reply(`*SELECCIONA UN NÚMERO*\n\nFuiste alcanzado por una bomba\n${brd}\n\n*Casillas abiertas:* ${casillasAbiertas}\nVida restante: ${vidasRestantes}\nBombas restantes: ${bombasRestantes}\n⚠️ *Has perdido ${dineroPerdido} Dinero*`);
-
-        delete boom[m.sender];
-    } else {
-        m.reply(`*SELECCIONA UN NÚMERO*\n\nFuiste alcanzado por una bomba\n${brd}\n\n*Casillas abiertas:* ${casillasAbiertas}\nVida restante: ${vidasRestantes}\nBombas restantes: ${bombasRestantes}`);
     }
-} else if (boom[m.sender].petak[selectedIndex] === 0) {
-    boom[m.sender].petak[selectedIndex] = 1;
-    boom[m.sender].board[selectedIndex] = '🌀';
-    boom[m.sender].lolos--;
-    boom[m.sender].pick++;
-
-    let vidasRestantes = '❤️'.repeat(boom[m.sender].nyawa.length);
-    let bombasRestantes = boom[m.sender].bomb;
-    let casillasAbiertas = boom[m.sender].pick;
-    let brd = boom[m.sender].board.join(' ');
-
-    if (boom[m.sender].lolos < 1) {
-        let dineroGanado = Math.floor(Math.random() * 1000) + 500;
-        global.db.data.users[m.sender].money += dineroGanado;
-
-        m.reply(`*¡Eres un maestro del boom! 🎉*\n\n${brd}\n\n*Casillas abiertas:* ${casillasAbiertas}\nVida restante: ${vidasRestantes}\nBombas restantes: ${bombasRestantes}\n🎖 *Has ganado ${dineroGanado} Dinero*`);
-
-        delete boom[m.sender];
-    } else {
-        m.reply(`*SELECCIONA UN NÚMERO*\n\n${brd}\n\n*Casillas abiertas:* ${casillasAbiertas}\nVida restante: ${vidasRestantes}\nBombas restantes: ${bombasRestantes}`);
-    }
-}
-
-}
-
-
+    break;
 			case 'tebaklogo':
 			case 'tebakaplikasi':
 			{
