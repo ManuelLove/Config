@@ -22647,14 +22647,26 @@ case 'tiktokvideo':
     const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com|vt\.tiktok\.com)/;
     if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!');
 
-function convertToShortLink(url) {
-    let match = url.match(/\/video\/(\d+)/);
-    return match ? `https://vt.tiktok.com/${match[1]}` : url;
-}
+    // 🔹 FUNCIÓN PARA CONVERTIR ENLACES LARGOS A CORTOS
+    function convertToShortLink(url) {
+        let match = url.match(/\/video\/(\d+)/);
+        return match ? `https://vt.tiktok.com/${match[1]}` : null;
+    }
 
-let text = args[0]; // Obtiene la URL del comando
-text = convertToShortLink(text); // Convierte el enlace largo a corto
+    // 🔥 REVISAR SI EL ENLACE ES LARGO
+    let shortUrl = convertToShortLink(text);
+    if (shortUrl) {
+        // Enlace largo detectado, responder con el enlace corto y NO procesar la descarga
+        return shoNhe.sendMessage(
+            m.chat,
+            {
+                text: `🔗 *Enlace corto generado:* ${shortUrl}\n\n📌 Usa este enlace corto en el comando para descargar el video:\n\`${prefix}tt ${shortUrl}\``
+            },
+            { quoted: m }
+        );
+    }
 
+    // 🔽 SI EL ENLACE YA ES CORTO, CONTINÚA CON LA DESCARGA
     try {
         const hasil = await tiktokDl(text);
         console.log('🔍 Resultado de tiktokDl:', JSON.stringify(hasil, null, 2));
@@ -22672,7 +22684,7 @@ text = convertToShortLink(text); // Convierte el enlace largo a corto
             m.chat, 
             {
                 video: { url: videoUrl },
-                caption: `🎥 *Título:* ${hasil.title}\n⏳ *Duración:* ${hasil.duration}s\n👤 *Autor:* ${hasil.author.nickname} (@${hasil.author.fullname})\n🔗 *Enlace corto:* ${text}`,
+                caption: `🎥 *Título:* ${hasil.title}\n⏳ *Duración:* ${hasil.duration}s\n👤 *Autor:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
                 footer: namabot,
                 buttons: [
                     { buttonId: `${prefix}ttmp3 ${text}`, buttonText: { displayText: "🎶 Tiktok Mp3" } }
