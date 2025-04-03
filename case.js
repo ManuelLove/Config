@@ -3315,7 +3315,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
             mentions: [m.sender]
         });
     } else {
-        shoNherly("🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
+        shoNherly("🎉 *¡Ganaste!* 🎉\n\n🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
     }
 
     delete boom[m.sender];
@@ -3386,7 +3386,7 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
             mentions: [m.sender]
         });
     } else {
-        shoNherly("🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
+        shoNherly("🎉 *¡GANASTE!*🌸\n\nNo puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
     }
 
     delete ahorcado[m.sender];
