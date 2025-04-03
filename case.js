@@ -22670,7 +22670,7 @@ case 'tiktokvideo':
     try {
         const hasil = await tiktokDl(text);
         console.log('🔍 Resultado de tiktokDl:', JSON.stringify(hasil, null, 2));
-
+if (!(await firely(m, mess.waits))) return;
         if (!hasil || !hasil.status || !hasil.data) return shoNherly('❌ No se pudo obtener el video de TikTok.');
 
         let videoUrl = hasil.data.find(item => item.type === 'nowatermark_hd')?.url || 
