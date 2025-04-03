@@ -3269,12 +3269,9 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				else emote('❌');
 			}
 		}
-	const rpPartisipasi = 100; // RP por jugar
-const rpJackpot = 10000; // RP si ganas
-
+		// Manejo de selección de casillas en BOOM
 if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) { 
     let selectedIndex = parseInt(body.trim()) - 1;
-
     if (selectedIndex < 0 || selectedIndex > 9) return;
 
     if (boom[m.sender].petak[selectedIndex] === 2) { 
@@ -3283,15 +3280,15 @@ if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) {
         boom[m.sender].bomb--; 
 
         if (boom[m.sender].nyawa.length < 1) { 
-            let rpPerdido = Math.floor(Math.random() * 500) + 200; 
-            global.db.data.users[m.sender].money = Math.max(0, global.db.data.users[m.sender].money - rpPerdido);
+            let limitePerdido = Math.floor(Math.random() * 3) + 1; // Pierde entre 1 y 3 de límite
+            global.db.data.users[m.sender].limit = Math.max(0, global.db.data.users[m.sender].limit - limitePerdido);
             
             shoNhe.sendMessage(m.chat, { 
-                text: `💥 *¡Boom! Perdiste!*\n${boom[m.sender].board.join(' ')}\n\n⚠️ *Perdiste ${rpPerdido} RP*` 
+                text: `💥 *¡Boom! Perdiste!*\n${boom[m.sender].board.join(' ')}\n\n⚠️ *Perdiste ${limitePerdido} límite*` 
             }, { quoted: m }); 
 
             clearTimeout(boom[m.sender].waktu);
-            delete boom[m.sender]; 
+            delete boom[m.sender]; // Eliminar la partida
         } else { 
             shoNhe.sendMessage(m.chat, { 
                 text: `💥 *Bomba encontrada!*\n${boom[m.sender].board.join(' ')}\n\n❤️ Vidas restantes: ${boom[m.sender].nyawa.length}` 
@@ -3303,26 +3300,21 @@ if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) {
         boom[m.sender].pick++; 
 
         if (boom[m.sender].lolos < 1) { 
-            global.db.data.users[m.sender].money += rpJackpot; 
+            let limiteGanado = Math.floor(Math.random() * 5) + 3; // Gana entre 3 y 7 de límite
+            global.db.data.users[m.sender].limit += limiteGanado;
             
             shoNhe.sendMessage(m.chat, { 
-                text: `🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join(' ')}\n\n🏆 *Ganaste ${rpJackpot} RP*` 
+                text: `🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join(' ')}\n\n🏆 *Ganaste ${limiteGanado} límite*` 
             }, { quoted: m });
 
             clearTimeout(boom[m.sender].waktu);
-            delete boom[m.sender]; 
+            delete boom[m.sender]; // Eliminar la partida
         } else { 
             shoNhe.sendMessage(m.chat, { 
                 text: `✔️ *Casilla segura!*\n${boom[m.sender].board.join(' ')}\n\n❤️ Vidas: ${boom[m.sender].nyawa.length}` 
             }, { quoted: m }); 
         } 
     }
-}
-
-// Dar RP por participar
-if (m.sender in boom) {
-    global.db.data.users[m.sender].money += rpPartisipasi;
-    shoNhe.sendMessage(m.chat, { text: `🎁 *Has recibido ${rpPartisipasi} RP por jugar!*` }, { quoted: m });
 }
 		async function cekgame(gamejid)
 		{
@@ -5723,7 +5715,7 @@ break;
             }
         }, 160000)
     };
-
+if (!(await firely(m, mess.waits))) return;
     m.reply(`*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n¡Elige un número! ¡Y no te dejes alcanzar por una bomba!\n\n🔸 Bombas: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
 }
 break;
