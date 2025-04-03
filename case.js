@@ -22660,7 +22660,7 @@ case 'tiktokvideo':
         return shoNhe.sendMessage(
             m.chat,
             {
-                text: `🔗 *Enlace corto generado:* ${shortUrl}\n\n📌 Usa este enlace corto en el comando para descargar el video:\n\`${prefix}tt ${shortUrl}\``
+                text: `🔗 *Enlace corto generado:*\n\n📌 Usa este enlace corto en el comando para descargar el video:\n\`${prefix}tt ${shortUrl}\``
             },
             { quoted: m }
         );
