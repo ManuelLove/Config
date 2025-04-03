@@ -5673,32 +5673,38 @@ break;
 }
 break;
 
-// Manejo de selección de casillas
-if (m.sender in boom && !isCmd && /^[1-9]|10$/i.test(body)) {
-    let selectedIndex = parseInt(body) - 1;
+// Manejo de selección de casillas en BOOM
+if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) { 
+    let selectedIndex = parseInt(body.trim()) - 1;
 
-    if (boom[m.sender].petak[selectedIndex] === 2) {
-        boom[m.sender].board[selectedIndex] = '💣';
-        boom[m.sender].nyawa.pop();
-        boom[m.sender].bomb--;
+    if (selectedIndex < 0 || selectedIndex > 9) return;
 
-        if (boom[m.sender].nyawa.length < 1) {
-            let dineroPerdido = Math.floor(Math.random() * 500) + 200;
+    if (boom[m.sender].petak[selectedIndex] === 2) { 
+        boom[m.sender].board[selectedIndex] = '💣'; 
+        boom[m.sender].nyawa.pop(); 
+        boom[m.sender].bomb--; 
+
+        if (boom[m.sender].nyawa.length < 1) { 
+            let dineroPerdido = Math.floor(Math.random() * 500) + 200; 
             global.db.data.users[m.sender].money = Math.max(0, global.db.data.users[m.sender].money - dineroPerdido);
-            shoNhe.sendMessage(m.chat, { text: `Fuiste alcanzado por una bomba\n${boom[m.sender].board.join(' ')}\n\n⚠️ *Has perdido ${dineroPerdido} Dinero*` }, { quoted: m });
-            delete boom[m.sender];
+            shoNhe.sendMessage(m.chat, { text: `💥 *¡Boom! Perdiste!*\n${boom[m.sender].board.join(' ')}\n\n⚠️ *Perdiste ${dineroPerdido} Dinero*` }, { quoted: m }); 
+            delete boom[m.sender]; 
+        } else { 
+            shoNhe.sendMessage(m.chat, { text: `💥 *Bomba encontrada!*\n${boom[m.sender].board.join(' ')}\n\n❤️ Vidas restantes: ${boom[m.sender].nyawa.length}` }, { quoted: m });
         }
-    } else {
-        boom[m.sender].board[selectedIndex] = '🌀';
-        boom[m.sender].lolos--;
-        boom[m.sender].pick++;
+    } else if (boom[m.sender].petak[selectedIndex] === 0) { 
+        boom[m.sender].board[selectedIndex] = '🌀'; 
+        boom[m.sender].lolos--; 
+        boom[m.sender].pick++; 
 
-        if (boom[m.sender].lolos < 1) {
-            let dineroGanado = Math.floor(Math.random() * 1000) + 500;
-            global.db.data.users[m.sender].money += dineroGanado;
-            shoNhe.sendMessage(m.chat, { text: `🎉 ¡Ganaste!\n${boom[m.sender].board.join(' ')}\n\n🎖 *Has ganado ${dineroGanado} Dinero*` }, { quoted: m });
-            delete boom[m.sender];
-        }
+        if (boom[m.sender].lolos < 1) { 
+            let dineroGanado = Math.floor(Math.random() * 1000) + 500; 
+            global.db.data.users[m.sender].money += dineroGanado; 
+            shoNhe.sendMessage(m.chat, { text: `🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join(' ')}\n\n🏆 *Ganaste ${dineroGanado} Dinero*` }, { quoted: m }); 
+            delete boom[m.sender]; 
+        } else { 
+            shoNhe.sendMessage(m.chat, { text: `✔️ *Casilla segura!*\n${boom[m.sender].board.join(' ')}\n\n❤️ Vidas: ${boom[m.sender].nyawa.length}` }, { quoted: m }); 
+        } 
     }
 }
 			case 'tebaklogo':
