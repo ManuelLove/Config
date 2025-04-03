@@ -26376,7 +26376,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				if (!isUrl(args[0]) || !args[0].includes('open.spotify.com/track')) return shoNherly('¡URL no válida!');
 				if (!(await firely(m, mess.waits))) return;
 				try {
-    let res = await fetch(`https://api.siputzx.my.id/api/d/spotify?url=${text}`);
+    let res = await fetch(`https://api.hiuraa.my.id/downloader/spotify?url=${text}`);
     let json = await res.json();
     
     console.log(json); // Para depurar y ver la respuesta en la consola
