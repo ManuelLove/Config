@@ -18335,7 +18335,7 @@ if (!(await firely(m, mess.waits))) return;
 
 try {
     console.log('📡 Conectando a la API...');
-    let response = await fetchJson(`https://nueva-api.com/api/fbdl?url=${text}`);
+    let response = await fetchJson(`https://api.hiuraa.my.id/downloader/snapfrom?url=${text}`);
     console.log('🔍 Respuesta API:', JSON.stringify(response, null, 2));
     
     if (!response.status || !response.result || !response.result.medias) {
