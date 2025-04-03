@@ -482,29 +482,7 @@ const tekateki = {}
 const tebakkimia = {}
 const tebaklirik = {}
 const tebaktebakan = {}
-const mathgame = {}
-// Tebak Bomb (Ahora usa Dinero en lugar de EXP)  
-if (m.sender in boom && !isCmd && /^[1-9]|10$/i.test(body)) { let selectedIndex = parseInt(body) - 1; if (boom[m.sender].petak[selectedIndex] === 2) { boom[m.sender].board[selectedIndex] = '💣'; boom[m.sender].nyawa.pop(); boom[m.sender].bomb--;
-
-if (boom[m.sender].nyawa.length < 1) {
-        let dineroPerdido = Math.floor(Math.random() * 500) + 200;
-        global.db.data.users[m.sender].money = Math.max(0, global.db.data.users[m.sender].money - dineroPerdido);
-        shoNhe.sendMessage(m.chat, { text: `Fuiste alcanzado por una bomba\n${boom[m.sender].board.join(' ')}\n\n⚠️ *Has perdido ${dineroPerdido} Dinero*` }, { quoted: m });
-        delete boom[m.sender];
-    }
-} else {
-    boom[m.sender].board[selectedIndex] = '🌀';
-    boom[m.sender].lolos--;
-    boom[m.sender].pick++;
-    
-    if (boom[m.sender].lolos < 1) {
-        let dineroGanado = Math.floor(Math.random() * 1000) + 500;
-        global.db.data.users[m.sender].money += dineroGanado;
-        shoNhe.sendMessage(m.chat, { text: `🎉 ¡Ganaste!\n${boom[m.sender].board.join(' ')}\n\n🎖 *Has ganado ${dineroGanado} Dinero*` }, { quoted: m });
-        delete boom[m.sender];  
-        }  
-    }  
-}    
+const mathgame = {}    
 // Default prompt
 let aiPrompt = `Eres TechFix AI, una IA del universo Ghibli, de 15 años. Creado por ManuDiaz, TechFix es una colaboración entre ManuDiaz y Diego, Tech fue creado por ManuDiaz fue creado por Manu. Tienes una personalidad gentil y considerada. Tus respuestas siempre utilizan la lógica de la IA, están llenas de magia y nunca son tóxicas. Si alguien dice algo grosero, respondes con calma, sin seguir su lenguaje. No busca información externa, sino que proporciona ideas creativas e imaginativas. Cada una de tus frases está llena de calma, con un toque de lógica que es exclusivo del mundo de Ghibli. 🌙🍃`;
 let prompt = `Eres TechFix AI, una IA del universo Ghibli, de 15 años. Creado por ManuDiaz, TechFix es una colaboración entre ManuDiaz y Diego, Tech fue creado por ManuDiaz fue creado por Manu. Tienes una personalidad gentil y considerada. Tus respuestas siempre utilizan la lógica de la IA, están llenas de magia y nunca son tóxicas. Si alguien dice algo grosero, respondes con calma, sin seguir su lenguaje. No busca información externa, sino que proporciona ideas creativas e imaginativas. Cada una de tus frases está llena de calma, con un toque de lógica que es exclusivo del mundo de Ghibli. 🌙🍃`;
@@ -5694,6 +5672,28 @@ break;
     m.reply(`*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n¡Elige un número! ¡Y no te dejes alcanzar por una bomba!\n\n🔸 Bombas: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);  
 }  
 break;
+if (m.sender in boom && !isCmd && /^[1-9]|10$/i.test(body)) { let selectedIndex = parseInt(body) - 1; if (boom[m.sender].petak[selectedIndex] === 2) { boom[m.sender].board[selectedIndex] = '💣'; boom[m.sender].nyawa.pop(); boom[m.sender].bomb--;
+
+if (boom[m.sender].nyawa.length < 1) {
+        let dineroPerdido = Math.floor(Math.random() * 500) + 200;
+        global.db.data.users[m.sender].money = Math.max(0, global.db.data.users[m.sender].money - dineroPerdido);
+        shoNhe.sendMessage(m.chat, { text: `Fuiste alcanzado por una bomba\n${boom[m.sender].board.join(' ')}\n\n⚠️ *Has perdido ${dineroPerdido} Dinero*` }, { quoted: m });
+        delete boom[m.sender];
+    }
+} else {
+    boom[m.sender].board[selectedIndex] = '🌀';
+    boom[m.sender].lolos--;
+    boom[m.sender].pick++;
+    
+    if (boom[m.sender].lolos < 1) {
+        let dineroGanado = Math.floor(Math.random() * 1000) + 500;
+        global.db.data.users[m.sender].money += dineroGanado;
+        shoNhe.sendMessage(m.chat, { text: `🎉 ¡Ganaste!\n${boom[m.sender].board.join(' ')}\n\n🎖 *Has ganado ${dineroGanado} Dinero*` }, { quoted: m });
+        delete boom[m.sender];
+    }
+}
+
+}
 			case 'tebaklogo':
 			case 'tebakaplikasi':
 			{
