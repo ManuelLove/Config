@@ -509,7 +509,7 @@ if (m.sender in boom) {
             let dineroPerdido = Math.floor(Math.random() * 500) + 200; // Rango de pérdida: 200 a 500 dinero  
             global.db.data.users[m.sender].money = Math.max(0, global.db.data.users[m.sender].money - dineroPerdido);  
   
-            await response.text(`*SELECCIONA UN NÚMERO*  
+            await shoNhe.sendMessage(`*SELECCIONA UN NÚMERO*  
   
 Fuiste alcanzado por una bomba  
 ${brd}  
@@ -521,7 +521,7 @@ Bombas restantes: ${bombasRestantes}
   
             delete boom[m.sender]; // Eliminar la partida después de perder  
         } else {  
-            await response.text(`*SELECCIONA UN NÚMERO*  
+            await shoNhe.sendMessage(`*SELECCIONA UN NÚMERO*  
   
 Fuiste alcanzado por una bomba  
 ${brd}  
@@ -545,7 +545,7 @@ Bombas restantes: ${bombasRestantes}`);
             let dineroGanado = Math.floor(Math.random() * 1000) + 500; // Rango de ganancia: 500 a 1000 dinero  
             global.db.data.users[m.sender].money += dineroGanado;  
   
-            await m.reply(`*¡Eres un maestro del boom! 🎉*  
+            await shoNhe.sendMessage(`*¡Eres un maestro del boom! 🎉*  
   
 ${brd}  
   
@@ -556,7 +556,7 @@ Bombas restantes: ${bombasRestantes}
   
             delete boom[m.sender]; // Eliminar la partida después de ganar  
         } else {  
-            await m.reply(`*SELECCIONA UN NÚMERO*  
+            await shoNhe.sendMessage(`*SELECCIONA UN NÚMERO*  
   
 ${brd}  
   
