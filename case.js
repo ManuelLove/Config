@@ -3341,6 +3341,13 @@ if (m.sender in ahorcado && m.text.length === 1 && /^[a-zA-Z]$/.test(m.text)) {
         shoNherly(`${respuesta}\n\n❌ *Letras incorrectas usadas:* ${letrasErradas || "Ninguna"}`);
     }
 }
+const palabras = [
+  "gato", "perro", "elefante", "tigre", "ballena", "mariposa", "tortuga", 
+  "conejo", "rana", "pulpo", "ardilla", "jirafa", "cocodrilo", "pingüino", 
+  "delfín", "serpiente", "hámster", "mosquito", "abeja", "negro", "television", 
+  "computadora", "botsito", "reggaeton", "economía", "electrónica", "facebook", 
+  "WhatsApp", "instagram", "tiktok", "presidente", "bot", "películas", "gata", "gatabot"
+];
 function elegirPalabraAleatoria() {
     return palabras[Math.floor(Math.random() * palabras.length)];
 }
