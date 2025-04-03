@@ -15323,71 +15323,53 @@ break
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				let baseUrl = 'https://weeb-api.vercel.app/'
-				const response = await fetch(baseUrl + command)
-				const imageBuffer = await response.buffer() // Get the image data as a buffer
-				let msgs = generateWAMessageFromContent(m.chat,
+				if (!(await firely(m, mess.waits))) return;
+				try
 				{
-					viewOnceMessage:
+					let res = await axios.get('https://api.hiuraa.my.id/random/loli',
 					{
-						message:
+						responseType: 'arraybuffer'
+					});
+					shoNhe.sendMessage(m.chat,
+					{
+						image: res.data,
+						caption: 'Aquí hay una foto de loli'
+					},
+					{
+						quoted: hw
+					});
+				}
+				catch (error)
+				{
+					shoNherly('No se pudo tomar la foto de loli. Inténtelo de nuevo más tarde.');
+				}
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
 						{
-							"messageContextInfo":
-							{
-								"deviceListMetadata":
-								{},
-								"deviceListMetadataVersion": 2
-							},
-							interactiveMessage: proto.Message.InteractiveMessage.create(
-							{
-								body: proto.Message.InteractiveMessage.Body.create(
-								{
-									text: `Hi ${pushName}\n_*Aquí está el resultado de ${command}*_`
-								}),
-								footer: proto.Message.InteractiveMessage.Footer.create(
-								{
-									text: namabot
-								}),
-								header: proto.Message.InteractiveMessage.Header.create(
-								{
-									hasMediaAttachment: false,
-									...await prepareWAMessageMedia(
-									{
-										image: imageBuffer
-									},
-									{
-										upload: shoNhe.waUploadToServer
-									})
-								}),
-								nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create(
-								{
-									buttons: [
-									{
-										"name": "quick_reply",
-										"buttonParamsJson": `{\"display_text\":\"Next ➡️\",\"id\":\"${prefix+command}"}`
-									}],
-								}),
-								contextInfo:
-								{
-									mentionedJid: [m.sender],
-									forwardingScore: 999,
-									isForwarded: true,
-									forwardedNewsletterMessageInfo:
-									{
-										newsletterJid: idsaluran,
-										newsletterName: namach,
-										serverMessageId: 143
-									}
-								}
-							})
+							displayText: "TQTO 💡"
 						}
-					}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
 				},
 				{
-					quoted: m
-				})
-				return await shoNhe.relayMessage(m.chat, msgs.message,
-				{})
+					quoted: hw
+				});
+           }
 			}
 			break
 			case 'waifu':
