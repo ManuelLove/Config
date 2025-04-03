@@ -3280,14 +3280,14 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 
         if (boom[m.sender].nyawa.length < 1) { 
             shoNhe.sendMessage(m.chat, { 
-                text: `💥 *¡Boom! Perdiste!*\n${boom[m.sender].board.join(' ')}\n\n⚠️ ¡Inténtalo de nuevo!` 
+                text: `💥 *¡Boom! Perdiste!*\n${boom[m.sender].board.join('')}\n\n⚠️ ¡Inténtalo de nuevo!` 
             }, { quoted: m });
 
             clearTimeout(boom[m.sender].waktu);
             delete boom[m.sender]; // Eliminar la partida
         } else { 
             shoNhe.sendMessage(m.chat, { 
-                text: `💥 *Bomba encontrada!*\n${boom[m.sender].board.join(' ')}\n\n❤️ Vidas restantes: ${boom[m.sender].nyawa.length}` 
+                text: `💥 *Bomba encontrada!*\n${boom[m.sender].board.join('')}\n\n❤️ Vidas restantes: ${boom[m.sender].nyawa.length}` 
             }, { quoted: m });
         }
     } else if (boom[m.sender].petak[selectedIndex] === 0) { 
@@ -3308,7 +3308,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
             saveUserFire(db);
 
             shoNhe.sendMessage(m.chat, { 
-                text: `🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join(' ')}\n\n🏆 *Ganaste ${limiteGanado} límite*` 
+                text: `🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join('')}\n\n🏆 *Ganaste ${limiteGanado} límite*` 
             }, { quoted: m });
 
             clearTimeout(boom[m.sender].waktu);
