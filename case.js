@@ -3355,13 +3355,13 @@ function elegirPalabraAleatoria() {
 function ocultarPalabra(palabra, letrasAdivinadas) {
     return palabra.split('').map(letra => letrasAdivinadas.includes(letra) ? letra : '_').join(' ');
 }
-
+function mostrarAhorcado(intentos) { const dibujo = [ " __", " |  |", intentos < 6 ? " |  😵" : " |", intentos < 5 ? " |  /" : intentos < 4 ? " |  /|" : intentos < 3 ? " |  /|\" : " |", intentos < 2 ? " |   /" : intentos < 1 ? " |   / \" : " |", "|" ]; return dibujo.join("\n"); }
 function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
     if (intentos === 0) {
         delete ahorcado[sender];
         return `😵 *¡PERDISTE!*\n\nLa palabra era: *"${palabra}"*`;
     }
-
+if (!mensaje.includes("_")) { let recompensa = isOwner ? 0 :
     if (!mensaje.includes("_")) {
         let recompensa = Math.floor(Math.random() * 500) + 100;
         global.db.data.users[sender].limit += recompensa;
