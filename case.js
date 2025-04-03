@@ -3269,8 +3269,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				else emote('❌');
 			}
 		}
-	// Manejo de selección de casillas en BOOM
-if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) { 
+	if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) { 
     let selectedIndex = parseInt(body.trim()) - 1;
     if (selectedIndex < 0 || selectedIndex > 9) return;
 
@@ -3282,7 +3281,7 @@ if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) {
         if (boom[m.sender].nyawa.length < 1) { 
             shoNhe.sendMessage(m.chat, { 
                 text: `💥 *¡Boom! Perdiste!*\n${boom[m.sender].board.join(' ')}\n\n⚠️ ¡Inténtalo de nuevo!` 
-            }, { quoted: m }); 
+            }, { quoted: m });
 
             clearTimeout(boom[m.sender].waktu);
             delete boom[m.sender]; // Eliminar la partida
@@ -3298,9 +3297,16 @@ if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) {
 
         if (boom[m.sender].lolos < 1) { 
             let limiteGanado = Math.floor(Math.random() * 5) + 3; // Gana entre 3 y 7 de límite
-            global.db.data.users[m.sender].limit += limiteGanado;
-            saveUserFire(global.db); // 🔥 Guardar cambios en la base de datos
-            
+
+            // Agregar límite usando el mismo método de .upfire
+            const db = loadUserFire();
+            if (!db[m.sender]) {
+                db[m.sender] = { limit: limiteGanado, role: 'user' };
+            } else {
+                db[m.sender].limit += limiteGanado;
+            }
+            saveUserFire(db);
+
             shoNhe.sendMessage(m.chat, { 
                 text: `🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join(' ')}\n\n🏆 *Ganaste ${limiteGanado} límite*` 
             }, { quoted: m });
