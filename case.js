@@ -22630,15 +22630,9 @@ case 'tiktok': case 'tiktokdown': case 'ttdown': case 'ttdl': case 'tt': case 't
     if (!isRegistered(m)) { 
         return sendRegister(shoNhe, m, prefix, namabot); 
     } 
-
-    // Cobro de 5 de límite antes de continuar
-    if (!checkLimit(m.sender, 5)) {
-        return shoNherly('No tienes suficiente límite para descargar este video. Necesitas al menos 5.');
-    }
-    updateLimit(m.sender, 5);
-
     updatePopularCommand(command); 
     const levelUpMessage = levelUpdate(command, m.sender); 
+
     if (!text) return shoNherly(`Ejemplo: ${prefix + command} url_tiktok`); 
 
     const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com)/; 
@@ -22656,23 +22650,33 @@ case 'tiktok': case 'tiktokdown': case 'ttdown': case 'ttdl': case 'tt': case 't
 
         if (!videoUrl) return shoNherly('No se pudo obtener la versión HD sin marca de agua.');
 
-        // Enviar el mensaje con botón, título y miniatura
-        let buttonMessage = {
-            image: { url: hasil.cover },
-            caption: `🎥 *Título:* ${hasil.title}\n⏳ *Duración:* ${hasil.duration}\n📍 *Región:* ${hasil.region}\n\n🔽 Presiona el botón para descargar`,
+        // Aplicar el sistema de cobro (Upfire 5 limits)
+        const cobro = await upfire(m.sender, 5);
+        if (!cobro.status) return shoNherly(`No tienes suficientes límites. Te faltan ${cobro.faltantes} límites.`);
+
+        // Crear los botones
+        const buttons = [
+            { buttonId: `${prefix}ttmp3 ${text}`, buttonText: { displayText: '🎵 Descargar Audio' }, type: 1 },
+            { buttonId: `${prefix}ttinfo ${text}`, buttonText: { displayText: 'ℹ️ Información' }, type: 1 }
+        ];
+
+        // Enviar el mensaje con botón
+        const message = {
+            video: { url: videoUrl },
+            caption: `🎬 *Título:* ${hasil.title}\n👤 *Autor:* ${hasil.author.fullname}\n🎶 *Sonido:* ${hasil.music_info.title}\n\n✅ Video en HD sin marca de agua`,
             footer: namabot,
-            buttons: [{ buttonId: `descargar ${videoUrl}`, buttonText: { displayText: "Descargar Video" }, type: 1 }],
-            headerType: 4
+            buttons: buttons,
+            headerType: 5
         };
 
-        await shoNhe.sendMessage(m.chat, buttonMessage, { quoted: m });
+        await shoNhe.sendMessage(m.chat, message, { quoted: m });
 
     } catch (error) { 
         console.error(error);
         shoNherly('Ocurrió un error al descargar el video.');
     } 
     
-    break; 
+    break; // Asegura que el switch-case no continúe ejecutando otros casos
 }
 			case 'toaud':
 			case 'toaudio':
