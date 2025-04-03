@@ -18324,6 +18324,63 @@ break;
            }
 			}
 			break
+		case 'fb': case 'facebook': case 'fbdl': { if (!isRegistered(m)) { return sendRegister(shoNhe, m, prefix, namabot); } updatePopularCommand(command); const levelUpMessage = levelUpdate(command, m.sender); console.log('📢 Procesando descarga de Facebook...');
+
+if (!text) {
+    console.log('⚠️ No se proporcionó ninguna URL.');
+    return shoNherly(`⚠️ Usa el comando de la siguiente manera: ${prefix + command} *url*\n\n🤔 *Ejemplo:*\n${prefix + command} https://www.facebook.com/share/r/19rWQmf5mM/`);
+}
+
+if (!(await firely(m, mess.waits))) return;
+
+try {
+    console.log('📡 Conectando a la API...');
+    let response = await fetchJson(`https://nueva-api.com/api/fbdl?url=${text}`);
+    console.log('🔍 Respuesta API:', JSON.stringify(response, null, 2));
+    
+    if (!response.status || !response.result || !response.result.medias) {
+        console.log('❌ Contenido no encontrado.');
+        return shoNherly('❌ Contenido no encontrado. ¡Asegúrate de que el enlace sea correcto!');
+    }
+    
+    console.log('✅ Contenido encontrado! Procesando...');
+    
+    let media = response.result.medias.find(m => m.quality === 'hd') || response.result.medias.find(m => m.quality === 'sd');
+    
+    if (!media) {
+        console.log('❌ No hay video disponible en ninguna calidad.');
+        return shoNherly('❌ No se encontró video disponible en ninguna calidad.');
+    }
+    
+    console.log(`🎥 Descargando video en calidad: ${media.quality.toUpperCase()}...`);
+    let videoUrl = media.url;
+    let caption = `🎥 *Facebook Video (${media.quality.toUpperCase()})*\n🔗 [Enlace Original](${text})`;
+    
+    await shoNhe.sendMessage(m.chat, {
+        video: { url: videoUrl },
+        caption: caption
+    }, { quoted: hw });
+    
+    console.log('✅ Video enviado correctamente!');
+} catch (err) {
+    console.error('❌ Error:', err);
+    shoNherly('❌ Ocurrió un error. Inténtalo más tarde.');
+}
+
+if (levelUpMessage) {
+    await shoNhe.sendMessage(m.chat, {
+        image: { url: levelUpMessage.image },
+        caption: levelUpMessage.text,
+        footer: "LEVEL UP🔥",
+        buttons: [
+            { buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+            { buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+        ],
+        viewOnce: true,
+    }, { quoted: hw });
+}
+
+} break;
 			case 'getq':
 			{
 				if (!isRegistered(m))
