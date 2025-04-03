@@ -24465,7 +24465,7 @@ shoNhe.sendMessage(m.chat,
 				if (!text) return angryshoNhe(`Ejemplo : ${prefix + command} hola hermana`)
 				if (!(await firely(m, mess.waits))) return;
 				try {
-					const buffer = await getBuffer(`https://siputzx-bart.hf.space/?q=${encodeURIComponent(text)}`)
+					const buffer = await getBuffer(`https://api.hiuraa.my.id/maker/brat?text=${encodeURIComponent(text)}`)
 					shoNhe.sendImageAsSticker(m.chat, buffer, m, { packname: namabot, author: namaowner })
 				} catch (err) {
 					RepshoNheError('Se produjo un error al crear una sticker de imagen. 😞');
