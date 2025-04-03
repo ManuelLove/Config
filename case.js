@@ -3366,9 +3366,9 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
         let recompensa = Math.floor(Math.random() * 5) + 2; // Límite aleatorio entre 2 y 5
         const db = loadUserFire();
             if (!db[m.sender]) {
-                db[m.sender] = { limit: limiteGanado, role: 'user' };
+                db[m.sender] = { limit: recompensa, role: 'user' };
             } else {
-                db[m.sender].limit += limiteGanado;
+                db[m.sender].limit += recompensa;
             }
             saveUserFire(db);
         delete ahorcado[sender];
