@@ -3364,8 +3364,13 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
 
     if (!mensaje.includes("_")) {
         let recompensa = Math.floor(Math.random() * 5) + 2; // Límite aleatorio entre 2 y 5
-        agregarLimite(sender, recompensa); // Agregar límite al usuario ganador
-
+        const db = loadUserFire();
+            if (!db[m.sender]) {
+                db[m.sender] = { limit: limiteGanado, role: 'user' };
+            } else {
+                db[m.sender].limit += limiteGanado;
+            }
+            saveUserFire(db);
         delete ahorcado[sender];
         return `🎉 *¡GANASTE!*\n\nPalabra correcta: *"${palabra}"*\n🏆 *Has ganado ${recompensa} límite*`;
     }
