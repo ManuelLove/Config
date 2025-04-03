@@ -3296,7 +3296,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
         boom[m.sender].pick++; 
 
         if (boom[m.sender].lolos < 1) { 
-            let limiteGanado = Math.floor(Math.random() * 5) + 3; // Gana entre 3 y 7 de límite
+            let limiteGanado = Math.floor(Math.random() * 15) + 7; // Gana entre 3 y 7 de límite
 
             // Agregar límite usando el mismo método de .upfire
             const db = loadUserFire();
@@ -3315,7 +3315,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
             delete boom[m.sender]; // Eliminar la partida
         } else { 
             shoNhe.sendMessage(m.chat, { 
-                text: `✔️ *Casilla segura!*\n${boom[m.sender].board.join(' ')}\n\n❤️ Vidas: ${boom[m.sender].nyawa.length}` 
+                text: `✔️ *Casilla segura!*\n${boom[m.sender].board.join('')}\n\n❤️ Vidas: ${boom[m.sender].nyawa.length}` 
             }, { quoted: m }); 
         } 
     }
