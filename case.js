@@ -22641,44 +22641,47 @@ case 'tiktokvideo':
     }
     updatePopularCommand(command);
     const levelUpMessage = levelUpdate(command, m.sender);
-    
+
     if (!text) return shoNherly(`Ejemplo: ${prefix + command} url_tiktok`);
-    
+
     const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com)/;
     if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!');
-    
+
     try {
         const hasil = await tiktokDl(text);
-        console.log('Hasil dari tiktokDl:', JSON.stringify(hasil, null, 2));
+        console.log('🔍 Resultado de tiktokDl:', JSON.stringify(hasil, null, 2));
 
-        if (!hasil.status) return shoNherly('Error al obtener el video.');
+        if (!hasil || !hasil.status || !hasil.data) return shoNherly('❌ No se pudo obtener el video de TikTok.');
 
-        // Selecciona la mejor versión del video
+        // Busca el mejor video disponible
         let videoUrl = hasil.data.find(item => item.type === 'nowatermark_hd')?.url || 
                        hasil.data.find(item => item.type === 'nowatermark')?.url;
 
-        if (!videoUrl) return shoNherly('No se pudo obtener la versión HD sin marca de agua.');
+        if (!videoUrl) {
+            return shoNherly('⚠️ No se encontró un video en HD sin marca de agua.');
+        }
 
+        console.log('✅ Enviando video:', videoUrl);
+
+        // Enviar el video por WhatsApp
         await shoNhe.sendMessage(m.chat, {
             video: { url: videoUrl },
-            caption: `*📍Título:* ${hasil.title}\n*⏳Duración:* ${hasil.duration}\n*🎃Autor:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
+            caption: `🎥 *Título:* ${hasil.title}\n⏳ *Duración:* ${hasil.duration}s\n👤 *Autor:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
             footer: namabot,
-            buttons: [
-                { buttonId: `${prefix}ttmp3 ${text}`, buttonText: { displayText: "Tiktok Mp3🎶" } }
-            ],
             viewOnce: true
         }, { quoted: m });
 
     } catch (e) {
-        console.error('Error al procesar la URL de TikTok:', e);
-        shoNherly('¡No se pudo procesar la URL! Detalles del error: ' + e.message);
+        console.error('🚨 Error al descargar el video de TikTok:', e);
+        shoNherly('⚠️ No se pudo procesar la URL de TikTok. Intenta con otro enlace.');
     }
 
+    // Mensaje de subida de nivel si aplica
     if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat, {
             image: { url: levelUpMessage.image },
             caption: levelUpMessage.text,
-            footer: "LEVEL UP🔥",
+            footer: "🔥 LEVEL UP",
             buttons: [
                 { buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
                 { buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
