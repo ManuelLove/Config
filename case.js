@@ -3275,21 +3275,24 @@ if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) {
 
     if (selectedIndex < 0 || selectedIndex > 9) return;
 
+    let user = global.db.data.users[m.sender]; // Obtener usuario de la base de datos
+    if (!user) return shoNhe.sendMessage(m.chat, { text: "❌ *No estás registrado en el sistema.*" }, { quoted: m });
+
     if (boom[m.sender].petak[selectedIndex] === 2) { 
         boom[m.sender].board[selectedIndex] = '💣'; 
         boom[m.sender].nyawa.pop(); 
         boom[m.sender].bomb--; 
 
         if (boom[m.sender].nyawa.length < 1) { 
-            let dineroPerdido = Math.floor(Math.random() * 500) + 200; 
-            global.db.data.users[m.sender].money = Math.max(0, global.db.data.users[m.sender].money - dineroPerdido);
-            
+            let dineroPerdido = Math.floor(user.balance * 0.1); // Pierde el 10% de su balance
+            user.balance = Math.max(0, user.balance - dineroPerdido);
+
             shoNhe.sendMessage(m.chat, { 
                 text: `💥 *¡Boom! Perdiste!*\n${boom[m.sender].board.join(' ')}\n\n⚠️ *Perdiste ${dineroPerdido} Dinero*` 
             }, { quoted: m }); 
 
-            clearTimeout(boom[m.sender].waktu); // Detener el timeout del juego
-            delete boom[m.sender]; // Eliminar la partida
+            clearTimeout(boom[m.sender].waktu);
+            delete boom[m.sender]; 
         } else { 
             shoNhe.sendMessage(m.chat, { 
                 text: `💥 *Bomba encontrada!*\n${boom[m.sender].board.join(' ')}\n\n❤️ Vidas restantes: ${boom[m.sender].nyawa.length}` 
@@ -3301,15 +3304,15 @@ if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) {
         boom[m.sender].pick++; 
 
         if (boom[m.sender].lolos < 1) { 
-            let dineroGanado = Math.floor(Math.random() * 1000) + 500; 
-            global.db.data.users[m.sender].money += dineroGanado; 
-            
+            let dineroGanado = Math.floor(user.balance * 0.2); // Gana el 20% de su balance
+            user.balance += dineroGanado;
+
             shoNhe.sendMessage(m.chat, { 
                 text: `🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join(' ')}\n\n🏆 *Ganaste ${dineroGanado} Dinero*` 
             }, { quoted: m });
 
-            clearTimeout(boom[m.sender].waktu); // Detener el timeout del juego
-            delete boom[m.sender]; // Eliminar la partida
+            clearTimeout(boom[m.sender].waktu);
+            delete boom[m.sender]; 
         } else { 
             shoNhe.sendMessage(m.chat, { 
                 text: `✔️ *Casilla segura!*\n${boom[m.sender].board.join(' ')}\n\n❤️ Vidas: ${boom[m.sender].nyawa.length}` 
