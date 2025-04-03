@@ -22626,20 +22626,6 @@ shoNhe.sendMessage(m.chat,
            }
 }
 				break
-function extractTikTokID(url) {
-    try {
-        // Si la URL es un enlace corto, la dejamos igual
-        if (url.includes("vt.tiktok.com")) return url;
-
-        // Buscar el ID del video en URLs largas de TikTok
-        let match = url.match(/\/video\/(\d+)/);
-        return match ? `https://www.tiktok.com/@_/video/${match[1]}` : null;
-    } catch (e) {
-        console.error("Error extrayendo ID de TikTok:", e);
-        return null;
-    }
-}
-
 case 'tiktok':
 case 'tiktokdown':
 case 'ttdown':
@@ -22661,7 +22647,22 @@ case 'tiktokvideo':
     const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com|vt\.tiktok\.com)/;
     if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!');
 
-    // 🔹 Normalizar la URL para evitar errores
+    // 🔹 Función para extraer el ID de TikTok de URLs largas
+    function extractTikTokID(url) {
+        try {
+            // Si la URL es un enlace corto, la dejamos igual
+            if (url.includes("vt.tiktok.com")) return url;
+
+            // Buscar el ID del video en URLs largas de TikTok
+            let match = url.match(/\/video\/(\d+)/);
+            return match ? `https://www.tiktok.com/@_/video/${match[1]}` : null;
+        } catch (e) {
+            console.error("Error extrayendo ID de TikTok:", e);
+            return null;
+        }
+    }
+
+    // 🔹 Normalizar la URL antes de enviarla a tiktokDl()
     const cleanUrl = extractTikTokID(text);
     if (!cleanUrl) return shoNherly('⚠️ No se pudo extraer el ID del video. Usa un enlace válido.');
 
