@@ -5656,7 +5656,7 @@ break;
         let currentNumber = gameSessions[m.chat].number;
         let isBoom = currentNumber % 7 === 0 || currentNumber.toString().includes("7");
 
-        if ((isBoom && body !== "Boom") || (!isBoom && body !== currentNumber.toString())) {
+        if ((isBoom && body.toLowerCase() !== "boom") || (!isBoom && body !== currentNumber.toString())) {
             shoNhe.sendMessage(m.chat, { text: `¡Error! El número correcto era: ${isBoom ? "Boom" : currentNumber}` });
             delete gameSessions[m.chat]; // Termina el juego en este chat
         } else {
