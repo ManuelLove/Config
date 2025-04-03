@@ -24682,62 +24682,49 @@ break;
            }
 			}
 			break
-			case "brat2":
-			{
-				if (!isRegistered(m))
+			case 'brat2': {
+			if (!isRegistered(m))
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly("[❗] Input teks tidak ditemukan! Kirim perintah dengan format: .bratvid <teks>");
-				try
-				{
-					let brat = `https://fgsi-brat.hf.space/?text=${encodeURIComponent(text)}&isVideo=true`;
-					let response = await axios.get(brat,
-					{
-						responseType: "arraybuffer"
-					});
-					let videoBuffer = response.data;
-					let stickerBuffer = await shoNhe.sendVideoAsSticker(m.chat, videoBuffer, m,
-					{
-						packname: "Stiker By",
-						author: "TechFix - Botz",
-					});
-					console.log("Stiker berhasil dibuat:", stickerBuffer);
+				if (!text) return angryshoNhe(`Ejemplo : ${prefix + command} hola hermana`)
+				if (!(await firely(m, mess.waits))) return;
+				try {
+					const buffer = await getBuffer(`https://api.hiuraa.my.id/maker/brat-green?text=${encodeURIComponent(text)}`)
+					shoNhe.sendImageAsSticker(m.chat, buffer, m, { packname: namabot, author: namaowner })
+				} catch (err) {
+					RepshoNheError('Se produjo un error al crear una sticker de imagen. 😞');
 				}
-				catch (err)
+				if (levelUpMessage)
 				{
-					console.error("Error:", err);
-					shoNherly("[❗] Maaf, terjadi kesalahan saat mencoba membuat stiker video. Silakan coba lagi.");
-				}
-				if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
+					await shoNhe.sendMessage(m.chat,
 					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
+						image: levelUpMessage.image,
+						caption: levelUpMessage.text,
+						footer: "LEVEL UP🔥",
+						buttons: [
 						{
-							displayText: "TQTO 💡"
-						}
+							buttonId: `${prefix}cek`,
+							buttonText:
+							{
+								displayText: "CEK FIRE 🔥"
+							}
+						},
+						{
+							buttonId: `${prefix}menu`,
+							buttonText:
+							{
+								displayText: "MENU 🍄"
+							}
+						}],
+						viewOnce: true,
 					},
 					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
+						quoted: hw
+					});
+				}
 			}
 			break;
 			case 'toptv':
