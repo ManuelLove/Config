@@ -483,7 +483,6 @@ const tebakkimia = {}
 const tebaklirik = {}
 const tebaktebakan = {}
 const mathgame = {}
-let boom = db.game.boom = []
 // Tebak Bomb (Ahora usa Dinero en lugar de EXP)  
 let pilih = '🌀', bomb = '💣';  
 if (m.sender in boom) {  
