@@ -22626,113 +22626,68 @@ shoNhe.sendMessage(m.chat,
            }
 }
 				break
-case 'tiktok': case 'tiktokdown': case 'ttdown': case 'ttdl': case 'tt': case 'ttmp4': case 'ttvideo': case 'tiktokmp4': case 'tiktokvideo': { 
-    if (!isRegistered(m)) { 
-        return sendRegister(shoNhe, m, prefix, namabot); 
-    } 
-    updatePopularCommand(command); 
-    const levelUpMessage = levelUpdate(command, m.sender); 
-    if (!text) return shoNherly(`Ejemplo: ${prefix + command} url_tiktok`); 
+case 'tiktok':
+case 'tiktokdown':
+case 'ttdown':
+case 'ttdl':
+case 'tt':
+case 'ttmp4':
+case 'ttvideo':
+case 'tiktokmp4':
+case 'tiktokvideo':
+{
+    if (!isRegistered(m)) {
+        return sendRegister(shoNhe, m, prefix, namabot);
+    }
+    updatePopularCommand(command);
+    const levelUpMessage = levelUpdate(command, m.sender);
+    
+    if (!text) return shoNherly(`Ejemplo: ${prefix + command} url_tiktok`);
+    
+    const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com)/;
+    if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!');
+    
+    try {
+        const hasil = await tiktokDl(text);
+        console.log('Hasil dari tiktokDl:', JSON.stringify(hasil, null, 2));
 
-    const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com)/; 
-    if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!'); 
-
-    try { 
-        const hasil = await tiktokDl(text); 
-        console.log('Hasil dari tiktokDl:', JSON.stringify(hasil, null, 2)); 
-        if (!(await firely(m, mess.waits))) return;
         if (!hasil.status) return shoNherly('Error al obtener el video.');
-        
-        // Obtener el enlace en HD sin marca de agua
-        let videoUrl = hasil.data.find(item => item.type === 'nowatermark_hd')?.url 
-                    || hasil.data.find(item => item.type === 'nowatermark')?.url;
+
+        // Selecciona la mejor versión del video
+        let videoUrl = hasil.data.find(item => item.type === 'nowatermark_hd')?.url || 
+                       hasil.data.find(item => item.type === 'nowatermark')?.url;
 
         if (!videoUrl) return shoNherly('No se pudo obtener la versión HD sin marca de agua.');
 
-        // Enviar el video
-        if (hasil && hasil.data && hasil.data.length > 0)
-					{
-						if (hasil.size_nowm)
-						{
-							await shoNhe.sendMessage(m.chat,
-							{
-								video:
-								{
-									url: hasil.data[1].url
-								},
-								caption: `*📍Title:* ${hasil.title}\n*⏳Duration:* ${hasil.duration}\n*🎃Author:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
-								footer: namabot,
-								buttons: [
-								{
-									buttonId: `${prefix}ttmp3 ${text}`,
-									buttonText:
-									{
-										displayText: "Tiktok Mp3🎶"
-									}
-								}],
-								viewOnce: true,
-							},
-							{
-								quoted: m
-							});
-						}
-						else
-						{
-							for (let i = 0; i < hasil.data.length; i++)
-							{
-								await shoNhe.sendMessage(m.chat,
-								{
-									video:
-									{
-										url: hasil.data[i].url
-									},
-									caption: `*🚀Video:* ${i + 1}`,
-								},
-								{
-									quoted: m
-								});
-							}
-						}
-					}
-					else
-					{
-						shoNherly('Data TikTok tidak ditemukan atau tidak valid!');
-					}
-				}
-				catch (e)
-				{
-					console.error('Error saat memproses URL TikTok:', e);
-					shoNherly('Gagal memproses URL! Detail error: ' + e.message);
-				}
-				if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-			}
-			break
+        await shoNhe.sendMessage(m.chat, {
+            video: { url: videoUrl },
+            caption: `*📍Título:* ${hasil.title}\n*⏳Duración:* ${hasil.duration}\n*🎃Autor:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
+            footer: namabot,
+            buttons: [
+                { buttonId: `${prefix}ttmp3 ${text}`, buttonText: { displayText: "Tiktok Mp3🎶" } }
+            ],
+            viewOnce: true
+        }, { quoted: m });
+
+    } catch (e) {
+        console.error('Error al procesar la URL de TikTok:', e);
+        shoNherly('¡No se pudo procesar la URL! Detalles del error: ' + e.message);
+    }
+
+    if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat, {
+            image: { url: levelUpMessage.image },
+            caption: levelUpMessage.text,
+            footer: "LEVEL UP🔥",
+            buttons: [
+                { buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+                { buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+            ],
+            viewOnce: true
+        }, { quoted: hw });
+    }
+}
+break;
 			case 'toaud':
 			case 'toaudio':
 			{
