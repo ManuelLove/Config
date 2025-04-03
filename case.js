@@ -22704,8 +22704,6 @@ case 'tiktokvideo':
 							}
 						}
 					}
-					else
-{
     } catch (e) {
         console.error('🚨 Error al descargar el video de TikTok:', e);
         shoNherly('⚠️ No se pudo procesar la URL de TikTok. Intenta con otro enlace.');
