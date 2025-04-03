@@ -509,7 +509,7 @@ if (m.sender in boom) {
             let dineroPerdido = Math.floor(Math.random() * 500) + 200; // Rango de pérdida: 200 a 500 dinero  
             global.db.data.users[m.sender].money = Math.max(0, global.db.data.users[m.sender].money - dineroPerdido);  
   
-            await m.reply(`*SELECCIONA UN NÚMERO*  
+            await response.text(`*SELECCIONA UN NÚMERO*  
   
 Fuiste alcanzado por una bomba  
 ${brd}  
@@ -521,7 +521,7 @@ Bombas restantes: ${bombasRestantes}
   
             delete boom[m.sender]; // Eliminar la partida después de perder  
         } else {  
-            await m.reply(`*SELECCIONA UN NÚMERO*  
+            await response.text(`*SELECCIONA UN NÚMERO*  
   
 Fuiste alcanzado por una bomba  
 ${brd}  
