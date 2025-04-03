@@ -22626,7 +22626,7 @@ shoNhe.sendMessage(m.chat,
            }
 }
 				break
-case 'tiktok': case 'tiktokdown': case 'ttdown': case 'ttdl': case 'tt': case 'ttmp4': case 'ttvideo': case 'tiktokmp4': case 'tiktokvideo': { if (!isRegistered(m)) { return sendRegister(shoNhe, m, prefix, namabot); } updatePopularCommand(command); const levelUpMessage = levelUpdate(command, m.sender); if (!text) return shoNherly(Ejemplo: ${prefix + command} url_tiktok); const tiktokRegex = /(?:https?://)?(?:www.)?(tiktok.com|vm.tiktok.com)/; if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!'); try { const hasil = await tiktokDl(text); console.log('Hasil dari tiktokDl:', JSON.stringify(hasil, null, 2)); if (!(await firely(m, mess.waits))) return;
+case 'tiktok': case 'tiktokdown': case 'ttdown': case 'ttdl': case 'tt': case 'ttmp4': case 'ttvideo': case 'tiktokmp4': case 'tiktokvideo': { if (!isRegistered(m)) { return sendRegister(shoNhe, m, prefix, namabot); } updatePopularCommand(command); const levelUpMessage = levelUpdate(command, m.sender); if (!text) return shoNherly(`Ejemplo: ${prefix + command} url_tiktok`); const tiktokRegex = /(?:https?://)?(?:www.)?(tiktok.com|vm.tiktok.com)/; if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!'); try { const hasil = await tiktokDl(text); console.log('Hasil dari tiktokDl:', JSON.stringify(hasil, null, 2)); if (!(await firely(m, mess.waits))) return;
 
 if (hasil && hasil.data && hasil.data.length > 0) {
         // Manejar caso donde el contenido es una imagen en "Photo Mode"
