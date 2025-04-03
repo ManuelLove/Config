@@ -22647,14 +22647,11 @@ case 'tiktokvideo':
     const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com|vt\.tiktok\.com)/;
     if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!');
 
-    // 🔹 Función mejorada para extraer ID del video de TikTok
+    // 🔹 Función mejorada para extraer el ID y generar un enlace corto
     function extractTikTokID(url) {
         try {
-            if (url.includes("vt.tiktok.com") || url.includes("vm.tiktok.com")) {
-                return url; // Devolver directamente si es un enlace corto (redirige solo)
-            }
             let match = url.match(/\/video\/(\d+)/);
-            return match ? `https://www.tiktok.com/@_/video/${match[1]}` : null;
+            return match ? `https://vt.tiktok.com/${match[1]}` : null;
         } catch (e) {
             console.error("Error extrayendo ID de TikTok:", e);
             return null;
@@ -22667,7 +22664,7 @@ case 'tiktokvideo':
     try {
         const hasil = await tiktokDl(cleanUrl);
         console.log('🔍 Resultado de tiktokDl:', JSON.stringify(hasil, null, 2));
-
+	if (!(await firely(m, mess.waits))) return;
         if (!hasil || !hasil.status || !hasil.data) return shoNherly('❌ No se pudo obtener el video de TikTok.');
 
         let videoUrl = hasil.data.find(item => item.type === 'nowatermark_hd')?.url || 
@@ -22681,7 +22678,7 @@ case 'tiktokvideo':
             m.chat, 
             {
                 video: { url: videoUrl },
-                caption: `🎥 *Título:* ${hasil.title}\n⏳ *Duración:* ${hasil.duration}s\n👤 *Autor:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
+                caption: `🎥 *Título:* ${hasil.title}\n⏳ *Duración:* ${hasil.duration}s\n👤 *Autor:* ${hasil.author.nickname} (@${hasil.author.fullname})\n🔗 *Enlace corto:* ${cleanUrl}`,
                 footer: namabot,
                 buttons: [
                     { buttonId: `${prefix}ttmp3 ${text}`, buttonText: { displayText: "🎶 Tiktok Mp3" } }
