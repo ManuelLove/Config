@@ -3269,7 +3269,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				else emote('❌');
 			}
 		}
-		// Manejo de selección de casillas en BOOM
+	// Manejo de selección de casillas en BOOM
 if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) { 
     let selectedIndex = parseInt(body.trim()) - 1;
     if (selectedIndex < 0 || selectedIndex > 9) return;
@@ -3280,11 +3280,8 @@ if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) {
         boom[m.sender].bomb--; 
 
         if (boom[m.sender].nyawa.length < 1) { 
-            let limitePerdido = Math.floor(Math.random() * 3) + 1; // Pierde entre 1 y 3 de límite
-            global.db.data.users[m.sender].limit = Math.max(0, global.db.data.users[m.sender].limit - limitePerdido);
-            
             shoNhe.sendMessage(m.chat, { 
-                text: `💥 *¡Boom! Perdiste!*\n${boom[m.sender].board.join(' ')}\n\n⚠️ *Perdiste ${limitePerdido} límite*` 
+                text: `💥 *¡Boom! Perdiste!*\n${boom[m.sender].board.join(' ')}\n\n⚠️ ¡Inténtalo de nuevo!` 
             }, { quoted: m }); 
 
             clearTimeout(boom[m.sender].waktu);
@@ -3302,6 +3299,7 @@ if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) {
         if (boom[m.sender].lolos < 1) { 
             let limiteGanado = Math.floor(Math.random() * 5) + 3; // Gana entre 3 y 7 de límite
             global.db.data.users[m.sender].limit += limiteGanado;
+            saveUserFire(global.db); // 🔥 Guardar cambios en la base de datos
             
             shoNhe.sendMessage(m.chat, { 
                 text: `🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join(' ')}\n\n🏆 *Ganaste ${limiteGanado} límite*` 
