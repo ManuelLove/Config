@@ -469,6 +469,7 @@ const tebakml = {}
 const tebakchara = {}
 const tebaklogo = {}
 const boom = {}
+const ahorcado = {}
 const tebakaplikasi = {}
 const tebakkata = {}
 const asahotak = {}
@@ -3320,6 +3321,49 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
         } 
     }
 }
+if (m.sender in ahorcado && m.text.length === 1 && /^[a-zA-Z]$/.test(m.text)) {
+    let juego = ahorcado[m.sender];
+    let letra = m.text.toLowerCase();
+
+    if (!juego.letrasAdivinadas.includes(letra)) {
+        juego.letrasAdivinadas.push(letra);
+        if (!juego.palabra.includes(letra)) juego.intentos--;
+    }
+
+    let mensaje = ocultarPalabra(juego.palabra, juego.letrasAdivinadas);
+    let respuesta = juegoTerminado(m.sender, mensaje, juego.palabra, juego.letrasAdivinadas, juego.intentos);
+
+    if (juego.intentos === 0 || !mensaje.includes("_")) {
+        shoNherly(respuesta);
+        delete ahorcado[m.sender];
+    } else {
+        let letrasErradas = juego.letrasAdivinadas.filter(l => !juego.palabra.includes(l)).join(", ");
+        shoNherly(`${respuesta}\n\n❌ *Letras incorrectas usadas:* ${letrasErradas || "Ninguna"}`);
+    }
+}
+function elegirPalabraAleatoria() {
+    return palabras[Math.floor(Math.random() * palabras.length)];
+}
+
+function ocultarPalabra(palabra, letrasAdivinadas) {
+    return palabra.split('').map(letra => letrasAdivinadas.includes(letra) ? letra : '_').join(' ');
+}
+
+function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
+    if (intentos === 0) {
+        delete ahorcado[sender];
+        return `😵 *¡PERDISTE!*\n\nLa palabra era: *"${palabra}"*`;
+    }
+
+    if (!mensaje.includes("_")) {
+        let recompensa = Math.floor(Math.random() * 500) + 100;
+        global.db.data.users[sender].limit += recompensa;
+        delete ahorcado[sender];
+        return `🎉 *¡GANASTE!*\n\nPalabra correcta: *"${palabra}"*\n🏆 *Has ganado ${recompensa} límite*`;
+    }
+
+    return `🎮 *AHORCADO*\n\n✍️ *Progreso:* ${mensaje}\n📉 Intentos restantes: *${intentos}*\n\n¡Escribe otra letra para continuar!`;
+}
 		async function cekgame(gamejid)
 		{
 			if (tekateki[gamejid])
@@ -5721,6 +5765,19 @@ break;
     };
 if (!(await firely(m, mess.waits))) return;
     m.reply(`*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n¡Elige un número! ¡Y no te dejes alcanzar por una bomba!\n\n🔸 Bombas: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
+}
+break;
+case 'ahorcado': {
+    if (ahorcado[m.sender]) return shoNherly("⚠️ Ya tienes un juego en curso. ¡Termina ese primero!");
+
+    const palabra = elegirPalabraAleatoria();
+    const letrasAdivinadas = [];
+    const intentos = 6;
+
+    ahorcado[m.sender] = { palabra, letrasAdivinadas, intentos };
+
+    let mensaje = ocultarPalabra(palabra, letrasAdivinadas);
+    shoNherly(`🎮 *AHORCADO*\n\n✍️ Adivina la palabra:\n${mensaje}\n\n📉 Intentos restantes: *${intentos}*\n\n¡Escribe una letra para comenzar!`);
 }
 break;
 			case 'tebaklogo':
