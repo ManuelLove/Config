@@ -469,7 +469,18 @@ const tebakml = {}
 const tebakchara = {}
 const tebaklogo = {}
 const boom = {}
-const ahorcado = {}
+const ahorcado = {};
+const intentosMaximos = 6;
+
+const dibujosAhorcado = [
+    "``` \n  ____ \n  |  | \n  |  😵 \n  |  /|\\ \n  |   / \\ \n _|_```", // 0 intentos restantes
+    "``` \n  ____ \n  |  | \n  |  😵 \n  |  /|\\ \n  |   /  \n _|_```", // 1 intento restante
+    "``` \n  ____ \n  |  | \n  |  😵 \n  |  /|\\ \n  |    \n _|_```", // 2 intentos restantes
+    "``` \n  ____ \n  |  | \n  |  😵 \n  |  /|  \n  |    \n _|_```", // 3 intentos restantes
+    "``` \n  ____ \n  |  | \n  |  😵 \n  |   |  \n  |    \n _|_```", // 4 intentos restantes
+    "``` \n  ____ \n  |  | \n  |  😵 \n  |     \n  |    \n _|_```", // 5 intentos restantes
+    "``` \n  ____ \n  |  | \n  |     \n  |     \n  |    \n _|_```"  // 6 intentos restantes (inicio)
+];
 const tebakaplikasi = {}
 const tebakkata = {}
 const asahotak = {}
@@ -3348,18 +3359,7 @@ const palabras = [
   "computadora", "botsito", "reggaeton", "economía", "electrónica", "facebook", 
   "WhatsApp", "instagram", "tiktok", "presidente", "bot", "películas", "gata", "gatabot"
 ];
-function mostrarAhorcado(intentos) {
-  const dibujo = [
-    " ____\n |  |\n |  😵\n |  /|\\\n |   / \\\n_|_",  // 0 intentos (ahorcado)
-    " ____\n |  |\n |  😵\n |  /|\\\n |   /\n_|_",   // 1 intento restante
-    " ____\n |  |\n |  😵\n |  /|\\\n |\n_|_",       // 2 intentos restantes
-    " ____\n |  |\n |  😵\n |  /|\n |\n_|_",       // 3 intentos restantes
-    " ____\n |  |\n |  😵\n |   |\n |\n_|_",       // 4 intentos restantes
-    " ____\n |  |\n |  😵\n |\n |\n_|_",           // 5 intentos restantes
-    " ____\n |  |\n |\n |\n |\n_|_"                // 6 intentos (juego inicia)
-  ];
-  return dibujo[intentos];
-}
+
 function elegirPalabraAleatoria() {
     return palabras[Math.floor(Math.random() * palabras.length)];
 }
