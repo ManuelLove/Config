@@ -3348,13 +3348,6 @@ const palabras = [
   "computadora", "botsito", "reggaeton", "economía", "electrónica", "facebook", 
   "WhatsApp", "instagram", "tiktok", "presidente", "bot", "películas", "gata", "gatabot"
 ];
-function elegirPalabraAleatoria() {
-    return palabras[Math.floor(Math.random() * palabras.length)];
-}
-
-function ocultarPalabra(palabra, letrasAdivinadas) {
-    return palabra.split('').map(letra => letrasAdivinadas.includes(letra) ? letra : '_').join(' ');
-}
 function mostrarAhorcado(intentos) {
   const dibujo = [
     " ____\n |  |\n |  😵\n |  /|\\\n |   / \\\n_|_",  // 0 intentos (ahorcado)
@@ -3367,6 +3360,14 @@ function mostrarAhorcado(intentos) {
   ];
   return dibujo[intentos];
 }
+function elegirPalabraAleatoria() {
+    return palabras[Math.floor(Math.random() * palabras.length)];
+}
+
+function ocultarPalabra(palabra, letrasAdivinadas) {
+    return palabra.split('').map(letra => letrasAdivinadas.includes(letra) ? letra : '_').join(' ');
+}
+
 function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
     if (intentos === 0) {
         delete ahorcado[sender];
