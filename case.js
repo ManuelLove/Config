@@ -3311,11 +3311,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
         }
         saveUserFire(db);
 
-        shoNherly(`🎉 *¡Ganaste!* Has recibido ${limiteGanado} límite.`, {
+        shoNherly(`🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join('')}\n\n🏆 *Ganaste ${limiteGanado} límite*`, {
             mentions: [m.sender]
         });
     } else {
-        shoNherly("❌ No puedes recibir recompensas por ser Owner.", { mentions: [m.sender] });
+        shoNherly("🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
     }
 
     delete boom[m.sender];
@@ -3382,17 +3382,14 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
         }
         saveUserFire(db);
 
-        shoNherly(`🎉 *¡FELICIDADES!* Ganaste *${recompensa} límite*.`, {
+        shoNherly(`🎉 *¡GANASTE!*\n\nPalabra correcta: *"${palabra}"*\n🏆 *Has ganado ${recompensa} límite*`, {
             mentions: [m.sender]
         });
     } else {
-        shoNherly("❌ No puedes recibir recompensas por ser Owner.", { mentions: [m.sender] });
+        shoNherly("🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
     }
 
-    delete ahorcado[m.sender];
-        return `🎉 *¡GANASTE!*\n\nPalabra correcta: *"${palabra}"*\n🏆 *Has ganado ${recompensa} límite*`;
-    }
-
+    delete ahorcado[m.sender];       
     return `🎮 *AHORCADO*\n\n✍️ *Progreso:* ${mensaje}\n📉 Intentos restantes: *${intentos}*\n\n¡Escribe otra letra para continuar!`;
 }
 		async function cekgame(gamejid)
