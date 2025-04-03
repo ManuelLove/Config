@@ -3269,14 +3269,13 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				else emote('❌');
 			}
 		}
-	// Manejo de selección de casillas en BOOM
+	const rpPartisipasi = 100; // RP por jugar
+const rpJackpot = 10000; // RP si ganas
+
 if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) { 
     let selectedIndex = parseInt(body.trim()) - 1;
 
     if (selectedIndex < 0 || selectedIndex > 9) return;
-
-    let user = global.db.data.users[m.sender]; // Obtener usuario de la base de datos
-    if (!user) return shoNhe.sendMessage(m.chat, { text: "❌ *No estás registrado en el sistema.*" }, { quoted: m });
 
     if (boom[m.sender].petak[selectedIndex] === 2) { 
         boom[m.sender].board[selectedIndex] = '💣'; 
@@ -3284,11 +3283,11 @@ if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) {
         boom[m.sender].bomb--; 
 
         if (boom[m.sender].nyawa.length < 1) { 
-            let dineroPerdido = Math.floor(user.balance * 0.1); // Pierde el 10% de su balance
-            user.balance = Math.max(0, user.balance - dineroPerdido);
-
+            let rpPerdido = Math.floor(Math.random() * 500) + 200; 
+            global.db.data.users[m.sender].money = Math.max(0, global.db.data.users[m.sender].money - rpPerdido);
+            
             shoNhe.sendMessage(m.chat, { 
-                text: `💥 *¡Boom! Perdiste!*\n${boom[m.sender].board.join(' ')}\n\n⚠️ *Perdiste ${dineroPerdido} Dinero*` 
+                text: `💥 *¡Boom! Perdiste!*\n${boom[m.sender].board.join(' ')}\n\n⚠️ *Perdiste ${rpPerdido} RP*` 
             }, { quoted: m }); 
 
             clearTimeout(boom[m.sender].waktu);
@@ -3304,11 +3303,10 @@ if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) {
         boom[m.sender].pick++; 
 
         if (boom[m.sender].lolos < 1) { 
-            let dineroGanado = Math.floor(user.balance * 0.2); // Gana el 20% de su balance
-            user.balance += dineroGanado;
-
+            global.db.data.users[m.sender].money += rpJackpot; 
+            
             shoNhe.sendMessage(m.chat, { 
-                text: `🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join(' ')}\n\n🏆 *Ganaste ${dineroGanado} Dinero*` 
+                text: `🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join(' ')}\n\n🏆 *Ganaste ${rpJackpot} RP*` 
             }, { quoted: m });
 
             clearTimeout(boom[m.sender].waktu);
@@ -3319,6 +3317,12 @@ if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) {
             }, { quoted: m }); 
         } 
     }
+}
+
+// Dar RP por participar
+if (m.sender in boom) {
+    global.db.data.users[m.sender].money += rpPartisipasi;
+    shoNhe.sendMessage(m.chat, { text: `🎁 *Has recibido ${rpPartisipasi} RP por jugar!*` }, { quoted: m });
 }
 		async function cekgame(gamejid)
 		{
