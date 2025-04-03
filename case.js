@@ -22647,22 +22647,18 @@ case 'tiktokvideo':
     const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com|vt\.tiktok\.com)/;
     if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!');
 
-    // 🔹 Función mejorada para extraer el ID y generar un enlace corto
-    function extractTikTokID(url) {
-        try {
-            let match = url.match(/\/video\/(\d+)/);
-            return match ? `https://vt.tiktok.com/${match[1]}` : null;
-        } catch (e) {
-            console.error("Error extrayendo ID de TikTok:", e);
-            return null;
-        }
+    // 🔹 FUNCIÓN PARA CONVERTIR ENLACES LARGOS A CORTOS
+    function convertToShortLink(url) {
+        let match = url.match(/\/video\/(\d+)/);
+        return match ? `https://vt.tiktok.com/${match[1]}` : url;
     }
 
-    const cleanUrl = extractTikTokID(text);
-    if (!cleanUrl) return shoNherly('⚠️ No se pudo extraer el ID del video. Usa un enlace válido.');
+    // 🔥 CONVERTIR URL LARGA A CORTA
+    let shortUrl = convertToShortLink(text);
+    console.log("✅ Enlace procesado:", shortUrl);
 
     try {
-        const hasil = await tiktokDl(cleanUrl);
+        const hasil = await tiktokDl(shortUrl);
         console.log('🔍 Resultado de tiktokDl:', JSON.stringify(hasil, null, 2));
 	if (!(await firely(m, mess.waits))) return;
         if (!hasil || !hasil.status || !hasil.data) return shoNherly('❌ No se pudo obtener el video de TikTok.');
@@ -22678,7 +22674,7 @@ case 'tiktokvideo':
             m.chat, 
             {
                 video: { url: videoUrl },
-                caption: `🎥 *Título:* ${hasil.title}\n⏳ *Duración:* ${hasil.duration}s\n👤 *Autor:* ${hasil.author.nickname} (@${hasil.author.fullname})\n🔗 *Enlace corto:* ${cleanUrl}`,
+                caption: `🎥 *Título:* ${hasil.title}\n⏳ *Duración:* ${hasil.duration}s\n👤 *Autor:* ${hasil.author.nickname} (@${hasil.author.fullname})\n🔗 *Enlace corto:* ${shortUrl}`,
                 footer: namabot,
                 buttons: [
                     { buttonId: `${prefix}ttmp3 ${text}`, buttonText: { displayText: "🎶 Tiktok Mp3" } }
