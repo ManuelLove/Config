@@ -22626,58 +22626,39 @@ shoNhe.sendMessage(m.chat,
            }
 }
 				break
-case 'tiktok': case 'tiktokdown': case 'ttdown': case 'ttdl': case 'tt': case 'ttmp4': case 'ttvideo': case 'tiktokmp4': case 'tiktokvideo': { if (!isRegistered(m)) { return sendRegister(shoNhe, m, prefix, namabot); } updatePopularCommand(command); const levelUpMessage = levelUpdate(command, m.sender); if (!text) return shoNherly(`Ejemplo: ${prefix + command} url_tiktok`); const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com)/; if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!'); try { const hasil = await tiktokDl(text); console.log('Hasil dari tiktokDl:', JSON.stringify(hasil, null, 2)); if (!(await firely(m, mess.waits))) return;
+case 'tiktok': case 'tiktokdown': case 'ttdown': case 'ttdl': case 'tt': case 'ttmp4': case 'ttvideo': case 'tiktokmp4': case 'tiktokvideo': { 
+    if (!isRegistered(m)) { 
+        return sendRegister(shoNhe, m, prefix, namabot); 
+    } 
+    updatePopularCommand(command); 
+    const levelUpMessage = levelUpdate(command, m.sender); 
+    if (!text) return shoNherly(`Ejemplo: ${prefix + command} url_tiktok`); 
 
-if (hasil && hasil.data && hasil.data.length > 0) {
-        // Manejar caso donde el contenido es una imagen en "Photo Mode"
-        if (hasil.data[0].type === "photo") {
-            return shoNhe.sendMessage(m.chat, {
-                image: { url: hasil.data[0].url },
-                caption: `Este es un post en modo foto en TikTok.`
-            }, { quoted: m });
-        }
+    const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com)/; 
+    if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!'); 
+
+    try { 
+        const hasil = await tiktokDl(text); 
+        console.log('Hasil dari tiktokDl:', JSON.stringify(hasil, null, 2)); 
         
-        // Buscar mejor calidad disponible
-        let videoUrl = hasil.data.find(v => v.type === "nowatermark_hd")?.url ||
-                       hasil.data.find(v => v.type === "nowatermark")?.url ||
-                       hasil.data.find(v => v.type === "watermark")?.url;
+        if (!hasil.status) return shoNherly('Error al obtener el video.');
+        
+        // Obtener el enlace en HD sin marca de agua
+        let videoUrl = hasil.data.find(item => item.type === 'nowatermark_hd')?.url 
+                    || hasil.data.find(item => item.type === 'nowatermark')?.url;
 
-        if (!videoUrl) {
-            return shoNherly('¡No se pudo obtener el video! Intenta con otro enlace o revisa si el video es privado.');
-        }
+        if (!videoUrl) return shoNherly('No se pudo obtener la versión HD sin marca de agua.');
 
-        await shoNhe.sendMessage(m.chat, {
-            video: { url: videoUrl },
-            caption: `*📍Título:* ${hasil.title || "No disponible"}\n*⏳Duración:* ${hasil.duration}\n*🎃Autor:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
-            footer: namabot,
-            buttons: [{
-                buttonId: `${prefix}ttmp3 ${text}`,
-                buttonText: { displayText: "Tiktok Mp3🎶" }
-            }],
-            viewOnce: true,
-        }, { quoted: m });
-    } else {
-        shoNherly('¡Datos de TikTok no encontrados o no válidos!');
-    }
-} catch (e) {
-    console.error('Error al procesar URL TikTok:', e);
-    shoNherly('¡No se pudo procesar la URL! Detalles del error: ' + e.message);
+        // Enviar el video
+        await shoNhe.sendMessage(m.chat, { video: { url: videoUrl }, caption: hasil.title }, { quoted: m });
+
+    } catch (error) { 
+        console.error(error);
+        shoNherly('Ocurrió un error al descargar el video.');
+    } 
+    
+    break; // Asegura que el switch-case no continúe ejecutando otros casos
 }
-
-if (levelUpMessage) {
-    await shoNhe.sendMessage(m.chat, {
-        image: { url: levelUpMessage.image },
-        caption: levelUpMessage.text,
-        footer: "LEVEL UP🔥",
-        buttons: [
-            { buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
-            { buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
-        ],
-        viewOnce: true,
-    }, { quoted: hw });
-}
-
-} break;
 			case 'toaud':
 			case 'toaudio':
 			{
