@@ -22630,6 +22630,13 @@ case 'tiktok': case 'tiktokdown': case 'ttdown': case 'ttdl': case 'tt': case 't
     if (!isRegistered(m)) { 
         return sendRegister(shoNhe, m, prefix, namabot); 
     } 
+
+    // Cobro de 5 de límite antes de continuar
+    if (!checkLimit(m.sender, 5)) {
+        return shoNherly('No tienes suficiente límite para descargar este video. Necesitas al menos 5.');
+    }
+    updateLimit(m.sender, 5);
+
     updatePopularCommand(command); 
     const levelUpMessage = levelUpdate(command, m.sender); 
     if (!text) return shoNherly(`Ejemplo: ${prefix + command} url_tiktok`); 
@@ -22649,27 +22656,13 @@ case 'tiktok': case 'tiktokdown': case 'ttdown': case 'ttdl': case 'tt': case 't
 
         if (!videoUrl) return shoNherly('No se pudo obtener la versión HD sin marca de agua.');
 
-        // Construir el mensaje con detalles del video
-        let messageText = `📹 *Título:* ${hasil.title}\n` +
-                          `⏳ *Duración:* ${hasil.duration}\n` +
-                          `👀 *Vistas:* ${hasil.stats.views}\n` +
-                          `❤️ *Likes:* ${hasil.stats.likes}\n` +
-                          `💬 *Comentarios:* ${hasil.stats.comment}\n` +
-                          `🔄 *Compartido:* ${hasil.stats.share}\n` +
-                          `🎵 *Sonido:* ${hasil.music_info.title} - ${hasil.music_info.author}\n\n` +
-                          `🔗 *Link:* ${text}`;
-
-        // Botón de descarga original (si lo tenías antes)
-        let buttons = [
-            { buttonId: `descargar ${videoUrl}`, buttonText: { displayText: "📥 Descargar" }, type: 1 }
-        ];
-
+        // Enviar el mensaje con botón, título y miniatura
         let buttonMessage = {
-            video: { url: videoUrl },
-            caption: messageText,
-            footer: "🔰 TikTok Downloader Bot",
-            buttons: buttons,
-            headerType: 5
+            image: { url: hasil.cover },
+            caption: `🎥 *Título:* ${hasil.title}\n⏳ *Duración:* ${hasil.duration}\n📍 *Región:* ${hasil.region}\n\n🔽 Presiona el botón para descargar`,
+            footer: namabot,
+            buttons: [{ buttonId: `descargar ${videoUrl}`, buttonText: { displayText: "Descargar Video" }, type: 1 }],
+            headerType: 4
         };
 
         await shoNhe.sendMessage(m.chat, buttonMessage, { quoted: m });
@@ -22679,7 +22672,7 @@ case 'tiktok': case 'tiktokdown': case 'ttdown': case 'ttdl': case 'tt': case 't
         shoNherly('Ocurrió un error al descargar el video.');
     } 
     
-    break; // Asegura que el switch-case no continúe ejecutando otros casos
+    break; 
 }
 			case 'toaud':
 			case 'toaudio':
