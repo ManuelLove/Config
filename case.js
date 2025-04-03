@@ -22653,25 +22653,28 @@ case 'tiktokvideo':
 
         if (!hasil || !hasil.status || !hasil.data) return shoNherly('❌ No se pudo obtener el video de TikTok.');
 
-        // Busca el mejor video disponible
         let videoUrl = hasil.data.find(item => item.type === 'nowatermark_hd')?.url || 
                        hasil.data.find(item => item.type === 'nowatermark')?.url;
 
-        if (!videoUrl) {
-            return shoNherly('⚠️ No se encontró un video en HD sin marca de agua.');
-        }
+        if (!videoUrl) return shoNherly('⚠️ No se encontró un video en HD sin marca de agua.');
 
         console.log('✅ Enviando video:', videoUrl);
 
-        // Enviar el video con botones
-        await shoNhe.sendMessage(m.chat, {
-            video: { url: videoUrl },
-            caption: `🎥 *Título:* ${hasil.title}\n⏳ *Duración:* ${hasil.duration}s\n👤 *Autor:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
-            footer: namabot,
-            buttons: [
-                { buttonId: `${prefix}ttmp3 ${text}`, buttonText: { displayText: "🎶 Tiktok Mp3" } }
-            ]
-        }, { quoted: m });
+        // FORZAR ENVÍO DEL VIDEO SIN "VIEWONCE"
+        await shoNhe.sendMessage(
+            m.chat, 
+            {
+                video: { url: videoUrl },
+                caption: `🎥 *Título:* ${hasil.title}\n⏳ *Duración:* ${hasil.duration}s\n👤 *Autor:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
+                footer: namabot,
+                buttons: [
+                    { buttonId: `${prefix}ttmp3 ${text}`, buttonText: { displayText: "🎶 Tiktok Mp3" } }
+                ],
+                mimetype: 'video/mp4',
+                fileName: `${hasil.title}.mp4`
+            }, 
+            { quoted: m }
+        );
 
     } catch (e) {
         console.error('🚨 Error al descargar el video de TikTok:', e);
