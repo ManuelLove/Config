@@ -5787,8 +5787,6 @@ break;
 				const gamecek = await cekgame(m.chat);
 				if (gamecek) return;
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
     if (boom[m.sender]) return m.reply('¡Aún quedan sesiones sin terminar!');
 
     boom[m.sender] = {
@@ -5819,8 +5817,6 @@ case 'ahorcado':
 				const gamecek = await cekgame(m.chat);
 				if (gamecek) return;
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
     if (ahorcado[m.sender]) return shoNherly("⚠️ Ya tienes un juego en curso. ¡Termina ese primero!");
     const palabra = elegirPalabraAleatoria();
     const letrasAdivinadas = [];
