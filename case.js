@@ -16062,7 +16062,9 @@ case 'hentaiimg':
 	if (!isVip) return shoNherly(mess.vips);
 	if (!(await firely(m, mess.waits))) return;
 
-	const res = await fetch('https://api.hiuraa.my.id/random/hentai');
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.hiuraa.my.id/random/hentai');
 const buffer = await res.buffer();
 
 await shoNhe.sendMessage(m.chat, {
