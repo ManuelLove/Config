@@ -3381,15 +3381,12 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
             db[m.sender].limit += recompensa;
         }
         saveUserFire(db);
-
-        shoNherly(`🎉 *¡GANASTE!*\n\nPalabra correcta: *"${palabra}"*\n🏆 *Has ganado ${recompensa} límite*`, {
+    delete ahorcado[m.sender];
+    shoNherly(`🎉 *¡GANASTE!*\n\nPalabra correcta: *"${palabra}"*\n🏆 *Has ganado ${recompensa} límite*`, {
             mentions: [m.sender]
         });
     } else {
         shoNherly("🎉 *¡GANASTE!*\n\n🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
-    }
-}
-    delete ahorcado[m.sender];
     }       
     return `🎮 *AHORCADO*\n\n✍️ *Progreso:* ${mensaje}\n📉 Intentos restantes: *${intentos}*\n\n¡Escribe otra letra para continuar!`;
 }
