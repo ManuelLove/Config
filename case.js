@@ -16054,74 +16054,48 @@ break
            }
 			}
 			break;
-		case 'hentaiimg':
+case 'hentaiimg':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const res = await fetch(`https://api.hiuraa.my.id/random/hentai`);
+	const buffer = await res.buffer();
+
+	await shoNhe.sendMessage(m.chat, {
+		image: buffer,
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
 			{
-				if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!isVip) return shoNherly(mess.vips);
-				if (!(await firely(m, mess.waits))) return;
-				const data = await fetchJson(`https://api.hiuraa.my.id/random/hentai`);
-				await shoNhe.sendMessage(m.chat,
-				{
-					image:
-					{
-						url: data.url
-					},
-					caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
-					footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
-					buttons: [
-					{
-						buttonId: prefix + command,
-						buttonText:
-						{
-							displayText: "🔄 Continuar de nuevo"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "📜 Volver al menú"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-				if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
+				buttonId: prefix + command,
+				buttonText: { displayText: "🔄 Continuar de nuevo" }
+			},
+			{
+				buttonId: `${prefix}menu`,
+				buttonText: { displayText: "📜 Volver al menú" }
 			}
-			break;
+		],
+		viewOnce: true,
+	}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
 			case 'hneko':
 			{
 				if (!isRegistered(m))
