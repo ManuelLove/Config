@@ -5807,6 +5807,7 @@ case 'ahorcado': {
     ahorcado[m.sender] = { palabra, letrasAdivinadas, intentos };
 
     let mensaje = ocultarPalabra(palabra, letrasAdivinadas);
+if (!(await firely(m, mess.waits))) return;
     shoNherly(`🎮 *AHORCADO*\n\n✍️ Adivina la palabra:\n${mensaje}\n\n📉 Intentos restantes: *${intentos}*\n\n¡Escribe una letra para comenzar!`);
 }
 break;
