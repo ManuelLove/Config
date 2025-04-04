@@ -5798,9 +5798,8 @@ if (!(await firely(m, mess.waits))) return;
 }
 break;
 case 'ahorcado': {
-if (!(await firely(m, mess.waits))) return;
     if (ahorcado[m.sender]) return shoNherly("⚠️ Ya tienes un juego en curso. ¡Termina ese primero!");
-
+if (!(await firely(m, mess.waits))) return;
     const palabra = elegirPalabraAleatoria();
     const letrasAdivinadas = [];
     const intentos = 6;
