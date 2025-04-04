@@ -3390,7 +3390,8 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
     }       
     return `🎮 *AHORCADO*\n\n✍️ *Progreso:* ${mensaje}\n📉 Intentos restantes: *${intentos}*\n\n¡Escribe otra letra para continuar!`;
     delete ahorcado[m.sender];
-}
+        } 
+    }
 		async function cekgame(gamejid)
 		{
 			if (tekateki[gamejid])
