@@ -26566,7 +26566,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			break
 			case 'delete':
 			case 'del':
-			case 'd':
+			case 'borrar':
 			{
 				if (!isRegistered(m))
 				{
