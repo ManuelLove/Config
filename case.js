@@ -16062,25 +16062,25 @@ case 'hentaiimg':
 	if (!isVip) return shoNherly(mess.vips);
 	if (!(await firely(m, mess.waits))) return;
 
-	const res = await fetch(`https://api.hiuraa.my.id/random/hentai`);
-	const buffer = await res.buffer();
+	const res = await fetch('https://api.hiuraa.my.id/random/hentai');
+const buffer = await res.buffer();
 
-	await shoNhe.sendMessage(m.chat, {
-		image: buffer,
-		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
-		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
-		buttons: [
-			{
-				buttonId: prefix + command,
-				buttonText: { displayText: "🔄 Continuar de nuevo" }
-			},
-			{
-				buttonId: `${prefix}menu`,
-				buttonText: { displayText: "📜 Volver al menú" }
-			}
-		],
-		viewOnce: true,
-	}, { quoted: hw });
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 
 	if (levelUpMessage) {
 		await shoNhe.sendMessage(m.chat, {
