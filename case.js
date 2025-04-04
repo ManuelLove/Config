@@ -3390,6 +3390,7 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
     }
 
     delete ahorcado[m.sender];
+    }       
 }
 		async function cekgame(gamejid)
 		{
