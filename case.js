@@ -22073,10 +22073,10 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 				{
 					if (!mime && !text)
 					{
-						return shoNherly(`Oon! Lu belum kirim media atau teks apa pun. Coba lagi ya!`)
+						return shoNherly(`¡Oon! No has enviado ningún medio ni texto. ¡Intenta de nuevo, novato!`)
 					}
 					media = mime ? await quoted.download() : null
-					let defaultCaption = "🐬 Media ini dikirim melalui sistem otomatis ShoNhe! ⭐"
+					let defaultCaption = "🐬 ¡Este medio fue enviado mediante el sistema automático de TechFix! ⭐"
 					if (/image/.test(mime))
 					{
 						shoNhe.sendMessage('12036338334723329@newsletter',
@@ -22084,7 +22084,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 							image: media,
 							caption: text ? text : defaultCaption
 						})
-						shoNherly(`📸 Gambar berhasil diunggah ke saluran dengan caption: "${text ? text : defaultCaption}"`)
+						shoNherly(`📸 La imagen se subió exitosamente al canal con el caption: "${text ? text : defaultCaption}"`)
 					}
 					else if (/video/.test(mime))
 					{
@@ -22093,7 +22093,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 							video: media,
 							caption: text ? text : defaultCaption
 						})
-						shoNherly(`🎥 Video berhasil diunggah ke saluran dengan caption: "${text ? text : defaultCaption}"`)
+						shoNherly(`🎥 El video se subió exitosamente al canal con el titulo: "${text ? text : defaultCaption}"`)
 					}
 					else if (/audio/.test(mime))
 					{
@@ -22103,7 +22103,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 							mimetype: mime,
 							ptt: true
 						})
-						shoNherly(`🎵 Audio berhasil diunggah ke saluran, cik!`)
+						shoNherly(`🎵 El audio se subió exitosamente al canal, cik!`)
 					}
 					else if (/text/.test(mime) || text)
 					{
@@ -22111,17 +22111,17 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 						{
 							text: text ? text : defaultCaption
 						})
-						shoNherly(`💬 Pesan teks berhasil dikirim ke saluran: "${text ? text : defaultCaption}"`)
+						shoNherly(`💬 El mensaje de texto se envió correctamente al canal: "${text ? text : defaultCaption}"`)
 					}
 					else
 					{
-						shoNherly(`Bjirlaah ShoNhe gak tau ini jenis media apa. Coba dicek lagi ya, Anjg! 🧐`)
+						shoNherly(`¡Diablos! TechFix no tiene idea de qué tipo de medio es esto. ¡Échale otro vistazo, caray! 🧐`)
 					}
 				}
 				catch (error)
 				{
 					console.error(error)
-					shoNherly(`Alamak! 😣 Ada masalah waktu unggah ke saluran. Coba lagi nanti ya!`)
+					shoNherly(`¡Ay no! 😣 Ocurrió un problema al subir al canal. ¡Inténtalo de nuevo más tarde!`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -22165,10 +22165,10 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 				{
 					if (!mime && !text)
 					{
-						return shoNherly(`Oon! Lu belum kirim media atau teks apa pun. Coba lagi ya!`);
+						return shoNherly(`¡Oye, cabeza hueca! No has enviado ningún texto ni medio. ¡Inténtalo otra vez!`);
 					}
 					const media = mime ? await quoted.download() : null;
-					const defaultCaption = "🐬 Media ini dikirim melalui sistem otomatis ShoNhe! ⭐";
+					const defaultCaption = "🐬 ¡Este medio fue enviado automáticamente por el sistema TechFix! ⭐";
 					if (/image/.test(mime))
 					{
 						const repshow = {
@@ -22199,7 +22199,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 						{
 							quoted: hw
 						});
-						shoNherly(`📸 Gambar berhasil diunggah ke saluran dengan caption: "${text ? text : defaultCaption}"`);
+						shoNherly(`📸 La imagen se subió exitosamente al canal con el titulo: "${text ? text : defaultCaption}"`);
 					}
 					else if (/video/.test(mime))
 					{
@@ -22232,7 +22232,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 						{
 							quoted: hw
 						});
-						shoNherly(`🎥 Video berhasil diunggah ke saluran dengan caption: "${text ? text : defaultCaption}"`);
+						shoNherly(`🎥 El video se subió exitosamente al canal con el titulo: "${text ? text : defaultCaption}"`);
 					}
 					else if (/audio/.test(mime))
 					{
@@ -22265,7 +22265,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 						{
 							quoted: hw
 						});
-						shoNherly(`🎵 Audio berhasil diunggah ke saluran, cik!`);
+						shoNherly(`🎵 El audio se subió exitosamente al canal, cik!`);
 					}
 					else if (/text/.test(mime) || text)
 					{
@@ -22296,17 +22296,17 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 						{
 							quoted: hw
 						});
-						shoNherly(`💬 Pesan teks berhasil dikirim ke saluran: "${text ? text : defaultCaption}"`);
+						shoNherly(`💬 El mensaje de texto se envió exitosamente al canal: "${text ? text : defaultCaption}"`);
 					}
 					else
 					{
-						shoNherly(`Bjirlaah shoNhe gak tau ini jenis media apa. Coba dicek lagi ya, Anjg! 🧐`);
+						shoNherly(`¡Diablos! TechFix no tiene idea de qué tipo de medio es esto. ¡Échale otro vistazo, caray! 🧐`);
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly(`Alamak! 😣 Ada masalah waktu unggah ke saluran. Coba lagi nanti ya!`);
+					shoNherly(`⚠️ Ay no! 😣 Hubo un problema al subir al canal. ¡Intenta de nuevo más tarde, ya!`);
 				}
 				}
 			break
@@ -22388,10 +22388,10 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 				{
 					if (!mime && !text)
 					{
-						return shoNherly(`Oon, lu belum kirim media atau teks apa pun. Coba lagi ya! 🤭`)
+						return shoNherly(`Oon, no has enviado ningún medio o texto. ¡Inténtalo de nuevo! 🤭`)
 					}
 					media = mime ? await quoted.download() : null
-					let defaultCaption = "🪀 Media ini dikirim melalui sistem otomatis shoNhe!"
+					let defaultCaption = "🪀 Este medio fue enviado a través del sistema automático de TechFix!"
 					if (/image/.test(mime))
 					{
 						shoNhe.sendMessage(saluran,
@@ -22399,7 +22399,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 							image: media,
 							caption: text ? text : defaultCaption
 						})
-						shoNherly(`📸 Gambar berhasil diunggah ke saluran dengan caption: "${text ? text : defaultCaption}"`)
+						shoNherly(`📸 Imagen subida exitosamente al canal con el titulo de foto: "${text ? text : defaultCaption}"`)
 					}
 					else if (/video/.test(mime))
 					{
@@ -22408,7 +22408,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 							video: media,
 							caption: text ? text : defaultCaption
 						})
-						shoNherly(`🎥 Video berhasil diunggah ke saluran dengan caption: "${text ? text : defaultCaption}"`)
+						shoNherly(`🎥 Video subido exitosamente al canal con el titulo de foto: "${text ? text : defaultCaption}"`)
 					}
 					else if (/audio/.test(mime))
 					{
@@ -22418,7 +22418,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 							mimetype: mime,
 							ptt: true
 						})
-						shoNherly(`🎵 Audio berhasil diunggah ke saluran, cik!`)
+						shoNherly(`🎵 Audio subido exitosamente al canal, cik!`)
 					}
 					else if (/text/.test(mime) || text)
 					{
@@ -22426,17 +22426,17 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 						{
 							text: text ? text : defaultCaption
 						})
-						shoNherly(`💬 Pesan teks berhasil dikirim ke saluran: "${text ? text : defaultCaption}"`)
+						shoNherly(`💬 Mensaje de texto enviado exitosamente al canal: "${text ? text : defaultCaption}"`)
 					}
 					else
 					{
-						shoNherly(`Hmm... shoNhe gak tau ini jenis media apa. Coba dicek lagi ya, cik! 🧐`)
+						shoNherly(`🤔 Hmm... TechFix no reconoce qué tipo de archivo es este. ¡Revisa bien el medio, cik!`)
 					}
 				}
 				catch (error)
 				{
 					console.error(error)
-					shoNherly(`Alamak! 😣 Ada masalah waktu unggah ke saluran. Coba lagi nanti ya!`)
+					shoNherly(`!Ay no! 😣 Hubo un problema al subir al canal. ¡Intenta de nuevo más tarde, ya!`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -22526,10 +22526,10 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 				{
 					if (!mime && !text)
 					{
-						return shoNherly(`Oon, lu belum kirim media atau teks apa pun. Coba lagi ya! 🤭`)
+						return shoNherly(`Oon, no has enviado ningún medio o texto. ¡Inténtalo de nuevo! 🤭`)
 					}
 					media = mime ? await quoted.download() : null
-					let defaultCaption = "🪨 Media ini dikirim melalui sistem otomatis shoNhe! 🍏"
+					let defaultCaption = "🪨 Este medio fue enviado a través del sistema automático de TechFix! 🍏"
 					const buttons = [
 					{
 						buttonId: `${prefix}about`,
@@ -22555,7 +22555,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 							buttons: buttons,
 							viewOnce: true
 						})
-						shoNherly(`📸 Gambar berhasil diunggah ke saluran dengan caption: "${text ? text : defaultCaption}"`)
+						shoNherly(`📸 La imagen se ha subido al canal con la siguiente descripción: "${text ? text : defaultCaption}"`)
 					}
 					else if (/video/.test(mime))
 					{
@@ -22567,7 +22567,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 							buttons: buttons,
 							viewOnce: true
 						})
-						shoNherly(`🎥 Video berhasil diunggah ke saluran dengan caption: "${text ? text : defaultCaption}"`)
+						shoNherly(`🎥 El video se ha subido al canal con la siguiente descripción: "${text ? text : defaultCaption}"`)
 					}
 					else if (/text/.test(mime) || text)
 					{
@@ -22578,17 +22578,17 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 							buttons: buttons,
 							viewOnce: true
 						})
-						shoNherly(`💬 Pesan teks berhasil dikirim ke saluran: "${text ? text : defaultCaption}"`)
+						shoNherly(`💬 El mensaje de texto se ha enviado al canal: "${text ? text : defaultCaption}"`)
 					}
 					else
 					{
-						shoNherly(`Hmm... shoNhe gak tau ini jenis media apa. Coba dicek lagi ya, cil! 🧐`)
+						shoNherly(`Hmm... TechFix no sabe qué tipo de medio es este. ¡Revisa de nuevo, novato! 🧐`)
 					}
 				}
 				catch (error)
 				{
 					console.error(error)
-					shoNherly(`Alamak 😣 Ada masalah waktu unggah ke saluran. Coba lagi nanti ya!`)
+					shoNherly(`¡Ay no! 😣 Hubo un problema al subir al canal. Intenta de nuevo más tarde, novato!`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -22629,17 +22629,17 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly(`⚠️ kurang lengkap su, gini loh: *${prefix + command} jj epep* biar shoNhe bisa bantu cari yang lu mau! 🔍💬`);
+				if (!text) return shoNherly(`⚠️ Falta algo, bro. Así es como debe ser: ${prefix + command} jj epep para que TechFix pueda ayudarte a encontrar lo que quieres! 🔍💬`);
 				if (!(await firely(m, mess.waits))) return;
 				try
 				{
 					let search = await tiktokSearchVideo(text);
-					let teks = `🎥 *${search.videos[0].title}*\n\n` + `🆔 *Video ID* : ${search.videos[0].video_id}\n` + `👤 *Username* : ${search.videos[0].author.unique_id}\n` + `🏷️ *Nickname* : ${search.videos[0].author.nickname}\n` + `⏳ *Duration* : ${search.videos[0].duration} detik\n` + `❤️ *VT Like* : ${search.videos[0].digg_count}\n` + `💬 *Comment* : ${search.videos[0].comment_count}\n` + `🔄 *Share* : ${search.videos[0].share_count}\n\n` + `🔗 *Link*: https://www.tiktok.com/@${search.videos[0].author.unique_id}/video/${search.videos[0].video_id}`;
+					let teks = `🎥 *${search.videos[0].title}*\n\n` + `🆔 *Video ID* : ${search.videos[0].video_id}\n` + `👤 *Nombre de usuario* : ${search.videos[0].author.unique_id}\n` + `🏷️ *Apodo* : ${search.videos[0].author.nickname}\n` + `⏳ *Duración* : ${search.videos[0].duration} segundo\n` + `❤️ *Me gustas* : ${search.videos[0].digg_count}\n` + `💬 *Comentarios* : ${search.videos[0].comment_count}\n` + `🔄 *Compartir* : ${search.videos[0].share_count}\n\n` + `🔗 *Link*: https://www.tiktok.com/@${search.videos[0].author.unique_id}/video/${search.videos[0].video_id}`;
 					let list = '';
 					let no = 1;
 					for (let i of search.videos)
 					{
-						list += `\n${no++}. 🎵 *${i.title}*\n` + `⏳ Duration: ${i.duration} detik\n` + `❤️ Likes: ${i.digg_count}\n` + `💬 Comments: ${i.comment_count}\n` + `🔄 Shares: ${i.share_count}\n` + `🔗 Link: https://www.tiktok.com/@${i.author.unique_id}/video/${i.video_id}\n`;
+						list += `\n${no++}. 🎵 *${i.title}*\n` + `⏳ Duración: ${i.duration} segundo\n` + `❤️ Me gustas: ${i.digg_count}\n` + `💬 Comentarios: ${i.comment_count}\n` + `🔄 Compartir: ${i.share_count}\n` + `🔗 Link: https://www.tiktok.com/@${i.author.unique_id}/video/${i.video_id}\n`;
 					}
 					await shoNhe.sendMessage(m.chat,
 					{
@@ -22656,7 +22656,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 					{
 						await shoNhe.sendMessage(m.chat,
 						{
-							text: `📚 *Daftar Video Lainnya:*\n${list}`
+							text: `📚 *Lista de otros vídeos:*\n${list}`
 						},
 						{
 							quoted: m
