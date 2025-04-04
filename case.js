@@ -3386,11 +3386,11 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
             mentions: [m.sender]
         });
     } else {
-        shoNherly("🎉 *¡GANASTE!*🌸\n\nNo puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
+        shoNherly("🎉 *¡GANASTE!*\n\n🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
     }
 
     delete ahorcado[m.sender];
-    }       
+       } else {        
     return `🎮 *AHORCADO*\n\n✍️ *Progreso:* ${mensaje}\n📉 Intentos restantes: *${intentos}*\n\n¡Escribe otra letra para continuar!`;
 }
 		async function cekgame(gamejid)
@@ -21261,7 +21261,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 				{
 					if (!(await firely(m, mess.waits))) return;
 					const search = await yts(`${text}`);
-					if (!search || search.all.length === 0) return shoNherly(`*Lagu tidak ditemukan!* ☹️`);
+					if (!search || search.all.length === 0) return shoNherly(`*¡Canción no encontrada!* ☹️`);
 					const
 					{
 						videoId,
