@@ -9541,7 +9541,7 @@ break;
 				ya = q.split("|")[0].replace(/[^0-9]/g, '');
 				unp = owner.indexOf(ya);
 				owner.splice(unp, 1);
-				fs.writeFileSync('./src/data/role/owner.json', JSON.stringify(owner));
+				fs.writeFileSync('./owner.json', JSON.stringify(owner));
 				shoNherly(`Número ${ya} eliminado exitosamente de la lista owner! ❌`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
