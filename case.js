@@ -25459,7 +25459,7 @@ break;
 								"buttonParamsJson": JSON.stringify(
 								{
 									display_text: `Owner (ManuDiaz)`, //ganti jadi (${namaowner})
-									url: `https://wa.me/+${owner}`
+									url: `https://wa.me/+573012686632`
 								})
 							}]
 						}
@@ -25647,7 +25647,7 @@ break;
                                 "name": "cta_url",
                                 "buttonParamsJson": JSON.stringify({
                                     display_text: `NEXT 💬`,
-                                    url: `https://wa.me/+${owner}`
+                                    url: `https://wa.me/+573012686632`
                                 })
                             }
                         ]
@@ -25671,7 +25671,7 @@ break;
                                 "name": "cta_url",
                                 "buttonParamsJson": JSON.stringify({
                                     display_text: `NEXT 💬`,
-                                    url: `https://wa.me/+${owner}`
+                                    url: `https://wa.me/+573012686632`
                                 })
                             }
                         ]
@@ -25695,7 +25695,7 @@ break;
                                 "name": "cta_url",
                                 "buttonParamsJson": JSON.stringify({
                                     display_text: `NEXT 💬`,
-                                    url: `https://wa.me/+${owner}`
+                                    url: `https://wa.me/+573012686632`
                                 })
                             }
                         ]
@@ -25719,7 +25719,7 @@ break;
                                 "name": "cta_url",
                                 "buttonParamsJson": JSON.stringify({
                                     display_text: `NEXT 💬`,
-                                    url: `https://wa.me/+${owner}`
+                                    url: `https://wa.me/+573012686632`
                                 })
                             }
                         ]
@@ -25743,7 +25743,7 @@ break;
                                 "name": "cta_url",
                                 "buttonParamsJson": JSON.stringify({
                                     display_text: `NEXT 💬`,
-                                    url: `https://wa.me/+${owner}`
+                                    url: `https://wa.me/+573012686632`
                                 })
                             }
                         ]
@@ -25767,7 +25767,7 @@ break;
                                 "name": "cta_url",
                                 "buttonParamsJson": JSON.stringify({
                                     display_text: `NEXT 💬`,
-                                    url: `https://wa.me/+${owner}`
+                                    url: `https://wa.me/+573012686632`
                                 })
                             }
                         ]
@@ -25791,7 +25791,7 @@ break;
                                 "name": "cta_url",
                                 "buttonParamsJson": JSON.stringify({
                                     display_text: `NEXT 💬`,
-                                    url: `https://wa.me/+${owner}`
+                                    url: `https://wa.me/+573012686632`
                                 })
                             }
                         ]
