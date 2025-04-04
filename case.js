@@ -5776,7 +5776,7 @@ break;
            }
 			}
 			break;
-			case 'boom':
+			case 'mina':
 			 			{
 				if (!isRegistered(m))
 				{
