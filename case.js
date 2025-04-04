@@ -1294,26 +1294,26 @@ await shoNhe.sendMessage(m.chat, {
 		// **Fungsi: Menambahkan thumbnail**
 		const addThumb3 = async (nama3, quoted3, mime3) =>
 		{
-			if (!/image/.test(mime3)) return 'Kirim/Reply Image dengan Caption untuk menambahkan thumbnail.';
+			if (!/image/.test(mime3)) return 'Envía/Responde una imagen con el mensaje para agregar una miniatura.';
 			const fileName3 = `${thumbFolder3}${nama3}.jpg`;
-			if (fs.existsSync(fileName3)) return 'Thumbnail dengan nama tersebut sudah ada.';
+			if (fs.existsSync(fileName3)) return 'Ya existe una miniatura con ese nombre.';
 			const media3 = await quoted3.download(); // Unduh file media dari pesan
 			fs.writeFileSync(fileName3, media3);
-			return `Thumbnail dengan nama "${nama3}" berhasil ditambahkan.`;
+			return `La miniatura con el nombre "${nama3}" se agregó con éxito.`;
 		};
 		// **Fungsi: Menghapus thumbnail**
 		const delThumb3 = (nama3) =>
 		{
 			const fileName3 = `${thumbFolder3}${nama3}.jpg`;
-			if (!fs.existsSync(fileName3)) return 'Thumbnail dengan nama tersebut tidak ditemukan.';
+			if (!fs.existsSync(fileName3)) return 'No se encontró una miniatura con ese nombre.';
 			fs.unlinkSync(fileName3);
-			return `Thumbnail dengan nama "${nama3}" berhasil dihapus.`;
+			return `La miniatura con el nombre "${nama3}" se eliminó con éxito.`;
 		};
 		// **Fungsi: Menampilkan daftar thumbnail**
 		const listThumb3 = () =>
 		{
 			const thumbList3 = readThumbList3();
-			if (thumbList3.length === 0) return 'Tidak ada thumbnail yang tersimpan.';
+			if (thumbList3.length === 0) return 'No hay miniaturas guardadas.';
 			return thumbList3.map(thumb => `Nama: ${thumb.name}`).join('\n');
 		};
 		// **Fungsi: Mengambil thumbnail secara acak**
@@ -2071,27 +2071,27 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 		// **Fungsi: Menambahkan thumbnail**
 		const addThumb2 = async (nama2, quoted2, mime2) =>
 		{
-			if (!/image/.test(mime2)) return 'Kirim/Reply Image dengan Caption untuk menambahkan thumbnail.';
+			if (!/image/.test(mime2)) return 'Envía/Responde una imagen con el mensaje para agregar una miniatura.';
 			const fileName2 = `${thumbFolder2}${nama2}.jpg`;
-			if (fs.existsSync(fileName2)) return 'Thumbnail dengan nama tersebut sudah ada.';
+			if (fs.existsSync(fileName2)) return 'Ya existe una miniatura con ese nombre.';
 			const media2 = await quoted2.download(); // Unduh file media dari pesan
 			fs.writeFileSync(fileName2, media2);
-			return `Thumbnail dengan nama "${nama2}" berhasil ditambahkan.`;
+			return `La miniatura con el nombre "${nama2}" se agregó con éxito.`;
 		};
 		// **Fungsi: Menghapus thumbnail**
 		const delThumb2 = (nama2) =>
 		{
 			const fileName2 = `${thumbFolder2}${nama2}.jpg`;
-			if (!fs.existsSync(fileName2)) return 'Thumbnail dengan nama tersebut tidak ditemukan.';
+			if (!fs.existsSync(fileName2)) return 'No se encontró una miniatura con ese nombre.';
 			fs.unlinkSync(fileName2);
-			return `Thumbnail dengan nama "${nama2}" berhasil dihapus.`;
+			return `La miniatura con el nombre "${nama2}" se eliminó con éxito.`;
 		};
 		// **Fungsi: Menampilkan daftar thumbnail**
 		const listThumb2 = () =>
 		{
 			const thumbList2 = readThumbList2();
-			if (thumbList2.length === 0) return 'Tidak ada thumbnail yang tersimpan.';
-			return thumbList2.map(thumb => `Nama: ${thumb.name}`).join('\n');
+			if (thumbList2.length === 0) return 'No hay miniaturas guardadas.';
+			return thumbList2.map(thumb => `Nombre: ${thumb.name}`).join('\n');
 		};
 		// **Fungsi: Mengambil thumbnail secara acak**
 		const getRandomThumb2 = () =>
@@ -2208,7 +2208,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			// Cek apakah nama sudah ada
 			if (thumbList.find(thumb => thumb.name === nama))
 			{
-				return 'Thumbnail dengan nama tersebut sudah ada.';
+				return 'Ya existe una miniatura con ese nombre.';
 			}
 			// Menambahkan thumbnail ke dalam daftar
 			thumbList.push(
@@ -2217,7 +2217,7 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 				url: url
 			});
 			writeThumbList(thumbList);
-			return `Thumbnail dengan nama ${nama} berhasil ditambahkan.`;
+			return `La miniatura con el nombre ${nama} se agregó con éxito.`;
 		};
 		// Fungsi untuk menghapus thumbnail berdasarkan nama
 		const delthumb = (nama) =>
@@ -2226,11 +2226,11 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			const index = thumbList.findIndex(thumb => thumb.name === nama);
 			if (index === -1)
 			{
-				return 'Thumbnail dengan nama tersebut tidak ditemukan.';
+				return 'No se encontró una miniatura con ese nombre.';
 			}
 			thumbList.splice(index, 1);
 			writeThumbList(thumbList);
-			return `Thumbnail dengan nama ${nama} berhasil dihapus.`;
+			return `La miniatura con el nombre ${nama} se eliminó con éxito.`;
 		};
 		// Fungsi untuk menampilkan daftar thumbnail
 		const listthumb = () =>
@@ -2238,9 +2238,9 @@ Mantén tus habilidades afiladas y nunca dejes de evolucionar."
 			const thumbList = readThumbList();
 			if (thumbList.length === 0)
 			{
-				return 'Tidak ada thumbnail yang tersimpan.';
+				return 'No hay miniaturas guardadas.';
 			}
-			return thumbList.map(thumb => `Nama: ${thumb.name}, URL: ${thumb.url}`).join('\n');
+			return thumbList.map(thumb => `Nombre: ${thumb.name}, URL: ${thumb.url}`).join('\n');
 		};
 		// Fungsi untuk memilih thumbnail secara random dari daftar
 		const getRandomThumb = () =>
@@ -7599,7 +7599,7 @@ break;
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners)
 				resetPopularCommands(); // Reset data
-				shoNherly('Data fitur populer telah direset.');
+				shoNherly('Los datos de funciones populares se han restablecido.');
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -13218,9 +13218,9 @@ await shoNhe.sendMessage(m.chat, {
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!quoted || !/image/.test(mime)) return shoNherly(`Kirim/Reply Image dengan Caption untuk menambahkan thumbnail.`);
+				if (!quoted || !/image/.test(mime)) return shoNherly(`Envía/Responde una imagen con el mensaje para agregar una miniatura.`);
 				const namaThumb2 = text.trim();
-				if (!namaThumb2) return shoNherly(`Masukkan nama thumbnail yang ingin ditambahkan.`);
+				if (!namaThumb2) return shoNherly(`Ingresa el nombre de la miniatura que deseas agregar.`);
 				const resultAdd2 = await addThumb2(namaThumb2, quoted, mime);
 				shoNherly(resultAdd2);
 				if (levelUpMessage) {
@@ -13261,7 +13261,7 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				const namaHapus2 = text.trim();
-				if (!namaHapus2) return shoNherly(`Masukkan nama thumbnail yang ingin dihapus.`);
+				if (!namaHapus2) return shoNherly(`Ingresa el nombre de la miniatura que deseas eliminar.`);
 				const resultDel2 = delThumb2(namaHapus2);
 				shoNherly(resultDel2);
 				if (levelUpMessage) {
@@ -13340,9 +13340,9 @@ await shoNhe.sendMessage(m.chat, {
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!quoted || !/image/.test(mime)) return shoNherly(`Kirim/Reply Image dengan Caption untuk menambahkan thumbnail.`);
+				if (!quoted || !/image/.test(mime)) return shoNherly(`Envía/Responde una imagen con el mensaje para agregar una miniatura.`);
 				const namaThumb3 = text.trim();
-				if (!namaThumb3) return shoNherly(`Masukkan nama thumbnail yang ingin ditambahkan.`);
+				if (!namaThumb3) return shoNherly(`Ingresa el nombre de la miniatura que deseas agregar.`);
 				const resultAdd3 = await addThumb3(namaThumb3, quoted, mime);
 				shoNherly(resultAdd3);
 				if (levelUpMessage) {
@@ -13383,7 +13383,7 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				const namaHapus3 = text.trim();
-				if (!namaHapus3) return shoNherly(`Masukkan nama thumbnail yang ingin dihapus.`);
+				if (!namaHapus3) return shoNherly(`Ingresa el nombre de la miniatura que deseas eliminar.`);
 				const resultDel3 = delThumb3(namaHapus3);
 				shoNherly(resultDel3);
 				if (levelUpMessage) {
@@ -19052,9 +19052,9 @@ if (levelUpMessage) {
 				if (!isGroup) return shoNherly(mess.groups);
 				if (!isAdmins) return shoNherly(mess.admins);
 				if (!isBotAdmins) return shoNherly(mess.abots);
-				if (!quoted) return shoNherly(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
-				if (!/image/.test(mime)) return shoNherly(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
-				if (/webp/.test(mime)) return shoNherly(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
+				if (!quoted) return shoNherly(`Envía/Responde una imagen con el mensaje ${prefix + command}`)
+				if (!/image/.test(mime)) return shoNherly(`Envía/Responde una imagen con el mensaje ${prefix + command}`)
+				if (/webp/.test(mime)) return shoNherly(`Envía/Responde una imagen con el mensaje ${prefix + command}`)
 				let media = await shoNhe.downloadAndSaveMediaMessage(quoted)
 				await shoNhe.updateProfilePicture(m.chat,
 				{
@@ -19288,9 +19288,9 @@ if (levelUpMessage) {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!quoted) return shoNherly(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
-				if (!/image/.test(mime)) return shoNherly(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
-				if (/webp/.test(mime)) return shoNherly(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
+				if (!quoted) return shoNherly(`Envía/Responde una imagen con el mensaje ${prefix + command}`)
+				if (!/image/.test(mime)) return shoNherly(`Envía/Responde una imagen con el mensaje ${prefix + command}`)
+				if (/webp/.test(mime)) return shoNherly(`Envía/Responde una imagen con el mensaje ${prefix + command}`)
 				let media = await shoNhe.downloadAndSaveMediaMessage(quoted)
 				await shoNhe.updateProfilePicture(botNumber,
 				{
@@ -19376,7 +19376,7 @@ if (levelUpMessage) {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!text) return shoNherly(`Where is the text?\nExample: ${prefix + command} ShoNhe AI`)
+				if (!text) return shoNherly(`¿Dónde está el texto?\nEjemplo: ${prefix + command} ShoNhe AI`)
 				await shoNhe.updateProfileStatus(text)
 				shoNherly('sipp')
 				if (levelUpMessage) {
@@ -19430,7 +19430,7 @@ if (levelUpMessage) {
 				const thumbList = readThumbList();
 				if (thumbList.length === 0)
 				{
-					return shoNherly('Tidak ada thumbnail yang tersimpan.');
+					return shoNherly('No hay miniaturas guardadas.');
 				}
 				let teks = '「 LIST THUMBNAIL 」\n\n';
 				for (let thumb of thumbList)
@@ -19477,13 +19477,13 @@ if (levelUpMessage) {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!text) return shoNherly(`*< / >* Example: ${prefix + command} thumbnail_name|image_url`);
+				if (!text) return shoNherly(`*< / >* Ejemplo: ${prefix + command} nombre_miniatura|url_imagen`);
 				let [nama, url] = text.split('|');
-				if (!nama || !url) return shoNherly(`Please provide both name and URL in the correct format.`);
+				if (!nama || !url) return shoNherly(`Por favor, proporciona tanto el nombre como la URL en el formato correcto.`);
 				const thumbList = readThumbList();
 				if (thumbList.find(thumb => thumb.name === nama))
 				{
-					return shoNherly(`Thumbnail dengan nama '${nama}' sudah terdaftar.`);
+					return shoNherly(`La miniatura con el nombre '${nama}' ya está registrada.`);
 				}
 				thumbList.push(
 				{
@@ -19491,7 +19491,7 @@ if (levelUpMessage) {
 					url: url
 				});
 				writeThumbList(thumbList);
-				shoNherly(`Thumbnail dengan nama '${nama}' berhasil ditambahkan!`);
+				shoNherly(`¡La miniatura con el nombre '${nama}' se agregó con éxito!`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -22319,7 +22319,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly("nomor?")
+				if (!text) return shoNherly("¿número?")
 				if (!isShoNheOwn) return shoNherly(mess.owners)
 				let dir = await fs.readdirSync("./database/sampah")
 				if (dir.length >= 2)
@@ -22330,8 +22330,8 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 						await fs.unlinkSync(`./database/sampah/${i}`)
 					}
 				}
-				await shoNherly(`proses pengiriman ke ${text}`)
-				var name = `shoNheBotz` //gausah diganti njir🗿
+				await shoNherly(`Proceso de envío a ${text}`)
+				var name = `TechFixBotz` //gausah diganti njir🗿
 				const ls = (await execSync("ls")).toString().split("\n").filter(
 					(pe) => pe != "node_modules" && pe != "session" && pe != "package-lock.json" && pe != "yarn.lock" && pe != "")
 				const anu = await execSync(`zip -r ${name}.zip ${ls.join(" ")}`)
@@ -22345,7 +22345,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 					quoted: m
 				})
 				await execSync(`rm -rf ${name}.zip`)
-				if (m.chat !== m.sender) return shoNherly(`Script bot berhasil dikirim ke ${text}`)
+				if (m.chat !== m.sender) return shoNherly(`El script del bot se ha enviado con éxito a ${text}`)
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
