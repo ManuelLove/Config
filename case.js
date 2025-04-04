@@ -3386,12 +3386,14 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
             mentions: [m.sender]
         });
     } else {
-        shoNherly("🎉 *¡GANASTE!*\n\n🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });   
+        shoNherly("🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
+    }
+
+    delete ahorcado[m.sender];
+    return `🎉 *¡GANASTE!*\n\nPalabra correcta: *"${palabra}"*`;
     }       
     return `🎮 *AHORCADO*\n\n✍️ *Progreso:* ${mensaje}\n📉 Intentos restantes: *${intentos}*\n\n¡Escribe otra letra para continuar!`;
-    delete ahorcado[m.sender];
-        } 
-    }
+}
 		async function cekgame(gamejid)
 		{
 			if (tekateki[gamejid])
