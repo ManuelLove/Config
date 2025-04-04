@@ -5776,7 +5776,19 @@ break;
            }
 			}
 			break;
-			case 'boom': {
+			case 'boom':
+			 			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				const gamecek = await cekgame(m.chat);
+				if (gamecek) return;
+				if (!(await firely(m, mess.waits))) return;
+				try
+				{
     if (boom[m.sender]) return m.reply('¡Aún quedan sesiones sin terminar!');
 
     boom[m.sender] = {
@@ -5793,13 +5805,23 @@ break;
             }
         }, 160000)
     };
-if (!(await firely(m, mess.waits))) return;
     m.reply(`*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n¡Elige un número! ¡Y no te dejes alcanzar por una bomba!\n\n🔸 Bombas: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
 }
 break;
-case 'ahorcado': {
+case 'ahorcado':
+ 			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				const gamecek = await cekgame(m.chat);
+				if (gamecek) return;
+				if (!(await firely(m, mess.waits))) return;
+				try
+				{
     if (ahorcado[m.sender]) return shoNherly("⚠️ Ya tienes un juego en curso. ¡Termina ese primero!");
-if (!(await firely(m, mess.waits))) return;
     const palabra = elegirPalabraAleatoria();
     const letrasAdivinadas = [];
     const intentos = 6;
@@ -15681,8 +15703,8 @@ break
 					{
 						url: data.url
 					},
-					caption: `Dasar ${pushname}, otak sagne🗿`,
-					footer: `${namabot} • Nikmati dengan penuh tanggung jawab!`,
+					caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+					footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
 					buttons: [
 					{
 						buttonId: prefix + command,
@@ -15749,8 +15771,8 @@ break
 					{
 						url: data.url
 					},
-					caption: `Dasar ${pushname}, otak sagne🗿`,
-					footer: `${namabot} • Nikmati dengan penuh tanggung jawab!`,
+					caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+					footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
 					buttons: [
 					{
 						buttonId: prefix + command,
@@ -15817,8 +15839,8 @@ break
 					{
 						url: data.url
 					},
-					caption: `Dasar ${pushname}, otak sagne🗿`,
-					footer: `${namabot} • Nikmati dengan penuh tanggung jawab!`,
+					caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+					footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
 					buttons: [
 					{
 						buttonId: prefix + command,
@@ -15985,8 +16007,8 @@ break
 					{
 						url: result[0].video_1
 					},
-					caption: `Woilah dasar ${puahname}, otak sagne`,
-					footer: `${namabot} • Gunakan fitur ini dengan bijak dan bertanggung jawab!`,
+					caption: `¡Vaya, típico de ti ${pushname}, mente pervertida!`,
+					footer: `${namabot} • ¡Usa esta función con sabiduría y responsabilidad!`,
 					buttons: [
 					{
 						buttonId: prefix + command,
@@ -16053,8 +16075,8 @@ break
 					{
 						url: data.url
 					},
-					caption: `Dasar ${pushname}, otak sagne🗿`,
-					footer: `${namabot} • Nikmati dengan penuh tanggung jawab!`,
+					caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+					footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
 					buttons: [
 					{
 						buttonId: prefix + command,
