@@ -24680,12 +24680,14 @@ break;
 				if (!(await firely(m, mess.waits))) return;
 				try {
 					const buffer = await getBuffer(`https://api.siputzx.my.id/api/m/brat?text=${encodeURIComponent(text)}&isVideo=false&delay=500`)
+					await emote('⏱️');
 					shoNhe.sendImageAsSticker(m.chat, buffer, m, { packname: namabot, author: namaowner })
 				} catch (err) {
 					RepshoNheError('Se produjo un error al crear una sticker de imagen. 😞');
 				}
 				if (levelUpMessage)
 				{
+				await emote('✅');
 					await shoNhe.sendMessage(m.chat,
 					{
 						image: levelUpMessage.image,
