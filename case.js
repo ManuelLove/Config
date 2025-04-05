@@ -18506,7 +18506,7 @@ case 'logo': {
         m.reply('Por favor, proporciona el texto para el logo.');
         return;
     }
-
+if (!(await firely(m, mess.waits))) return;
     // Quitar mención del texto
     const cleanText = text.replace(/@(\d{5,})/g, "").trim();
 
