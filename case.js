@@ -18502,31 +18502,36 @@ if (apkSizeMB > maxSizeMB) {
 }
 break;
 case 'logo': {
-if (!text) {
-m.reply('Por favor, proporciona el texto para el logo.');
-return;
-}
+    if (!text) {
+        m.reply('Por favor, proporciona el texto para el logo.');
+        return;
+    }
 
-let profilePicture;
-try {
-const sender = m.isGroup ? m.sender : m.chat;
-profilePicture = await shoNhe.profilePictureUrl(sender, 'image');
-} catch {
-profilePicture = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60';
-}
+    // Quitar mención del texto
+    const cleanText = text.replace(/@(\d{5,})/g, "").trim();
 
-const apiUrl = `https://eliasar-yt-api.vercel.app/api/canvas/logo?texto=${encodeURIComponent(text)}&url=${encodeURIComponent(profilePicture)}`;
+    // Obtener imagen de perfil del mencionado o del remitente si no hay
+    let target = m.mentionedJid && m.mentionedJid.length > 0 ? m.mentionedJid[0] : m.sender;
+    let profilePicture;
+    try {
+        profilePicture = await shoNhe.profilePictureUrl(target, 'image');
+    } catch {
+        profilePicture = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60';
+    }
 
-try {
-m.reply('⏳ Generando tu logo personalizado, por favor espera...');
-await shoNhe.sendMessage(m.chat, {
-image: { url: apiUrl },
-caption: `✨ Aquí tienes tu logo con el texto: *${text}*`
-}, { quoted: m });
-} catch {
-m.reply('❌ Ocurrió un error al generar tu logo. Inténtalo de nuevo más tarde.');
+    const apiUrl = `https://eliasar-yt-api.vercel.app/api/canvas/logo?texto=${encodeURIComponent(cleanText)}&url=${encodeURIComponent(profilePicture)}`;
+
+    try {
+        m.reply('⏳ Generando tu logo personalizado, por favor espera...');
+        await shoNhe.sendMessage(m.chat, {
+            image: { url: apiUrl },
+            caption: `✨ Aquí tienes tu logo con el texto: *${cleanText}*`
+        }, { quoted: m });
+    } catch {
+        m.reply('❌ Ocurrió un error al generar tu logo. Inténtalo de nuevo más tarde.');
+    }
+    break;
 }
-break;
 		case 'fb': case 'fbdl': { if (!isRegistered(m)) { return sendRegister(shoNhe, m, prefix, namabot); } updatePopularCommand(command); const levelUpMessage = levelUpdate(command, m.sender); console.log('📢 Procesando descarga de Facebook...');
 
 if (!text) {
