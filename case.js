@@ -6127,15 +6127,15 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 ║  🌟 *TU PERFIL DE NIVEL* 🌟 ║  
 ╚═══════════════════╝  
 
-📛 *Nombre*       : ${m.pushName || 'Desconocido'}  
-📱 *Número*      : ${m.sender.split('@')[0]}  
+📛 *Nombre*     : ${m.pushName || 'Desconocido'}  
+📱 *Número*     : ${m.sender.split('@')[0]}  
 
 ╭───────•✧✧✧•───────╮  
-🎮 *Nivel*      : ${user.level || 0}  
-✨ *Exp*        : ${user.exp || 0}/${user.expTarget || 10}  
-💰 *Saldo*      : Rp${user.balance || 0}  
-📊 *Comandos*   : ${user.commandCount || 0}  
-💎 *Rol*        : ${user.role || 'Usuario'}  
+   🎮 *Nivel*   : ${user.level || 0}  
+   ✨ *Exp*    : ${user.exp || 0}/${user.expTarget || 10}  
+   💰 *Saldo*  : Rp${user.balance || 0}  
+   📊 *Comandos* : ${user.commandCount || 0}  
+   💎 *Rol     : ${user.role || 'Usuario'}  
 ╰───────•✧✧✧•───────╯  
 
 ╔═══════════════════╗  
