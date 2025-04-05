@@ -18506,7 +18506,7 @@ case 'apkdl':
 	}
 	if (!(await firely(m, mess.waits))) return;
 	try {
-		const res = await fetchJson(`https://api.hiuraa.my.id/downloader/aptoide?query=${text}`);
+		const res = await fetchJson(`https://api.dorratz.com/v2/apk-dl?text=${text}`);
 
 		if (!res || !res.name || !res.dllink) {
 			console.log('❌ Respuesta inesperada:', res);
