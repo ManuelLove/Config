@@ -18426,7 +18426,7 @@ break;
 				try
 				{
 					console.log('📡 Menghubungi API...');
-					let anu = await fetchJson(`https://api.siputzx.my.id/api/d/igdl?url=${text}`);
+					let anu = await fetchJson(`https://api.hiuraa.my.id/downloader/instagram?url=${text}`);
 					console.log('🔍 Respons API:', JSON.stringify(anu, null, 2));
 					if (!anu.status || !anu.data || anu.data.length === 0)
 					{
