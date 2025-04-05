@@ -18460,13 +18460,13 @@ case 'apk': {
         if (buffer.length > maxSizeBytes) return reply('❌ El archivo APK es demasiado grande para enviarlo por WhatsApp (límite 100MB).');
 
         // Enviar imagen con info
-        await conn.sendMessage(from, {
+        await shoNhe.sendMessage(from, {
             image: { url: icon },
             caption: `*📦 Nombre:* ${name}\n*📁 Paquete:* ${pkg}\n*💾 Tamaño:* ${size}\n*📅 Última Actualización:* ${lastUpdate}`
         }, { quoted: msg });
 
         // Enviar el archivo APK
-        await conn.sendMessage(from, {
+        await shoNhe.sendMessage(from, {
             document: buffer,
             fileName: `${name}.apk`,
             mimetype: 'application/vnd.android.package-archive'
@@ -18474,7 +18474,7 @@ case 'apk': {
 
     } catch (err) {
         console.error(err);
-        await conn.sendMessage(from, { react: { text: '❌', key: msg.key } });
+        await shoNhe.sendMessage(from, { react: { text: '❌', key: msg.key } });
         reply('❌ Hubo un error al buscar el APK.');
     }
 
