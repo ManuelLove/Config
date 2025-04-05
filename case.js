@@ -18433,7 +18433,7 @@ break;
 case 'apk': {
     if (!text) return reply(`*✳️ Ingresa el nombre de una app.*\n\nEjemplo: ${usedPrefix + command} whatsapp`);
 
-    let api = `https://api.dorratz.com/v2/apk-dl?text=${encodeURIComponent(text)}`;
+    let api = `https://api.dorratz.com/v2/apk-dl?text=${text}`;
 
     try {
         let res = await fetch(api);
