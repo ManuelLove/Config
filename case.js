@@ -18496,88 +18496,51 @@ case 'igdl':
 break;
 case 'apk':
 case 'modoapk': {
-    let { search, download } = 
-    if (!text) return m.reply(lenguaje.descargar.text24);
-    try {
-        const apiRes = await fetch(`https://api.dorratz.com/v2/apk-dl?text=${text}`);
-        const d = await apiRes.json();
-        if (d.name && d.dllink) {
-            const infoapk = `╭━─━─━─≪≫─━─━─━╮
-│ ≡ ${lenguaje.descargar.text25} ≡
-│——————«•»——————
-│🔸📌 ${lenguaje.descargar.text12} ${d.name}
-│🔸📦 *Package:* ${d.package}
-│🔸🕒 ${lenguaje.descargar.text26} ${d.lastUpdate}
-│🔸📥 ${lenguaje.descargar.text27} ${d.size}
-╰━─━─━─≪≫─━─━─━╯`;
-            await conn.sendMessage(m.chat, {
-                image: { url: d.icon },
-                caption: infoapk
-            }, {
-                quoted: m,
-                ephemeralExpiration: 24 * 60 * 100,
-                disappearingMessagesInChat: 24 * 60 * 100
-            });
+  if (!text) return m.reply(lenguaje.descargar.text24)
+  try {
+    const res = await fetch(`https://api.dorratz.com/v2/apk-dl?text=${text}`)
+    const json = await res.json()
 
-            if (d.size.includes('GB') || parseFloat(d.size.replace(' MB', '')) > 999) {
-                return await m.reply(lenguaje.descargar.text28);
-            }
+    if (!json.name || !json.dllink) throw 'No se pudo obtener información del APK'
 
-            await conn.sendMessage(m.chat, {
-                document: { url: d.dllink },
-                mimetype: 'application/vnd.android.package-archive',
-                fileName: d.name + '.apk',
-                caption: null
-            }, {
-                quoted: m,
-                ephemeralExpiration: 24 * 60 * 100,
-                disappearingMessagesInChat: 24 * 60 * 100
-            });
-        } else {
-            throw new Error('No se encontraron datos válidos en la API principal');
-        }
-    } catch {
-        try {
-            let searchA = await search(text);
-            let data5 = await download(searchA[0].id);
-            let infoapk2 = `╭━─━─━─≪≫─━─━─━╮
-│ ≡ ${lenguaje.descargar.text25} ≡
-│——————«•»——————
-│🔸📌 ${lenguaje.descargar.text12} ${data5.name}
-│🔸📦 *Package:* ${data5.package}
-│🔸🕒 ${lenguaje.descargar.text26} ${data5.lastup}
-│🔸📥 ${lenguaje.descargar.text27} ${data5.size}
-╰━─━─━─≪≫─━─━─━╯`;
-            await conn.sendMessage(m.chat, {
-                image: { url: data5.icon },
-                caption: infoapk2
-            }, {
-                quoted: m,
-                ephemeralExpiration: 24 * 60 * 100,
-                disappearingMessagesInChat: 24 * 60 * 100
-            });
+    let caption = `╭━─━─━─≪≫─━─━─━╮\n`
+    caption += `│ ≡ ${lenguaje.descargar.text25} ≡\n`
+    caption += `│——————«•»——————\n`
+    caption += `│🔸📌 ${lenguaje.descargar.text12} ${json.name}\n`
+    caption += `│🔸📦 *Package:* ${json.package}\n`
+    caption += `│🔸🕒 ${lenguaje.descargar.text26} ${json.lastUpdate}\n`
+    caption += `│🔸📥 ${lenguaje.descargar.text27} ${json.size}\n`
+    caption += `╰━─━─━─≪≫─━─━─━╯`
 
-            if (data5.size.includes('GB') || parseFloat(data5.size.replace(' MB', '')) > 999) {
-                return await m.reply(lenguaje.descargar.text28);
-            }
+    await shoNhe.sendMessage(m.chat, {
+      image: { url: json.icon },
+      caption: caption
+    }, {
+      quoted: m,
+      ephemeralExpiration: 24 * 60 * 100,
+      disappearingMessagesInChat: 24 * 60 * 100
+    })
 
-            await conn.sendMessage(m.chat, {
-                document: { url: data5.dllink },
-                mimetype: 'application/vnd.android.package-archive',
-                fileName: data5.name + '.apk',
-                caption: null
-            }, {
-                quoted: m,
-                ephemeralExpiration: 24 * 60 * 100,
-                disappearingMessagesInChat: 24 * 60 * 100
-            });
-        } catch (error) {
-            m.reply('❌ Ocurrió un error al procesar la descarga.');
-            console.error(error);
-        }
+    if (json.size.includes('GB') || parseFloat(json.size.replace(' MB', '')) > 999) {
+      return await m.reply(lenguaje.descargar.text28)
     }
+
+    await shoNhe.sendMessage(m.chat, {
+      document: { url: json.dllink },
+      fileName: `${json.name}.apk`,
+      mimetype: 'application/vnd.android.package-archive'
+    }, {
+      quoted: m,
+      ephemeralExpiration: 24 * 60 * 100,
+      disappearingMessagesInChat: 24 * 60 * 100
+    })
+
+  } catch (error) {
+    console.error(error)
+    m.reply('No se pudo encontrar ni descargar el APK.')
+  }
 }
-break;
+break
 		case 'fb': case 'facebook': case 'fbdl': { if (!isRegistered(m)) { return sendRegister(shoNhe, m, prefix, namabot); } updatePopularCommand(command); const levelUpMessage = levelUpdate(command, m.sender); console.log('📢 Procesando descarga de Facebook...');
 
 if (!text) {
