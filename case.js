@@ -18431,11 +18431,9 @@ case 'igdl':
 }
 break;
 case 'apk': {
-    if (!text) return reply(`✳️ *Ingresa el nombre de una app.*\n\nEjemplo: ${usedPrefix + command} whatsapp`);
+    if (!text) return reply(`*✳️ Ingresa el nombre de una app.*\n\nEjemplo: ${usedPrefix + command} whatsapp`);
 
     let api = `https://api.dorratz.com/v2/apk-dl?text=${encodeURIComponent(text)}`;
-
-    await shoNhe.sendMessage(from, { react: { text: '⏳', key: msg.key } });
 
     try {
         let res = await fetch(api);
@@ -18454,32 +18452,30 @@ case 'apk': {
         } = data;
 
         // Descargar el APK
-        let apkRes = await fetch(dllink);
+                let apkRes = await fetch(dllink);
         const buffer = Buffer.from(await apkRes.arrayBuffer());
 
-        // Verificar tamaño permitido por WhatsApp (máx. 100 MB)
+        // Verificar tamaño permitido por WhatsApp (máximo 100 MB)
         const maxSizeBytes = 100 * 1024 * 1024;
         if (buffer.length > maxSizeBytes) return reply('❌ El archivo APK es demasiado grande para enviarlo por WhatsApp (límite 100MB).');
 
         // Enviar imagen con info
-        await shoNhe.sendMessage(from, {
+        await conn.sendMessage(from, {
             image: { url: icon },
-            caption: `📱 *Nombre:* ${name}\n📦 *Paquete:* ${pkg}\n💾 *Tamaño:* ${size}\n📅 *Última Actualización:* ${lastUpdate}`
+            caption: `*📦 Nombre:* ${name}\n*📁 Paquete:* ${pkg}\n*💾 Tamaño:* ${size}\n*📅 Última Actualización:* ${lastUpdate}`
         }, { quoted: msg });
 
         // Enviar el archivo APK
-        await shoNhe.sendMessage(from, {
+        await conn.sendMessage(from, {
             document: buffer,
             fileName: `${name}.apk`,
             mimetype: 'application/vnd.android.package-archive'
         }, { quoted: msg });
 
-        await shoNhe.sendMessage(from, { react: { text: '✅', key: msg.key } });
-
     } catch (err) {
         console.error(err);
-        await shoNhe.sendMessage(from, { react: { text: '❌', key: msg.key } });
-        reply('❌ Hubo un error al buscar o descargar el APK.');
+        await conn.sendMessage(from, { react: { text: '❌', key: msg.key } });
+        reply('❌ Hubo un error al buscar el APK.');
     }
 
 	if (levelUpMessage) {
