@@ -18501,6 +18501,53 @@ if (apkSizeMB > maxSizeMB) {
 	}
 }
 break;
+case 'gay': {
+    if (!m.isGroup) return shoNherly(info.group);
+
+    const vn = 'https://qu.ax/HfeP.mp3';
+    await m.react('🏳️‍🌈');
+
+    const member = participants.map(u => u.id);
+    const who = m.mentionedJid?.[0] || m.sender;
+    const me = m.sender;
+
+    const random = Math.floor(Math.random() * 100);
+    let ga;
+
+    if (random < 20) {
+        ga = 'Usted es hetero 🤪🤙';
+    } else if (random >= 21 && random <= 30) {
+        ga = 'Mas o menos 🤔';
+    } else if (random >= 31 && random <= 40) {
+        ga = 'Tengo mis dudas 😑';
+    } else if (random >= 41 && random <= 50) {
+        ga = 'Tengo razón? 😏';
+    } else {
+        ga = 'Usted es gay 🥸';
+    }
+
+    const jawab = `@${who.split("@")[0]} es 🏳️‍🌈 *${random}%* gay\n\n${ga}`;
+    const pp = await shoNhe.profilePictureUrl(who, 'image').catch(_ => 'https://telegra.ph/file/6765f503ebd91db2fe461.jpg');
+    const imageUrl = global.API('https://some-random-api.com', '/canvas/gay', { avatar: pp });
+
+    await shoNhe.sendMessage(m.chat, {
+        image: { url: imageUrl },
+        caption: jawab,
+        contextInfo: {
+            mentionedJid: [who],
+            forwardingScore: 9999999,
+            isForwarded: false
+        }
+    }, { quoted: m, ephemeralExpiration: 24 * 60 * 1000 });
+
+    await shoNhe.sendMessage(m.chat, {
+        audio: { url: vn },
+        mimetype: 'audio/mp4',
+        ptt: true
+    }, { quoted: m });
+
+    break;
+}
 case 'logo': {
     if (!text) {
         shoNherly('Por favor, proporciona el texto para el logo.');
