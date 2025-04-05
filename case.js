@@ -1695,7 +1695,7 @@ await shoNhe.sendMessage(m.chat, {
 		{
 			fs.writeFileSync(userFirePath, JSON.stringify(db, null, 2));
 		}
-function levelUpdate(command, sender) {
+async function levelUpdate(command, sender, shoNhe, m) {
     const db = loadUserFire();
     if (!db[sender]) {
         db[sender] = {
@@ -1704,51 +1704,39 @@ function levelUpdate(command, sender) {
             exp: 0,
             expTarget: 10,
             commandCount: 0,
-            balance: 0 // Initial balance
+            balance: 0
         };
     }
-    const user = db[sender];
-    if (user.commandCount == null) user.commandCount = 0;
-    if (user.exp == null) user.exp = 0;
-    if (user.level == null) user.level = 0;
-    if (user.expTarget == null) user.expTarget = 10;
-    if (user.balance == null) user.balance = 0;
 
-    // Increment commands and exp
-    user.commandCount += 1;
-    user.exp += 1;
+    const user = db[sender];
+    user.commandCount = (user.commandCount ?? 0) + 1;
+    user.exp = (user.exp ?? 0) + 1;
+    user.level = user.level ?? 0;
+    user.expTarget = user.expTarget ?? 10;
+    user.balance = user.balance ?? 0;
 
     let levelUpMessage = null;
+
     if (user.exp >= user.expTarget) {
-        user.level += 1; // Level up
-        user.expTarget += 20; // Increase target exp
+        user.level += 1;
+        user.expTarget += 20;
 
-        // Define image URL based on level
-        const levelImages = {
-            1: "https://i.ibb.co.com/tXMNptr/01.png",
-            2: "https://i.ibb.co.com/Gxqbrzg/02.png",
-            3: "https://i.ibb.co.com/fVRR1BV/03.png",
-            4: "https://i.ibb.co.com/zPy0DcD/04.png",
-            5: "https://i.ibb.co.com/0V7msHW/05.png",
-            6: "https://i.ibb.co.com/4tNm7BV/06.png",
-            7: "https://i.ibb.co.com/6NrT4wb/07.png",
-            8: "https://i.ibb.co.com/QYbY3Qb/08.png",
-            9: "https://i.ibb.co.com/g7KC6jg/09.png",
-            10: "https://i.ibb.co.com/Bndy2xp/10.png",
-            default: "https://i.ibb.co.com/CQcbcQP/default.png"
-        };
+        let ppuser;
+        try {
+            ppuser = await shoNhe.profilePictureUrl(m.sender, 'image');
+        } catch {
+            ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60';
+        }
 
-        const levelImage = levelImages[user.level] || levelImages.default;
+        const levelImage = `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURIComponent(ppuser)}`;
 
         levelUpMessage = {
-            text: 
-`🎉 ¡Felicidades! @${m.sender.split`@`[0]} ha subido de nivel.\n⬅️ Nivel anterior: ${user.level - 1}\n➡️ Nuevo nivel: ${user.level}\n🌟 Rol actual: ${user.role || 'Regular User'}\n📅 Fecha: ${new Date().toLocaleString('id-ID')}\n✨ ¡Sigue así!`,
-`🌟 @${m.sender.split`@`[0]} ha alcanzado un nuevo nivel.\n🔙 Anterior: ${user.level - 1}\n🔜 Nuevo: ${user.level}\n👑 Rol: ${user.role || 'Regular User'}\n📅 Fecha: ${new Date().toLocaleString('id-ID')}\n> mira tu nivel aquí `,
+            text: `🎉 ¡Felicidades! @${m.sender.split('@')[0]} ha subido de nivel.\n⬅️ Nivel anterior: ${user.level - 1}\n➡️ Nuevo nivel: ${user.level}\n🌟 Rol actual: ${user.role || 'Regular User'}\n📅 Fecha: ${new Date().toLocaleString('id-ID')}\n✨ ¡Sigue así!`,
             image: levelImage
         };
     }
 
-    saveUserFire(db);
+    saveUserFire(db); // Guarda la DB si es necesario
     console.log(`📊 Command "${command}" executed by ${sender}`);
     return levelUpMessage;
 }
