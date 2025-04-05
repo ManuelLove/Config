@@ -6124,23 +6124,23 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 				// Informasi level, exp, dan lainnya
 				const info = 
 `╔═══════════════════╗  
-║ 🌟 *TU PERFIL DE NIVEL* 🌟 ║  
+║  🌟 *TU PERFIL DE NIVEL* 🌟 ║  
 ╚═══════════════════╝  
 
 📛 *Nombre*       : ${m.pushName || 'Desconocido'}  
 📱 *Número*      : ${m.sender.split('@')[0]}  
 
-╭────────•✧✧✧•───────╮  
+╭───────•✧✧✧•───────╮  
 🎮 *Nivel*      : ${user.level || 0}  
 ✨ *Exp*        : ${user.exp || 0}/${user.expTarget || 10}  
 💰 *Saldo*      : Rp${user.balance || 0}  
 📊 *Comandos*   : ${user.commandCount || 0}  
 💎 *Rol*        : ${user.role || 'Usuario'}  
-╰────────•✧✧✧•───────╯  
+╰───────•✧✧✧•───────╯  
 
-╔════════════════════╗  
+╔═══════════════════╗  
 ║             📢 *INFORMACIÓN*             
-╠════════════════════╣  
+╠═══════════════════╣  
 ║ ➤ *Logros*: Has superado      
 ║    ${user.level - 1 || 0} niveles y ahora      
 ║    estás en el nivel ${user.level || 0}.   
@@ -6150,7 +6150,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 ║ ➤ *Consejo*: "Cada pequeño        
 ║    paso te acerca más         
 ║    a la cima del éxito."                
-╚════════════════════╝  
+╚═══════════════════╝  
 
 📡 *Registro del sistema*:  
 "Tu información se ha actualizado en tiempo real. ¡Sigue activo y explora más funciones!"`;
