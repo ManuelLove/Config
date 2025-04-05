@@ -18528,7 +18528,7 @@ case 'gay': {
 
     const jawab = `@${who.split("@")[0]} es 🏳️‍🌈 *${random}%* gay\n\n${ga}`;
     const pp = await shoNhe.profilePictureUrl(who, 'image').catch(_ => 'https://telegra.ph/file/6765f503ebd91db2fe461.jpg');
-    const imageUrl = global.API('https://some-random-api.com', '/canvas/gay', { avatar: pp });
+    const imageUrl = `https://some-random-api.com/canvas/gay?avatar=${encodeURIComponent(pp)}`;
 
     await shoNhe.sendMessage(m.chat, {
         image: { url: imageUrl },
