@@ -18510,22 +18510,22 @@ case 'apkdl': {
 
 		const { name, dllink, icon, size, package: pkg, lastUpdate } = res;
 
-		let caption = `📦 *Nombre:* ${name}\n` +
-		              `📁 *Tamaño:* ${size}\n` +
-		              `📦 *Paquete:* ${pkg}\n` +
-		              `🕒 *Actualización:* ${lastUpdate}\n` +
-		              `🔗 *Link:* ${dllink}`;
+		let caption = `📱 *Nombre:* ${name}\n`;
+		if (pkg) caption += `📦 *Paquete:* ${pkg}\n`;
+		if (size) caption += `💾 *Tamaño:* ${size}\n`;
+		if (lastUpdate) caption += `🕒 *Última actualización:* ${lastUpdate}`;
 
 		console.log('📥 Descargando APK:', name);
 
 		const response = await axios.get(dllink, {
-			responseType: 'arraybuffer',
-			maxContentLength: Infinity,
-			maxBodyLength: Infinity,
-			headers: {
-				'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
-			}
-		});
+  responseType: 'arraybuffer',
+  maxContentLength: Infinity,
+  maxBodyLength: Infinity,
+  headers: {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+    'Accept': 'application/vnd.android.package-archive'
+  }
+});
 
 		const buffer = Buffer.from(response.data);
 
