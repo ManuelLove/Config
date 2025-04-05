@@ -18478,6 +18478,7 @@ case 'apk': {
         reply('❌ Hubo un error al buscar el APK.');
     }
 break;
+}
 		case 'fb': case 'fbdl': { if (!isRegistered(m)) { return sendRegister(shoNhe, m, prefix, namabot); } updatePopularCommand(command); const levelUpMessage = levelUpdate(command, m.sender); console.log('📢 Procesando descarga de Facebook...');
 
 if (!text) {
