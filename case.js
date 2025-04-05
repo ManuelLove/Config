@@ -18495,52 +18495,65 @@ case 'igdl':
 }
 break;
 case 'apk':
-case 'modoapk': {
-  if (!text) return m.reply(lenguaje.descargar.text24)
-  try {
-    const res = await fetch(`https://api.dorratz.com/v2/apk-dl?text=${text}`)
-    const json = await res.json()
+case 'apkdl':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
 
-    if (!json.name || !json.dllink) throw 'No se pudo obtener información del APK'
+	if (!text) {
+		return shoNherly(`⚠️ Usa el comando de la siguiente manera: ${prefix + command} *nombre o link del APK*\n\n🤖 *Ejemplo:* ${prefix + command} my boy`);
+	}
+	try {
+		const res = await fetchJson(`https://api.hiuraa.my.id/downloader/aptoide?query=${encodeURIComponent(text)}`);
+		if (!res || !res.dllink) {
+			return shoNherly('❌ No se encontró ningún APK para esa búsqueda.');
+		}
 
-    let caption = `╭━─━─━─≪≫─━─━─━╮\n`
-    caption += `│ ≡ ${lenguaje.descargar.text25} ≡\n`
-    caption += `│——————«•»——————\n`
-    caption += `│🔸📌 ${lenguaje.descargar.text12} ${json.name}\n`
-    caption += `│🔸📦 *Package:* ${json.package}\n`
-    caption += `│🔸🕒 ${lenguaje.descargar.text26} ${json.lastUpdate}\n`
-    caption += `│🔸📥 ${lenguaje.descargar.text27} ${json.size}\n`
-    caption += `╰━─━─━─≪≫─━─━─━╯`
+		const {
+			name,
+			size,
+			package: pkg,
+			lastUpdate,
+			icon,
+			dllink
+		} = res;
 
-    await shoNhe.sendMessage(m.chat, {
-      image: { url: json.icon },
-      caption: caption
-    }, {
-      quoted: m,
-      ephemeralExpiration: 24 * 60 * 100,
-      disappearingMessagesInChat: 24 * 60 * 100
-    })
+		const response = await axios.get(dllink, { responseType: 'arraybuffer' });
+		const buffer = Buffer.from(response.data);
 
-    if (json.size.includes('GB') || parseFloat(json.size.replace(' MB', '')) > 999) {
-      return await m.reply(lenguaje.descargar.text28)
-    }
+		let caption = `📦 *Nombre:* ${name}\n`;
+		if (pkg) caption += `📦 *Paquete:* ${pkg}\n`;
+		if (size) caption += `📁 *Tamaño:* ${size}\n`;
+		if (lastUpdate) caption += `🕒 *Última actualización:* ${lastUpdate}`;
 
-    await shoNhe.sendMessage(m.chat, {
-      document: { url: json.dllink },
-      fileName: `${json.name}.apk`,
-      mimetype: 'application/vnd.android.package-archive'
-    }, {
-      quoted: m,
-      ephemeralExpiration: 24 * 60 * 100,
-      disappearingMessagesInChat: 24 * 60 * 100
-    })
+		await shoNhe.sendMessage(m.chat, {
+			document: buffer,
+			fileName: `${name}.apk`,
+			mimetype: 'application/vnd.android.package-archive',
+			caption: caption
+		}, { quoted: hw });
 
-  } catch (error) {
-    console.error(error)
-    m.reply('No se pudo encontrar ni descargar el APK.')
-  }
+	} catch (err) {
+		console.error('❌ Error al descargar el APK:', err);
+		shoNherly('❌ Ocurrió un error al intentar descargar el archivo.');
+	}
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat,
+		{
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
 }
-break
+break;
 		case 'fb': case 'facebook': case 'fbdl': { if (!isRegistered(m)) { return sendRegister(shoNhe, m, prefix, namabot); } updatePopularCommand(command); const levelUpMessage = levelUpdate(command, m.sender); console.log('📢 Procesando descarga de Facebook...');
 
 if (!text) {
