@@ -18496,7 +18496,7 @@ case 'igdl':
 break;
 case 'apk':
 case 'modoapk': {
-    let { search, download } = require('aptoide-scraper');
+    let { search, download } = 
     if (!text) return m.reply(lenguaje.descargar.text24);
     try {
         const apiRes = await fetch(`https://api.dorratz.com/v2/apk-dl?text=${text}`);
