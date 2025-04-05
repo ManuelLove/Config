@@ -18401,154 +18401,91 @@ break;
 			 * PEMBATAS DOANG HEHE
 			 */
 			case 'ig':
-			case 'instagram':
-			case 'igdl':
-			{
-				if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
+case 'instagram':
+case 'igdl':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	console.log('📢 Procesando comando IG...');
+
+	if (!text) {
+		return shoNherly(`⚠️ Usa el comando de la siguiente manera: ${prefix + command} *url*\n\n🤔 *Ejemplo:*\n${prefix + command} https://www.instagram.com/reel/Cr5AXBQvBC1/`);
+	}
+
+	if (!(await firely(m, mess.waits))) return;
+
+	const regex = /(\d+)$/;
+	const match = text.match(regex);
+	const numImages = match ? parseInt(match[1]) : 8;
+
+	try {
+		console.log('🌐 Solicitando API...');
+		let anu = await fetchJson(`https://api.hiuraa.my.id/downloader/instagram?url=${text}`);
+		if (!anu.status || !anu.result || !anu.result.url || anu.result.url.length === 0) {
+			console.log('❌ Contenido no encontrado o inválido.');
+			return shoNherly('❌ Contenido no encontrado. ¡Asegúrate de que el enlace sea correcto!');
+		}
+
+		const urls = anu.result.url;
+		const totalItems = Math.min(urls.length, numImages);
+		console.log(`✅ Contenido encontrado: ${totalItems} archivo(s).`);
+
+		for (let i = 0; i < totalItems; i++) {
+			let mediaUrl = urls[i];
+			try {
+				const response = await axios.get(mediaUrl, { responseType: 'arraybuffer' });
+				const buffer = Buffer.from(response.data);
+				const contentType = response.headers['content-type'];
+				let type;
+
+				if (contentType?.startsWith('video')) {
+					type = { mime: 'video/mp4' };
+				} else if (contentType?.startsWith('image')) {
+					type = { mime: 'image/jpeg' };
+				} else {
+					type = await FileType.fromBuffer(buffer);
 				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				console.log('📢 Memproses perintah IG Download...');
-				if (!text)
-				{
-					console.log('⚠️ No se proporcionó ninguna URL.');
-					return shoNherly(`⚠️ Usa el comando de la siguiente manera: ${prefix + command} *url*\n\n🤔 *Ejemplo:*\n${prefix + command} https://www.instagram.com/reel/Cr5AXBQvBC1/`);
+
+				if (type?.mime.startsWith('video')) {
+					await shoNhe.sendMessage(m.chat, {
+						video: buffer,
+						caption: `🎥 *Instagram Video*\n🔗 [Enlace Original](${anu.result.metadata.url})`
+					}, { quoted: hw });
+				} else if (type?.mime.startsWith('image')) {
+					await shoNhe.sendMessage(m.chat, {
+						image: buffer,
+						caption: `🖼️ *Instagram Foto*\n🔗 [Enlace Original](${anu.result.metadata.url})`
+					}, { quoted: hw });
+				} else {
+					console.log('❓ Tipo de archivo no reconocido:', mediaUrl);
+					shoNherly('⚠️ Tipo de archivo no reconocido');
 				}
-				if (!(await firely(m, mess.waits))) return;
-				// Mengambil angka setelah URL jika ada
-				const regex = /(\d+)$/;
-				const match = text.match(regex);
-				const numImages = match ? parseInt(match[1]) : 8; // Default ke 8 jika tidak ada angka
-				console.log('🌐 URL yang dimasukkan:', text);
-				console.log('🔢 Jumlah gambar yang akan dikirim:', numImages);
-				try
-				{
-					console.log('📡 Menghubungi API...');
-					let anu = await fetchJson(`https://api.hiuraa.my.id/downloader/instagram?url=${text}`);
-					console.log('🔍 Respons API:', JSON.stringify(anu, null, 2));
-					if (!anu.status || !anu.data || anu.data.length === 0)
-					{
-						console.log('❌ Data tidak ditemukan atau kosong.');
-						return shoNherly('❌ Contenido no encontrado. ¡Asegúrate de que el enlace sea correcto!');
-					}
-					console.log('✅ Data ditemukan! Proses pengiriman...');
-					let count = 0; // Untuk membatasi jumlah gambar/video yang dikirim
-					// Batasi data yang dikirim sesuai jumlah yang diinginkan
-					const totalItems = Math.min(anu.data.length, numImages);
-					for (let i = 0; i < totalItems; i++)
-					{
-						let item = anu.data[i];
-						console.log('📦 Item ditemukan:', item);
-						// Ambil data file dari URL
-						console.log('⏳ Mengunduh file untuk deteksi tipe...');
-						const response = await axios.get(item.url,
-						{
-							responseType: 'arraybuffer'
-						});
-						// Periksa header Content-Type
-						const contentType = response.headers['content-type'];
-						console.log('Tipe file dari header:', contentType);
-						// Deteksi tipe file jika header tidak memberikan informasi yang jelas
-						let type;
-						if (contentType)
-						{
-							if (contentType.startsWith('video'))
-							{
-								type = {
-									mime: 'video/mp4'
-								}; // Asumsikan video mp4 jika tipe file adalah video
-							}
-							else if (contentType.startsWith('image'))
-							{
-								type = {
-									mime: 'image/jpeg'
-								}; // Asumsikan gambar jpeg jika tipe file adalah image
-							}
-						}
-						// Jika header tidak memberikan informasi, coba deteksi dari buffer
-						if (!type)
-						{
-							const buffer = Buffer.from(response.data);
-							type = await FileType.fromBuffer(buffer);
-							console.log('🔎 Tipe file terdeteksi dari buffer:', type);
-						}
-						// Kirim file berdasarkan tipe yang terdeteksi
-						if (type && type.mime.startsWith('video'))
-						{
-							console.log('🎥 Mengirim video...');
-							const buffer = Buffer.from(response.data);
-							await shoNhe.sendMessage(m.chat,
-							{
-								video: buffer,
-								caption: `🎥 *Instagram Video*\n🔗 [Enlace Original](${text})`
-							},
-							{
-								quoted: hw
-							});
-							console.log('✅ Video berhasil dikirim!');
-						}
-						else if (type && type.mime.startsWith('image'))
-						{
-							console.log('🖼️ Mengirim gambar...');
-							const buffer = Buffer.from(response.data);
-							await shoNhe.sendMessage(m.chat,
-							{
-								image: buffer,
-								caption: `🖼️ *Instagram Foto*\n🔗 [Enlace Original](${text})`
-							},
-							{
-								quoted: hw
-							});
-							console.log('✅ Gambar berhasil dikirim!');
-						}
-						else
-						{
-							console.log('❓ Jenis file tidak dikenali:', item.url);
-							shoNherly('⚠️ ¡Tipo de archivo no reconocido!');
-						}
-						count++; // Increment count setiap gambar/video dikirim
-					}
-					if (count === 0)
-					{
-						shoNherly('⚠️ No hay contenido para enviar.');
-					}
-				}
-				catch (err)
-				{
-					console.error('❌ Error:', err);
-					shoNherly('❌ Hay un error. Vuelve a intentarlo más tarde.');
-				}
-				if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
+			} catch (err) {
+				console.error('❌ Error al descargar archivo:', err);
+				shoNherly('❌ Error al procesar el archivo.');
 			}
-			break
+		}
+	} catch (err) {
+		console.error('❌ Error general:', err);
+		shoNherly('❌ Hay un error. Inténtalo más tarde.');
+	}
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat,
+		{
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
 		case 'fb': case 'facebook': case 'fbdl': { if (!isRegistered(m)) { return sendRegister(shoNhe, m, prefix, namabot); } updatePopularCommand(command); const levelUpMessage = levelUpdate(command, m.sender); console.log('📢 Procesando descarga de Facebook...');
 
 if (!text) {
