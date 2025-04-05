@@ -18502,12 +18502,15 @@ case 'apkdl':
 	const levelUpMessage = levelUpdate(command, m.sender);
 
 	if (!text) {
-		return shoNherly(`⚠️ Usa el comando de la siguiente manera: ${prefix + command} *nombre o link del APK*\n\n🤖 *Ejemplo:* ${prefix + command} my boy`);
+		return shoNherly(`⚠️ Usa el comando así: ${prefix + command} *url o id válido de la API*\n\n📦 *Ejemplo:* ${prefix + command} myboy`);
 	}
+	if (!(await firely(m, mess.waits))) return;
 	try {
-		const res = await fetchJson(`https://api.hiuraa.my.id/downloader/aptoide?query=${encodeURIComponent(text)}`);
-		if (!res || !res.dllink) {
-			return shoNherly('❌ No se encontró ningún APK para esa búsqueda.');
+		const res = await fetchJson(`https://api.hiuraa.my.id/downloader/aptoide?query=${text}`);
+
+		if (!res || !res.name || !res.dllink) {
+			console.log('❌ Respuesta inesperada:', res);
+			return shoNherly('❌ No se encontró ningún APK para esa búsqueda o el formato no es válido.');
 		}
 
 		const {
@@ -18519,12 +18522,13 @@ case 'apkdl':
 			dllink
 		} = res;
 
+		console.log('📥 Descargando APK:', name);
 		const response = await axios.get(dllink, { responseType: 'arraybuffer' });
 		const buffer = Buffer.from(response.data);
 
-		let caption = `📦 *Nombre:* ${name}\n`;
+		let caption = `📱 *Nombre:* ${name}\n`;
 		if (pkg) caption += `📦 *Paquete:* ${pkg}\n`;
-		if (size) caption += `📁 *Tamaño:* ${size}\n`;
+		if (size) caption += `💾 *Tamaño:* ${size}\n`;
 		if (lastUpdate) caption += `🕒 *Última actualización:* ${lastUpdate}`;
 
 		await shoNhe.sendMessage(m.chat, {
@@ -18535,8 +18539,8 @@ case 'apkdl':
 		}, { quoted: hw });
 
 	} catch (err) {
-		console.error('❌ Error al descargar el APK:', err);
-		shoNherly('❌ Ocurrió un error al intentar descargar el archivo.');
+		console.error('❌ Error al procesar la descarga:', err);
+		return shoNherly('❌ Ocurrió un error al intentar descargar o enviar el APK.');
 	}
 
 	if (levelUpMessage) {
