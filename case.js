@@ -18505,7 +18505,7 @@ case 'gay': {
     if (!m.isGroup) return shoNherly(info.group);
 
     const vn = 'https://qu.ax/HfeP.mp3';
-    await m.react('🏳️‍🌈');
+    await emote('🏳️‍🌈');
 
     const member = participants.map(u => u.id);
     const who = m.mentionedJid?.[0] || m.sender;
