@@ -1695,7 +1695,7 @@ await shoNhe.sendMessage(m.chat, {
 		{
 			fs.writeFileSync(userFirePath, JSON.stringify(db, null, 2));
 		}
-function levelUpdate(command, sender) {
+async function levelUpdate(command, sender, m, shoNhe) {
     const db = loadUserFire();
     if (!db[sender]) {
         db[sender] = {
