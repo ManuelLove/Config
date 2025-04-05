@@ -18477,21 +18477,6 @@ case 'apk': {
         await shoNhe.sendMessage(from, { react: { text: '❌', key: msg.key } });
         reply('❌ Hubo un error al buscar el APK.');
     }
-
-	if (levelUpMessage) {
-		await shoNhe.sendMessage(m.chat,
-		{
-			image: { url: levelUpMessage.image },
-			caption: levelUpMessage.text,
-			footer: "LEVEL UP🔥",
-			buttons: [
-				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
-				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
-			],
-			viewOnce: true,
-		}, { quoted: hw });
-	}
-}
 break;
 		case 'fb': case 'fbdl': { if (!isRegistered(m)) { return sendRegister(shoNhe, m, prefix, namabot); } updatePopularCommand(command); const levelUpMessage = levelUpdate(command, m.sender); console.log('📢 Procesando descarga de Facebook...');
 
