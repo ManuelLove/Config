@@ -18430,55 +18430,57 @@ case 'igdl':
 	}
 }
 break;
-case 'apk':
-case 'apkdl':
-{
-	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
-	updatePopularCommand(command);
-	const levelUpMessage = levelUpdate(command, m.sender);
+case 'apk': {
+    if (!text) return reply(`*✳️ Ingresa el nombre de una app.*\n\nEjemplo: ${usedPrefix + command} whatsapp`);
 
-	if (!text) {
-		return shoNherly(`⚠️ Usa el comando así: ${prefix + command} *url o id válido de la API*\n\n📦 *Ejemplo:* ${prefix + command} myboy`);
-	}
+    let api = `https://api.dorratz.com/v2/apk-dl?text=${encodeURIComponent(text)}`;
 
-	if (!(await firely(m, mess.waits))) return;
+    await sock.sendMessage(from, { react: { text: '⏳', key: msg.key } });
 
-	try {
-		const res = await fetchJson(`https://api.dorratz.com/v2/apk-dl?text=${text}`);
+    try {
+        let res = await fetch(api);
+        if (!res.ok) throw await res.text();
+        let data = await res.json();
 
-		if (!res || !res.name || !res.dllink) {
-			console.log('❌ Respuesta inesperada:', res);
-			return shoNherly('❌ No se encontró ningún APK para esa búsqueda o el formato no es válido.');
-		}
+        if (!data || !data.name || !data.dllink) return reply('❌ No se encontró ningún APK para esa búsqueda.');
 
-		const {
-			name,
-			size,
-			package: pkg,
-			lastUpdate,
-			icon,
-			dllink
-		} = res;
-		console.log('📥 Descargando APK:', name);
-		const response = await axios.get(dllink, { responseType: 'arraybuffer' });
-		const buffer = Buffer.from(response.data);
+        let {
+            name,
+            size,
+            package: pkg,
+            lastUpdate,
+            icon,
+            dllink
+        } = data;
 
-		let caption = `📱 *Nombre:* ${name}\n`;
-		if (pkg) caption += `📦 *Paquete:* ${pkg}\n`;
-		if (size) caption += `💾 *Tamaño:* ${size}\n`;
-		if (lastUpdate) caption += `🕒 *Última actualización:* ${lastUpdate}`;
+        // Descargar el APK
+        let apkRes = await fetch(dllink);
+        let buffer = await apkRes.buffer();
 
-		await shoNhe.sendMessage(m.chat, {
-			document: buffer,
-			fileName: `${name}.apk`,
-			mimetype: 'application/vnd.android.package-archive',
-			caption: caption
-		}, { quoted: hw });
+        // Verificar tamaño permitido por WhatsApp (máximo 100 MB)
+        const maxSizeBytes = 100 * 1024 * 1024;
+        if (buffer.length > maxSizeBytes) return reply('❌ El archivo APK es demasiado grande para enviarlo por WhatsApp (límite 100MB).');
 
-	} catch (err) {
-		console.error('❌ Error al procesar la descarga:', err);
-		return shoNherly('❌ Ocurrió un error al intentar descargar o enviar el APK.');
-	}
+        // Enviar imagen con info
+        await conn.sendMessage(from, {
+            image: { url: icon },
+            caption: `*📦 Nombre:* ${name}\n*📁 Paquete:* ${pkg}\n*💾 Tamaño:* ${size}\n*📅 Última Actualización:* ${lastUpdate}`
+        }, { quoted: msg });
+
+        // Enviar el archivo APK
+        await conn.sendMessage(from, {
+            document: buffer,
+            fileName: `${name}.apk`,
+            mimetype: 'application/vnd.android.package-archive'
+        }, { quoted: msg });
+
+        await conn.sendMessage(from, { react: { text: '✅', key: msg.key } });
+
+    } catch (err) {
+        console.error(err);
+        await conn.sendMessage(from, { react: { text: '❌', key: msg.key } });
+        reply('❌ Hubo un error al buscar el APK.');
+    }
 
 	if (levelUpMessage) {
 		await shoNhe.sendMessage(m.chat,
