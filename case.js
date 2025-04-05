@@ -24871,7 +24871,16 @@ break;
 				if (!text) return shoNherly(`Ejemplo : ${prefix + command} hola hermana`)
 				if (!(await firely(m, mess.waits))) return;
 				try {
-					const buffer = await getBuffer(`https://api.siputzx.my.id/api/canvas/xnxx?title=${encodeURIComponent(text)}&image=@${who.split("@")[0]}`)
+					let targetJid = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.sender;
+
+let ppuser;
+try {
+  ppuser = await shoNhe.profilePictureUrl(targetJid, 'image');
+} catch {
+  ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60';
+}
+
+const buffer = await getBuffer(`https://api.siputzx.my.id/api/canvas/xnxx?title=${encodeURIComponent(text)}&image=${encodeURIComponent(ppuser)}`);
 					shoNhe.sendImageAsSticker(m.chat, buffer, m, { packname: namabot, author: namaowner })
 				} catch (err) {
 					RepshoNheError('Se produjo un error al crear una sticker de imagen. 😞');
