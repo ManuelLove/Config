@@ -18435,8 +18435,6 @@ case 'apk': {
 
     let api = `https://api.dorratz.com/v2/apk-dl?text=${encodeURIComponent(text)}`;
 
-    await sock.sendMessage(from, { react: { text: '⏳', key: msg.key } });
-
     try {
         let res = await fetch(api);
         if (!res.ok) throw await res.text();
@@ -18473,8 +18471,6 @@ case 'apk': {
             fileName: `${name}.apk`,
             mimetype: 'application/vnd.android.package-archive'
         }, { quoted: msg });
-
-        await conn.sendMessage(from, { react: { text: '✅', key: msg.key } });
 
     } catch (err) {
         console.error(err);
