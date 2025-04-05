@@ -1724,69 +1724,19 @@ function levelUpdate(command, sender) {
         user.expTarget += 20; // Increase target exp
 
         // Define image URL based on level
-        const levelImages = {
-            1: "https://i.ibb.co.com/tXMNptr/01.png",
-            2: "https://i.ibb.co.com/Gxqbrzg/02.png",
-            3: "https://i.ibb.co.com/fVRR1BV/03.png",
-            4: "https://i.ibb.co.com/zPy0DcD/04.png",
-            5: "https://i.ibb.co.com/0V7msHW/05.png",
-            6: "https://i.ibb.co.com/4tNm7BV/06.png",
-            7: "https://i.ibb.co.com/6NrT4wb/07.png",
-            8: "https://i.ibb.co.com/QYbY3Qb/08.png",
-            9: "https://i.ibb.co.com/g7KC6jg/09.png",
-            10: "https://i.ibb.co.com/Bndy2xp/10.png",
-            default: "https://i.ibb.co.com/CQcbcQP/default.png"
-        };
+        if (before !== user.level) {
+	try {
+		ppuser = await shoNhe.profilePictureUrl(m.sender, 'image');
+	} catch (err) {
+		ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60';
+	}
 
-        const levelImage = levelImages[user.level] || levelImages.default;
+	const imageUrl = `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURIComponent(ppuser)}`;
 
         levelUpMessage = {
             text: 
-`┌────────────────────────────────────┐  
-│                         ██░░ ACTUALIZACIÓN DEL SISTEMA ░░██                    │  
-└────────────────────────────────────┘
-
-🔓 [ACCESO CONCEDIDO]  
->> Sistema de nivelación de usuarios iniciado...  
->> Cargando perfil de usuario...  
->> Escaneando la integridad de la base de datos.... ✅  
-
-────────────────────────────────────────
-🛡️ *NOTIFICACIÓN DE SUBIDA DE NIVEL*  
-────────────────────────────────────────
-🎉 *¡FELICIDADES, AGENTE!*  
-📈 Has subido de rango para:  
-   NIVEL: *${user.level - 1} ➡️ ${user.level}*  
-
-────────────────────────────────────────
-📊 *INFORME DE BASE DE DATOS DE USUARIOS*  
-────────────────────────────────────────
-📂 *Nombre*        : *${m.pushName || 'Unknown'}*  
-📂 *Número*      : *${sender.split('@')[0]}*  
-📂 *Nivel actual*: *${user.level}*  
-📂 *Experiencia*  : *${user.exp}/${user.expTarget}*  
-📂 *Comandos utilizados*: *${user.commandCount}*  
-📂 *Balance*     : *Rp${user.balance}*  
-📂 *Rol*        : *${user.role || 'Regular User'}*  
-
-────────────────────────────────────────
-⚡ *ACTUALIZACIÓN DE LA MISIÓN*  
-────────────────────────────────────────
-"Bienvenido a un nuevo nivel, Agente. La red espera.  
-Mantén tus habilidades afiladas y nunca dejes de evolucionar."  
-
-────────────────────────────────────────
-💻 *ESTADO DEL SISTEMA DE HIPERVÍNCULO*  
-────────────────────────────────────────
-[🟢] INTENTOS DE RASTREO: BLOQUEADOS  
-[🟢] INTEGRIDAD DEL CORTAFUEGOS: 100%  
-[🟢] CIFRADO DE DATOS: ACTIVO  
-────────────────────────────────────────
-
->> El sistema cerrará sesión automáticamente en 10 segundos...  
->> CERRAR SESIÓN CANCELADO por solicitud del usuario.  
-
-🔻 *FIN DE LA TRANSMISIÓN* 🔻`,
+`🎉 ¡Felicidades! @${m.sender.split`@`[0]} ha subido de nivel.\n⬅️ Nivel anterior: ${user.level - 1}\n➡️ Nuevo nivel: ${user.level}\n🌟 Rol actual: ${user.role || 'Regular User'}\n📅 Fecha: ${new Date().toLocaleString('id-ID')}\n✨ ¡Sigue así!`,
+`🌟 @${m.sender.split`@`[0]} ha alcanzado un nuevo nivel.\n🔙 Anterior: ${user.level - 1}\n🔜 Nuevo: ${user.level}\n👑 Rol: ${user.role || 'Regular User'}\n📅 Fecha: ${new Date().toLocaleString('id-ID')}\n> mira tu nivel aquí `,
             image: levelImage
         };
     }
