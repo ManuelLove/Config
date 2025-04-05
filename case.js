@@ -1695,7 +1695,7 @@ await shoNhe.sendMessage(m.chat, {
 		{
 			fs.writeFileSync(userFirePath, JSON.stringify(db, null, 2));
 		}
-async function levelUpdate(command, sender, m, shoNhe) {
+function levelUpdate(command, sender) {
     const db = loadUserFire();
     if (!db[sender]) {
         db[sender] = {
@@ -1724,14 +1724,9 @@ async function levelUpdate(command, sender, m, shoNhe) {
         user.expTarget += 20; // Increase target exp
 
         // Define image URL based on level
-        let ppuser;
-        try {
-            ppuser = await shoNhe.profilePictureUrl(m.sender, 'image');
-        } catch (err) {
-            ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60';
-        }
+        const levelImages = { `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURIComponent(ppuser)}`;
 
-        const levelImage = `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURIComponent(ppuser)}`;
+        const levelImage = levelImages[user.level] || levelImages.default;
 
         levelUpMessage = {
             text: 
