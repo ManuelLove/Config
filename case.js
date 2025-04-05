@@ -24677,8 +24677,8 @@ break;
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!text) return shoNherly(`Ejemplo : ${prefix + command} hola hermana`)
-				if (!(await firely(m, mess.waits))) return;
 				await emote('⏱️');
+				if (!(await firely(m, mess.waits))) return;
 				try {
 					const buffer = await getBuffer(`https://api.siputzx.my.id/api/m/brat?text=${encodeURIComponent(text)}&isVideo=false&delay=500`)
 					await emote('✅');
