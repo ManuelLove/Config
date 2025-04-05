@@ -1724,14 +1724,14 @@ function levelUpdate(command, sender) {
         user.expTarget += 20; // Increase target exp
 
         // Define image URL based on level
-        if (before !== user.level) {
-	try {
-		ppuser = await shoNhe.profilePictureUrl(m.sender, 'image');
-	} catch (err) {
-		ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60';
-	}
+        let ppuser;
+try {
+  ppuser = await shoNhe.profilePictureUrl(m.sender, 'image');
+} catch (err) {
+  ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60';
+}
 
-	const imageUrl = `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURIComponent(ppuser)}`;
+const imageUrl = `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURIComponent(ppuser)}`;
 
         levelUpMessage = {
             text: 
