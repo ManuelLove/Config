@@ -1724,7 +1724,8 @@ function levelUpdate(command, sender) {
         user.expTarget += 20; // Increase target exp
 
         // Define image URL based on level
-        const levelImages = { `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURIComponent(ppuser)}`;
+        const levelImages = {
+default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURIComponent(ppuser)}`;
 
         const levelImage = levelImages[user.level] || levelImages.default;
 
