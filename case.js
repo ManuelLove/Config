@@ -18505,10 +18505,10 @@ case 'follar':
 case 'violar':
 case 'coger': {
     if (!text) return shoNherly('Debes mencionar a alguien. Ejemplo: .follar @usuario');
-
+await emote('🥵');
     let user = m.mentionedJid?.[0] || m.quoted?.sender;
     if (!user) return shoNherly('Debes mencionar o responder a alguien.');
-
+if (!(await firely(m, mess.waits))) return;
     const tag = '@' + user.split('@')[0];
 
     const texto = `🤤👅🥵 *𝐀𝐂𝐀𝐁𝐀𝐒 𝐃𝐄 𝐅𝐎𝐋𝐋𝐀𝐑𝐓𝐄𝐋@!*🥵👅🤤
@@ -18517,8 +18517,6 @@ case 'coger': {
 
 ${tag}
 🤤🥵 *¡𝐘𝐀 𝐓𝐄 𝐇𝐀𝐍 𝐅𝐎𝐋𝐋𝐀𝐃𝐎!* 🥵🤤`;
-
-    await emote('🥵');
 
     await shoNhe.sendMessage(m.chat, {
         text: texto,
