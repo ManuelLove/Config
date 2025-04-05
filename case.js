@@ -1732,7 +1732,7 @@ default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURICompon
 
         levelUpMessage = {
             text: 
-`🎉 ¡Felicidades! @${m.sender.split`@`[0]} ha subido de nivel.\n⬅️ Nivel anterior: ${user.level - 1}\n➡️ Nuevo nivel: ${user.level}\n🌟 Rol actual: ${user.role || 'Regular User'}\n📅 Fecha: ${new Date().toLocaleString('id-ID')}\n✨ ¡Sigue así! `,
+`🎉 ¡Felicidades! ${m.pushName || 'Unknown'} ha subido de nivel.\n⬅️ Nivel anterior: ${user.level - 1}\n➡️ Nuevo nivel: ${user.level}\n🌟 Rol actual: ${user.role || 'Regular User'}\n📅 Fecha: ${new Date().toLocaleString('id-ID')}\n✨ ¡Sigue así! `,
             image: levelImage
         };
     }
@@ -6116,18 +6116,8 @@ break;
 				{
 					return shoNherly('⚠️ Anda belum memiliki data. Silakan gunakan command terlebih dahulu!');
 				}
-				const leveling = {
-            1: "https://i.ibb.co.com/tXMNptr/01.png",
-            2: "https://i.ibb.co.com/Gxqbrzg/02.png",
-            3: "https://i.ibb.co.com/fVRR1BV/03.png",
-            4: "https://i.ibb.co.com/zPy0DcD/04.png",
-            5: "https://i.ibb.co.com/0V7msHW/05.png",
-            6: "https://i.ibb.co.com/4tNm7BV/06.png",
-            7: "https://i.ibb.co.com/6NrT4wb/07.png",
-            8: "https://i.ibb.co.com/QYbY3Qb/08.png",
-            9: "https://i.ibb.co.com/g7KC6jg/09.png",
-            10: "https://i.ibb.co.com/Bndy2xp/10.png",
-            default: "https://i.ibb.co.com/CQcbcQP/default.png"
+				const levelImages = {
+default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURIComponent(ppuser)}`
         };
 
         const levelImage = leveling[user.level] || leveling.default;
@@ -11396,7 +11386,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners)
-				if (!args[0]) return shoNherly(`*Contoh : ${command} add 6281214281312*`)
+				if (!args[0]) return shoNherly(`*Ejemplo : ${command} add 6281214281312*`)
 				if (args[1])
 				{
 					orgnye = args[1] + "@s.whatsapp.net"
@@ -11408,16 +11398,16 @@ ${formattedCommandList}
 				const isBane = banned.includes(orgnye)
 				if (args[0] === "add")
 				{
-					if (isBane) return shoNherly('*Pengguna Ini telah Di Ban*')
+					if (isBane) return shoNherly('*Este usuario ha sido baneado*')
 					banned.push(orgnye)
-					shoNherly(`Succes ban Pengguna Ini`)
+					shoNherly(`*✅ Usuario baneado con éxito*`)
 				}
 				else if (args[0] === "del")
 				{
-					if (!isBane) return shoNherly('*Pengguna Ini Telah Di hapus Dari Ban*')
+					if (!isBane) return shoNherly('*El usuario ha sido eliminado de la lista de baneados*')
 					let delbans = banned.indexOf(orgnye)
 					banned.splice(delbans, 1)
-					shoNherly(`*Berhasil Menghapus Pengguna yang Di Ban*`)
+					shoNherly(`*✅ Se eliminó correctamente al usuario baneado*`)
 				}
 				else
 				{
@@ -14684,8 +14674,8 @@ break
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!quoted) return angryshoNhe (`Envía o responde a una imagen/video/gif con el título ${prefix + command}\n¡La duración del video debe ser de 1-9 segundos!`);
-				if (!mime) return angryshoNhe (`Envía o responde una imagen/video/gif con el título ${prefix + command}\n¡La duración del video debe ser de 1-9 segundos!`);
+				if (!quoted) return shoNherly (`Envía o responde a una imagen/video/gif con el título ${prefix + command}\n¡La duración del video debe ser de 1-9 segundos!`);
+				if (!mime) return shoNherly (`Envía o responde una imagen/video/gif con el título ${prefix + command}\n¡La duración del video debe ser de 1-9 segundos!`);
                 if (!(await firely(m, mess.waits))) return;
 				const swn = args.join(" ");
 				const pcknm = swn.split("|")[0];
@@ -14703,11 +14693,11 @@ break
 					let media = await shoNhe.downloadAndSaveMediaMessage(quoted);
 					await shoNhe.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: atnm });
 				} else if (/video/.test(mime)) {
-					if ((quoted.msg || quoted).seconds > 9) return angryshoNhe ('El vídeo es demasiado largo, máximo 9 segundos! ⏳');
+					if ((quoted.msg || quoted).seconds > 9) return shoNherly ('El vídeo es demasiado largo, máximo 9 segundos! ⏳');
 					let media = await shoNhe.downloadAndSaveMediaMessage(quoted);
 					await shoNhe.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm });
 				} else {
-					angryshoNhe (`¡Envía fotos/vídeos para usar, hermano!`);
+					shoNherly (`¡Envía fotos/vídeos para usar, hermano!`);
 				}
 				if (levelUpMessage)
 				{
@@ -24686,7 +24676,7 @@ break;
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return angryshoNhe(`Ejemplo : ${prefix + command} hola hermana`)
+				if (!text) return shoNherly(`Ejemplo : ${prefix + command} hola hermana`)
 				if (!(await firely(m, mess.waits))) return;
 				try {
 					const buffer = await getBuffer(`https://api.hiuraa.my.id/maker/brat?text=${encodeURIComponent(text)}`)
@@ -24876,7 +24866,7 @@ break;
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return angryshoNhe(`Ejemplo : ${prefix + command} hola hermana`)
+				if (!text) return shoNherly(`Ejemplo : ${prefix + command} hola hermana`)
 				if (!(await firely(m, mess.waits))) return;
 				try {
 					const buffer = await getBuffer(`https://api.hiuraa.my.id/maker/brat-green?text=${encodeURIComponent(text)}`)
@@ -25223,7 +25213,7 @@ break;
 				if (!isGroup) return shoNherly(mess.groups);
 				pler.push(m.chat)
 				fs.writeFileSync('./database/sewa.json', JSON.stringify(pler))
-				shoNherly(`${command} Sukses Menambahkan Ke List Sewa✅`)
+				shoNherly(`${command} Agregado exitosamente a la lista de alquileres✅`)
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -25266,7 +25256,7 @@ break;
 				var ini = pler.indexOf(m.chat)
 				pler.splice(ini, 1)
 				fs.writeFileSync('./database/sewa.json', JSON.stringify(pler))
-				shoNherly(`${command} Sukses Menghapus Dari List Sewa✅`)
+				shoNherly(`${command} Eliminación exitosa de la lista de alquileres ✅`)
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -26009,9 +25999,9 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!text) return shoNherly(`Example: ${prefix + command} prompt text`);
+				if (!text) return shoNherly(`Ejemplo: ${prefix + command} prompt text`);
 				prompt = text;
-				shoNherly(`Prompt berhasil diatur:\n"${prompt}"`);
+				shoNherly(`Mensaje configurado correctamente:\n"${prompt}"`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -26476,25 +26466,25 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				const userChoice = text.toLowerCase();
-				const choices = ['batu', 'gunting', 'kertas'];
+				const choices = ['piedra', 'tijeras', 'papel'];
 				const botChoice = choices[Math.floor(Math.random() * choices.length)];
 				if (!choices.includes(userChoice))
 				{
-					return shoNherly('🧠 Pilih antara *batu*, *gunting*, atau *kertas* ya, Kak!');
+					return shoNherly('🧠 ¡Elige entre *piedra*, *tijeras* o *papel*, hermano!');
 				}
 				let hasil = '';
 				if (userChoice === botChoice)
 				{
-					hasil = `🤝 Seri! Kita sama-sama pilih *${botChoice}*`;
+					hasil = `🤝 ¡Enserio! Elegimos juntos*${botChoice}*`;
 				}
 				else if (
-					(userChoice === 'batu' && botChoice === 'gunting') || (userChoice === 'gunting' && botChoice === 'kertas') || (userChoice === 'kertas' && botChoice === 'batu'))
+					(userChoice === 'piedra' && botChoice === 'tijeras') || (userChoice === 'tijeras' && botChoice === 'papel') || (userChoice === 'papel' && botChoice === 'piedra'))
 				{
-					hasil = `🎉 Kakak menang! Aku pilih *${botChoice}*`;
+					hasil = `🎉 ¡Hermano ganó! Yo elegí *${botChoice}*`;
 				}
 				else
 				{
-					hasil = `😢 Aku menang! Aku pilih *${botChoice}*`;
+					hasil = `😢 ¡Yo gané! Yo elijo *${botChoice}*`;
 				}
 				shoNherly(hasil);
 				if (levelUpMessage) {
@@ -26680,7 +26670,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return angryshoNhe('Input teksnya!')
+				if (!text) return shoNherly('Input teksnya!')
 				if (!(await firely(m, mess.waits))) return;
 				const sender = m.sender
 				const username = await shoNhe.getName(m.quoted ? m.quoted.sender : sender)
@@ -26753,18 +26743,18 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!quoted) return angryshoNhe (`Kirim atau balas gambar/video/gif dengan caption ${prefix + command}\nDurasi video 1-9 detik ya!`);
-				if (!mime) return angryshoNhe (`Kirim atau balas gambar/video/gif dengan caption ${prefix + command}\nDurasi video 1-9 detik ya!`);
+				if (!quoted) return shoNherly (`Envía o responde una imagen/video/gif con el texto ${prefix + command}\n¡La duración del video debe ser de 1 a 9 segundos!`);
+				if (!mime) return shoNherly (`Envía o responde una imagen/video/gif con el texto ${prefix + command}\n¡La duración del video debe ser de 1 a 9 segundos!`);
 	if (!(await firely(m, mess.waits))) return;
 				if (/image/.test(mime)) {
 					let media = await shoNhe.downloadAndSaveMediaMessage(quoted);
 					await shoNhe.sendImageAsSticker(m.chat, media, m, { packname: namabot, author: namaowner });
 				} else if (/video/.test(mime)) {
-					if ((quoted.msg || quoted).seconds > 9) return angryshoNhe (`Durasi video terlalu panjang! 🕒 Kirim video dengan durasi 1-9 detik ya!`);
+					if ((quoted.msg || quoted).seconds > 9) return shoNherly (`¡La duración del video es demasiado larga! 🕒 Envía un video de entre 1 y 9 segundos, ¡por favor!`);
 					let media = await shoNhe.downloadAndSaveMediaMessage(quoted);
 					await shoNhe.sendVideoAsSticker(m.chat, media, m, { packname: namabot, author: namaowner });
 				} else {
-					angryshoNhe (`Kirim atau balas gambar/video/gif dengan caption ${prefix + command}\nDurasi video 1-9 detik ya!`);
+					shoNherly (`Envía o responde una imagen/video/gif con el mensaje ${prefix + command}\n¡La duración del video debe ser de 1 a 9 segundos!`);
 				}
 				if (levelUpMessage)
 				{
@@ -26805,7 +26795,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
 				if (!/webp/.test(mime) && /image/.test(mime)) {
-					if (!text) return angryshoNhe(`Penggunaan: ${prefix + command} teks_atas|teks_bawah`);
+					if (!text) return shoNherly(`Uso: ${prefix + command} texto_arriba|texto_abajo`);
 		
 					atas = text.split('|')[0] ? text.split('|')[0] : '';
 					bawah = text.split('|')[1] ? text.split('|')[1] : '';
@@ -26816,7 +26806,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 		
 					await shoNhe.sendImageAsSticker(m.chat, meme, m, { packname: namabot, author: namaowner });
 				} else {
-					shoNherly(`Kirim atau balas gambar dengan caption ${prefix + command} teks_atas|teks_bawah untuk membuat meme!`);
+					shoNherly(`Envía o responde a una imagen con el titulo ${prefix + command} texto_arriba|texto_abajo para crear un meme.`);
 				}
 				if (levelUpMessage)
 				{
