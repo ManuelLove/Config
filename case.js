@@ -24871,7 +24871,7 @@ break;
 				if (!text) return shoNherly(`Ejemplo : ${prefix + command} hola hermana`)
 				if (!(await firely(m, mess.waits))) return;
 				try {
-					const buffer = await getBuffer(`https://api.siputzx.my.id/api/canvas/xnxx?title=${encodeURIComponent(text)}&image=${m.sender.split('@')[0]}`)
+					const buffer = await getBuffer(`https://api.siputzx.my.id/api/canvas/xnxx?title=${encodeURIComponent(text)}&image=@${m.sender.split('@')[0]}`)
 					shoNhe.sendImageAsSticker(m.chat, buffer, m, { packname: namabot, author: namaowner })
 				} catch (err) {
 					RepshoNheError('Se produjo un error al crear una sticker de imagen. 😞');
