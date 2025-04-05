@@ -1695,7 +1695,7 @@ await shoNhe.sendMessage(m.chat, {
 		{
 			fs.writeFileSync(userFirePath, JSON.stringify(db, null, 2));
 		}
-function levelUpdate(command, sender) {
+function levelUpdate(command, sender, shoNhe, m) {
     const db = loadUserFire();
     if (!db[sender]) {
         db[sender] = {
@@ -1704,45 +1704,39 @@ function levelUpdate(command, sender) {
             exp: 0,
             expTarget: 10,
             commandCount: 0,
-            balance: 0 // Initial balance
+            balance: 0
         };
     }
-    const user = db[sender];
-    if (user.commandCount == null) user.commandCount = 0;
-    if (user.exp == null) user.exp = 0;
-    if (user.level == null) user.level = 0;
-    if (user.expTarget == null) user.expTarget = 10;
-    if (user.balance == null) user.balance = 0;
 
-    // Increment commands and exp
-    user.commandCount += 1;
-    user.exp += 1;
+    const user = db[sender];
+    user.commandCount = (user.commandCount ?? 0) + 1;
+    user.exp = (user.exp ?? 0) + 1;
+    user.level = user.level ?? 0;
+    user.expTarget = user.expTarget ?? 10;
+    user.balance = user.balance ?? 0;
 
     let levelUpMessage = null;
+
     if (user.exp >= user.expTarget) {
-        user.level += 1; // Level up
-        user.expTarget += 20; // Increase target exp
+        user.level += 1;
+        user.expTarget += 20;
 
-        // Define image URL based on level
         let ppuser;
-try {
-  ppuser = await shoNhe.profilePictureUrl(m.sender, 'image');
-} catch (err) {
-  ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60';
-}
+        try {
+            ppuser = await shoNhe.profilePictureUrl(m.sender, 'image');
+        } catch {
+            ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60';
+        }
 
-const imageUrl = `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURIComponent(ppuser)}`;
+        const levelImage = `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURIComponent(ppuser)}`;
 
-        const levelUpMessage = {
-  image: { url: imageUrl },
-  caption:
-`🎉 ¡Felicidades! @${m.sender.split`@`[0]} ha subido de nivel.\n⬅️ Nivel anterior: ${user.level - 1}\n➡️ Nuevo nivel: ${user.level}\n🌟 Rol actual: ${user.role || 'Regular User'}\n📅 Fecha: ${new Date().toLocaleString('id-ID')}\n✨ ¡Sigue así!`,
-`🌟 @${m.sender.split`@`[0]} ha alcanzado un nuevo nivel.\n🔙 Anterior: ${user.level - 1}\n🔜 Nuevo: ${user.level}\n👑 Rol: ${user.role || 'Regular User'}\n📅 Fecha: ${new Date().toLocaleString('id-ID')}\n> mira tu nivel aquí `,
+        levelUpMessage = {
+            text: `🎉 ¡Felicidades! @${m.sender.split('@')[0]} ha subido de nivel.\n⬅️ Nivel anterior: ${user.level - 1}\n➡️ Nuevo nivel: ${user.level}\n🌟 Rol actual: ${user.role || 'Regular User'}\n📅 Fecha: ${new Date().toLocaleString('id-ID')}\n✨ ¡Sigue así!`,
             image: levelImage
         };
     }
 
-    saveUserFire(db);
+    saveUserFire(db); // Guarda la DB si es necesario
     console.log(`📊 Command "${command}" executed by ${sender}`);
     return levelUpMessage;
 }
