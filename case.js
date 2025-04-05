@@ -1724,21 +1724,14 @@ function levelUpdate(command, sender) {
         user.expTarget += 20; // Increase target exp
 
         // Define image URL based on level
-        const levelImages = {
-            1: "https://i.ibb.co.com/tXMNptr/01.png",
-            2: "https://i.ibb.co.com/Gxqbrzg/02.png",
-            3: "https://i.ibb.co.com/fVRR1BV/03.png",
-            4: "https://i.ibb.co.com/zPy0DcD/04.png",
-            5: "https://i.ibb.co.com/0V7msHW/05.png",
-            6: "https://i.ibb.co.com/4tNm7BV/06.png",
-            7: "https://i.ibb.co.com/6NrT4wb/07.png",
-            8: "https://i.ibb.co.com/QYbY3Qb/08.png",
-            9: "https://i.ibb.co.com/g7KC6jg/09.png",
-            10: "https://i.ibb.co.com/Bndy2xp/10.png",
-            default: "https://i.ibb.co.com/CQcbcQP/default.png"
-        };
+        let ppuser;
+        try {
+            ppuser = await shoNhe.profilePictureUrl(m.sender, 'image');
+        } catch (err) {
+            ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60';
+        }
 
-        const levelImage = levelImages[user.level] || levelImages.default;
+        const levelImage = `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURIComponent(ppuser)}`;
 
         levelUpMessage = {
             text: 
