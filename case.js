@@ -6117,7 +6117,7 @@ break;
 					return shoNherly('⚠️ Anda belum memiliki data. Silakan gunakan command terlebih dahulu!');
 				}
 				const levelImages = {
-default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURIComponent(ppuser)}`
+default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://tinyurl.com/2a99js3e&avatarURL=${encodeURIComponent(ppuser)}&rankName=Agente&rankId=0&requireExp=${user.expTarget || 10}&level=${user.level || 0}&name=${m.pushName || 'Desconocido'}&exp=${user.exp || 0}`
         };
 
         const levelImage = leveling[user.level] || leveling.default;
@@ -24780,8 +24780,8 @@ break;
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				if (!text) return shoNherly(`Contoh : ${prefix + command} Hai kak`)
-				if (text.length > 250) return shoNherly(`Karakter terbatas, max 250!`)
+				if (!text) return shoNherly(`Ejemplo : ${prefix + command} Hola Bro`)
+				if (text.length > 250) return shoNherly(`Caracteres limitados máximo 250!`)
 				const words = text.split(" ")
 				const tempDir = path.join(process.cwd(), 'temp')
 				if (!fs.existsSync(tempDir)) fs.mkdirSync(tempDir)
