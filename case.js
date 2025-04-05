@@ -18494,6 +18494,58 @@ case 'igdl':
 	}
 }
 break;
+case 'apk':
+case 'modoapk': {
+    if (!text) return m.reply(lenguaje.descargar.text24);
+    try {
+        const res = await fetch(`https://api.hiuraa.my.id/downloader/aptoide?query=${encodeURIComponent(text)}`);
+        const data = await res.json();
+
+        if (data.name && data.dllink) {
+            const response = `╭━─━─━─≪≫─━─━─━╮
+│ ≡ ${lenguaje.descargar.text25} ≡
+│——————«•»——————
+│🔸📌 ${lenguaje.descargar.text12} ${data.name}
+│🔸📦 *Package:* ${data.package}
+│🔸🕒 ${lenguaje.descargar.text26} ${data.lastUpdate}
+│🔸📥 ${lenguaje.descargar.text27} ${data.size}
+╰━─━─━─≪≫─━─━─━╯`;
+
+            await conn.sendMessage(m.chat, {
+                image: { url: data.icon },
+                caption: response
+            }, {
+                quoted: m,
+                ephemeralExpiration: 24 * 60 * 100,
+                disappearingMessagesInChat: 24 * 60 * 100
+            });
+
+            if (data.size.includes('GB') || parseFloat(data.size.replace(' MB', '')) > 999) {
+                return await m.reply(lenguaje.descargar.text28);
+            }
+
+            await conn.sendMessage(m.chat, {
+                document: { url: data.dllink },
+                mimetype: 'application/vnd.android.package-archive',
+                fileName: data.name + '.apk',
+                caption: null
+            }, {
+                quoted: m,
+                ephemeralExpiration: 24 * 60 * 100,
+                disappearingMessagesInChat: 24 * 60 * 100
+            });
+        } else {
+            throw new Error('No se encontraron datos válidos en la API principal');
+        }
+    } catch (error) {
+        m.reply(info.error);
+        console.error(error);
+    }
+
+    db.data.users[m.sender].limit -= 3;
+    m.reply('3 ' + info.limit);
+}
+break;
 		case 'fb': case 'facebook': case 'fbdl': { if (!isRegistered(m)) { return sendRegister(shoNhe, m, prefix, namabot); } updatePopularCommand(command); const levelUpMessage = levelUpdate(command, m.sender); console.log('📢 Procesando descarga de Facebook...');
 
 if (!text) {
