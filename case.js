@@ -18407,7 +18407,6 @@ case 'igdl':
 	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
 	updatePopularCommand(command);
 	const levelUpMessage = levelUpdate(command, m.sender);
-	console.log('📢 Procesando comando IG...');
 
 	if (!text) {
 		return shoNherly(`⚠️ Usa el comando de la siguiente manera: ${prefix + command} *url*\n\n🤔 *Ejemplo:*\n${prefix + command} https://www.instagram.com/reel/Cr5AXBQvBC1/`);
@@ -18417,22 +18416,23 @@ case 'igdl':
 
 	const regex = /(\d+)$/;
 	const match = text.match(regex);
-	const numImages = match ? parseInt(match[1]) : 8;
+	const numMedia = match ? parseInt(match[1]) : 8;
 
 	try {
-		console.log('🌐 Solicitando API...');
-		let anu = await fetchJson(`https://api.hiuraa.my.id/downloader/instagram?url=${text}`);
-		if (!anu.status || !anu.result || !anu.result.url || anu.result.url.length === 0) {
-			console.log('❌ Contenido no encontrado o inválido.');
-			return shoNherly('❌ Contenido no encontrado. ¡Asegúrate de que el enlace sea correcto!');
+		const res = await fetchJson(`https://api.hiuraa.my.id/downloader/instagram?url=${text}`);
+		if (!res.status || !res.result) {
+			return shoNherly('❌ Contenido no encontrado o inválido.');
 		}
 
-		const urls = anu.result.url;
-		const totalItems = Math.min(urls.length, numImages);
-		console.log(`✅ Contenido encontrado: ${totalItems} archivo(s).`);
+		const metadata = res.result.metadata || {};
+		const mediaUrls = res.result.url || res.result.downloadUrl;
+		if (!mediaUrls || mediaUrls.length === 0) {
+			return shoNherly('❌ No se encontraron archivos multimedia.');
+		}
 
+		const totalItems = Math.min(mediaUrls.length, numMedia);
 		for (let i = 0; i < totalItems; i++) {
-			let mediaUrl = urls[i];
+			const mediaUrl = mediaUrls[i];
 			try {
 				const response = await axios.get(mediaUrl, { responseType: 'arraybuffer' });
 				const buffer = Buffer.from(response.data);
@@ -18447,28 +18447,36 @@ case 'igdl':
 					type = await FileType.fromBuffer(buffer);
 				}
 
+				// Construir caption con metadatos si están disponibles
+				let caption = '';
+				if (metadata.caption) caption += `📝 *Caption:* ${metadata.caption}\n`;
+				if (metadata.username) caption += `👤 *Usuario:* @${metadata.username}\n`;
+				if (metadata.like) caption += `❤️ *Likes:* ${metadata.like}\n`;
+				if (metadata.comment) caption += `💬 *Comentarios:* ${metadata.comment}\n`;
+				if (text) caption += `🔗 *Link:* ${text}`;
+
 				if (type?.mime.startsWith('video')) {
 					await shoNhe.sendMessage(m.chat, {
 						video: buffer,
-						caption: `🎥 *Instagram Video*\n🔗 [Enlace Original](${anu.result.metadata.url})`
+						caption: caption || `🎥 *Instagram Video*`
 					}, { quoted: hw });
 				} else if (type?.mime.startsWith('image')) {
 					await shoNhe.sendMessage(m.chat, {
 						image: buffer,
-						caption: `🖼️ *Instagram Foto*\n🔗 [Enlace Original](${anu.result.metadata.url})`
+						caption: caption || `🖼️ *Instagram Foto*`
 					}, { quoted: hw });
 				} else {
 					console.log('❓ Tipo de archivo no reconocido:', mediaUrl);
 					shoNherly('⚠️ Tipo de archivo no reconocido');
 				}
 			} catch (err) {
-				console.error('❌ Error al descargar archivo:', err);
-				shoNherly('❌ Error al procesar el archivo.');
+				console.error('❌ Error al procesar el archivo:', err);
+				shoNherly('❌ Error al descargar un archivo.');
 			}
 		}
 	} catch (err) {
 		console.error('❌ Error general:', err);
-		shoNherly('❌ Hay un error. Inténtalo más tarde.');
+		shoNherly('❌ Ocurrió un error. Inténtalo más tarde.');
 	}
 
 	if (levelUpMessage) {
