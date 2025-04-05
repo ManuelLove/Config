@@ -6117,7 +6117,7 @@ break;
 					return shoNherly('⚠️ Anda belum memiliki data. Silakan gunakan command terlebih dahulu!');
 				}
 				const leveling = {
-default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://tinyurl.com/2a99js3e&avatarURL=${encodeURIComponent(ppuser)}&rankName=Agente&rankId=0&requireExp=${user.expTarget || 10}&level=${user.level || 0}&name=${m.pushName || 'Desconocido'}&exp=${user.exp || 0}`
+default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.ibb.co/QF59VhSL/0b797f561eca.jpg&avatarURL=${encodeURIComponent(ppuser)}&rankName=Agente&rankId=0&requireExp=${user.expTarget || 10}&level=${user.level || 0}&name=${m.pushName || 'Desconocido'}&exp=${user.exp || 0}`
         };
 
         const levelImage = leveling[user.level] || leveling.default;
