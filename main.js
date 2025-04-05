@@ -9,7 +9,7 @@ const _0x4bb63d=_0x3497;(function(_0x3ee4b9,_0x2687f8){const _0x59f534=_0x3497,_
 '╰━━╮┃╭╯┃╰━━╮┃┃╰━╮┃╰━╯╯╱┃┃┃\x0a' +
 '╱╱╱╰╯╰━━╯╰━━╯╰━━╯╰━━━╯╰╯╰╯\x0a' +
 'Bot\x20whatsapp\x20solo\x20termux\x20©\x0a' +
-'SHO-NHE\x20V3\x20|\x20Creado\x20por\x20sychyy\x20&\x20nhebotx\x0a' +
+'Tech-Fix\x20V3\x20|\x20Creado\x20por\x20ManuDiaz\x20&\x20TechFix\x0a' +
 '▐█▄▄▄█▐█─▐█▐█▄▄▄█▐█▄─▐█▐█─▐█▐█▄▄▄\x20\x0a' +
 '───▄▄▄▄▐█▄▄▄▐█───▐█▌▐█▐█▐█▐█▄▄█▐█▄▄▄\x20\x0a' +
 '▐█▄▄▄▐█─▐█▐█▄▄▄▐█───▄▐█──▄─▐█──▐█▄▄▄\x0a' +
