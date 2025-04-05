@@ -18459,7 +18459,6 @@ case 'apkdl':
 			icon,
 			dllink
 		} = res;
-}
 		console.log('📥 Descargando APK:', name);
 		const response = await axios.get(dllink, { responseType: 'arraybuffer' });
 		const buffer = Buffer.from(response.data);
