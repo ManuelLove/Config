@@ -18495,63 +18495,73 @@ case 'igdl':
 }
 break;
 case 'apk':
-case 'apkdl': {
+case 'apkdl':
+{
 	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
 	updatePopularCommand(command);
 	const levelUpMessage = levelUpdate(command, m.sender);
-	if (!text) return shoNherly(`✳️ Usa: *${prefix + command} nombre de la app*\n\nEj: ${prefix + command} facebook lite`);
+
+	if (!text) {
+		return shoNherly(`⚠️ Usa el comando así: ${prefix + command} *url o id válido de la API*\n\n📦 *Ejemplo:* ${prefix + command} myboy`);
+	}
+
 	if (!(await firely(m, mess.waits))) return;
-	console.log('📥 Buscando APK para:', text);
+
 	try {
-		const res = await fetchJson(`https://api.dorratz.com/v2/apk-dl?text=${encodeURIComponent(text)}`);
-		console.log('🔍 Respuesta API:', JSON.stringify(res, null, 2));
+		const res = await fetchJson(`https://api.dorratz.com/v2/apk-dl?text=${text}`);
 
-		if (!res || !res.dllink) return shoNherly('❌ No se encontró ningún APK para esa búsqueda.');
+		if (!res || !res.name || !res.dllink) {
+			console.log('❌ Respuesta inesperada:', res);
+			return shoNherly('❌ No se encontró ningún APK para esa búsqueda o el formato no es válido.');
+		}
 
-const { name, size, icon, package: pkg, dllink, lastUpdate } = json;
-
-const maxSizeMB = 300;
+		const {
+			name,
+			size,
+			package: pkg,
+			lastUpdate,
+			icon,
+			dllink
+		} = res;
+const maxSizeMB = 50;
 const apkSizeMB = parseFloat(size);
 
 if (apkSizeMB > maxSizeMB) {
 	return shoNherly(`❌ El APK **${name}** pesa ${size}, que excede el límite de descarga (${maxSizeMB} MB). Intenta con otra app más liviana.`);
 }
+		console.log('📥 Descargando APK:', name);
+		const response = await axios.get(dllink, { responseType: 'arraybuffer' });
+		const buffer = Buffer.from(response.data);
 
-const caption = `📦 *APK Encontrado*\n\n*🔹 Nombre:* ${name}\n*📦 Paquete:* ${pkg}\n*📁 Tamaño:* ${size}\n*🕒 Última actualización:* ${lastUpdate}\n\n🔗 Enlace: ${dllink}`;
+		let caption = `📱 *Nombre:* ${name}\n`;
+		if (pkg) caption += `📦 *Paquete:* ${pkg}\n`;
+		if (size) caption += `💾 *Tamaño:* ${size}\n`;
+		if (lastUpdate) caption += `🕒 *Última actualización:* ${lastUpdate}`;
 
-try {
-	console.log('📥 Descargando APK:', name);
-	const response = await axios.get(dllink, { responseType: 'arraybuffer', timeout: 30000 }); // 30 segundos máx.
-	const buffer = Buffer.from(response.data);
+		await shoNhe.sendMessage(m.chat, {
+			document: buffer,
+			fileName: `${name}.apk`,
+			mimetype: 'application/vnd.android.package-archive',
+			caption: caption
+		}, { quoted: hw });
 
-	await shoNhe.sendMessage(m.chat, {
-		document: buffer,
-		fileName: `${name}.apk`,
-		mimetype: 'application/vnd.android.package-archive',
-		caption
-	}, { quoted: hw });
-
-} catch (e) {
-	console.error(`❌ Error al descargar o enviar el APK (${name}):`, e.message || e);
-	return shoNherly('❌ Hubo un error descargando o enviando el APK. Intenta con otra app o más tarde.');
-}
-
-		console.log('✅ APK enviado:', name);
-		if (levelUpMessage) {
-			await shoNhe.sendMessage(m.chat, {
-				image: { url: levelUpMessage.image },
-				caption: levelUpMessage.text,
-				footer: "LEVEL UP🔥",
-				buttons: [
-					{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" }},
-					{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" }}
-				],
-				viewOnce: true
-			}, { quoted: hw });
-		}
 	} catch (err) {
-		console.error('❌ Error al procesar el APK:', err.message || err);
-		shoNherly('❌ No se pudo descargar el APK. Puede que el enlace esté caído o protegido.');
+		console.error('❌ Error al procesar la descarga:', err);
+		return shoNherly('❌ Ocurrió un error al intentar descargar o enviar el APK.');
+	}
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat,
+		{
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
 	}
 }
 break;
