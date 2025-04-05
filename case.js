@@ -18508,34 +18508,33 @@ case 'apkdl': {
 
 		if (!res || !res.dllink) return shoNherly('❌ No se encontró ningún APK para esa búsqueda.');
 
-		const { name, dllink, icon, size, package: pkg, lastUpdate } = res;
+const { name, size, icon, package: pkg, dllink, lastUpdate } = json;
 
-		let caption = `📱 *Nombre:* ${name}\n`;
-		if (pkg) caption += `📦 *Paquete:* ${pkg}\n`;
-		if (size) caption += `💾 *Tamaño:* ${size}\n`;
-		if (lastUpdate) caption += `🕒 *Última actualización:* ${lastUpdate}`;
+const maxSizeMB = 300;
+const apkSizeMB = parseFloat(size);
 
-		console.log('📥 Descargando APK:', name);
+if (apkSizeMB > maxSizeMB) {
+	return shoNherly(`❌ El APK **${name}** pesa ${size}, que excede el límite de descarga (${maxSizeMB} MB). Intenta con otra app más liviana.`);
+}
 
-		const response = await axios.get(dllink, {
-  responseType: 'arraybuffer',
-  maxContentLength: Infinity,
-  maxBodyLength: Infinity,
-  headers: {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-    'Accept': 'application/vnd.android.package-archive'
-  }
-});
+const caption = `📦 *APK Encontrado*\n\n*🔹 Nombre:* ${name}\n*📦 Paquete:* ${pkg}\n*📁 Tamaño:* ${size}\n*🕒 Última actualización:* ${lastUpdate}\n\n🔗 Enlace: ${dllink}`;
 
-		const buffer = Buffer.from(response.data);
+try {
+	console.log('📥 Descargando APK:', name);
+	const response = await axios.get(dllink, { responseType: 'arraybuffer', timeout: 30000 }); // 30 segundos máx.
+	const buffer = Buffer.from(response.data);
 
-		await shoNhe.sendMessage(m.chat, {
-			document: buffer,
-			fileName: `${name}.apk`,
-			mimetype: 'application/vnd.android.package-archive',
-			caption: caption,
-			thumbnail: await getBuffer(icon)
-		}, { quoted: hw });
+	await shoNhe.sendMessage(m.chat, {
+		document: buffer,
+		fileName: `${name}.apk`,
+		mimetype: 'application/vnd.android.package-archive',
+		caption
+	}, { quoted: hw });
+
+} catch (e) {
+	console.error(`❌ Error al descargar o enviar el APK (${name}):`, e.message || e);
+	return shoNherly('❌ Hubo un error descargando o enviando el APK. Intenta con otra app o más tarde.');
+}
 
 		console.log('✅ APK enviado:', name);
 		if (levelUpMessage) {
