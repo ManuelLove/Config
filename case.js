@@ -18503,7 +18503,7 @@ if (apkSizeMB > maxSizeMB) {
 break;
 case 'logo': {
     if (!text) {
-        m.reply('Por favor, proporciona el texto para el logo.');
+        shoNherly('Por favor, proporciona el texto para el logo.');
         return;
     }
 if (!(await firely(m, mess.waits))) return;
@@ -18522,13 +18522,13 @@ if (!(await firely(m, mess.waits))) return;
     const apiUrl = `https://eliasar-yt-api.vercel.app/api/canvas/logo?texto=${encodeURIComponent(cleanText)}&url=${encodeURIComponent(profilePicture)}`;
 
     try {
-        m.reply('⏳ Generando tu logo personalizado, por favor espera...');
+        shoNherly('⏳ Generando tu logo personalizado, por favor espera...');
         await shoNhe.sendMessage(m.chat, {
             image: { url: apiUrl },
             caption: `✨ Aquí tienes tu logo con el texto: *${cleanText}*`
         }, { quoted: m });
     } catch {
-        m.reply('❌ Ocurrió un error al generar tu logo. Inténtalo de nuevo más tarde.');
+        shoNherly('❌ Ocurrió un error al generar tu logo. Inténtalo de nuevo más tarde.');
     }
     break;
 }
