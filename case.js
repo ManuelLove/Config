@@ -26488,7 +26488,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				let hasil = '';
 				if (userChoice === botChoice)
 				{
-					hasil = `🤝 ¡Enserio! Elegimos juntos*${botChoice}*`;
+					hasil = `🤝 ¡Enserio! Elegimos juntos *${botChoice}*`;
 				}
 				else if (
 					(userChoice === 'piedra' && botChoice === 'tijeras') || (userChoice === 'tijeras' && botChoice === 'papel') || (userChoice === 'papel' && botChoice === 'piedra'))
