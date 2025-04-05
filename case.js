@@ -18459,11 +18459,6 @@ case 'apkdl':
 			icon,
 			dllink
 		} = res;
-const maxSizeMB = 100;
-const apkSizeMB = parseFloat(size);
-
-if (apkSizeMB > maxSizeMB) {
-	return shoNherly(`❌ El APK **${name}** pesa ${size}, que excede el límite de descarga (${maxSizeMB} MB). Intenta con otra app más liviana.`);
 }
 		console.log('📥 Descargando APK:', name);
 		const response = await axios.get(dllink, { responseType: 'arraybuffer' });
