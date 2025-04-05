@@ -18525,7 +18525,7 @@ case 'gay': {
     } else {
         ga = 'Usted es gay 🥸';
     }
-
+	if (!(await firely(m, mess.waits))) return;
     const jawab = `@${who.split("@")[0]} es 🏳️‍🌈 *${random}%* gay\n\n${ga}`;
     const pp = await shoNhe.profilePictureUrl(who, 'image').catch(_ => 'https://telegra.ph/file/6765f503ebd91db2fe461.jpg');
     const imageUrl = `https://some-random-api.com/canvas/gay?avatar=${encodeURIComponent(pp)}`;
