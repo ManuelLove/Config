@@ -5752,7 +5752,7 @@ break;
             }
         }, 160000)
     };
-    shoNherly(`*💣 BOOM - ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n¡Elige un número! ¡Y no te dejes alcanzar por una bomba!\n\n🔸 Bombas: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
+    shoNherly(`*💣 ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n¡Elige un número! ¡Y no te dejes alcanzar por una bomba!\n\n🔸 Bombas: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
 }
 break;
 case 'ahorcado':
