@@ -18553,8 +18553,8 @@ case 'matematicas': {
 ${Object.keys(modes).join(' | ')}
 
 𝙀𝙅𝙀𝙈𝙋𝙇𝙊:
-${usedPrefix + command} noob
-${usedPrefix + command} impossible2
+${prefix + command} noob
+${prefix + command} impossible2
 
 😼 𝙈𝙄𝙀𝙉𝙏𝙍𝘼𝙎 𝙈𝘼𝙎 𝘿𝙄𝙁𝙄𝘾𝙐𝙇𝘿𝘼𝘿 𝙈𝘼𝙔𝙊𝙍 𝙍𝙀𝘾𝙊𝙈𝙋𝙀𝙉𝙎𝘼`.trim()
     return await shoNhe.reply(m.chat, texto, fkontak, m)
