@@ -18510,7 +18510,8 @@ case 'doxxeo': {
     if (m.isGroup) who = m.mentionedJid[0];
     else who = m.chat;
     if (!who) return shoNherly(`*¿A quién quieres doxear? Etiqueta a alguien.*`);
-
+if (!(await firely(m, mess.waits))) return;
+    await emote('☠️');
     let start = `*😱 ¡¡Empezando Doxxeo!! 😱*`;
     let porcentajes = [
         `*${pickRandom(['0','1','2','3','4','5','6','7','8','9','10'])}%*`,
