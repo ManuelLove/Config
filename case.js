@@ -1,4 +1,3 @@
-const cooldownDox = {}; // fuera del handler, al inicio del archivo si quieres global
 // CREATOR : YUDA & TNGX
 // TQTO? DI COMMAND TQTO
 // BIG THX TO : GALANGz, TNGXAJA[Nhe], ORANG TUA, ALLAH, PENYEDIA REST API, PENYEDIA BASE AWAL
@@ -279,6 +278,7 @@ global.niatsholat = [
 ];
 const readmore = String.fromCharCode(8206).repeat(4001);
 // Path ke file riwayat
+const cooldownDox = {}; // fuera del handler, al inicio del archivo si quieres global
 const popularPath = './database/popular.json';
 let popularData = {};
 try
@@ -18507,7 +18507,7 @@ if (apkSizeMB > maxSizeMB) {
 break;
 case 'doxear':
 case 'doxxeo': {
-    const cooldownTime = 600000; // 10 minutos en milisegundos
+    const cooldownTime = 60000; // 10 minutos en milisegundos
     const user = m.sender;
 
     if (cooldownDox[user] && (Date.now() - cooldownDox[user]) < cooldownTime) {
