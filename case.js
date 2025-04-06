@@ -18508,9 +18508,9 @@ case 'personalidad': {
         return list[Math.floor(Math.random() * list.length)];
     }
 
-    let personalidad = `┏━━°❀❬ *PERSONALIDAD* ❭❀°━━┓
+    let personalidad = `┏━°❀❬ *PERSONALIDAD* ❭❀°━┓
 *┃*
-*┃• Nombre* : ${text}
+*┃• Nombre* : ${m.pushName || 'Desconocido'}
 *┃• Buena Moral* : ${pickRandom(['6%','12%','20%','27%','35%','41%','49%','54%','60%','66%','73%','78%','84%','92%','93%','94%','96%','98,3%','99,7%','99,9%','1%','2,9%','0%','0,4%'])}
 *┃• Mala Moral* : ${pickRandom(['6%','12%','20%','27%','35%','41%','49%','54%','60%','66%','73%','78%','84%','92%','93%','94%','96%','98,3%','99,7%','99,9%','1%','2,9%','0%','0,4%'])}
 *┃• Tipo de persona* : ${pickRandom(['De buen corazón','Arrogante','Tacaño','Generoso','Humilde','Tímido','Cobarde','Entrometido','Cristal','No binarie XD','Pendejo'])}
