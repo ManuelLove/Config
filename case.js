@@ -3343,6 +3343,7 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
 function pickRandom(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
+const cooldownDox = {}; // fuera del handler, al inicio del archivo si quieres global
 		async function cekgame(gamejid)
 		{
 			if (tekateki[gamejid])
@@ -18506,12 +18507,24 @@ if (apkSizeMB > maxSizeMB) {
 break;
 case 'doxear':
 case 'doxxeo': {
-if (!(await firely(m, mess.waits))) return;
+    const cooldownTime = 600000; // 10 minutos en milisegundos
+    const user = m.sender;
+
+    if (cooldownDox[user] && (Date.now() - cooldownDox[user]) < cooldownTime) {
+        let waitTime = ((cooldownTime - (Date.now() - cooldownDox[user])) / 60000).toFixed(1);
+        return shoNherly(`*Debes esperar ${waitTime} minutos para volver a usar este comando.*`);
+    }
+
+    cooldownDox[user] = Date.now(); // set cooldown
+
+    if (!(await firely(m, mess.waits))) return;
     await emote('☠️');
+
     let who;
     if (m.isGroup) who = m.mentionedJid[0];
     else who = m.chat;
     if (!who) return shoNherly(`*¿A quién quieres doxear? Etiqueta a alguien.*`);
+
     let start = `*😱 ¡¡Empezando Doxxeo!! 😱*`;
     let porcentajes = [
         `*${pickRandom(['0','1','2','3','4','5','6','7','8','9','10'])}%*`,
