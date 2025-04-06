@@ -18504,9 +18504,9 @@ break;
 case 'pregunta':
 case 'preg': {
     if (!text) return shoNherly(`*Y la pregunta?*\n\n*Ejemplo:* ${prefix + command} mañana va a llover?`);
-    
-    await emote('🤔');
     if (!(await firely(m, mess.waits))) return;
+    await emote('🤔');
+    
     const respuestas = [
         'no', 
         'sí', 
