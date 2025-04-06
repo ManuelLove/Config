@@ -5722,7 +5722,7 @@ break;
            }
 			}
 			break;
-			case 'mina':
+			case 'minas':
 			 			{
 				if (!isRegistered(m))
 				{
@@ -18501,9 +18501,63 @@ if (apkSizeMB > maxSizeMB) {
 	}
 }
 break;
+case 'pregunta':
+case 'preg': {
+    if (!text) return shoNherly(`*Y la pregunta?*\n\n*Ejemplo:* ${prefix + command} mañana va a llover?`);
+    
+    await emote('🤔');
+    if (!(await firely(m, mess.waits))) return;
+    const respuestas = [
+        'no', 
+        'sí', 
+        'no sé', 
+        'puede ser', 
+        'no creo', 
+        'olvio', 
+        '¿Qué pregunta más boluda?', 
+        'A ver...', 
+        'pendejo', 
+        'pues no sé',
+        'claro que sí',
+        'por supuesto',
+        'absolutamente',
+        'es posible',
+        'dudo mucho',
+        'sin duda',
+        'quizás',
+        'depende',
+        'ni idea',
+        'me inclino a decir que sí',
+        'definitivamente no',
+        'ni lo sueñes',
+        'es probable',
+        'tal vez sí, tal vez no',
+        'no te puedo decir',
+        'eso es secreto',
+        'seguro que no',
+        'la verdad es que sí',
+        'no tengo ni idea',
+        'no deberías preguntar eso',
+        'pregunta complicada',
+        'no sabría decir',
+        'es imposible saberlo',
+        'puede que sí, puede que no',
+        'ni idea, amigo',
+        'quizá más tarde',
+        'no me hagas elegir',
+        'eso es irrelevante',
+        'no me pidas que adivine',
+        'nadie sabe'
+    ];
+    
+    let respuesta = respuestas[Math.floor(Math.random() * respuestas.length)];
+    
+    shoNherly(`*• Pregunta:* ${text}\n*• Respuesta:* ${respuesta}`);
+    break;
+}
 case 'personalidad': {
     if (!text) return shoNherly('✳️ Ingresa un nombre o persona para analizar su personalidad.');
-    
+    if (!(await firely(m, mess.waits))) return;
     function pickRandom(list) {
         return list[Math.floor(Math.random() * list.length)];
     }
