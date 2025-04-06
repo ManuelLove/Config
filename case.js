@@ -19717,7 +19717,7 @@ if (levelUpMessage) {
 					shoNhe.sendMessage(m.chat,
 					{
 						image: proses,
-						caption: "lo he hecho hermano"
+						caption: "*𝘈𝘘𝘜𝘐 𝘛𝘐𝘌𝘕𝘌 𝘓𝘈 𝘐𝘔𝘈𝘎𝘌𝘕 𝘌𝘓 𝘏𝘋*\n\nˢᶦ ˡᵃ ᶦᵐᵃᵍᵉⁿ ⁿᵒ ˢᵃˡᵉ ᵉˡ ᴴᴰ ʳᵉˢᵖᵒⁿᵈᵉ ᵃ ˡᵃ ᶦᵐᵃᵍᵉⁿ ᶜᵒⁿ ᵉˡ ᶜᵒᵐᵃⁿᵈᵒ ᵈᵉ ⁿᵘᵉᵛᵒ"
 					},
 					{
 						quoted: m
@@ -24607,7 +24607,7 @@ break;
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				shoNherly(`reiniciando ${global.namabot}`)
+				shoNherly(`_🔄 Reiniciando Bot..._ ${global.namabot}`)
 				shoNherly(mess.dones)
 				await sleep(3000)
 				process.exit()
