@@ -4130,6 +4130,10 @@ User @${m.sender.split('@')[0]}, ¿sigues bien, bro? El sistema ha detectado tu 
 				});
 		}}*/
 		//=================[ TEMPAT CASE DI BAWAH INI ]=================\\
+		const lenguajeGB = {
+  smsAvisoAG: () => '❗',
+  smsAvisoIIG: () => 'ℹ️',
+}
 		switch (command)
 		{
 		case 'addprodukown': {
