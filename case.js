@@ -1,3 +1,4 @@
+const cooldownDox = {}; // fuera del handler, al inicio del archivo si quieres global
 // CREATOR : YUDA & TNGX
 // TQTO? DI COMMAND TQTO
 // BIG THX TO : GALANGz, TNGXAJA[Nhe], ORANG TUA, ALLAH, PENYEDIA REST API, PENYEDIA BASE AWAL
@@ -3343,7 +3344,6 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
 function pickRandom(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
-const cooldownDox = {}; // fuera del handler, al inicio del archivo si quieres global
 		async function cekgame(gamejid)
 		{
 			if (tekateki[gamejid])
