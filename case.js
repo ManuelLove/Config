@@ -18557,23 +18557,23 @@ ${prefix + command} noob
 ${prefix + command} impossible2
 
 😼 𝙈𝙄𝙀𝙉𝙏𝙍𝘼𝙎 𝙈𝘼𝙎 𝘿𝙄𝙁𝙄𝘾𝙐𝙇𝘿𝘼𝘿 𝙈𝘼𝙔𝙊𝙍 𝙍𝙀𝘾𝙊𝙈𝙋𝙀𝙉𝙎𝘼`.trim()
-    return await shoNhe.reply(m.chat, texto, fkontak, m)
+    return await shoNhe.sendMessage(m.chat, texto, fkontak, m)
   }
 
   let mode = args[0].toLowerCase()
-  if (!(mode in modes)) return await shoNhe.reply(m.chat, `${lenguajeGB['smsAvisoAG']()} Modo inválido\n\n${Object.keys(modes).join(', ')}`, fkontak, m)
+  if (!(mode in modes)) return await shoNhe.sendMessage(m.chat, `${lenguajeGB['smsAvisoAG']()} Modo inválido\n\n${Object.keys(modes).join(', ')}`, fkontak, m)
 
   let id = m.chat
-  if (id in global.math) return shoNhe.reply(m.chat, `${lenguajeGB['smsAvisoAG']()} 𝘼Ú𝙉 𝙃𝘼𝙔 𝙐𝙉𝘼 𝙋𝙍𝙀𝙂𝙐𝙉𝙏𝘼 𝙎𝙄𝙉 𝙍𝙀𝙎𝙋𝙐𝙀𝙎𝙏𝘼!`, global.math[id][0])
+  if (id in global.math) return shoNherly(m.chat, `${lenguajeGB['smsAvisoAG']()} 𝘼Ú𝙉 𝙃𝘼𝙔 𝙐𝙉𝘼 𝙋𝙍𝙀𝙂𝙐𝙉𝙏𝘼 𝙎𝙄𝙉 𝙍𝙀𝙎𝙋𝙐𝙀𝙎𝙏𝘼!`, global.math[id][0])
 
   let math = genMath(mode)
   global.math[id] = [
-    await shoNhe.reply(m.chat, `𝘾𝙪𝙖𝙡 𝙚𝙨 𝙚𝙡 𝙧𝙚𝙨𝙪𝙡𝙩𝙖𝙙𝙤 𝙙𝙚:\n\n*${math.str} = ?*\n\n⏳ Tiempo: ${(math.time / 1000).toFixed(0)} segundos\n🎁 Recompensa: *${math.bonus} limit*\n\nResponde este mensaje para ganar.`, m),
+    await shoNhe.sendMessage(m.chat, `𝘾𝙪𝙖𝙡 𝙚𝙨 𝙚𝙡 𝙧𝙚𝙨𝙪𝙡𝙩𝙖𝙙𝙤 𝙙𝙚:\n\n*${math.str} = ?*\n\n⏳ Tiempo: ${(math.time / 1000).toFixed(0)} segundos\n🎁 Recompensa: *${math.bonus} limit*\n\nResponde este mensaje para ganar.`, m),
     math,
     4,
     setTimeout(() => {
       if (global.math[id]) {
-        shoNhe.reply(m.chat, `${lenguajeGB['smsAvisoAG']()} 𝙏𝙄𝙀𝙈𝙋𝙊 𝘼𝙂𝙊𝙏𝘼𝘿𝙊!\n𝙍𝙀𝙎𝙋𝙐𝙀𝙎𝙏𝘼: *${math.result}*`, global.math[id][0])
+        shoNherly(m.chat, `${lenguajeGB['smsAvisoAG']()} 𝙏𝙄𝙀𝙈𝙋𝙊 𝘼𝙂𝙊𝙏𝘼𝘿𝙊!\n𝙍𝙀𝙎𝙋𝙐𝙀𝙎𝙏𝘼: *${math.result}*`, global.math[id][0])
         delete global.math[id]
       }
     }, math.time)
