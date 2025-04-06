@@ -3229,7 +3229,9 @@ default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURICompon
             shoNhe.sendMessage(m.chat, { 
                 text: `💥 *¡Boom! Perdiste!*\n${boom[m.sender].board.join('')}\n\n⚠️ ¡Inténtalo de nuevo!` 
             }, { quoted: m });
-             // Eliminar la partida
+
+            clearTimeout(boom[m.sender].waktu);
+            delete boom[m.sender]; // Eliminar la partida
         } else { 
             shoNhe.sendMessage(m.chat, { 
                 text: `💥 *Bomba encontrada!*\n${boom[m.sender].board.join('')}\n\n❤️ Vidas restantes: ${boom[m.sender].nyawa.length}` 
@@ -3246,7 +3248,7 @@ default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURICompon
     // Cargar la base de datos
     const db = loadUserFire();
     const role = db[m.sender]?.role || 'user'; // Verificar el rol del usuario
-clearTimeout(boom[m.sender].waktu);
+
     if (role !== 'owner') { // Solo si NO es owner
         if (!db[m.sender]) {
             db[m.sender] = { limit: limiteGanado, role: 'user' };
@@ -3261,7 +3263,7 @@ clearTimeout(boom[m.sender].waktu);
     } else {
         shoNherly("🎉 *¡Ganaste!* 🎉\n\n🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
     }
-
+clearTimeout(boom[m.sender].waktu);
     delete boom[m.sender];
         } else { 
             shoNhe.sendMessage(m.chat, { 
