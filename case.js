@@ -19979,52 +19979,60 @@ if (levelUpMessage) {
            }
 			}
 			break
-case 'texttospech':
-case 'tts':
-case 'tospech': {
-    if (!isRegistered(m)) {
-        return sendRegister(shoNhe, m, prefix, namabot);
-    }
-
-    updatePopularCommand(command);
-    const levelUpMessage = levelUpdate(command, m.sender); // Actualiza el nivel
-
-    if (!text) return shoNherly('¿Dónde está el texto que quieres convertir a audio?');
-
-    try {
-        let audioUrl = `https://api.hiuraa.my.id/tools/openai-tts?text=${encodeURIComponent(text)}&voice=nova`;
-
-        await shoNhe.sendMessage(m.chat, {
-            audio: { url: audioUrl },
-            mimetype: 'audio/mpeg',
-            ptt: true
-        }, { quoted: hw });
-
-        if (levelUpMessage) {
-            await shoNhe.sendMessage(m.chat, {
-                image: { url: levelUpMessage.image },
-                caption: levelUpMessage.text,
-                footer: "LEVEL UP🔥",
-                buttons: [
-                    {
-                        buttonId: `${prefix}tqto`,
-                        buttonText: { displayText: "TQTO 💡" }
-                    },
-                    {
-                        buttonId: `${prefix}menu`,
-                        buttonText: { displayText: "MENU 🍄" }
-                    }
-                ],
-                viewOnce: true
-            }, { quoted: hw });
-        }
-    } catch (e) {
-        console.error(e);
-        shoNherly('❌ Ocurrió un error al generar el audio.');
-    }
-
-    break;
-}
+			case 'texttospech':
+			case 'tts':
+			case 'tospech':
+			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				if (!text) return shoNherly('¿Dónde está el texto que quieres convertir a audio?')
+				let
+				{
+					tts
+				} = require('./lib/tts')
+				let anu = await tts(text)
+				shoNhe.sendMessage(m.chat,
+				{
+					audio: anu,
+					ptt: true,
+					mimetype: 'audio/mpeg'
+				},
+				{
+					quoted: hw
+				})
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
+				{
+					quoted: hw
+				});
+           }
+			}
+			break
 			case 'translate':
 			case 'tr':
 			{
@@ -21302,6 +21310,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			}
 			break
 			case 'yts':
+			case 'ytbuscar':
 			case 'ytsearch':
 			{
 				if (!isRegistered(m))
