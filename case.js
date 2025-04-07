@@ -3443,7 +3443,7 @@ ${isWin
     if (isWin) {
         const role = db[winner]?.role || 'user';
         if (role !== 'owner') {
-            const recompensaExtra = 25;
+            const recompensaExtra = 30;
             db[winner].limit = (db[winner].limit || 0) + recompensaExtra;
         }
     }
