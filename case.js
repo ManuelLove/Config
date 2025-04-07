@@ -3407,10 +3407,10 @@ ${arr.slice(6).join('')}
 ❌ = ${shoNhe.getName(room13.game.playerO)}
 
 ${isWin 
-  ? `*${shoNhe.getName(winner)}* *HAS GANADOS 🎉*\n*🎁 OBTIENE* ${winScore} XP` 
+  ? `@${winner.split('@')[0]} *HA GANADO 🎉*\n*🎁 OBTIENE RECOMPENSA EN LÍMIT*` 
   : isTie 
-    ? `*EMPATE 😹*` 
-    : `𝐓𝐮𝐫𝐧𝐨 𝐝𝐞\n\n${['❎', '❌'][1 * room13.game._currentTurn]} (${shoNhe.getName(room13.game.currentTurn)})`}`
+    ? `*EMPATE 😹*\n*🎁 AMBOS OBTIENEN RECOMPENSA EN LÍMIT*` 
+    : `𝐓𝐮𝐫𝐧𝐨 𝐝𝐞\n\n${['❎', '❌'][1 * room13.game._currentTurn]} (@${room13.game.currentTurn.split('@')[0]})`}`
 
     let users = global.db.data.users
     if ((room13.game._currentTurn ^ isSurrender ? room13.x : room13.o) !== m.chat)
@@ -3424,12 +3424,33 @@ ${isWin
     })
 
     if (isTie || isWin) {
-        users[room13.game.playerX].exp += playScore
-        users[room13.game.playerO].exp += playScore
-        delete this.game[room13.id]
-        if (isWin)
-            users[winner].exp += winScore - playScore
+    const db = loadUserFire();
+
+    const jugadores = [room13.game.playerX, room13.game.playerO];
+
+    for (let jid of jugadores) {
+        const role = db[jid]?.role || 'user';
+        if (role !== 'owner') {
+            const recompensa = Math.floor(Math.random() * 15) + 7;
+            if (!db[jid]) {
+                db[jid] = { limit: recompensa, role: 'user' };
+            } else {
+                db[jid].limit = (db[jid].limit || 0) + recompensa;
+            }
+        }
     }
+
+    if (isWin) {
+        const role = db[winner]?.role || 'user';
+        if (role !== 'owner') {
+            const recompensaExtra = Math.floor(Math.random() * 15) + 7;
+            db[winner].limit = (db[winner].limit || 0) + recompensaExtra;
+        }
+    }
+
+    saveUserFire(db);
+    delete this.game[room13.id];
+}
 }
 function parseMention(text) {
     return [...text.matchAll(/@(.*?)/g)].map(v => v[1]);
