@@ -29175,27 +29175,26 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 						await shoNherly(require('util').format(teks))
 					}
 				}
-				if (budy.startsWith('$'))
-				{
-					if (!isShoNheOwn) return
-					exec(budy.slice(2), (err, stdout) =>
-					{
-						if (err) return shoNherly(`${err}`)
-						if (stdout) return shoNherly(stdout)
-					})
-				}
-		}
-try {
-   // código que puede lanzar error
-} catch (err) {
-   console.error(err);
+if (budy.startsWith('$')) {
+	if (!isShoNheOwn) return
+	exec(budy.slice(1), (err, stdout) => {
+		if (err) return shoNherly(`${err}`)
+		if (stdout) return shoNherly(stdout)
+	})
 }
-}
+
+// Este bloque que sigue parece estar fuera de lugar y da error, lo quitamos
+// try {
+//    // código que puede lanzar error
+// } catch (err) {
+//    console.error(err);
+// }
+
+// Auto recarga de archivo
 let file = require.resolve(__filename)
-fs.watchFile(file, () =>
-{
+fs.watchFile(file, () => {
 	fs.unwatchFile(file)
 	console.log(`Update ${__filename}`)
 	delete require.cache[file]
 	require(file)
-}),
+})
