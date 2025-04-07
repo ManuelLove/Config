@@ -3403,14 +3403,14 @@ ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')} 
 ${arr.slice(6).join('')}
 
-❎ = @${room13.game.playerX.split('@')[0]}
-❌ = @${room13.game.playerO.split('@')[0]}
+❎ = ${shoNhe.getName(room13.game.playerX)}
+❌ = ${shoNhe.getName(room13.game.playerO)}
 
 ${isWin 
-  ? `@${winner.split('@')[0]} *HAS GANADOS 🎉*\n*🎁 OBTIENE* ${winScore} XP` 
+  ? `*${shoNhe.getName(winner)}* *HAS GANADOS 🎉*\n*🎁 OBTIENE* ${winScore} XP` 
   : isTie 
     ? `*EMPATE 😹*` 
-    : `𝐓𝐮𝐫𝐧𝐨 𝐝𝐞\n\n${['❎', '❌'][1 * room13.game._currentTurn]} (@${room13.game.currentTurn.split('@')[0]})`}`
+    : `𝐓𝐮𝐫𝐧𝐨 𝐝𝐞\n\n${['❎', '❌'][1 * room13.game._currentTurn]} (${shoNhe.getName(room13.game.currentTurn)})`}`
 
     let users = global.db.data.users
     if ((room13.game._currentTurn ^ isSurrender ? room13.x : room13.o) !== m.chat)
@@ -18708,7 +18708,7 @@ case 'tictactoe': {
             }[v];
         });
 
-        let str = `*\`🕹 ＴＲＥＳ ＥＮ ＲＡＹＡ 🎮\`*\n\n🎮👾 ᴇsᴘᴇʀᴀɴᴅᴏ ᴀ @${room13.game.currentTurn.split('@')[0]} ᴄᴏᴍᴏ ᴘʀɪᴍᴇʀ ᴊᴜɢᴀᴅᴏʀ
+        let str = `*\`🕹 ＴＲＥＳ ＥＮ ＲＡＹＡ 🎮\`*\n\n🎮👾 ᴇsᴘᴇʀᴀɴᴅᴏ ᴀ *${shoNhe.getName(room13.game.currentTurn)}* ᴄᴏᴍᴏ ᴘʀɪᴍᴇʀ ᴊᴜɢᴀᴅᴏʀ
 
 ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
