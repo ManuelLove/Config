@@ -1,3 +1,5 @@
+const isBan = banned.includes(m.sender);
+if (isBan) return;
 if (isBan && !isShoNheOwn) return;
 // CREATOR : YUDA & TNGX
 // TQTO? DI COMMAND TQTO
