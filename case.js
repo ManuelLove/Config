@@ -279,12 +279,6 @@ global.niatsholat = [
 const readmore = String.fromCharCode(8206).repeat(4001);
 // Path ke file riwayat
 const cooldownDox = {}; // fuera del handler, al inicio del archivo si quieres global
-const senderNumber = sender.split('@')[0];
-		const isBan = banned.includes(senderNumber);
-
-if (isBan) {
-  return shoNherly('*🚫 Has sido baneado del bot. Contacta a un administrador si crees que es un error.*');
-}
 const popularPath = './database/popular.json';
 let popularData = {};
 try
@@ -1519,6 +1513,12 @@ await shoNhe.sendMessage(m.chat, {
 			const data = await read.resize(width, height).getBufferAsync(jimp.MIME_JPEG);
 			return data;
 		};
+		const senderNumber = m.sender;
+const isBan = banned.includes(senderNumber);
+
+if (isBan) {
+  return shoNherly('*🚫 Has sido baneado del bot. Contacta a un administrador si crees que es un error.*');
+}
 		async function downloadMp4(link)
 		{
 			try
