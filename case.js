@@ -3431,6 +3431,9 @@ ${isWin
             users[winner].exp += winScore - playScore
     }
 }
+function parseMention(text) {
+    return [...text.matchAll(/@(.*?)/g)].map(v => v[1]);
+}
 		async function cekgame(gamejid)
 		{
 			if (tekateki[gamejid])
