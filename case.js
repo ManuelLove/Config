@@ -18746,7 +18746,7 @@ case 'deltictactoe':
 case 'ttceend':
 case 'delttc': case {
     this.game = this.game ? this.game : {}
-    let room13 = Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))
+    let room13 = Object.values(this.game)find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))
     if (!room13) return shoNherly('⚠️ ɴᴏ ᴇsᴛᴀs ᴇɴ ᴘᴀʀᴛɪᴅᴀ ᴅᴇ ᴛɪᴄᴛᴀᴄᴛᴏᴇ 🎮')
 
     // Solo el jugador X o O puede cerrarla
