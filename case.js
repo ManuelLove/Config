@@ -18719,7 +18719,7 @@ ${arr.slice(6).join('')}
 ▢ *𝐑𝐄𝐆𝐋𝐀𝐒 :*
 
 * ʜᴀᴢ 3 ғɪʟᴀs ᴅᴇ sɪᴍʙᴏʟᴏs ᴠᴇʀᴛɪᴄᴀʟᴇs, ʜᴏʀɪᴢᴏɴᴛᴀʟᴇs ᴏ ᴅɪᴀɢᴏɴᴀʟᴇs ᴘᴀʀᴀ ɢᴀɴᴀʀ
-* ᴇsᴄʀɪʙᴇ *rendirse* para rendirte y admitir la derrota`;
+* ᴇsᴄʀɪʙᴇ *delttc* para rendirte y admitir la derrota`;
 
         if (room13.x !== room13.o) await shoNhe.sendText(room13.x, str, m, {
             mentions: parseMention(str)
