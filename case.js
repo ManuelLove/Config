@@ -3443,7 +3443,7 @@ ${isWin
     if (isWin) {
         const role = db[winner]?.role || 'user';
         if (role !== 'owner') {
-            const recompensaExtra = 20;
+            const recompensaExtra = 30;
             db[winner].limit = (db[winner].limit || 0) + recompensaExtra;
         }
     }
@@ -11511,19 +11511,18 @@ ${formattedCommandList}
 					orgnye = m.quoted.sender
 				}
 				const isBane = banned.includes(orgnye)
-				if (args[0] === "add")
-				{
-					if (isBane) return shoNherly('*Este usuario ha sido baneado*')
-					banned.push(orgnye)
-					shoNherly(`*✅ Usuario baneado con éxito*`)
-				}
-				else if (args[0] === "del")
-				{
-					if (!isBane) return shoNherly('*El usuario ha sido eliminado de la lista de baneados*')
-					let delbans = banned.indexOf(orgnye)
-					banned.splice(delbans, 1)
-					shoNherly(`*✅ Se eliminó correctamente al usuario baneado*`)
-				}
+if (args[0] === "add") {
+    if (isBane) return shoNherly('*Este usuario ha sido baneado*')
+    banned.push(orgnye)
+    fs.writeFileSync('./database/banned.json', JSON.stringify(banned, null, 2)) // << AÑADIDO
+    shoNherly(`*✅ Usuario baneado con éxito*`)
+} else if (args[0] === "del") {
+    if (!isBane) return shoNherly('*El usuario no está baneado*')
+    let delbans = banned.indexOf(orgnye)
+    banned.splice(delbans, 1)
+    fs.writeFileSync('./database/banned.json', JSON.stringify(banned, null, 2)) // << AÑADIDO
+    shoNherly(`*✅ Se eliminó correctamente al usuario baneado*`)
+}
 				else
 				{
 					shoNherly("Error")
