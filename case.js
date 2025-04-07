@@ -279,6 +279,11 @@ global.niatsholat = [
 const readmore = String.fromCharCode(8206).repeat(4001);
 // Path ke file riwayat
 const cooldownDox = {}; // fuera del handler, al inicio del archivo si quieres global
+const senderNumber = m.sender;
+const isBan = banned.includes(senderNumber);
+
+if (isBan) {
+  return shoNherly('*🚫 Has sido baneado del bot. Contacta a un administrador si crees que es un error.*');
 const popularPath = './database/popular.json';
 let popularData = {};
 try
@@ -4827,7 +4832,8 @@ break;
 
 // ================= [ PROSES QRIS ] ================= \\
 case 'addqris': {
-    if (!isRegistered(m)) {
+    if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*'); {
         return sendRegister(shoNhe, m, prefix, namabot);
     }
     updatePopularCommand(command);
@@ -4938,7 +4944,8 @@ case 'pay_qris': {
 }
 break;
 case 'deleteqris': {
-    if (!isRegistered(m)) {
+    if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*'); {
         return sendRegister(shoNhe, m, prefix, namabot);
     }
     updatePopularCommand(command);
@@ -5115,6 +5122,7 @@ break;
 			case 'tebakgambar':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -5252,6 +5260,7 @@ break;
 			case 'tebakgame':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -5323,6 +5332,7 @@ break;
 			case 'tebakhero':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -5394,6 +5404,7 @@ break;
 			case 'tebakff':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -5476,6 +5487,8 @@ break;
 			case 'tebakkabupaten':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -5531,6 +5544,8 @@ break;
 			case 'tebakjkt48':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -5602,6 +5617,8 @@ break;
 			case 'tebakhewan':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -5674,6 +5691,8 @@ break;
 			case 'tebakml':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -5755,6 +5774,8 @@ break;
 			case 'tebakchara':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -5840,6 +5861,8 @@ break;
 			case 'minas':
 			 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -5870,6 +5893,8 @@ break;
 case 'ahorcado':
  			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -5893,6 +5918,8 @@ break;
 			case 'tebakaplikasi':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -5964,6 +5991,8 @@ break;
 			case 'tebakaplikassi':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -6035,6 +6064,8 @@ break;
 			case 'tebakkata':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -6096,6 +6127,7 @@ break;
 			case 'asahotak':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -6157,6 +6189,7 @@ break;
 			case 'lengkapikalimat':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -6219,6 +6252,7 @@ break;
 			case 'cek':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -6332,6 +6366,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 				let sender = m.sender;
 				// Periksa apakah pengguna sudah terdaftar
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -6365,6 +6400,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			case 'tebakbendera':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -6436,6 +6472,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			case 'tebakkalimat':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -6499,6 +6536,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			case 'siapakahaku':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -6560,6 +6598,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			case 'tebakkimia':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -6621,6 +6660,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			case 'tebaklirik':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -6682,6 +6722,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			case 'tebaktebakan':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -6743,6 +6784,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			case 'susunkata':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -6804,6 +6846,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			case 'caklontong':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -6865,6 +6908,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			case 'tekateki':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -6926,6 +6970,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			case 'ayuda':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -7085,6 +7130,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			case 'rendirse':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -7405,6 +7451,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			case 'populer':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -7468,6 +7515,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			case 'githubstalk':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -7518,6 +7566,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			case 'npmstalk':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -7581,6 +7630,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			case 'gdrive':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -7643,6 +7693,7 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			case 'resetpop':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -7682,7 +7733,8 @@ default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.i
 			break
 			// Penanganan perintah "script"
 			case "script": {
-    if (!isRegistered(m)) {
+    if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*'); {
         return sendRegister(shoNhe, m, prefix, namabot);
     }
     updatePopularCommand(command);
@@ -7771,6 +7823,7 @@ break;
 			case 'afk':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -7836,6 +7889,7 @@ break;
 			case 'farm':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -7849,6 +7903,7 @@ break;
 			case 'autobio':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -9537,6 +9592,7 @@ break;
 			case 'addowner':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -9582,6 +9638,7 @@ break;
 			case 'delowner':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -9626,6 +9683,7 @@ break;
 			case 'listowner':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -11495,6 +11553,7 @@ ${formattedCommandList}
 			case 'banned':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -11559,6 +11618,7 @@ if (args[0] === "add") {
 			case 'listban':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -11646,6 +11706,7 @@ if (args[0] === "add") {
 			case 'totalfitur':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -11687,6 +11748,7 @@ if (args[0] === "add") {
 			case 'setpremium':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -11790,6 +11852,7 @@ if (args[0] === "add") {
 			case 'delpr':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -11846,6 +11909,7 @@ if (args[0] === "add") {
 			case 'listpr':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -11892,6 +11956,7 @@ if (args[0] === "add") {
 			case 'upswteks':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -11941,6 +12006,7 @@ if (args[0] === "add") {
 			case 'sendclear':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -11996,6 +12062,7 @@ if (args[0] === "add") {
 			case 'upswvideo':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -12066,6 +12133,7 @@ if (args[0] === "add") {
 			case 'setprompt2':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -12107,6 +12175,7 @@ if (args[0] === "add") {
 			case 'llama':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -12165,6 +12234,7 @@ if (args[0] === "add") {
 			case 'metaai':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -12223,6 +12293,7 @@ if (args[0] === "add") {
 			case 'nous':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -12281,6 +12352,7 @@ if (args[0] === "add") {
 			case 'bett':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -12335,6 +12407,7 @@ if (args[0] === "add") {
 			case 'bett2':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -12390,6 +12463,7 @@ if (args[0] === "add") {
 			case 'bett3':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -12445,6 +12519,7 @@ if (args[0] === "add") {
 			case 'claudeai':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -12503,6 +12578,7 @@ if (args[0] === "add") {
 			case 'dbrxai':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -12561,6 +12637,7 @@ if (args[0] === "add") {
 			case 'minar':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -12629,6 +12706,7 @@ if (args[0] === "add") {
 			case 'deepseek':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -12702,6 +12780,7 @@ if (args[0] === "add") {
 			case 'setreply':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -12772,6 +12851,7 @@ if (args[0] === "add") {
 			case 'dreamshaper':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -12842,6 +12922,7 @@ if (args[0] === "add") {
 			case 'kontoool':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -12977,6 +13058,7 @@ if (args[0] === "add") {
 			case 'img2text':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13071,6 +13153,7 @@ if (args[0] === "add") {
 			case 'venice':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13151,6 +13234,7 @@ if (args[0] === "add") {
 			case 'find':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13178,6 +13262,7 @@ if (args[0] === "add") {
 			case 'claim':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13191,6 +13276,7 @@ if (args[0] === "add") {
 			case 'tesload':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13263,6 +13349,7 @@ await shoNhe.sendMessage(m.chat, {
 			case 'addthumb2':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13305,6 +13392,7 @@ await shoNhe.sendMessage(m.chat, {
 			case 'delthumb2':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13346,6 +13434,7 @@ await shoNhe.sendMessage(m.chat, {
 			case 'listthumb2':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13385,6 +13474,7 @@ await shoNhe.sendMessage(m.chat, {
 			case 'addthumb3':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13427,6 +13517,7 @@ await shoNhe.sendMessage(m.chat, {
 			case 'delthumb3':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13468,6 +13559,7 @@ await shoNhe.sendMessage(m.chat, {
 			case 'listthumb3':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13508,6 +13600,7 @@ await shoNhe.sendMessage(m.chat, {
 			case 'resetlink':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13552,6 +13645,7 @@ await shoNhe.sendMessage(m.chat, {
 			case 'latukam':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13612,6 +13706,7 @@ await shoNhe.sendMessage(m.chat, {
 			
 case 'kisahnabi': {
 if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13663,6 +13758,7 @@ if (levelUpMessage) {
 break
 case 'asmaulhusna': {
 if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13733,6 +13829,7 @@ break;
 
 case 'ayatkursi': {
 if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13782,6 +13879,7 @@ if (!isRegistered(m))
 break;
 case 'bacaansholat': {
 if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13845,6 +13943,7 @@ shoNherly(`${caption}`)
 break
 case 'niatsholat': {
 if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13893,6 +13992,7 @@ break;
 
 case 'quotesislami': {
 if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -13986,6 +14086,7 @@ break;
 
 case 'doatahlil': {
 if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -14036,6 +14137,7 @@ break
 			case 'gwjgbskntl':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -14106,6 +14208,7 @@ break
 			case 'qwq':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -14165,6 +14268,7 @@ break
 			case 'stabilityai':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -14236,6 +14340,7 @@ break
 			case 'stable':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -14307,6 +14412,7 @@ break
 			case 'flux':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -14378,6 +14484,7 @@ break
 			case 'gandalf':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -14437,6 +14544,7 @@ break
 			case 'gemini':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -14576,6 +14684,7 @@ break
 			case 'yumeko':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -14714,6 +14823,7 @@ break
 			case 'programming':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -14783,6 +14893,7 @@ break
 			case 'stickerwm': 
 			case 'take': {
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -14846,6 +14957,7 @@ break
 			case 'quotesanime':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -14918,6 +15030,7 @@ break
 			case 'cecanindo':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -14975,6 +15088,7 @@ break
 			case 'dellist':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15007,6 +15121,7 @@ break
 			case 'updatelist':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15032,6 +15147,7 @@ break
 			case 'bluearchive':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15089,6 +15205,7 @@ break
 			case 'git': 
 			case 'gitclone': {
 			if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15150,6 +15267,7 @@ break
 			case 'cecanchina':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15207,6 +15325,7 @@ break
 			case 'cecanjapan':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15264,6 +15383,7 @@ break
 			case 'cecankorea':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15321,6 +15441,7 @@ break
 			case 'cecanthai':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15378,6 +15499,7 @@ break
 			case 'cecanviet':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15435,6 +15557,7 @@ break
 			case 'cats':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15492,6 +15615,7 @@ break
 			case 'neko':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15549,6 +15673,7 @@ break
 			case 'loli':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15606,6 +15731,7 @@ break
 			case 'waifu':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15665,6 +15791,7 @@ break
 			case 'upswimg':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15735,6 +15862,7 @@ break
 			case 'hwaifu':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15803,6 +15931,7 @@ break
 			case 'trap':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15871,6 +16000,7 @@ break
 			case 'blowjob':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -15949,7 +16079,8 @@ break
 
 //Source Code:
 case 'hd': {
-if (!isRegistered(m)) {
+if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*'); {
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
 updatePopularCommand(command);
@@ -16039,6 +16170,7 @@ break
 			case 'hentai-video':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -16106,7 +16238,8 @@ break
 			break;
 case 'hentaiimg':
 {
-	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*'); return sendRegister(shoNhe, m, prefix, namabot);
 	updatePopularCommand(command);
 	const levelUpMessage = levelUpdate(command, m.sender);
 	if (!isVip) return shoNherly(mess.vips);
@@ -16151,6 +16284,7 @@ break;
 			case 'hneko':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -16220,6 +16354,7 @@ break;
 			case 'readviewonce':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -16322,6 +16457,7 @@ break;
 			case 'upswaudio':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -16382,6 +16518,7 @@ break;
 			case 'contact':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -16431,6 +16568,7 @@ break;
 			case 'getcon':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -16481,6 +16619,7 @@ break;
 			case 'svcontact':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -16544,6 +16683,7 @@ break;
 			case 'upfire':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -16617,6 +16757,7 @@ break;
 			case 'delfire':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -16668,6 +16809,7 @@ break;
 			case 'listfireuser':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -16730,6 +16872,7 @@ break;
 			case 'deluser':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -16768,6 +16911,7 @@ break;
 			case 'repository':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -16829,6 +16973,7 @@ break;
 			case 'poll':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -16855,6 +17000,7 @@ break;
 			case 'cekfire':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -16921,6 +17067,7 @@ break;
 			case 'cyus':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -16959,6 +17106,7 @@ break;
 			case 'imdb':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -17043,6 +17191,7 @@ break;
 			case 'pinterestdl':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -17121,6 +17270,7 @@ break;
 			case 'anichindet':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -17172,6 +17322,7 @@ break;
 			case 'anichindownload':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -17220,6 +17371,7 @@ break;
 			case 'anichinepisode':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -17264,6 +17416,7 @@ break;
 			case 'anichinsearch':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -17341,6 +17494,7 @@ case 'cekadzan': {
 			case 'aurataildet':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -17422,6 +17576,7 @@ case 'cekadzan': {
 			case 'animelatest':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -17488,6 +17643,7 @@ case 'cekadzan': {
 			case 'aurataillatest':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -17555,6 +17711,7 @@ case 'cekadzan': {
 			case 'ats':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -17617,6 +17774,7 @@ case 'cekadzan': {
 			case 'auratailpop':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -17716,6 +17874,7 @@ break;
 			case 'animpopular':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -17781,6 +17940,7 @@ break;
 			case 'komikindodetail':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -17853,6 +18013,7 @@ break;
 			case 'komikindodownload':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -17962,6 +18123,7 @@ break;
 			case 'samehadakurelease':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -18045,6 +18207,7 @@ break;
 			case 'komikindosearch':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -18095,6 +18258,7 @@ break;
 			case 'otakudesuongoing':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -18205,6 +18369,7 @@ break;
 			case 'otakudesusearch':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -18267,6 +18432,7 @@ break;
 			case 'otakudesudetail':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -18341,6 +18507,7 @@ break;
 			case 'samehadakudetail':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -18388,6 +18555,7 @@ break;
 			case 'oploverzdownload':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -18454,7 +18622,8 @@ break;
 case 'instagram':
 case 'igdl':
 {
-	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*'); return sendRegister(shoNhe, m, prefix, namabot);
 	updatePopularCommand(command);
 	const levelUpMessage = levelUpdate(command, m.sender);
 
@@ -18547,7 +18716,8 @@ break;
 case 'apk':
 case 'apkdl':
 {
-	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*'); return sendRegister(shoNhe, m, prefix, namabot);
 	updatePopularCommand(command);
 	const levelUpMessage = levelUpdate(command, m.sender);
 
@@ -18964,7 +19134,8 @@ if (!(await firely(m, mess.waits))) return;
     }
     break;
 }
-		case 'fb': case 'fbdl': { if (!isRegistered(m)) { return sendRegister(shoNhe, m, prefix, namabot); } updatePopularCommand(command); const levelUpMessage = levelUpdate(command, m.sender); console.log('📢 Procesando descarga de Facebook...');
+		case 'fb': case 'fbdl': { if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*'); { return sendRegister(shoNhe, m, prefix, namabot); } updatePopularCommand(command); const levelUpMessage = levelUpdate(command, m.sender); console.log('📢 Procesando descarga de Facebook...');
 
 if (!text) {
     console.log('⚠️ No se proporcionó ninguna URL.');
@@ -19024,6 +19195,7 @@ if (levelUpMessage) {
 			case 'getq':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19077,6 +19249,7 @@ if (levelUpMessage) {
 			case 'sencontact':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19133,6 +19306,7 @@ if (levelUpMessage) {
 			case 'getgcid':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19198,6 +19372,7 @@ if (levelUpMessage) {
 			case 'getchid':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19264,6 +19439,7 @@ if (levelUpMessage) {
 			case 'contag':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19321,6 +19497,7 @@ if (levelUpMessage) {
 			case 'tesbtn2':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19384,6 +19561,7 @@ if (levelUpMessage) {
 			case 'delsession':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19459,6 +19637,7 @@ if (levelUpMessage) {
 			case 'setppgc':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19508,6 +19687,7 @@ if (levelUpMessage) {
 			case 'tesq':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19596,6 +19776,7 @@ if (levelUpMessage) {
 			case "kudeta":
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19648,6 +19829,7 @@ if (levelUpMessage) {
 			case 'delppgroup':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19697,6 +19879,7 @@ if (levelUpMessage) {
 			case 'setppbot':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19745,6 +19928,7 @@ if (levelUpMessage) {
 			case 'delppbot':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19785,6 +19969,7 @@ if (levelUpMessage) {
 			case 'setbiobot':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19836,6 +20021,7 @@ if (levelUpMessage) {
 			case 'listthumb':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19886,6 +20072,7 @@ if (levelUpMessage) {
 			case 'addthumb':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19941,6 +20128,7 @@ if (levelUpMessage) {
 			case 'deletethumb':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -19987,6 +20175,7 @@ if (levelUpMessage) {
 			case "setcmd":
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -20046,6 +20235,7 @@ if (levelUpMessage) {
 			case 'hdr':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -20113,6 +20303,7 @@ if (levelUpMessage) {
 			case "hidetag":
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -20164,6 +20355,7 @@ if (levelUpMessage) {
 			case 'add':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -20256,6 +20448,7 @@ if (levelUpMessage) {
 			case 'tospech':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -20309,6 +20502,7 @@ if (levelUpMessage) {
 			case 'tr':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -20371,6 +20565,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'asignar':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -20462,6 +20657,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'squirrel':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -20542,6 +20738,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'autostatusview':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -20591,6 +20788,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'anticall':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -20648,6 +20846,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'adminevent':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -20698,6 +20897,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'groupevent':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -20764,6 +20964,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'creategc':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -20830,6 +21031,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'mitos':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -20870,6 +21072,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'faktaunik':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -20959,6 +21162,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'grup':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -21170,6 +21374,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'metu':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -21246,6 +21451,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'shinetext':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -21345,6 +21551,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'lyrics':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -21413,6 +21620,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'realown':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -21476,6 +21684,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'contact2':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -21539,6 +21748,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case "listcmd":
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -21586,6 +21796,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'ytsearch':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -21730,6 +21941,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'ytplay':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -21850,6 +22062,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'ytmp3c':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -21925,6 +22138,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'ytv':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -22095,6 +22309,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'sound100':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -22120,6 +22335,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'searchnumber':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -22235,6 +22451,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'song':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -22335,6 +22552,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'pin':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -22479,6 +22697,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'upchannel':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -22571,6 +22790,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'upchannels':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -22730,6 +22950,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case "kirimsc":
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -22794,6 +23015,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'upsaluran':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -22932,6 +23154,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'upsaluran2':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -23040,6 +23263,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'ttsearch':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -23115,6 +23339,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			case 'ping':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -23155,6 +23380,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 			break
 			case 'alquilar': {
 			if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -23277,7 +23503,8 @@ case 'ttvideo':
 case 'tiktokmp4':
 case 'tiktokvideo':
 {
-    if (!isRegistered(m)) {
+    if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*'); {
         return sendRegister(shoNhe, m, prefix, namabot);
     }
     updatePopularCommand(command);
@@ -23358,6 +23585,7 @@ break;
 			case 'toaudio':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -23421,6 +23649,7 @@ break;
 			case 'settings':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -23606,6 +23835,7 @@ break;
 			case 'sendurlimg2':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -23725,6 +23955,7 @@ break;
 			case 'sendlist':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -23843,6 +24074,7 @@ break;
 			case 'sendlistimg':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -23965,6 +24197,7 @@ break;
 			case 'sendlist2':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -24086,6 +24319,7 @@ break;
 			case 'sendlistimg2':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -24215,6 +24449,7 @@ break;
 			case 'sendbutton':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -24279,6 +24514,7 @@ break;
 			case 'sendbutton2':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -24346,6 +24582,7 @@ break;
 			case 'sendbuttonimg':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -24411,6 +24648,7 @@ break;
 			case 'sendurlch':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -24530,6 +24768,7 @@ break;
 			case 'sendlistch':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -24659,6 +24898,7 @@ break;
 			case 'sendbuttonimg2':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -24727,6 +24967,7 @@ break;
 			case 'autotypingon':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -24768,6 +25009,7 @@ break;
 			case 'autotypingoff':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -24808,6 +25050,7 @@ break;
 			case 'autovnon':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -24849,6 +25092,7 @@ break;
 			case 'autovnoff':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -24889,6 +25133,7 @@ break;
 			case 'tomp3':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -24953,6 +25198,7 @@ break;
 			case 'restart':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -24997,6 +25243,7 @@ break;
 			case 'tovoice':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -25061,6 +25308,7 @@ break;
 			case 'togif':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -25135,6 +25383,7 @@ break;
 			break
 			case 'brat': {
 			if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -25184,6 +25433,7 @@ break;
 			case 'toimg':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -25240,6 +25490,7 @@ break;
 			case 'bratgif':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -25327,6 +25578,7 @@ break;
 			break
 			case 'brat2': {
 			if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -25384,6 +25636,7 @@ const buffer = await getBuffer(`https://api.siputzx.my.id/api/canvas/xnxx?title=
 			case 'toptv':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -25442,6 +25695,7 @@ const buffer = await getBuffer(`https://api.siputzx.my.id/api/canvas/xnxx?title=
 			case 'tourl':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -25514,6 +25768,7 @@ const buffer = await getBuffer(`https://api.siputzx.my.id/api/canvas/xnxx?title=
 			case 'img2ibb':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -25599,6 +25854,7 @@ const buffer = await getBuffer(`https://api.siputzx.my.id/api/canvas/xnxx?title=
 			case 'tiktokaudio':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -25681,6 +25937,7 @@ const buffer = await getBuffer(`https://api.siputzx.my.id/api/canvas/xnxx?title=
 			case 'addsewa':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -25723,6 +25980,7 @@ const buffer = await getBuffer(`https://api.siputzx.my.id/api/canvas/xnxx?title=
 			case 'delsewa':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -25766,6 +26024,7 @@ const buffer = await getBuffer(`https://api.siputzx.my.id/api/canvas/xnxx?title=
 			case 'ytmp3':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -25807,6 +26066,7 @@ const buffer = await getBuffer(`https://api.siputzx.my.id/api/canvas/xnxx?title=
 			case 'ytmp4':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -25848,6 +26108,7 @@ const buffer = await getBuffer(`https://api.siputzx.my.id/api/canvas/xnxx?title=
 			case 'owner':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -26014,7 +26275,8 @@ const buffer = await getBuffer(`https://api.siputzx.my.id/api/canvas/xnxx?title=
 			break
 			case 'payment':
     {
-        if (!isRegistered(m)) {
+        if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*'); {
             return sendRegister(shoNhe, m, prefix, namabot);
         }
         updatePopularCommand(command);
@@ -26288,6 +26550,7 @@ const buffer = await getBuffer(`https://api.siputzx.my.id/api/canvas/xnxx?title=
 			case 'about':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -26389,6 +26652,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'shoNheai':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -26470,6 +26734,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'setprompt':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -26511,6 +26776,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'delcase':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -26572,6 +26838,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'addcase':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -26641,6 +26908,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'pushcontact':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -26747,6 +27015,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'pushkontak4':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -26816,6 +27085,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case "closetime":
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -26885,6 +27155,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'spotifysearch':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -26937,6 +27208,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'suit':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -26998,6 +27270,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'borrar':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -27046,6 +27319,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'spotifydl':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -27142,6 +27416,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				// Menyusun perintah ffmpeg untuk membuat gambar dengan overlay
 			case 'qc':{
 			if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -27215,6 +27490,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			break;
 			case 's': case 'sticker': case 'stiker': {
 			if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -27265,6 +27541,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			break;
 			case 'smeme': case 'stickermeme': case 'stickmeme': {
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -27318,6 +27595,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'tqto':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -27404,6 +27682,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'play':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -27492,6 +27771,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'wogwogg':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -27613,6 +27893,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'ttslide':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -27768,6 +28049,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'tesbtn':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -27895,6 +28177,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'getcase':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -27946,6 +28229,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'mode':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -28109,6 +28393,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'groupon':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -28153,6 +28438,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'groupoff':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -28195,6 +28481,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case "casecek":
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -28245,6 +28532,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'eval':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -28265,6 +28553,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'exec':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -28281,6 +28570,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case 'return':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
@@ -28807,6 +29097,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			case '500ccxz':
 			{
 				if (!isRegistered(m))
+if (isBan) return shoNherly('*🚫 Estás baneado del bot.*');
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
