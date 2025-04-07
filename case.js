@@ -29198,4 +29198,4 @@ fs.watchFile(file, () =>
 	console.log(`Update ${__filename}`)
 	delete require.cache[file]
 	require(file)
-})
+}),
