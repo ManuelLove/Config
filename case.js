@@ -3407,10 +3407,10 @@ ${arr.slice(6).join('')}
 ❌ = ${shoNhe.getName(room13.game.playerO)}
 
 ${isWin 
-  ? `@${winner.split('@')[0]} *HA GANADO 🎉*\n*🎁 OBTIENE RECOMPENSA EN LÍMIT*` 
+  ? `${shoNhe.getName(winner)} *HA GANADO 🎉*\n*🎁 OBTIENE RECOMPENSA EN LÍMIT*` 
   : isTie 
     ? `*EMPATE 😹*\n*🎁 AMBOS OBTIENEN RECOMPENSA EN LÍMIT*` 
-    : `𝐓𝐮𝐫𝐧𝐨 𝐝𝐞\n\n${['❎', '❌'][1 * room13.game._currentTurn]} (@${room13.game.currentTurn.split('@')[0]})`}`
+    : `𝐓𝐮𝐫𝐧𝐨 𝐝𝐞\n\n${['❎', '❌'][1 * room13.game._currentTurn]} (${shoNhe.getName(room13.game.currentTurn)})`}`
 
     let users = global.db.data.users
     if ((room13.game._currentTurn ^ isSurrender ? room13.x : room13.o) !== m.chat)
