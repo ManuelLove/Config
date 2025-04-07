@@ -3344,8 +3344,8 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
 function pickRandom(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
-let winScore = 27
-let playScore = 99
+let winScore = 20
+let playScore = -10
 this.game = this.game ? this.game : {}
 let room13 = Object.values(this.game).find(room13 => room13.id && room13.game && room13.state && room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender) && room13.state == 'PLAYING')
 
@@ -3409,7 +3409,7 @@ ${arr.slice(6).join('')}
 ${isWin 
   ? `${shoNhe.getName(winner)} *HA GANADO 🎉*\n*🎁 OBTIENE RECOMPENSA EN LÍMIT ${winScore}*` 
   : isTie 
-    ? `*EMPATE 😹*\n*🎁 AMBOS PIERDEN LÍMIT*` 
+    ? `*EMPATE 😹*\n*🎁 AMBOS PIERDEN LÍMIT ${playScore}*` 
     : `𝐓𝐮𝐫𝐧𝐨 𝐝𝐞\n\n${['❎', '❌'][1 * room13.game._currentTurn]} (${shoNhe.getName(room13.game.currentTurn)})`}`
 
     let users = global.db.data.users
