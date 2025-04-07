@@ -3416,10 +3416,10 @@ ${isWin
     if ((room13.game._currentTurn ^ isSurrender ? room13.x : room13.o) !== m.chat)
         room13[room13.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
 
-    if (room13.x !== room13.o) await conn.sendText(room13.x, str, m, {
+    if (room13.x !== room13.o) await shoNhe.sendText(room13.x, str, m, {
         mentions: parseMention(str)
     })
-    await conn.sendText(room13.o, str, m, {
+    await shoNhe.sendText(room13.o, str, m, {
         mentions: parseMention(str)
     })
 
@@ -18654,7 +18654,7 @@ case 'doxxeo': {
 *TCP OPEN PORTS:* 443
 *ROUTER VENDEDOR:* ERICCSON
 *DEVICE VENDEDOR:* WIN32-X
-*CONNECTION TYPE:* TPLINK COMPANY
+*shoNheECTION TYPE:* TPLINK COMPANY
 *ICMPHOPS:* 192.168.0.1 192.168.1.1 100.73.43.4
 host-132.12.32.167.ucom.com
 host-132.12.111.ucom.com
@@ -18718,10 +18718,10 @@ ${arr.slice(6).join('')}
 * ʜᴀᴢ 3 ғɪʟᴀs ᴅᴇ sɪᴍʙᴏʟᴏs ᴠᴇʀᴛɪᴄᴀʟᴇs, ʜᴏʀɪᴢᴏɴᴛᴀʟᴇs ᴏ ᴅɪᴀɢᴏɴᴀʟᴇs ᴘᴀʀᴀ ɢᴀɴᴀʀ
 * ᴇsᴄʀɪʙᴇ *rendirse* para rendirte y admitir la derrota`;
 
-        if (room13.x !== room13.o) await conn.sendText(room13.x, str, m, {
+        if (room13.x !== room13.o) await shoNhe.sendText(room13.x, str, m, {
             mentions: parseMention(str)
         });
-        await conn.sendText(room13.o, str, m, {
+        await shoNhe.sendText(room13.o, str, m, {
             mentions: parseMention(str)
         });
     } else {
