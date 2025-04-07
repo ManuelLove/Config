@@ -279,8 +279,8 @@ global.niatsholat = [
 const readmore = String.fromCharCode(8206).repeat(4001);
 // Path ke file riwayat
 const cooldownDox = {}; // fuera del handler, al inicio del archivo si quieres global
-const senderNumber = sender;
-const isBan = banned.includes(senderNumber);
+const senderNumber = sender.split('@')[0];
+		const isBan = banned.includes(senderNumber);
 
 if (isBan) {
   return shoNherly('*🚫 Has sido baneado del bot. Contacta a un administrador si crees que es un error.*');
