@@ -29175,21 +29175,17 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 						await shoNherly(require('util').format(teks))
 					}
 				}
-				if (budy.startsWith('$'))
-				{
-					if (!isShoNheOwn) return
-					exec(budy.slice(2), (err, stdout) =>
-					{
-						if (err) return shoNherly(`${err}`)
-						if (stdout) return shoNherly(stdout)
-					})
-				}
-		}
-	}
-	catch (err)
-	{
-		console.log(util.format(err))
-	}
+try {
+  if (budy.startsWith('$')) {
+    if (!isShoNheOwn) return
+    exec(budy.slice(2), (err, stdout) => {
+      if (err) return shoNherly(`${err}`)
+      if (stdout) return shoNherly(stdout)
+    })
+  }
+} catch (err) {
+  console.log(util.format(err))
+}
 }
 let file = require.resolve(__filename)
 fs.watchFile(file, () =>
