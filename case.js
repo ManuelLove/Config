@@ -18741,6 +18741,17 @@ ${arr.slice(6).join('')}
     }
 }
 break;
+case 'ttcreset':
+case 'deltictactoe':
+case 'ttceend':
+case 'delttc': {
+    this.game = this.game ? this.game : {}
+    let room13 = Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))
+    if (!room13) return m.reply('⚠️ ɴᴏ ᴇsᴛᴀs ᴇɴ ᴘᴀʀᴛɪᴅᴀ ᴅᴇ ᴛɪᴄᴛᴀᴄᴛᴏᴇ 🎮')
+    delete this.game[room13.id]
+    m.reply('✅ sᴇ ʀᴇɪɴɪᴄɪᴏ ʟᴀ sᴇsɪᴏɴ ᴅᴇ *ᴛɪᴄᴛᴀᴄᴛᴏᴇ 🎮*')
+}
+break
 case 'pregunta':
 case 'preg': {
     if (!text) return shoNherly(`*Y la pregunta?*\n\n*Ejemplo:* ${prefix + command} mañana va a llover?`);
