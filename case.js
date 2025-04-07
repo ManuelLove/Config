@@ -3355,7 +3355,7 @@ if (room13) {
     let isTie = false
     let isSurrender = false
 
-    if (!/^([1-9]|(me)?give up|surr?ender|off|skip)$/i.test(m.text)) return
+    if (!/^([1-9]|(me)?give up|surr?ender|soymanco|skip)$/i.test(m.text)) return
     isSurrender = !/^[1-9]$/.test(m.text)
 
     if (m.sender !== room13.game.currentTurn) {
@@ -3392,9 +3392,21 @@ if (room13) {
     })
 
     if (isSurrender) {
-        room13.game._currentTurn = m.sender === room13.game.playerX
-        isWin = true
-    }
+    room13.game._currentTurn = m.sender === room13.game.playerX
+    isWin = true
+    str = `*\`🎮 ＴＲＥＳ ＥＮ ＲＡＹＡ 🎮\`*
+
+${arr.slice(0, 3).join('')}
+${arr.slice(3, 6).join('')} 
+${arr.slice(6).join('')}
+
+❎ = ${shoNhe.getName(room13.game.playerX)}
+❌ = ${shoNhe.getName(room13.game.playerO)}
+
+*${shoNhe.getName(m.sender)} se rindió.* ¡*${shoNhe.getName(room13.game.currentTurn)} gana!* 🎉
+
+*🎁 OBTIENE* ${winScore} XP`
+}
 
     let winner = isSurrender ? room13.game.currentTurn : room13.game.winner
     let str = `*\`🎮 ＴＲＥＳ ＥＮ ＲＡＹＡ 🎮\`*
@@ -18719,7 +18731,7 @@ ${arr.slice(6).join('')}
 ▢ *𝐑𝐄𝐆𝐋𝐀𝐒 :*
 
 * ʜᴀᴢ 3 ғɪʟᴀs ᴅᴇ sɪᴍʙᴏʟᴏs ᴠᴇʀᴛɪᴄᴀʟᴇs, ʜᴏʀɪᴢᴏɴᴛᴀʟᴇs ᴏ ᴅɪᴀɢᴏɴᴀʟᴇs ᴘᴀʀᴀ ɢᴀɴᴀʀ
-* ᴇsᴄʀɪʙᴇ *delttc* para rendirte y admitir la derrota`;
+* ᴇsᴄʀɪʙᴇ *soymanco* para rendirte y admitir la derrota`;
 
         if (room13.x !== room13.o) await shoNhe.sendText(room13.x, str, m, {
             mentions: parseMention(str)
