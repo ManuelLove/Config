@@ -685,11 +685,7 @@ if (m.mtype === 'interactiveResponseMessage' && m.message.interactiveResponseMes
 		const owner = JSON.parse(fs.readFileSync('./owner.json'))
 		const isShoNheOwn = owner.includes(senderNumber) || isBot
 		const isVip = prem.includes(senderNumber) || isShoNheOwn
-		let isBan = await checkIfBanned(...); // o lo que sea que uses
 		const banned = JSON.parse(fs.readFileSync('./database/banned.json'))
-		if (isBan) {
-    return shoNherly(`Estás baneado del bot. Contacta con un administrador para apelar.`);
-}
 		const isBan = banned.includes(senderNumber)
 		const getQuoted = (m.quoted || m);
 		const quoted = (getQuoted.type == 'buttonsMessage') ? getQuoted[Object.keys(getQuoted)[1]] : (getQuoted.type == 'templateMessage') ? getQuoted.hydratedTemplate[Object.keys(getQuoted.hydratedTemplate)[1]] : (getQuoted.type == 'product') ? getQuoted[Object.keys(getQuoted)[0]] : m.quoted ? m.quoted : m
@@ -11526,6 +11522,9 @@ if (args[0] === "add") {
     banned.splice(delbans, 1)
     fs.writeFileSync('./database/banned.json', JSON.stringify(banned, null, 2)) // << AÑADIDO
     shoNherly(`*✅ Se eliminó correctamente al usuario baneado*`)
+}
+if (isBan) {
+    return shoNherly(`Estás baneado del bot. Contacta con un administrador para apelar.`);
 }
 				else
 				{
