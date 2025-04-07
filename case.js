@@ -18690,7 +18690,7 @@ case 'ttc':
 case 'ttt':
 case 'tictactoe': {
 let user = global.db.data.users[m.sender]
-let TicTacToe = require("./libs/tictactoe")
+let TicTacToe = require("./lib/tictactoe")
 this.game = this.game ? this.game : {}
 if (Object.values(this.game).find(room13 => room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender))) return m.reply(`${lenguaje.game.text13}`)
 let room13 = Object.values(this.game).find(room13 => room13.state === 'WAITING' && (text ? room13.name === text : true))
