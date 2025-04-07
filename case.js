@@ -29175,21 +29175,33 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 						await shoNherly(require('util').format(teks))
 					}
 				}
-				if (budy.startsWith('$'))
-				{
-					if (!isShoNheOwn) return
-					exec(budy.slice(2), (err, stdout) =>
-					{
-						if (err) return shoNherly(`${err}`)
-						if (stdout) return shoNherly(stdout)
-					})
-				}
+try {
+	if (budy.startsWith('=>') || budy.startsWith('>') || budy.startsWith('>>')) {
+		if (!isShoNheOwn) return
+		try {
+			let kode = budy.trim().split(" ")[0]
+			let teks = await eval(`(async () => { ${kode == ">>" ? "return" : ""} ${q}})()`)
+			await shoNherly(require('util').format(teks))
+		} catch (e) {
+			await shoNherly(require('util').format(e))
 		}
+	}
+
+	if (budy.startsWith('$')) {
+		if (!isShoNheOwn) return
+		exec(budy.slice(2), (err, stdout) => {
+			if (err) return shoNherly(`${err}`)
+			if (stdout) return shoNherly(stdout)
+		})
+}
+	}
 	catch (err)
 	{
 		console.log(util.format(err))
 	}
+// << ELIMINA UNA DE ESTAS LLAVES EXTRA >>
 }
+
 let file = require.resolve(__filename)
 fs.watchFile(file, () =>
 {
