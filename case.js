@@ -3431,7 +3431,7 @@ ${isWin
     for (let jid of jugadores) {
         const role = db[jid]?.role || 'user';
         if (role !== 'owner') {
-            const recompensa = -10;
+            const recompensa = -5;
             if (!db[jid]) {
                 db[jid] = { limit: recompensa, role: 'user' };
             } else {
@@ -3443,7 +3443,7 @@ ${isWin
     if (isWin) {
         const role = db[winner]?.role || 'user';
         if (role !== 'owner') {
-            const recompensaExtra = 30;
+            const recompensaExtra = 25;
             db[winner].limit = (db[winner].limit || 0) + recompensaExtra;
         }
     }
@@ -18700,6 +18700,7 @@ break;
 case 'ttc':
 case 'ttt':
 case 'tictactoe': {
+    if (!(await firely(m, mess.waits))) return;
     let user = global.db.data.users[m.sender];
     let TicTacToe = require("./lib/tictactoe");
     this.game = this.game ? this.game : {};
