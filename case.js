@@ -18744,15 +18744,10 @@ break;
 case 'ttcreset':
 case 'deltictactoe':
 case 'ttceend':
-case 'delttc': case {
-    this.game = this.game ? this.game : {};
-    if (Object.values(this.game).find(room13 => room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender))) {
+case 'delttc': {
+    this.game = this.game ? this.game : {}
+    let room13 = Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))
     if (!room13) return shoNherly('⚠️ ɴᴏ ᴇsᴛᴀs ᴇɴ ᴘᴀʀᴛɪᴅᴀ ᴅᴇ ᴛɪᴄᴛᴀᴄᴛᴏᴇ 🎮')
-
-    // Solo el jugador X o O puede cerrarla
-    if (m.sender !== room13.game.playerX && m.sender !== room13.game.playerO)
-        return shoNherly('⚠️ Solo los jugadores de la partida pueden cerrarla.')
-
     delete this.game[room13.id]
     shoNherly('✅ sᴇ ʀᴇɪɴɪᴄɪᴏ ʟᴀ sᴇsɪᴏɴ ᴅᴇ *ᴛɪᴄᴛᴀᴄᴛᴏᴇ 🎮*')
 }
