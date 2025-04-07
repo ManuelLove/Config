@@ -3363,7 +3363,7 @@ if (room13) {
     }
 
     if (!isSurrender && 1 > (ok = room13.game.turn(m.sender === room13.game.playerO, parseInt(m.text) - 1))) {
-        m.reply({
+        shoNherly({
             '-3': 'El juego ha terminado',
             '-2': 'Inválido',
             '-1': 'Posición inválida',
@@ -5827,7 +5827,7 @@ break;
 				const gamecek = await cekgame(m.chat);
 				if (gamecek) return;
 				if (!(await firely(m, mess.waits))) return;
-    if (boom[m.sender]) return m.reply('¡Aún quedan sesiones sin terminar!');
+    if (boom[m.sender]) return shoNherly('¡Aún quedan sesiones sin terminar!');
 
     boom[m.sender] = {
         petak: [0, 0, 0, 2, 0, 2, 0, 2, 0, 0].sort(() => Math.random() - 0.5),
@@ -18684,7 +18684,7 @@ case 'tictactoe': {
     let TicTacToe = require("./lib/tictactoe");
     this.game = this.game ? this.game : {};
     if (Object.values(this.game).find(room13 => room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender))) {
-        return m.reply(`⚠️ Todavía estás en el juego`);
+        return shoNherly(`⚠️ Todavía estás en el juego`);
     }
     
     let room13 = Object.values(this.game).find(room13 => room13.state === 'WAITING' && (text ? room13.name === text : true));
@@ -18736,7 +18736,7 @@ ${arr.slice(6).join('')}
             state: 'WAITING'
         };
         if (text) room13.name = text;
-        m.reply(`*⏳ ᴇsᴘᴇʀᴀɴᴅᴏ ᴀʟ sɪɢᴜɪᴇɴᴛᴇ ᴊᴜɢᴀᴅᴏ*` + (text ? ` *ᴇsᴄʀɪʙᴀ ᴇʟ sɪɢᴜɪᴇɴᴛᴇ ᴄᴏᴍᴀɴᴅᴏ:* ${prefix + command} ${text}\n\n🎁 ʀᴇᴄᴏᴍᴘᴇɴsᴀ: *4999 XP*` : ''));
+        shoNherly(`*⏳ ᴇsᴘᴇʀᴀɴᴅᴏ ᴀʟ sɪɢᴜɪᴇɴᴛᴇ ᴊᴜɢᴀᴅᴏ*` + (text ? ` *ᴇsᴄʀɪʙᴀ ᴇʟ sɪɢᴜɪᴇɴᴛᴇ ᴄᴏᴍᴀɴᴅᴏ:* ${prefix + command} ${text}\n\n🎁 ʀᴇᴄᴏᴍᴘᴇɴsᴀ: *4999 XP*` : ''));
         this.game[room13.id] = room13;
     }
 }
