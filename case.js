@@ -670,6 +670,8 @@ if (m.mtype === 'interactiveResponseMessage' && m.message.interactiveResponseMes
 		const prefixRegex = /^[°zZ#$@*+,.?=''():√%!¢£¥€π¤ΠΦ_&><™©®Δ^βα~¦|/\\©^]/;
 		const prefix = prefixRegex.test(body) ? body.match(prefixRegex)[0] : '.';
 		const isCmd = body.startsWith(prefix);
+		if (isCmd) {
+  if (isBan) return reply('*Has sido baneado del bot.*');
 		const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
 		const args = body.trim().split(/ +/).slice(1)
 		const text = q = args.join(" ")
@@ -2821,7 +2823,6 @@ default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURICompon
 					}
 				}
 			};
-			if (isBan && !isShoNheOwn) return;
 			return shoNhe.sendMessage(m.chat, context,
 			{
 				quoted: m,
