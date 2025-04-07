@@ -29185,7 +29185,6 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 					})
 				}
 		}
-	}
 try {
    // código que puede lanzar error
 } catch (err) {
