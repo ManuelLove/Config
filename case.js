@@ -18745,8 +18745,6 @@ case 'ttcreset':
 case 'deltictactoe':
 case 'ttceend':
 case 'delttc': case {
-    let user = global.db.data.users[m.sender];
-    let TicTacToe = require("./lib/tictactoe");
     this.game = this.game ? this.game : {};
     if (Object.values(this.game).find(room13 => room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender))) {
     if (!room13) return shoNherly('⚠️ ɴᴏ ᴇsᴛᴀs ᴇɴ ᴘᴀʀᴛɪᴅᴀ ᴅᴇ ᴛɪᴄᴛᴀᴄᴛᴏᴇ 🎮')
