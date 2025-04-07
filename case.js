@@ -3392,21 +3392,9 @@ if (room13) {
     })
 
     if (isSurrender) {
-    room13.game._currentTurn = m.sender === room13.game.playerX
-    isWin = true
-    str = `*\`🎮 ＴＲＥＳ ＥＮ ＲＡＹＡ 🎮\`*
-
-${arr.slice(0, 3).join('')}
-${arr.slice(3, 6).join('')} 
-${arr.slice(6).join('')}
-
-❎ = ${shoNhe.getName(room13.game.playerX)}
-❌ = ${shoNhe.getName(room13.game.playerO)}
-
-*${shoNhe.getName(m.sender)} se rindió.* ¡*${shoNhe.getName(room13.game.currentTurn)} gana!* 🎉
-
-*🎁 OBTIENE* ${winScore} XP`
-}
+        room13.game._currentTurn = m.sender === room13.game.playerX
+        isWin = true
+    }
 
     let winner = isSurrender ? room13.game.currentTurn : room13.game.winner
     let str = `*\`🎮 ＴＲＥＳ ＥＮ ＲＡＹＡ 🎮\`*
