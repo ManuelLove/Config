@@ -279,7 +279,7 @@ global.niatsholat = [
 const readmore = String.fromCharCode(8206).repeat(4001);
 // Path ke file riwayat
 const cooldownDox = {}; // fuera del handler, al inicio del archivo si quieres global
-const senderNumber = m.sender;
+const senderNumber = sender;
 const isBan = banned.includes(senderNumber);
 
 if (isBan) {
