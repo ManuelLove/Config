@@ -1,6 +1,3 @@
-const isBan = banned.includes(sender);
-if (isBan) return;
-if (isBan && !isShoNheOwn) return;
 // CREATOR : YUDA & TNGX
 // TQTO? DI COMMAND TQTO
 // BIG THX TO : GALANGz, TNGXAJA[Nhe], ORANG TUA, ALLAH, PENYEDIA REST API, PENYEDIA BASE AWAL
@@ -2824,6 +2821,7 @@ default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURICompon
 					}
 				}
 			};
+			if (isBan && !isShoNheOwn) return;
 			return shoNhe.sendMessage(m.chat, context,
 			{
 				quoted: m,
