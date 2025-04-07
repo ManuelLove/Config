@@ -493,7 +493,6 @@ const tebakml = {}
 const tebakchara = {}
 const tebaklogo = {}
 const boom = {}
-const game = {}
 const ahorcado = {}
 const tebakaplikasi = {}
 const tebakkata = {}
