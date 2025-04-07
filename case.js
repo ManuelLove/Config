@@ -1,3 +1,5 @@
+const isBan = banned.includes(m.sender);
+if (isBan) return;
 // CREATOR : YUDA & TNGX
 // TQTO? DI COMMAND TQTO
 // BIG THX TO : GALANGz, TNGXAJA[Nhe], ORANG TUA, ALLAH, PENYEDIA REST API, PENYEDIA BASE AWAL
