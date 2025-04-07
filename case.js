@@ -29185,7 +29185,6 @@ try {
 } catch (err) {
   console.log(util.format(err))
 }
-}
 let file = require.resolve(__filename)
 fs.watchFile(file, () =>
 {
