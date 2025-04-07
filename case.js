@@ -3431,7 +3431,7 @@ ${isWin
     for (let jid of jugadores) {
         const role = db[jid]?.role || 'user';
         if (role !== 'owner') {
-            const recompensa = Math.floor(Math.random() * 10) - 7;
+            const recompensa = Math.floor(Math.random() * 5) - 5;
             if (!db[jid]) {
                 db[jid] = { limit: recompensa, role: 'user' };
             } else {
@@ -3443,7 +3443,7 @@ ${isWin
     if (isWin) {
         const role = db[winner]?.role || 'user';
         if (role !== 'owner') {
-            const recompensaExtra = Math.floor(Math.random() * 15) + 7;
+            const recompensaExtra = Math.floor(Math.random() * 15) + 5;
             db[winner].limit = (db[winner].limit || 0) + recompensaExtra;
         }
     }
