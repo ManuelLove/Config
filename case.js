@@ -1513,8 +1513,6 @@ await shoNhe.sendMessage(m.chat, {
 			const data = await read.resize(width, height).getBufferAsync(jimp.MIME_JPEG);
 			return data;
 		};
-const isBan = banned.includes(senderNumber);
-
 if (isBan) {
   return shoNherly('*🚫 Has sido baneado del bot. Contacta a un administrador si crees que es un error.*');
 }
