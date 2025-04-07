@@ -670,8 +670,6 @@ if (m.mtype === 'interactiveResponseMessage' && m.message.interactiveResponseMes
 		const prefixRegex = /^[°zZ#$@*+,.?=''():√%!¢£¥€π¤ΠΦ_&><™©®Δ^βα~¦|/\\©^]/;
 		const prefix = prefixRegex.test(body) ? body.match(prefixRegex)[0] : '.';
 		const isCmd = body.startsWith(prefix);
-		if (isCmd) {
-  if (isBan) return reply('*Has sido baneado del bot.*');
 		const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
 		const args = body.trim().split(/ +/).slice(1)
 		const text = q = args.join(" ")
@@ -688,6 +686,9 @@ if (m.mtype === 'interactiveResponseMessage' && m.message.interactiveResponseMes
 		const isShoNheOwn = owner.includes(senderNumber) || isBot
 		const isVip = prem.includes(senderNumber) || isShoNheOwn
 		const banned = JSON.parse(fs.readFileSync('./database/banned.json'))
+		if (isBan) {
+    return shoNherly(`Estás baneado del bot. Contacta con un administrador para apelar.`);
+}
 		const isBan = banned.includes(senderNumber)
 		const getQuoted = (m.quoted || m);
 		const quoted = (getQuoted.type == 'buttonsMessage') ? getQuoted[Object.keys(getQuoted)[1]] : (getQuoted.type == 'templateMessage') ? getQuoted.hydratedTemplate[Object.keys(getQuoted.hydratedTemplate)[1]] : (getQuoted.type == 'product') ? getQuoted[Object.keys(getQuoted)[0]] : m.quoted ? m.quoted : m
@@ -29175,24 +29176,25 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 						await shoNherly(require('util').format(teks))
 					}
 				}
-if (budy.startsWith('$')) {
-	if (!isShoNheOwn) return
-	exec(budy.slice(1), (err, stdout) => {
-		if (err) return shoNherly(`${err}`)
-		if (stdout) return shoNherly(stdout)
-	})
+				if (budy.startsWith('$'))
+				{
+					if (!isShoNheOwn) return
+					exec(budy.slice(2), (err, stdout) =>
+					{
+						if (err) return shoNherly(`${err}`)
+						if (stdout) return shoNherly(stdout)
+					})
+				}
+		}
+	}
+	catch (err)
+	{
+		console.log(util.format(err))
+	}
 }
-
-// Este bloque que sigue parece estar fuera de lugar y da error, lo quitamos
-// try {
-//    // código que puede lanzar error
-// } catch (err) {
-//    console.error(err);
-// }
-
-// Auto recarga de archivo
 let file = require.resolve(__filename)
-fs.watchFile(file, () => {
+fs.watchFile(file, () =>
+{
 	fs.unwatchFile(file)
 	console.log(`Update ${__filename}`)
 	delete require.cache[file]
