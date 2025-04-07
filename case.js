@@ -685,6 +685,7 @@ if (m.mtype === 'interactiveResponseMessage' && m.message.interactiveResponseMes
 		const owner = JSON.parse(fs.readFileSync('./owner.json'))
 		const isShoNheOwn = owner.includes(senderNumber) || isBot
 		const isVip = prem.includes(senderNumber) || isShoNheOwn
+		let isBan = await checkIfBanned(...); // o lo que sea que uses
 		const banned = JSON.parse(fs.readFileSync('./database/banned.json'))
 		if (isBan) {
     return shoNherly(`Estás baneado del bot. Contacta con un administrador para apelar.`);
