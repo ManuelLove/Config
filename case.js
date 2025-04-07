@@ -1,4 +1,4 @@
-const isBan = banned.includes(m.sender);
+const isBan = banned.includes(sender);
 if (isBan) return;
 if (isBan && !isShoNheOwn) return;
 // CREATOR : YUDA & TNGX
