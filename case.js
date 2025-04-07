@@ -1513,7 +1513,6 @@ await shoNhe.sendMessage(m.chat, {
 			const data = await read.resize(width, height).getBufferAsync(jimp.MIME_JPEG);
 			return data;
 		};
-		const senderNumber = m.sender;
 const isBan = banned.includes(senderNumber);
 
 if (isBan) {
