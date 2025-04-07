@@ -279,6 +279,29 @@ global.niatsholat = [
 const readmore = String.fromCharCode(8206).repeat(4001);
 // Path ke file riwayat
 const cooldownDox = {}; // fuera del handler, al inicio del archivo si quieres global
+const game = {
+text1: `*\`🎮 ＴＲＥＳ ＥＮ ＲＡＹＡ 🎮\`*`, 
+text2: `*HAS GANADOS 🎉*\n*🎁 OBTIENE*`, 
+text3: `*EMPATE 😹*`, 
+text4: `𝐓𝐮𝐫𝐧𝐨 𝐝𝐞`, 
+text5: `*Respuesta correcta 🎉*\n\n*Ganarte :*`, 
+text6: `⚠️ 𝚃𝚘𝚍𝚊𝚟𝚒𝚊 𝚑𝚊𝚢 𝚙𝚛𝚎𝚐𝚞𝚗𝚝𝚊𝚜 𝚜𝚒𝚗 𝚛𝚎𝚜𝚙𝚞𝚎𝚜𝚝𝚊 𝚎𝚗 𝚎𝚜𝚝𝚎 𝚌𝚑𝚊𝚝`, 
+text7: `🧮 𝙳𝚒𝚏𝚒𝚌𝚞𝚕𝚝𝚊𝚍𝚎𝚜 𝚍𝚒𝚜𝚙𝚘𝚗𝚒𝚋𝚕𝚎𝚜 :`, 
+text8: `MATEMÁTICAS`, 
+text9: `¿𝙲𝚄𝙰𝙽𝚃𝙾 𝙴𝚂 :`, 
+text10: `𝚃𝙸𝙴𝙼𝙿𝙾`, 
+text11: `*𝚁𝙴𝚂𝙿𝙾𝙽𝙳𝙴 𝙰 𝙴𝚂𝚃𝙴 𝙼𝙴𝙽𝚂𝙰𝙹𝙴 𝙲𝙾𝙽 𝙻𝙰 𝚁𝙴𝚂𝙿𝚄𝙴𝚂𝚃𝙰*`, 
+text12: `⏳ *sᴇ ᴀᴄᴀʙᴏ ᴇʟ ᴛɪᴇᴍᴘᴏ!, ʟᴀ ʀᴇsᴘᴜᴇsᴛᴀ ᴇs:*`, 
+text13: `⚠️ Todavía estás en el juego`, 
+text14: `*\`🕹 ＴＲＥＳ ＥＮ ＲＡＹＡ 🎮\`*\n\n🎮👾 ᴇsᴘᴇʀᴀɴᴅᴏ ᴀ`, 
+text15: `ᴄᴏᴍᴏ ᴘʀɪᴍᴇʀ ᴊᴜɢᴀᴅᴏʀ`, 
+text16: `*𝐒𝐀𝐋𝐀 :*`, 
+text17: `*𝐑𝐄𝐆𝐋𝐀𝐒 :*\n\n* ʜᴀᴢ 3 ғɪʟᴀs ᴅᴇ sɪᴍʙᴏʟᴏs ᴠᴇʀᴛɪᴄᴀʟᴇs, ʜᴏʀɪᴢᴏɴᴛᴀʟᴇs ᴏ ᴅɪᴀɢᴏɴᴀʟᴇs ᴘᴀʀᴀ ɢᴀɴᴀʀ\n* ᴇsᴄʀɪʙᴇ *rendirse* para rendirte y admitir la derrota`, 
+text18: `*⏳ ᴇsᴘᴇʀᴀɴᴅᴏ ᴀʟ sɪɢᴜɪᴇɴᴛᴇ ᴊᴜɢᴀᴅᴏ*`, 
+text19: `*ᴇsᴄʀɪʙᴀ ᴇʟ sɪɢᴜɪᴇɴᴛᴇ ᴄᴏᴍᴀɴᴅᴏ:`, 
+text20: `ʀᴇᴄᴏᴍᴘᴇɴsᴀ:`, 
+text21: `✅ sᴇ ʀᴇɪɴɪᴄɪᴏ ʟᴀ sᴇsɪᴏɴ ᴅᴇ *ᴛɪᴄᴛᴀᴄᴛᴏᴇ 🎮*`, 
+text22: `⚠️ ɴᴏ ᴇsᴛᴀs ᴇɴ ᴘᴀʀᴛɪᴅᴀ ᴅᴇ ᴛɪᴄᴛᴀᴄᴛᴏᴇ 🎮` }
 const popularPath = './database/popular.json';
 let popularData = {};
 try
@@ -3343,6 +3366,82 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
 }
 function pickRandom(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
+}
+let winScore = 4999
+let playScore = 99
+this.game = this.game ? this.game : {}
+let room13 = Object.values(this.game).find(room13 => room13.id && room13.game && room13.state && room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender) && room13.state == 'PLAYING')
+if (room13) {
+let ok
+let isWin = !1
+let isTie = !1
+let isSurrender = !1
+//m.reply(`[DEBUG]\n${parseInt(m.text)}`)
+if (!/^([1-9]|(me)?give up|surr?ender|off|skip)$/i.test(m.text)) return
+isSurrender = !/^[1-9]$/.test(m.text)
+if (m.sender !== room13.game.currentTurn) {
+if (!isSurrender) return !0
+}
+if (!isSurrender && 1 > (ok = room13.game.turn(m.sender === room13.game.playerO, parseInt(m.text) - 1))) {
+m.reply({
+'-3': 'El juego ha terminado',
+'-2': 'Inválido',
+'-1': 'Posición inválida',
+0: 'Posición inválida',
+} [ok])
+return !0
+}
+if (m.sender === room13.game.winner) isWin = true
+else if (room13.game.board === 511) isTie = true
+let arr = room13.game.render().map(v => {
+return {
+X: '❎',
+O: '❌',
+1: '1️⃣',
+2: '2️⃣',
+3: '3️⃣',
+4: '4️⃣',
+5: '5️⃣',
+6: '6️⃣',
+7: '7️⃣',
+8: '8️⃣',
+9: '9️⃣',
+} [v]
+})
+if (isSurrender) {
+room13.game._currentTurn = m.sender === room13.game.playerX
+isWin = true
+}
+let winner = isSurrender ? room13.game.currentTurn : room13.game.winner
+let str = `${lenguaje.game.text1}
+
+${arr.slice(0, 3).join('')}
+${arr.slice(3, 6).join('')} 
+${arr.slice(6).join('')}
+
+❎ = @${room13.game.playerX.split('@')[0]}
+❌ = @${room13.game.playerO.split('@')[0]}
+
+${isWin ? `@${winner.split('@')[0]} ${lenguaje.game.text2} ${winScore} XP` : isTie ? `${lenguaje.game.text3}` : `${lenguaje.game.text4}
+
+${['❎', '❌'][1 * room13.game._currentTurn]} (@${room13.game.currentTurn.split('@')[0]})`}` //`
+let users = global.db.data.users
+if ((room13.game._currentTurn ^ isSurrender ? room13.x : room13.o) !== m.chat)
+room13[room13.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
+if (room13.x !== room13.o) await conn.sendText(room13.x, str, m, {
+mentions: parseMention(str)
+})
+await conn.sendText(room13.o, str, m, {
+mentions: parseMention(str)
+})
+
+if (isTie || isWin) {
+users[room13.game.playerX].exp += playScore
+users[room13.game.playerO].exp += playScore
+delete this.game[room13.id]
+if (isWin)
+users[winner].exp += winScore - playScore
+}
 }
 		async function cekgame(gamejid)
 		{
@@ -12639,7 +12738,7 @@ ${formattedCommandList}
 			}
 			break;
 			case 'privatechatonly':
-				if (!isShoNheOwn) return shoNherly('⚠️ Hanya owner yang bisa menggunakan perintah ini.');
+				if (!isShoNheOwn) return shoNherly('⚠️ Solo el owner puede usar este comando.');
 				const status = args[0]?.toLowerCase();
 				if (status === 'on')
 				{
@@ -18587,6 +18686,62 @@ Sof02s32inf14.1e100.net
     shoNhe.sendMessage(m.chat, { text: doxeo, edit: key });
 }
 break;
+case 'ttc':
+case 'ttt':
+case 'tictactoe': {
+let user = global.db.data.users[m.sender]
+let TicTacToe = require("./libs/tictactoe")
+this.game = this.game ? this.game : {}
+if (Object.values(this.game).find(room13 => room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender))) return m.reply(`${lenguaje.game.text13}`)
+let room13 = Object.values(this.game).find(room13 => room13.state === 'WAITING' && (text ? room13.name === text : true))
+if (room13) {
+room13.o = m.chat
+room13.game.playerO = m.sender
+room13.state = 'PLAYING'
+let arr = room13.game.render().map(v => {
+return {
+X: '❎',
+O: '❌',
+1: '1️⃣',
+2: '2️⃣',
+3: '3️⃣',
+4: '4️⃣',
+5: '5️⃣',
+6: '6️⃣',
+7: '7️⃣',
+8: '8️⃣',
+9: '9️⃣',
+} [v]
+})
+let str = `${lenguaje.game.text14} @${room13.game.currentTurn.split('@')[0]} ${lenguaje.game.text15}
+
+${arr.slice(0, 3).join('')}
+${arr.slice(3, 6).join('')}
+${arr.slice(6).join('')}
+
+▢ ${lenguaje.game.text16} ${room13.id}
+
+▢ ${lenguaje.game.text17}`
+if (room13.x !== room13.o) await conn.sendText(room13.x, str, m, {
+mentions: parseMention(str)
+})
+await conn.sendText(room13.o, str, m, {
+mentions: parseMention(str)
+})
+} else {
+room13 = {
+id: 'tictactoe-' + (+new Date),
+x: m.chat,
+o: '',
+game: new TicTacToe(m.sender, 'o'),
+state: 'WAITING'
+}
+if (text) room13.name = text
+m.reply(`${lenguaje.game.text18}` + (text ? ` ${lenguaje.game.text19} ${prefix + command} ${text}\n\n🎁 ${lenguaje.game.text20} *4999 XP*` : ''))
+this.game[room13.id] = room13
+}
+}
+break
 case 'pregunta':
 case 'preg': {
     if (!text) return shoNherly(`*Y la pregunta?*\n\n*Ejemplo:* ${prefix + command} mañana va a llover?`);
