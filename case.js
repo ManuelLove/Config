@@ -19352,7 +19352,7 @@ if (levelUpMessage) {
 						return shoNherly('Unable to scan directory: ' + err);
 					}
 					let filteredArray = await files.filter(item => ['session-', 'pre-key', 'sender-key', 'app-state'].some(ext => item.startsWith(ext)));
-					let teks = `Terdeteksi ${filteredArray.length} Session file\n\n`
+					let teks = `Detectado ${filteredArray.length} Archivos de sesión\n\n`
 					if (filteredArray.length == 0) return shoNherly(teks);
 					filteredArray.map(function(e, i)
 					{
@@ -19360,15 +19360,15 @@ if (levelUpMessage) {
 					})
 					if (text && text == 'true')
 					{
-						await shoNherly('Menghapus Session File..')
+						await shoNherly('Eliminar archivo de sesión..')
 						await filteredArray.forEach(function(file)
 						{
 							fs.unlinkSync('./session/' + file)
 						});
 						sleep(2000)
-						shoNherly('Berhasil Menghapus Semua Sampah Session')
+						shoNherly('Se eliminó correctamente toda la papelera de sesión')
 					}
-					else shoNherly(teks + `\nKetik _${prefix + command} true_\nUntuk Menghapus`)
+					else shoNherly(teks + `\nEscribe _${prefix + command} true_\nPara Eliminar`)
 				});
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
