@@ -11276,8 +11276,20 @@ ${formattedCommandList}
 									text: namabot
 								}),
 								header: proto.Message.InteractiveMessage.Header.fromObject(
-
+								{
+									hasMediaAttachment: true,
+									documentMessage:
+									{
+										"url": "https://mmg.whatsapp.net/v/t62.7119-24/30129597_829817659174206_6300413901737393729_n.enc?ccb=11-4&oh=01_Q5AaIA5MAdyMQOjp8l42SnRy_8qjz9O8JH8vgPee1nIdko51&oe=66595EB9&_nc_sid=5e03e0&mms3=true",
+										"mimetype": "application/pdf",
+										"fileSha256": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
 									
+										"fileLength": 120000,
+										"mediaKey": "SkHeALp42Ch7DGb6nuV6p7hxL+V9yjh9s9t3Ox8a72o=",
+										"fileName": `© TechFix Botz`,
+										"directPath": "/v/t62.7119-24/30129597_829817659174206_6300413901737393729_n.enc?ccb=11-4&oh=01_Q5AaIA5MAdyMQOjp8l42SnRy_8qjz9O8JH8vgPee1nIdko51&oe=66595EB9&_nc_sid=5e03e0",
+										"contactVcard": true,
+										"mediaKeyTimestamp": "1658703206"
 									}
 								}),
 								nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create(
