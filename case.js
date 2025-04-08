@@ -11278,7 +11278,7 @@ ${formattedCommandList}
 								header: proto.Message.InteractiveMessage.Header.fromObject(
 								{
 									hasMediaAttachment: true,
-									}
+
 								}),
 								nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create(
 								{
