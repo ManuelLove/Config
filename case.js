@@ -2554,11 +2554,7 @@ default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURICompon
 							mentionedJid: [m.sender], // Menyebutkan pengirim
 							forwardingScore: 999999,
 							isForwarded: true,
-							forwardedNewsletterMessageInfo:
-							{
-								newsletterName: namach, // Nama saluran
-								newsletterJid: idsaluran, // Jid saluran
-							},
+
 							externalAdReply:
 							{
 								showAdAttribution: true,
@@ -2663,11 +2659,7 @@ default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURICompon
 				{
 					forwardingScore: 1,
 					isForwarded: true,
-					forwardedNewsletterMessageInfo:
-					{
-						newsletterName: namabot,
-						newsletterJid: idsaluran,
-					},
+					
 					externalAdReply:
 					{
 						showAdAttribution: true,
@@ -2778,11 +2770,7 @@ default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURICompon
 					mentionedJid: [m.sender],
 					forwardingScore: 999999,
 					isForwarded: true,
-					forwardedNewsletterMessageInfo:
-					{
-						newsletterName: namach,
-						newsletterJid: idsaluran,
-					},
+					
 					externalAdReply:
 					{
 						title: `Respuesta Correcta 🥳`,
@@ -2808,11 +2796,7 @@ default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURICompon
 					mentionedJid: [m.sender],
 					forwardingScore: 999999,
 					isForwarded: true,
-					forwardedNewsletterMessageInfo:
-					{
-						newsletterName: namach,
-						newsletterJid: idsaluran,
-					},
+					
 					externalAdReply:
 					{
 						title: `Tiempo Agotado ⏰`,
@@ -3871,12 +3855,7 @@ User @${m.sender.split('@')[0]}, ¿sigues bien, bro? El sistema ha detectado tu 
 								mentionedJid: [m.sender],
 								forwardingScore: 1,
 								isForwarded: true,
-								forwardedNewsletterMessageInfo:
-								{
-									newsletterJid: saluran,
-									newsletterName: namach,
-									serverMessageId: -1
-								},
+								
 								businessMessageForwardInfo:
 								{
 									businessOwnerJid: shoNhe.decodeJid(shoNhe.user.id)
@@ -3940,12 +3919,7 @@ User @${m.sender.split('@')[0]}, ¿sigues bien, bro? El sistema ha detectado tu 
 								mentionedJid: [m.sender],
 								forwardingScore: 1,
 								isForwarded: true,
-								forwardedNewsletterMessageInfo:
-								{
-									newsletterJid: saluran,
-									newsletterName: namach,
-									serverMessageId: -1
-								},
+								
 								businessMessageForwardInfo:
 								{
 									businessOwnerJid: shoNhe.decodeJid(shoNhe.user.id)
@@ -4010,12 +3984,7 @@ User @${m.sender.split('@')[0]}, ¿sigues bien, bro? El sistema ha detectado tu 
 								mentionedJid: [m.sender],
 								forwardingScore: 1,
 								isForwarded: true,
-								forwardedNewsletterMessageInfo:
-								{
-									newsletterJid: idsaluran,
-									newsletterName: namach,
-									serverMessageId: -1
-								},
+								
 								businessMessageForwardInfo:
 								{
 									businessOwnerJid: shoNhe.decodeJid(shoNhe.user.id)
@@ -4072,12 +4041,7 @@ User @${m.sender.split('@')[0]}, ¿sigues bien, bro? El sistema ha detectado tu 
 							{
 								mentionedJid: [m.sender],
 								isForwarded: true,
-								forwardedNewsletterMessageInfo:
-								{
-									newsletterJid: idsaluran,
-									newsletterName: namach,
-									serverMessageId: -1
-								},
+								
 								businessMessageForwardInfo:
 								{
 									businessOwnerJid: shoNhe.decodeJid(shoNhe.user.id)
@@ -8700,11 +8664,7 @@ ${menuforu(prefix, simbols)}
 							forwardingScore: 999,
 							isForwarded: true,
 							mentionedJid: [sender],
-							forwardedNewsletterMessageInfo:
-							{
-								newsletterName: namaowner,
-								newsletterJid: idsaluran,
-							},
+							
 							externalAdReply:
 							{
 								showAdAttribution: true,
@@ -8943,12 +8903,7 @@ ${menuforu(prefix, simbols)}
 										mentionedJid: [m.sender],
 										forwardingScore: 999,
 										isForwarded: true,
-										forwardedNewsletterMessageInfo:
-										{
-											newsletterJid: idsaluran,
-											newsletterName: namaowner,
-											serverMessageId: 143
-										}
+										
 									}
 								})
 							}
@@ -9121,12 +9076,7 @@ ${menuforu(prefix, simbols)}
 										mentionedJid: [m.sender],
 										forwardingScore: 999,
 										isForwarded: true,
-										forwardedNewsletterMessageInfo:
-										{
-											newsletterJid: idsaluran,
-											newsletterName: namach,
-											serverMessageId: 143
-										}
+										
 									}
 								})
 							}
@@ -14042,11 +13992,7 @@ break
 					{
 						forwardingScore: 1,
 						isForwarded: true,
-						forwardedNewsletterMessageInfo:
-						{
-							newsletterName: namabot,
-							newsletterJid: idsaluran,
-						},
+						
 						externalAdReply:
 						{
 							showAdAttribution: true,
@@ -22588,11 +22534,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 							{
 								forwardingScore: 1,
 								isForwarded: true,
-								forwardedNewsletterMessageInfo:
-								{
-									newsletterName: namabot,
-									newsletterJid: idsaluran,
-								},
+								
 								externalAdReply:
 								{
 									showAdAttribution: true,
@@ -22620,11 +22562,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 							{
 								forwardingScore: 1,
 								isForwarded: true,
-								forwardedNewsletterMessageInfo:
-								{
-									newsletterName: namabot,
-									newsletterJid: idsaluran,
-								},
+								
 								externalAdReply:
 								{
 									showAdAttribution: true,
@@ -22653,11 +22591,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 							{
 								forwardingScore: 1,
 								isForwarded: true,
-								forwardedNewsletterMessageInfo:
-								{
-									newsletterName: namabot,
-									newsletterJid: idsaluran,
-								},
+								
 								externalAdReply:
 								{
 									showAdAttribution: true,
@@ -22686,11 +22620,7 @@ Por favor, consulta la lista con: ${prefix + command} list`)
 							{
 								forwardingScore: 1,
 								isForwarded: true,
-								forwardedNewsletterMessageInfo:
-								{
-									newsletterName: namabot,
-									newsletterJid: idsaluran,
-								},
+								
 								externalAdReply:
 								{
 									showAdAttribution: true,
@@ -27559,12 +27489,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 									mentionedJid: [m.sender],
 									forwardingScore: 999,
 									isForwarded: true,
-									forwardedNewsletterMessageInfo:
-									{
-										newsletterJid: '12036338334723329@newsletter',
-										newsletterName: namaowner,
-										serverMessageId: 143
-									}
+									
 								}
 							})
 						}
@@ -27843,12 +27768,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 									mentionedJid: [m.sender],
 									forwardingScore: 999,
 									isForwarded: true,
-									forwardedNewsletterMessageInfo:
-									{
-										newsletterJid: '12036338334723329@newsletter',
-										newsletterName: namaowner,
-										serverMessageId: 143
-									}
+									
 								}
 							})
 						}
@@ -28992,12 +28912,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 									mentionedJid: [m.sender],
 									forwardingScore: 999,
 									isForwarded: true,
-									forwardedNewsletterMessageInfo:
-									{
-										newsletterJid: idsaluran,
-										newsletterName: namach,
-										serverMessageId: 143
-									}
+									
 								}
 							})
 						}
