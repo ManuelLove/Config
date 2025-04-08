@@ -20313,7 +20313,7 @@ if (levelUpMessage) {
   mimetype: 'audio/mpeg',
   fileName: 'tts.mp3'
 }, {
-  quoted: m
+  quoted: hw
 });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
