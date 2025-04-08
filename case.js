@@ -5845,36 +5845,28 @@ case 'ruletas':
 case 'suerte':
 case 'casino': {
     const db = loadUserFire();
-
-    if (!db[m.sender]) {
-        db[m.sender] = { limit: 0, role: 'user' };
-    }
+    if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
 
     let apuesta = parseInt(args[0]);
-    if (isNaN(apuesta) || apuesta <= 0) return m.reply('❌ Ingresa una cantidad válida para apostar.');
+    if (isNaN(apuesta) || apuesta <= 0) return m.reply('❌ Ingresa una apuesta válida.');
 
     const isOwner = db[m.sender].role === 'owner';
+    if (!isOwner && apuesta > db[m.sender].limit) return m.reply('❌ No tienes suficiente límite.');
 
-    if (!isOwner && apuesta > db[m.sender].limit) {
-        return m.reply('❌ No tienes suficiente límite para apostar.');
-    }
-
-    let puntosJugador = Math.floor(Math.random() * 101);
-    let puntosComputadora = Math.floor(Math.random() * 101);
+    let jug = Math.floor(Math.random() * 101);
+    let cpu = Math.floor(Math.random() * 101);
 
     if (!isOwner) db[m.sender].limit -= apuesta;
 
-    if (puntosJugador > puntosComputadora) {
-        let recompensa = apuesta * 2;
-        if (!isOwner) db[m.sender].limit += recompensa;
-
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*¡Ganaste!* ${isOwner ? 'owner' : `+${recompensa} límite`}`);
-    } else if (puntosJugador < puntosComputadora) {
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*Perdiste* ${isOwner ? 'owner' : `-${apuesta} límite`}`);
+    if (jug > cpu) {
+        let premio = apuesta * 2;
+        if (!isOwner) db[m.sender].limit += premio;
+        m.reply(`🎰 Ganaste!\nTú: ${jug} | Bot: ${cpu}\n${isOwner ? 'Eres owner, sin recompensa' : `+${premio} límite`}`);
+    } else if (jug < cpu) {
+        m.reply(`🎰 Perdiste\nTú: ${jug} | Bot: ${cpu}\n${isOwner ? 'Eres owner, sin pérdida' : `-${apuesta} límite`}`);
     } else {
         if (!isOwner) db[m.sender].limit += apuesta;
-
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*Empate* ${isOwner ? 'owner' : `Recuperas ${apuesta} límite`}`);
+        m.reply(`🎰 Empate\nTú: ${jug} | Bot: ${cpu}\n${isOwner ? 'Sin cambios' : `Apuesta devuelta: ${apuesta}`}`);
     }
 
     saveUserFire(db);
