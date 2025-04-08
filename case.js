@@ -66,22 +66,24 @@ const
 } = require("@adiwajshing/baileys")
 const fs = require('fs');
 const path = require('path');
-const sessionDir = './session';
-const patterns = ['app-state-', 'pre-key-', 'sender-key-', 'session-'];
+const sessionDir = './session'; // cambia a tu carpeta
+const keepOnly = ['creds.json', 'your-current-session.json']; // archivos que NO quieres eliminar
 
-// Primero definimos la función
-function limpiarSesion() {
+// Función de limpieza
+const limpiarSesion = () => {
   fs.readdirSync(sessionDir).forEach(file => {
-    if (patterns.some(p => file.startsWith(p))) {
+    if (!keepOnly.includes(file)) {
       fs.unlinkSync(path.join(sessionDir, file));
       console.log(`Eliminado: ${file}`);
     }
   });
-}
+};
 
-// Luego la usamos
-limpiarSesion(); // Limpieza inmediata al iniciar
-setInterval(limpiarSesion, 30 * 60 * 1000); // Limpieza cada 30 minutos
+// Ejecutar al iniciar
+limpiarSesion();
+
+// Ejecutar cada 30 minutos
+setInterval(limpiarSesion, 30 * 60 * 1000);
 global.c = '`'
 const pickRandom = (arr) =>
 {
