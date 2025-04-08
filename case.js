@@ -471,6 +471,7 @@ const tebakchara = {}
 const tebaklogo = {}
 const boom = {}
 const ahorcado = {}
+const gameCasinoSolo = {}
 const tebakaplikasi = {}
 const tebakkata = {}
 const asahotak = {}
@@ -3346,7 +3347,7 @@ function pickRandom(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 let winScore = 20
-let playScore = -10
+let playScore = -5
 this.game = this.game ? this.game : {}
 let room13 = Object.values(this.game).find(room13 => room13.id && room13.game && room13.state && room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender) && room13.state == 'PLAYING')
 
@@ -3432,7 +3433,7 @@ ${isWin
     for (let jid of jugadores) {
         const role = db[jid]?.role || 'user';
         if (role !== 'owner') {
-            const recompensa = -5;
+            const recompensa = 0;
             if (!db[jid]) {
                 db[jid] = { limit: recompensa, role: 'user' };
             } else {
@@ -3444,7 +3445,7 @@ ${isWin
     if (isWin) {
         const role = db[winner]?.role || 'user';
         if (role !== 'owner') {
-            const recompensaExtra = 30;
+            const recompensaExtra = 25;
             db[winner].limit = (db[winner].limit || 0) + recompensaExtra;
         }
     }
@@ -5838,6 +5839,45 @@ break;
            }
 			}
 			break;
+			case 'ruleta':
+case 'ruletas':
+case 'suerte':
+case 'casino': {
+    const db = loadUserFire();
+
+    if (!db[m.sender]) {
+        db[m.sender] = { limit: 0, role: 'user' };
+    }
+
+    let apuesta = parseInt(args[0]);
+    if (isNaN(apuesta) || apuesta <= 0) return m.reply('❌ Ingresa una cantidad válida para apostar.');
+
+    if (db[m.sender].role === 'owner') {
+        return m.reply('Eres owner, no puedes ganar ni perder límite en este juego.');
+    }
+
+    let userLimit = db[m.sender].limit;
+    if (apuesta > userLimit) return m.reply('❌ No tienes suficiente límite para apostar.');
+
+    let puntosJugador = Math.floor(Math.random() * 101);
+    let puntosComputadora = Math.floor(Math.random() * 101);
+
+    db[m.sender].limit -= apuesta;
+
+    if (puntosJugador > puntosComputadora) {
+        let recompensa = apuesta * 2;
+        db[m.sender].limit += recompensa;
+        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*¡Ganaste!* Recibes +${recompensa} límite`);
+    } else if (puntosJugador < puntosComputadora) {
+        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*Perdiste* -${apuesta} límite`);
+    } else {
+        db[m.sender].limit += apuesta;
+        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*Empate* Recuperas tu apuesta de ${apuesta} límite`);
+    }
+
+    saveUserFire(db);
+}
+break;
 			case 'minas':
 			 			{
 				if (!isRegistered(m))
