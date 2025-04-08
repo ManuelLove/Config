@@ -5854,7 +5854,10 @@ case 'casino': {
     if (isNaN(apuesta) || apuesta <= 0) return m.reply('❌ Ingresa una cantidad válida para apostar.');
 
     const isOwner = db[m.sender].role === 'owner';
-    if (!isOwner && apuesta > db[m.sender].limit) return m.reply('❌ No tienes suficiente límite para apostar.');
+
+    if (!isOwner && apuesta > db[m.sender].limit) {
+        return m.reply('❌ No tienes suficiente límite para apostar.');
+    }
 
     let puntosJugador = Math.floor(Math.random() * 101);
     let puntosComputadora = Math.floor(Math.random() * 101);
@@ -5864,12 +5867,14 @@ case 'casino': {
     if (puntosJugador > puntosComputadora) {
         let recompensa = apuesta * 2;
         if (!isOwner) db[m.sender].limit += recompensa;
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} pts\n*Bot:* ${puntosComputadora} pts\n\n*¡Ganaste!* ${isOwner ? 'Eres owner, sin recompensa' : `+${recompensa} límite`}`);
+
+        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*¡Ganaste!* ${isOwner ? 'Pero como eres owner, no ganas límite.' : `+${recompensa} límite`}`);
     } else if (puntosJugador < puntosComputadora) {
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} pts\n*Bot:* ${puntosComputadora} pts\n\n*Perdiste* ${isOwner ? 'Eres owner, sin pérdida' : `-${apuesta} límite`}`);
+        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*Perdiste* ${isOwner ? 'Pero como eres owner, no pierdes límite.' : `-${apuesta} límite`}`);
     } else {
         if (!isOwner) db[m.sender].limit += apuesta;
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} pts\n*Bot:* ${puntosComputadora} pts\n\n*Empate* ${isOwner ? 'Sin cambios' : `Apuesta devuelta: ${apuesta}`}`);
+
+        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*Empate* ${isOwner ? 'Como eres owner, no hay cambios.' : `Recuperas tu apuesta de ${apuesta} límite`}`);
     }
 
     saveUserFire(db);
