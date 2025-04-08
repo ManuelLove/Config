@@ -5868,13 +5868,13 @@ case 'casino': {
         let recompensa = apuesta * 2;
         if (!isOwner) db[m.sender].limit += recompensa;
 
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*¡Ganaste!* ${isOwner ? 'owner, no ganas límite.' : `+${recompensa} límite`}`);
+        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*¡Ganaste!* ${isOwner ? 'owner' : `+${recompensa} límite`}`);
     } else if (puntosJugador < puntosComputadora) {
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*Perdiste* ${isOwner ? 'owner, no pierdes límite.' : `-${apuesta} límite`}`);
+        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*Perdiste* ${isOwner ? 'owner' : `-${apuesta} límite`}`);
     } else {
         if (!isOwner) db[m.sender].limit += apuesta;
 
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*Empate* ${isOwner ? 'owner, no hay cambios.' : `Recuperas ${apuesta} límite`}`);
+        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*Empate* ${isOwner ? 'owner' : `Recuperas ${apuesta} límite`}`);
     }
 
     saveUserFire(db);
