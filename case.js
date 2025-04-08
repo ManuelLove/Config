@@ -686,8 +686,7 @@ if (m.mtype === 'interactiveResponseMessage' && m.message.interactiveResponseMes
 		const isShoNheOwn = owner.includes(senderNumber) || isBot
 		const isVip = prem.includes(senderNumber) || isShoNheOwn
 		const banned = JSON.parse(fs.readFileSync('./database/banned.json'))
-		const isBan = banned.includes(m.sender);
-if (isBan) return;
+		const isBan = banned.includes(senderNumber)
 		const getQuoted = (m.quoted || m);
 		const quoted = (getQuoted.type == 'buttonsMessage') ? getQuoted[Object.keys(getQuoted)[1]] : (getQuoted.type == 'templateMessage') ? getQuoted.hydratedTemplate[Object.keys(getQuoted.hydratedTemplate)[1]] : (getQuoted.type == 'product') ? getQuoted[Object.keys(getQuoted)[0]] : m.quoted ? m.quoted : m
 		const mime = (quoted.msg || quoted).mimetype || ''
@@ -978,13 +977,13 @@ END:VCARD`
 			if (!chats || typeof chats !== 'object')
 			{
 				global.db.data.chats[m.chat] = {
-					isBanned: false,
+					isBanned: true,
 					antispam: false
 				};
 			}
 			else
 			{
-				if (!('isBanned' in chats)) chats.isBanned = false;
+				if (!('isBanned' in chats)) chats.isBanned = true;
 				if (!('antispam' in chats)) chats.antispam = false;
 				if (!('antilink' in chats)) chats.antilink = false;
     			if (!('antilinkgc' in chats)) chats.antilinkgc = false;
