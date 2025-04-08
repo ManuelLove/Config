@@ -8081,8 +8081,9 @@ if (isUserRegistered(m.sender)) {
 						mimetype: 'application/pdf',
 						fileLength: '100000000000000',
 						pageCount: '999',
-						image: {
-            url: `https://i.ibb.co/tTCHsX02/shoNhe.jpg`, // Pastikan file ini tersedia
+						image:
+						{
+							url: getRandomThumb2(), // Pastikan file ini tersedia
 							gifPlayback: true
 						},
 						caption: `${shonhemenu}`, // Teks menu
