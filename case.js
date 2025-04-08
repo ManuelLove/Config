@@ -20310,8 +20310,7 @@ if (levelUpMessage) {
 				let anu = await tts(text)
 				shoNhe.sendMessage(m.chat, {
   audio: anu,
-  mimetype: 'audio/ogg; codecs=opus',
-  ptt: true
+  mimetype: 'audio/ogg; codecs=opus'
 }, { quoted: hw })
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
