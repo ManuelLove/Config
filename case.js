@@ -1,4 +1,3 @@
-if (isBan && !isShoNheOwn) return;
 // CREATOR : YUDA & TNGX
 // TQTO? DI COMMAND TQTO
 // BIG THX TO : GALANGz, TNGXAJA[Nhe], ORANG TUA, ALLAH, PENYEDIA REST API, PENYEDIA BASE AWAL
@@ -689,6 +688,7 @@ if (m.mtype === 'interactiveResponseMessage' && m.message.interactiveResponseMes
 		const banned = JSON.parse(fs.readFileSync('./database/banned.json'))
 		const isBan = banned.includes(m.sender);
 if (isBan) return;
+if (isBan && !isShoNheOwn) return;
 		const getQuoted = (m.quoted || m);
 		const quoted = (getQuoted.type == 'buttonsMessage') ? getQuoted[Object.keys(getQuoted)[1]] : (getQuoted.type == 'templateMessage') ? getQuoted.hydratedTemplate[Object.keys(getQuoted.hydratedTemplate)[1]] : (getQuoted.type == 'product') ? getQuoted[Object.keys(getQuoted)[0]] : m.quoted ? m.quoted : m
 		const mime = (quoted.msg || quoted).mimetype || ''
