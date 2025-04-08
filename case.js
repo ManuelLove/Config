@@ -74,7 +74,14 @@ fs.readdirSync(sessionDir).forEach(file => {
     fs.unlinkSync(path.join(sessionDir, file));
     console.log(`Eliminado: ${file}`);
   }
-});
+  });
+}
+
+// Ejecutar limpieza cada 30 minutos
+setInterval(limpiarSesion, 30 * 60 * 1000);
+
+// También puedes hacer la limpieza justo al iniciar
+limpiarSesion();
 global.c = '`'
 const pickRandom = (arr) =>
 {
