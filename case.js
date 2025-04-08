@@ -3827,25 +3827,7 @@ function parseMention(text) {
 - ${getReason2 || 'No especificado'}  
 
 [⏳] *DURACIÓN DESDE AFK*:  
-- ${anu2.hours || 0} Horas, ${anu2.minutes || 0} Minutos, ${anu2.seconds || 0} Segundos  
-
-[🛡️] *NOTA IMPORTANTE*:  
-- Este mensaje ha sido enviado por un sistema automático.  
-- Los datos de actividad se registran en tiempo real.  
-- Cualquier infracción será revisada posteriormente.  
-
-[💻] *CONSEJOS DEL SISTEMA*:  
-- Para más información, espera a que el usuario vuelva a estar activo.  
-- Usa la función de búsqueda o ayuda si la necesitas.  
-
-🔍 *MONITOREO DEL SISTEMA*:  
-- El estado del usuario se monitorea dentro del sistema.  
-- Ninguna actividad pasa desapercibida en nuestros registros.  
-- Sigue los protocolos de interacción establecidos.  
-
-📡 *SISTEMA ACTIVO*:  
-- Los datos se actualizan en tiempo real.  
-- Mantente conectado para más notificaciones.`)
+- ${anu2.hours || 0} Horas, ${anu2.minutes || 0} Minutos, ${anu2.seconds || 0} Segundos`)
 				}
 			}
 			if (checkAfkUser(m.sender, afk))
@@ -3864,22 +3846,7 @@ User @${m.sender.split('@')[0]}, ¿sigues bien, bro? El sistema ha detectado tu 
 - ${getReason || 'No se ha proporcionado ninguna razón'}  
 
 [⏳] *DURACIÓN*:  
-- ${anu.hours || 0} Horas, ${anu.minutes || 0} Minutos, ${anu.seconds || 0} Segundos  
-
-[🛠️] *INSTRUCCIONES*:  
-- Si hay algún problema, actualiza tu estado lo antes posible.  
-- Evita tardar demasiado, el sistema siempre está monitoreando.  
-
-[🔍] *REGISTRO DEL SISTEMA*:  
-- Este estado ha sido registrado en el protocolo de logs.  
-- No ignores este mensaje para mantener la credibilidad de tu actividad.  
-
-[⚡] *CONSEJO*:  
-- “El tiempo sigue corriendo, úsalo sabiamente. No dejes que el mundo virtual te supere.”  
-
-📡 *ESTADO DEL SISTEMA*:  
-- Monitoreo en tiempo real activo.  
-- El sistema permanecerá conectado hasta que vuelvas a estar activo.`, fvideo)
+- ${anu.hours || 0} Horas, ${anu.minutes || 0} Minutos, ${anu.seconds || 0} Segundos`, fvideo)
 			}
 		}
 		//==================[ BUTTON MESSAGE ]======================\\
@@ -5840,7 +5807,6 @@ break;
 			}
 			break;
 			case 'ruleta':
-case 'ruleta':
 case 'ruletas':
 case 'suerte':
 case 'casino': {
@@ -5853,19 +5819,16 @@ case 'casino': {
     let apuesta = parseInt(args[0]);
     if (isNaN(apuesta) || apuesta <= 0) return m.reply('❌ Ingresa una cantidad válida para apostar.');
 
+    if (db[m.sender].role === 'owner') {
+        return m.reply('Eres owner, no puedes ganar ni perder límite en este juego.');
+    }
+
+    let userLimit = db[m.sender].limit;
+    if (apuesta > userLimit) return m.reply('❌ No tienes suficiente límite para apostar.');
+
     let puntosJugador = Math.floor(Math.random() * 101);
     let puntosComputadora = Math.floor(Math.random() * 101);
 
-    if (db[m.sender].role === 'owner') {
-        // Solo mostrar el resultado, sin modificar límite
-        let resultadoTexto = `🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n`;
-        if (puntosJugador > puntosComputadora) resultadoTexto += '*¡Ganaste!* owner';
-        else if (puntosJugador < puntosComputadora) resultadoTexto += '*Perdiste* owner';
-        else resultadoTexto += '*Empate* owner';
-        return m.reply(resultadoTexto);
-    }
-
-    if (apuesta > db[m.sender].limit) return m.reply('❌ No tienes suficiente límite para apostar.');
     db[m.sender].limit -= apuesta;
 
     if (puntosJugador > puntosComputadora) {
@@ -7837,18 +7800,7 @@ break;
 - ${reason || 'No especificada, tal vez un gran secreto.'}  
 
 ⏳ *Duración AFK*:  
-- El sistema ha detectado que el usuario ha dejado sus tareas.  
-
-🔒 *Nota del Sistema*:  
-- "No vuelvas, bro, jajaja. Pero en serio, no tardes demasiado."  
-
-🔍 *SUPERVISIÓN*:  
-- El sistema registra toda la actividad relacionada con este usuario.  
-- Evita interrumpir hasta que termine el estado AFK.  
-
-📡 *INFO*:  
-- Este estado se actualizará cuando el usuario vuelva a estar activo.  
-- Asegúrate de continuar con tus tareas o interactuar al regresar.`, fvideo);
+- El sistema ha detectado que el usuario ha dejado sus tareas.`, fvideo);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
