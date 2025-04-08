@@ -3455,6 +3455,8 @@ ${isWin
 function parseMention(text) {
     return [...text.matchAll(/@(.*?)/g)].map(v => v[1]);
 }
+const isBan = banned.includes(m.sender);
+if (isBan) return;
 		async function cekgame(gamejid)
 		{
 			if (tekateki[gamejid])
@@ -11522,9 +11524,6 @@ if (args[0] === "add") {
     banned.splice(delbans, 1)
     fs.writeFileSync('./database/banned.json', JSON.stringify(banned, null, 2)) // << AÑADIDO
     shoNherly(`*✅ Se eliminó correctamente al usuario baneado*`)
-}
-if (isBan) {
-    return shoNherly(`Estás baneado del bot. Contacta con un administrador para apelar.`);
 }
 				else
 				{
