@@ -8094,13 +8094,11 @@ if (isUserRegistered(m.sender)) {
 							externalAdReply:
 							{
 								title: namabot,
-								body: descown,
-								thumbnailUrl: `https://i.ibb.co/tTCHsX02/shoNhe.jpg`, // Gambar thumbnail
+								body: namaowner,
+								thumbnail: getRandomThumb3(),
+								sourceUrl: wagc,
 								mediaType: 1,
-								renderLargerThumbnail: true,
-								previewType: 0,
-								mediaUrl: gh,
-								sourceUrl: gh,
+								renderLargerThumbnail: true
 							}
 						},
 						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
@@ -8269,7 +8267,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8318,7 +8316,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8379,7 +8377,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8427,7 +8425,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8477,7 +8475,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8543,7 +8541,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8612,7 +8610,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8675,7 +8673,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8746,7 +8744,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8856,7 +8854,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -10838,7 +10836,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
