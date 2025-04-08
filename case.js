@@ -1540,7 +1540,7 @@ await shoNhe.sendMessage(m.chat, {
 				catch (err)
 				{
 					console.error('❌ Respons bukan JSON:', textResponse);
-					m.reply("Se produjo un error en la API. Por favor inténtalo de nuevo más tarde..");
+					shoNherly("Se produjo un error en la API. Por favor inténtalo de nuevo más tarde..");
 					return;
 				}
 				console.log('📥 Respons diterima dari API:', data);
@@ -1563,13 +1563,13 @@ await shoNhe.sendMessage(m.chat, {
 				else
 				{
 					console.log('❌ Gagal mengambil video. URL tidak valid.');
-					m.reply("No se pudo grabar el video. Por favor revisa la URL.");
+					shoNherly("No se pudo grabar el video. Por favor revisa la URL.");
 				}
 			}
 			catch (err)
 			{
 				console.error('❌ Terjadi kesalahan:', err.message);
-				m.reply(`Error: ${err.message}`);
+				shoNherly(`Error: ${err.message}`);
 			}
 		}
 		async function downloadMp3(link)
@@ -1596,7 +1596,7 @@ await shoNhe.sendMessage(m.chat, {
 				catch (err)
 				{
 					console.error('❌ Respons bukan JSON:', textResponse);
-					m.reply("Se produjo un error en la API. Por favor inténtalo de nuevo más tarde.");
+					shoNherly("Se produjo un error en la API. Por favor inténtalo de nuevo más tarde.");
 					return;
 				}
 				console.log('📥 Respons diterima dari API:', data);
@@ -1642,25 +1642,25 @@ await shoNhe.sendMessage(m.chat, {
 							}).on('error', (err) =>
 							{
 								console.error('❌ Gagal mengonversi file audio:', err.message);
-								m.reply('No se pudo reprocesar el archivo de audio.');
+								shoNherly('No se pudo reprocesar el archivo de audio.');
 							}).save(fixedFilePath);
 					});
 					writer.on('error', (err) =>
 					{
 						console.error('❌ Gagal mengunduh file audio:', err.message);
-						m.reply('No se pudo descargar el archivo de audio.');
+						shoNherly('No se pudo descargar el archivo de audio.');
 					});
 				}
 				else
 				{
 					console.log('❌ Gagal mengambil audio. URL tidak valid.');
-					m.reply("No se pudo recuperar el audio. Por favor revisa la URL.");
+					shoNherly("No se pudo recuperar el audio. Por favor revisa la URL.");
 				}
 			}
 			catch (err)
 			{
 				console.error('❌ Terjadi kesalahan:', err.message);
-				m.reply(`Error: ${err.message}`);
+				shoNherly(`Error: ${err.message}`);
 			}
 		}
 		if (!global.public)
@@ -2582,7 +2582,7 @@ default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURICompon
 		{
 			if (typereply === 's1')
 			{
-				m.reply(teks);
+				shoNherly(teks);
 			}
 			else if (typereply === 's2')
 			{
@@ -5851,12 +5851,12 @@ case 'casino': {
     }
 
     let apuesta = parseInt(args[0]);
-    if (isNaN(apuesta) || apuesta <= 0) return m.reply('❌ Ingresa una cantidad válida para apostar.');
+    if (isNaN(apuesta) || apuesta <= 0) return shoNherly('❌ Ingresa una cantidad válida para apostar.');
 
     const isOwner = db[m.sender].role === 'owner';
 
     if (!isOwner && apuesta > db[m.sender].limit) {
-        return m.reply('❌ No tienes suficiente límite para apostar.');
+        return shoNherly('❌ No tienes suficiente límite para apostar.');
     }
 
     let puntosJugador = Math.floor(Math.random() * 101);
@@ -5868,13 +5868,13 @@ case 'casino': {
         let recompensa = apuesta * 2;
         if (!isOwner) db[m.sender].limit += recompensa;
 
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*¡Ganaste!* ${isOwner ? 'Pero como eres owner, no ganas límite.' : `+${recompensa} límite`}`);
+        shoNherly(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*¡Ganaste!* ${isOwner ? 'Pero como eres owner, no ganas límite.' : `+${recompensa} límite`}`);
     } else if (puntosJugador < puntosComputadora) {
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*Perdiste* ${isOwner ? 'Pero como eres owner, no pierdes límite.' : `-${apuesta} límite`}`);
+        shoNherly(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*Perdiste* ${isOwner ? 'Pero como eres owner, no pierdes límite.' : `-${apuesta} límite`}`);
     } else {
         if (!isOwner) db[m.sender].limit += apuesta;
 
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*Empate* ${isOwner ? 'Como eres owner, no hay cambios.' : `Recuperas tu apuesta de ${apuesta} límite`}`);
+        shoNherly(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*Empate* ${isOwner ? 'Como eres owner, no hay cambios.' : `Recuperas tu apuesta de ${apuesta} límite`}`);
     }
 
     saveUserFire(db);
