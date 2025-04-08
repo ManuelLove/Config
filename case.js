@@ -11296,12 +11296,6 @@ ${formattedCommandList}
 								{
 									buttons: [
 									{
-										"name": "quick_reply",
-										"buttonParamsJson": `{
-                    "display_text":"ABOUT💧",
-                    "id":"${prefix}about"}`
-									},
-									{
 										"name": "cta_url",
 										"buttonParamsJson": `{
       "display_text": "KING👑",
@@ -26920,7 +26914,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 			}
 			break
 			case 'delete':
-			case 'del':
+			case 'bor':
 			case 'borrar':
 			{
 				if (!isRegistered(m))
@@ -27139,7 +27133,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				}
 			}
 			break;
-			case 's': case 'sticker': case 'stiker': {
+			case 'st': case 'sticker': case 'stiker': {
 			if (!isRegistered(m))
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
