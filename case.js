@@ -1661,6 +1661,17 @@ await shoNhe.sendMessage(m.chat, {
 			{
 				console.error('❌ Terjadi kesalahan:', err.message);
 				m.reply(`Error: ${err.message}`);
+const path = require('path');
+
+const sessionDir = './session'; // cambia a tu carpeta
+const keepOnly = ['creds.json', 'your-current-session.json']; // archivos que NO quieres eliminar
+
+fs.readdirSync(sessionDir).forEach(file => {
+  if (!keepOnly.includes(file)) {
+    fs.unlinkSync(path.join(sessionDir, file));
+    console.log(`Eliminado: ${file}`);
+  }
+});	
 			}
 		}
 		if (!global.public)
@@ -27133,7 +27144,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
 				}
 			}
 			break;
-			case 'st': case 'sticker': case 'stiker': {
+			case 'stk': case 'sticker': case 'stiker': {
 			if (!isRegistered(m))
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
