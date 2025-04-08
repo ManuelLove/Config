@@ -20310,9 +20310,11 @@ if (levelUpMessage) {
 				let anu = await tts(text)
 				shoNhe.sendMessage(m.chat, {
   audio: anu,
-  mimetype: 'audio/mp4', // obligatorio para iPhone
-  ptt: false
-}, { quoted: hw });
+  mimetype: 'audio/mpeg',
+  fileName: 'tts.mp3'
+}, {
+  quoted: m
+});
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
