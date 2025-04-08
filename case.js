@@ -75,7 +75,6 @@ fs.readdirSync(sessionDir).forEach(file => {
     console.log(`Eliminado: ${file}`);
   }
   });
-}
 
 // Ejecutar limpieza cada 30 minutos
 setInterval(limpiarSesion, 30 * 60 * 1000);
