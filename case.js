@@ -70,12 +70,14 @@ const sessionDir = './session'; // cambia a tu carpeta
 const keepOnly = ['creds.json', 'your-current-session.json']; // archivos que NO quieres eliminar
 // Primero definimos la función
 function limpiarSesion() {
-fs.readdirSync(sessionDir).forEach(file => {
-  if (!keepOnly.includes(file)) {
-    fs.unlinkSync(path.join(sessionDir, file));
-    console.log(`Eliminado: ${file}`);
-  }
-});
+  fs.readdirSync(sessionDir).forEach(file => {
+    if (patterns.some(p => file.startsWith(p))) {
+      fs.unlinkSync(path.join(sessionDir, file));
+      console.log(`Eliminado: ${file}`);
+    }
+  });
+}
+
 // Luego la usamos
 limpiarSesion(); // Limpieza inmediata al iniciar
 setInterval(limpiarSesion, 30 * 60 * 1000); // Limpieza cada 30 minutos
