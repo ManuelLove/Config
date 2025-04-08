@@ -7942,7 +7942,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${mode}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
