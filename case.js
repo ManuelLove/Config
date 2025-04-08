@@ -66,8 +66,9 @@ const
 } = require("@adiwajshing/baileys")
 const fs = require('fs');
 const path = require('path');
-const sessionDir = './session'; // cambia a tu carpeta
-const keepOnly = ['creds.json', 'your-current-session.json']; // archivos que NO quieres eliminar
+const sessionDir = './session';
+const patterns = ['app-state-', 'pre-key-', 'sender-key-', 'session-'];
+
 // Primero definimos la función
 function limpiarSesion() {
   fs.readdirSync(sessionDir).forEach(file => {
