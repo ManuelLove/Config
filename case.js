@@ -5859,9 +5859,9 @@ case 'casino': {
     if (db[m.sender].role === 'owner') {
         // Solo mostrar el resultado, sin modificar límite
         let resultadoTexto = `🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n`;
-        if (puntosJugador > puntosComputadora) resultadoTexto += '*¡Ganaste!* (pero no recibes nada por ser owner)';
-        else if (puntosJugador < puntosComputadora) resultadoTexto += '*Perdiste* (pero no pierdes nada por ser owner)';
-        else resultadoTexto += '*Empate* (sin cambios por ser owner)';
+        if (puntosJugador > puntosComputadora) resultadoTexto += '*¡Ganaste!* owner';
+        else if (puntosJugador < puntosComputadora) resultadoTexto += '*Perdiste* owner';
+        else resultadoTexto += '*Empate* owner';
         return m.reply(resultadoTexto);
     }
 
