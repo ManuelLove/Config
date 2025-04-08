@@ -20309,14 +20309,14 @@ if (levelUpMessage) {
 				} = require('./lib/tts')
 				let anu = await tts(text)
 				shoNhe.sendMessage(m.chat,
-				{
-					audio: anu,
-					ptt: true,
-					mimetype: 'audio/mpeg'
-				},
-				{
-					quoted: hw
-				})
+{
+	audio: anu,
+	ptt: true,
+	mimetype: 'audio/ogg; codecs=opus'
+},
+{
+	quoted: hw
+})
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
