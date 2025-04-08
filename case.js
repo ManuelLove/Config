@@ -375,7 +375,7 @@ const
 	pomfCDN
 } = require('./lib/scp/uploader');
 let botSettings = {
-	autotyping: true,
+	autotyping: false,
 	autovn: false
 };
 const
@@ -7942,7 +7942,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${mode}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
