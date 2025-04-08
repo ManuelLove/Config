@@ -8963,7 +8963,7 @@ ${menuforu(prefix, simbols)}
 				else if (typemenu === 's12')
 				{
 					const menuv12 = 
-`${shomenu}`
+`${shonhemenu}`
 					let msg = generateWAMessageFromContent(from,
 					{
 						viewOnceMessage:
