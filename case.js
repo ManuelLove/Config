@@ -1541,7 +1541,7 @@ await shoNhe.sendMessage(m.chat, {
 				catch (err)
 				{
 					console.error('❌ Respons bukan JSON:', textResponse);
-					m.reply("Se produjo un error en la API. Por favor inténtalo de nuevo más tarde..");
+					shoNherly("Se produjo un error en la API. Por favor inténtalo de nuevo más tarde..");
 					return;
 				}
 				console.log('📥 Respons diterima dari API:', data);
@@ -1564,13 +1564,13 @@ await shoNhe.sendMessage(m.chat, {
 				else
 				{
 					console.log('❌ Gagal mengambil video. URL tidak valid.');
-					m.reply("No se pudo grabar el video. Por favor revisa la URL.");
+					shoNherly("No se pudo grabar el video. Por favor revisa la URL.");
 				}
 			}
 			catch (err)
 			{
 				console.error('❌ Terjadi kesalahan:', err.message);
-				m.reply(`Error: ${err.message}`);
+				shoNherly(`Error: ${err.message}`);
 			}
 		}
 		async function downloadMp3(link)
@@ -1597,7 +1597,7 @@ await shoNhe.sendMessage(m.chat, {
 				catch (err)
 				{
 					console.error('❌ Respons bukan JSON:', textResponse);
-					m.reply("Se produjo un error en la API. Por favor inténtalo de nuevo más tarde.");
+					shoNherly("Se produjo un error en la API. Por favor inténtalo de nuevo más tarde.");
 					return;
 				}
 				console.log('📥 Respons diterima dari API:', data);
@@ -1643,25 +1643,25 @@ await shoNhe.sendMessage(m.chat, {
 							}).on('error', (err) =>
 							{
 								console.error('❌ Gagal mengonversi file audio:', err.message);
-								m.reply('No se pudo reprocesar el archivo de audio.');
+								shoNherly('No se pudo reprocesar el archivo de audio.');
 							}).save(fixedFilePath);
 					});
 					writer.on('error', (err) =>
 					{
 						console.error('❌ Gagal mengunduh file audio:', err.message);
-						m.reply('No se pudo descargar el archivo de audio.');
+						shoNherly('No se pudo descargar el archivo de audio.');
 					});
 				}
 				else
 				{
 					console.log('❌ Gagal mengambil audio. URL tidak valid.');
-					m.reply("No se pudo recuperar el audio. Por favor revisa la URL.");
+					shoNherly("No se pudo recuperar el audio. Por favor revisa la URL.");
 				}
 			}
 			catch (err)
 			{
 				console.error('❌ Terjadi kesalahan:', err.message);
-				m.reply(`Error: ${err.message}`);
+				shoNherly(`Error: ${err.message}`);
 			}
 		}
 		if (!global.public)
@@ -2579,7 +2579,7 @@ default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURICompon
 		{
 			if (typereply === 's1')
 			{
-				m.reply(teks);
+				shoNherly(teks);
 			}
 			else if (typereply === 's2')
 			{
@@ -3450,12 +3450,12 @@ if (roof) {
         roof.status = 'play';
         clearTimeout(roof.waktu);
 
-        await conn.sendMessage(roof.p, { text: 'El juego ha comenzado. Escribe: piedra, papel o tijeras.' });
-        await conn.sendMessage(roof.p2, { text: 'El juego ha comenzado. Escribe: piedra, papel o tijeras.' });
+        await shoNhe.sendMessage(roof.p, { text: 'El juego ha comenzado. Escribe: piedra, papel o tijeras.' });
+        await shoNhe.sendMessage(roof.p2, { text: 'El juego ha comenzado. Escribe: piedra, papel o tijeras.' });
 
         roof.waktu_milih = setTimeout(() => {
             if (!roof.pilih || !roof.pilih2) {
-                m.reply(`⏳ Tiempo agotado, juego cancelado.`);
+                shoNherly(`⏳ Tiempo agotado, juego cancelado.`);
                 delete suitpvp[roof.id];
             }
         }, roof.timeout);
@@ -3467,12 +3467,12 @@ if (roof) {
 
         if (m.sender === roof.p && !roof.pilih) {
             roof.pilih = jugada;
-            m.reply(`Elegiste *${jugada}*. Esperando al oponente...`);
+            shoNherly(`Elegiste *${jugada}*. Esperando al oponente...`);
         }
 
         if (m.sender === roof.p2 && !roof.pilih2) {
             roof.pilih2 = jugada;
-            m.reply(`Elegiste *${jugada}*. Procesando resultado...`);
+            shoNherly(`Elegiste *${jugada}*. Procesando resultado...`);
         }
 
         if (roof.pilih && roof.pilih2) {
@@ -3497,14 +3497,14 @@ if (roof) {
                 ganador = roof.p2;
             }
 
-            let name1 = await conn.getName(roof.p);
-            let name2 = await conn.getName(roof.p2);
+            let name1 = await shoNhe.getName(roof.p);
+            let name2 = await shoNhe.getName(roof.p2);
             let mensaje = `🎮 *Resultado de Suit PvP*\n\n${name1}: *${jug1}*\n${name2}: *${jug2}*\n\n`;
 
             if (empate) {
                 mensaje += `⚖️ *Empate* - No hay ganador.`;
             } else {
-                let winName = await conn.getName(ganador);
+                let winName = await shoNhe.getName(ganador);
                 let isOwner = db[ganador]?.role === 'owner';
                 let reward = Math.floor(Math.random() * 9 + 7); // 7 a 15
 
@@ -3514,7 +3514,7 @@ if (roof) {
                 mensaje += `🏆 *Ganador:* ${winName}\n🎁 *Recompensa:* ${isOwner ? '0' : '+' + reward} límite`;
             }
 
-            conn.sendMessage(roof.chat, { text: mensaje, mentions: [roof.p, roof.p2] }, { quoted: m });
+            shoNhe.sendMessage(roof.chat, { text: mensaje, mentions: [roof.p, roof.p2] }, { quoted: m });
             delete suitpvp[roof.id];
             saveUserFire(db);
         }
@@ -5892,20 +5892,20 @@ case 'suitpvp': {
     let db = loadUserFire();
 
     if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.sender)))
-        return m.reply(`Termina tu juego anterior de suit.`);
+        return shoNherly(`Termina tu juego anterior de suit.`);
 
     if (!m.mentionedJid[0] || m.mentionedJid[0] === m.sender)
-        return m.reply(`Etiqueta a un jugador válido para desafiar.\nEjemplo: ${prefix}suitpvp @usuario`);
+        return shoNherly(`Etiqueta a un jugador válido para desafiar.\nEjemplo: ${prefix}suitpvp @usuario`);
 
     if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.mentionedJid[0])))
-        return m.reply(`La persona ya está en otro juego.`);
+        return shoNherly(`La persona ya está en otro juego.`);
 
     let id = 'suitpvp_' + new Date() * 1;
     let name1 = m.pushName || 'Desconocido';
-    let name2 = await conn.getName(m.mentionedJid[0]) || 'Desconocido';
+    let name2 = await shoNhe.getName(m.mentionedJid[0]) || 'Desconocido';
 
     let caption = `🤜 *SUIT PvP* 🤛\n\n${name1} ha desafiado a ${name2} a un duelo.\n\n${name2}, responde con "aceptar" o "rechazar".`;
-    m.reply(caption);
+    shoNherly(caption);
 
     suitpvp[id] = {
         id,
@@ -5917,7 +5917,7 @@ case 'suitpvp': {
         poin: 0,
         waktu: setTimeout(() => {
             if (suitpvp[id]) {
-                m.reply(`⏳ Tiempo agotado, juego cancelado.`);
+                shoNherly(`⏳ Tiempo agotado, juego cancelado.`);
                 delete suitpvp[id];
             }
         }, 60000)
