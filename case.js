@@ -5866,14 +5866,14 @@ case 'casino': {
     }
 
     let apuesta = parseInt(args[0]);
-    if (isNaN(apuesta) || apuesta <= 0) return shoNherly('❌ Ingresa una cantidad válida para apostar.');
+    if (isNaN(apuesta) || apuesta <= 0) return m.reply('❌ Ingresa una cantidad válida para apostar.');
 
     if (db[m.sender].role === 'owner') {
-        return shoNherly('Eres owner, no puedes ganar ni perder límite en este juego.');
+        return m.reply('Eres owner, no puedes ganar ni perder límite en este juego.');
     }
 
     let userLimit = db[m.sender].limit;
-    if (apuesta > userLimit) return shoNherly('❌ No tienes suficiente límite para apostar.');
+    if (apuesta > userLimit) return m.reply('❌ No tienes suficiente límite para apostar.');
 
     let puntosJugador = Math.floor(Math.random() * 101);
     let puntosComputadora = Math.floor(Math.random() * 101);
