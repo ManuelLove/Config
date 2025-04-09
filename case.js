@@ -5856,6 +5856,7 @@ break;
 			}
 			break;
 			case 'ruleta':
+case 'ruleta':
 case 'ruletas':
 case 'suerte':
 case 'casino': {
