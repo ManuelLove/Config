@@ -3528,11 +3528,9 @@ if (roof) {
         }
     }
 }
-if (db.data.chats[m.chat]?.antispam) {
-    if (isFiltered(m.sender)) return; // evita que repita spam muy seguido
-    addFilter(m.sender);
-    addSpam(m.sender, spamDB);
-    if (isSpam(m.sender, spamDB)) return shoNherly('⛔ Estás haciendo spam, espera un momento.');
+if (global.db.data.chats[m.chat]?.antispam) {
+    if (isSpam(m.sender, global.spamDB)) return shoNherly('❌ *Estás enviando demasiados comandos. Espera un momento...*');
+    addSpam(m.sender, global.spamDB);
 }
 		async function cekgame(gamejid)
 		{
