@@ -3528,6 +3528,12 @@ if (roof) {
         }
     }
 }
+if (db.data.chats[m.chat]?.antispam) {
+    if (isFiltered(m.sender)) return; // evita que repita spam muy seguido
+    addFilter(m.sender);
+    addSpam(m.sender, spamDB);
+    if (isSpam(m.sender, spamDB)) return shoNherly('⛔ Estás haciendo spam, espera un momento.');
+}
 		async function cekgame(gamejid)
 		{
 			if (tekateki[gamejid])
