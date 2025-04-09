@@ -66,6 +66,10 @@ const
 } = require("@adiwajshing/baileys")
 const fs = require('fs');
 const path = require('path');
+global.spamDB = global.spamDB || []
+const { ResetSpam } = require('./lib/antispam.js') // ajusta la ruta si está en otra carpeta
+
+ResetSpam(global.spamDB)
 global.c = '`'
 const pickRandom = (arr) =>
 {
@@ -3525,6 +3529,12 @@ if (roof) {
             saveUserFire(db);
         }
     }
+}
+if (db.data.chats[m.chat]?.antispam) {
+    if (isFiltered(m.sender)) return; // evita que repita spam muy seguido
+    addFilter(m.sender);
+    addSpam(m.sender, spamDB);
+    if (isSpam(m.sender, spamDB)) return shoNherly('⛔ Estás haciendo spam, espera un momento.');
 }
 		async function cekgame(gamejid)
 		{
@@ -11801,51 +11811,44 @@ if (args[0] === "add") {
            }
 			}
 			break;
-			case 'antispam':
-			{
-				if (!isGroup) return shoNherly(mess.groups);
-				if (!isBotAdmins) return shoNherly(mess.abots);
-				if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins);
-				if (args.length < 1) return shoNherly('true/false?')
-				if (args[0] === 'true')
-				{
-					db.data.chats[m.chat].antispam = true
-					shoNherly(`${command} is activado`)
-				}
-				else if (args[0] === 'false')
-				{
-					db.data.chats[m.chat].antispam = false
-					shoNherly(`${command} is desactivado`)
-				}
-				if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-			}
-			break;
+			case 'antispam': {
+    if (!isGroup) return shoNherly(mess.groups);
+    if (!isBotAdmins) return shoNherly(mess.abots);
+    if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins);
+
+    if (args.length < 1) return shoNherly('Usa true o false para activar o desactivar el antispam');
+
+    let estado = args[0].toLowerCase();
+    if (estado === 'true') {
+        db.data.chats[m.chat].antispam = true;
+        shoNherly(`${command} ha sido *activado*`);
+    } else if (estado === 'false') {
+        db.data.chats[m.chat].antispam = false;
+        shoNherly(`${command} ha sido *desactivado*`);
+    } else {
+        return shoNherly('Argumento no válido. Usa true o false.');
+    }
+
+    if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat, {
+            image: { url: levelUpMessage.image },
+            caption: levelUpMessage.text,
+            footer: "LEVEL UP🔥",
+            buttons: [
+                {
+                    buttonId: `${prefix}tqto`,
+                    buttonText: { displayText: "TQTO 💡" }
+                },
+                {
+                    buttonId: `${prefix}menu`,
+                    buttonText: { displayText: "MENU 🍄" }
+                }
+            ],
+            viewOnce: true,
+        }, { quoted: hw });
+    }
+}
+break;
 			case 'delprem':
 			case 'deletepremium':
 			case 'delpremium':
