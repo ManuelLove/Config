@@ -5907,36 +5907,42 @@ case 'casino': {
     saveUserFire(db);
 }
 break;
-case 'suitpvp': { let poin = 10; let poin_lose = 10; let timeout = 60000; if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.sender))) return shoNherly(Termina tu juego anterior primero.);
+case 'suitpvp': {
+    let db = loadUserFire();
 
-if (m.mentionedJid[0] === m.sender) return shoNherly(`¡No puedes jugar contigo mismo!`);
-if (!m.mentionedJid[0]) return shoNherly(`_¿A quién quieres desafiar?_
+    if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.sender)))
+        return shoNherly(`Termina tu juego anterior de suit.`);
 
-Etiqueta a la persona.
+    if (!m.mentionedJid[0] || m.mentionedJid[0] === m.sender)
+        return shoNherly(`Etiqueta a un jugador válido para desafiar.\nEjemplo: ${prefix}suitpvp @usuario`);
 
-Ejemplo: ${prefix}suitpvp @usuario); if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.mentionedJid[0]))) return shoNherly(La persona ya está en un juego.`);
+    if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.mentionedJid[0])))
+        return shoNherly(`La persona ya está en otro juego.`);
 
-let id = 'suitpvp_' + new Date() * 1;
-let caption = `_*SUIT PvP*_
+    let id = 'suitpvp_' + new Date() * 1;
+    let name1 = m.pushName || 'Desconocido';
+    let name2 = await shoNhe.getName(m.mentionedJid[0]) || 'Desconocido';
 
-@${m.sender.split@[0]} desafió a @${m.mentionedJid[0].split@[0]} a un duelo de Piedra, Papel o Tijeras
+    let caption = `🤜 *SUIT PvP* 🤛\n\n${name1} ha desafiado a ${name2} a un duelo.\n\n${name2}, responde con "aceptar" o "rechazar".`;
+    shoNherly(caption);
 
-@${m.mentionedJid[0].split@[0]} escribe aceptar o rechazar`; shoNherly(caption, m.chat, { mentions: [m.sender, m.mentionedJid[0]] });
-
-suitpvp[id] = {
-    id,
-    chat: m.chat,
-    p: m.sender,
-    p2: m.mentionedJid[0],
-    status: 'wait',
-    waktu: setTimeout(() => {
-        if (suitpvp[id]) shoNherly(`⏳ Tiempo agotado, juego cancelado.`);
-        delete suitpvp[id];
-    }, timeout),
-    poin, poin_lose, timeout
-};
-
-} break;
+    suitpvp[id] = {
+        id,
+        chat: m.chat,
+        p: m.sender,
+        p2: m.mentionedJid[0],
+        status: 'wait',
+        timeout: 60000,
+        poin: 0,
+        waktu: setTimeout(() => {
+            if (suitpvp[id]) {
+                shoNherly(`⏳ Tiempo agotado, juego cancelado.`);
+                delete suitpvp[id];
+            }
+        }, 60000)
+    };
+}
+break;
 			case 'minas':
 			 			{
 				if (!isRegistered(m))
