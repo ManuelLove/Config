@@ -3528,10 +3528,6 @@ if (roof) {
         }
     }
 }
-if (global.db.data.chats[m.chat]?.antispam) {
-    if (isSpam(m.sender, global.spamDB)) return shoNherly('❌ *Estás enviando demasiados comandos. Espera un momento...*');
-    addSpam(m.sender, global.spamDB);
-}
 		async function cekgame(gamejid)
 		{
 			if (tekateki[gamejid])
