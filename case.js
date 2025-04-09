@@ -66,10 +66,6 @@ const
 } = require("@adiwajshing/baileys")
 const fs = require('fs');
 const path = require('path');
-global.spamDB = global.spamDB || []
-const { ResetSpam } = require('./lib/antispam.js') // ajusta la ruta si está en otra carpeta
-
-ResetSpam(global.spamDB)
 global.c = '`'
 const pickRandom = (arr) =>
 {
@@ -362,6 +358,8 @@ const
 	isSpam,
 	ResetSpam
 } = require('./lib/antispam');
+global.spamDB = global.spamDB || []
+ResetSpam(global.spamDB)
 const
 {
 	githubstalk,
