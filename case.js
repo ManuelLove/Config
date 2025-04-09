@@ -5886,10 +5886,10 @@ case 'casino': {
         db[m.sender].limit += recompensa;
         m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*¡Ganaste!* Recibes +${recompensa} límite`);
     } else if (puntosJugador < puntosComputadora) {
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*Perdiste* -${apuesta} límite`);
+        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*¡Perdiste!* Recibes -${apuesta} límite`);
     } else {
         db[m.sender].limit += apuesta;
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*Empate* Recuperas tu apuesta de ${apuesta} límite`);
+        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n*¡Empate!* Recibes ${apuesta} límite`);
     }
 
     saveUserFire(db);
