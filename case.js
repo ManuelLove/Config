@@ -3442,83 +3442,102 @@ ${isWin
 function parseMention(text) {
     return [...text.matchAll(/@(.*?)/g)].map(v => v[1]);
 }
-let roof = Object.values(suitpvp).find(roof => roof.id && [roof.p, roof.p2].includes(m.sender));
-if (roof) {
-    let db = loadUserFire();
+let roof = Object.values(suitpvp).find(r => r.id && r.status && [r.p, r.p2].includes(m.sender)); if (roof) { let reg = /^(piedra|papel|tijeras)$/i; let jugada = reg.exec(m.text?.toLowerCase() || '')?.[0];
 
-    if (m.sender == roof.p2 && /^aceptar$/i.test(m.text) && roof.status === 'wait') {
-        roof.status = 'play';
-        clearTimeout(roof.waktu);
+if (m.sender == roof.p2 && /^aceptar$/i.test(m.text) && roof.status === 'wait') {
+    roof.status = 'play';
+    clearTimeout(roof.waktu);
 
-        await shoNhe.sendMessage(roof.p, { text: 'El juego ha comenzado. Escribe: piedra, papel o tijeras.' });
-        await shoNhe.sendMessage(roof.p2, { text: 'El juego ha comenzado. Escribe: piedra, papel o tijeras.' });
+    let name1 = await shoNhe.getName(roof.p);
+    let name2 = await shoNhe.getName(roof.p2);
 
-        roof.waktu_milih = setTimeout(() => {
-            if (!roof.pilih || !roof.pilih2) {
-                shoNherly(`⏳ Tiempo agotado, juego cancelado.`);
-                delete suitpvp[roof.id];
-            }
-        }, roof.timeout);
-    }
+    await shoNhe.sendMessage(roof.chat, {
+        text: `✅ *${name2} aceptó el desafío de ${name1}*
 
-    let reg = /^(piedra|papel|tijeras)$/i;
-    if ([roof.p, roof.p2].includes(m.sender) && reg.test(m.text)) {
-        let jugada = reg.exec(m.text.toLowerCase())[0];
+Ambos jugadores escriban: piedra, papel o tijeras.`, mentions: [roof.p, roof.p2] });
 
-        if (m.sender === roof.p && !roof.pilih) {
-            roof.pilih = jugada;
-            shoNherly(`Elegiste *${jugada}*. Esperando al oponente...`);
-        }
+await shoNhe.sendMessage(roof.p, { text: '🗿 Piedra\n📄 Papel\n✂️ Tijeras\n\nEscribe tu jugada.' });
+    await shoNhe.sendMessage(roof.p2, { text: '🗿 Piedra\n📄 Papel\n✂️ Tijeras\n\nEscribe tu jugada.' });
 
-        if (m.sender === roof.p2 && !roof.pilih2) {
-            roof.pilih2 = jugada;
-            shoNherly(`Elegiste *${jugada}*. Procesando resultado...`);
-        }
-
-        if (roof.pilih && roof.pilih2) {
-            clearTimeout(roof.waktu_milih);
-
-            let resultado = '';
-            let empate = false;
-            let ganador;
-
-            let jug1 = roof.pilih;
-            let jug2 = roof.pilih2;
-
-            if (jug1 === jug2) {
-                empate = true;
-            } else if (
-                (jug1 === 'piedra' && jug2 === 'tijeras') ||
-                (jug1 === 'tijeras' && jug2 === 'papel') ||
-                (jug1 === 'papel' && jug2 === 'piedra')
-            ) {
-                ganador = roof.p;
-            } else {
-                ganador = roof.p2;
-            }
-
-            let name1 = await shoNhe.getName(roof.p);
-            let name2 = await shoNhe.getName(roof.p2);
-            let mensaje = `🎮 *Resultado de Suit PvP*\n\n${name1}: *${jug1}*\n${name2}: *${jug2}*\n\n`;
-
-            if (empate) {
-                mensaje += `⚖️ *Empate* - No hay ganador.`;
-            } else {
-                let winName = await shoNhe.getName(ganador);
-                let isOwner = db[ganador]?.role === 'owner';
-                let reward = Math.floor(Math.random() * 9 + 7); // 7 a 15
-
-                if (!db[ganador]) db[ganador] = { limit: 0, role: 'user' };
-                if (!isOwner) db[ganador].limit += reward;
-
-                mensaje += `🏆 *Ganador:* ${winName}\n🎁 *Recompensa:* ${isOwner ? '0' : '+' + reward} límite`;
-            }
-
-            shoNhe.sendMessage(roof.chat, { text: mensaje, mentions: [roof.p, roof.p2] }, { quoted: m });
+    roof.waktu_milih = setTimeout(() => {
+        if (!roof.pilih || !roof.pilih2) {
+            shoNhe.sendMessage(roof.chat, {
+                text: `⏳ *Tiempo agotado*, juego cancelado.`,
+                mentions: [roof.p, roof.p2]
+            });
             delete suitpvp[roof.id];
-            saveUserFire(db);
         }
+    }, roof.timeout);
+} else if (m.sender == roof.p2 && /^(rechazar|cancelar)$/i.test(m.text) && roof.status === 'wait') {
+    let name2 = await shoNhe.getName(roof.p2);
+    shoNherly(`❌ ${name2} rechazó el desafío.`);
+    delete suitpvp[roof.id];
+}
+
+if (!jugada) return;
+
+if (m.sender === roof.p && !roof.pilih) {
+    roof.pilih = jugada;
+    shoNherly(`✅ Elegiste *${jugada}*. Esperando al oponente...`);
+    if (!roof.pilih2) {
+        await shoNhe.sendMessage(roof.p2, { text: `⚠️ Tu oponente ya eligió, elige tú ahora:` });
     }
+} else if (m.sender === roof.p2 && !roof.pilih2) {
+    roof.pilih2 = jugada;
+    shoNherly(`✅ Elegiste *${jugada}*. Esperando al oponente...`);
+    if (!roof.pilih) {
+        await shoNhe.sendMessage(roof.p, { text: `⚠️ Tu oponente ya eligió, elige tú ahora:` });
+    }
+}
+
+if (roof.pilih && roof.pilih2) {
+    clearTimeout(roof.waktu_milih);
+
+    let ganador = '';
+    let empate = false;
+
+    if ((roof.pilih === 'piedra' && roof.pilih2 === 'tijeras') ||
+        (roof.pilih === 'tijeras' && roof.pilih2 === 'papel') ||
+        (roof.pilih === 'papel' && roof.pilih2 === 'piedra')) {
+        ganador = roof.p;
+    } else if (roof.pilih === roof.pilih2) {
+        empate = true;
+    } else {
+        ganador = roof.p2;
+    }
+
+    const db = loadUserFire();
+    [roof.p, roof.p2].forEach(j => {
+        if (!db[j]) db[j] = { limit: 0, role: 'user' };
+    });
+
+    let recompensa = Math.floor(Math.random() * 9) + 7; // 7-15
+    if (!empate && db[ganador].role !== 'owner') {
+        db[ganador].limit += recompensa;
+    }
+
+    let name1 = await shoNhe.getName(roof.p);
+    let name2 = await shoNhe.getName(roof.p2);
+
+    let result = `🎮 *Resultados del Suit PvP*
+
+${name1} eligió: ${roof.pilih} ${name2} eligió: ${roof.pilih2}
+
+`;
+
+if (empate) {
+        result += `⚖️ *Empate* - No hay ganadores.`;
+    } else {
+        result += `🏆 *Ganador:* ${await shoNhe.getName(ganador)}
+
+🎁 Recompensa: +${recompensa} límite`; }
+
+shoNhe.sendMessage(roof.chat, { text: result, mentions: [roof.p, roof.p2] });
+
+    delete suitpvp[roof.id];
+    saveUserFire(db);
+}
+
 }
 		async function cekgame(gamejid)
 		{
@@ -5888,42 +5907,36 @@ case 'casino': {
     saveUserFire(db);
 }
 break;
-case 'suitpvp': {
-    let db = loadUserFire();
+case 'suitpvp': { let poin = 10; let poin_lose = 10; let timeout = 60000; if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.sender))) return shoNherly(Termina tu juego anterior primero.);
 
-    if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.sender)))
-        return shoNherly(`Termina tu juego anterior de suit.`);
+if (m.mentionedJid[0] === m.sender) return shoNherly(`¡No puedes jugar contigo mismo!`);
+if (!m.mentionedJid[0]) return shoNherly(`_¿A quién quieres desafiar?_
 
-    if (!m.mentionedJid[0] || m.mentionedJid[0] === m.sender)
-        return shoNherly(`Etiqueta a un jugador válido para desafiar.\nEjemplo: ${prefix}suitpvp @usuario`);
+Etiqueta a la persona.
 
-    if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.mentionedJid[0])))
-        return shoNherly(`La persona ya está en otro juego.`);
+Ejemplo: ${prefix}suitpvp @usuario); if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.mentionedJid[0]))) return shoNherly(La persona ya está en un juego.`);
 
-    let id = 'suitpvp_' + new Date() * 1;
-    let name1 = m.pushName || 'Desconocido';
-    let name2 = await shoNhe.getName(m.mentionedJid[0]) || 'Desconocido';
+let id = 'suitpvp_' + new Date() * 1;
+let caption = `_*SUIT PvP*_
 
-    let caption = `🤜 *SUIT PvP* 🤛\n\n${name1} ha desafiado a ${name2} a un duelo.\n\n${name2}, responde con "aceptar" o "rechazar".`;
-    shoNherly(caption);
+@${m.sender.split@[0]} desafió a @${m.mentionedJid[0].split@[0]} a un duelo de Piedra, Papel o Tijeras
 
-    suitpvp[id] = {
-        id,
-        chat: m.chat,
-        p: m.sender,
-        p2: m.mentionedJid[0],
-        status: 'wait',
-        timeout: 60000,
-        poin: 0,
-        waktu: setTimeout(() => {
-            if (suitpvp[id]) {
-                shoNherly(`⏳ Tiempo agotado, juego cancelado.`);
-                delete suitpvp[id];
-            }
-        }, 60000)
-    };
-}
-break;
+@${m.mentionedJid[0].split@[0]} escribe aceptar o rechazar`; shoNherly(caption, m.chat, { mentions: [m.sender, m.mentionedJid[0]] });
+
+suitpvp[id] = {
+    id,
+    chat: m.chat,
+    p: m.sender,
+    p2: m.mentionedJid[0],
+    status: 'wait',
+    waktu: setTimeout(() => {
+        if (suitpvp[id]) shoNherly(`⏳ Tiempo agotado, juego cancelado.`);
+        delete suitpvp[id];
+    }, timeout),
+    poin, poin_lose, timeout
+};
+
+} break;
 			case 'minas':
 			 			{
 				if (!isRegistered(m))
