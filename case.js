@@ -983,13 +983,15 @@ END:VCARD`
 			{
 				global.db.data.chats[m.chat] = {
 					isBanned: true,
-					antispam: false
+					antispam: false,
+					antitoxic: false
 				};
 			}
 			else
 			{
 				if (!('isBanned' in chats)) chats.isBanned = true;
 				if (!('antispam' in chats)) chats.antispam = false;
+				if (!('antitoxic' in chats)) chats.antispam = false;
 				if (!('antilink' in chats)) chats.antilink = false;
     			if (!('antilinkgc' in chats)) chats.antilinkgc = false;
 			}
@@ -11809,6 +11811,24 @@ if (args[0] === "add") {
            }
 			}
 			break;
+		case 'antitoxic':
+{
+	if (!isGroup) return shoNherly(mess.groups);
+	if (!isBotAdmins) return shoNherly(mess.abots);
+	if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins);
+	if (args.length < 1) return shoNherly('Usa: antitoxic true / false');
+
+	if (args[0] === 'true') {
+		db.data.chats[m.chat].antitoxic = true;
+		shoNherly(`${command} activado correctamente.`);
+	} else if (args[0] === 'false') {
+		db.data.chats[m.chat].antitoxic = false;
+		shoNherly(`${command} desactivado correctamente.`);
+	} else {
+		shoNherly('Argumento inválido. Usa: antitoxic true / false');
+	}
+}
+break;
 			case 'antispam': {
     if (!isGroup) return shoNherly(mess.groups);
     if (!isBotAdmins) return shoNherly(mess.abots);
