@@ -18604,11 +18604,14 @@ if (apkSizeMB > maxSizeMB) {
 		if (lastUpdate) caption += `🕒 *Última actualización:* ${lastUpdate}`;
 
 		await shoNhe.sendMessage(m.chat, {
-			document: buffer,
-			fileName: `${name}.apk`,
-			mimetype: 'application/vnd.android.package-archive',
-			caption: caption
-		}, { quoted: hw });
+			const filePath = path.join(__dirname, 'temp', `${name}.apk`);
+fs.writeFileSync(filePath, buffer);
+await shoNhe.sendMessage(m.chat, {
+  document: fs.readFileSync(filePath),
+  fileName: `${name}.apk`,
+  mimetype: 'application/vnd.android.package-archive'
+}, { quoted: hw });
+fs.unlinkSync(filePath); // limpiar
 
 	} catch (err) {
 		console.error('❌ Error al procesar la descarga:', err);
