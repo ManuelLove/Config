@@ -1071,7 +1071,7 @@ END:VCARD`
 
 		if (user.warn < 4) {
 			await shoNhe.sendMessage(m.chat, {
-				text: `☣️ *PALABRA PROHIBIDA* ☣️\n\n*@${m.sender.split('@')[0]}* La palabra \`(${isToxic})\` está prohibida.\n⚠️ *Advertencias:* \`${user.warn}/4\``,
+				text: `☣️ *PALABRA PROHIBIDA* ☣️\n\n*@${m.sender.split('@')[0]}* La palabra \`(${isToxic})\` está prohibida.\n⚠️ *Advertencias:* \`${user.warn}/4\`${namaBot}`,
 				mentions: [m.sender]
 			});
 			await shoNhe.sendMessage(m.chat, {
@@ -1085,7 +1085,7 @@ END:VCARD`
 		} else {
 			user.warn = 0;
 			await shoNhe.sendMessage(m.chat, {
-				text: `☣️ *ELIMINADO POR TOXICIDAD* ☣️\n\n*@${m.sender.split('@')[0]}* fue eliminado por decir \`(${isToxic})\``,
+				text: `☣️ *ELIMINADO POR TOXICIDAD* ☣️\n\n*@${m.sender.split('@')[0]}* fue eliminado por decir \`(${isToxic})\`${namaBot}`,
 				mentions: [m.sender]
 			});
 			await shoNhe.sendMessage(m.chat, {
@@ -11691,7 +11691,8 @@ case 'warning': {
 🫵 *${reason}*
 
 ADVERTENCIA
-⚠️ *${user.warn}/4*`;
+⚠️ *${user.warn}/4*
+${namaBot}`;
 
   await shoNhe.sendMessage(m.chat, { text: warnText, mentions: [who] }, { quoted: m });
 
@@ -11721,7 +11722,7 @@ case 'quitaradvertir': {
 ADVERTENCIA
 ⚠️ Antes: *${user.warn + 1}/4*
 ⚠️ Ahora: *${user.warn}/4*
-${wm}`;
+${namaBot}`;
 
   await shoNhe.sendMessage(m.chat, { text, mentions: [who] }, { quoted: m });
 }
@@ -11748,7 +11749,7 @@ ${await Promise.all(adv.map(async ([jid, user], i) => {
   })).then(list => list.join('\n'))}
 ╰•·–––––––––––––––––––·•*
 ⚠️ ADVERTENCIA ⇢ ${adv.length > 0 ? '*?/4*' : '*0/4*'}
-${wm}`;
+${namaBot}`;
 
   await shoNhe.sendMessage(m.chat, { text: caption, mentions: adv.map(([jid]) => jid) }, { quoted: m });
 }
