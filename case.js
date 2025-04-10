@@ -18603,8 +18603,7 @@ if (apkSizeMB > maxSizeMB) {
 		if (size) caption += `💾 *Tamaño:* ${size}\n`;
 		if (lastUpdate) caption += `🕒 *Última actualización:* ${lastUpdate}`;
 
-		await shoNhe.sendMessage(m.chat, {
-			const filePath = path.join(__dirname, 'temp', `${name}.apk`);
+const filePath = path.join(__dirname, 'temp', `${name}.apk`);
 fs.writeFileSync(filePath, buffer);
 await shoNhe.sendMessage(m.chat, {
   document: fs.readFileSync(filePath),
