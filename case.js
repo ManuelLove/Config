@@ -1060,7 +1060,7 @@ END:VCARD`
 			}
 		}
 		if (db.data.chats[m.chat].antitoxic) {
-	const toxicRegex = /g0re|g0r3|g.o.r.e|sap0|malparido|malparida|chocha|chup4l4|hijodeputa|putita|putito|pene|droga|verga|mierda|caca|idiota|maricon|bitch|fuck|shit|motherfucker|polla|semen|chupamela|estupido|estupida|imbecil|zorra|puta|puto|perra|perro|coño|pito|csm|ptm|baboso|babosa|feo|fea|gordo|gorda|chupapolla/i;
+	const toxicRegex = /g0re|g0r3|g.o.r.e|sap0|sap4|malparido|malparida|malparidos|malparidas|m4lp4rid0|m4lp4rido|m4lparido|malp4rido|m4lparid0|malp4rid0|chocha|chup4la|chup4l4|chupalo|chup4lo|chup4l0|chupal0|chupon|chupameesta|sabandija|hijodelagranputa|hijodeputa|hijadeputa|hijadelagranputa|kbron|kbrona|cajetuda|laconchadedios|putita|putito|put1t4|putit4|putit0|put1to|put1ta|pr0stitut4s|pr0stitutas|pr05titutas|pr0stitut45|prostitut45|prostituta5|pr0stitut45|fanax|f4nax|drogas|droga|dr0g4|nepe|p3ne|p3n3|pen3|p.e.n.e|pvt0|pvto|put0|hijodelagransetentamilparesdeputa|Chingadamadre|coño|c0ño|coñ0|c0ñ0|afeminado|drog4|cocaína|marihuana|chocho|chocha|cagon|pedorro|agrandado|agrandada|pedorra|cagona|pinga|joto|sape|mamar|chigadamadre|hijueputa|chupa|caca|bobo|boba|loco|loca|chupapolla|estupido|estupida|estupidos|polla|pollas|idiota|maricon|chucha|verga|vrga|naco|zorra|zorro|zorras|zorros|pito|huevon|huevona|huevones|rctmre|mrd|ctm|csm|cepe|sepe|sepesito|cepecito|cepesito|hldv|ptm|baboso|babosa|babosos|babosas|feo|fea|feos|feas|mamawebos|chupame|bolas|qliao|imbecil|embeciles|kbrones|cabron|capullo|carajo|gore|gorre|gorreo|gordo|gorda|gordos|gordas|sapo|sapa|mierda|cerdo|cerda|puerco|puerca|perra|perro|dumb|fuck|shit|bullshit|cunt|semen|bitch|motherfucker|foker|fucking/i;
 	const isToxic = toxicRegex.exec(budy);
 
 	if (isToxic && !isAdmins && !m.key.fromMe && !isShoNheOwn && isBotAdmins) {
@@ -11673,6 +11673,75 @@ if (args[0] === "add") {
            }
 			}
 			break;
+		case 'advertir':
+case 'advertencia':
+case 'warn':
+case 'warning': {
+    const smsAdveu1 = () => `${lenguajeGB['smsAvisoAG']()}*SOLO PUEDE USAR SI ESTÁ ACTIVADA LA FUNCIÓN:*\n`;
+    const smsAdveu2 = () => 'Motivo';
+    const smsAdveu3 = () => `${lenguajeGB['smsAvisoMG']()}*RECUERDE ESCRIBIR EL MOTIVO DE LA ADVERTENCIA*\n`;
+    const smsAdveu4 = () => '*RECIBIÓ UNA ADVERTENCIA EN ESTE GRUPO!!*';
+    const smsAdveu5 = () => 'ADVERTENCIA';
+    const smsAdveu7 = () => '*TE LO ADVERTI VARIAS VECES!!*';
+    const smsAdveu8 = () => '*AHORA SERÁS ELIMINADO(A)* 🙄';
+
+    let lenGB = lenguajeGB.lenguaje() == 'en' ? usedPrefix + 'on antitoxic' : usedPrefix + 'on antitoxicos';
+    if (!db.data.chats[m.chat].antitoxic && m.isGroup) return shoNhe.sendMessage(m.chat, { text: smsAdveu1() + lenGB }, { quoted: m });
+
+    let who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false;
+    if (!who) return shoNhe.sendMessage(m.chat, { text: lenguajeGB.smsMalused3() + `*${usedPrefix + command} @user ${smsAdveu2()}*` }, { quoted: m });
+
+    let txt = text.replace('@' + who.split`@`[0], '').trim();
+    if (!txt) return shoNhe.sendMessage(m.chat, { text: smsAdveu3() + `*${usedPrefix + command} @user ${smsAdveu2()}*` }, { quoted: m });
+
+    let user = global.db.data.users[who];
+    user.warn += 1;
+
+    await shoNhe.sendMessage(m.chat, {
+        text: `*@${who.split`@`[0]}* ${smsAdveu4()}\n\n🫵 *${txt}*\n\n*${smsAdveu5()}*\n⚠️ *${user.warn}/4*\n${wm}`,
+        mentions: [who]
+    });
+
+    if (user.warn >= 4) {
+        user.warn = 0;
+        await shoNhe.sendMessage(m.chat, { text: `${smsAdveu7()}\n*@${who.split`@`[0]}* ${smsAdveu8()}`, mentions: [who] });
+        user.banned = true;
+        await shoNhe.groupParticipantsUpdate(m.chat, [who], 'remove');
+    }
+    break;
+}
+
+case 'deladvertir':
+case 'eliminaradvertir':
+case 'quitaradvertir': {
+    const smsAdveu10 = () => '*SE LE ELIMINÓ UNA ADVERTENCIA EN ESTE GRUPO!!*';
+    const smsAdveu5 = () => 'ADVERTENCIA';
+    const smsAdveu11 = () => 'Antes:';
+    const smsAdveu12 = () => 'Ahora:';
+
+    let who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false;
+    if (!who) return shoNhe.sendMessage(m.chat, { text: lenguajeGB.smsMalused3() + `*${usedPrefix + command} @user*` }, { quoted: m });
+
+    let user = global.db.data.users[who];
+    user.warn -= 1;
+    await shoNhe.sendMessage(m.chat, {
+        text: `♻️ *@${who.split`@`[0]}* ${smsAdveu10()}\n\n*${smsAdveu5()}*\n⚠️ *${smsAdveu11()} ${user.warn + 1}/4*\n⚠️ *${smsAdveu12()} ${user.warn}/4*`,
+        mentions: [who]
+    });
+    break;
+}
+
+case 'listaadv':
+case 'listadv':
+case 'advlist': {
+    let adv = Object.entries(global.db.data.users).filter(([_, u]) => u.warn > 0);
+    let caption = `⚠️ 𝙐𝙎𝙐𝘼𝙍𝙄𝙊𝙎 𝘼𝘿𝙑𝙀𝙍𝙏𝙄𝘿𝙊𝙎\n*╭•·–––––––––––––––––––·•*\n│ *Total : ${adv.length} Usuarios*\n` + adv.map(([jid, user], i) => {
+        let name = await shoNhe.getName(jid).catch(() => 'Sin Nombre');
+        return `│ *${i + 1}.* ${name} *(${user.warn}/4)*\n│ @${jid.split`@`[0]}\n│ - - - - - - - - -`;
+    }).join('\n') + `\n*╰•·–––––––––––––––––––·•*\n\n${wm}`;
+    await shoNhe.sendMessage(m.chat, { text: caption, mentions: adv.map(([jid]) => jid) }, { quoted: m });
+    break;
+}
 		case 'antitoxic':
 {
 	if (!isGroup) return shoNherly(mess.groups)
