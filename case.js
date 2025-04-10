@@ -3276,7 +3276,7 @@ default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURICompon
         boom[m.sender].pick++; 
 
         if (boom[m.sender].lolos < 1) { 
-    let limiteGanado = Math.floor(Math.random() * 15) + 7; // Gana entre 7 y 15 de límite
+    let limiteGanado = 20; // Gana entre 7 y 15 de límite
 
     // Cargar la base de datos
     const db = loadUserFire();
@@ -3347,7 +3347,7 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
     }
 
     if (!mensaje.includes("_")) {
-    let recompensa = Math.floor(Math.random() * 15) + 7; // Límite aleatorio entre 7 y 15
+    let recompensa = 20; // Límite aleatorio entre 7 y 15
 
     // Cargar la base de datos
     const db = loadUserFire();
@@ -3557,7 +3557,7 @@ if (roof) {
             } else {
                 let winName = await shoNhe.getName(ganador);
                 let isOwner = db[ganador]?.role === 'owner';
-                let reward = Math.floor(Math.random() * 9 + 7); // 7 a 15
+                let reward = 20; // 7 a 15
 
                 if (!db[ganador]) db[ganador] = { limit: 0, role: 'user' };
                 if (!isOwner) db[ganador].limit += reward;
