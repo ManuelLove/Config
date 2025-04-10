@@ -1071,7 +1071,7 @@ END:VCARD`
 
 		if (user.warn < 4) {
 			await shoNhe.sendMessage(m.chat, {
-				text: `☣️ *PALABRA PROHIBIDA* ☣️\n\n*@${m.sender.split('@')[0]}* La palabra \`(${isToxic})\` está prohibida.\n⚠️ *Advertencias:* \`${user.warn}/4\`>${namaBot}`,
+				text: `☣️ *PALABRA PROHIBIDA* ☣️\n\n*@${m.sender.split('@')[0]}* La palabra \`(${isToxic})\` está prohibida.\n⚠️ *Advertencias:* \`${user.warn}/4\`> ${namaBot}`,
 				mentions: [m.sender]
 			});
 			await shoNhe.sendMessage(m.chat, {
@@ -1085,7 +1085,7 @@ END:VCARD`
 		} else {
 			user.warn = 0;
 			await shoNhe.sendMessage(m.chat, {
-				text: `☣️ *ELIMINADO POR TOXICIDAD* ☣️\n\n*@${m.sender.split('@')[0]}* fue eliminado por decir \`(${isToxic})\`>${namaBot}`,
+				text: `☣️ *ELIMINADO POR TOXICIDAD* ☣️\n\n*@${m.sender.split('@')[0]}* fue eliminado por decir \`(${isToxic})\`> ${namaBot}`,
 				mentions: [m.sender]
 			});
 			await shoNhe.sendMessage(m.chat, {
@@ -11690,7 +11690,7 @@ case 'warn': {
 
 ADVERTENCIA
 ⚠️ *${user.warn}/4*
->${namaBot}`;
+> ${namaBot}`;
 
   await shoNhe.sendMessage(m.chat, { text: warnText, mentions: [who] }, { quoted: m });
 
@@ -11718,7 +11718,7 @@ case 'unwarn': {
 ADVERTENCIA
 ⚠️ Antes: *${user.warn + 1}/4*
 ⚠️ Ahora: *${user.warn}/4*
->${namaBot}`;
+> ${namaBot}`;
 
   await shoNhe.sendMessage(m.chat, { text, mentions: [who] }, { quoted: m });
 }
@@ -11727,7 +11727,7 @@ break;
 // LISTA DE ADVERTIDOS
 case 'listadv': {
   let adv = Object.entries(global.db.data.users).filter(user => user[1].warn);
-  let caption = `⚠️ USUARIOS ADVERTIDOS : WARNED
+  let caption = `⚠️ USUARIOS ADVERTIDOS :
 ╭•·–––––––––––––––––––·•*
 │ Total : ${adv.length} Usuarios
 ${await Promise.all(adv.map(async ([jid, user], i) => {
@@ -11742,7 +11742,7 @@ ${await Promise.all(adv.map(async ([jid, user], i) => {
   })).then(list => list.join('\n'))}
 ╰•·–––––––––––––––––––·•*
 ⚠️ Cada usuario puede recibir hasta *4 advertencias*
->${namaBot}`;
+> ${namaBot}`;
 
   await shoNhe.sendMessage(m.chat, { text: caption, mentions: adv.map(([jid]) => jid) }, { quoted: m });
 }
