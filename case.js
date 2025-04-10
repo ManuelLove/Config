@@ -18617,6 +18617,10 @@ await new Promise((resolve, reject) => {
   writer.on('finish', resolve);
   writer.on('error', reject);
 });
+		let caption = `📱 *Nombre:* ${name}\n`;
+		if (pkg) caption += `📦 *Paquete:* ${pkg}\n`;
+		if (size) caption += `💾 *Tamaño:* ${size}\n`;
+		if (lastUpdate) caption += `🕒 *Última actualización:* ${lastUpdate}`;
 
 		await shoNhe.sendMessage(m.chat, {
   document: fs.readFileSync(filePath),
