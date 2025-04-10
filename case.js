@@ -15896,13 +15896,12 @@ break
 				const data = await fetchJson(`https://api.waifu.pics/nsfw/${command}`);
 				await shoNhe.sendMessage(m.chat,
 				{
-					video:
-					{
-						url: data.url
-					},
-					gifPlayback: true,
-					caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
-					footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+					video: {
+    url: data.url
+  },
+  gifPlayback: true,
+  caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+  footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
 					buttons: [
 					{
 						buttonId: prefix + command,
