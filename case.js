@@ -5916,16 +5916,19 @@ case 'casino': {
     let apuesta = parseInt(args[0]);
     if (isNaN(apuesta) || apuesta <= 0) return m.reply('❌ Ingresa una cantidad válida para apostar.');
 
-    if (db[m.sender].role === 'owner') {
-        return m.reply('Eres owner, no puedes ganar ni perder límite en este juego.');
-    }
-
-    let userLimit = db[m.sender].limit;
-    if (apuesta > userLimit) return m.reply('❌ No tienes suficiente límite para apostar.');
-
     let puntosJugador = Math.floor(Math.random() * 101);
     let puntosComputadora = Math.floor(Math.random() * 101);
 
+    if (db[m.sender].role === 'owner') {
+        // Solo mostrar el resultado, sin modificar límite
+        let resultadoTexto = `🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*Computadora:* ${puntosComputadora} puntos\n\n`;
+        if (puntosJugador > puntosComputadora) resultadoTexto += '*¡Ganaste!* Recibes +0 límite';
+        else if (puntosJugador < puntosComputadora) resultadoTexto += '*¡Perdiste!* Recibes -0 límite';
+        else resultadoTexto += '*¡Empate!* Recibes +0 límite';
+        return m.reply(resultadoTexto);
+    }
+
+    if (apuesta > db[m.sender].limit) return m.reply('❌ No tienes suficiente límite para apostar.');
     db[m.sender].limit -= apuesta;
 
     if (puntosJugador > puntosComputadora) {
