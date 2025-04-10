@@ -5957,11 +5957,11 @@ case 'suitpvp': {
 
     if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.mentionedJid[0])))
         return shoNherly(`La persona ya está en otro juego.`);
-if (!(await firely(m, mess.waits))) return;
+
     let id = 'suitpvp_' + new Date() * 1;
     let name1 = m.pushName || 'Desconocido';
     let name2 = await shoNhe.getName(m.mentionedJid[0]) || 'Desconocido';
-
+if (!(await firely(m, mess.waits))) return;
     let caption = `🤜 *SUIT PvP* 🤛\n\n${name1} ha desafiado a ${name2} a un duelo.\n\n${name2}, responde con "aceptar" o "rechazar".`;
     shoNherly(caption);
 
