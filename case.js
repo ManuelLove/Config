@@ -3490,7 +3490,7 @@ function parseMention(text) {
 let roof = Object.values(suitpvp).find(roof => roof.id && [roof.p, roof.p2].includes(m.sender));
 if (roof) {
     let db = loadUserFire();
-
+if (!(await firely(m, mess.waits))) return;
     	if (m.sender == roof.p2 && /^(aceptar|ok|yes|si)$/i.test(m.text) && m.isGroup && roof.status == 'wait') {
 		roof.status = 'play';
 		roof.asal = m.chat;
@@ -5948,7 +5948,7 @@ case 'casino': {
 break;
 case 'suitpvp': {
     let db = loadUserFire();
-
+if (!(await firely(m, mess.waits))) return;
     if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.sender)))
         return shoNherly(`Termina tu juego anterior de suit.`);
 
