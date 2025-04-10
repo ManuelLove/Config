@@ -9360,14 +9360,12 @@ ${menuforu(prefix, simbols)}
 
 ┌╾⚟┉➲${c}【 ɪsʟɑᴍ ᴍᴇɴᴜ 】${c} ⟢
 ├────────────────
-┞ᗛ ${simbols} ${prefix}jadwalsholat
-┞ᗛ ${simbols} ${prefix}asmaulhusna
-┞ᗛ ${simbols} ${prefix}ayatkursi
-┞ᗛ ${simbols} ${prefix}bacaansholat
-┞ᗛ ${simbols} ${prefix}doaharian
-┞ᗛ ${simbols} ${prefix}quotesislami
-┞ᗛ ${simbols} ${prefix}doatahlil
-┞ᗛ ${simbols} ${prefix}kisahnabi
+┞ᗛ ${simbols} ${prefix}hentai
+┞ᗛ ${simbols} ${prefix}hentaiimg
+┞ᗛ ${simbols} ${prefix}hwaifu
+┞ᗛ ${simbols} ${prefix}hneko
+┞ᗛ ${simbols} ${prefix}trap
+┞ᗛ ${simbols} ${prefix}blowjob
 └──────────────────╼.✗`
 				const tombol = [
 				{
@@ -9467,7 +9465,7 @@ ${menuforu(prefix, simbols)}
 ┞ᗛ ${simbols} ${prefix}ytmp3 <link>    
 ┞ᗛ ${simbols} ${prefix}ytmp4 <link>      
 ┞ᗛ ${simbols} ${prefix}videy <link>       
-┞ᗛ ${simbols} ${prefix}song <q>            
+┞ᗛ ${simbols} ${prefix}apk <q>            
 ┞ᗛ ${simbols} ${prefix}ytsearch <q>      
 ┞ᗛ ${simbols} ${prefix}tiktok <link>     
 ┞ᗛ ${simbols} ${prefix}tiktoksearch <q>
@@ -9847,7 +9845,7 @@ break;
 ┞ᗛ ${simbols} ${prefix}claudeai
 ┞ᗛ ${simbols} ${prefix}dbrxai
 ┞ᗛ ${simbols} ${prefix}deepseek
-┞ᗛ ${simbols} ${prefix}dreamshaper
+┞ᗛ ${simbols} ${prefix}imgai
 ┞ᗛ ${simbols} ${prefix}img2text
 ┞ᗛ ${simbols} ${prefix}venice
 ┞ᗛ ${simbols} ${prefix}latukam
@@ -9962,6 +9960,18 @@ break;
 ┞ᗛ ${simbols} ${prefix}tebaklogo
 ┞ᗛ ${simbols} ${prefix}tebakaplikasi
 ┞ᗛ ${simbols} ${prefix}suit
+┞ᗛ ${simbols} ${prefix}suitpvp
+┞ᗛ ${simbols} ${prefix}minas
+┞ᗛ ${simbols} ${prefix}casino
+┞ᗛ ${simbols} ${prefix}ahorcado
+┞ᗛ ${simbols} ${prefix}personalidad
+┞ᗛ ${simbols} ${prefix}gay
+┞ᗛ ${simbols} ${prefix}doxear
+┞ᗛ ${simbols} ${prefix}ttc
+┞ᗛ ${simbols} ${prefix}tictactoe
+┞ᗛ ${simbols} ${prefix}delttc
+┞ᗛ ${simbols} ${prefix}pregunta
+┞ᗛ ${simbols} ${prefix}follar
 ┞ᗛ ${simbols} ${prefix}tebakkata
 ┞ᗛ ${simbols} ${prefix}asahotak
 ┞ᗛ ${simbols} ${prefix}lengkapikalimat
@@ -10081,106 +10091,6 @@ break;
 ┞ᗛ ${simbols} ${prefix}reverse
 ┞ᗛ ${simbols} ${prefix}fat
 ┞ᗛ ${simbols} ${prefix}squirrel
-┞ᗛ ${simbols} ${prefix}sound1
-┞ᗛ ${simbols} ${prefix}sound2
-┞ᗛ ${simbols} ${prefix}sound3
-┞ᗛ ${simbols} ${prefix}sound4
-┞ᗛ ${simbols} ${prefix}sound5
-┞ᗛ ${simbols} ${prefix}sound6
-┞ᗛ ${simbols} ${prefix}sound7
-┞ᗛ ${simbols} ${prefix}sound8
-┞ᗛ ${simbols} ${prefix}sound9
-┞ᗛ ${simbols} ${prefix}sound10
-┞ᗛ ${simbols} ${prefix}sound11
-┞ᗛ ${simbols} ${prefix}sound12
-┞ᗛ ${simbols} ${prefix}sound13
-┞ᗛ ${simbols} ${prefix}sound14
-┞ᗛ ${simbols} ${prefix}sound15
-┞ᗛ ${simbols} ${prefix}sound16
-┞ᗛ ${simbols} ${prefix}sound17
-┞ᗛ ${simbols} ${prefix}sound18
-┞ᗛ ${simbols} ${prefix}sound19
-┞ᗛ ${simbols} ${prefix}sound20
-┞ᗛ ${simbols} ${prefix}sound21
-┞ᗛ ${simbols} ${prefix}sound22
-┞ᗛ ${simbols} ${prefix}sound23
-┞ᗛ ${simbols} ${prefix}sound24
-┞ᗛ ${simbols} ${prefix}sound25
-┞ᗛ ${simbols} ${prefix}sound26
-┞ᗛ ${simbols} ${prefix}sound27
-┞ᗛ ${simbols} ${prefix}sound28
-┞ᗛ ${simbols} ${prefix}sound29
-┞ᗛ ${simbols} ${prefix}sound30
-┞ᗛ ${simbols} ${prefix}sound31
-┞ᗛ ${simbols} ${prefix}sound32
-┞ᗛ ${simbols} ${prefix}sound33
-┞ᗛ ${simbols} ${prefix}sound34
-┞ᗛ ${simbols} ${prefix}sound35
-┞ᗛ ${simbols} ${prefix}sound36
-┞ᗛ ${simbols} ${prefix}sound37
-┞ᗛ ${simbols} ${prefix}sound38
-┞ᗛ ${simbols} ${prefix}sound39
-┞ᗛ ${simbols} ${prefix}sound40
-┞ᗛ ${simbols} ${prefix}sound41
-┞ᗛ ${simbols} ${prefix}sound42
-┞ᗛ ${simbols} ${prefix}sound43
-┞ᗛ ${simbols} ${prefix}sound44
-┞ᗛ ${simbols} ${prefix}sound45
-┞ᗛ ${simbols} ${prefix}sound46
-┞ᗛ ${simbols} ${prefix}sound47
-┞ᗛ ${simbols} ${prefix}sound48
-┞ᗛ ${simbols} ${prefix}sound49
-┞ᗛ ${simbols} ${prefix}sound50
-┞ᗛ ${simbols} ${prefix}sound51
-┞ᗛ ${simbols} ${prefix}sound52
-┞ᗛ ${simbols} ${prefix}sound53
-┞ᗛ ${simbols} ${prefix}sound54
-┞ᗛ ${simbols} ${prefix}sound55
-┞ᗛ ${simbols} ${prefix}sound56
-┞ᗛ ${simbols} ${prefix}sound57
-┞ᗛ ${simbols} ${prefix}sound58
-┞ᗛ ${simbols} ${prefix}sound59
-┞ᗛ ${simbols} ${prefix}sound60
-┞ᗛ ${simbols} ${prefix}sound61
-┞ᗛ ${simbols} ${prefix}sound62
-┞ᗛ ${simbols} ${prefix}sound63
-┞ᗛ ${simbols} ${prefix}sound64
-┞ᗛ ${simbols} ${prefix}sound65
-┞ᗛ ${simbols} ${prefix}sound66
-┞ᗛ ${simbols} ${prefix}sound67
-┞ᗛ ${simbols} ${prefix}sound68
-┞ᗛ ${simbols} ${prefix}sound69
-┞ᗛ ${simbols} ${prefix}sound70
-┞ᗛ ${simbols} ${prefix}sound71
-┞ᗛ ${simbols} ${prefix}sound72
-┞ᗛ ${simbols} ${prefix}sound73
-┞ᗛ ${simbols} ${prefix}sound74
-┞ᗛ ${simbols} ${prefix}sound75
-┞ᗛ ${simbols} ${prefix}sound76
-┞ᗛ ${simbols} ${prefix}sound77
-┞ᗛ ${simbols} ${prefix}sound78
-┞ᗛ ${simbols} ${prefix}sound79
-┞ᗛ ${simbols} ${prefix}sound80
-┞ᗛ ${simbols} ${prefix}sound81
-┞ᗛ ${simbols} ${prefix}sound82
-┞ᗛ ${simbols} ${prefix}sound83
-┞ᗛ ${simbols} ${prefix}sound84
-┞ᗛ ${simbols} ${prefix}sound85
-┞ᗛ ${simbols} ${prefix}sound86
-┞ᗛ ${simbols} ${prefix}sound87
-┞ᗛ ${simbols} ${prefix}sound88
-┞ᗛ ${simbols} ${prefix}sound89
-┞ᗛ ${simbols} ${prefix}sound90
-┞ᗛ ${simbols} ${prefix}sound91
-┞ᗛ ${simbols} ${prefix}sound92
-┞ᗛ ${simbols} ${prefix}sound93
-┞ᗛ ${simbols} ${prefix}sound94
-┞ᗛ ${simbols} ${prefix}sound95
-┞ᗛ ${simbols} ${prefix}sound96
-┞ᗛ ${simbols} ${prefix}sound97
-┞ᗛ ${simbols} ${prefix}sound98
-┞ᗛ ${simbols} ${prefix}sound99
-┞ᗛ ${simbols} ${prefix}sound100
 └──────────────────╼.✗`;
 				const tombol = [
 				{
@@ -10850,6 +10760,7 @@ break;
 ┌╾⚟┉➲${c}【 ᴏᴛʜᴇʀ ᴍᴇɴᴜ 】${c} ⟢
 ├────────────────
 ┞ᗛ ${simbols} ${prefix}popular
+┞ᗛ ${simbols} ${prefix}logo
 ┞ᗛ ${simbols} ${prefix}script
 ┞ᗛ ${simbols} ${prefix}totalfitur
 ┞ᗛ ${simbols} ${prefix}readviewonce
@@ -10857,7 +10768,6 @@ break;
 ┞ᗛ ${simbols} ${prefix}mitos
 ┞ᗛ ${simbols} ${prefix}delete
 ┞ᗛ ${simbols} ${prefix}imdb <film>
-┞ᗛ ${simbols} ${prefix}jadwalsholat
 ┞ᗛ ${simbols} ${prefix}listkota
 ┞ᗛ ${simbols} ${prefix}owner
 ┞ᗛ ${simbols} ${prefix}about
@@ -10986,7 +10896,7 @@ ${formattedCommandList}
 ├────────────────
 ┞ᗛ ${simbols} ${prefix}ytmp3 <link>
 ┞ᗛ ${simbols} ${prefix}ytmp4 <link>
-┞ᗛ ${simbols} ${prefix}song <q>
+┞ᗛ ${simbols} ${prefix}apk <q>
 ┞ᗛ ${simbols} ${prefix}gitclone <link>
 ┞ᗛ ${simbols} ${prefix}ytsearch <q>
 ┞ᗛ ${simbols} ${prefix}tiktok <link>
@@ -11049,106 +10959,6 @@ ${formattedCommandList}
 ┞ᗛ ${simbols} ${prefix}reverse
 ┞ᗛ ${simbols} ${prefix}fat
 ┞ᗛ ${simbols} ${prefix}squirrel
-┞ᗛ ${simbols} ${prefix}sound1
-┞ᗛ ${simbols} ${prefix}sound2
-┞ᗛ ${simbols} ${prefix}sound3
-┞ᗛ ${simbols} ${prefix}sound4
-┞ᗛ ${simbols} ${prefix}sound5
-┞ᗛ ${simbols} ${prefix}sound6
-┞ᗛ ${simbols} ${prefix}sound7
-┞ᗛ ${simbols} ${prefix}sound8
-┞ᗛ ${simbols} ${prefix}sound9
-┞ᗛ ${simbols} ${prefix}sound10
-┞ᗛ ${simbols} ${prefix}sound11
-┞ᗛ ${simbols} ${prefix}sound12
-┞ᗛ ${simbols} ${prefix}sound13
-┞ᗛ ${simbols} ${prefix}sound14
-┞ᗛ ${simbols} ${prefix}sound15
-┞ᗛ ${simbols} ${prefix}sound16
-┞ᗛ ${simbols} ${prefix}sound17
-┞ᗛ ${simbols} ${prefix}sound18
-┞ᗛ ${simbols} ${prefix}sound19
-┞ᗛ ${simbols} ${prefix}sound20
-┞ᗛ ${simbols} ${prefix}sound21
-┞ᗛ ${simbols} ${prefix}sound22
-┞ᗛ ${simbols} ${prefix}sound23
-┞ᗛ ${simbols} ${prefix}sound24
-┞ᗛ ${simbols} ${prefix}sound25
-┞ᗛ ${simbols} ${prefix}sound26
-┞ᗛ ${simbols} ${prefix}sound27
-┞ᗛ ${simbols} ${prefix}sound28
-┞ᗛ ${simbols} ${prefix}sound29
-┞ᗛ ${simbols} ${prefix}sound30
-┞ᗛ ${simbols} ${prefix}sound31
-┞ᗛ ${simbols} ${prefix}sound32
-┞ᗛ ${simbols} ${prefix}sound33
-┞ᗛ ${simbols} ${prefix}sound34
-┞ᗛ ${simbols} ${prefix}sound35
-┞ᗛ ${simbols} ${prefix}sound36
-┞ᗛ ${simbols} ${prefix}sound37
-┞ᗛ ${simbols} ${prefix}sound38
-┞ᗛ ${simbols} ${prefix}sound39
-┞ᗛ ${simbols} ${prefix}sound40
-┞ᗛ ${simbols} ${prefix}sound41
-┞ᗛ ${simbols} ${prefix}sound42
-┞ᗛ ${simbols} ${prefix}sound43
-┞ᗛ ${simbols} ${prefix}sound44
-┞ᗛ ${simbols} ${prefix}sound45
-┞ᗛ ${simbols} ${prefix}sound46
-┞ᗛ ${simbols} ${prefix}sound47
-┞ᗛ ${simbols} ${prefix}sound48
-┞ᗛ ${simbols} ${prefix}sound49
-┞ᗛ ${simbols} ${prefix}sound50
-┞ᗛ ${simbols} ${prefix}sound51
-┞ᗛ ${simbols} ${prefix}sound52
-┞ᗛ ${simbols} ${prefix}sound53
-┞ᗛ ${simbols} ${prefix}sound54
-┞ᗛ ${simbols} ${prefix}sound55
-┞ᗛ ${simbols} ${prefix}sound56
-┞ᗛ ${simbols} ${prefix}sound57
-┞ᗛ ${simbols} ${prefix}sound58
-┞ᗛ ${simbols} ${prefix}sound59
-┞ᗛ ${simbols} ${prefix}sound60
-┞ᗛ ${simbols} ${prefix}sound61
-┞ᗛ ${simbols} ${prefix}sound62
-┞ᗛ ${simbols} ${prefix}sound63
-┞ᗛ ${simbols} ${prefix}sound64
-┞ᗛ ${simbols} ${prefix}sound65
-┞ᗛ ${simbols} ${prefix}sound66
-┞ᗛ ${simbols} ${prefix}sound67
-┞ᗛ ${simbols} ${prefix}sound68
-┞ᗛ ${simbols} ${prefix}sound69
-┞ᗛ ${simbols} ${prefix}sound70
-┞ᗛ ${simbols} ${prefix}sound71
-┞ᗛ ${simbols} ${prefix}sound72
-┞ᗛ ${simbols} ${prefix}sound73
-┞ᗛ ${simbols} ${prefix}sound74
-┞ᗛ ${simbols} ${prefix}sound75
-┞ᗛ ${simbols} ${prefix}sound76
-┞ᗛ ${simbols} ${prefix}sound77
-┞ᗛ ${simbols} ${prefix}sound78
-┞ᗛ ${simbols} ${prefix}sound79
-┞ᗛ ${simbols} ${prefix}sound80
-┞ᗛ ${simbols} ${prefix}sound81
-┞ᗛ ${simbols} ${prefix}sound82
-┞ᗛ ${simbols} ${prefix}sound83
-┞ᗛ ${simbols} ${prefix}sound84
-┞ᗛ ${simbols} ${prefix}sound85
-┞ᗛ ${simbols} ${prefix}sound86
-┞ᗛ ${simbols} ${prefix}sound87
-┞ᗛ ${simbols} ${prefix}sound88
-┞ᗛ ${simbols} ${prefix}sound89
-┞ᗛ ${simbols} ${prefix}sound90
-┞ᗛ ${simbols} ${prefix}sound91
-┞ᗛ ${simbols} ${prefix}sound92
-┞ᗛ ${simbols} ${prefix}sound93
-┞ᗛ ${simbols} ${prefix}sound94
-┞ᗛ ${simbols} ${prefix}sound95
-┞ᗛ ${simbols} ${prefix}sound96
-┞ᗛ ${simbols} ${prefix}sound97
-┞ᗛ ${simbols} ${prefix}sound98
-┞ᗛ ${simbols} ${prefix}sound99
-┞ᗛ ${simbols} ${prefix}sound100
 └──────────────────╼.✗
 
 ┌╾⚟┉➲${c}【 ʀᴀɴᴅᴏᴍ ᴍᴇɴᴜ 】${c} ⟢
@@ -11256,7 +11066,7 @@ ${formattedCommandList}
 ┞ᗛ ${simbols} ${prefix}claudeai
 ┞ᗛ ${simbols} ${prefix}dbrxai
 ┞ᗛ ${simbols} ${prefix}deepseek
-┞ᗛ ${simbols} ${prefix}dreamshaper
+┞ᗛ ${simbols} ${prefix}imgai
 ┞ᗛ ${simbols} ${prefix}img2text
 ┞ᗛ ${simbols} ${prefix}venice
 ┞ᗛ ${simbols} ${prefix}latukam
@@ -11303,6 +11113,18 @@ ${formattedCommandList}
 ┞ᗛ ${simbols} ${prefix}tebaklogo
 ┞ᗛ ${simbols} ${prefix}tebakaplikasi
 ┞ᗛ ${simbols} ${prefix}suit
+┞ᗛ ${simbols} ${prefix}suitpvp
+┞ᗛ ${simbols} ${prefix}minas
+┞ᗛ ${simbols} ${prefix}casino
+┞ᗛ ${simbols} ${prefix}ahorcado
+┞ᗛ ${simbols} ${prefix}personalidad
+┞ᗛ ${simbols} ${prefix}gay
+┞ᗛ ${simbols} ${prefix}doxear
+┞ᗛ ${simbols} ${prefix}ttc
+┞ᗛ ${simbols} ${prefix}tictactoe
+┞ᗛ ${simbols} ${prefix}delttc
+┞ᗛ ${simbols} ${prefix}pregunta
+┞ᗛ ${simbols} ${prefix}follar
 ┞ᗛ ${simbols} ${prefix}tebakkata
 ┞ᗛ ${simbols} ${prefix}asahotak
 ┞ᗛ ${simbols} ${prefix}lengkapikalimat
@@ -11386,6 +11208,7 @@ ${formattedCommandList}
 ┌╾⚟┉➲${c}【 ᴏᴛʜᴇʀ ᴍᴇɴᴜ 】${c} ⟢
 ├────────────────
 ┞ᗛ ${simbols} ${prefix}popular
+┞ᗛ ${simbols} ${prefix}logo
 ┞ᗛ ${simbols} ${prefix}script
 ┞ᗛ ${simbols} ${prefix}totalfitur
 ┞ᗛ ${simbols} ${prefix}readviewonce
@@ -11393,7 +11216,6 @@ ${formattedCommandList}
 ┞ᗛ ${simbols} ${prefix}mitos
 ┞ᗛ ${simbols} ${prefix}delete
 ┞ᗛ ${simbols} ${prefix}imdb <film>
-┞ᗛ ${simbols} ${prefix}jadwalsholat
 ┞ᗛ ${simbols} ${prefix}listkota
 ┞ᗛ ${simbols} ${prefix}owner
 ┞ᗛ ${simbols} ${prefix}about
