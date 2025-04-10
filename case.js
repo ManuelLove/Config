@@ -11691,8 +11691,7 @@ case 'warning': {
 🫵 *${reason}*
 
 ADVERTENCIA
-⚠️ *${user.warn}/4*
-${wm}`;
+⚠️ *${user.warn}/4*`;
 
   await shoNhe.sendMessage(m.chat, { text: warnText, mentions: [who] }, { quoted: m });
 
