@@ -18588,7 +18588,7 @@ case 'apkdl':
 			icon,
 			dllink
 		} = res;
-const maxSizeMB = 100;
+const maxSizeMB = 200;
 const apkSizeMB = parseFloat(size);
 
 if (apkSizeMB > maxSizeMB) {
