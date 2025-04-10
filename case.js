@@ -11673,78 +11673,87 @@ if (args[0] === "add") {
            }
 			}
 			break;
-		case 'advertir':
-case 'advertencia':
+		// ADVERTIR
+case 'advertir':
 case 'warn':
 case 'warning': {
-    const smsAdveu1 = () => `${lenguajeGB['smsAvisoAG']()}*SOLO PUEDE USAR SI ESTÁ ACTIVADA LA FUNCIÓN:*\n`;
-    const smsAdveu2 = () => 'Motivo';
-    const smsAdveu3 = () => `${lenguajeGB['smsAvisoMG']()}*RECUERDE ESCRIBIR EL MOTIVO DE LA ADVERTENCIA*\n`;
-    const smsAdveu4 = () => '*RECIBIÓ UNA ADVERTENCIA EN ESTE GRUPO!!*';
-    const smsAdveu5 = () => 'ADVERTENCIA';
-    const smsAdveu7 = () => '*TE LO ADVERTI VARIAS VECES!!*';
-    const smsAdveu8 = () => '*AHORA SERÁS ELIMINADO(A)* 🙄';
+  if (!db.data.chats[m.chat].antitoxic && m.isGroup) return shoNhe.sendMessage(m.chat, { text: '❗ SOLO PUEDE USAR SI ESTÁ ACTIVADA LA FUNCIÓN: .on antitoxicos' }, { quoted: m });
 
-    let lenGB = lenguajeGB.lenguaje() == 'en' ? usedPrefix + 'on antitoxic' : usedPrefix + 'on antitoxicos';
-    if (!db.data.chats[m.chat].antitoxic && m.isGroup) return shoNhe.sendMessage(m.chat, { text: smsAdveu1() + lenGB }, { quoted: m });
+  let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : null;
+  if (!who) return shoNhe.sendMessage(m.chat, { text: `❗ Debes mencionar a alguien para advertir.\nEjemplo: *${usedPrefix + command} @usuario motivo*` }, { quoted: m });
 
-    let who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false;
-    if (!who) return shoNhe.sendMessage(m.chat, { text: lenguajeGB.smsMalused3() + `*${usedPrefix + command} @user ${smsAdveu2()}*` }, { quoted: m });
+  let user = global.db.data.users[who];
+  let reason = text.split(' ').slice(1).join(' ');
+  if (!reason) return shoNhe.sendMessage(m.chat, { text: `❗ Escriba el motivo de la advertencia.\nEjemplo: *${usedPrefix + command} @usuario motivo*` }, { quoted: m });
 
-    let txt = text.replace('@' + who.split`@`[0], '').trim();
-    if (!txt) return shoNhe.sendMessage(m.chat, { text: smsAdveu3() + `*${usedPrefix + command} @user ${smsAdveu2()}*` }, { quoted: m });
+  user.warn += 1;
+  let warnText = `*@${who.split('@')[0]}* RECIBIÓ UNA ADVERTENCIA EN ESTE GRUPO!!
+🫵 *${reason}*
 
-    let user = global.db.data.users[who];
-    user.warn += 1;
+ADVERTENCIA
+⚠️ *${user.warn}/4*
+${wm}`;
 
-    await shoNhe.sendMessage(m.chat, {
-        text: `*@${who.split`@`[0]}* ${smsAdveu4()}\n\n🫵 *${txt}*\n\n*${smsAdveu5()}*\n⚠️ *${user.warn}/4*\n${wm}`,
-        mentions: [who]
-    });
+  await shoNhe.sendMessage(m.chat, { text: warnText, mentions: [who] }, { quoted: m });
 
-    if (user.warn >= 4) {
-        user.warn = 0;
-        await shoNhe.sendMessage(m.chat, { text: `${smsAdveu7()}\n*@${who.split`@`[0]}* ${smsAdveu8()}`, mentions: [who] });
-        user.banned = true;
-        await shoNhe.groupParticipantsUpdate(m.chat, [who], 'remove');
-    }
-    break;
+  if (user.warn >= 4) {
+    user.warn = 0;
+    user.banned = true;
+    await shoNhe.sendMessage(m.chat, { text: `*TE LO ADVERTI VARIAS VECES!!*\n*@${who.split('@')[0]}* AHORA SERÁS ELIMINADO(A) 🙄`, mentions: [who] }, { quoted: m });
+    await shoNhe.groupParticipantsUpdate(m.chat, [who], 'remove');
+  }
 }
+break;
 
+// ELIMINAR ADVERTENCIA
 case 'deladvertir':
-case 'eliminaradvertir':
+case 'unwarn':
 case 'quitaradvertir': {
-    const smsAdveu10 = () => '*SE LE ELIMINÓ UNA ADVERTENCIA EN ESTE GRUPO!!*';
-    const smsAdveu5 = () => 'ADVERTENCIA';
-    const smsAdveu11 = () => 'Antes:';
-    const smsAdveu12 = () => 'Ahora:';
+  if (!db.data.chats[m.chat].antitoxic && m.isGroup) return shoNhe.sendMessage(m.chat, { text: '❗ SOLO PUEDE USAR SI ESTÁ ACTIVADA LA FUNCIÓN: .on antitoxicos' }, { quoted: m });
 
-    let who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false;
-    if (!who) return shoNhe.sendMessage(m.chat, { text: lenguajeGB.smsMalused3() + `*${usedPrefix + command} @user*` }, { quoted: m });
+  let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : null;
+  if (!who) return shoNhe.sendMessage(m.chat, { text: `❗ Debes mencionar a alguien.\nEjemplo: *${usedPrefix + command} @usuario*` }, { quoted: m });
 
-    let user = global.db.data.users[who];
-    user.warn -= 1;
-    await shoNhe.sendMessage(m.chat, {
-        text: `♻️ *@${who.split`@`[0]}* ${smsAdveu10()}\n\n*${smsAdveu5()}*\n⚠️ *${smsAdveu11()} ${user.warn + 1}/4*\n⚠️ *${smsAdveu12()} ${user.warn}/4*`,
-        mentions: [who]
-    });
-    break;
+  let user = global.db.data.users[who];
+  if (user.warn > 0) user.warn -= 1;
+
+  let text = `♻️ *@${who.split('@')[0]}* SE LE ELIMINÓ UNA ADVERTENCIA EN ESTE GRUPO!!
+
+ADVERTENCIA
+⚠️ Antes: *${user.warn + 1}/4*
+⚠️ Ahora: *${user.warn}/4*
+${wm}`;
+
+  await shoNhe.sendMessage(m.chat, { text, mentions: [who] }, { quoted: m });
 }
+break;
 
-case 'listaadv':
+// LISTA DE ADVERTIDOS
 case 'listadv':
-case 'advlist': {
-    let adv = Object.entries(global.db.data.users).filter(([_, u]) => u.warn > 0);
-    let lista = await Promise.all(adv.map(async ([jid, user], i) => {
-        let name = await shoNhe.getName(jid).catch(() => 'Sin Nombre');
-        return `│ *${i + 1}.* ${name} *(${user.warn}/4)*\n│ @${jid.split`@`[0]}\n│ - - - - - - - - -`;
-    }));
+case 'listaadv':
+case 'advlist':
+case 'adv': {
+  let adv = Object.entries(global.db.data.users).filter(user => user[1].warn);
+  let caption = `⚠️ USUARIOS ADVERTIDOS : WARNED
+╭•·–––––––––––––––––––·•*
+│ Total : ${adv.length} Usuarios
+${await Promise.all(adv.map(async ([jid, user], i) => {
+    let name = 'Sin Nombre';
+    try {
+      name = await shoNhe.getName(jid);
+    } catch (e) {}
+    return `│
+│ ${i + 1}. ${name} *(${user.warn}/4)*
+│ @${jid.split('@')[0]}
+│ - - - - - - - - -`;
+  })).then(list => list.join('\n'))}
+╰•·–––––––––––––––––––·•*
+⚠️ ADVERTENCIA ⇢ ${adv.length > 0 ? '*?/4*' : '*0/4*'}
+${wm}`;
 
-    let caption = `⚠️ 𝙐𝙎𝙐𝘼𝙍𝙄𝙊𝙎 𝘼𝘿𝙑𝙀𝙍𝙏𝙄𝘿𝙊𝙎\n*╭•·–––––––––––––––––––·•*\n│ *Total : ${adv.length} Usuarios*\n` + lista.join('\n') + `\n*╰•·–––––––––––––––––––·•*\n\n${wm}`;
-    
-    await shoNhe.sendMessage(m.chat, { text: caption, mentions: adv.map(([jid]) => jid) }, { quoted: m });
-    break;
+  await shoNhe.sendMessage(m.chat, { text: caption, mentions: adv.map(([jid]) => jid) }, { quoted: m });
 }
+break;
 		case 'antitoxic':
 {
 	if (!isGroup) return shoNherly(mess.groups)
