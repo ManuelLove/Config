@@ -18566,33 +18566,37 @@ case 'apkdl':
 	updatePopularCommand(command);
 	const levelUpMessage = levelUpdate(command, m.sender);
 
-	if (!text) return shoNherly(`⚠️ Usa el comando así: ${prefix + command} *nombre o id válido de app*`);
+	if (!text) {
+		return shoNherly(`⚠️ Usa el comando así: ${prefix + command} *url o id válido de la API*\n\n📦 *Ejemplo:* ${prefix + command} myboy`);
+	}
 
 	if (!(await firely(m, mess.waits))) return;
 
 	try {
 		const res = await fetchJson(`https://api.dorratz.com/v2/apk-dl?text=${text}`);
-		if (!res || !res.name || !res.dllink) return shoNherly('❌ No se encontró ningún APK válido.');
 
-		const { name, size, dllink, package: pkg, lastUpdate } = res;
-		const maxSizeMB = 200;
-		const apkSizeMB = parseFloat(size);
-
-		if (apkSizeMB > maxSizeMB) {
-			return shoNherly(`❌ El APK **${name}** pesa ${size}, que excede el límite permitido de ${maxSizeMB} MB.`);
+		if (!res || !res.name || !res.dllink) {
+			console.log('❌ Respuesta inesperada:', res);
+			return shoNherly('❌ No se encontró ningún APK para esa búsqueda o el formato no es válido.');
 		}
 
+		const {
+			name,
+			size,
+			package: pkg,
+			lastUpdate,
+			icon,
+			dllink
+		} = res;
+const maxSizeMB = 100;
+const apkSizeMB = parseFloat(size);
+
+if (apkSizeMB > maxSizeMB) {
+	return shoNherly(`❌ El APK **${name}** pesa ${size}, que excede el límite de descarga (${maxSizeMB} MB). Intenta con otra app más liviana.`);
+}
 		console.log('📥 Descargando APK:', name);
-		const filePath = `./tmp/${name}.apk`;
-
-		const writer = fs.createWriteStream(filePath);
-		const response = await axios({ url: dllink, method: 'GET', responseType: 'stream' });
-		response.data.pipe(writer);
-
-		await new Promise((resolve, reject) => {
-			writer.on('finish', resolve);
-			writer.on('error', reject);
-		});
+		const response = await axios.get(dllink, { responseType: 'arraybuffer' });
+		const buffer = Buffer.from(response.data);
 
 		let caption = `📱 *Nombre:* ${name}\n`;
 		if (pkg) caption += `📦 *Paquete:* ${pkg}\n`;
@@ -18600,17 +18604,15 @@ case 'apkdl':
 		if (lastUpdate) caption += `🕒 *Última actualización:* ${lastUpdate}`;
 
 		await shoNhe.sendMessage(m.chat, {
-			document: fs.readFileSync(filePath),
+			document: buffer,
 			fileName: `${name}.apk`,
 			mimetype: 'application/vnd.android.package-archive',
 			caption: caption
 		}, { quoted: hw });
 
-		fs.unlinkSync(filePath); // Borra el archivo después de enviarlo
-
 	} catch (err) {
 		console.error('❌ Error al procesar la descarga:', err);
-		return shoNherly('❌ Ocurrió un error al descargar o enviar el APK.');
+		return shoNherly('❌ Ocurrió un error al intentar descargar o enviar el APK.');
 	}
 
 	if (levelUpMessage) {
