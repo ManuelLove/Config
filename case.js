@@ -8299,8 +8299,8 @@ if (isUserRegistered(m.sender)) {
 										id: ".downloadmenu"
 									},
 									{
-										title: "🌟 MENÚ ISLÁMICO",
-										description: "Menú de búsqueda e información islámica",
+										title: "🌟 MENÚ ILEGAL",
+										description: "Menú de búsqueda e información ILEGAL",
 										id: ".islammenu"
 									},
 									{
@@ -8309,8 +8309,8 @@ if (isUserRegistered(m.sender)) {
 										id: ".othermenu"
 									},
 									{
-										title: "🔥 MENÚ DEL PROPIETARIO",
-										description: "Sólo el PROPIETARIO👽 puede usar este comando",
+										title: "🔥 MENÚ DEL OWNER",
+										description: "Sólo el OWNER👽 puede usar este comando",
 										id: ".ownermenu"
 									},
 									{
