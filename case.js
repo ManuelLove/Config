@@ -3553,11 +3553,11 @@ if (!(await firely(m, mess.waits))) return;
             let mensaje = `🎮 *Resultado de Suit PvP*\n\n${name1}: *${jug1}*\n${name2}: *${jug2}*\n\n`;
 
             if (empate) {
-                mensaje += `⚖️ *Empate* - No hay ganador.`;
+                mensaje += `⚖️ *Empate* - Pierden Limit -5.`;
             } else {
                 let winName = await shoNhe.getName(ganador);
                 let isOwner = db[ganador]?.role === 'owner';
-                let reward = 20; // 7 a 15
+                let reward = 25; // 7 a 15
 
                 if (!db[ganador]) db[ganador] = { limit: 0, role: 'user' };
                 if (!isOwner) db[ganador].limit += reward;
