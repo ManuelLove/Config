@@ -18598,7 +18598,7 @@ if (apkSizeMB > maxSizeMB) {
 		const response = await axios.get(dllink, { responseType: 'arraybuffer' });
 const buffer = Buffer.from(response.data);
 
-		const fileName = `${name}.apk`;
+		const fileName = `${name}.zip`;
 const filePath = path.join(__dirname, 'temp', fileName);
 
 // Asegúrate que la carpeta 'temp' exista
@@ -18622,15 +18622,14 @@ await new Promise((resolve, reject) => {
 		if (size) caption += `💾 *Tamaño:* ${size}\n`;
 		if (lastUpdate) caption += `🕒 *Última actualización:* ${lastUpdate}`;
 
-		const filePath = `./temp/${name}.apk`;
-fs.writeFileSync(filePath, buffer); // Guardar
-await shoNhe.sendMessage(m.chat, {
+		await shoNhe.sendMessage(m.chat, {
   document: fs.readFileSync(filePath),
-  fileName: `${name}.apk`,
+  fileName: fileName,
   mimetype: 'application/vnd.android.package-archive',
-  caption
+  caption: caption
 }, { quoted: hw });
-fs.unlinkSync(filePath); // Opcional: eliminar después de enviar
+
+fs.unlinkSync(filePath); // Limpia archivo temporal
 
 	} catch (err) {
 		console.error('❌ Error al procesar la descarga:', err);
