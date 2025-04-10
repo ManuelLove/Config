@@ -18562,93 +18562,86 @@ break;
 case 'apk':
 case 'apkdl':
 {
-	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
-	updatePopularCommand(command);
-	const levelUpMessage = levelUpdate(command, m.sender);
+  if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+  updatePopularCommand(command);
+  const levelUpMessage = levelUpdate(command, m.sender);
 
-	if (!text) {
-		return shoNherly(`⚠️ Usa el comando así: ${prefix + command} *url o id válido de la API*\n\n📦 *Ejemplo:* ${prefix + command} myboy`);
-	}
+  if (!text) {
+    return shoNherly(`⚠️ Usa el comando así: ${prefix + command} *url o id válido de la API*\n\n📦 *Ejemplo:* ${prefix + command} myboy`);
+  }
 
-	if (!(await firely(m, mess.waits))) return;
+  if (!(await firely(m, mess.waits))) return;
 
-	try {
-		const res = await fetchJson(`https://api.dorratz.com/v2/apk-dl?text=${text}`);
+  try {
+    const res = await fetchJson(`https://api.dorratz.com/v2/apk-dl?text=${text}`);
 
-		if (!res || !res.name || !res.dllink) {
-			console.log('❌ Respuesta inesperada:', res);
-			return shoNherly('❌ No se encontró ningún APK para esa búsqueda o el formato no es válido.');
-		}
+    if (!res || !res.name || !res.dllink) {
+      console.log('❌ Respuesta inesperada:', res);
+      return shoNherly('❌ No se encontró ningún APK para esa búsqueda o el formato no es válido.');
+    }
 
-		const {
-			name,
-			size,
-			package: pkg,
-			lastUpdate,
-			icon,
-			dllink
-		} = res;
-const maxSizeMB = 200;
-const apkSizeMB = parseFloat(size);
+    const { name, size, package: pkg, lastUpdate, dllink } = res;
+    const maxSizeMB = 300;
+    const apkSizeMB = parseFloat(size);
 
-if (apkSizeMB > maxSizeMB) {
-	return shoNherly(`❌ El APK **${name}** pesa ${size}, que excede el límite de descarga (${maxSizeMB} MB). Intenta con otra app más liviana.`);
-}
-		console.log('📥 Descargando APK:', name);
-		const response = await axios.get(dllink, { responseType: 'arraybuffer' });
-const buffer = Buffer.from(response.data);
+    if (apkSizeMB > maxSizeMB) {
+      return shoNherly(`❌ El APK **${name}** pesa ${size}, que excede el límite de descarga (${maxSizeMB} MB). Intenta con otra app más liviana.`);
+    }
 
-		const fileName = `${name}.zip`;
-const filePath = path.join(__dirname, 'temp', fileName);
+    const fs = require('fs');
+    const path = require('path');
+    const axios = require('axios');
 
-// Asegúrate que la carpeta 'temp' exista
-if (!fs.existsSync('./temp')) fs.mkdirSync('./temp');
+    const tmpFolder = path.join(__dirname, 'tmp');
+    if (!fs.existsSync(tmpFolder)) fs.mkdirSync(tmpFolder);
 
-// Descarga con stream y guarda en disco
-const writer = fs.createWriteStream(filePath);
-const download = await axios({
-  method: 'GET',
-  url: dllink,
-  responseType: 'stream'
-});
-download.data.pipe(writer);
+    const filePath = path.join(tmpFolder, `${name}.apk`);
 
-await new Promise((resolve, reject) => {
-  writer.on('finish', resolve);
-  writer.on('error', reject);
-});
-		let caption = `📱 *Nombre:* ${name}\n`;
-		if (pkg) caption += `📦 *Paquete:* ${pkg}\n`;
-		if (size) caption += `💾 *Tamaño:* ${size}\n`;
-		if (lastUpdate) caption += `🕒 *Última actualización:* ${lastUpdate}`;
+    console.log('📥 Descargando APK:', name);
+    const response = await axios({
+      url: dllink,
+      method: 'GET',
+      responseType: 'stream',
+    });
 
-		await shoNhe.sendMessage(m.chat, {
-  document: fs.readFileSync(filePath),
-  fileName: fileName,
-  mimetype: 'application/vnd.android.package-archive',
-  caption: caption
-}, { quoted: hw });
+    const writer = fs.createWriteStream(filePath);
+    response.data.pipe(writer);
 
-fs.unlinkSync(filePath); // Limpia archivo temporal
+    await new Promise((resolve, reject) => {
+      writer.on('finish', resolve);
+      writer.on('error', reject);
+    });
 
-	} catch (err) {
-		console.error('❌ Error al procesar la descarga:', err);
-		return shoNherly('❌ Ocurrió un error al intentar descargar o enviar el APK.');
-	}
+    let caption = `📱 *Nombre:* ${name}\n`;
+    if (pkg) caption += `📦 *Paquete:* ${pkg}\n`;
+    if (size) caption += `💾 *Tamaño:* ${size}\n`;
+    if (lastUpdate) caption += `🕒 *Última actualización:* ${lastUpdate}`;
 
-	if (levelUpMessage) {
-		await shoNhe.sendMessage(m.chat,
-		{
-			image: { url: levelUpMessage.image },
-			caption: levelUpMessage.text,
-			footer: "LEVEL UP🔥",
-			buttons: [
-				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
-				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
-			],
-			viewOnce: true,
-		}, { quoted: hw });
-	}
+    await shoNhe.sendMessage(m.chat, {
+      document: fs.readFileSync(filePath),
+      fileName: `${name}.apk`,
+      mimetype: 'application/vnd.android.package-archive',
+      caption: caption
+    }, { quoted: hw });
+
+    fs.unlinkSync(filePath); // Limpieza del archivo temporal
+  } catch (err) {
+    console.error('❌ Error al procesar la descarga:', err);
+    return shoNherly('❌ Ocurrió un error al intentar descargar o enviar el APK.');
+  }
+
+  if (levelUpMessage) {
+    await shoNhe.sendMessage(m.chat, {
+      image: { url: levelUpMessage.image },
+      caption: levelUpMessage.text,
+      footer: "LEVEL UP🔥",
+      buttons: [
+        { buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+        { buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+      ],
+      viewOnce: true,
+    }, { quoted: hw });
+  }
 }
 break;
 case 'doxear':
