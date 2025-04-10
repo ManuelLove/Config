@@ -18622,14 +18622,15 @@ await new Promise((resolve, reject) => {
 		if (size) caption += `💾 *Tamaño:* ${size}\n`;
 		if (lastUpdate) caption += `🕒 *Última actualización:* ${lastUpdate}`;
 
-		await shoNhe.sendMessage(m.chat, {
+		const filePath = `./temp/${name}.apk`;
+fs.writeFileSync(filePath, buffer); // Guardar
+await shoNhe.sendMessage(m.chat, {
   document: fs.readFileSync(filePath),
-  fileName: fileName,
+  fileName: `${name}.apk`,
   mimetype: 'application/vnd.android.package-archive',
-  caption: caption
+  caption
 }, { quoted: hw });
-
-fs.unlinkSync(filePath); // Limpia archivo temporal
+fs.unlinkSync(filePath); // Opcional: eliminar después de enviar
 
 	} catch (err) {
 		console.error('❌ Error al procesar la descarga:', err);
