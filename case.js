@@ -11735,10 +11735,13 @@ case 'listaadv':
 case 'listadv':
 case 'advlist': {
     let adv = Object.entries(global.db.data.users).filter(([_, u]) => u.warn > 0);
-    let caption = `⚠️ 𝙐𝙎𝙐𝘼𝙍𝙄𝙊𝙎 𝘼𝘿𝙑𝙀𝙍𝙏𝙄𝘿𝙊𝙎\n*╭•·–––––––––––––––––––·•*\n│ *Total : ${adv.length} Usuarios*\n` + adv.map(([jid, user], i) => {
+    let lista = await Promise.all(adv.map(async ([jid, user], i) => {
         let name = await shoNhe.getName(jid).catch(() => 'Sin Nombre');
         return `│ *${i + 1}.* ${name} *(${user.warn}/4)*\n│ @${jid.split`@`[0]}\n│ - - - - - - - - -`;
-    }).join('\n') + `\n*╰•·–––––––––––––––––––·•*\n\n${wm}`;
+    }));
+
+    let caption = `⚠️ 𝙐𝙎𝙐𝘼𝙍𝙄𝙊𝙎 𝘼𝘿𝙑𝙀𝙍𝙏𝙄𝘿𝙊𝙎\n*╭•·–––––––––––––––––––·•*\n│ *Total : ${adv.length} Usuarios*\n` + lista.join('\n') + `\n*╰•·–––––––––––––––––––·•*\n\n${wm}`;
+    
     await shoNhe.sendMessage(m.chat, { text: caption, mentions: adv.map(([jid]) => jid) }, { quoted: m });
     break;
 }
