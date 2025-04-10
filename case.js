@@ -11680,11 +11680,11 @@ case 'warning': {
   if (!db.data.chats[m.chat].antitoxic && m.isGroup) return shoNhe.sendMessage(m.chat, { text: '❗ SOLO PUEDE USAR SI ESTÁ ACTIVADA LA FUNCIÓN: .on antitoxicos' }, { quoted: m });
 
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : null;
-  if (!who) return shoNhe.sendMessage(m.chat, { text: `❗ Debes mencionar a alguien para advertir.\nEjemplo: *${usedPrefix + command} @usuario motivo*` }, { quoted: m });
+  if (!who) return shoNhe.sendMessage(m.chat, { text: `❗ Debes mencionar a alguien para advertir.\nEjemplo: *${prefix + command} @usuario motivo*` }, { quoted: m });
 
   let user = global.db.data.users[who];
   let reason = text.split(' ').slice(1).join(' ');
-  if (!reason) return shoNhe.sendMessage(m.chat, { text: `❗ Escriba el motivo de la advertencia.\nEjemplo: *${usedPrefix + command} @usuario motivo*` }, { quoted: m });
+  if (!reason) return shoNhe.sendMessage(m.chat, { text: `❗ Escriba el motivo de la advertencia.\nEjemplo: *${prefix + command} @usuario motivo*` }, { quoted: m });
 
   user.warn += 1;
   let warnText = `*@${who.split('@')[0]}* RECIBIÓ UNA ADVERTENCIA EN ESTE GRUPO!!
@@ -11712,7 +11712,7 @@ case 'quitaradvertir': {
   if (!db.data.chats[m.chat].antitoxic && m.isGroup) return shoNhe.sendMessage(m.chat, { text: '❗ SOLO PUEDE USAR SI ESTÁ ACTIVADA LA FUNCIÓN: .on antitoxicos' }, { quoted: m });
 
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : null;
-  if (!who) return shoNhe.sendMessage(m.chat, { text: `❗ Debes mencionar a alguien.\nEjemplo: *${usedPrefix + command} @usuario*` }, { quoted: m });
+  if (!who) return shoNhe.sendMessage(m.chat, { text: `❗ Debes mencionar a alguien.\nEjemplo: *${prefix + command} @usuario*` }, { quoted: m });
 
   let user = global.db.data.users[who];
   if (user.warn > 0) user.warn -= 1;
