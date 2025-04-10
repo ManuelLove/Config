@@ -12893,7 +12893,7 @@ break;
 					shoNherly('❌ Usar: privatechatonly [on/off]');
 				}
 				break;
-			case 'dreamshaper':
+			case 'imgai':
 			{
 				if (!isRegistered(m))
 				{
@@ -12902,12 +12902,12 @@ break;
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Ingrese un mensaje para crear una imagen.\n\nEjemplo: Dreamshaper crea una imagen de gato');
+				if (!text) return shoNherly('⚠️ Ingrese un mensaje para crear una imagen.\n\nEjemplo: imgai crea una imagen de gato');
 				if (!(await firely(m, mess.waits))) return;
 				try
 				{
 					// Panggil API dengan input dari pengguna
-					const apiUrl = `https://api.siputzx.my.id/api/ai/dreamshaper?prompt=${encodeURIComponent(text)}`;
+					const apiUrl = `https://api.hiuraa.my.id/ai-img/imagen?text=${encodeURIComponent(text)}`;
 					const response = await axios.get(apiUrl,
 					{
 						responseType: 'arraybuffer'
