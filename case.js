@@ -3557,7 +3557,7 @@ if (roof) {
             } else {
                 let winName = await shoNhe.getName(ganador);
                 let isOwner = db[ganador]?.role === 'owner';
-                let reward = 20; // 7 a 15
+                let reward = 20); // 7 a 15
 
                 if (!db[ganador]) db[ganador] = { limit: 0, role: 'user' };
                 if (!isOwner) db[ganador].limit += reward;
