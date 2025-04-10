@@ -26985,7 +26985,7 @@ Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarr
     if (!json.status) return shoNherly('Error: No se pudo obtener datos de la API.');
 
     let { data } = json; // Extraer la información dentro de "data"
-    if (!data.downloadUrl) return shoNherly('Error: No se encontró un enlace de descarga.');
+    if (!data.download) return shoNherly('Error: No se encontró un enlace de descarga.');
 
     await shoNhe.sendMessage(m.chat, {
         audio: { url: data.downloadUrl },
