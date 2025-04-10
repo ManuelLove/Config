@@ -9358,7 +9358,7 @@ ${menuforu(prefix, simbols)}
 │  ⎘ ɪɴꜱᴛᴀɢʀᴀᴍ: ${itg}
 └──────────────────╼.✗
 
-┌╾⚟┉➲${c}【 ɪsʟɑᴍ ᴍᴇɴᴜ 】${c} ⟢
+┌╾⚟┉➲${c}【 ɪʟᴇɢᴀʟ ᴍᴇɴᴜ 】${c} ⟢
 ├────────────────
 ┞ᗛ ${simbols} ${prefix}hentai
 ┞ᗛ ${simbols} ${prefix}hentaiimg
