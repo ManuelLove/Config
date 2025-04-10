@@ -3490,12 +3490,12 @@ function parseMention(text) {
 let roof = Object.values(suitpvp).find(roof => roof.id && [roof.p, roof.p2].includes(m.sender));
 if (roof) {
     let db = loadUserFire();
-if (!(await firely(m, mess.waits))) return;
+
     	if (m.sender == roof.p2 && /^(aceptar|ok|yes|si)$/i.test(m.text) && m.isGroup && roof.status == 'wait') {
 		roof.status = 'play';
 		roof.asal = m.chat;
 		clearTimeout(roof.waktu);
-
+if (!(await firely(m, mess.waits))) return;
 		let name1 = await shoNhe.getName(roof.p);
 		let name2 = await shoNhe.getName(roof.p2);
 
@@ -5948,7 +5948,7 @@ case 'casino': {
 break;
 case 'suitpvp': {
     let db = loadUserFire();
-if (!(await firely(m, mess.waits))) return;
+
     if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.sender)))
         return shoNherly(`Termina tu juego anterior de suit.`);
 
@@ -5957,7 +5957,7 @@ if (!(await firely(m, mess.waits))) return;
 
     if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.mentionedJid[0])))
         return shoNherly(`La persona ya está en otro juego.`);
-
+if (!(await firely(m, mess.waits))) return;
     let id = 'suitpvp_' + new Date() * 1;
     let name1 = m.pushName || 'Desconocido';
     let name2 = await shoNhe.getName(m.mentionedJid[0]) || 'Desconocido';
