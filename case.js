@@ -1071,7 +1071,7 @@ END:VCARD`
 
 		if (user.warn < 4) {
 			await shoNhe.sendMessage(m.chat, {
-				text: `☣️ *PALABRA PROHIBIDA* ☣️\n\n*@${m.sender.split('@')[0]}* La palabra \`(${isToxic})\` está prohibida.\n⚠️ *Advertencias:* \`${user.warn}/4\`${namaBot}`,
+				text: `☣️ *PALABRA PROHIBIDA* ☣️\n\n*@${m.sender.split('@')[0]}* La palabra \`(${isToxic})\` está prohibida.\n⚠️ *Advertencias:* \`${user.warn}/4\`>${namaBot}`,
 				mentions: [m.sender]
 			});
 			await shoNhe.sendMessage(m.chat, {
@@ -1085,7 +1085,7 @@ END:VCARD`
 		} else {
 			user.warn = 0;
 			await shoNhe.sendMessage(m.chat, {
-				text: `☣️ *ELIMINADO POR TOXICIDAD* ☣️\n\n*@${m.sender.split('@')[0]}* fue eliminado por decir \`(${isToxic})\`${namaBot}`,
+				text: `☣️ *ELIMINADO POR TOXICIDAD* ☣️\n\n*@${m.sender.split('@')[0]}* fue eliminado por decir \`(${isToxic})\`>${namaBot}`,
 				mentions: [m.sender]
 			});
 			await shoNhe.sendMessage(m.chat, {
@@ -11674,9 +11674,7 @@ if (args[0] === "add") {
 			}
 			break;
 		// ADVERTIR
-case 'advertir':
-case 'warn':
-case 'warning': {
+case 'warn': {
   if (!db.data.chats[m.chat].antitoxic && m.isGroup) return shoNhe.sendMessage(m.chat, { text: '❗ SOLO PUEDE USAR SI ESTÁ ACTIVADA LA FUNCIÓN: .on antitoxicos' }, { quoted: m });
 
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : null;
@@ -11692,7 +11690,7 @@ case 'warning': {
 
 ADVERTENCIA
 ⚠️ *${user.warn}/4*
-${namaBot}`;
+>${namaBot}`;
 
   await shoNhe.sendMessage(m.chat, { text: warnText, mentions: [who] }, { quoted: m });
 
@@ -11706,9 +11704,7 @@ ${namaBot}`;
 break;
 
 // ELIMINAR ADVERTENCIA
-case 'deladvertir':
-case 'unwarn':
-case 'quitaradvertir': {
+case 'unwarn': {
   if (!db.data.chats[m.chat].antitoxic && m.isGroup) return shoNhe.sendMessage(m.chat, { text: '❗ SOLO PUEDE USAR SI ESTÁ ACTIVADA LA FUNCIÓN: .on antitoxicos' }, { quoted: m });
 
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : null;
@@ -11722,17 +11718,14 @@ case 'quitaradvertir': {
 ADVERTENCIA
 ⚠️ Antes: *${user.warn + 1}/4*
 ⚠️ Ahora: *${user.warn}/4*
-${namaBot}`;
+>${namaBot}`;
 
   await shoNhe.sendMessage(m.chat, { text, mentions: [who] }, { quoted: m });
 }
 break;
 
 // LISTA DE ADVERTIDOS
-case 'listadv':
-case 'listaadv':
-case 'advlist':
-case 'adv': {
+case 'listadv': {
   let adv = Object.entries(global.db.data.users).filter(user => user[1].warn);
   let caption = `⚠️ USUARIOS ADVERTIDOS : WARNED
 ╭•·–––––––––––––––––––·•*
@@ -11748,8 +11741,8 @@ ${await Promise.all(adv.map(async ([jid, user], i) => {
 │ - - - - - - - - -`;
   })).then(list => list.join('\n'))}
 ╰•·–––––––––––––––––––·•*
-⚠️ ADVERTENCIA ⇢ ${adv.length > 0 ? '*?/4*' : '*0/4*'}
-${namaBot}`;
+⚠️ Cada usuario puede recibir hasta *4 advertencias*
+>${namaBot}`;
 
   await shoNhe.sendMessage(m.chat, { text: caption, mentions: adv.map(([jid]) => jid) }, { quoted: m });
 }
