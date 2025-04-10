@@ -1059,6 +1059,47 @@ END:VCARD`
 				});
 			}
 		}
+		if (db.data.chats[m.chat].antitoxic) {
+	const toxicRegex = /g0re|g0r3|g.o.r.e|sap0|malparido|malparida|chocha|chup4l4|hijodeputa|putita|putito|pene|droga|verga|mierda|caca|idiota|maricon|bitch|fuck|shit|motherfucker|polla|semen|chupamela|estupido|estupida|imbecil|zorra|puta|puto|perra|perro|coño|pito|csm|ptm|baboso|babosa|feo|fea|gordo|gorda|chupapolla/i;
+	const isToxic = toxicRegex.exec(budy);
+
+	if (isToxic && !isAdmins && !m.key.fromMe && !isShoNheOwn && isBotAdmins) {
+		let user = global.db.data.users[m.sender] || {};
+		if (!user.warn) user.warn = 0;
+
+		user.warn += 1;
+
+		if (user.warn < 4) {
+			await shoNhe.sendMessage(m.chat, {
+				text: `☣️ *PALABRA PROHIBIDA* ☣️\n\n*@${m.sender.split('@')[0]}* La palabra \`(${isToxic})\` está prohibida.\n⚠️ *Advertencias:* \`${user.warn}/4\``,
+				mentions: [m.sender]
+			});
+			await shoNhe.sendMessage(m.chat, {
+				delete: {
+					remoteJid: m.chat,
+					fromMe: false,
+					id: m.key.id,
+					participant: m.key.participant
+				}
+			});
+		} else {
+			user.warn = 0;
+			await shoNhe.sendMessage(m.chat, {
+				text: `☣️ *ELIMINADO POR TOXICIDAD* ☣️\n\n*@${m.sender.split('@')[0]}* fue eliminado por decir \`(${isToxic})\``,
+				mentions: [m.sender]
+			});
+			await shoNhe.sendMessage(m.chat, {
+				delete: {
+					remoteJid: m.chat,
+					fromMe: false,
+					id: m.key.id,
+					participant: m.key.participant
+				}
+			});
+			await shoNhe.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
+		}
+	}
+}
 		function findRiwayat(idtrx)
 		{
 			// Baca file riwayat.json
@@ -11813,19 +11854,19 @@ if (args[0] === "add") {
 			break;
 		case 'antitoxic':
 {
-	if (!isGroup) return shoNherly(mess.groups);
-	if (!isBotAdmins) return shoNherly(mess.abots);
-	if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins);
-	if (args.length < 1) return shoNherly('Usa: antitoxic true / false');
-
-	if (args[0] === 'true') {
-		db.data.chats[m.chat].antitoxic = true;
-		shoNherly(`${command} activado correctamente.`);
-	} else if (args[0] === 'false') {
-		db.data.chats[m.chat].antitoxic = false;
-		shoNherly(`${command} desactivado correctamente.`);
+	if (!isGroup) return shoNherly(mess.groups)
+	if (!isBotAdmins) return shoNherly(mess.abots)
+	if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins)
+	if (args.length < 1) return shoNherly('Usa:\n.antitoxic on\n.antitoxic off')
+	const chat = db.data.chats[m.chat]
+	if (/on/i.test(args[0])) {
+		chat.antitoxic = true
+		shoNherly(`☣️ *Antitoxic activado*`)
+	} else if (/off/i.test(args[0])) {
+		chat.antitoxic = false
+		shoNherly(`☣️ *Antitoxic desactivado*`)
 	} else {
-		shoNherly('Argumento inválido. Usa: antitoxic true / false');
+		shoNherly('Usa:\n.antitoxic on\n.antitoxic off')
 	}
 }
 break;
