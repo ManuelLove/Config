@@ -15625,7 +15625,7 @@ case 'readviewonce':
 	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
 	updatePopularCommand(command);
 	if (!(await firely(m, mess.waits))) return;
-
+console.log(JSON.stringify(m.quoted.message, null, 2));
 	if (!m.quoted) return shoNherly(`Responde a un mensaje de "ver una vez"`);
 
 	// Captura el mensaje viewOnce real
