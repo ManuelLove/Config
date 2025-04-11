@@ -3375,7 +3375,7 @@ if (db.data.chats[m.chat]?.antispam) {
     addSpam(m.sender, spamDB);
     if (isSpam(m.sender, spamDB)) return shoNherly('⛔ Estás haciendo spam, espera un momento.');
 }
-conn.ev.on('messages.delete', async ({ messages }) => {
+shoNhe.ev.on('messages.delete', async ({ messages }) => {
 	const m = messages[0];
 	if (!m.message) return;
 
@@ -3397,15 +3397,15 @@ conn.ev.on('messages.delete', async ({ messages }) => {
 		type = Object.keys(content)[0];
 	}
 
-	const pushname = conn.getName ? conn.getName(sender) : sender.split('@')[0];
+	const pushname = shoNhe.getName ? shoNhe.getName(sender) : sender.split('@')[0];
 
 	// Aviso
-	await conn.sendMessage(chat, {
+	await shoNhe.sendMessage(chat, {
 		text: `*${pushname}* eliminó un mensaje. Aquí está el contenido recuperado:`
 	}, { quoted: m });
 
 	// Reenvía el contenido
-	await conn.sendMessage(chat, content, { quoted: m });
+	await shoNhe.sendMessage(chat, content, { quoted: m });
 });
 		async function cekgame(gamejid)
 		{
