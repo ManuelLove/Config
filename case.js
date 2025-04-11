@@ -15619,63 +15619,51 @@ break;
            }
 			}
 			break;
-			case 'rvo':
-			case 'readviewonce':
-			{
-				if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!m.quoted) return shoNherly(`Reply to view once message`)
-				if (m.quoted.mtype !== 'viewOnceMessageV2') return shoNherly(`This is not a view once message`)
-				if (!(await firely(m, mess.waits))) return;
-				let msg = m.quoted.message
-				let type = Object.keys(msg)[0]
-				let media = await downloadContentFromMessage(msg[type], type == 'imageMessage' ? 'image' : 'video')
-				let buffer = Buffer.from([])
-				for await (const chunk of media)
-				{
-					buffer = Buffer.concat([buffer, chunk])
-				}
-				if (/video/.test(type))
-				{
-					return shoNhe.sendFile(m.chat, buffer, 'media.mp4', msg[type].caption || '', m)
-				}
-				else if (/image/.test(type))
-				{
-					return shoNhe.sendFile(m.chat, buffer, 'media.jpg', msg[type].caption || '', m)
-				}
-				if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-			}
-			break
+case 'rvo':
+case 'readviewonce':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+
+	if (!m.quoted) return shoNherly(`Responde a un mensaje de "ver una vez"`);
+	if (m.quoted.mtype !== 'viewOnceMessageV2') return shoNherly(`Ese no es un mensaje de "ver una vez"`);
+
+	if (!(await firely(m, mess.waits))) return;
+
+	const viewOnceMsg = m.quoted.message;
+	const msgType = Object.keys(viewOnceMsg)[0];
+	const content = viewOnceMsg[msgType];
+
+	let stream = await downloadContentFromMessage(content, msgType.includes('image') ? 'image' : 'video');
+	let buffer = Buffer.from([]);
+	for await (const chunk of stream) buffer = Buffer.concat([buffer, chunk]);
+
+	const filename = msgType.includes('video') ? 'media.mp4' : 'media.jpg';
+	const mimetype = msgType.includes('video') ? 'video/mp4' : 'image/jpeg';
+	const caption = content.caption || '';
+
+	await shoNhe.sendMessage(m.chat, {
+		[msgType.includes('video') ? 'video' : 'image']: buffer,
+		mimetype,
+		caption
+	}, { quoted: m });
+
+	// Mensaje de subida de nivel (si aplica)
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
 			//[ *CASE AI JOKO SIJAWA* ]
 			case "joko":
 			{
