@@ -269,6 +269,7 @@ const tebakchara = {}
 const tebaklogo = {}
 const boom = {}
 const ahorcado = {}
+const game = {}
 const gameCasinoSolo = {}
 const suitpvp = {}
 const tebakaplikasi = {}
