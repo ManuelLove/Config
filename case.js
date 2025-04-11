@@ -15643,19 +15643,19 @@ case 'readviewonce':
 		await shoNhe.sendFile(m.chat, buffer, fileName, caption, m);
 	} else if (mimetype.includes('audio')) {
 		try {
-			try {
-  let ext = mimetype.split('/')[1];
-  let ptt = await toPTT(buffer, ext);
-  if (!ptt) throw new Error("Error al convertir a PTT");
-
-  await shoNhe.sendFile(m.chat, ptt, 'voice.opus', '', m, true, {
-    mimetype: 'audio/ogg; codecs=opus',
-    ptt: true
-  });
-} catch (e) {
-  console.error('Error al procesar el audio PTT:', e);
-  await shoNherly(`No se pudo procesar el audio como nota de voz.`);
+			let ext = mimetype.split('/')[1];
+if (!buffer || !ext) return shoNherly('Audio inválido.');
+console.log('Buffer recibido para audio:', buffer?.length);
+let ptt = await toPTT(buffer, ext);
+if (!ptt || !Buffer.isBuffer(ptt)) {
+  console.error('PTT no generado correctamente');
+  return await shoNherly(`No se pudo convertir el audio en nota de voz.`);
 }
+
+await shoNhe.sendFile(m.chat, ptt, 'voice.opus', '', m, true, {
+  mimetype: 'audio/ogg; codecs=opus',
+  ptt: true
+});
 		} catch (e) {
 			console.error(e);
 			await shoNherly(`No se pudo procesar el audio.`);
