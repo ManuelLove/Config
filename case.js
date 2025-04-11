@@ -18062,7 +18062,8 @@ case 'tictactoe': {
     if (!(await firely(m, mess.waits))) return;
     let user = global.db.data.users[m.sender];
     let TicTacToe = require("./lib/tictactoe");
-    let game = getGame();
+const { getGame } = require('./lib/tictactoe-session');
+let session = getGame();
     if (Object.values(game).find(room13 => room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender))) {
         return shoNherly(`⚠️ Todavía estás en el juego`);
     }
