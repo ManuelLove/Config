@@ -15624,31 +15624,33 @@ case 'readviewonce':
 {
 	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
 	updatePopularCommand(command);
-
-	if (!m.quoted) return shoNherly(`Responde a un mensaje de "ver una vez"`);
-	if (m.quoted.mtype !== 'viewOnceMessageV2') return shoNherly(`Ese no es un mensaje de "ver una vez"`);
-
 	if (!(await firely(m, mess.waits))) return;
 
-	const viewOnceMsg = m.quoted.message;
-	const msgType = Object.keys(viewOnceMsg)[0];
-	const content = viewOnceMsg[msgType];
+	if (!m.quoted) return shoNherly(`Responde a un mensaje de "ver una vez"`);
 
-	let stream = await downloadContentFromMessage(content, msgType.includes('image') ? 'image' : 'video');
+	// Captura el mensaje viewOnce real
+	const quoted = m.quoted;
+	const viewOnce = quoted.message?.viewOnceMessageV2 || quoted.message?.viewOnceMessage || null;
+	if (!viewOnce) return shoNherly(`Ese no es un mensaje de "ver una vez"`);
+
+	// Extraer el contenido real
+	const msg = viewOnce.message;
+	const type = Object.keys(msg)[0];
+	const media = await downloadContentFromMessage(msg[type], type.includes('image') ? 'image' : 'video');
 	let buffer = Buffer.from([]);
-	for await (const chunk of stream) buffer = Buffer.concat([buffer, chunk]);
+	for await (const chunk of media) buffer = Buffer.concat([buffer, chunk]);
 
-	const filename = msgType.includes('video') ? 'media.mp4' : 'media.jpg';
-	const mimetype = msgType.includes('video') ? 'video/mp4' : 'image/jpeg';
-	const caption = content.caption || '';
+	const fileName = type.includes('video') ? 'video.mp4' : 'image.jpg';
+	const sendType = type.includes('video') ? 'video' : 'image';
+	const caption = msg[type]?.caption || '';
 
 	await shoNhe.sendMessage(m.chat, {
-		[msgType.includes('video') ? 'video' : 'image']: buffer,
-		mimetype,
-		caption
+		[sendType]: buffer,
+		caption,
+		mimetype: sendType === 'video' ? 'video/mp4' : 'image/jpeg'
 	}, { quoted: m });
 
-	// Mensaje de subida de nivel (si aplica)
+	// Mensaje de Level Up (opcional)
 	const levelUpMessage = levelUpdate(command, m.sender);
 	if (levelUpMessage) {
 		await shoNhe.sendMessage(m.chat, {
