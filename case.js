@@ -157,23 +157,6 @@ const
 require('events').EventEmitter.defaultMaxListeners = 50;
 global.spamDB = global.spamDB || []
 ResetSpam(global.spamDB)
-// Almacén de mensajes en memoria
-global.msgStore = global.msgStore || {};
-
-shoNhe.ev.on('messages.upsert', async ({ messages, type }) => {
-	const m = messages[0];
-	if (!m.message || m.key?.id?.startsWith('BAE5')) return;
-
-	// Guardar el mensaje por su ID
-	global.msgStore[m.key.id] = m;
-
-	// (opcional) Puedes limitar cuántos guardar para no consumir tanta RAM
-	const maxMessages = 500;
-	const ids = Object.keys(global.msgStore);
-	if (ids.length > maxMessages) {
-		delete global.msgStore[ids[0]]; // eliminar el más viejo
-	}
-});
 const
 {
 	githubstalk,
@@ -3393,6 +3376,23 @@ if (db.data.chats[m.chat]?.antispam) {
     addSpam(m.sender, spamDB);
     if (isSpam(m.sender, spamDB)) return shoNherly('⛔ Estás haciendo spam, espera un momento.');
 }
+// Almacén de mensajes en memoria
+global.msgStore = global.msgStore || {};
+
+shoNhe.ev.on('messages.upsert', async ({ messages, type }) => {
+	const m = messages[0];
+	if (!m.message || m.key?.id?.startsWith('BAE5')) return;
+
+	// Guardar el mensaje por su ID
+	global.msgStore[m.key.id] = m;
+
+	// (opcional) Puedes limitar cuántos guardar para no consumir tanta RAM
+	const maxMessages = 500;
+	const ids = Object.keys(global.msgStore);
+	if (ids.length > maxMessages) {
+		delete global.msgStore[ids[0]]; // eliminar el más viejo
+	}
+});
 shoNhe.ev.on('messages.delete', async ({ messages }) => {
 	const m = messages[0];
 	if (!m || !m.key || !m.key.remoteJid || !m.key.id) return;
