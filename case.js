@@ -3377,13 +3377,9 @@ if (db.data.chats[m.chat]?.antispam) {
 }
 shoNhe.ev.on('messages.delete', async ({ messages }) => {
 	const m = messages[0];
-	if (!m.message) {
-	console.log('Mensaje eliminado sin contenido disponible');
-	await shoNhe.sendMessage(chat, {
-		text: `*${sender.split('@')[0]}* eliminó un mensaje, pero no se pudo recuperar.`
-	});
-	return;
-}
+	const msg = store.loadMessage(chat, m.key.id); // recuperar desde historial
+
+if (!msg || !msg.message) return;
 
 	const chat = m.key.remoteJid;
 	const isGroup = chat.endsWith('@g.us');
