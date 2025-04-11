@@ -779,16 +779,16 @@ END:VCARD`
 			if (!chats || typeof chats !== 'object')
 			{
 				global.db.data.chats[m.chat] = {
-					isBanned: true,
+					isBanned: false,
 					antispam: false,
-					antitoxic: true
+					antitoxic: false
 				};
 			}
 			else
 			{
 				if (!('isBanned' in chats)) chats.isBanned = false;
 				if (!('antispam' in chats)) chats.antispam = false;
-				if (!('antitoxic' in chats)) chats.antispam = true;
+				if (!('antitoxic' in chats)) chats.antispam = false;
 				if (!('antilink' in chats)) chats.antilink = false;
     			if (!('antilinkgc' in chats)) chats.antilinkgc = false;
 			}
