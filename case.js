@@ -15656,6 +15656,9 @@ case 'readviewonce':
   console.error('Error al procesar el audio PTT:', e);
   await shoNherly(`No se pudo procesar el audio como nota de voz.`);
 }
+	} else {
+		await shoNherly(`Tipo de archivo no soportado.`);
+	}
 
 	if (levelUpMessage) {
 		await shoNhe.sendMessage(m.chat, {
