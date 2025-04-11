@@ -154,6 +154,7 @@ const
 	isSpam,
 	ResetSpam
 } = require('./lib/antispam');
+require('events').EventEmitter.defaultMaxListeners = 50;
 global.spamDB = global.spamDB || []
 ResetSpam(global.spamDB)
 const
@@ -3375,11 +3376,11 @@ if (db.data.chats[m.chat]?.antispam) {
     addSpam(m.sender, spamDB);
     if (isSpam(m.sender, spamDB)) return shoNherly('⛔ Estás haciendo spam, espera un momento.');
 }
+shoNhe.ev.removeAllListeners('messages.delete'); // limpia duplicados
 shoNhe.ev.on('messages.delete', async ({ messages }) => {
+	// tu código aquí...
 	const m = messages[0];
-	const msg = store.loadMessage(chat, m.key.id); // recuperar desde historial
-
-if (!msg || !msg.message) return;
+	if (!m.message) return;
 
 	const chat = m.key.remoteJid;
 	const isGroup = chat.endsWith('@g.us');
