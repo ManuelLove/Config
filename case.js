@@ -18117,7 +18117,7 @@ ${arr.slice(6).join('')}
         };
         if (text) room13.name = text;
         shoNherly(`*⏳ ᴇsᴘᴇʀᴀɴᴅᴏ ᴀʟ sɪɢᴜɪᴇɴᴛᴇ ᴊᴜɢᴀᴅᴏ*` + (text ? ` *ᴇsᴄʀɪʙᴀ ᴇʟ sɪɢᴜɪᴇɴᴛᴇ ᴄᴏᴍᴀɴᴅᴏ:* ${prefix + command} ${text}\n\n🎁 ʀᴇᴄᴏᴍᴘᴇɴsᴀ: *4999 XP*` : ''));
-        session.game[room13.id] = room13;
+        session[room13.id] = room13;
     }
 }
 break;
