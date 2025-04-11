@@ -52,20 +52,13 @@ function toAudio(buffer, ext) {
  * @param {String} ext File Extension 
  */
 function toPTT(buffer, ext) {
-  console.log('Ejecutando toPTT con extensión:', ext);
   return ffmpeg(buffer, [
     '-vn',
     '-c:a', 'libopus',
     '-b:a', '128k',
     '-vbr', 'on',
     '-compression_level', '10'
-  ], ext, 'opus').then(buf => {
-    console.log('toPTT completado. Tamaño del buffer:', buf.length);
-    return buf;
-  }).catch(err => {
-    console.error('Error en toPTT/ffmpeg:', err);
-    return null;
-  });
+  ], ext, 'opus')
 }
 
 /**
