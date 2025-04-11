@@ -154,7 +154,6 @@ const
 	isSpam,
 	ResetSpam
 } = require('./lib/antispam');
-require('events').EventEmitter.defaultMaxListeners = 50;
 global.spamDB = global.spamDB || []
 ResetSpam(global.spamDB)
 const
@@ -781,8 +780,7 @@ END:VCARD`
 				global.db.data.chats[m.chat] = {
 					isBanned: false,
 					antispam: false,
-					antitoxic: false,
-					antidelete: false
+					antitoxic: false
 				};
 			}
 			else
@@ -790,7 +788,6 @@ END:VCARD`
 				if (!('isBanned' in chats)) chats.isBanned = false;
 				if (!('antispam' in chats)) chats.antispam = false;
 				if (!('antitoxic' in chats)) chats.antispam = false;
-				if (!('antidelete' in chats)) chats.antispam = false;
 				if (!('antilink' in chats)) chats.antilink = false;
     			if (!('antilinkgc' in chats)) chats.antilinkgc = false;
 			}
@@ -3376,51 +3373,6 @@ if (db.data.chats[m.chat]?.antispam) {
     addSpam(m.sender, spamDB);
     if (isSpam(m.sender, spamDB)) return shoNherly('⛔ Estás haciendo spam, espera un momento.');
 }
-// Almacén de mensajes en memoria
-global.msgStore = global.msgStore || {};
-
-shoNhe.ev.on('messages.upsert', async ({ messages, type }) => {
-	const m = messages[0];
-	if (!m.message || m.key?.id?.startsWith('BAE5')) return;
-
-	// Guardar el mensaje por su ID
-	global.msgStore[m.key.id] = m;
-
-	// (opcional) Puedes limitar cuántos guardar para no consumir tanta RAM
-	const maxMessages = 500;
-	const ids = Object.keys(global.msgStore);
-	if (ids.length > maxMessages) {
-		delete global.msgStore[ids[0]]; // eliminar el más viejo
-	}
-});
-shoNhe.ev.on('messages.delete', async ({ messages }) => {
-	const m = messages[0];
-	if (!m || !m.key || !m.key.remoteJid || !m.key.id) return;
-
-	const chat = m.key.remoteJid;
-	const sender = m.key.participant || m.key.remoteJid;
-	const isBot = m.key.fromMe;
-
-	// Solo si el grupo tiene antidelete activado
-	if (!db.data.chats[chat] || !db.data.chats[chat].antidelete) return;
-	if (isBot) return;
-
-	const msg = global.msgStore[m.key.id];
-	if (!msg || !msg.message) {
-		console.log('❌ No se pudo recuperar el mensaje eliminado:', m.key.id);
-		return;
-	}
-
-	const pushname = shoNhe.getName ? shoNhe.getName(sender) : sender.split('@')[0];
-
-	// Aviso
-	await shoNhe.sendMessage(chat, {
-		text: `*${pushname}* eliminó un mensaje. Aquí está el contenido:`
-	}, { quoted: msg });
-
-	// Reenviar el mensaje eliminado
-	await shoNhe.sendMessage(chat, msg.message, { quoted: msg });
-});
 		async function cekgame(gamejid)
 		{
 			if (tekateki[gamejid])
@@ -11517,19 +11469,6 @@ if (args[0] === "add") {
            }
 			}
 			break;
-			case 'antidelete':
-{
-	if (!isGroup) return shoNherly(lenguajeGB.smsGrupos);
-	if (!isAdmins && !isCreator) return shoNherly(lenguajeGB.smsAdmin);
-
-	const chat = db.data.chats[m.chat];
-	chat.antidelete = !chat.antidelete;
-
-	await shoNherly(chat.antidelete
-		? '🛡️ AntiDelete ACTIVADO. El bot recuperará mensajes eliminados.'
-		: '🛡️ AntiDelete DESACTIVADO. Ya no se recuperarán mensajes eliminados.');
-}
-break;
 		// ADVERTIR
 case 'warn': 			{
 				if (!isGroup) return shoNherly(mess.groups);
