@@ -15619,63 +15619,37 @@ break;
            }
 			}
 			break;
-			case 'rvo':
-			case 'readviewonce':
-			{
-				if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!m.quoted) return shoNherly(`Reply to view once message`)
-				if (!m.quoted.viewOnce) return shoNherly(`Ese no es un mensaje de "ver una vez"`)
-				if (!(await firely(m, mess.waits))) return;
-				let msg = m.quoted.message
-				let type = Object.keys(msg)[0]
-				let media = await downloadContentFromMessage(msg[type], type == 'imageMessage' ? 'image' : 'video')
-				let buffer = Buffer.from([])
-				for await (const chunk of media)
-				{
-					buffer = Buffer.concat([buffer, chunk])
-				}
-				if (/video/.test(type))
-				{
-					return shoNhe.sendFile(m.chat, buffer, 'media.mp4', msg[type].caption || '', m)
-				}
-				else if (/image/.test(type))
-				{
-					return shoNhe.sendFile(m.chat, buffer, 'media.jpg', msg[type].caption || '', m)
-				}
-				if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-			}
-			break
+case 'rvo':
+case 'readviewonce':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+
+	if (!m.quoted) return shoNherly(`Responde a un mensaje de "ver una vez"`);
+	if (!m.quoted.viewOnce) return shoNherly(`Ese no es un mensaje de "ver una vez"`);
+	if (!(await firely(m, mess.waits))) return;
+
+	let mediaType = m.quoted.mimetype?.includes("video") ? 'video' : 'image';
+	let buffer = await m.quoted.download();
+
+	let fileName = mediaType === 'video' ? 'media.mp4' : 'media.jpg';
+	await shoNhe.sendFile(m.chat, buffer, fileName, m.quoted.text || '', m);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" }},
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" }}
+			],
+			viewOnce: true
+		}, { quoted: hw });
+	}
+}
+break;
 			//[ *CASE AI JOKO SIJAWA* ]
 			case "joko":
 			{
