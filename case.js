@@ -189,7 +189,12 @@ const
 } = require('./lib/scp/hekkso')
 const contacts = JSON.parse(fs.readFileSync('./src/data/role/contacts.json'));
 const lyrics = require('./lib/scp/lyrics');
-const { toAudio, toPTT, toVideo } = require('./lib/converter');
+const
+{
+	toAudio,
+	toPTT,
+	toVideo
+} = require('./lib/converter');
 const
 {
 	addAfkUser,
@@ -15638,7 +15643,7 @@ case 'readviewonce':
 		await shoNhe.sendFile(m.chat, buffer, fileName, caption, m);
 	} else if (mimetype.includes('audio')) {
 		try {
-			let audio = await toAudio(buffer, mimetype.split('/')[1]); // Asegúrate de tener esta función
+			let audio = await toAudio(buffer, 'ogg'); // o 'webm' si sabes que viene así // Asegúrate de tener esta función
 			await shoNhe.sendFile(m.chat, audio, 'audio.mp3', caption, m, true, {
 				mimetype: 'audio/mpeg',
 				ptt: false
