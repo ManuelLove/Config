@@ -15643,7 +15643,8 @@ case 'readviewonce':
 		await shoNhe.sendFile(m.chat, buffer, fileName, caption, m);
 	} else if (mimetype.includes('audio')) {
 		try {
-			let audio = await toAudio(buffer, 'ogg'); // o 'webm' si sabes que viene así // Asegúrate de tener esta función
+			let ext = mimetype.split('/')[1]; // ej: audio/ogg => 'ogg'
+let audio = await toAudio(buffer, ext); // Asegúrate de tener esta función
 			await shoNhe.sendFile(m.chat, audio, 'audio.mp3', caption, m, true, {
 				mimetype: 'audio/mpeg',
 				ptt: false
