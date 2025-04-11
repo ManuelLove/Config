@@ -15622,6 +15622,11 @@ break;
 case 'rvo':
 case 'readviewonce':
 {
+const {
+  toAudio,
+  toPTT,
+  toVideo
+} = require('./lib/converter');
 	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
 	updatePopularCommand(command);
 	const levelUpMessage = levelUpdate(command, m.sender);
@@ -15643,12 +15648,12 @@ case 'readviewonce':
 		await shoNhe.sendFile(m.chat, buffer, fileName, caption, m);
 	} else if (mimetype.includes('audio')) {
 		try {
-			let ext = mimetype.split('/')[1]; // ej: audio/ogg => 'ogg'
-let audio = await toAudio(buffer, ext); // Asegúrate de tener esta función
-			await shoNhe.sendFile(m.chat, audio, 'audio.mp3', caption, m, true, {
-				mimetype: 'audio/mpeg',
-				ptt: false
-			});
+			let ext = mimetype.split('/')[1];
+let ptt = await toPTT(buffer, ext);
+await shoNhe.sendFile(m.chat, ptt, 'voice.opus', '', m, true, {
+  mimetype: 'audio/ogg; codecs=opus',
+  ptt: true
+});
 		} catch (e) {
 			console.error(e);
 			await shoNherly(`No se pudo procesar el audio.`);
