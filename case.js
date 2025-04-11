@@ -145,7 +145,7 @@ const
 	quotedLyo,
 	simi
 } = require('./lib/screaper')
-const session = require('./lib/tictactoe-session') // Ajusta la ruta según tu estructura
+const { getGame, setGame } = require('./lib/tictactoe-session') // Ajusta la ruta según tu estructura
 const pinterest = require('./lib/scp/pinterest');
 const
 {
@@ -3175,7 +3175,7 @@ function pickRandom(arr) {
 }
 let winScore = 20
 let playScore = -5
-let game = session.game
+let game = getGame()
 let room13 = Object.values(game).find(room13 => room13.id && room13.game && room13.state && room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender) && room13.state == 'PLAYING')
 
 if (room13) {
@@ -3278,7 +3278,7 @@ ${isWin
     }
 
     saveUserFire(db);
-    delete session.game[room13.id];
+    delete game[room13.id];
 }
 }
 function parseMention(text) {
@@ -18062,7 +18062,7 @@ case 'tictactoe': {
     if (!(await firely(m, mess.waits))) return;
     let user = global.db.data.users[m.sender];
     let TicTacToe = require("./lib/tictactoe");
-    let game = session.game;
+    let game = getGame();
     if (Object.values(this.game).find(room13 => room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender))) {
         return shoNherly(`⚠️ Todavía estás en el juego`);
     }
@@ -18125,7 +18125,7 @@ case 'ttcreset':
 case 'deltictactoe':
 case 'ttceend':
 case 'delttc': {
-    let game = session.game
+    let game = getGame()
     let room13 = Object.values(game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))
     if (!room13) return shoNherly('⚠️ ɴᴏ ᴇsᴛᴀs ᴇɴ ᴘᴀʀᴛɪᴅᴀ ᴅᴇ ᴛɪᴄᴛᴀᴄᴛᴏᴇ 🎮')
     delete game[room13.id]
