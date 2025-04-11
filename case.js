@@ -145,6 +145,7 @@ const
 	quotedLyo,
 	simi
 } = require('./lib/screaper')
+const session = require('./lib/tictactoe-session') // Ajusta la ruta según tu estructura
 const pinterest = require('./lib/scp/pinterest');
 const
 {
@@ -269,7 +270,6 @@ const tebakchara = {}
 const tebaklogo = {}
 const boom = {}
 const ahorcado = {}
-const game = {}
 const gameCasinoSolo = {}
 const suitpvp = {}
 const tebakaplikasi = {}
@@ -3175,8 +3175,8 @@ function pickRandom(arr) {
 }
 let winScore = 20
 let playScore = -5
-this.game = this.game ? this.game : {}
-let room13 = Object.values(this.game).find(room13 => room13.id && room13.game && room13.state && room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender) && room13.state == 'PLAYING')
+let game = session.game
+let room13 = Object.values(game).find(room13 => room13.id && room13.game && room13.state && room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender) && room13.state == 'PLAYING')
 
 if (room13) {
     let ok
@@ -3278,7 +3278,7 @@ ${isWin
     }
 
     saveUserFire(db);
-    delete this.game[room13.id];
+    delete session.game[room13.id];
 }
 }
 function parseMention(text) {
@@ -18062,7 +18062,7 @@ case 'tictactoe': {
     if (!(await firely(m, mess.waits))) return;
     let user = global.db.data.users[m.sender];
     let TicTacToe = require("./lib/tictactoe");
-    this.game = this.game ? this.game : {};
+    let game = session.game;
     if (Object.values(this.game).find(room13 => room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender))) {
         return shoNherly(`⚠️ Todavía estás en el juego`);
     }
@@ -18117,7 +18117,7 @@ ${arr.slice(6).join('')}
         };
         if (text) room13.name = text;
         shoNherly(`*⏳ ᴇsᴘᴇʀᴀɴᴅᴏ ᴀʟ sɪɢᴜɪᴇɴᴛᴇ ᴊᴜɢᴀᴅᴏ*` + (text ? ` *ᴇsᴄʀɪʙᴀ ᴇʟ sɪɢᴜɪᴇɴᴛᴇ ᴄᴏᴍᴀɴᴅᴏ:* ${prefix + command} ${text}\n\n🎁 ʀᴇᴄᴏᴍᴘᴇɴsᴀ: *4999 XP*` : ''));
-        this.game[room13.id] = room13;
+        session.game[room13.id] = room13;
     }
 }
 break;
@@ -18125,13 +18125,13 @@ case 'ttcreset':
 case 'deltictactoe':
 case 'ttceend':
 case 'delttc': {
-    this.game = this.game ? this.game : {}
-    let room13 = Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))
+    let game = session.game
+    let room13 = Object.values(game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))
     if (!room13) return shoNherly('⚠️ ɴᴏ ᴇsᴛᴀs ᴇɴ ᴘᴀʀᴛɪᴅᴀ ᴅᴇ ᴛɪᴄᴛᴀᴄᴛᴏᴇ 🎮')
-    delete this.game[room13.id]
+    delete game[room13.id]
     shoNherly('✅ sᴇ ʀᴇɪɴɪᴄɪᴏ ʟᴀ sᴇsɪᴏɴ ᴅᴇ *ᴛɪᴄᴛᴀᴄᴛᴏᴇ 🎮*')
 }
-break
+break;
 case 'pregunta':
 case 'preg': {
     if (!text) return shoNherly(`*Y la pregunta?*\n\n*Ejemplo:* ${prefix + command} mañana va a llover?`);
