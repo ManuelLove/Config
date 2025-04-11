@@ -15622,11 +15622,6 @@ break;
 case 'rvo':
 case 'readviewonce':
 {
-const {
-  toAudio,
-  toPTT,
-  toVideo
-} = require('./lib/converter');
 	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
 	updatePopularCommand(command);
 	const levelUpMessage = levelUpdate(command, m.sender);
@@ -15648,12 +15643,19 @@ const {
 		await shoNhe.sendFile(m.chat, buffer, fileName, caption, m);
 	} else if (mimetype.includes('audio')) {
 		try {
-			let ext = mimetype.split('/')[1];
-let ptt = await toPTT(buffer, ext);
-await shoNhe.sendFile(m.chat, ptt, 'voice.opus', '', m, true, {
-  mimetype: 'audio/ogg; codecs=opus',
-  ptt: true
-});
+			try {
+  let ext = mimetype.split('/')[1];
+  let ptt = await toPTT(buffer, ext);
+  if (!ptt) throw new Error("Error al convertir a PTT");
+
+  await shoNhe.sendFile(m.chat, ptt, 'voice.opus', '', m, true, {
+    mimetype: 'audio/ogg; codecs=opus',
+    ptt: true
+  });
+} catch (e) {
+  console.error('Error al procesar el audio PTT:', e);
+  await shoNherly(`No se pudo procesar el audio como nota de voz.`);
+}
 		} catch (e) {
 			console.error(e);
 			await shoNherly(`No se pudo procesar el audio.`);
