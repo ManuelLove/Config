@@ -15630,11 +15630,31 @@ case 'readviewonce':
 	if (!m.quoted.viewOnce) return shoNherly(`Ese no es un mensaje de "ver una vez"`);
 	if (!(await firely(m, mess.waits))) return;
 
-	let mediaType = m.quoted.mimetype?.includes("video") ? 'video' : 'image';
+	let mimetype = m.quoted.mimetype || '';
 	let buffer = await m.quoted.download();
+	let fileName = '';
+	let caption = m.quoted.text || '';
 
-	let fileName = mediaType === 'video' ? 'media.mp4' : 'media.jpg';
-	await shoNhe.sendFile(m.chat, buffer, fileName, m.quoted.text || '', m);
+	if (mimetype.includes('image')) {
+		fileName = 'media.jpg';
+		await shoNhe.sendFile(m.chat, buffer, fileName, caption, m);
+	} else if (mimetype.includes('video')) {
+		fileName = 'media.mp4';
+		await shoNhe.sendFile(m.chat, buffer, fileName, caption, m);
+	} else if (mimetype.includes('audio')) {
+		try {
+			let audio = await toAudio(buffer); // Asegúrate de tener esta función
+			await shoNhe.sendFile(m.chat, audio, 'audio.mp3', caption, m, true, {
+				mimetype: 'audio/mpeg',
+				ptt: false
+			});
+		} catch (e) {
+			console.error(e);
+			await shoNherly(`No se pudo procesar el audio.`);
+		}
+	} else {
+		await shoNherly(`Tipo de archivo no soportado.`);
+	}
 
 	if (levelUpMessage) {
 		await shoNhe.sendMessage(m.chat, {
