@@ -3175,8 +3175,7 @@ function pickRandom(arr) {
 let winScore = 20
 let playScore = -5
 global.tictactoe = global.tictactoe || {}
-let room13 = Object.values(global.tictactoe).find( ... )
-let room13 = Object.values(this.game).find(room13 => room13.id && room13.game && room13.state && room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender) && room13.state == 'PLAYING')
+let room13 = Object.values(global.tictactoe).find(room13 => room13.id && room13.game && room13.state && room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender) && room13.state == 'PLAYING')
 
 if (room13) {
     let ok
@@ -18063,8 +18062,7 @@ case 'tictactoe': {
     let user = global.db.data.users[m.sender];
     let TicTacToe = require("./lib/tictactoe");
     global.tictactoe = global.tictactoe || {}
-let room13 = Object.values(global.tictactoe).find( ... );
-    if (Object.values(this.game).find(room13 => room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender))) {
+    if (Object.values(global.tictactoe).find(room13 => room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender))) {
         return shoNherly(`⚠️ Todavía estás en el juego`);
     }
     
@@ -18127,8 +18125,7 @@ case 'deltictactoe':
 case 'ttceend':
 case 'delttc': {
     global.tictactoe = global.tictactoe || {}
-let room13 = Object.values(global.tictactoe).find( ... )
-    let room13 = Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))
+let room13 = Object.values(global.tictactoe).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))
     if (!room13) return shoNherly('⚠️ ɴᴏ ᴇsᴛᴀs ᴇɴ ᴘᴀʀᴛɪᴅᴀ ᴅᴇ ᴛɪᴄᴛᴀᴄᴛᴏᴇ 🎮')
     delete global.tictactoe[room13.id]
     shoNherly('✅ sᴇ ʀᴇɪɴɪᴄɪᴏ ʟᴀ sᴇsɪᴏɴ ᴅᴇ *ᴛɪᴄᴛᴀᴄᴛᴏᴇ 🎮*')
