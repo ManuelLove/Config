@@ -780,7 +780,8 @@ END:VCARD`
 				global.db.data.chats[m.chat] = {
 					isBanned: false,
 					antispam: false,
-					antitoxic: false
+					antitoxic: false,
+					antidelete: false
 				};
 			}
 			else
@@ -788,6 +789,7 @@ END:VCARD`
 				if (!('isBanned' in chats)) chats.isBanned = false;
 				if (!('antispam' in chats)) chats.antispam = false;
 				if (!('antitoxic' in chats)) chats.antispam = false;
+				if (!('antidelete' in chats)) chats.antispam = false;
 				if (!('antilink' in chats)) chats.antilink = false;
     			if (!('antilinkgc' in chats)) chats.antilinkgc = false;
 			}
