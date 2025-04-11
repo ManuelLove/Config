@@ -18063,11 +18063,11 @@ case 'tictactoe': {
     let user = global.db.data.users[m.sender];
     let TicTacToe = require("./lib/tictactoe");
     let game = getGame();
-    if (Object.values(this.game).find(room13 => room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender))) {
+    if (Object.values(game).find(room13 => room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender))) {
         return shoNherly(`⚠️ Todavía estás en el juego`);
     }
     
-    let room13 = Object.values(this.game).find(room13 => room13.state === 'WAITING' && (text ? room13.name === text : true));
+    let room13 = Object.values(game).find(room13 => room13.state === 'WAITING' && (text ? room13.name === text : true));
     if (room13) {
         room13.o = m.chat;
         room13.game.playerO = m.sender;
