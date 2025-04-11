@@ -73,209 +73,6 @@ const pickRandom = (arr) =>
 };
 const simbol = ["⭔", "⌬", "〆", "»", "✧", "✪", "✹", "✦", "♢", "✯", "❖", "◆", "★", "⊗", "⊕", "⊙", "⌖", "⌕", "⌘", "⌙", "⌝", "⌞", "⎈", "⎯", "⎱", "⟊", "⟐", "⟫", "⟁", "⬣", "⬸", "⬙", "⤫", "⤷", "⧫", "⧖", "⧙", "⧚", "⧤", "⧩", "⨀", "⨁", "⨂", "⨆", "⨇", "⨈", "⨓", "⨔", "⨕", "⨖", "⨗", "⨤", "⩺", "⩻", "⩼", "⩽", "⩾", "⪴", "⪶", "⪸", "⪹", "⫷", "⫸", "⫽", "⪯", "⩿", "⪺", "⪻", "⫮", "⪮", "⨵", "⨶", "⩸", "⩹", "⩺", "⪪", "⪫", "⪬", "⪭", "⪮", "⬸", "⬶", "⩷", "⩸", "⩹", "⩺", "⪪", "⪫", "⪬", "⪭", "⪮", "⪯", "⬸", "⬶", "⨂", "⨃", "⨄", "⨅", "⨆", "⨇", "⨈", "⨉", "⨊", "⨋", "⨌", "⨍", "⨎", "⨏", "⨐", "⨑", "⨒", "⨓", "⨔", "⨕", "⨖", "⨗", "⨘", "⨙", "⨚", "⨛", "⨜", "⨝", "⨞", "⨟", "⨠", "⨡", "⨢", "⨣", "⨤", "⨥", "⨦", "⨧", "⨨", "⨩", "⨪", "⨫", "⨬", "⨭", "⨮", "⨯", "⨰", "⨱", "⨲", "⨳", "⨴", "⨵", "⨶", "⨷", "⨸", "⨹", "⨺", "⨻", "⨼", "⨽", "⨾", "⨿", "⩀", "⩁", "⩂", "⩃", "⩄", "⩅", "⩆", "⩇", "⩈", "⩉", "⩊", "⩋", "⩌", "⩍", "⩎", "⩏", "⩐", "⩑", "⩒", "⩓", "⩔", "⩕", "⩖", "⩗"];
 let simbols = `${pickRandom(["⭔", "⌬", "〆", "»", "✧", "✪", "✹", "✦", "♢", "✯", "✾", "✽", "✿", "❀", "❂", "❉", "❖", "✶", "◉", "◆", "★", "✥", "⊗", "⊕", "⊙", "⌖", "⌕", "⌘", "⌙", "⌝", "⌞", "⎈", "⎱", "⟊", "⟐", "⟫", "⟁", "⬣", "⬸", "⬙", "⤫", "⤷", "⧫", "⧖", "⧙", "⧚", "⧤", "⧩", "⨀", "⨁", "⨂", "⨆", "⨇", "⨈", "⨓", "⨔", "⨕", "⨖", "⨗", "⨤", "⩺", "⩻", "⩼", "⩽", "⩾", "⪴", "⪶", "⪸", "⪹", "⫷", "⫸", "⫽", "⪯", "⩿", "⪺", "⪻", "⫮", "⪮", "⨵", "⨶", "⩸", "⩹", "⩺", "⪪", "⪫", "⪬", "⪭", "⪮", "⬸", "⬶", "⩷", "⩸", "⩹", "⩺", "⪪", "⪫", "⪬", "⪭", "⪮", "⪯", "⬸", "⬶", "⨂", "⨃", "⨄", "⨅", "⨆", "⨇", "⨈", "⨉", "⨊", "⨋", "⨌", "⨍", "⨎", "⨏", "⨐", "⨑", "⨒", "⨓", "⨔", "⨕", "⨖", "⨗", "⨘", "⨙", "⨚", "⨛", "⨜", "⨝", "⨞", "⨟", "⨠", "⨡", "⨢", "⨣", "⨤", "⨥", "⨦", "⨧", "⨨", "⨩", "⨪", "⨫", "⨬", "⨭", "⨮", "⨯", "⨰", "⨱", "⨲", "⨳", "⨴", "⨵", "⨶", "⨷", "⨸", "⨹", "⨺", "⨻", "⨼", "⨽", "⨾", "⨿", "⩀", "⩁", "⩂", "⩃", "⩄", "⩅", "⩆", "⩇", "⩈", "⩉", "⩊", "⩋", "⩌", "⩍", "⩎", "⩏", "⩐", "⩑", "⩒", "⩓", "⩔", "⩕", "⩖", "⩗"])}`;
-global.asmaulhusna2 = [
-    { index: 1, latin: "Ar-Rahman", arabic: "الرَّحْمَنُ", translation_id: "Yang Maha Pengasih", translation_en: "The Most Gracious" },
-    { index: 2, latin: "Ar-Rahim", arabic: "الرَّحِيمُ", translation_id: "Yang Maha Penyayang", translation_en: "The Most Merciful" },
-    { index: 3, latin: "Al-Malik", arabic: "الْمَلِكُ", translation_id: "Yang Maha Merajai", translation_en: "The King and Owner of Dominion" },
-    { index: 4, latin: "Al-Quddus", arabic: "الْقُدُّوسُ", translation_id: "Yang Maha Suci", translation_en: "The Absolutely Pure" },
-    { index: 5, latin: "As-Salam", arabic: "السَّلَامُ", translation_id: "Yang Maha Memberi Keselamatan", translation_en: "The Source of Peace and Safety" },
-    { index: 6, latin: "Al-Mu'min", arabic: "الْمُؤْمِنُ", translation_id: "Yang Maha Memberi Keamanan", translation_en: "The Giver of Faith and Security" },
-    { index: 7, latin: "Al-Muhaymin", arabic: "الْمُهَيْمِنُ", translation_id: "Yang Maha Memelihara", translation_en: "The Guardian, The Witness, The Overseer" },
-    { index: 8, latin: "Al-Aziz", arabic: "الْعَزِيزُ", translation_id: "Yang Maha Perkasa", translation_en: "The Almighty" },
-    { index: 9, latin: "Al-Jabbar", arabic: "الْجَبَّارُ", translation_id: "Yang Maha Memaksa", translation_en: "The Compeller, The Restorer" },
-    { index: 10, latin: "Al-Mutakabbir", arabic: "الْمُتَكَبِّرُ", translation_id: "Yang Maha Megah", translation_en: "The Supreme, The Majestic" },
-    { index: 11, latin: "Al-Khaliq", arabic: "الْخَالِقُ", translation_id: "Yang Maha Pencipta", translation_en: "The Creator, the Maker" },
-    { index: 12, latin: "Al-Bari'", arabic: "الْبَارِئُ", translation_id: "Yang Maha Merencanakan", translation_en: "The Evolver" },
-    { index: 13, latin: "Al-Musawwir", arabic: "الْمُصَوِّرُ", translation_id: "Yang Maha Membentuk Rupa", translation_en: "The Fashioner" },
-    { index: 14, latin: "Al-Ghaffar", arabic: "الْغَفَّارُ", translation_id: "Yang Maha Pengampun", translation_en: "The Constant Forgiver" },
-    { index: 15, latin: "Al-Qahhar", arabic: "الْقَهَّارُ", translation_id: "Yang Maha Menundukkan", translation_en: "The All-Subduer" },
-    { index: 16, latin: "Al-Wahhab", arabic: "الْوَهَّابُ", translation_id: "Yang Maha Pemberi Karunia", translation_en: "The Supreme Bestower" },
-    { index: 17, latin: "Ar-Razzaq", arabic: "الرَّزَّاقُ", translation_id: "Yang Maha Pemberi Rezeki", translation_en: "The Provider" },
-    { index: 18, latin: "Al-Fattah", arabic: "الْفَتَّاحُ", translation_id: "Yang Maha Pembuka Rahmat", translation_en: "The Supreme Solver" },
-    { index: 19, latin: "Al-Alim", arabic: "الْعَلِيمُ", translation_id: "Yang Maha Mengetahui", translation_en: "The All-Knowing" },
-    { index: 20, latin: "Al-Qabid", arabic: "الْقَابِضُ", translation_id: "Yang Maha Menyempitkan", translation_en: "The Withholder" },
-    { index: 21, latin: "Al-Basit", arabic: "الْبَاسِطُ", translation_id: "Yang Maha Melapangkan", translation_en: "The Extender" },
-    { index: 22, latin: "Al-Khafid", arabic: "الْخَافِضُ", translation_id: "Yang Maha Merendahkan", translation_en: "The Reducer" },
-    { index: 23, latin: "Ar-Rafi", arabic: "الرَّافِعُ", translation_id: "Yang Maha Meninggikan", translation_en: "The Exalter" },
-    { index: 24, latin: "Al-Mu'izz", arabic: "المعز", translation_id: "Yang Maha Memuliakan", translation_en: "The Honourer, the Bestower" },
-    { index: 25, latin: "Al-Muzil", arabic: "المذل", translation_id: "Yang Maha Menghinakan", translation_en: "The Dishonourer" },
-    { index: 26, latin: "As-Sami'", arabic: "السميع", translation_id: "Yang Maha Mendengar", translation_en: "The All-Hearing" },
-    { index: 27, latin: "Al-Basir", arabic: "البصير", translation_id: "Yang Maha Melihat", translation_en: "The All-Seeing" },
-    { index: 28, latin: "Al-Hakam", arabic: "الحكم", translation_id: "Yang Maha Menetapkan", translation_en: "The Impartial Judge" },
-    { index: 29, latin: "Al-Adl", arabic: "العدل", translation_id: "Yang Maha Adil", translation_en: "The Utterly Just" },
-    { index: 30, latin: "Al-Latif", arabic: "اللَّطِيفُ", translation_id: "Yang Maha Lembut", translation_en: "The Subtle One, the Most Gentle" },
-    { index: 31, latin: "Al-Khabir", arabic: "الْخَبِيرُ", translation_id: "Yang Maha Waspada", translation_en: "The All-Aware" },
-    { index: 32, latin: "Al-Halim", arabic: "الْحَلِيمُ", translation_id: "Yang Maha Penyantun", translation_en: "The Most Forbearing" },
-    { index: 33, latin: "Al-Azim", arabic: "الْعَظِيمُ", translation_id: "Yang Maha Agung", translation_en: "The Magnificent, the Infinite" },
-    { index: 34, latin: "Al-Ghaffur", arabic: "الْغَفُورُ", translation_id: "Yang Maha Pengampun", translation_en: "The Great Forgiver" },
-    { index: 35, latin: "Ash-Shakur", arabic: "الشَّكُورُ", translation_id: "Yang Maha Pembalas Budi", translation_en: "The Most Appreciative" },
-    { index: 36, latin: "Al-Aliyy", arabic: "الْعَلِيُّ", translation_id: "Yang Maha Tinggi", translation_en: "The Most High, the Exalted" },
-    { index: 37, latin: "Al-Kabir", arabic: "الْكَبِيرُ", translation_id: "Yang Maha Besar", translation_en: "The Most Great" },
-    { index: 38, latin: "Al-Hafiz", arabic: "الْحَفِيظُ", translation_id: "Yang Maha Memelihara", translation_en: "The Preserver" },
-    { index: 39, latin: "Al-Muqit", arabic: "المقيت", translation_id: "Yang Maha Pemberi Kecukupan", translation_en: "The Sustainer" },
-    { index: 40, latin: "Al-Hasib", arabic: "الْحَسِيبُ", translation_id: "Yang Maha Membuat Perhitungan", translation_en: "The Reckoner" },
-    { index: 41, latin: "Al-Jalil", arabic: "الْجَلِيلُ", translation_id: "Yang Maha Luhur", translation_en: "The Majestic" },
-    { index: 42, latin: "Al-Karim", arabic: "الْكَرِيمُ", translation_id: "Yang Maha Pemurah", translation_en: "The Most Generous, the Most Esteemed" },
-    { index: 43, latin: "Ar-Raqib", arabic: "الرَّقِيبُ", translation_id: "Yang Maha Mengawasi", translation_en: "The Watchful" },
-    { index: 44, latin: "Al-Mujib", arabic: "الْمُجِيبُ", translation_id: "Yang Maha Mengabulkan", translation_en: "The Responsive One" },
-    { index: 45, latin: "Al-Wasi'", arabic: "الْوَاسِعُ", translation_id: "Yang Maha Luas", translation_en: "The All-Encompassing, the Boundless" },
-    { index: 46, latin: "Al-Hakim", arabic: "الْحَكِيمُ", translation_id: "Yang Maha Bijaksana", translation_en: "The All-Wise" },
-    { index: 47, latin: "Al-Wadud", arabic: "الْوَدُودُ", translation_id: "Yang Maha Mengasihi", translation_en: "The Most Loving" },
-    { index: 48, latin: "Al-Majid", arabic: "الْمَجِيدُ", translation_id: "Yang Maha Mulia", translation_en: "The Glorious, the Most Honorable" },
-    { index: 49, latin: "Al-Ba'ith", arabic: "الْبَاعِثُ", translation_id: "Yang Maha Membangkitkan", translation_en: "The Infuser of New Life" },
-    { index: 50, latin: "Ash-Shahid", arabic: "الشَّهِيدُ", translation_id: "Yang Maha Menyaksikan", translation_en: "The All-and-Ever Witnessing" },
-    { index: 51, latin: "Al-Haqq", arabic: "الْحَقُّ", translation_id: "Yang Maha Benar", translation_en: "The Absolute Truth" },
-    { index: 52, latin: "Al-Wakil", arabic: "الْوَكِيلُ", translation_id: "Yang Maha Memelihara", translation_en: "The Trustee, the Disposer of Affairs" },
-    { index: 53, latin: "Al-Qawiyy", arabic: "الْقَوِيُّ", translation_id: "Yang Maha Kuat", translation_en: "The All-Strong" },
-    { index: 54, latin: "Al-Matin", arabic: "الْمَتِينُ", translation_id: "Yang Maha Kokoh", translation_en: "The Firm One" },
-    { index: 55, latin: "Al-Waliyy", arabic: "الْوَلِيُّ", translation_id: "Yang Maha Melindungi", translation_en: "The Sole-Authority" },
-    { index: 56, latin: "Al-Hamid", arabic: "الْحَمِيدُ", translation_id: "Yang Maha Terpuji", translation_en: "The Praiseworthy" },
-    { index: 57, latin: "Al-Muhsi", arabic: "الْمُحْصِي", translation_id: "Yang Maha Mengalkulasi", translation_en: "The All-Enumerating, the Counter" },
-    { index: 58, latin: "Al-Mubdi", arabic: "الْمُبْدِئُ", translation_id: "Yang Maha Memulai", translation_en: "The Originator, the Initiator" },
-    { index: 59, latin: "Al-Mu'id", arabic: "الْمُعِيدُ", translation_id: "Yang Maha Mengembalikan Kehidupan", translation_en: "The Restorer, the Reinstater" },
-    { index: 60, latin: "Al-Muhyi", arabic: "الْمُحْيِي", translation_id: "Yang Maha Menghidupkan", translation_en: "The Giver of Life" },
-    { index: 61, latin: "Al-Mumit", arabic: "المميت", translation_id: "Yang Maha Mematikan", translation_en: "The Creator of Death" },
-    { index: 62, latin: "Al-Hayy", arabic: "الْحَيُّ", translation_id: "Yang Maha Hidup", translation_en: "The Ever-Living" },
-    { index: 63, latin: "Al-Qayyum", arabic: "الْقَيُّومُ", translation_id: "Yang Maha Mandiri", translation_en: "The Sustainer, the Self-Subsisting" },
-    { index: 64, latin: "Al-Wajid", arabic: "الْوَاجِدُ", translation_id: "Yang Maha Menemukan", translation_en: "The Perceiver" },
-    { index: 65, latin: "Al-Majid", arabic: "الْمَاجِدُ", translation_id: "Yang Maha Mulia", translation_en: "The Glorious, the Most Honorable" },
-    { index: 66, latin: "Al-Wahid", arabic: "الْوَاحِدُ", translation_id: "Yang Maha Esa", translation_en: "The Only One" },
-    { index: 67, latin: "Al-Ahad", arabic: "أَلاَحَدُ", translation_id: "Yang Maha Tunggal", translation_en: "The Sole One" },
-    { index: 68, latin: "As-Samad", arabic: "الصَّمَدُ", translation_id: "Yang Maha Dibutuhkan", translation_en: "The Self-Sufficient, the Impregnable" },
-    { index: 69, latin: "Al-Qadir", arabic: "الْقَادِرُ", translation_id: "Yang Maha Menentukan", translation_en: "The Omnipotent" },
-    { index: 70, latin: "Al-Muqtadir", arabic: "المقتدر", translation_id: "Yang Maha Berkuasa", translation_en: "The Creator of All Power" },
-    { index: 71, latin: "Al-Muqaddim", arabic: "الْمُقَدِّمُ", translation_id: "Yang Maha Mendahulukan", translation_en: "The Expediter, the Promoter" },
-    { index: 72, latin: "Al-Mu'akhkhir", arabic: "الْمُؤَخِّرُ", translation_id: "Yang Maha Mengakhirkan", translation_en: "The Delayer" },
-    { index: 73, latin: "Al-Awwal", arabic: "الأوّل", translation_id: "Yang Maha Awal", translation_en: "The First" },
-    { index: 74, latin: "Al-Akhir", arabic: "الآخِرُ", translation_id: "Yang Maha Akhir", translation_en: "The Last" },
-    { index: 75, latin: "Az-Zahir", arabic: "الظاهر", translation_id: "Yang Maha Nyata", translation_en: "The Manifest" },
-    { index: 76, latin: "Al-Batin", arabic: "الباطن", translation_id: "Yang Maha Ghaib", translation_en: "The Hidden One, Knower of the Hidden" },
-    { index: 77, latin: "Al-Wali", arabic: "الْوَالِي", translation_id: "Yang Maha Memerintah", translation_en: "The Sole Governor" },
-    { index: 78, latin: "Al-Muta'ali", arabic: "المتعالي", translation_id: "Yang Maha Tinggi", translation_en: "The Self Exalted" },
-    { index: 79, latin: "Al-Barr", arabic: "البر", translation_id: "Yang Maha Penderma", translation_en: "The Source of All Goodness" },
-    { index: 80, latin: "At-Tawwab", arabic: "التواب", translation_id: "Yang Maha Penerima Tobat", translation_en: "The Ever-Accepter of Repentance" },
-    { index: 81, latin: "Al-Muntaqim", arabic: "المنتقم", translation_id: "Yang Maha Pemberi Balasan", translation_en: "The Avenger" },
-    { index: 82, latin: "Al-Afuww", arabic: "العفو", translation_id: "Yang Maha Pemaaf", translation_en: "The Pardoner" },
-    { index: 83, latin: "Ar-Ra'uf", arabic: "الرؤوف", translation_id: "Yang Maha Pengasuh", translation_en: "The Most Kind" },
-    { index: 84, latin: "Malik-ul-Mulk", arabic: "مالك الملك", translation_id: "Yang Maha Penguasa Kerajaan", translation_en: "Master of the Kingdom, Owner of the Dominion" },
-    { index: 85, latin: "Dzul-Jalali Wal-Ikram", arabic: "ذو الجلال والإكرام", translation_id: "Yang Maha Pemilik Kebesaran dan Kemuliaan", translation_en: "Possessor of Glory and Honour, Lord of Glory and Generosity" },
-    { index: 86, latin: "Al-Muqsit", arabic: "المقسط", translation_id: "Yang Maha Adil", translation_en: "The Just One" },
-    { index: 87, latin: "Al-Jami", arabic: "الْجَامِعُ", translation_id: "Yang Maha Mengumpulkan", translation_en: "The Gatherer, the Uniter" },
-    { index: 88, latin: "Al-Ghaniyy", arabic: "الْغَنِيُّ", translation_id: "Yang Maha Kaya", translation_en: "The Self-Sufficient, the Wealthy" },
-    { index: 89, latin: "Al-Mughni", arabic: "المغني", translation_id: "Yang Maha Pemberi Kekayaan", translation_en: "The Enricher" },
-    { index: 90, latin: "Al-Mani'", arabic: "المانع", translation_id: "Yang Maha Mencegah", translation_en: "The Withholder" },
-    { index: 91, latin: "Ad-Darr", arabic: "الضار", translation_id: "Yang Maha Penimpa Kemudharatan", translation_en: "The Distresser" },
-    { index: 92, latin: "An-Nafi'", arabic: "النافع", translation_id: "Yang Maha Memberi Manfaat", translation_en: "The Propitious, the Benefactor" },
-    { index: 93, latin: "An-Nur", arabic: "النور", translation_id: "Yang Maha Bercahaya", translation_en: "The Light" },
-    { index: 94, latin: "Al-Hadi", arabic: "الهادي", translation_id: "Yang Maha Pemberi Petunjuk", translation_en: "The Guide" },
-    { index: 95, latin: "Al-Badi", arabic: "البديع", translation_id: "Yang Maha Pencipta Tiada Bandingannya", translation_en: "The Incomparable Originator" },
-    { index: 96, latin: "Al-Baqi", arabic: "الباقي", translation_id: "Yang Maha Kekal", translation_en: "The Ever-Surviving" },
-    { index: 97, latin: "Al-Warith", arabic: "الوارث", translation_id: "Yang Maha Pewaris", translation_en: "The Inheritor, the Heir" },
-    { index: 98, latin: "Ar-Rashid", arabic: "الرشيد", translation_id: "Yang Maha Pandai", translation_en: "The Guide, Infallible Teacher and Knower" },
-    { index: 99, latin: "As-Sabur", arabic: "الصبور", translation_id: "Yang Maha Sabar", translation_en: "The Extensively Enduring" }
-]
-global.bacaanshalat = {
-    result: [
-        {
-            name: "Niat Sholat",
-            arabic: "أُصَلِّي فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى",
-            latin: "Usholli fardhos shubhi rok’ataini mustaqbilal qiblati adaa-an lillaahi ta’aalaa.",
-            terjemahan: "Aku niat sholat fardhu subuh dua rakaat menghadap kiblat tepat waktu karena Allah Ta’ala."
-        },
-        {
-            name: "Takbiratul Ihram",
-            arabic: "اللَّهُ أَكْبَرُ",
-            latin: "Allahu Akbar.",
-            terjemahan: "Allah Maha Besar."
-        },
-        {
-            name: "Doa Iftitah",
-            arabic: "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ وَتَبَارَكَ اسْمُكَ وَتَعَالَى جَدُّكَ وَلَا إِلَهَ غَيْرُكَ",
-            latin: "Subhaanaka Allahumma wa bihamdika wa tabaarakasmuka wa ta’ala jadduka wa laa ilaaha ghairuka.",
-            terjemahan: "Maha Suci Engkau ya Allah, aku memuji-Mu, nama-Mu amat berkah, keagungan-Mu tinggi, dan tiada Tuhan selain Engkau."
-        },
-        {
-            name: "Al-Fatihah",
-            arabic: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ...\n(hingga akhir surah Al-Fatihah)",
-            latin: "Bismillahirrahmanirrahim...\n(hingga akhir surah Al-Fatihah).",
-            terjemahan: "Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang...\n(terjemahan lengkap Al-Fatihah)."
-        },
-        {
-            name: "Rukuk",
-            arabic: "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
-            latin: "Subhaana rabbiyal ‘azhiim.",
-            terjemahan: "Maha Suci Tuhanku Yang Maha Agung."
-        },
-        {
-            name: "I'tidal",
-            arabic: "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ\nرَبَّنَا لَكَ الْحَمْدُ",
-            latin: "Sami’allaahu liman hamidah.\nRabbanaa lakal hamd.",
-            terjemahan: "Allah mendengar orang yang memuji-Nya.\nYa Tuhan kami, hanya bagi-Mu segala pujian."
-        },
-        {
-            name: "Sujud",
-            arabic: "سُبْحَانَ رَبِّيَ الْأَعْلَى",
-            latin: "Subhaana rabbiyal a’laa.",
-            terjemahan: "Maha Suci Tuhanku Yang Maha Tinggi."
-        },
-        {
-            name: "Duduk di antara dua sujud",
-            arabic: "رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَارْفَعْنِي وَاهْدِنِي وَعَافِنِي وَارْزُقْنِي",
-            latin: "Rabbighfir lii, warhamnii, wajburnii, warfa’nii, wahdinii, wa’aafinii, warzuqnii.",
-            terjemahan: "Ya Tuhanku, ampunilah aku, rahmatilah aku, cukupkanlah aku, angkatlah derajatku, tunjukilah aku, sehatkanlah aku, dan berilah aku rezeki."
-        },
-        {
-            name: "Tasyahhud Awal",
-            arabic: "التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ...\n(hingga akhir Tasyahhud Awal)",
-            latin: "Attahiyyatul mubarakaatus shalawaatuth thayyibaatu lillaah...\n(hingga akhir Tasyahhud Awal).",
-            terjemahan: "Segala penghormatan, keberkahan, sholawat, dan kebaikan hanya bagi Allah...\n(terjemahan lengkap Tasyahhud Awal)."
-        },
-        {
-            name: "Tasyahhud Akhir",
-            arabic: "التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ...\n(hingga akhir Tasyahhud Akhir)",
-            latin: "Attahiyyatul mubarakaatus shalawaatuth thayyibaatu lillaah...\n(hingga akhir Tasyahhud Akhir).",
-            terjemahan: "Segala penghormatan, keberkahan, sholawat, dan kebaikan hanya bagi Allah...\n(terjemahan lengkap Tasyahhud Akhir)."
-        },
-        {
-            name: "Salam",
-            arabic: "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
-            latin: "Assalaamu ‘alaikum wa rahmatullaah.",
-            terjemahan: "Semoga keselamatan dan rahmat Allah tercurah untukmu."
-        }
-    ]
-};
-global.niatsholat = [
-    {
-        solat: 'subuh',
-        arabic: 'أُصَلِّي فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى',
-        latin: 'Usholli fardhos shubhi rok’ataini mustaqbilal qiblati adaa-an lillaahi ta’aalaa.',
-        translation_id: 'Aku niat sholat fardhu subuh dua rakaat menghadap kiblat tepat waktu karena Allah Ta’ala.'
-    },
-    {
-        solat: 'dzuhur',
-        arabic: 'أُصَلِّي فَرْضَ الظُّهْرِ أَرْبَعَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى',
-        latin: 'Usholli fardhodh dzuhri arba’a raka’aatin mustaqbilal qiblati adaa-an lillaahi ta’aalaa.',
-        translation_id: 'Aku niat sholat fardhu dzuhur empat rakaat menghadap kiblat tepat waktu karena Allah Ta’ala.'
-    },
-    {
-        solat: 'ashar',
-        arabic: 'أُصَلِّي فَرْضَ العَصْرِ أَرْبَعَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى',
-        latin: 'Usholli fardhol asri arba’a raka’aatin mustaqbilal qiblati adaa-an lillaahi ta’aalaa.',
-        translation_id: 'Aku niat sholat fardhu ashar empat rakaat menghadap kiblat tepat waktu karena Allah Ta’ala.'
-    },
-    {
-        solat: 'maghrib',
-        arabic: 'أُصَلِّي فَرْضَ المَغْرِبِ ثَلَاثَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى',
-        latin: 'Usholli fardhol maghribi tsalaasa raka’aatin mustaqbilal qiblati adaa-an lillaahi ta’aalaa.',
-        translation_id: 'Aku niat sholat fardhu maghrib tiga rakaat menghadap kiblat tepat waktu karena Allah Ta’ala.'
-    },
-    {
-        solat: 'isha',
-        arabic: 'أُصَلِّي فَرْضَ العِشَاءِ أَرْبَعَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى',
-        latin: 'Usholli fardhol isyaai arba’a raka’aatin mustaqbilal qiblati adaa-an lillaahi ta’aalaa.',
-        translation_id: 'Aku niat sholat fardhu isya empat rakaat menghadap kiblat tepat waktu karena Allah Ta’ala.'
-    }
-];
 const readmore = String.fromCharCode(8206).repeat(4001);
 // Path ke file riwayat
 const cooldownDox = {}; // fuera del handler, al inicio del archivo si quieres global
@@ -337,7 +134,6 @@ const
 	happymod,
 	umma,
 	ringtone,
-	jadwalsholat,
 	styletext,
 	tiktokDl,
 	facebookDl,
@@ -982,14 +778,14 @@ END:VCARD`
 			if (!chats || typeof chats !== 'object')
 			{
 				global.db.data.chats[m.chat] = {
-					isBanned: true,
+					isBanned: false,
 					antispam: false,
 					antitoxic: false
 				};
 			}
 			else
 			{
-				if (!('isBanned' in chats)) chats.isBanned = true;
+				if (!('isBanned' in chats)) chats.isBanned = false;
 				if (!('antispam' in chats)) chats.antispam = false;
 				if (!('antitoxic' in chats)) chats.antispam = false;
 				if (!('antilink' in chats)) chats.antilink = false;
@@ -11674,7 +11470,10 @@ if (args[0] === "add") {
 			}
 			break;
 		// ADVERTIR
-case 'warn': {
+case 'warn': 			{
+				if (!isGroup) return shoNherly(mess.groups);
+				if (!isBotAdmins) return shoNherly(mess.abots);
+				if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins);
   if (!db.data.chats[m.chat].antitoxic && m.isGroup) return shoNhe.sendMessage(m.chat, { text: '❗ SOLO PUEDE USAR SI ESTÁ ACTIVADA LA FUNCIÓN: .on antitoxicos' }, { quoted: m });
 
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : null;
@@ -11704,7 +11503,10 @@ ADVERTENCIA
 break;
 
 // ELIMINAR ADVERTENCIA
-case 'unwarn': {
+case 'unwarn': 			{
+				if (!isGroup) return shoNherly(mess.groups);
+				if (!isBotAdmins) return shoNherly(mess.abots);
+				if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins);
   if (!db.data.chats[m.chat].antitoxic && m.isGroup) return shoNhe.sendMessage(m.chat, { text: '❗ SOLO PUEDE USAR SI ESTÁ ACTIVADA LA FUNCIÓN: .on antitoxicos' }, { quoted: m });
 
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : null;
@@ -11725,7 +11527,10 @@ ADVERTENCIA
 break;
 
 // LISTA DE ADVERTIDOS
-case 'listadv': {
+case 'listadv': 			{
+				if (!isGroup) return shoNherly(mess.groups);
+				if (!isBotAdmins) return shoNherly(mess.abots);
+				if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins);
   let adv = Object.entries(global.db.data.users).filter(user => user[1].warn);
   let caption = `⚠️ USUARIOS ADVERTIDOS :
 ╭•·–––––––––––––––––––·•*
@@ -11765,44 +11570,51 @@ break;
 	}
 }
 break;
-			case 'antispam': {
-    if (!isGroup) return shoNherly(mess.groups);
-    if (!isBotAdmins) return shoNherly(mess.abots);
-    if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins);
-
-    if (args.length < 1) return shoNherly('Usa true o false para activar o desactivar el antispam');
-
-    let estado = args[0].toLowerCase();
-    if (estado === 'true') {
-        db.data.chats[m.chat].antispam = true;
-        shoNherly(`${command} ha sido *activado*`);
-    } else if (estado === 'false') {
-        db.data.chats[m.chat].antispam = false;
-        shoNherly(`${command} ha sido *desactivado*`);
-    } else {
-        return shoNherly('Argumento no válido. Usa true o false.');
-    }
-
-    if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat, {
-            image: { url: levelUpMessage.image },
-            caption: levelUpMessage.text,
-            footer: "LEVEL UP🔥",
-            buttons: [
-                {
-                    buttonId: `${prefix}tqto`,
-                    buttonText: { displayText: "TQTO 💡" }
-                },
-                {
-                    buttonId: `${prefix}menu`,
-                    buttonText: { displayText: "MENU 🍄" }
-                }
-            ],
-            viewOnce: true,
-        }, { quoted: hw });
-    }
-}
-break;
+			case 'antispam':
+			{
+				if (!isGroup) return shoNherly(mess.groups);
+				if (!isBotAdmins) return shoNherly(mess.abots);
+				if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins);
+				if (args.length < 1) return shoNherly('true/false?')
+				if (args[0] === 'true')
+				{
+					db.data.chats[m.chat].antispam = true
+					shoNherly(`${command} is enabled`)
+				}
+				else if (args[0] === 'false')
+				{
+					db.data.chats[m.chat].antispam = false
+					shoNherly(`${command} is disabled`)
+				}
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
+				{
+					quoted: hw
+				});
+           }
+			}
+			break;
 			case 'delprem':
 			case 'deletepremium':
 			case 'delpremium':
@@ -13627,431 +13439,7 @@ await shoNhe.sendMessage(m.chat, {
            }
 			}
 			break
-			//=============[ Islam - Feature ]=================//
-			
-case 'kisahnabi': {
-if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-if (!text) return shoNherly(`Ingrese el nombre del profeta\nEjemplo: historia del profeta Adán`)
-let url = await fetch(`https://raw.githubusercontent.com/ZeroChanBot/Api-Freee/a9da6483809a1fbf164cdf1dfbfc6a17f2814577/data/kisahNabi/${text}.json`)
-let kisah = await url.json().catch(_ => "Error")
-if (kisah == "Error") return shoNherly("*Not Found*")
-
-let hasil = `*👳 Profeta :* ${kisah.name}
-*- Fecha de nacimiento :* ${kisah.thn_kelahiran}
-*- Lugar de nacimientor :* ${kisah.tmp}
-*- Edad :* ${kisah.usia}
-
-*—————— \`[ K I S A H ]\` ——————*
-
-${kisah.description}`
-
-shoNherly(`${hasil}`)
-if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-}
-break
-case 'asmaulhusna': {
-if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-    const contoh = `*\`「 Asmaul Husna 」\`*`;
-    const anjuran = `
-Dari Abu Hurairah radhiallahu anhu, Rasulullah Saw bersabda: 
-*"إِنَّ لِلَّهِ تَعَالَى تِسْعَةً وَتِسْعِينَ اسْمًا، مِائَةٌ إِلَّا وَاحِدًا، مَنْ أَحْصَاهَا دخل الجنة، وهو وتر يُحِبُّ الْوِتْرَ"*  
-**Artinya:** "Sesungguhnya Allah mempunyai sembilan puluh sembilan nama, alias seratus kurang satu. Barang siapa yang menghitung-hitungnya, niscaya masuk surga; Dia Witir dan menyukai yang witir".`;
-    
-    let json = global.asmaulhusna2;
-
-    // Jika tidak ada argumen, tampilkan semua Asmaul Husna
-    if (!args[0]) {
-        let data = json.map((v, i) => 
-            `${i + 1}. ${v.latin}\n${v.arabic}\n*Artinya (ID):* _"${v.translation_id}"_\n*Artinya (EN):* _"${v.translation_en}"_`
-        ).join('\n\n');
-        return shoNherly(`${contoh}\n\n${data}\n\n${anjuran}`);
-    }
-
-    // Jika ada argumen, tampilkan Asmaul Husna berdasarkan nomor
-    if (args[0]) {
-        if (isNaN(args[0])) return reply(`Contoh penggunaan:\nasmaulhusna 1`);
-        if (args[0] < 1 || args[0] > 99) throw `Minimal 1 dan maksimal 99!`;
-
-        let result = json.find(v => v.index == args[0].replace(/[^0-9]/g, ''));
-        if (!result) return reply(`Asmaul Husna nomor ${args[0]} tidak ditemukan!`);
-        
-        return shoNherly(`*\`「 Asmaul Husna 」\`*
-
-No. ${result.index}
-*${result.latin}*
-${result.arabic}
-*Artinya (ID):* _"${result.translation_id}"_  
-*Artinya (EN):* _"${result.translation_en}"_`);
-    }
-    if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-}
-break;
-
-
-case 'ayatkursi': {
-if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-    let ayatKursi = `
-    *Ayat Kursi*
-
-    *Arab:*
-    اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ  
-
-    *Latin:*
-    Allahu laa ilaaha illa huwa, Al-Hayyul Qayyum, laa ta'khudhuhu sinatun wa laa naum, lahu maa fis-samaawaati wa maa fil-ardh, man dzalladzii yasyfa'u 'indahu illa bi idznih, ya'lamu maa baina aidiihim wa maa khalfahum, wa laa yuhiithuuna bisyai-in min 'ilmihi illa bimaa syaa, wa si'a kursiyyuhus-samaawaati wal-ardh, wa laa ya'uduhu hifzhuhumaa wa huwal 'aliyyul azhiim.  
-
-    *Artinya:*
-    Allah, tidak ada Tuhan melainkan Dia yang hidup kekal lagi terus-menerus mengurus (makhluk-Nya); tidak mengantuk dan tidak tidur. Kepunyaan-Nya apa yang di langit dan di bumi. Tiada yang dapat memberi syafa'at di sisi Allah tanpa izin-Nya. Allah mengetahui apa-apa yang di hadapan mereka dan di belakang mereka, dan mereka tidak mengetahui apa-apa dari ilmu Allah melainkan apa yang dikehendaki-Nya. Kursi Allah meliputi langit dan bumi. Dan Allah tidak merasa berat memelihara keduanya, dan Allah Maha Tinggi lagi Maha Besar.  
-    `;
-    shoNherly(ayatKursi.trim());
-    if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-}
-break;
-case 'bacaansholat': {
-if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-    let bacaan = JSON.stringify(global.bacaanshalat);
-    let json = JSON.parse(bacaan);
-    let data = json.result
-        .map((v, i) => `${i + 1}. ${v.name}\n${v.arabic}\n${v.latin}\n*Artinya:*\n_"${v.terjemahan}"_`)
-        .join('\n\n');
-    let contoh = `*\`「 Bacaan Shalat 」\`*\n\n`;
-    shoNherly(`${contoh}${data}`);
-    if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-}
-break;
-
-case 'doaharian': {
-let src = JSON.parse(fs.readFileSync('./lib/json/doaharian.json', 'utf-8'))
-let caption = src.map((v, i) => {
-return `
-*${i + 1}.* ${v.title}
-
-•°• Latin :
-${v.latin}
-
-•°• Arabic :
-${v.arabic}
-
-•°• Translate :
-${v.translation}
-`.trim()
-}).join('\n\n')
-shoNherly(`${caption}`)
-}
-break
-case 'niatsholat': {
-if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-    if (!q) return reply(`Contoh Penggunaan :\nniatsholat Subuh`);
-    let text = q.toLowerCase() || '';
-    let data = global.niatsholat.find(v => v.solat === text);
-    if (!data) return shoNherly(`*\`[ ${q} Tidak Ditemukan ]\`*\n\nList Solat 5 Waktu :\n• Subuh\n• Maghrib\n• Dzuhur\n• Isha\n• Ashar`);
-    shoNherly(`*\`[ Niat Sholat ${q.charAt(0).toUpperCase() + q.slice(1)} ]\`*
-
-*Arab :* ${data.arabic}
-
-*Latin :* ${data.latin}
-
-*Translate :* ${data.translation_id}`.trim());
-if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-}
-break;
-
-case 'quotesislami': {
-if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-    const global = {
-        qislami: [
-            { arabic: "إِنَّ مَعَ الْعُسْرِ يُسْرًا", arti: "Sesungguhnya bersama kesulitan ada kemudahan." },
-            { arabic: "وَقُل رَّبُّ زِدْنِي عِلْمًا", arti: "Dan katakanlah: 'Ya Tuhanku, tambahkanlah ilmu kepadaku.'" },
-            { arabic: "اللّهُ لَا إِلٰهَ إِلَّا هُوَ", arti: "Allah, tidak ada Tuhan selain Dia." },
-            { arabic: "وَقَتَلْتُ نَفْسَكِ فَاغْفِرْ لِي", arti: "Dan aku telah membunuh diriku, maka ampunilah aku." },
-            { arabic: "إِنَّ اللّهَ مَعَ الصَّابِرِينَ", arti: "Sesungguhnya Allah bersama orang-orang yang sabar." },
-            { arabic: "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا", arti: "Sesungguhnya bersama kesulitan ada kemudahan." },
-            { arabic: "رَبُّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَاهُ", arti: "Tuhan kami, janganlah Engkau hukum kami jika kami lupa." },
-            { arabic: "إِنَّ اللّهَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ", arti: "Sesungguhnya Allah Maha Kuasa atas segala sesuatu." },
-            { arabic: "اللّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ", arti: "Allah adalah cahaya langit dan bumi." },
-            { arabic: "مَن جَاءَ بِالْحَسَنَةِ فَلَهُ عَشْرُ أَمْثَالِهَا", arti: "Barangsiapa yang membawa kebaikan, maka dia mendapat sepuluh kali lipat ganjarannya." },
-            { arabic: "إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَا وَمَمَاتِي لِلّهِ رَبِّ الْعَالَمِينَ", arti: "Sesungguhnya salatku, ibadahku, hidupku, dan matiku hanya untuk Allah, Tuhan semesta alam." },
-            { arabic: "وَقَالَ رَبُّكُمُ ادْعُونِي أَسْتَجِبْ لَكُمْ", arti: "Dan Tuhanmu berfirman: 'Berdoalah kepada-Ku, niscaya Aku akan mengabulkan doamu.'" },
-            { arabic: "إِنَّ اللّهَ غَفُورٌ رَحِيمٌ", arti: "Sesungguhnya Allah Maha Pengampun lagi Maha Penyayang." },
-            { arabic: "الْفَجْرِ وَلَيَالٍ عَشْرٍ", arti: "Demi fajar dan sepuluh malam yang terakhir." },
-            { arabic: "إِنَّ اللّهَ يُحِبُّ التَّوَابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", arti: "Sesungguhnya Allah mencintai orang-orang yang bertaubat dan mencintai orang-orang yang mensucikan diri." },
-            { arabic: "رَحْمَتِي وَسِعَتْ كُلَّ شَيْءٍ", arti: "Rahmat-Ku meliputi segala sesuatu." },
-            { arabic: "إِنَّ اللّهَ مَعَ الَّذِينَ اتَّقَوْا وَالَّذِينَ هُمْ مُحْسِنُونَ", arti: "Sesungguhnya Allah bersama orang-orang yang bertakwa dan orang-orang yang berbuat baik." },
-            { arabic: "أُحِبُّ لِأَخِيكَ مَا تُحِبُّ لِنَفْسِكَ", arti: "Cintailah untuk saudaramu apa yang kamu cintai untuk dirimu sendiri." },
-            { arabic: "قُلْ هُوَ اللّهُ أَحَدٌ", arti: "Katakanlah: 'Dia adalah Allah, yang Maha Esa.'" },
-            { arabic: "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا", arti: "Sesungguhnya bersama kesulitan ada kemudahan." },
-            { arabic: "وَفِرْحَةً لِأَصْحَابِ الْجَنَّةِ", arti: "Dan kegembiraan bagi penghuni surga." },
-            { arabic: "إِنَّ اللّهَ سَمِيعٌ بَصِيرٌ", arti: "Sesungguhnya Allah Maha Mendengar lagi Maha Melihat." },
-            { arabic: "وَتَوَكَّلْتُ عَلَى اللّهِ", arti: "Dan aku bertawakkal kepada Allah." },
-            { arabic: "لَا إِلٰهَ إِلَّا اللّهُ وَحْدَهُ", arti: "Tidak ada Tuhan selain Allah, yang Maha Esa." },
-            { arabic: "إِنَّ اللّهَ يُحِبُّ الصَّابِرِينَ", arti: "Sesungguhnya Allah mencintai orang-orang yang sabar." },
-            { arabic: "مَنْ تَرَكَ شَيْئًا لِلَّهِ عَوَّضَهُ اللّهُ", arti: "Barang siapa meninggalkan sesuatu karena Allah, maka Allah akan memberinya ganti." },
-            { arabic: "الْحَمْدُ لِلّهِ رَبِّ الْعَالَمِينَ", arti: "Segala puji bagi Allah, Tuhan semesta alam." },
-            { arabic: "فَإِنَّ رَحْمَتِي سَبَقَتْ غَضَبِي", arti: "Sesungguhnya rahmat-Ku mendahului murka-Ku." },
-            { arabic: "يُدَبِّرُ الْأَمْرَ", arti: "Dia yang mengatur segala urusan." },
-            { arabic: "إِنَّ اللّهَ مَعَ الصَّابِرِينَ", arti: "Sesungguhnya Allah bersama orang-orang yang sabar." },
-            { arabic: "اللّهُمَّ اجْعَلْنَا مِنْ أَهْلِ الْقُرْآنِ", arti: "Ya Allah, jadikan kami termasuk orang-orang yang ahli Al-Qur'an." },
-            { arabic: "اللّهُ وَالْأَكْبَرُ", arti: "Allah Maha Besar." },
-            { arabic: "إِنَّ رَبَّكَ وَاسِعُ الْمَغْفِرَةِ", arti: "Sesungguhnya Tuhanmu Maha Luas Pengampunannya." },
-            { arabic: "إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ", arti: "Sesungguhnya orang-orang yang beriman itu bersaudara." },
-            { arabic: "إِنَّ اللّهَ جَمِيلٌ يُحِبُّ الْجَمَالَ", arti: "Sesungguhnya Allah itu Maha Indah dan mencintai keindahan." },
-            { arabic: "إِنَّ الْمُتَّقِينَ فِي جَنَّاتٍ وَنَهَرٍ", arti: "Sesungguhnya orang-orang yang bertakwa berada dalam surga dan mata air." },
-            { arabic: "وَمَنْ يَتَّقِ اللّهَ يَجْعَلْ لَهُ مَخْرَجًا", arti: "Dan barang siapa bertakwa kepada Allah, niscaya Dia akan memberikan jalan keluar baginya." },
-            { arabic: "لَا تَحْزَنْ إِنَّ اللّهَ مَعَنَا", arti: "Janganlah kamu bersedih, sesungguhnya Allah bersama kita." },
-            { arabic: "يُحِبُّونَ مَنْ جَاءَ وَفِيهِ النَّاسُ", arti: "Mereka mencintai orang yang datang di dalamnya." },
-            { arabic: "وَمَا تَفْعَلُوا مِنْ خَيْرٍ فَإِنَّ اللّهَ يَعْلَمُهُ", arti: "Dan apa saja yang kamu kerjakan dari kebaikan, maka sesungguhnya Allah mengetahuinya." },
-            { arabic: "لَا تَفْجَعْ أَعْمَالَكُمْ", arti: "Janganlah menyia-nyiakan amal-amalmu." },
-            { arabic: "إِنَّ مَا وَعَدَكُمْ اللّهُ وَرَحْمَتَهُ", arti: "Sesungguhnya apa yang dijanjikan oleh Allah adalah kasih sayang-Nya." },
-            { arabic: "أَنْتَ وَلِيِّي فِي دُنْيَا وَفِي آخِرَةٍ", arti: "Engkau adalah pelindungku di dunia dan di akhirat." },
-            { arabic: "اللّهُمَّ اجْعَلْنَا مِمَّنْ يَسْتَمِعُونَ الْقَوْلَ فَيَتَّبِعُونَ أَحْسَنَهُ", arti: "Ya Allah, jadikan kami termasuk orang yang mendengarkan perkataan dan mengikuti yang terbaik darinya." },
-            { arabic: "إِنَّ اللّهَ يُحِبُّ أَنْ تَفْعَلُوا الْحَسَنَاتِ", arti: "Sesungguhnya Allah mencintai jika kamu berbuat kebaikan." },
-            { arabic: "قُلْ إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَا وَمَمَاتِي لِلّهِ", arti: "Katakanlah, sesungguhnya salatku, ibadahku, hidupku, dan matiku hanya untuk Allah." },
-            { arabic: "وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِلْعَالَمِينَ", arti: "Dan Kami tidak mengutusmu, melainkan untuk menjadi rahmat bagi semesta alam." },
-            { arabic: "يَا أَيُّهَا الَّذِينَ آمَنُوا", arti: "Wahai orang-orang yang beriman," }
-        ]
-    };
-    const randomIndex = Math.floor(Math.random() * global.qislami.length);
-    const randomQuote = global.qislami[randomIndex];
-    const { arabic, arti } = randomQuote;
-    shoNherly(`${arabic}\n${arti}`);
-    if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-}
-break;
-
-case 'doatahlil': {
-if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-let { result } = JSON.parse(fs.readFileSync('./lib/json/tahlil.json', 'utf-8'))
-let caption = result.map((v, i) => {
-return `
-*${i + 1}.* ${v.title}
-
-•°• Arabic :
-${v.arabic}
-
-•°• Translate :
-${v.translation}
-`.trim()
-}).join('\n\n')
-shoNherly(`${caption}`)
-if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-}
-break
+			//=============[ Islam - Feature ]=================//			
 			case 'gwjgbskntl':
 			{
 				if (!isRegistered(m))
@@ -17684,50 +17072,6 @@ case 'cekadzan': {
 				}
 				}
 			break
-			case 'jadwalsholat': {
-    let kodeKota = args[0] || '3578'; // Default ke Surabaya jika kode kota tidak diberikan
-    if (!args[0]) {
-        shoNherly("⚠️ Kode kota tidak diberikan. Mengambil jadwal sholat untuk *Surabaya*.");
-    }
-
-    let jadwal = await getJadwalSholat(kodeKota);
-    if (!jadwal) return shoNherly("❌ Tidak dapat mengambil jadwal sholat, coba lagi nanti.");
-
-    let teks = `📅 *Jadwal Sholat Hari Ini (${jadwal.tanggal})*\n\n`;
-    teks += `📍 *Lokasi:* ${jadwal.lokasi}\n`;
-    teks += `🌅 *Subuh:* ${jadwal.subuh}\n`;
-    teks += `☀️ *Dzuhur:* ${jadwal.dzuhur}\n`;
-    teks += `⛅ *Ashar:* ${jadwal.ashar}\n`;
-    teks += `🌆 *Maghrib:* ${jadwal.maghrib}\n`;
-    teks += `🌙 *Isya:* ${jadwal.isya}\n`;
-
-    shoNherly(teks);
-}
-break;
-			case 'listkota':
-				try
-				{
-					const url = 'https://raw.githubusercontent.com/lakuapik/jadwalsholatorg/master/kota.json';
-					const response = await axios.get(url);
-					const kotaList = response.data;
-					if (!kotaList || kotaList.length === 0)
-					{
-						shoNherly('❌ Tidak ada data kota yang tersedia.');;
-					}
-					let pesan = `📍 *Daftar Kota yang Tersedia*\n\n`;
-					pesan += `Usar formato: .jadwalsholat jakarta|2025|01\n\n`;
-					kotaList.forEach((kota, index) =>
-					{
-						pesan += `${index + 1}. ${kota}\n`;
-					});
-					shoNherly(pesan);
-				}
-				catch (error)
-				{
-					console.error(error);
-					shoNherly('⚠️ Gagal mengambil daftar kota. Coba lagi nanti.');
-				}
-				break;
 			case 'animpopular':
 			{
 				if (!isRegistered(m))
