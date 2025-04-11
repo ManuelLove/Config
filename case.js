@@ -3373,6 +3373,38 @@ if (db.data.chats[m.chat]?.antispam) {
     addSpam(m.sender, spamDB);
     if (isSpam(m.sender, spamDB)) return shoNherly('⛔ Estás haciendo spam, espera un momento.');
 }
+conn.ev.on('messages.delete', async ({ messages }) => {
+	const m = messages[0];
+	if (!m.message) return;
+
+	const chat = m.key.remoteJid;
+	const isGroup = chat.endsWith('@g.us');
+	const sender = m.key.participant || m.key.remoteJid;
+	const isBot = m.key.fromMe;
+
+	// Requiere que el bot tenga guardado el chat en db
+	if (!db.data.chats[chat] || !db.data.chats[chat].antidelete) return;
+	if (isBot) return;
+
+	let content = m.message;
+	let type = Object.keys(content)[0];
+
+	// Manejo de mensajes "ver una vez"
+	if (type === 'viewOnceMessageV2' || type === 'viewOnceMessage') {
+		content = content[type].message;
+		type = Object.keys(content)[0];
+	}
+
+	const pushname = conn.getName ? conn.getName(sender) : sender.split('@')[0];
+
+	// Aviso
+	await conn.sendMessage(chat, {
+		text: `*${pushname}* eliminó un mensaje. Aquí está el contenido recuperado:`
+	}, { quoted: m });
+
+	// Reenvía el contenido
+	await conn.sendMessage(chat, content, { quoted: m });
+});
 		async function cekgame(gamejid)
 		{
 			if (tekateki[gamejid])
@@ -11469,6 +11501,20 @@ if (args[0] === "add") {
            }
 			}
 			break;
+			case 'antidelete':
+{
+	if (!isGroup) return shoNherly(lenguajeGB.smsGrupos); // o tu texto
+	if (!isAdmins && !isCreator) return shoNherly(lenguajeGB.smsAdmin);
+
+	if (!db.data.chats[m.chat].antidelete) {
+		db.data.chats[m.chat].antidelete = true;
+		await shoNherly('🛡️ AntiDelete activado. El bot recuperará mensajes eliminados.');
+	} else {
+		db.data.chats[m.chat].antidelete = false;
+		await shoNherly('🛡️ AntiDelete desactivado. Ya no se recuperarán mensajes eliminados.');
+	}
+}
+break;
 		// ADVERTIR
 case 'warn': 			{
 				if (!isGroup) return shoNherly(mess.groups);
