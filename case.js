@@ -15643,11 +15643,11 @@ case 'readviewonce':
 		await shoNhe.sendFile(m.chat, buffer, fileName, caption, m);
 	} else if (mimetype.includes('audio')) {
 		try {
-			let audio = await toPTT(buffer, mimetype.split('/')[1]);
-await shoNhe.sendFile(m.chat, audio, 'audio.opus', '', m, true, {
-	mimetype: 'audio/ogg; codecs=opus',
-	ptt: true
-});
+			let audio = await toAudio(buffer, mimetype.split('/')[1]); // Asegúrate de tener esta función
+			await shoNhe.sendFile(m.chat, audio, 'audio.mp3', caption, m, true, {
+				mimetype: 'audio/mpeg',
+				ptt: false
+			});
 		} catch (e) {
 			console.error(e);
 			await shoNherly(`No se pudo procesar el audio.`);
