@@ -189,12 +189,7 @@ const
 } = require('./lib/scp/hekkso')
 const contacts = JSON.parse(fs.readFileSync('./src/data/role/contacts.json'));
 const lyrics = require('./lib/scp/lyrics');
-const
-{
-	toAudio,
-	toPTT,
-	toVideo
-} = require('./lib/converter');
+const { toAudio, toPTT, toVideo } = require('./lib/converter');
 const
 {
 	addAfkUser,
