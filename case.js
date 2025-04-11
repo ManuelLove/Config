@@ -15648,10 +15648,11 @@ case 'readviewonce':
   let ptt = await toPTT(buffer, ext);
   if (!ptt) throw new Error("Error al convertir a PTT");
 
-  await shoNhe.sendFile(m.chat, ptt, 'voice.opus', '', m, true, {
-    mimetype: 'audio/ogg; codecs=opus',
-    ptt: true
-  });
+  await shoNhe.sendMessage(m.chat, {
+  audio: ptt,
+  mimetype: 'audio/ogg; codecs=opus',
+  ptt: true
+}, { quoted: m });
 } catch (e) {
   console.error('Error al procesar el audio PTT:', e);
   await shoNherly(`No se pudo procesar el audio como nota de voz.`);
