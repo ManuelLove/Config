@@ -1,4 +1,3 @@
-
 class TicTacToe {
     constructor(playerX = 'x', playerO = 'o') {
         this.playerX = playerX
@@ -6,7 +5,7 @@ class TicTacToe {
         this._currentTurn = false
         this._x = 0
         this._o = 0
-        this.turns = 0 
+        this.turns = 0
     }
 
     get board() {
@@ -91,4 +90,4 @@ class TicTacToe {
 
 new TicTacToe().turn
 
-module.exports = TicTacToe
+export default TicTacToe
