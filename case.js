@@ -269,7 +269,6 @@ const tebakml = {}
 const tebakchara = {}
 const tebaklogo = {}
 const boom = {}
-const pending = {} // Para almacenar confirmaciones
 const ahorcado = {}
 const gameCasinoSolo = {}
 const suitpvp = {}
@@ -3374,36 +3373,6 @@ if (db.data.chats[m.chat]?.antispam) {
     addFilter(m.sender);
     addSpam(m.sender, spamDB);
     if (isSpam(m.sender, spamDB)) return shoNherly('⛔ Estás haciendo spam, espera un momento.');
-}
-if (pending[m.sender] && pending[m.sender].type === 'transferlimit') {
-  if (/^sí$/i.test(budy)) {
-    let data = pending[m.sender]
-    let sender = await loadUserFire(m.sender)
-    let receiver = await loadUserFire(data.to)
-
-    if (sender.limit < data.amount) {
-      delete pending[m.sender]
-      return m.reply(`*Ya no tienes suficiente 'limit'. Tienes:* ${sender.limit}`)
-    }
-
-    sender.limit -= data.amount
-    receiver.limit += data.amount
-
-    await saveUserFire(m.sender, sender)
-    await saveUserFire(data.to, receiver)
-
-    await shoNhe.sendMessage(m.chat, {
-      text: `✅ Se transfirieron *${data.amount} limit* a *@${data.to.split`@`[0]}* correctamente.`,
-      mentions: [data.to]
-    }, { quoted: m })
-
-    delete pending[m.sender]
-    return
-  } else {
-    await m.reply(`❌ Transferencia cancelada.`)
-    delete pending[m.sender]
-    return
-  }
 }
 		async function cekgame(gamejid)
 		{
@@ -17934,36 +17903,6 @@ case 'igdl':
 	}
 }
 break;
-case /^transferirlimit$/i:
-case /^transferlimit$/i:
-case /^traspasarlimit$/i:
-case /^enviarlimit$/i:
-  if (!isRegistered()) return m.reply(lenguajeGB.smsRg())
-  if (!m.isGroup) return m.reply(lenguajeGB.smsSoloGrupos())
-
-  if (!text) return m.reply(`*Usa el comando así:*\n.transferirlimit @usuario cantidad`)
-  let mention = m.mentionedJid[0]
-  if (!mention) return m.reply(`*Debes mencionar al usuario al que quieres transferir*`)
-  let args = text.split(' ')
-  let cantidad = parseInt(args[1])
-  if (isNaN(cantidad) || cantidad <= 0) return m.reply(`*La cantidad debe ser válida y mayor a cero.*`)
-
-  let userSender = await loadUserFire(m.sender)
-  let userReceiver = await loadUserFire(mention)
-
-  if (userSender.limit < cantidad) return m.reply(`*No tienes suficiente 'limit'. Tienes:* ${userSender.limit}`)
-
-  let confirmText = `¿Estás seguro de transferir *${cantidad} limit* a *@${mention.split`@`[0]}*?\n\nResponde con *sí* para confirmar.`
-
-  pending[m.sender] = {
-    type: 'transferlimit',
-    to: mention,
-    amount: cantidad,
-    time: +new Date
-  }
-
-  await shoNhe.sendMessage(m.chat, { text: confirmText, mentions: [mention] }, { quoted: m })
-  break
 case 'apk':
 case 'apkdl':
 {
