@@ -145,6 +145,7 @@ const
 	quotedLyo,
 	simi
 } = require('./lib/screaper')
+const crypto = require('crypto');
 const { getGame, setGame } = require('./lib/tictactoe-session') // Ajusta la ruta según tu estructura
 const pinterest = require('./lib/scp/pinterest');
 const
@@ -5713,8 +5714,8 @@ case 'casino': {
     let apuesta = parseInt(args[0]);
     if (isNaN(apuesta) || apuesta <= 0) return m.reply('❌ Ingresa una cantidad válida para apostar.');
 
-    let puntosJugador = Math.floor(Math.random() * 101);
-    let puntosComputadora = Math.floor(Math.random() * 101);
+    let puntosJugador = crypto.randomInt(0, 101); // 0 a 100 incluido
+let puntosComputadora = crypto.randomInt(0, 101);
 
     if (db[m.sender].role === 'owner') {
         // Solo mostrar el resultado, sin modificar límite
