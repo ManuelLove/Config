@@ -18021,7 +18021,7 @@ case 'enviar': {
   break;
 }
 
-case /^sí$/i: {
+case 'si': {
   if (!shoNhe.transferencias[replyId]) return;
   
   let transferencia = shoNhe.transferencias[replyId];
@@ -18044,7 +18044,7 @@ case /^sí$/i: {
   break;
 }
 
-case /^no$/i: {
+case 'no': {
   if (!shoNhe.transferencias[replyId]) return;
 
   let transferencia = shoNhe.transferencias[replyId];
