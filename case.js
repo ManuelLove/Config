@@ -17974,7 +17974,9 @@ if (apkSizeMB > maxSizeMB) {
 	}
 }
 break;
-case /^transferir|transfer$/i:
+case 'transfer':
+case 'transferir':
+{
 if (!isRegistered) return m.reply(lenguajeGB.smsRgt())
 if (!text) return m.reply(`*Ejemplo:* ${usedPrefix + command} @usuario 5`)
 
