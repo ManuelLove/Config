@@ -269,6 +269,7 @@ const tebakml = {}
 const tebakchara = {}
 const tebaklogo = {}
 const boom = {}
+const pending = {} // Para almacenar confirmaciones
 const ahorcado = {}
 const gameCasinoSolo = {}
 const suitpvp = {}
@@ -1766,7 +1767,7 @@ default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURICompon
 			}
 			// Dapatkan limit user berdasarkan role
 			const userLimit = db[sender].limit;
-			const reduction = db[sender].role === 'owner' ? 0 : 5; // Owner tidak ada pengurangan limit
+			const reduction = db[sender].role === 'owner' ? 0 : 10; // Owner tidak ada pengurangan limit
 			// Cek limit sebelum melanjutkan
 			if (userLimit <= 0 && db[sender].role !== 'owner')
 			{
@@ -3073,7 +3074,7 @@ default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURICompon
         boom[m.sender].pick++; 
 
         if (boom[m.sender].lolos < 1) { 
-    let limiteGanado = 20; // Gana entre 7 y 15 de límite
+    let limiteGanado = 30; // Gana entre 7 y 15 de límite
 
     // Cargar la base de datos
     const db = loadUserFire();
@@ -3144,7 +3145,7 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
     }
 
     if (!mensaje.includes("_")) {
-    let recompensa = 20; // Límite aleatorio entre 7 y 15
+    let recompensa = 30; // Límite aleatorio entre 7 y 15
 
     // Cargar la base de datos
     const db = loadUserFire();
@@ -3174,7 +3175,7 @@ function pickRandom(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 let winScore = 20
-let playScore = -5
+let playScore = -10
 let game = getGame()
 let room13 = Object.values(game).find(room13 => room13.id && room13.game && room13.state && room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender) && room13.state == 'PLAYING')
 
@@ -3272,7 +3273,7 @@ ${isWin
     if (isWin) {
         const role = db[winner]?.role || 'user';
         if (role !== 'owner') {
-            const recompensaExtra = 25;
+            const recompensaExtra = 30;
             db[winner].limit = (db[winner].limit || 0) + recompensaExtra;
         }
     }
@@ -3350,11 +3351,11 @@ if (!(await firely(m, mess.waits))) return;
             let mensaje = `🎮 *Resultado de Suit PvP*\n\n${name1}: *${jug1}*\n${name2}: *${jug2}*\n\n`;
 
             if (empate) {
-                mensaje += `⚖️ *Empate* - Pierden Limit -5.`;
+                mensaje += `⚖️ *Empate* - Pierden Limit -10.`;
             } else {
                 let winName = await shoNhe.getName(ganador);
                 let isOwner = db[ganador]?.role === 'owner';
-                let reward = 25; // 7 a 15
+                let reward = 30; // 7 a 15
 
                 if (!db[ganador]) db[ganador] = { limit: 0, role: 'user' };
                 if (!isOwner) db[ganador].limit += reward;
@@ -3373,6 +3374,36 @@ if (db.data.chats[m.chat]?.antispam) {
     addFilter(m.sender);
     addSpam(m.sender, spamDB);
     if (isSpam(m.sender, spamDB)) return shoNherly('⛔ Estás haciendo spam, espera un momento.');
+}
+if (pending[m.sender] && pending[m.sender].type === 'transferlimit') {
+  if (/^sí$/i.test(budy)) {
+    let data = pending[m.sender]
+    let sender = await loadUserFire(m.sender)
+    let receiver = await loadUserFire(data.to)
+
+    if (sender.limit < data.amount) {
+      delete pending[m.sender]
+      return m.reply(`*Ya no tienes suficiente 'limit'. Tienes:* ${sender.limit}`)
+    }
+
+    sender.limit -= data.amount
+    receiver.limit += data.amount
+
+    await saveUserFire(m.sender, sender)
+    await saveUserFire(data.to, receiver)
+
+    await shoNhe.sendMessage(m.chat, {
+      text: `✅ Se transfirieron *${data.amount} limit* a *@${data.to.split`@`[0]}* correctamente.`,
+      mentions: [data.to]
+    }, { quoted: m })
+
+    delete pending[m.sender]
+    return
+  } else {
+    await m.reply(`❌ Transferencia cancelada.`)
+    delete pending[m.sender]
+    return
+  }
 }
 		async function cekgame(gamejid)
 		{
@@ -17903,6 +17934,36 @@ case 'igdl':
 	}
 }
 break;
+case /^transferirlimit$/i:
+case /^transferlimit$/i:
+case /^traspasarlimit$/i:
+case /^enviarlimit$/i:
+  if (!isRegistered()) return m.reply(lenguajeGB.smsRg())
+  if (!m.isGroup) return m.reply(lenguajeGB.smsSoloGrupos())
+
+  if (!text) return m.reply(`*Usa el comando así:*\n.transferirlimit @usuario cantidad`)
+  let mention = m.mentionedJid[0]
+  if (!mention) return m.reply(`*Debes mencionar al usuario al que quieres transferir*`)
+  let args = text.split(' ')
+  let cantidad = parseInt(args[1])
+  if (isNaN(cantidad) || cantidad <= 0) return m.reply(`*La cantidad debe ser válida y mayor a cero.*`)
+
+  let userSender = await loadUserFire(m.sender)
+  let userReceiver = await loadUserFire(mention)
+
+  if (userSender.limit < cantidad) return m.reply(`*No tienes suficiente 'limit'. Tienes:* ${userSender.limit}`)
+
+  let confirmText = `¿Estás seguro de transferir *${cantidad} limit* a *@${mention.split`@`[0]}*?\n\nResponde con *sí* para confirmar.`
+
+  pending[m.sender] = {
+    type: 'transferlimit',
+    to: mention,
+    amount: cantidad,
+    time: +new Date
+  }
+
+  await shoNhe.sendMessage(m.chat, { text: confirmText, mentions: [mention] }, { quoted: m })
+  break
 case 'apk':
 case 'apkdl':
 {
