@@ -17998,7 +17998,7 @@ if (apkSizeMB > maxSizeMB) {
 break;
 case 'transferir':
 case 'enviar': {
-  if (!isRegistered(m.sender)) return m.reply(lenguajeGB.smsAvisoRG()) // Validación registro
+  if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
 
   let [cantidad, userMention] = text.split(/[\s,]+/)
   if (!cantidad || !userMention) return m.reply(`*Usa el comando así:*\n.transferir 10 @usuario`)
