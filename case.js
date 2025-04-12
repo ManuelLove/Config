@@ -3381,18 +3381,18 @@ if (global.transferencias && global.transferencias[m.sender]) {
     let userReceptor = await loadUserFire(receptor)
 
     if (userEmisor.limit < cantidad) {
-      shoNhe.reply(m.chat, '*Ya no tienes suficiente limit.*', m)
+      m.reply(m.chat, '*Ya no tienes suficiente limit.*', m)
     } else {
       userEmisor.limit -= cantidad
       userReceptor.limit += cantidad
       await saveUserFire(m.sender, userEmisor)
       await saveUserFire(receptor, userReceptor)
 
-      shoNhe.reply(m.chat, `*Transferencia exitosa de ${cantidad} limit a @${receptor.split('@')[0]}*`, m, { mentions: [receptor] })
+      m.reply(m.chat, `*Transferencia exitosa de ${cantidad} limit a @${receptor.split('@')[0]}*`, m, { mentions: [receptor] })
     }
     delete global.transferencias[m.sender]
   } else if (m.chat === chat && m.text.toLowerCase() === 'no') {
-    shoNhe.reply(m.chat, '*Transferencia cancelada.*', m)
+    m.reply(m.chat, '*Transferencia cancelada.*', m)
     delete global.transferencias[m.sender]
   }
 }
@@ -17998,26 +17998,26 @@ if (apkSizeMB > maxSizeMB) {
 break;
 case 'transferir':
 case 'enviar':
-  if (!text) return shoNhe.reply(m.chat, `*Uso:* ${usedPrefix + command} @usuario cantidad`, m)
+  if (!text) return m.reply(m.chat, `*Uso:* ${Prefix + command} @usuario cantidad`, m)
 
   const match = text.match(/@(\d+)\s+(\d+)/)
-  if (!match) return shoNhe.reply(m.chat, `*Ejemplo:* ${usedPrefix + command} @usuario 10`, m)
+  if (!match) return m.reply(m.chat, `*Ejemplo:* ${Prefix + command} @usuario 10`, m)
 
   const jid = match[1] + '@s.whatsapp.net'
   const cantidad = parseInt(match[2])
   const emisor = m.sender
   const receptor = jid
 
-  if (isNaN(cantidad) || cantidad <= 0) return shoNhe.reply(m.chat, 'Cantidad inválida.', m)
+  if (isNaN(cantidad) || cantidad <= 0) return m.reply(m.chat, 'Cantidad inválida.', m)
 
-  if (receptor === emisor) return shoNhe.reply(m.chat, '*No puedes transferirte a ti mismo.*', m)
+  if (receptor === emisor) return m.reply(m.chat, '*No puedes transferirte a ti mismo.*', m)
 
-  if (global.owner.some(v => receptor.includes(v))) return shoNhe.reply(m.chat, '*No puedes transferirle a un Owner.*', m)
+  if (global.owner.some(v => receptor.includes(v))) return m.reply(m.chat, '*No puedes transferirle a un Owner.*', m)
 
   let userEmisor = await loadUserFire(emisor)
   let userReceptor = await loadUserFire(receptor)
 
-  if (userEmisor.limit < cantidad) return shoNhe.reply(m.chat, '*No tienes suficiente limit.*', m)
+  if (userEmisor.limit < cantidad) return m.reply(m.chat, '*No tienes suficiente limit.*', m)
 
   // Guardamos en global temporal para confirmar
   global.transferencias = global.transferencias || {}
@@ -18031,10 +18031,10 @@ case 'enviar':
 setTimeout(() => {
   if (global.transferencias && global.transferencias[emisor]) {
     delete global.transferencias[emisor]
-    shoNhe.reply(m.chat, '*Transferencia cancelada por inactividad (60s).*', m)
+    m.reply(m.chat, '*Transferencia cancelada por inactividad (60s).*', m)
   }
 }, 60000)
-  await shoNhe.reply(m.chat,
+  await m.reply(m.chat,
     `*¿Confirmas transferir ${cantidad} limit a @${receptor.split('@')[0]}?*\n\nResponde con *sí* para confirmar o *no* para cancelar.`,
     m, { mentions: [receptor] }
   )
