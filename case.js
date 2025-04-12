@@ -17996,7 +17996,8 @@ if (apkSizeMB > maxSizeMB) {
 	}
 }
 break;
-case /^transferir|enviar$/i:
+case 'transferir':
+case 'enviar':
   if (!text) return shoNhe.reply(m.chat, `*Uso:* ${usedPrefix + command} @usuario cantidad`, m)
 
   const match = text.match(/@(\d+)\s+(\d+)/)
