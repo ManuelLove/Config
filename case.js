@@ -18033,7 +18033,7 @@ try {
 }
 
   let mensaje = `¿Estás seguro de transferir *${cantidad} limit* a *@${receptor.split("@")[0]}*?\n\nResponde con *sí* para confirmar o *no* para cancelar.`;
-await conn.sendMessage(m.chat, { text: mensaje, mentions: [receptor] }, { quoted: m });
+await shoNhe.sendMessage(m.chat, { text: mensaje, mentions: [receptor] }, { quoted: m });
 
   shoNhe.transferencias = shoNhe.transferencias || {}
   shoNhe.transferencias[replyId] = {
