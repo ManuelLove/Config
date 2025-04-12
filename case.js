@@ -17974,48 +17974,42 @@ if (apkSizeMB > maxSizeMB) {
 	}
 }
 break;
-case 'transfer':
-case 'transferir':
-if (!isRegistered) return m.reply(lenguajeGB.smsRgt())
-if (!text) return m.reply(`*Ejemplo:* ${Prefix + command} @usuario 5`)
+case 'transferir': case 'transfer': {
+  if (!isRegistered) return m.reply(lenguajeGB.smsRG() + wm);
+  if (!m.isGroup) return m.reply('*Este comando solo funciona en grupos.*');
 
-let [userTag, cantidadTxt] = text.split(" ")
-let cantidad = parseInt(cantidadTxt)
-if (!userTag || isNaN(cantidad)) return m.reply(`*Ejemplo:* ${Prefix + command} @usuario 5`)
-if (cantidad <= 0) return m.reply('*La cantidad debe ser mayor a 0.*')
+  let receptor = m.mentionedJid[0];
+  if (!receptor) return m.reply(`*Etiqueta al usuario al que deseas transferir limit.*`);
+  if (receptor === m.sender) return m.reply('*No puedes transferirte limit a ti mismo.*');
 
-let target = m.mentionedJid[0] || userTag.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-if (!target) return m.reply('*Debes mencionar a un usuario válido.*')
-if (target === m.sender) return m.reply('*No puedes transferirte a ti mismo.*')
+  if (global.owner.some(o => (typeof o === 'object' ? o[0] : o) === receptor)) {
+    return m.reply('*No puedes transferir limit a un owner.*');
+  }
 
-let data = await loadUserFire(m.sender)
-let dataTarget = await loadUserFire(target)
+  let cantidad = parseInt(text.split(' ')[1]);
+  if (!cantidad || isNaN(cantidad)) return m.reply(`*Especifica una cantidad válida para transferir.*`);
+  if (cantidad < 1) return m.reply(`*La cantidad mínima a transferir es 1.*`);
 
-if (data.limit < cantidad) return m.reply(`*No tienes suficiente limit para transferir.*\nTu saldo: ${data.limit}`)
+  let senderUser = await loadUserFire(m.sender);
+  let receptorUser = await loadUserFire(receptor);
 
-let isOwnerTarget = global.owner.filter(([n]) => target.includes(n)).length > 0
-if (global.owner.some(o => (typeof o === 'object' ? o[0] : o) === receptor)) {
-  return m.reply('*No puedes transferir limit a un owner.*')
+  if (senderUser.limit < cantidad) return m.reply(`*No tienes suficiente limit para transferir ${cantidad}.*`);
+
+  // Confirmación de transferencia (como en tictactoe)
+  let texto = `¿Estás seguro que deseas transferir *${cantidad} limit* a *@${receptor.split('@')[0]}*?\n\nResponde con *sí* para confirmar.`;
+  let data = {
+    type: 'transferencia',
+    from: m.sender,
+    to: receptor,
+    cantidad: cantidad,
+    mensaje: m.key
+  };
+  global.confirmations = global.confirmations || {};
+  global.confirmations[m.chat] = data;
+
+  await shoNhe.sendMessage(m.chat, { text: texto, mentions: [receptor] }, { quoted: m });
 }
-
-// CONFIRMACIÓN (tipo tictactoe)
-shoNhe.sendMessage(m.chat, {
-  text: `*Confirmación requerida*\n\n¿Quieres transferir *${cantidad} limit* a *@${target.split`@`[0]}*?\n\nResponde con *sí* para confirmar.`,
-  mentions: [target]
-}, { quoted: m })
-
-const aceptar = (m2) => m2.fromMe && m2.text.toLowerCase() === 'si' && m2.sender === m.sender
-
-shoNhe.awaitMessage(m.chat, aceptar, 60_000).then(async () => {
-  data.limit -= cantidad
-  dataTarget.limit += cantidad
-  await saveUserFire(m.sender, data)
-  await saveUserFire(target, dataTarget)
-  m.reply(`*Transferencia realizada con éxito.*\n\nHas enviado *${cantidad} limit* a *@${target.split`@`[0]}*`, null, { mentions: [target] })
-}).catch(() => {
-  m.reply('*Transferencia cancelada por falta de confirmación.*')
-})
-break
+break;
 case 'doxear':
 case 'doxxeo': {
     const cooldownTime = 60000; // 10 minutos en milisegundos
