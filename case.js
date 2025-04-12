@@ -18015,7 +18015,7 @@ case 'enviar': {
   if (users[receptor].rol === 'owner') return m.reply(`*No puedes transferir a un usuario con rol owner.*`)
 
   let sender = m.sender // el que está enviando
-let receptor = // definido correctamente
+receptor = m.mentionedJid[0] || text.split(" ")[0] // definido correctamente
 let amount = parseInt(args[1]) // cantidad a enviar
 
 let senderData = global.db.data.users[sender]
