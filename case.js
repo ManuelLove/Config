@@ -18013,8 +18013,10 @@ case 'enviar': {
 
   break;
 }
+case 'sí':
 case 'si': {
   if (!m.quoted || !m.quoted.key || !m.quoted.key.id) return;
+
   let replyId = m.quoted.key.id;
   if (!shoNhe.transferencias || !shoNhe.transferencias[replyId]) return;
 
@@ -18034,12 +18036,12 @@ case 'si': {
   clearTimeout(t.timeout);
   delete shoNhe.transferencias[replyId];
 
-  shoNherly(`✅ *Transferencia realizada:*\n\nDe: *@${t.from.split('@')[0]}*\nA: *@${t.to.split('@')[0]}*\nCantidad: *${t.amount} limit*`, m);
-
-  break;
+  return shoNherly(`✅ *Transferencia realizada:*\n\nDe: *@${t.from.split('@')[0]}*\nA: *@${t.to.split('@')[0]}*\nCantidad: *${t.amount} limit*`, m);
 }
+  break;
 case 'no': {
   if (!m.quoted || !m.quoted.key || !m.quoted.key.id) return;
+
   let replyId = m.quoted.key.id;
   if (!shoNhe.transferencias || !shoNhe.transferencias[replyId]) return;
 
@@ -18049,9 +18051,9 @@ case 'no': {
   clearTimeout(t.timeout);
   delete shoNhe.transferencias[replyId];
 
-  shoNherly('❌ *Transferencia cancelada.*');
-  break;
+  return shoNherly('❌ *Transferencia cancelada.*');
 }
+  break;
 case 'doxear':
 case 'doxxeo': {
     const cooldownTime = 60000; // 10 minutos en milisegundos
