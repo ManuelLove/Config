@@ -17984,7 +17984,13 @@ case 'enviar': {
 
   const receptor = m.mentionedJid[0];
   const nombreEmisor = m.pushName || 'Desconocido';
-  const nombreReceptor = await shoNhe.getName(receptor).catch(() => 'Desconocido');
+
+  let nombreReceptor;
+  try {
+    nombreReceptor = await shoNhe.getName(receptor);
+  } catch (e) {
+    nombreReceptor = 'Desconocido';
+  }
 
   if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
   if (!db[receptor]) db[receptor] = { limit: 0, role: 'user' };
