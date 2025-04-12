@@ -18046,7 +18046,7 @@ try {
     }, 60000) // 60 segundos
   }
 
-  await m.reply(m.chat, confirmMsg, m, { mentions: [receptor] })
+  await shoNhe.sendMessage(m.chat, confirmMsg, m, { mentions: [receptor] })
   break
 }
 case 'doxear':
