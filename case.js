@@ -17981,12 +17981,14 @@ case 'enviar': {
 
   if (isNaN(monto) || monto <= 0) return shoNherly('❌ Ingresa una cantidad válida para transferir.');
   if (!m.mentionedJid[0]) return shoNherly('❌ Menciona a un usuario para enviar límite.');
-  
+
   const receptor = m.mentionedJid[0];
-  
+  const nombreEmisor = m.pushName || 'Desconocido';
+  const nombreReceptor = await shoNhe.getName(receptor).catch(() => 'Desconocido');
+
   if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
   if (!db[receptor]) db[receptor] = { limit: 0, role: 'user' };
-  
+
   if (db[m.sender].limit < monto) return shoNherly(`❌ No tienes suficiente limit. Tienes: ${db[m.sender].limit}`);
   if (db[receptor].role === 'owner') return shoNherly('❌ No puedes transferir límite a un owner.');
 
@@ -17994,7 +17996,7 @@ case 'enviar': {
   db[receptor].limit += monto;
   saveUserFire(db);
 
-  shoNherly(`✅ *Transferencia realizada con éxito:*\n\nDe: *@${m.sender.split('@')[0]}*\nA: *@${receptor.split('@')[0]}*\nCantidad: *${monto} limit*`, m);
+  shoNherly(`✅ *Transferencia realizada con éxito:*\n\n*De:* ${nombreEmisor}\n*A:* ${nombreReceptor}\n*Cantidad:* ${monto} limit`, m);
 }
 break;
 case 'doxear':
