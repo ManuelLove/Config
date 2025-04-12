@@ -3374,6 +3374,28 @@ if (db.data.chats[m.chat]?.antispam) {
     addSpam(m.sender, spamDB);
     if (isSpam(m.sender, spamDB)) return shoNherly('⛔ Estás haciendo spam, espera un momento.');
 }
+if (global.transferencias && global.transferencias[m.sender]) {
+  const { receptor, cantidad, chat, timestamp } = global.transferencias[m.sender]
+  if (m.chat === chat && m.text.toLowerCase() === 'sí') {
+    let userEmisor = await loadUserFire(m.sender)
+    let userReceptor = await loadUserFire(receptor)
+
+    if (userEmisor.limit < cantidad) {
+      shoNhe.reply(m.chat, '*Ya no tienes suficiente limit.*', m)
+    } else {
+      userEmisor.limit -= cantidad
+      userReceptor.limit += cantidad
+      await saveUserFire(m.sender, userEmisor)
+      await saveUserFire(receptor, userReceptor)
+
+      shoNhe.reply(m.chat, `*Transferencia exitosa de ${cantidad} limit a @${receptor.split('@')[0]}*`, m, { mentions: [receptor] })
+    }
+    delete global.transferencias[m.sender]
+  } else if (m.chat === chat && m.text.toLowerCase() === 'no') {
+    shoNhe.reply(m.chat, '*Transferencia cancelada.*', m)
+    delete global.transferencias[m.sender]
+  }
+}
 		async function cekgame(gamejid)
 		{
 			if (tekateki[gamejid])
@@ -17974,42 +17996,48 @@ if (apkSizeMB > maxSizeMB) {
 	}
 }
 break;
-case 'transferir': case 'transfer': {
-  if (!isRegistered) return m.reply(lenguajeGB.smsRG() + wm);
-  if (!m.isGroup) return m.reply('*Este comando solo funciona en grupos.*');
+case /^transferir|enviar$/i:
+  if (!text) return shoNhe.reply(m.chat, `*Uso:* ${usedPrefix + command} @usuario cantidad`, m)
 
-  let receptor = m.mentionedJid[0];
-  if (!receptor) return m.reply(`*Etiqueta al usuario al que deseas transferir limit.*`);
-  if (receptor === m.sender) return m.reply('*No puedes transferirte limit a ti mismo.*');
+  const match = text.match(/@(\d+)\s+(\d+)/)
+  if (!match) return shoNhe.reply(m.chat, `*Ejemplo:* ${usedPrefix + command} @usuario 10`, m)
 
-  if (global.owner.some(o => (typeof o === 'object' ? o[0] : o) === receptor)) {
-    return m.reply('*No puedes transferir limit a un owner.*');
+  const jid = match[1] + '@s.whatsapp.net'
+  const cantidad = parseInt(match[2])
+  const emisor = m.sender
+  const receptor = jid
+
+  if (isNaN(cantidad) || cantidad <= 0) return shoNhe.reply(m.chat, 'Cantidad inválida.', m)
+
+  if (receptor === emisor) return shoNhe.reply(m.chat, '*No puedes transferirte a ti mismo.*', m)
+
+  if (global.owner.some(v => receptor.includes(v))) return shoNhe.reply(m.chat, '*No puedes transferirle a un Owner.*', m)
+
+  let userEmisor = await loadUserFire(emisor)
+  let userReceptor = await loadUserFire(receptor)
+
+  if (userEmisor.limit < cantidad) return shoNhe.reply(m.chat, '*No tienes suficiente limit.*', m)
+
+  // Guardamos en global temporal para confirmar
+  global.transferencias = global.transferencias || {}
+  global.transferencias[emisor] = {
+    receptor,
+    cantidad,
+    chat: m.chat,
+    timestamp: +new Date
   }
-
-  let cantidad = parseInt(text.split(' ')[1]);
-  if (!cantidad || isNaN(cantidad)) return m.reply(`*Especifica una cantidad válida para transferir.*`);
-  if (cantidad < 1) return m.reply(`*La cantidad mínima a transferir es 1.*`);
-
-  let senderUser = await loadUserFire(m.sender);
-  let receptorUser = await loadUserFire(receptor);
-
-  if (senderUser.limit < cantidad) return m.reply(`*No tienes suficiente limit para transferir ${cantidad}.*`);
-
-  // Confirmación de transferencia (como en tictactoe)
-  let texto = `¿Estás seguro que deseas transferir *${cantidad} limit* a *@${receptor.split('@')[0]}*?\n\nResponde con *sí* para confirmar.`;
-  let data = {
-    type: 'transferencia',
-    from: m.sender,
-    to: receptor,
-    cantidad: cantidad,
-    mensaje: m.key
-  };
-  global.confirmations = global.confirmations || {};
-  global.confirmations[m.chat] = data;
-
-  await shoNhe.sendMessage(m.chat, { text: texto, mentions: [receptor] }, { quoted: m });
-}
-break;
+// Expira en 60 segundos
+setTimeout(() => {
+  if (global.transferencias && global.transferencias[emisor]) {
+    delete global.transferencias[emisor]
+    shoNhe.reply(m.chat, '*Transferencia cancelada por inactividad (60s).*', m)
+  }
+}, 60000)
+  await shoNhe.reply(m.chat,
+    `*¿Confirmas transferir ${cantidad} limit a @${receptor.split('@')[0]}?*\n\nResponde con *sí* para confirmar o *no* para cancelar.`,
+    m, { mentions: [receptor] }
+  )
+  break
 case 'doxear':
 case 'doxxeo': {
     const cooldownTime = 60000; // 10 minutos en milisegundos
