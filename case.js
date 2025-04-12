@@ -5713,6 +5713,8 @@ case 'casino': {
 
     let apuesta = parseInt(args[0]);
     if (isNaN(apuesta) || apuesta <= 0) return m.reply('❌ Ingresa una cantidad válida para apostar.');
+    
+if (apuesta < 100) return shoNherly('❌ La apuesta mínima es de 100 límite.');
 
     let puntosJugador = crypto.randomInt(0, 101); // 0 a 100 incluido
 let puntosComputadora = crypto.randomInt(0, 101);
