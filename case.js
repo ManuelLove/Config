@@ -17974,66 +17974,45 @@ if (apkSizeMB > maxSizeMB) {
 	}
 }
 break;
-case 'transferirlimit': {
-  if (!isRegistered) return shoNhe(m.chat, lenguajeGB.smsRegistro(), m);
-  const user = global.db.data.users[m.sender];
-  const mentioned = m.mentionedJid[0];
-  const cantidad = parseInt(text.split(' ').pop());
+case /^transferir|transfer$/i:
+if (!isRegistered) return m.reply(lenguajeGB.smsRgt())
+if (!text) return m.reply(`*Ejemplo:* ${usedPrefix + command} @usuario 5`)
 
-  if (!mentioned || isNaN(cantidad)) {
-    return shoNhe(m.chat, `*Uso correcto:*\n${prefix}transferirlimit @usuario cantidad`, m);
-  }
+let [userTag, cantidadTxt] = text.split(" ")
+let cantidad = parseInt(cantidadTxt)
+if (!userTag || isNaN(cantidad)) return m.reply(`*Ejemplo:* ${usedPrefix + command} @usuario 5`)
+if (cantidad <= 0) return m.reply('*La cantidad debe ser mayor a 0.*')
 
-  if (cantidad <= 0) return shoNhe(m.chat, '*La cantidad debe ser mayor que 0.*', m);
-  if (user.limit < cantidad) return shoNhe(m.chat, '*No tienes suficiente limit para transferir.*', m);
+let target = m.mentionedJid[0] || userTag.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
+if (!target) return m.reply('*Debes mencionar a un usuario válido.*')
+if (target === m.sender) return m.reply('*No puedes transferirte a ti mismo.*')
 
-  const receptor = global.db.data.users[mentioned];
-  if (!receptor) return shoNhe(m.chat, '*Usuario no encontrado en la base de datos.*', m);
+let data = await loadUserFire(m.sender)
+let dataTarget = await loadUserFire(target)
 
-  const transferId = `${m.sender}_${mentioned}_${cantidad}`;
+if (data.limit < cantidad) return m.reply(`*No tienes suficiente limit para transferir.*\nTu saldo: ${data.limit}`)
 
-  if (!global.transferencias) global.transferencias = {};
-  global.transferencias[transferId] = {
-    de: m.sender,
-    para: mentioned,
-    cantidad,
-    chat: m.chat
-  };
+let isOwnerTarget = global.owner.filter(([n]) => target.includes(n)).length > 0
+if (isOwnerTarget) return m.reply('*No puedes transferir limit a un Owner.*')
 
-  return shoNhe.sendMessage(m.chat, {
-    text: `@${m.sender.split('@')[0]} desea transferirte *${cantidad} limit*\n\n¿Aceptas la transferencia?\n\nEscribe:\n.aceptartransfer ${cantidad}`,
-    mentions: [mentioned]
-  }, { quoted: m });
-}
-break;
+// CONFIRMACIÓN (tipo tictactoe)
+shoNhe.sendMessage(m.chat, {
+  text: `*Confirmación requerida*\n\n¿Quieres transferir *${cantidad} limit* a *@${target.split`@`[0]}*?\n\nResponde con *sí* para confirmar.`,
+  mentions: [target]
+}, { quoted: m })
 
-case 'aceptartransfer': {
-  const cantidad = parseInt(text.trim());
-  if (isNaN(cantidad) || cantidad <= 0) return shoNhe(m.chat, '*Especifica la cantidad correctamente. Ej: .aceptartransfer 20*', m);
+const aceptar = (m2) => m2.fromMe && m2.text.toLowerCase() === 'si' && m2.sender === m.sender
 
-  const posibles = Object.keys(global.transferencias || {}).filter(k => k.includes(`_${m.sender}_${cantidad}`));
-  if (!posibles.length) return shoNhe(m.chat, '*No hay transferencias pendientes para ti por esa cantidad.*', m);
-
-  const confirm = global.transferencias[posibles[0]];
-  const userEmisor = global.db.data.users[confirm.de];
-  const userReceptor = global.db.data.users[confirm.para];
-
-  if (userEmisor.limit < confirm.cantidad) {
-    delete global.transferencias[posibles[0]];
-    return shoNhe(m.chat, '*El usuario ya no tiene suficiente limit para completar la transferencia.*', m);
-  }
-
-  userEmisor.limit -= confirm.cantidad;
-  userReceptor.limit += confirm.cantidad;
-
-  shoNhe.sendMessage(m.chat, {
-    text: `*Transferencia exitosa*\n\n@${confirm.de.split('@')[0]} envió *${confirm.cantidad} limit* a @${confirm.para.split('@')[0]}`,
-    mentions: [confirm.de, confirm.para]
-  }, { quoted: m });
-
-  delete global.transferencias[posibles[0]];
-}
-break;
+shoNhe.awaitMessage(m.chat, aceptar, 60_000).then(async () => {
+  data.limit -= cantidad
+  dataTarget.limit += cantidad
+  await saveUserFire(m.sender, data)
+  await saveUserFire(target, dataTarget)
+  m.reply(`*Transferencia realizada con éxito.*\n\nHas enviado *${cantidad} limit* a *@${target.split`@`[0]}*`, null, { mentions: [target] })
+}).catch(() => {
+  m.reply('*Transferencia cancelada por falta de confirmación.*')
+})
+break
 case 'doxear':
 case 'doxxeo': {
     const cooldownTime = 60000; // 10 minutos en milisegundos
