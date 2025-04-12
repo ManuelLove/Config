@@ -17981,7 +17981,7 @@ case 'transferirlimit': {
   const cantidad = parseInt(text.split(' ').pop());
 
   if (!mentioned || isNaN(cantidad)) {
-    return shoNhe.reply(m.chat, `*Uso correcto:*\n${usedPrefix}transferirlimit @usuario cantidad`, m);
+    return shoNhe.reply(m.chat, `*Uso correcto:*\n${prefix}transferirlimit @usuario cantidad`, m);
   }
 
   if (cantidad <= 0) return shoNhe.reply(m.chat, '*La cantidad debe ser mayor que 0.*', m);
