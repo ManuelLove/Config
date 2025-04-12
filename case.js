@@ -868,7 +868,7 @@ END:VCARD`
 
 		if (user.warn < 4) {
 			await shoNhe.sendMessage(m.chat, {
-				text: `☣️ *PALABRA PROHIBIDA* ☣️\n\n*@${await conn.getName(m.sender)}* La palabra \`(${isToxic})\` está prohibida.\n⚠️ *Advertencias:* \`${user.warn}/4\`> ${namaBot}`,
+				text: `☣️ *PALABRA PROHIBIDA* ☣️\n\n*@${await shoNhe.getName(m.sender)}* La palabra \`(${isToxic})\` está prohibida.\n⚠️ *Advertencias:* \`${user.warn}/4\`> ${namaBot}`,
 				mentions: [m.sender]
 			});
 			await shoNhe.sendMessage(m.chat, {
@@ -882,7 +882,7 @@ END:VCARD`
 		} else {
 			user.warn = 0;
 			await shoNhe.sendMessage(m.chat, {
-				text: `☣️ *ELIMINADO POR TOXICIDAD* ☣️\n\n*@${await conn.getName(m.sender)}* fue eliminado por decir \`(${isToxic})\`> ${namaBot}`,
+				text: `☣️ *ELIMINADO POR TOXICIDAD* ☣️\n\n*@${await shoNhe.getName(m.sender)}* fue eliminado por decir \`(${isToxic})\`> ${namaBot}`,
 				mentions: [m.sender]
 			});
 			await shoNhe.sendMessage(m.chat, {
