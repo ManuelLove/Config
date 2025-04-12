@@ -17998,10 +17998,10 @@ if (apkSizeMB > maxSizeMB) {
 break;
 case 'transferir':
 case 'enviar':
-  if (!text) return m.reply(m.chat, `*Uso:* ${Prefix + command} @usuario cantidad`, m)
+  if (!text) return m.reply(m.chat, `*Uso:* ${prefix + command} @usuario cantidad`, m)
 
   const match = text.match(/@(\d+)\s+(\d+)/)
-  if (!match) return m.reply(m.chat, `*Ejemplo:* ${Prefix + command} @usuario 10`, m)
+  if (!match) return m.reply(m.chat, `*Ejemplo:* ${prefix + command} @usuario 10`, m)
 
   const jid = match[1] + '@s.whatsapp.net'
   const cantidad = parseInt(match[2])
