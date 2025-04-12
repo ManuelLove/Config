@@ -17977,11 +17977,11 @@ break;
 case 'transfer':
 case 'transferir':
 if (!isRegistered) return m.reply(lenguajeGB.smsRgt())
-if (!text) return m.reply(`*Ejemplo:* ${usedPrefix + command} @usuario 5`)
+if (!text) return m.reply(`*Ejemplo:* ${Prefix + command} @usuario 5`)
 
 let [userTag, cantidadTxt] = text.split(" ")
 let cantidad = parseInt(cantidadTxt)
-if (!userTag || isNaN(cantidad)) return m.reply(`*Ejemplo:* ${usedPrefix + command} @usuario 5`)
+if (!userTag || isNaN(cantidad)) return m.reply(`*Ejemplo:* ${Prefix + command} @usuario 5`)
 if (cantidad <= 0) return m.reply('*La cantidad debe ser mayor a 0.*')
 
 let target = m.mentionedJid[0] || userTag.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
@@ -17994,7 +17994,9 @@ let dataTarget = await loadUserFire(target)
 if (data.limit < cantidad) return m.reply(`*No tienes suficiente limit para transferir.*\nTu saldo: ${data.limit}`)
 
 let isOwnerTarget = global.owner.filter(([n]) => target.includes(n)).length > 0
-if (isOwnerTarget) return m.reply('*No puedes transferir limit a un Owner.*')
+if (global.owner.some(o => (typeof o === 'object' ? o[0] : o) === receptor)) {
+  return m.reply('*No puedes transferir limit a un owner.*')
+}
 
 // CONFIRMACIÓN (tipo tictactoe)
 shoNhe.sendMessage(m.chat, {
