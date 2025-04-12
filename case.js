@@ -17974,6 +17974,63 @@ if (apkSizeMB > maxSizeMB) {
 	}
 }
 break;
+case 'transferirlimit': {
+    if (!isRegistered) return shoNhe.reply(m.chat, lenguajeGB.smsRegistro(), m);
+
+    const users = global.db.data.users;
+    const parts = budy.trim().split(/\s+/);
+    if (parts.length < 2) return shoNhe.reply(m.chat, `*Uso correcto:*\n${usedPrefix}transferirlimit @usuario cantidad`, m);
+
+    const mentioned = m.mentionedJid[0];
+    const cantidad = parseInt(parts[parts.length - 1]);
+
+    if (!mentioned || isNaN(cantidad)) {
+        return shoNhe.reply(m.chat, `*Uso correcto:*\n${usedPrefix}transferirlimit @usuario cantidad`, m);
+    }
+
+    if (cantidad <= 0) return shoNhe.reply(m.chat, `*La cantidad debe ser mayor a 0.*`, m);
+    if (users[m.sender].limit < cantidad) return shoNhe.reply(m.chat, `*No tienes suficiente limit para transferir.*`, m);
+
+    const confirmarId = `${m.sender}_${mentioned}_${cantidad}`;
+    if (!global.confirmaciones) global.confirmaciones = {};
+    global.confirmaciones[confirmarId] = {
+        de: m.sender,
+        para: mentioned,
+        cantidad,
+        chat: m.chat
+    };
+
+    return shoNhe.sendMessage(m.chat, {
+        text: `*¿Confirmas que deseas transferir ${cantidad} limit a @${mentioned.split('@')[0]}?*\nResponde con: *sí ${cantidad}* para confirmar.`,
+        mentions: [mentioned]
+    }, { quoted: m });
+}
+break;
+
+case 'sí': {
+    const cantidad = parseInt(text.split(" ")[1]);
+    const confirmId = Object.keys(global.confirmaciones || {}).find(k => k.startsWith(`${m.sender}_`) && k.endsWith(`_${cantidad}`));
+    if (!confirmId) return;
+
+    const confirm = global.confirmaciones[confirmId];
+    if (confirm && confirm.chat === m.chat) {
+        if (global.db.data.users[m.sender].limit < confirm.cantidad) {
+            delete global.confirmaciones[confirmId];
+            return shoNhe.reply(m.chat, `*Ya no tienes suficiente limit para completar esta transferencia.*`, m);
+        }
+
+        global.db.data.users[m.sender].limit -= confirm.cantidad;
+        global.db.data.users[confirm.para].limit += confirm.cantidad;
+
+        shoNhe.sendMessage(m.chat, {
+            text: `*Transferencia exitosa*\n@${m.sender.split('@')[0]} envió *${confirm.cantidad} limit* a @${confirm.para.split('@')[0]}`,
+            mentions: [m.sender, confirm.para]
+        }, { quoted: m });
+
+        delete global.confirmaciones[confirmId];
+    }
+}
+break;
 case 'doxear':
 case 'doxxeo': {
     const cooldownTime = 60000; // 10 minutos en milisegundos
