@@ -18032,7 +18032,7 @@ try {
   nombreReceptor = 'Usuario'
 }
 
-let confirmMsg = await conn.sendMessage(m.chat, {
+let confirmMsg = await shoNhe.sendMessage(m.chat, {
   text: `¿Estás seguro de transferir *${monto} limit* a *@${receptor.split('@')[0]}*?\n\nResponde con *sí* para confirmar o *no* para cancelar.`,
   mentions: [receptor]
 }, { quoted: m })
