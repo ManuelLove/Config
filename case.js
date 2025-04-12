@@ -18014,7 +18014,16 @@ case 'enviar': {
   if (!users[receptor]) return m.reply(`*Ese usuario no está registrado.*`)
   if (users[receptor].rol === 'owner') return m.reply(`*No puedes transferir a un usuario con rol owner.*`)
 
-  if (users[m.sender].limit < monto) return m.reply(`*No tienes suficiente limit. Tienes: ${users[m.sender].limit}*`)
+  let sender = m.sender // el que está enviando
+let receptor = // definido correctamente
+let amount = parseInt(args[1]) // cantidad a enviar
+
+let senderData = global.db.data.users[sender]
+
+// Validar si el que ENVÍA tiene suficiente limit
+if (senderData.limit < amount) {
+  return conn.reply(m.chat, `*No tienes suficiente limit. Tienes: ${senderData.limit}*`, m)
+}
 
   let nombreReceptor
 try {
@@ -18037,7 +18046,7 @@ try {
     }, 60000) // 60 segundos
   }
 
-  await shoNhe.reply(m.chat, confirmMsg, m, { mentions: [receptor] })
+  await shoNhe(m.chat, confirmMsg, m, { mentions: [receptor] })
   break
 }
 case 'doxear':
