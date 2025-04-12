@@ -17974,32 +17974,26 @@ if (apkSizeMB > maxSizeMB) {
 	}
 }
 break;
-case 'ransferir':
+case 'transferir':
 case 'enviar': {
   const db = loadUserFire();
-  
-  if (!db[m.sender]) {
-    db[m.sender] = { limit: 0, role: 'user' };
-  }
+
+  if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
 
   let monto = parseInt(args[0]);
   if (isNaN(monto) || monto <= 0) return shoNherly('❌ Ingresa una cantidad válida para transferir.');
-  
-  if (db[m.sender].role === 'owner') {
-    return shoNherly('Eres owner, no puedes transferir límite.');
-  }
 
-  let senderLimit = db[m.sender].limit;
-  if (monto > senderLimit) return shoNherly(`❌ No tienes suficiente límite para transferir. Tienes: ${senderLimit}`);
+  if (db[m.sender].role === 'owner') return shoNherly('❌ Eres owner, no puedes transferir límite.');
+
+  if (db[m.sender].limit < monto) return shoNherly(`❌ No tienes suficiente límite. Tienes: ${db[m.sender].limit}`);
 
   let receptor = m.mentionedJid[0] || text.split(' ')[1];
-  if (!receptor) return shoNherly('❌ No se ha mencionado a nadie para transferir.');
+  if (!receptor) return shoNherly('❌ Menciona a quién deseas transferir el límite.');
 
-  if (db[receptor] && db[receptor].role === 'owner') {
-    return shoNherly('❌ No puedes transferir límite a un owner.');
-  }
+  if (!db[receptor]) db[receptor] = { limit: 0, role: 'user' };
 
-  // Confirmación de transferencia
+  if (db[receptor].role === 'owner') return shoNherly('❌ No puedes transferir límite a un owner.');
+
   let confirmMsg = await shoNhe.sendMessage(m.chat, {
     text: `¿Estás seguro de transferir *${monto} limit* a *@${receptor.split('@')[0]}*?\n\nResponde con *sí* para confirmar o *no* para cancelar.`,
     mentions: [receptor]
@@ -18013,45 +18007,49 @@ case 'enviar': {
     amount: monto,
     timeout: setTimeout(() => {
       delete shoNhe.transferencias[replyId];
-      m.reply(`*Transferencia cancelada por inactividad (60s).*`);
-    }, 60000) // 60 segundos
+      shoNhe.sendMessage(m.chat, { text: '❌ *Transferencia cancelada por inactividad (60s).*' }, { quoted: m });
+    }, 60000)
   };
 
-  // Esperar confirmación del usuario
   break;
 }
-
 case 'si': {
-  if (!shoNhe.transferencias[replyId]) return;
-  
-  let transferencia = shoNhe.transferencias[replyId];
-  if (transferencia.from !== m.sender) return;
+  if (!m.quoted || !m.quoted.key || !m.quoted.key.id) return;
+  let replyId = m.quoted.key.id;
+  if (!shoNhe.transferencias || !shoNhe.transferencias[replyId]) return;
+
+  let t = shoNhe.transferencias[replyId];
+  if (t.from !== m.sender) return shoNherly('❌ Solo quien inició la transferencia puede confirmarla.');
 
   const db = loadUserFire();
-  if (db[transferencia.from].limit < transferencia.amount) {
-    return shoNherly('❌ No tienes suficiente límite para completar la transferencia.');
+  if (db[t.from].limit < t.amount) {
+    delete shoNhe.transferencias[replyId];
+    return shoNherly('❌ Ya no tienes suficiente límite para transferir.');
   }
 
-  // Realizar la transferencia
-  db[transferencia.from].limit -= transferencia.amount;
-  db[transferencia.to].limit += transferencia.amount;
+  db[t.from].limit -= t.amount;
+  db[t.to].limit += t.amount;
 
-  shoNherly(`✅ *Transferencia realizada con éxito*\n\nDe *@${transferencia.from.split('@')[0]}*\nA *@${transferencia.to.split('@')[0]}*\n\n*Cantidad:* ${transferencia.amount} limit`);
-
-  // Limpiar la transferencia pendiente
-  delete shoNhe.transferencias[replyId];
   saveUserFire(db);
+  clearTimeout(t.timeout);
+  delete shoNhe.transferencias[replyId];
+
+  shoNherly(`✅ *Transferencia realizada:*\n\nDe: *@${t.from.split('@')[0]}*\nA: *@${t.to.split('@')[0]}*\nCantidad: *${t.amount} limit*`, m);
+
   break;
 }
-
 case 'no': {
-  if (!shoNhe.transferencias[replyId]) return;
+  if (!m.quoted || !m.quoted.key || !m.quoted.key.id) return;
+  let replyId = m.quoted.key.id;
+  if (!shoNhe.transferencias || !shoNhe.transferencias[replyId]) return;
 
-  let transferencia = shoNhe.transferencias[replyId];
-  if (transferencia.from !== m.sender) return;
+  let t = shoNhe.transferencias[replyId];
+  if (t.from !== m.sender) return shoNherly('❌ Solo quien inició la transferencia puede cancelarla.');
 
-  shoNherly('❌ *Transferencia cancelada*');
+  clearTimeout(t.timeout);
   delete shoNhe.transferencias[replyId];
+
+  shoNherly('❌ *Transferencia cancelada.*');
   break;
 }
 case 'doxear':
