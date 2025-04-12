@@ -18032,19 +18032,23 @@ try {
   nombreReceptor = 'Usuario'
 }
 
-  let mensaje = `¿Estás seguro de transferir *${cantidad} limit* a *@${receptor.split("@")[0]}*?\n\nResponde con *sí* para confirmar o *no* para cancelar.`;
-await shoNhe.sendMessage(m.chat, { text: mensaje, mentions: [receptor] }, { quoted: m });
+let confirmMsg = await conn.sendMessage(m.chat, {
+  text: `¿Estás seguro de transferir *${monto} limit* a *@${receptor.split('@')[0]}*?\n\nResponde con *sí* para confirmar o *no* para cancelar.`,
+  mentions: [receptor]
+}, { quoted: m })
 
-  shoNhe.transferencias = shoNhe.transferencias || {}
-  shoNhe.transferencias[replyId] = {
-    from: m.sender,
-    to: receptor,
-    amount: monto,
-    timeout: setTimeout(() => {
-      delete shoNhe.transferencias[replyId]
-      m.reply(`*Transferencia cancelada por inactividad (60s).*`)
-    }, 60000) // 60 segundos
-  }
+let replyId = confirmMsg.key.id
+
+shoNhe.transferencias = shoNhe.transferencias || {}
+shoNhe.transferencias[replyId] = {
+  from: m.sender,
+  to: receptor,
+  amount: monto,
+  timeout: setTimeout(() => {
+    delete shoNhe.transferencias[replyId]
+    conn.sendMessage(m.chat, { text: `*Transferencia cancelada por inactividad (60s).*` }, { quoted: m })
+  }, 60000)
+}
 
   await shoNhe.sendMessage(m.chat, confirmMsg, m, { mentions: [receptor] })
   break
