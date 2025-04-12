@@ -17975,20 +17975,20 @@ if (apkSizeMB > maxSizeMB) {
 }
 break;
 case 'transferirlimit': {
-  if (!isRegistered) return shoNherly(m.chat, lenguajeGB.smsRegistro(), m);
+  if (!isRegistered) return shoNhe(m.chat, lenguajeGB.smsRegistro(), m);
   const user = global.db.data.users[m.sender];
   const mentioned = m.mentionedJid[0];
   const cantidad = parseInt(text.split(' ').pop());
 
   if (!mentioned || isNaN(cantidad)) {
-    return shoNherly(m.chat, `*Uso correcto:*\n${prefix}transferirlimit @usuario cantidad`, m);
+    return shoNhe(m.chat, `*Uso correcto:*\n${prefix}transferirlimit @usuario cantidad`, m);
   }
 
-  if (cantidad <= 0) return shoNherly(m.chat, '*La cantidad debe ser mayor que 0.*', m);
-  if (user.limit < cantidad) return shoNherly(m.chat, '*No tienes suficiente limit para transferir.*', m);
+  if (cantidad <= 0) return shoNhe(m.chat, '*La cantidad debe ser mayor que 0.*', m);
+  if (user.limit < cantidad) return shoNhe(m.chat, '*No tienes suficiente limit para transferir.*', m);
 
   const receptor = global.db.data.users[mentioned];
-  if (!receptor) return shoNherly(m.chat, '*Usuario no encontrado en la base de datos.*', m);
+  if (!receptor) return shoNhe(m.chat, '*Usuario no encontrado en la base de datos.*', m);
 
   const transferId = `${m.sender}_${mentioned}_${cantidad}`;
 
@@ -18009,10 +18009,10 @@ break;
 
 case 'aceptartransfer': {
   const cantidad = parseInt(text.trim());
-  if (isNaN(cantidad) || cantidad <= 0) return shoNherly(m.chat, '*Especifica la cantidad correctamente. Ej: .aceptartransfer 20*', m);
+  if (isNaN(cantidad) || cantidad <= 0) return shoNhe(m.chat, '*Especifica la cantidad correctamente. Ej: .aceptartransfer 20*', m);
 
   const posibles = Object.keys(global.transferencias || {}).filter(k => k.includes(`_${m.sender}_${cantidad}`));
-  if (!posibles.length) return shoNherly(m.chat, '*No hay transferencias pendientes para ti por esa cantidad.*', m);
+  if (!posibles.length) return shoNhe(m.chat, '*No hay transferencias pendientes para ti por esa cantidad.*', m);
 
   const confirm = global.transferencias[posibles[0]];
   const userEmisor = global.db.data.users[confirm.de];
@@ -18020,7 +18020,7 @@ case 'aceptartransfer': {
 
   if (userEmisor.limit < confirm.cantidad) {
     delete global.transferencias[posibles[0]];
-    return shoNherly(m.chat, '*El usuario ya no tiene suficiente limit para completar la transferencia.*', m);
+    return shoNhe(m.chat, '*El usuario ya no tiene suficiente limit para completar la transferencia.*', m);
   }
 
   userEmisor.limit -= confirm.cantidad;
