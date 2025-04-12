@@ -18032,8 +18032,8 @@ try {
   nombreReceptor = 'Usuario'
 }
 
-  let confirmMsg = `¿Estás seguro de transferir *${monto} limit* a *@${receptor.split`@`[0]}*?\n\nResponde con *sí* para confirmar o *no* para cancelar.`
-  let replyId = m.chat + m.id
+  let mensaje = `¿Estás seguro de transferir *${cantidad} limit* a *@${receptor.split("@")[0]}*?\n\nResponde con *sí* para confirmar o *no* para cancelar.`;
+await conn.sendMessage(m.chat, { text: mensaje, mentions: [receptor] }, { quoted: m });
 
   shoNhe.transferencias = shoNhe.transferencias || {}
   shoNhe.transferencias[replyId] = {
