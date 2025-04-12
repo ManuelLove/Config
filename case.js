@@ -18016,7 +18016,12 @@ case 'enviar': {
 
   if (users[m.sender].limit < monto) return m.reply(`*No tienes suficiente limit. Tienes: ${users[m.sender].limit}*`)
 
-  let nombreReceptor = await shoNhe.getName(receptor).catch(() => 'Usuario')
+  let nombreReceptor
+try {
+  nombreReceptor = await shoNhe.getName(receptor)
+} catch {
+  nombreReceptor = 'Usuario'
+}
 
   let confirmMsg = `¿Estás seguro de transferir *${monto} limit* a *@${receptor.split`@`[0]}*?\n\nResponde con *sí* para confirmar o *no* para cancelar.`
   let replyId = m.chat + m.id
