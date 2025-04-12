@@ -3374,26 +3374,26 @@ if (db.data.chats[m.chat]?.antispam) {
     addSpam(m.sender, spamDB);
     if (isSpam(m.sender, spamDB)) return shoNherly('⛔ Estás haciendo spam, espera un momento.');
 }
-if (global.transferencias && global.transferencias[m.sender]) {
-  const { receptor, cantidad, chat, timestamp } = global.transferencias[m.sender]
-  if (m.chat === chat && m.text.toLowerCase() === 'sí') {
-    let userEmisor = await loadUserFire(m.sender)
-    let userReceptor = await loadUserFire(receptor)
+if (shoNhe.transferencias) {
+  let id = m.chat + m.quoted?.id
+  let transferencia = shoNhe.transferencias[id]
+  if (transferencia && m.sender === transferencia.from) {
+    let texto = m.text.toLowerCase()
+    if (texto === 'sí' || texto === 'si') {
+      let { from, to, amount, timeout } = transferencia
+      clearTimeout(timeout)
+      delete shoNhe.transferencias[id]
 
-    if (userEmisor.limit < cantidad) {
-      m.reply(m.chat, '*Ya no tienes suficiente limit.*', m)
-    } else {
-      userEmisor.limit -= cantidad
-      userReceptor.limit += cantidad
-      await saveUserFire(m.sender, userEmisor)
-      await saveUserFire(receptor, userReceptor)
+      global.db.data.users[from].limit -= amount
+      global.db.data.users[to].limit += amount
 
-      m.reply(m.chat, `*Transferencia exitosa de ${cantidad} limit a @${receptor.split('@')[0]}*`, m, { mentions: [receptor] })
+      return m.reply(`✅ *Transferencia completada:*\nHas enviado *${amount} limit* a *@${to.split`@`[0]}*`, null, { mentions: [to] })
     }
-    delete global.transferencias[m.sender]
-  } else if (m.chat === chat && m.text.toLowerCase() === 'no') {
-    m.reply(m.chat, '*Transferencia cancelada.*', m)
-    delete global.transferencias[m.sender]
+    if (texto === 'no') {
+      clearTimeout(transferencia.timeout)
+      delete shoNhe.transferencias[id]
+      return m.reply(`❌ *Transferencia cancelada.*`)
+    }
   }
 }
 		async function cekgame(gamejid)
@@ -17997,48 +17997,44 @@ if (apkSizeMB > maxSizeMB) {
 }
 break;
 case 'transferir':
-case 'enviar':
-  if (!text) return m.reply(m.chat, `*Uso:* ${prefix + command} @usuario cantidad`, m)
+case 'enviar': {
+  if (!isRegistered(m.sender)) return m.reply(lenguajeGB.smsAvisoRG()) // Validación registro
 
-  const match = text.match(/@(\d+)\s+(\d+)/)
-  if (!match) return m.reply(m.chat, `*Ejemplo:* ${prefix + command} @usuario 10`, m)
+  let [cantidad, userMention] = text.split(/[\s,]+/)
+  if (!cantidad || !userMention) return m.reply(`*Usa el comando así:*\n.transferir 10 @usuario`)
+  if (isNaN(cantidad)) return m.reply(`*La cantidad debe ser un número válido.*`)
 
-  const jid = match[1] + '@s.whatsapp.net'
-  const cantidad = parseInt(match[2])
-  const emisor = m.sender
-  const receptor = jid
+  let monto = parseInt(cantidad)
+  if (monto < 1) return m.reply(`*La cantidad mínima es 1.*`)
+  let receptor = m.mentionedJid[0] ? m.mentionedJid[0] : userMention.includes('@') ? userMention.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : ''
+  if (!receptor) return m.reply(`*Menciona al usuario correctamente.*`)
+  if (receptor === m.sender) return m.reply(`*No puedes transferirte a ti mismo.*`)
 
-  if (isNaN(cantidad) || cantidad <= 0) return m.reply(m.chat, 'Cantidad inválida.', m)
+  let users = global.db.data.users
+  if (!users[receptor]) return m.reply(`*Ese usuario no está registrado.*`)
+  if (users[receptor].rol === 'owner') return m.reply(`*No puedes transferir a un usuario con rol owner.*`)
 
-  if (receptor === emisor) return m.reply(m.chat, '*No puedes transferirte a ti mismo.*', m)
+  if (users[m.sender].limit < monto) return m.reply(`*No tienes suficiente limit. Tienes: ${users[m.sender].limit}*`)
 
-  if (global.owner.some(v => receptor.includes(v))) return m.reply(m.chat, '*No puedes transferirle a un Owner.*', m)
+  let nombreReceptor = await shoNhe.getName(receptor).catch(() => 'Usuario')
 
-  let userEmisor = await loadUserFire(emisor)
-  let userReceptor = await loadUserFire(receptor)
+  let confirmMsg = `¿Estás seguro de transferir *${monto} limit* a *@${receptor.split`@`[0]}*?\n\nResponde con *sí* para confirmar o *no* para cancelar.`
+  let replyId = m.chat + m.id
 
-  if (userEmisor.limit < cantidad) return m.reply(m.chat, '*No tienes suficiente limit.*', m)
-
-  // Guardamos en global temporal para confirmar
-  global.transferencias = global.transferencias || {}
-  global.transferencias[emisor] = {
-    receptor,
-    cantidad,
-    chat: m.chat,
-    timestamp: +new Date
+  shoNhe.transferencias = shoNhe.transferencias || {}
+  shoNhe.transferencias[replyId] = {
+    from: m.sender,
+    to: receptor,
+    amount: monto,
+    timeout: setTimeout(() => {
+      delete shoNhe.transferencias[replyId]
+      m.reply(`*Transferencia cancelada por inactividad (60s).*`)
+    }, 60000) // 60 segundos
   }
-// Expira en 60 segundos
-setTimeout(() => {
-  if (global.transferencias && global.transferencias[emisor]) {
-    delete global.transferencias[emisor]
-    m.reply(m.chat, '*Transferencia cancelada por inactividad (60s).*', m)
-  }
-}, 60000)
-  await m.reply(m.chat,
-    `*¿Confirmas transferir ${cantidad} limit a @${receptor.split('@')[0]}?*\n\nResponde con *sí* para confirmar o *no* para cancelar.`,
-    m, { mentions: [receptor] }
-  )
+
+  await shoNhe.reply(m.chat, confirmMsg, m, { mentions: [receptor] })
   break
+}
 case 'doxear':
 case 'doxxeo': {
     const cooldownTime = 60000; // 10 minutos en milisegundos
