@@ -17976,7 +17976,6 @@ if (apkSizeMB > maxSizeMB) {
 break;
 case 'transfer':
 case 'transferir':
-{
 if (!isRegistered) return m.reply(lenguajeGB.smsRgt())
 if (!text) return m.reply(`*Ejemplo:* ${usedPrefix + command} @usuario 5`)
 
