@@ -5704,7 +5704,7 @@ break;
            }
 			}
 			break;
-case 'casino': {
+case 'joket': {
     const db = loadUserFire();
 
     if (!db[m.sender]) {
@@ -5740,6 +5740,59 @@ let puntosComputadora = crypto.randomInt(0, 101);
     } else {
         db[m.sender].limit += apuesta;
         m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*NPC:* ${puntosComputadora} puntos\n\n*¡Empate!* Recibes +${apuesta} límite`);
+    }
+
+    saveUserFire(db);
+}
+break;
+case 'casino': {
+    const db = loadUserFire();
+    if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
+
+    let apuesta = parseInt(args[0]);
+    if (isNaN(apuesta) || apuesta <= 0) return m.reply('❌ Ingresa una cantidad válida para apostar.');
+    if (apuesta < 100) return m.reply('❌ La apuesta mínima es de 100 límite.');
+    if (apuesta > db[m.sender].limit) return m.reply('❌ No tienes suficiente límite para apostar.');
+
+    if (db[m.sender].role === 'owner') {
+        return m.reply('Eres owner, no puedes ganar ni perder límite en el casino.');
+    }
+
+    db[m.sender].limit -= apuesta;
+
+    let puntosJugador = crypto.randomInt(0, 101);
+    let puntosNPC = crypto.randomInt(20, 101);
+    if (puntosJugador > puntosNPC && Math.random() < 0.2) puntosJugador = puntosNPC - 1;
+
+    let diferencia = puntosJugador - puntosNPC;
+    let gano = diferencia > 5;
+
+    const chance = Math.random();
+    let mult = 1.2;
+    if (chance > 0.95) mult = 5;
+    else if (chance > 0.8) mult = 2;
+    else if (chance > 0.5) mult = 1.5;
+
+    await shoNherly('🎰 *Bienvenido al Casino ShoNhe* 🎰\n\n⏳ Girando la ruleta...');
+    await new Promise(r => setTimeout(r, 1500));
+    await shoNherly('🎲 Obteniendo tu puntaje...');
+    await new Promise(r => setTimeout(r, 1000));
+    await shoNherly(`🎯 *Tu puntuación:* ${puntosJugador}`);
+    await new Promise(r => setTimeout(r, 1000));
+    await shoNherly('🤖 El NPC está tirando...');
+    await new Promise(r => setTimeout(r, 1300));
+    await shoNherly(`💀 *Puntuación NPC:* ${puntosNPC}`);
+    await new Promise(r => setTimeout(r, 800));
+
+    if (gano) {
+        let ganancia = Math.floor(apuesta * mult);
+        db[m.sender].limit += ganancia;
+        shoNherly(`✨ *¡Ganaste!* x${mult} multiplicador\n\nGanaste +${ganancia} límite`);
+    } else if (diferencia < 0) {
+        shoNherly(`☠️ *Perdiste* -${apuesta} límite\nIntenta de nuevo con más suerte.`);
+    } else {
+        db[m.sender].limit += apuesta;
+        shoNherly(`🤝 *Empate* – Recuperas tu apuesta (+${apuesta} límite)`);
     }
 
     saveUserFire(db);
