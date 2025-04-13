@@ -15641,7 +15641,7 @@ const gif = await shoNhe.sendMessage(m.chat, {
   caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
 	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
   gifPlayback: true, gifAttribution: 0,
-  mimetype: 'video/mp4',
+  mimetype: 'video/m4a',
 	buttons: [
 		{
 			buttonId: prefix + command,
