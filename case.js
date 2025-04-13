@@ -9107,7 +9107,7 @@ ${menuforu(prefix, simbols)}
 			break
 			case 'islammenu':
 			{
-				updatePopularCommand(command);
+			if (!isVip) return shoNherly(mess.vips);	updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				const db = loadUserFire();
 				const user = db[m.sender] ||
