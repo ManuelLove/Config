@@ -15639,9 +15639,10 @@ break;
 	const gifBuffer = await res.buffer();
 
 	const gifPath = path.join(__dirname, 'temp.mp4');
+	writeFileSync(gifPath, gifBuffer);
 
 	await shoNhe.sendMessage(m.chat, {
-		video: { url: gifPath },
+		video: { url: mp4Path },
 		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
 		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
 		buttons: [
