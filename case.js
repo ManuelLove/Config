@@ -15642,7 +15642,7 @@ break;
 	writeFileSync(gifPath, gifBuffer);
 
 	await shoNhe.sendMessage(m.chat, {
-		video: { url: mp4Path },
+		video: { url: gifPath },
 		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
 		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
 		buttons: [
