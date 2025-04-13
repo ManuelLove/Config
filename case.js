@@ -5775,6 +5775,45 @@ case 'joket': {
   });
 }
 break;
+case 'tragaperras': {
+    const db = loadUserFire();
+    if (!db[m.sender]) db[m.sender] = { limit: 100, role: 'user' };
+
+    let apuesta = parseInt(args[0]);
+    if (isNaN(apuesta) || apuesta <= 0) return m.reply('❌ Ingresa una cantidad válida para apostar.');
+    if (apuesta < 100) return m.reply('❌ La apuesta mínima es 100 límite.');
+    if (apuesta > db[m.sender].limit) return m.reply('❌ No tienes suficiente límite.');
+
+    db[m.sender].limit -= apuesta;
+
+    // Animación: Mostramos la máquina de tragaperras girando
+    let animaciones = ['🎰 ¡Girando la máquina! 🍒', '🔴 ¡Apostando en la tragaperras! 💰'];
+    let animation = animaciones[Math.floor(Math.random() * animaciones.length)];
+    let respuesta = await m.reply(`${animation}`);
+
+    // Simulamos la tragaperras
+    let símbolos = ['🍒', '🍊', '🍋', '🍉', '🍇'];
+    let resultados = [
+        [símbolos[Math.floor(Math.random() * símbolos.length)], símbolos[Math.floor(Math.random() * símbolos.length)], símbolos[Math.floor(Math.random() * símbolos.length)]],
+        [símbolos[Math.floor(Math.random() * símbolos.length)], símbolos[Math.floor(Math.random() * símbolos.length)], símbolos[Math.floor(Math.random() * símbolos.length)]]
+    ];
+
+    let mensajeFinal = `🎰 *Máquina Tragaperras* 🎰\n\n*Tu apuesta:* ${apuesta}\n*Resultado 1:* ${resultados[0].join(' | ')}\n*Resultado 2:* ${resultados[1].join(' | ')}\n`;
+
+    // Comprobamos si alguien gana (Múltiples NPCs)
+    let ganadores = resultados.filter(res => res[0] === res[1] && res[1] === res[2]);
+    if (ganadores.length > 0) {
+        let ganancia = apuesta * 5;
+        db[m.sender].limit += ganancia;
+        mensajeFinal += `🎉 *¡Ganaste!* Recibes ${ganancia} límite.`;
+    } else {
+        mensajeFinal += `💥 *¡Perdiste!* Se te restan ${apuesta} límite.`;
+    }
+
+    saveUserFire(db);
+    return m.reply(mensajeFinal);
+}
+break;
 case 'casino': {
   const db = loadUserFire();
   if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
