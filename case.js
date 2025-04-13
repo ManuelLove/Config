@@ -9160,11 +9160,49 @@ ${menuforu(prefix, simbols)}
 ┌╾⚟┉➲${c}【 ɪʟᴇɢᴀʟ ᴍᴇɴᴜ 】${c} ⟢
 ├────────────────
 ┞ᗛ ${simbols} ${prefix}hentai
-┞ᗛ ${simbols} ${prefix}hentaiimg
+┞ᗛ ${simbols} ${prefix}hentaiv2
+┞ᗛ ${simbols} ${prefix}hentaiv3
+┞ᗛ ${simbols} ${prefix}hentaiv4
 ┞ᗛ ${simbols} ${prefix}hwaifu
 ┞ᗛ ${simbols} ${prefix}hneko
+┞ᗛ ${simbols} ${prefix}hculo
+┞ᗛ ${simbols} ${prefix}hsexy
+┞ᗛ ${simbols} ${prefix}herotico
+┞ᗛ ${simbols} ${prefix}hmilf
+┞ᗛ ${simbols} ${prefix}hsexoral
+┞ᗛ ${simbols} ${prefix}hpdjrusa
 ┞ᗛ ${simbols} ${prefix}trap
 ┞ᗛ ${simbols} ${prefix}blowjob
+┞ᗛ ${simbols} ${prefix}porntetas
+┞ᗛ ${simbols} ${prefix}pornsemen
+┞ᗛ ${simbols} ${prefix}pornsexduro
+┞ᗛ ${simbols} ${prefix}pornextremo
+┞ᗛ ${simbols} ${prefix}pornmanos
+┞ᗛ ${simbols} ${prefix}pornfollando
+┞ᗛ ${simbols} ${prefix}pornbeso
+┞ᗛ ${simbols} ${prefix}pornlamer
+┞ᗛ ${simbols} ${prefix}porn69
+┞ᗛ ${simbols} ${prefix}pornchupada
+┞ᗛ ${simbols} ${prefix}pornanal
+┞ᗛ ${simbols} ${prefix}pornculos
+┞ᗛ ${simbols} ${prefix}pornerotico
+┞ᗛ ${simbols} ${prefix}pornnegras
+┞ᗛ ${simbols} ${prefix}pornsinpanti
+┞ᗛ ${simbols} ${prefix}porncuello
+┞ᗛ ${simbols} ${prefix}porncorridas
+┞ᗛ ${simbols} ${prefix}pornpollas
+┞ᗛ ${simbols} ${prefix}porndoble
+┞ᗛ ${simbols} ${prefix}pornconejita
+┞ᗛ ${simbols} ${prefix}pornpies
+┞ᗛ ${simbols} ${prefix}porntrans
+┞ᗛ ${simbols} ${prefix}porngay
+┞ᗛ ${simbols} ${prefix}porngrupal
+┞ᗛ ${simbols} ${prefix}pornpatricasex
+┞ᗛ ${simbols} ${prefix}porncoño
+┞ᗛ ${simbols} ${prefix}pornreal
+┞ᗛ ${simbols} ${prefix}porntatuada
+┞ᗛ ${simbols} ${prefix}pornotiny
+┞ᗛ ${simbols} ${prefix}pornnavidad
 └──────────────────╼.✗`
 				const tombol = [
 				{
@@ -10371,98 +10409,24 @@ break;
 
 ┌╾⚟┉➲${c}【 ʀᴀɴᴅᴏᴍ ᴍᴇɴᴜ 】${c} ⟢
 ├────────────────
-┞ᗛ ${simbols} ${prefix}wallhp
-┞ᗛ ${simbols} ${prefix}akira
-┞ᗛ ${simbols} ${prefix}akiyama
-┞ᗛ ${simbols} ${prefix}ana
-┞ᗛ ${simbols} ${prefix}art
-┞ᗛ ${simbols} ${prefix}asuna
-┞ᗛ ${simbols} ${prefix}ayuzawa
-┞ᗛ ${simbols} ${prefix}boruto
-┞ᗛ ${simbols} ${prefix}bts
-┞ᗛ ${simbols} ${prefix}chiho
-┞ᗛ ${simbols} ${prefix}chitoge
-┞ᗛ ${simbols} ${prefix}cosplay
-┞ᗛ ${simbols} ${prefix}cosplayloli
-┞ᗛ ${simbols} ${prefix}cosplaysagiri
-┞ᗛ ${simbols} ${prefix}cyber
-┞ᗛ ${simbols} ${prefix}deidara
-┞ᗛ ${simbols} ${prefix}doraemon
-┞ᗛ ${simbols} ${prefix}neko
+┞ᗛ ${simbols} ${prefix}loli
 ┞ᗛ ${simbols} ${prefix}waifu
-┞ᗛ ${simbols} ${prefix}elaina
+┞ᗛ ${simbols} ${prefix}neko
+┞ᗛ ${simbols} ${prefix}nekov2
+┞ᗛ ${simbols} ${prefix}cats
 ┞ᗛ ${simbols} ${prefix}cecanindo
 ┞ᗛ ${simbols} ${prefix}cecanchina
 ┞ᗛ ${simbols} ${prefix}cecankorea
 ┞ᗛ ${simbols} ${prefix}cecanthai
 ┞ᗛ ${simbols} ${prefix}cecanviet
 ┞ᗛ ${simbols} ${prefix}cecanjapan
-┞ᗛ ${simbols} ${prefix}cats
-┞ᗛ ${simbols} ${prefix}bluearchive
-┞ᗛ ${simbols} ${prefix}emilia
-┞ᗛ ${simbols} ${prefix}erza
-┞ᗛ ${simbols} ${prefix}exo
-┞ᗛ ${simbols} ${prefix}gamewallpaper
-┞ᗛ ${simbols} ${prefix}gremory
-┞ᗛ ${simbols} ${prefix}hacker
-┞ᗛ ${simbols} ${prefix}hestia
-┞ᗛ ${simbols} ${prefix}Husbu
-┞ᗛ ${simbols} ${prefix}inori
-┞ᗛ ${simbols} ${prefix}islamic
-┞ᗛ ${simbols} ${prefix}isuzu
-┞ᗛ ${simbols} ${prefix}itachi
-┞ᗛ ${simbols} ${prefix}itori
-┞ᗛ ${simbols} ${prefix}jennie
-┞ᗛ ${simbols} ${prefix}jiso
-┞ᗛ ${simbols} ${prefix}justina
-┞ᗛ ${simbols} ${prefix}kaga
-┞ᗛ ${simbols} ${prefix}kagura
-┞ᗛ ${simbols} ${prefix}kakasih
-┞ᗛ ${simbols} ${prefix}kaori
-┞ᗛ ${simbols} ${prefix}cartoon
-┞ᗛ ${simbols} ${prefix}shortquote
-┞ᗛ ${simbols} ${prefix}keneki
-┞ᗛ ${simbols} ${prefix}kotori
-┞ᗛ ${simbols} ${prefix}kurumi
-┞ᗛ ${simbols} ${prefix}lisa
-┞ᗛ ${simbols} ${prefix}loli2
-┞ᗛ ${simbols} ${prefix}madara
-┞ᗛ ${simbols} ${prefix}megumin
-┞ᗛ ${simbols} ${prefix}mikasa
-┞ᗛ ${simbols} ${prefix}mikey
-┞ᗛ ${simbols} ${prefix}miku
-┞ᗛ ${simbols} ${prefix}minato
-┞ᗛ ${simbols} ${prefix}mountain
-┞ᗛ ${simbols} ${prefix}naruto
-┞ᗛ ${simbols} ${prefix}nekonime
-┞ᗛ ${simbols} ${prefix}nezuko
-┞ᗛ ${simbols} ${prefix}onepiece
-┞ᗛ ${simbols} ${prefix}pentol
-┞ᗛ ${simbols} ${prefix}pokemon
+┞ᗛ ${simbols} ${prefix}bluearchive  
 ┞ᗛ ${simbols} ${prefix}programming
-┞ᗛ ${simbols} ${prefix}randomnime
-┞ᗛ ${simbols} ${prefix}randomnime2
-┞ᗛ ${simbols} ${prefix}rize
-┞ᗛ ${simbols} ${prefix}rose
-┞ᗛ ${simbols} ${prefix}sagiri
-┞ᗛ ${simbols} ${prefix}sakura
-┞ᗛ ${simbols} ${prefix}sasuke
-┞ᗛ ${simbols} ${prefix}satanic
-┞ᗛ ${simbols} ${prefix}shina
-┞ᗛ ${simbols} ${prefix}shinka
-┞ᗛ ${simbols} ${prefix}shinomiya
-┞ᗛ ${simbols} ${prefix}shizuka
-┞ᗛ ${simbols} ${prefix}shota
-┞ᗛ ${simbols} ${prefix}space
-┞ᗛ ${simbols} ${prefix}technology
-┞ᗛ ${simbols} ${prefix}tejina
-┞ᗛ ${simbols} ${prefix}toukachan
-┞ᗛ ${simbols} ${prefix}tsunade
-┞ᗛ ${simbols} ${prefix}waifu2
-┞ᗛ ${simbols} ${prefix}yotsuba
-┞ᗛ ${simbols} ${prefix}yuki
-┞ᗛ ${simbols} ${prefix}yulibocil
-┞ᗛ ${simbols} ${prefix}yumeko
+┞ᗛ ${simbols} ${prefix}sirvienta
+┞ᗛ ${simbols} ${prefix}animeselfi
+┞ᗛ ${simbols} ${prefix}animeuniforme
+┞ᗛ ${simbols} ${prefix}animepechos
+┞ᗛ ${simbols} ${prefix}animerandom
 └──────────────────╼.✗`
 				const tombol = [
 				{
@@ -10762,98 +10726,24 @@ ${formattedCommandList}
 
 ┌╾⚟┉➲${c}【 ʀᴀɴᴅᴏᴍ ᴍᴇɴᴜ 】${c} ⟢
 ├────────────────
-┞ᗛ ${simbols} ${prefix}wallhp
-┞ᗛ ${simbols} ${prefix}akira
-┞ᗛ ${simbols} ${prefix}akiyama
-┞ᗛ ${simbols} ${prefix}ana
-┞ᗛ ${simbols} ${prefix}art
-┞ᗛ ${simbols} ${prefix}asuna
-┞ᗛ ${simbols} ${prefix}ayuzawa
-┞ᗛ ${simbols} ${prefix}boruto
-┞ᗛ ${simbols} ${prefix}bts
-┞ᗛ ${simbols} ${prefix}chiho
-┞ᗛ ${simbols} ${prefix}chitoge
-┞ᗛ ${simbols} ${prefix}cosplay
-┞ᗛ ${simbols} ${prefix}cosplayloli
-┞ᗛ ${simbols} ${prefix}cosplaysagiri
-┞ᗛ ${simbols} ${prefix}cyber
-┞ᗛ ${simbols} ${prefix}deidara
-┞ᗛ ${simbols} ${prefix}doraemon
-┞ᗛ ${simbols} ${prefix}neko
+┞ᗛ ${simbols} ${prefix}loli
 ┞ᗛ ${simbols} ${prefix}waifu
-┞ᗛ ${simbols} ${prefix}elaina
+┞ᗛ ${simbols} ${prefix}neko
+┞ᗛ ${simbols} ${prefix}nekov2
+┞ᗛ ${simbols} ${prefix}cats
 ┞ᗛ ${simbols} ${prefix}cecanindo
 ┞ᗛ ${simbols} ${prefix}cecanchina
 ┞ᗛ ${simbols} ${prefix}cecankorea
 ┞ᗛ ${simbols} ${prefix}cecanthai
 ┞ᗛ ${simbols} ${prefix}cecanviet
 ┞ᗛ ${simbols} ${prefix}cecanjapan
-┞ᗛ ${simbols} ${prefix}cats
-┞ᗛ ${simbols} ${prefix}bluearchive
-┞ᗛ ${simbols} ${prefix}emilia
-┞ᗛ ${simbols} ${prefix}erza
-┞ᗛ ${simbols} ${prefix}exo
-┞ᗛ ${simbols} ${prefix}gamewallpaper
-┞ᗛ ${simbols} ${prefix}gremory
-┞ᗛ ${simbols} ${prefix}hacker
-┞ᗛ ${simbols} ${prefix}hestia
-┞ᗛ ${simbols} ${prefix}Husbu
-┞ᗛ ${simbols} ${prefix}inori
-┞ᗛ ${simbols} ${prefix}islamic
-┞ᗛ ${simbols} ${prefix}isuzu
-┞ᗛ ${simbols} ${prefix}itachi
-┞ᗛ ${simbols} ${prefix}itori
-┞ᗛ ${simbols} ${prefix}jennie
-┞ᗛ ${simbols} ${prefix}jiso
-┞ᗛ ${simbols} ${prefix}justina
-┞ᗛ ${simbols} ${prefix}kaga
-┞ᗛ ${simbols} ${prefix}kagura
-┞ᗛ ${simbols} ${prefix}kakasih
-┞ᗛ ${simbols} ${prefix}kaori
-┞ᗛ ${simbols} ${prefix}cartoon
-┞ᗛ ${simbols} ${prefix}shortquote
-┞ᗛ ${simbols} ${prefix}keneki
-┞ᗛ ${simbols} ${prefix}kotori
-┞ᗛ ${simbols} ${prefix}kurumi
-┞ᗛ ${simbols} ${prefix}lisa
-┞ᗛ ${simbols} ${prefix}loli2
-┞ᗛ ${simbols} ${prefix}madara
-┞ᗛ ${simbols} ${prefix}megumin
-┞ᗛ ${simbols} ${prefix}mikasa
-┞ᗛ ${simbols} ${prefix}mikey
-┞ᗛ ${simbols} ${prefix}miku
-┞ᗛ ${simbols} ${prefix}minato
-┞ᗛ ${simbols} ${prefix}mountain
-┞ᗛ ${simbols} ${prefix}naruto
-┞ᗛ ${simbols} ${prefix}nekonime
-┞ᗛ ${simbols} ${prefix}nezuko
-┞ᗛ ${simbols} ${prefix}onepiece
-┞ᗛ ${simbols} ${prefix}pentol
-┞ᗛ ${simbols} ${prefix}pokemon
+┞ᗛ ${simbols} ${prefix}bluearchive  
 ┞ᗛ ${simbols} ${prefix}programming
-┞ᗛ ${simbols} ${prefix}randomnime
-┞ᗛ ${simbols} ${prefix}randomnime2
-┞ᗛ ${simbols} ${prefix}rize
-┞ᗛ ${simbols} ${prefix}rose
-┞ᗛ ${simbols} ${prefix}sagiri
-┞ᗛ ${simbols} ${prefix}sakura
-┞ᗛ ${simbols} ${prefix}sasuke
-┞ᗛ ${simbols} ${prefix}satanic
-┞ᗛ ${simbols} ${prefix}shina
-┞ᗛ ${simbols} ${prefix}shinka
-┞ᗛ ${simbols} ${prefix}shinomiya
-┞ᗛ ${simbols} ${prefix}shizuka
-┞ᗛ ${simbols} ${prefix}shota
-┞ᗛ ${simbols} ${prefix}space
-┞ᗛ ${simbols} ${prefix}technology
-┞ᗛ ${simbols} ${prefix}tejina
-┞ᗛ ${simbols} ${prefix}toukachan
-┞ᗛ ${simbols} ${prefix}tsunade
-┞ᗛ ${simbols} ${prefix}waifu2
-┞ᗛ ${simbols} ${prefix}yotsuba
-┞ᗛ ${simbols} ${prefix}yuki
-┞ᗛ ${simbols} ${prefix}yulibocil
-┞ᗛ ${simbols} ${prefix}yumeko
+┞ᗛ ${simbols} ${prefix}sirvienta
+┞ᗛ ${simbols} ${prefix}animeselfi
+┞ᗛ ${simbols} ${prefix}animeuniforme
+┞ᗛ ${simbols} ${prefix}animepechos
+┞ᗛ ${simbols} ${prefix}animerandom
 └──────────────────╼.✗
 
 ┌╾⚟┉➲${c}【 ᴀɪ ᴍᴇɴᴜ 】${c} ⟢
@@ -13900,224 +13790,6 @@ await shoNhe.sendMessage(m.chat, {
            }
 			}
 			break
-			case 'wallhp':
-			case 'akira':
-			case 'akiyama':
-			case 'ana':
-			case 'art':
-			case 'asuna':
-			case 'ayuzawa':
-			case 'boruto':
-			case 'bts':
-			case 'chiho':
-			case 'chitoge':
-			case 'cosplay':
-			case 'cosplayloli':
-			case 'cosplaysagiri':
-			case 'cyber':
-			case 'deidara':
-			case 'doraemon':
-			case 'elaina':
-			case 'emilia':
-			case 'erza':
-			case 'exo':
-			case 'gamewallpaper':
-			case 'gremory':
-			case 'hacker':
-			case 'hestia':
-			case 'Husbu':
-			case 'inori':
-			case 'islamic':
-			case 'isuzu':
-			case 'itachi':
-			case 'itori':
-			case 'jennie':
-			case 'jiso':
-			case 'justina':
-			case 'kaga':
-			case 'kagura':
-			case 'kakasih':
-			case 'kaori':
-			case 'cartoon':
-			case 'shortquote':
-			case 'keneki':
-			case 'kotori':
-			case 'kurumi':
-			case 'lisa':
-			case 'loli2':
-			case 'madara':
-			case 'megumin':
-			case 'mikasa':
-			case 'mikey':
-			case 'miku':
-			case 'minato':
-			case 'mountain':
-			case 'naruto':
-			case 'nekonime':
-			case 'nezuko':
-			case 'onepiece':
-			case 'pentol':
-			case 'pokemon':
-			case 'randomnime':
-			case 'randomnime2':
-			case 'rize':
-			case 'rose':
-			case 'sagiri':
-			case 'sakura':
-			case 'sasuke':
-			case 'satanic':
-			case 'shina':
-			case 'shinka':
-			case 'shinomiya':
-			case 'shizuka':
-			case 'shota':
-			case 'space':
-			case 'technology':
-			case 'tejina':
-			case 'toukachan':
-			case 'tsunade':
-			case 'waifu2':
-			case 'yotsuba':
-			case 'yuki':
-			case 'yulibocil':
-			case 'yumeko':
-			{
-				if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!(await firely(m, mess.waits))) return;
-				let data
-				if (/akira/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/akira.json')
-				if (/akiyama/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/akiyama.json')
-				if (/ana/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/ana.json')
-				if (/art/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/art.json')
-				if (/asuna/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/asuna.json')
-				if (/ayuzawa/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/ayuzawa.json')
-				if (/boneka/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/boneka.json')
-				if (/boruto/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/boruto.json')
-				if (/bts/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/bts.json')
-				if (/cecan/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/cecan.json')
-				if (/chiho/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/chiho.json')
-				if (/chitoge/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/chitoge.json')
-				if (/cogan/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/cogan.json')
-				if (/cosplay/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/cosplay.json')
-				if (/cosplayloli/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/cosplayloli.json')
-				if (/cosplaysagiri/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/cosplaysagiri.json')
-				if (/cyber/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/cyber.json')
-				if (/deidara/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/deidara.json')
-				if (/doraemon/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/doraemon.json')
-				if (/eba/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/eba.json')
-				if (/elaina/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/elaina.json')
-				if (/emilia/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/emilia.json')
-				if (/erza/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/erza.json')
-				if (/exo/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/exo.json')
-				if (/femdom/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/femdom.json')
-				if (/freefire/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/freefire.json')
-				if (/gamewallpaper/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/gamewallpaper.json')
-				if (/glasses/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/glasses.json')
-				if (/gremory/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/gremory.json')
-				if (/hacker/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/hekel.json')
-				if (/hestia/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/hestia.json')
-				if (/Husbu/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/Husbu.json')
-				if (/inori/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/inori.json')
-				if (/islamic/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/islamic.json')
-				if (/isuzu/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/isuzu.json')
-				if (/itachi/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/itachi.json')
-				if (/itori/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/itori.json')
-				if (/jennie/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/jeni.json')
-				if (/jiso/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/jiso.json')
-				if (/justina/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/justina.json')
-				if (/kaga/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kaga.json')
-				if (/kagura/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kagura.json')
-				if (/kakasih/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kakasih.json')
-				if (/kaori/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kaori.json')
-				if (/cartoon/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kartun.json')
-				if (/shortquote/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/katakata.json')
-				if (/keneki/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/keneki.json')
-				if (/kotori/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kotori.json')
-				if (/kpop/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kpop.json')
-				if (/kucing/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kucing.json')
-				if (/kurumi/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kurumi.json')
-				if (/lisa/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/lisa.json')
-				if (/loli2/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/loli.json')
-				if (/madara/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/madara.json')
-				if (/megumin/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/megumin.json')
-				if (/mikasa/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/mikasa.json')
-				if (/mikey/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/mikey.json')
-				if (/miku/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/miku.json')
-				if (/minato/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/minato.json')
-				if (/mobile/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/mobil.json')
-				if (/motor/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/motor.json')
-				if (/mountain/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/mountain.json')
-				if (/naruto/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/naruto.json')
-				if (/nekonime/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/nekonime.json')
-				if (/nezuko/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/nezuko.json')
-				if (/onepiece/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/onepiece.json')
-				if (/pentol/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/pentol.json')
-				if (/pokemon/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/pokemon.json')
-				if (/profil/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/profil.json')
-				if (/progamming/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/programming.json')
-				if (/pubg/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/pubg.json')
-				if (/randblackpink/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/randblackpink.json')
-				if (/randomnime/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/randomnime.json')
-				if (/randomnime2/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/randomnime2.json')
-				if (/rize/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/rize.json')
-				if (/rose/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/rose.json')
-				if (/ryujin/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/ryujin.json')
-				if (/sagiri/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/sagiri.json')
-				if (/sakura/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/sakura.json')
-				if (/sasuke/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/sasuke.json')
-				if (/satanic/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/satanic.json')
-				if (/shina/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/shina.json')
-				if (/shinka/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/shinka.json')
-				if (/shinomiya/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/shinomiya.json')
-				if (/shizuka/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/shizuka.json')
-				if (/shota/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/shota.json')
-				if (/space/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/tatasurya.json')
-				if (/technology/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/technology.json')
-				if (/tejina/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/tejina.json')
-				if (/toukachan/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/toukachan.json')
-				if (/tsunade/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/tsunade.json')
-				if (/waifu2/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/waifu.json')
-				if (/wallhp/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/wallhp.json')
-				if (/wallml/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/wallml.json')
-				if (/wallmlnime/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/wallnime.json')
-				if (/yotsuba/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/yotsuba.json')
-				if (/yuki/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/yuki.json')
-				if (/yulibocil/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/yulibocil.json')
-				if (/yumeko/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/yumeko.json')
-				const response = data[Math.floor(Math.random() * data.length)]
-				const buffer = await getBuffer(response);
-				await shoNhe.sendMessage(m.chat,
-				{
-					image: buffer,
-					caption: `Nih ${pushname}, ${command}-nya🐬`,
-					footer: namabot,
-					buttons: [
-					{
-						buttonId: prefix + command,
-						buttonText:
-						{
-							displayText: "🔄 Continuar de nuevo"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "📜 Volver al menú"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: m
-				});
-			};
-			break;
 			case 'programming':
 			{
 				if (!isRegistered(m))
@@ -14953,6 +14625,63 @@ await shoNhe.sendMessage(m.chat, {
            }
 			}
 			break
+			case 'nekov2':
+			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				if (!(await firely(m, mess.waits))) return;
+				try
+				{
+					let res = await axios.get('https://api.nekorinn.my.id/waifuim/waifu',
+					{
+						responseType: 'arraybuffer'
+					});
+					shoNhe.sendMessage(m.chat,
+					{
+						image: res.data,
+						caption: 'Aquí hay una foto de Neko'
+					},
+					{
+						quoted: hw
+					});
+				}
+				catch (error)
+				{
+					shoNherly('No se pudo tomar la foto de Neko. Inténtelo de nuevo más tarde.');
+				}
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
+				{
+					quoted: hw
+				});
+           }
+			}
+			break
 			case 'loli':
 			{
 				if (!isRegistered(m))
@@ -14980,6 +14709,291 @@ await shoNhe.sendMessage(m.chat, {
 				catch (error)
 				{
 					shoNherly('No se pudo tomar la foto de loli. Inténtelo de nuevo más tarde.');
+				}
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
+				{
+					quoted: hw
+				});
+           }
+			}
+			break
+			case 'animeselfi':
+			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				if (!(await firely(m, mess.waits))) return;
+				try
+				{
+					let res = await axios.get('https://api.nekorinn.my.id/waifuim/selfies',
+					{
+						responseType: 'arraybuffer'
+					});
+					shoNhe.sendMessage(m.chat,
+					{
+						image: res.data,
+						caption: 'Aquí hay una foto de animeselfi'
+					},
+					{
+						quoted: hw
+					});
+				}
+				catch (error)
+				{
+					shoNherly('No se pudo tomar la foto de animeselfi. Inténtelo de nuevo más tarde.');
+				}
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
+				{
+					quoted: hw
+				});
+           }
+			}
+			break
+			case 'animeuniforme':
+			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				if (!(await firely(m, mess.waits))) return;
+				try
+				{
+					let res = await axios.get('https://api.nekorinn.my.id/waifuim/uniform',
+					{
+						responseType: 'arraybuffer'
+					});
+					shoNhe.sendMessage(m.chat,
+					{
+						image: res.data,
+						caption: 'Aquí hay una foto de animeuniforme'
+					},
+					{
+						quoted: hw
+					});
+				}
+				catch (error)
+				{
+					shoNherly('No se pudo tomar la foto de animeuniforme. Inténtelo de nuevo más tarde.');
+				}
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
+				{
+					quoted: hw
+				});
+           }
+			}
+			break
+			case 'animepechos':
+			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				if (!(await firely(m, mess.waits))) return;
+				try
+				{
+					let res = await axios.get('https://api.nekorinn.my.id/waifuim/oppai',
+					{
+						responseType: 'arraybuffer'
+					});
+					shoNhe.sendMessage(m.chat,
+					{
+						image: res.data,
+						caption: 'Aquí hay una foto de animepechos'
+					},
+					{
+						quoted: hw
+					});
+				}
+				catch (error)
+				{
+					shoNherly('No se pudo tomar la foto de animepechos. Inténtelo de nuevo más tarde.');
+				}
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
+				{
+					quoted: hw
+				});
+           }
+			}
+			break
+			case 'sirvienta':
+			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				if (!(await firely(m, mess.waits))) return;
+				try
+				{
+					let res = await axios.get('https://api.nekorinn.my.id/waifuim/maid',
+					{
+						responseType: 'arraybuffer'
+					});
+					shoNhe.sendMessage(m.chat,
+					{
+						image: res.data,
+						caption: 'Aquí hay una foto de sirvienta'
+					},
+					{
+						quoted: hw
+					});
+				}
+				catch (error)
+				{
+					shoNherly('No se pudo tomar la foto de sirvienta. Inténtelo de nuevo más tarde.');
+				}
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
+				{
+					quoted: hw
+				});
+           }
+			}
+			break
+			case 'animerandom':
+			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				if (!(await firely(m, mess.waits))) return;
+				try
+				{
+					let res = await axios.get('https://api.nekorinn.my.id/random/bluearchive',
+					{
+						responseType: 'arraybuffer'
+					});
+					shoNhe.sendMessage(m.chat,
+					{
+						image: res.data,
+						caption: 'Aquí hay una foto de anime'
+					},
+					{
+						quoted: hw
+					});
+				}
+				catch (error)
+				{
+					shoNherly('No se pudo tomar la foto de anime. Inténtelo de nuevo más tarde.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -15511,7 +15525,7 @@ break
            }
 			}
 			break;
-case 'hentaiimg':
+case 'hentaiv2':
 {
 	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
 	updatePopularCommand(command);
@@ -15623,7 +15637,7 @@ break;
            }
 			}
 			break;
-		case 'tetas': {
+		case 'porntetas': {
 	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
 	updatePopularCommand(command);
 	const levelUpMessage = levelUpdate(command, m.sender);
@@ -15666,6 +15680,1760 @@ break;
 	// Limpieza
 	fs.unlinkSync(gifPath);
 	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornsemen': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/cum');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornsexduro': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/dom');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornextremo': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/extreme');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornmanos': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/finger');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornfollando': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/fuck');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornbeso': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/kiss');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornlamer': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/lick');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porn69': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/sixtynine');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornchupada': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/suck');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornanal':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/anal');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornculos':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/ass');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornerotico':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/ass');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornnegras':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/black');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornsinpanti':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/bottomless');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porncuello':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/collared');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porncorridas':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/cumsluts');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornpollas':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/dick');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porndoble':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/dp');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornconejita':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/easter');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornpies':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/feet');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porntrans':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/futa');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porngay':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/gay');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porngrupal':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/group');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'hentaiv3':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/hentai');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornpatricasex':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/pegged');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porncoño':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/pussy');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornreal':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/real');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porntatuada':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/tattoo');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornotiny':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/tiny');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornnavidad':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/xmas');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'hculo':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/ass');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'hsexy':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/ecchi');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'herotico:
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/ero');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'hentaiv4':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/hentai');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'hmilf':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/milf');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'hsexoral':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/oral');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'hpdjrusa':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/paizuri');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 
 	if (levelUpMessage) {
 		await shoNhe.sendMessage(m.chat, {
