@@ -15623,66 +15623,36 @@ break;
            }
 			}
 			break;
-			case 'tetas': {
+			case 'tetas':
+{
 	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
 	updatePopularCommand(command);
 	const levelUpMessage = levelUpdate(command, m.sender);
 	if (!isVip) return shoNherly(mess.vips);
 	if (!(await firely(m, mess.waits))) return;
 
-	const fs = require('fs');
-	const { writeFile } = require('fs/promises');
-	const { spawn } = require('child_process');
-	const fetch = require('node-fetch');
-	const path = require('path');
+	const fetch = require('node-fetch'); // si no lo tienes arriba
 
-	const gifPath = './temp/input.gif';
-	const mp4Path = './temp/output.mp4';
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/boobs');
+const buffer = await res.buffer();
 
-	// Descargar gif desde la API
-	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/boobs');
-	const gifBuffer = await res.buffer();
+await shoNhe.sendMessage(m.chat, {
+	video: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 
-	// Guardar el archivo .gif temporalmente
-	await writeFile(gifPath, gifBuffer);
-
-	// Convertir .gif a .mp4 usando FFmpeg
-	await new Promise((resolve, reject) => {
-		const ffmpeg = spawn('ffmpeg', [
-			'-y',
-			'-i', gifPath,
-			'-t', '6', // duración máxima
-			'-vf', 'scale=320:-1',
-			'-pix_fmt', 'yuv420p',
-			'-movflags', 'faststart',
-			mp4Path
-		]);
-
-		ffmpeg.on('close', resolve);
-		ffmpeg.on('error', reject);
-	});
-
-	// Enviar como video con gifPlayback (WhatsApp lo interpreta como gif animado)
-	await shoNhe.sendMessage(m.chat, {
-		video: fs.readFileSync(mp4Path),
-		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
-		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
-		gifPlayback: true,
-		mimetype: 'video/mp4',
-		buttons: [
-			{
-				buttonId: prefix + command,
-				buttonText: { displayText: "🔄 Continuar de nuevo" }
-			},
-			{
-				buttonId: `${prefix}menu`,
-				buttonText: { displayText: "📜 Volver al menú" }
-			}
-		],
-		viewOnce: true
-	}, { quoted: hw });
-
-	// Si subió de nivel, mostrar imagen de subida
 	if (levelUpMessage) {
 		await shoNhe.sendMessage(m.chat, {
 			image: { url: levelUpMessage.image },
@@ -15695,10 +15665,6 @@ break;
 			viewOnce: true,
 		}, { quoted: hw });
 	}
-
-	// Eliminar archivos temporales
-	fs.unlinkSync(gifPath);
-	fs.unlinkSync(mp4Path);
 }
 break;
 case 'rvo':
