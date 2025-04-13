@@ -15623,50 +15623,68 @@ break;
            }
 			}
 			break;
-			case 'tetas':
-{
-	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
-	updatePopularCommand(command);
-	const levelUpMessage = levelUpdate(command, m.sender);
-	if (!isVip) return shoNherly(mess.vips);
-	if (!(await firely(m, mess.waits))) return;
+			case 'tetas': {
+  if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+  updatePopularCommand(command);
+  const levelUpMessage = levelUpdate(command, m.sender);
+  if (!isVip) return shoNherly(mess.vips);
+  if (!(await firely(m, mess.waits))) return;
 
-	const fetch = require('node-fetch'); // si no lo tienes arriba
+  const fs = require('fs');
+  const path = require('path');
+  const { exec } = require('child_process');
+  const fetch = require('node-fetch');
 
-const res = await fetch('https://api.nekorinn.my.id/nsfwhub/boobs');
-const buffer = await res.buffer();
+  const res = await fetch('https://api.nekorinn.my.id/nsfwhub/boobs');
+  const buffer = await res.buffer();
 
-const gif = await shoNhe.sendMessage(m.chat, {
-  video: buffer, // resultado.url es la URL que te da la API
-  caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
-	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
-  gifPlayback: true, gifAttribution: 0,
-  mimetype: 'video/m4a',
-	buttons: [
-		{
-			buttonId: prefix + command,
-			buttonText: { displayText: "🔄 Continuar de nuevo" }
-		},
-		{
-			buttonId: `${prefix}menu`,
-			buttonText: { displayText: "📜 Volver al menú" }
-		}
-	],
-	viewOnce: true
-}, { quoted: hw });
+  const tmpInput = path.join(__dirname, 'temp_input.mp4');
+  const tmpOutput = path.join(__dirname, 'temp_output.mp4');
+  fs.writeFileSync(tmpInput, buffer);
 
-	if (levelUpMessage) {
-		await shoNhe.sendMessage(m.chat, {
-			image: { url: levelUpMessage.image },
-			caption: levelUpMessage.text,
-			footer: "LEVEL UP🔥",
-			buttons: [
-				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
-				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
-			],
-			viewOnce: true,
-		}, { quoted: hw });
-	}
+  exec(`ffmpeg -y -i ${tmpInput} -t 5 -vf "scale=320:-1" -c:v libx264 -crf 28 -preset veryfast ${tmpOutput}`, async (err) => {
+    if (err) {
+      fs.unlinkSync(tmpInput);
+      return shoNherly('Error al convertir el gif.');
+    }
+
+    const gifBuffer = fs.readFileSync(tmpOutput);
+
+    await shoNhe.sendMessage(m.chat, {
+      video: gifBuffer,
+      caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+      footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+      gifPlayback: true,
+      mimetype: 'video/mp4',
+      buttons: [
+        {
+          buttonId: prefix + command,
+          buttonText: { displayText: "🔄 Continuar de nuevo" }
+        },
+        {
+          buttonId: `${prefix}menu`,
+          buttonText: { displayText: "📜 Volver al menú" }
+        }
+      ],
+      viewOnce: true
+    }, { quoted: hw });
+
+    fs.unlinkSync(tmpInput);
+    fs.unlinkSync(tmpOutput);
+  });
+
+  if (levelUpMessage) {
+    await shoNhe.sendMessage(m.chat, {
+      image: { url: levelUpMessage.image },
+      caption: levelUpMessage.text,
+      footer: "LEVEL UP🔥",
+      buttons: [
+        { buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+        { buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+      ],
+      viewOnce: true,
+    }, { quoted: hw });
+  }
 }
 break;
 case 'rvo':
