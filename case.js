@@ -5788,78 +5788,78 @@ case 'joket': {
 }
 break;
 case 'roletarusa': {
-  const db = loadUserFire();
-  if (db[m.sender]?.role === 'owner') return m.reply('Los owner no pueden participar.');
+  if (db[m.sender].role === 'owner') return m.reply('Los owner no pueden participar.')
 
-  if (!global.ruletaRusa) global.ruletaRusa = {};
+  if (global.partidasRoleta && global.partidasRoleta[m.chat]) {
+    return m.reply('Ya hay una partida de ruleta rusa en curso.');
+  }
 
-  if (global.ruletaRusa[m.chat]) return m.reply('Ya hay una partida en curso, espera que termine.');
+  global.partidasRoleta = global.partidasRoleta || {};
+  global.partidasRoleta[m.chat] = [{ id: m.sender, nombre: pushname }];
 
-  global.ruletaRusa[m.chat] = {
-    jugadores: [{ id: m.sender, nombre: pushname, vivo: true, esUsuario: true }],
-    start: Date.now()
-  };
-
-  let mensajeInicio = await shoNhe.sendMessage(m.chat, {
-    text: `🎯 *Ruleta Rusa iniciada por @${m.sender.split('@')[0]}*\n\n_Se pueden unir hasta 10 segundos con el comando:_\n*.roletarusa*`,
-    mentions: [m.sender]
+  let mensajeInicial = await shoNhe.sendMessage(m.chat, {
+    text: `🎮 *Ruleta Rusa Iniciada*\n\nEscribe *unirme* para participar.\nTienes 10 segundos...`,
   }, { quoted: m });
 
-  setTimeout(async () => {
-    let partida = global.ruletaRusa[m.chat];
-    if (!partida) return;
+  await new Promise(r => setTimeout(r, 10000));
 
-    let faltantes = 5 - partida.jugadores.length;
-    let npcs = ['Vladimir', 'Sasha', 'Mikhail', 'Igor', 'Tatiana'];
-    for (let i = 0; i < faltantes; i++) {
-      partida.jugadores.push({ nombre: `NPC: ${npcs[i]}`, vivo: true, esUsuario: false });
+  let participantes = global.partidasRoleta[m.chat] || [];
+  delete global.partidasRoleta[m.chat];
+
+  const npcs = [
+    { nombre: 'NPC: Vladimir' },
+    { nombre: 'NPC: Sasha' },
+    { nombre: 'NPC: Mikhail' },
+    { nombre: 'NPC: Dimitri' },
+    { nombre: 'NPC: Natasha' },
+    { nombre: 'NPC: Igor' }
+  ];
+
+  while (participantes.length < 5) {
+    let npc = npcs.shift();
+    if (!npc) break;
+    participantes.push({ id: null, nombre: npc.nombre });
+  }
+
+  participantes = participantes.map(p => ({ ...p, vivo: true }));
+
+  let mensaje = await shoNhe.sendMessage(m.chat, { text: '🔫 Iniciando Ruleta Rusa...' }, { quoted: m });
+
+  for (let ronda = 1; ronda <= 4; ronda++) {
+    await new Promise(r => setTimeout(r, 2000));
+
+    let vivos = participantes.filter(p => p.vivo);
+    if (vivos.length <= 1) break;
+
+    let elegido = vivos[Math.floor(Math.random() * vivos.length)];
+    elegido.vivo = false;
+
+    let texto = `*Ronda ${ronda} - Disparando...*\n\n`;
+    for (let p of participantes) {
+      texto += `${p.vivo ? '🟢' : '☠️'} ${p.nombre}\n`;
     }
 
-    let mensaje = await shoNhe.sendMessage(m.chat, { text: '🔫 Iniciando Ruleta Rusa...' }, { quoted: m });
+    await shoNhe.sendMessage(m.chat, { edit: mensaje.key, text: texto });
+  }
 
-    for (let ronda = 1; ronda <= 4; ronda++) {
-      await new Promise(r => setTimeout(r, 2000));
+  let ganador = participantes.find(p => p.vivo);
+  let textoFinal = `*🎉 Ruleta Rusa Finalizada*\n\n`;
 
-      let vivos = partida.jugadores.filter(j => j.vivo);
-      if (vivos.length <= 1) break;
+  for (let p of participantes) {
+    textoFinal += `${p.vivo ? '🟢' : '☠️'} ${p.nombre}\n`;
+  }
 
-      let elegido = vivos[Math.floor(Math.random() * vivos.length)];
-      elegido.vivo = false;
-
-      let texto = `*Ronda ${ronda} - Disparando...*\n\n`;
-      for (let j of partida.jugadores) {
-        texto += `• ${j.vivo ? '🟢' : '☠️'} ${j.nombre}\n`;
-      }
-
-      await shoNhe.sendMessage(m.chat, {
-        text: texto,
-        edit: mensaje.key
-      });
-    }
-
-    let ganador = partida.jugadores.find(j => j.vivo);
-    let textoFinal = `🎉 *¡Fin del juego!*\n\n`;
-    for (let j of partida.jugadores) {
-      textoFinal += `• ${j.vivo ? '🟢' : '☠️'} ${j.nombre}\n`;
-    }
-
-    if (ganador?.esUsuario) {
-      if (!db[ganador.id]) db[ganador.id] = { limit: 0, role: 'user' };
-      db[ganador.id].limit += 50;
-      textoFinal += `\n*¡${ganador.nombre} gana +50 límite!*`;
-    } else {
-      textoFinal += `\n*¡${ganador?.nombre} gana, pero como es un NPC, nadie gana límite!*`;
-    }
-
-    await shoNhe.sendMessage(m.chat, {
-      text: textoFinal,
-      edit: mensaje.key
-    });
-
+  if (ganador?.id) {
+    db[ganador.id] = db[ganador.id] || { limit: 0, role: 'user' };
+    db[ganador.id].limit += 50;
+    textoFinal += `\n🏆 *${ganador.nombre} gana 50 límite!*`;
     saveUserFire(db);
-    delete global.ruletaRusa[m.chat];
+  } else {
+    textoFinal += `\n🏆 *${ganador?.nombre} gana... pero es un NPC, así que nadie recibe límite.*`;
+  }
 
-  }, 10000);
+  await shoNhe.sendMessage(m.chat, { edit: mensaje.key, text: textoFinal });
+
 }
 break;
 case 'casino': {
