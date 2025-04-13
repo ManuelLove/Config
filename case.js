@@ -5825,13 +5825,13 @@ case 'roletarusa': {
       lista = lista.filter(p => p.id !== eliminado.id);
 
       let texto = `*Ronda ${ronda} - Disparando...*\n\n`;
-      for (let jugador of [...lista, eliminado]) {
-        if (muertos.includes(jugador.id)) {
-          texto += `• ☠️ ${jugador.nombre}\n`;
-        } else {
-          texto += `• 🟢 ${jugador.nombre}\n`;
-        }
-      }
+for (let jugador of participantes) {
+  if (muertos.includes(jugador.id)) {
+    texto += `• ☠️ ${jugador.nombre}\n`;
+  } else {
+    texto += `• 🟢 ${jugador.nombre}\n`;
+  }
+}
 
       await shoNhe.sendMessage(m.chat, {
         edit: msgAnimado.key,
