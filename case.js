@@ -15623,41 +15623,50 @@ break;
            }
 			}
 			break;
-		case 'beta': {
-  if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
-  updatePopularCommand(command);
-  const levelUpMessage = levelUpdate(command, m.sender);
-  if (!isVip) return shoNherly(mess.vips);
-  if (!(await firely(m, mess.waits))) return;
+			case 'tetas':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
 
-  const res = await fetch('https://api.nekorinn.my.id/nsfwhub/boobs');
-  const arrayBuffer = await res.arrayBuffer();
-  const buffer = Buffer.from(arrayBuffer);
-  const filePath = `./tmp/boobs_${Date.now()}.gif`;
-  await fs.promises.writeFile(filePath, buffer);
+	const fetch = require('node-fetch'); // si no lo tienes arriba
 
-  await shoNhe.sendMessage(m.chat, {
-    video: fs.readFileSync(filePath),
-    mimetype: 'image/gif',
-    gifPlayback: true,
-    caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
-    viewOnce: true,
-  }, { quoted: m });
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/boobs');
+const buffer = await res.buffer();
 
-  fs.unlinkSync(filePath);
+await shoNhe.sendMessage(m.chat, {
+	document: buffer,
+	mimetype: 'image/gif',
+	fileName: 'tetas.gif',
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 
-  if (levelUpMessage) {
-    await shoNhe.sendMessage(m.chat, {
-      image: { url: levelUpMessage.image },
-      caption: levelUpMessage.text,
-      footer: "LEVEL UP🔥",
-      buttons: [
-        { buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" }},
-        { buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" }},
-      ],
-      viewOnce: true,
-    }, { quoted: m });
-  }
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
 }
 break;
 case 'rvo':
