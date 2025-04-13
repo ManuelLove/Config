@@ -17229,7 +17229,7 @@ await shoNhe.sendMessage(m.chat, {
 	}
 }
 break;
-case 'herotico:
+case 'herotico':
 {
 	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
 	updatePopularCommand(command);
