@@ -15630,31 +15630,28 @@ break;
 	if (!isVip) return shoNherly(mess.vips);
 	if (!(await firely(m, mess.waits))) return;
 
-	const { spawn } = require('child_process');
-	const { writeFileSync, unlinkSync, existsSync } = require('fs');
-	const path = require('path');
 	const fetch = require('node-fetch');
 
 	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/boobs');
-	const gifBuffer = await res.buffer();
-
-	const gifPath = path.join(__dirname, 'temp.mp4');
-	writeFileSync(gifPath, gifBuffer);
+	const buffer = await res.buffer();
 
 	await shoNhe.sendMessage(m.chat, {
-		video: { url: gifPath },
+		video: buffer,
 		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
 		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
 		buttons: [
-			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
-			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+			{
+				buttonId: prefix + command,
+				buttonText: { displayText: "🔄 Continuar de nuevo" }
+			},
+			{
+				buttonId: `${prefix}menu`,
+				buttonText: { displayText: "📜 Volver al menú" }
+			}
 		],
-		viewOnce: true,
-		gifPlayback: true
+		mimetype: 'video/mp4',
+		viewOnce: true
 	}, { quoted: hw });
-
-	if (existsSync(gifPath)) unlinkSync(gifPath);
-	if (existsSync(mp4Path)) unlinkSync(mp4Path);
 
 	if (levelUpMessage) {
 		await shoNhe.sendMessage(m.chat, {
