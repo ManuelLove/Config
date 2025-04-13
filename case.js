@@ -5849,7 +5849,6 @@ case 'roletarusa': {
     textoFinal += `${p.vivo ? '🟢' : '☠️'} ${p.nombre}\n`;
   }
 
-  let ganador = lista[0];
 if (ganador.id && !ganador.id.startsWith('npc')) {
   const db = loadUserFire();
   if (!db[ganador.id]) db[ganador.id] = { limit: 0, role: 'user' };
