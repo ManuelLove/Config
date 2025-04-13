@@ -15642,15 +15642,6 @@ break;
 	const mp4Path = path.join(__dirname, 'temp.mp4');
 	writeFileSync(gifPath, gifBuffer);
 
-	await new Promise((resolve, reject) => {
-		const ffmpeg = spawn('ffmpeg', ['-i', gifPath, '-movflags', 'faststart', '-pix_fmt', 'yuv420p', '-vf', 'scale=320:-1', mp4Path]);
-		ffmpeg.stderr.on('data', data => console.log(data.toString()));
-		ffmpeg.on('close', code => {
-			if (code === 0) resolve();
-			else reject(new Error('Error al convertir GIF a MP4'));
-		});
-	});
-
 	await shoNhe.sendMessage(m.chat, {
 		video: { url: mp4Path },
 		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
