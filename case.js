@@ -5850,13 +5850,13 @@ case 'roletarusa': {
   }
 
   if (ganador?.id) {
-    db[ganador.id] = db[ganador.id] || { limit: 0, role: 'user' };
-    db[ganador.id].limit += 50;
-    textoFinal += `\n🏆 *${ganador.nombre} gana 50 límite!*`;
-    saveUserFire(db);
-  } else {
-    textoFinal += `\n🏆 *${ganador?.nombre} gana... pero es un NPC, así que nadie recibe límite.*`;
-  }
+  if (!db[ganador.id]) db[ganador.id] = { limit: 0, role: 'user' };
+  db[ganador.id].limit += 50;
+  textoFinal += `\n🏆 *${ganador.nombre} gana 50 límite!*`;
+  saveUserFire(db);
+} else {
+  textoFinal += `\n🏆 *${ganador?.nombre} gana... pero es un NPC, así que nadie recibe límite.*`;
+}
 
   await shoNhe.sendMessage(m.chat, { edit: mensaje.key, text: textoFinal });
 
