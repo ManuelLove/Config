@@ -5775,43 +5775,52 @@ case 'joket': {
   });
 }
 break;
-case 'tragaperras': {
-    const db = loadUserFire();
-    if (!db[m.sender]) db[m.sender] = { limit: 100, role: 'user' };
+case 'roletarusa': {
+  const db = loadUserFire()
+  if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' }
 
-    let apuesta = parseInt(args[0]);
-    if (isNaN(apuesta) || apuesta <= 0) return m.reply('❌ Ingresa una cantidad válida para apostar.');
-    if (apuesta < 100) return m.reply('❌ La apuesta mínima es 100 límite.');
-    if (apuesta > db[m.sender].limit) return m.reply('❌ No tienes suficiente límite.');
+  if (db[m.sender].role === 'owner') return m.reply('Los owner no pueden participar.')
 
-    db[m.sender].limit -= apuesta;
+  const participantes = [
+    { nombre: pushname, id: m.sender, vivo: true, esUsuario: true },
+    { nombre: 'NPC: Vladimir', vivo: true },
+    { nombre: 'NPC: Sasha', vivo: true },
+    { nombre: 'NPC: Mikhail', vivo: true }
+  ]
 
-    // Animación: Mostramos la máquina de tragaperras girando
-    let animaciones = ['🎰 ¡Girando la máquina! 🍒', '🔴 ¡Apostando en la tragaperras! 💰'];
-    let animation = animaciones[Math.floor(Math.random() * animaciones.length)];
-    let respuesta = await m.reply(`${animation}`);
+  let mensaje = await shoNhe.sendMessage(m.chat, { text: '🔫 Iniciando Ruleta Rusa...' }, { quoted: m })
 
-    // Simulamos la tragaperras
-    let símbolos = ['🍒', '🍊', '🍋', '🍉', '🍇'];
-    let resultados = [
-        [símbolos[Math.floor(Math.random() * símbolos.length)], símbolos[Math.floor(Math.random() * símbolos.length)], símbolos[Math.floor(Math.random() * símbolos.length)]],
-        [símbolos[Math.floor(Math.random() * símbolos.length)], símbolos[Math.floor(Math.random() * símbolos.length)], símbolos[Math.floor(Math.random() * símbolos.length)]]
-    ];
+  for (let ronda = 1; ronda <= 3; ronda++) {
+    await new Promise(r => setTimeout(r, 2000))
 
-    let mensajeFinal = `🎰 *Máquina Tragaperras* 🎰\n\n*Tu apuesta:* ${apuesta}\n*Resultado 1:* ${resultados[0].join(' | ')}\n*Resultado 2:* ${resultados[1].join(' | ')}\n`;
+    let vivos = participantes.filter(p => p.vivo)
+    let elegido = vivos[Math.floor(Math.random() * vivos.length)]
 
-    // Comprobamos si alguien gana (Múltiples NPCs)
-    let ganadores = resultados.filter(res => res[0] === res[1] && res[1] === res[2]);
-    if (ganadores.length > 0) {
-        let ganancia = apuesta * 5;
-        db[m.sender].limit += ganancia;
-        mensajeFinal += `🎉 *¡Ganaste!* Recibes ${ganancia} límite.`;
-    } else {
-        mensajeFinal += `💥 *¡Perdiste!* Se te restan ${apuesta} límite.`;
+    elegido.vivo = false
+
+    let texto = `*Ronda ${ronda} - Disparando...*\n\n`
+    for (let p of participantes) {
+      texto += `• ${p.vivo ? '🟢' : '☠️'} ${p.nombre}\n`
     }
 
-    saveUserFire(db);
-    return m.reply(mensajeFinal);
+    await shoNhe.sendMessage(m.chat, { text: texto, edit: mensaje.key })
+  }
+
+  await new Promise(r => setTimeout(r, 2000))
+
+  let ganadores = participantes.filter(p => p.vivo)
+  let textoFinal = `🎉 *Sobrevivientes de la Ruleta Rusa* 🎉\n\n`
+  for (let p of ganadores) {
+    textoFinal += `• ${p.nombre} 🟢\n`
+    if (p.esUsuario) {
+      db[p.id].limit += 50
+      textoFinal += `  +50 límite ganado!\n`
+    }
+  }
+
+  saveUserFire(db)
+  await shoNhe.sendMessage(m.chat, { text: textoFinal, edit: mensaje.key })
+
 }
 break;
 case 'casino': {
