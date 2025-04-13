@@ -5776,53 +5776,51 @@ case 'joket': {
 }
 break;
 case 'roletarusa': {
-  const db = loadUserFire()
-  if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' }
+  if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot)
+  const participantes = [{ id: m.sender, name: m.pushName }]
+  const joinMsg = await shoNhe.sendMessage(m.chat, { text: `🎯 *Ruleta Rusa Iniciada*\n\nEscribe *unirme* para participar. Tienes 10 segundos...\n\nParticipantes:\n• ${m.pushName}` }, { quoted: m })
 
-  if (db[m.sender].role === 'owner') return m.reply('Los owner no pueden participar.')
+  const collector = shoNhe.createMessageCollector(m.chat, 10000) // 10 segundos
+  collector.on('collect', (msg) => {
+    if (msg.text.toLowerCase() === 'unirme' && !participantes.find(p => p.id === msg.sender)) {
+      participantes.push({ id: msg.sender, name: msg.pushName })
+      let names = participantes.map(p => `• ${p.name}`).join('\n')
+      shoNhe.sendMessage(m.chat, { edit: joinMsg.key, text: `🎯 *Ruleta Rusa Iniciada*\n\nEscribe *unirme* para participar. Tienes 10 segundos...\n\nParticipantes:\n${names}` })
+    }
+  })
 
-  const participantes = [
-    { nombre: pushname, id: m.sender, vivo: true, esUsuario: true },
-    { nombre: 'NPC: Vladimir', vivo: true },
-    { nombre: 'NPC: Sasha', vivo: true },
-    { nombre: 'NPC: Mikhail', vivo: true }
-  ]
-
-  let mensaje = await shoNhe.sendMessage(m.chat, { text: '🔫 Iniciando Ruleta Rusa...' }, { quoted: m })
-
-  for (let ronda = 1; ronda <= 3; ronda++) {
-    await new Promise(r => setTimeout(r, 2000))
-
-    let vivos = participantes.filter(p => p.vivo)
-    let elegido = vivos[Math.floor(Math.random() * vivos.length)]
-
-    elegido.vivo = false
-
-    let texto = `*Ronda ${ronda} - Disparando...*\n\n`
-    for (let p of participantes) {
-      texto += `• ${p.vivo ? '🟢' : '☠️'} ${p.nombre}\n`
+  collector.on('end', async () => {
+    while (participantes.length < 5) {
+      participantes.push({ id: 'npc' + participantes.length, name: `NPC ${participantes.length}` })
     }
 
-    await shoNhe.sendMessage(m.chat, { text: texto, edit: mensaje.key })
-  }
+    let players = [...participantes]
+    let msg = await shoNhe.sendMessage(m.chat, { text: `🔫 *Iniciando Ruleta Rusa con ${players.length} jugadores...*` }, { quoted: m })
+    await delay(2000)
 
-  await new Promise(r => setTimeout(r, 2000))
+    while (players.length > 1) {
+      let random = Math.floor(Math.random() * players.length)
+      let eliminado = players.splice(random, 1)[0]
 
-  let ganadores = participantes.filter(p => p.vivo)
-  let textoFinal = `🎉 *Sobrevivientes de la Ruleta Rusa* 🎉\n\n`
-  for (let p of ganadores) {
-    textoFinal += `• ${p.nombre} 🟢\n`
-    if (p.esUsuario) {
-      db[p.id].limit += 50
-      textoFinal += `  +50 límite ganado!\n`
+      let texto = `💥 *¡Disparo!*\n\n${eliminado.name} fue eliminado.\n\nJugadores restantes:\n${players.map(p => `• ${p.name}`).join('\n')}`
+      await shoNhe.sendMessage(m.chat, { edit: msg.key, text: texto })
+      await delay(2500)
     }
-  }
 
-  saveUserFire(db)
-  await shoNhe.sendMessage(m.chat, { text: textoFinal, edit: mensaje.key })
-
+    let ganador = players[0]
+    if (!ganador.id.startsWith('npc')) {
+      const db = loadUserFire()
+      if (!db[ganador.id]) db[ganador.id] = { limit: 0, role: 'user' }
+      const premio = 50 + Math.floor(Math.random() * 51) // 50 - 100
+      db[ganador.id].limit += premio
+      saveUserFire(db)
+      await shoNhe.sendMessage(m.chat, { edit: msg.key, text: `🏆 *¡${ganador.name} sobrevive y gana ${premio} límite!*` })
+    } else {
+      await shoNhe.sendMessage(m.chat, { edit: msg.key, text: `💀 Todos murieron, gana el *${ganador.name}* (NPC)` })
+    }
+  })
 }
-break;
+break
 case 'casino': {
   const db = loadUserFire();
   if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
