@@ -15643,7 +15643,7 @@ break;
 	writeFileSync(gifPath, gifBuffer);
 
 	await new Promise((resolve, reject) => {
-		const ffmpeg = spawn('ffmpeg', ['-i', gifPath, '-movflags', 'faststart', '-pix_fmt', 'yuv420p', '-vf', 'scale=320:-1', mp4Path]);
+		const ffmpeg = spawn('ffmpeg', ['-y', '-i', gifPath, '-movflags', 'faststart', '-pix_fmt', 'yuv420p', '-vf', 'scale=320:-1', mp4Path]);
 		ffmpeg.stderr.on('data', data => console.log(data.toString()));
 		ffmpeg.on('close', code => {
 			if (code === 0) resolve();
