@@ -5849,15 +5849,20 @@ case 'roletarusa': {
     textoFinal += `${p.vivo ? '🟢' : '☠️'} ${p.nombre}\n`;
   }
 
-  if (ganador.id) {
+  let ganador = lista[0];
+if (ganador.id && !ganador.id.startsWith('npc')) {
+  const db = loadUserFire();
   if (!db[ganador.id]) db[ganador.id] = { limit: 0, role: 'user' };
+
+  const recompensa = 50 + Math.floor(Math.random() * 51); // entre 50 y 100
   if (db[ganador.id].role !== 'owner') {
-    db[ganador.id].limit += 50;
+    db[ganador.id].limit += recompensa;
+    saveUserFire(db);
   }
-  textoFinal += `\n🏆 *${ganador.nombre} gana 50 límite!*`;
-  saveUserFire(db);
+
+  texto += `\n🏆 *${ganador.nombre} gana ${recompensa} límite!*`;
 } else {
-  textoFinal += `\n🏆 *${ganador.nombre} gana... pero es un NPC, así que no recibe límite.*`;
+  texto += `\n🏆 *${ganador.nombre} gana... pero es un NPC, así que no recibe límite.*`;
 }
 
   await shoNhe.sendMessage(m.chat, { edit: mensaje.key, text: textoFinal });
