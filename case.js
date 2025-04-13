@@ -15638,9 +15638,7 @@ break;
 	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/boobs');
 	const gifBuffer = await res.buffer();
 
-	const gifPath = path.join(__dirname, 'temp.gif');
-	const mp4Path = path.join(__dirname, 'temp.mp4');
-	writeFileSync(gifPath, gifBuffer);
+	const gifPath = path.join(__dirname, 'temp.mp4');
 
 	await shoNhe.sendMessage(m.chat, {
 		video: { url: mp4Path },
