@@ -5746,56 +5746,56 @@ let puntosComputadora = crypto.randomInt(0, 101);
 }
 break;
 case 'casino': {
-    const db = loadUserFire();
-    if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
+  const db = loadUserFire();
+  if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
 
-    let apuesta = parseInt(args[0]);
-    if (isNaN(apuesta) || apuesta <= 0) return m.reply('❌ Ingresa una cantidad válida para apostar.');
-    if (apuesta < 100) return m.reply('❌ La apuesta mínima es de 100 límite.');
-    if (apuesta > db[m.sender].limit) return m.reply('❌ No tienes suficiente límite para apostar.');
+  let apuesta = parseInt(args[0]);
+  if (isNaN(apuesta) || apuesta <= 0) return shoNherly('❌ Ingresa una cantidad válida para apostar.');
+  if (apuesta < 100) return shoNherly('❌ La apuesta mínima es de 100 límite.');
+  if (apuesta > db[m.sender].limit) return shoNherly('❌ No tienes suficiente límite para apostar.');
+  if (db[m.sender].role === 'owner') return shoNherly('Eres owner, no puedes ganar ni perder límite en el casino.');
 
-    if (db[m.sender].role === 'owner') {
-        return m.reply('Eres owner, no puedes ganar ni perder límite en el casino.');
-    }
+  db[m.sender].limit -= apuesta;
 
-    db[m.sender].limit -= apuesta;
+  // Mensajes de suspenso
+  const nombre = '@' + m.sender.split('@')[0];
+  const animacion = [
+    `${nombre} *Girando la ruleta...* 🎰`,
+    `${nombre} *Reuniendo tus fichas...* 🎲`,
+    `${nombre} *El crupier baraja tus chances...* 🃏`,
+    `${nombre} *¡La suerte está echada! 🔮*`
+  ];
 
-    let puntosJugador = crypto.randomInt(0, 101);
-    let puntosNPC = crypto.randomInt(20, 101);
-    if (puntosJugador > puntosNPC && Math.random() < 0.2) puntosJugador = puntosNPC - 1;
+  for (let texto of animacion) {
+    await shoNhe.sendMessage(m.chat, { text: texto, mentions: [m.sender] }, { quoted: m });
+    await new Promise(res => setTimeout(res, 1200));
+  }
 
-    let diferencia = puntosJugador - puntosNPC;
-    let gano = diferencia > 5;
+  // Resultado aleatorio
+  let puntosJugador = crypto.randomInt(0, 101);
+  let puntosNPC = crypto.randomInt(30, 101);
 
-    const chance = Math.random();
-    let mult = 1.2;
-    if (chance > 0.95) mult = 5;
-    else if (chance > 0.8) mult = 2;
-    else if (chance > 0.5) mult = 1.5;
+  let resultado = '';
+  let ganancia = 0;
+  const chance = Math.random();
+  let mult = 1.2;
+  if (chance > 0.95) mult = 5;
+  else if (chance > 0.8) mult = 2;
+  else if (chance > 0.5) mult = 1.5;
 
-    await shoNherly('🎰 *Bienvenido al Casino ShoNhe* 🎰\n\n⏳ Girando la ruleta...');
-    await new Promise(r => setTimeout(r, 1500));
-    await shoNherly('🎲 Obteniendo tu puntaje...');
-    await new Promise(r => setTimeout(r, 1000));
-    await shoNherly(`🎯 *Tu puntuación:* ${puntosJugador}`);
-    await new Promise(r => setTimeout(r, 1000));
-    await shoNherly('🤖 El NPC está tirando...');
-    await new Promise(r => setTimeout(r, 1300));
-    await shoNherly(`💀 *Puntuación NPC:* ${puntosNPC}`);
-    await new Promise(r => setTimeout(r, 800));
+  if (puntosJugador > puntosNPC + 5) {
+    ganancia = Math.floor(apuesta * mult);
+    db[m.sender].limit += ganancia;
+    resultado = `✨ *¡Ganaste!* x${mult}\n\n*Tú:* ${puntosJugador} pts\n*NPC:* ${puntosNPC} pts\n\n*Ganaste +${ganancia} límite*`;
+  } else if (puntosJugador < puntosNPC) {
+    resultado = `☠️ *Perdiste* -${apuesta} límite\n\n*Tú:* ${puntosJugador} pts\n*NPC:* ${puntosNPC} pts\n\nMejor suerte la próxima...`;
+  } else {
+    db[m.sender].limit += apuesta;
+    resultado = `🤝 *Empate*\n\n*Tú:* ${puntosJugador} pts\n*NPC:* ${puntosNPC} pts\n\nRecuperas tu apuesta (+${apuesta} límite)`;
+  }
 
-    if (gano) {
-        let ganancia = Math.floor(apuesta * mult);
-        db[m.sender].limit += ganancia;
-        shoNherly(`✨ *¡Ganaste!* x${mult} multiplicador\n\nGanaste +${ganancia} límite`);
-    } else if (diferencia < 0) {
-        shoNherly(`☠️ *Perdiste* -${apuesta} límite\nIntenta de nuevo con más suerte.`);
-    } else {
-        db[m.sender].limit += apuesta;
-        shoNherly(`🤝 *Empate* – Recuperas tu apuesta (+${apuesta} límite)`);
-    }
-
-    saveUserFire(db);
+  saveUserFire(db);
+  return shoNherly(resultado);
 }
 break;
 case 'suitpvp': {
