@@ -3375,6 +3375,9 @@ if (db.data.chats[m.chat]?.antispam) {
     addSpam(m.sender, spamDB);
     if (isSpam(m.sender, spamDB)) return shoNherly('⛔ Estás haciendo spam, espera un momento.');
 }
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
 		async function cekgame(gamejid)
 		{
 			if (tekateki[gamejid])
