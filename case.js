@@ -5789,85 +5789,81 @@ case 'joket': {
 break;
 case 'roletarusa': {
   const db = loadUserFire();
-  if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+  if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
   if (db[m.sender].role === 'owner') return m.reply('Los owner no pueden participar.');
 
-  const jugadores = [{ id: m.sender, nombre: pushname, vivo: true, esUsuario: true }];
-  const npcs = ['NPC: Vladimir', 'NPC: Sasha', 'NPC: Mikhail', 'NPC: Igor', 'NPC: Natalia'];
+  if (!global.ruletaRusa) global.ruletaRusa = {};
+  if (global.ruletaRusa[m.chat]) return m.reply('Ya hay una ruleta en curso.');
 
-  let mensajeEspera = await shoNhe.sendMessage(m.chat, {
-    text: `🎯 *Ruleta Rusa* 🎯\n\n@${m.sender.split('@')[0]} ha iniciado una partida.\n\nEscribe *unirme* en los próximos *10 segundos* para participar (máximo 5 jugadores).`,
-    mentions: [m.sender]
+  global.ruletaRusa[m.chat] = {
+    jugadores: [{ nombre: pushname, id: m.sender, vivo: true, esUsuario: true }],
+    tiempo: Date.now()
+  };
+
+  let mensaje = await shoNhe.sendMessage(m.chat, {
+    text: `*🎯 *Ruleta Rusa* 🎯*\n\nEscribe *"unirme"* para participar.\nInicia en 10 segundos...`
   }, { quoted: m });
 
-  const recolectados = new Set();
-  recolectados.add(m.sender);
-  const participantes = [...jugadores];
+  // Espera 10 segundos
+  setTimeout(async () => {
+    const juego = global.ruletaRusa[m.chat];
+    if (!juego) return;
 
-  const recolector = shoNhe.ev.on('messages.upsert', async ({ messages }) => {
-    const res = messages[0];
-    if (!res.message || res.key.remoteJid !== m.chat) return;
-
-    const text = res.message.conversation?.toLowerCase();
-    const sender = res.key.participant || res.key.remoteJid;
-
-    if (text === 'unirme' && !recolectados.has(sender) && participantes.length < 5) {
-      recolectados.add(sender);
-      const nombre = res.pushName || 'Participante';
-      participantes.push({ id: sender, nombre, vivo: true, esUsuario: true });
-      await shoNhe.sendMessage(m.chat, { text: `✅ @${sender.split('@')[0]} se unió a la ruleta.`, mentions: [sender] });
-    }
-  });
-
-  await new Promise(r => setTimeout(r, 10000));
-  shoNhe.ev.removeListener('messages.upsert', recolector);
-
-  // Agregar NPCs si no hay suficientes jugadores
-  while (participantes.length < 5) {
-    const npc = npcs.shift();
-    participantes.push({ nombre: npc, vivo: true });
-  }
-
-  let msg = await shoNhe.sendMessage(m.chat, { text: '🔫 Iniciando Ruleta Rusa...' }, { quoted: m });
-
-  for (let ronda = 1; ronda <= 4; ronda++) {
-    await new Promise(r => setTimeout(r, 2500));
-
-    let vivos = participantes.filter(p => p.vivo);
-    if (vivos.length === 1) break;
-
-    let elegido = vivos[Math.floor(Math.random() * vivos.length)];
-    elegido.vivo = false;
-
-    let texto = `*Ronda ${ronda} - Disparo...*\n\n`;
-    for (let p of participantes) {
-      texto += `• ${p.vivo ? '🟢' : '☠️'} ${p.nombre}\n`;
+    let faltantes = 5 - juego.jugadores.length;
+    const npcs = ['NPC: Vladimir', 'NPC: Sasha', 'NPC: Mikhail', 'NPC: Igor', 'NPC: Natasha'];
+    for (let i = 0; i < faltantes; i++) {
+      juego.jugadores.push({ nombre: npcs[i], vivo: true });
     }
 
-    await shoNhe.sendMessage(m.chat, {
-      text: texto,
-      edit: msg.key
-    });
-  }
+    let ronda = 1;
+    while (juego.jugadores.filter(p => p.vivo).length > 1) {
+      await new Promise(r => setTimeout(r, 2000));
 
-  let ganador = participantes.find(p => p.vivo);
-  let textoFinal = `*¡Fin del Juego!*\n\n`;
-  textoFinal += `Ganador: ${ganador.nombre}\n\n`;
-  for (let p of participantes) {
-    textoFinal += `• ${p.vivo ? '🟢' : '☠️'} ${p.nombre}\n`;
-  }
+      let vivos = juego.jugadores.filter(p => p.vivo);
+      let elegido = vivos[Math.floor(Math.random() * vivos.length)];
+      elegido.vivo = false;
 
-  if (ganador?.esUsuario) {
-    db[ganador.id].limit += 50;
-    textoFinal += `\nPremio: +50 límite`;
+      let texto = `*Ronda ${ronda} - Disparando...*\n\n`;
+      for (let p of juego.jugadores) {
+        texto += `${p.vivo ? '🟢' : '☠️'} ${p.nombre}\n`;
+      }
+
+      await shoNhe.sendMessage(m.chat, { text: texto }, { quoted: m });
+      ronda++;
+    }
+
+    let ganador = juego.jugadores.find(p => p.vivo);
+    if (ganador.esUsuario) {
+      db[ganador.id].limit += 50;
+      await shoNhe.sendMessage(m.chat, {
+        text: `🎉 *¡${ganador.nombre} sobrevive!* Gana +50 límite`,
+        mentions: [ganador.id]
+      }, { quoted: m });
+    } else {
+      await shoNhe.sendMessage(m.chat, {
+        text: `☠️ *¡Solo un NPC sobrevivió!* No hay ganancia.`
+      }, { quoted: m });
+    }
+
     saveUserFire(db);
-  }
+    delete global.ruletaRusa[m.chat];
+  }, 10000);
 
-  await shoNhe.sendMessage(m.chat, {
-    text: textoFinal,
-    mentions: ganador?.esUsuario ? [ganador.id] : [],
-    edit: msg.key
-  });
+  // Escuchar "unirme"
+  setInterval(() => {
+    // Este bloque es solo decorativo, porque no se puede capturar eventos aquí directamente.
+  }, 1000);
+}
+break;
+
+case 'unirme': {
+  if (!global.ruletaRusa || !global.ruletaRusa[m.chat]) return;
+  const juego = global.ruletaRusa[m.chat];
+  if (juego.jugadores.find(j => j.id === m.sender)) return;
+  if (juego.jugadores.length >= 5) return m.reply('Ya hay 5 jugadores.');
+
+  juego.jugadores.push({ nombre: pushname, id: m.sender, vivo: true, esUsuario: true });
+  m.reply(`✅ Te has unido a la ruleta rusa, ${pushname}`);
 }
 break;
 case 'casino': {
