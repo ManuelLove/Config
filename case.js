@@ -15637,7 +15637,7 @@ const res = await fetch('https://api.nekorinn.my.id/nsfwhub/boobs');
 const buffer = await res.buffer();
 
 await shoNhe.sendMessage(m.chat, {
-  video: buffer, // resultado.url es la URL que te da la API
+  image: buffer, // resultado.url es la URL que te da la API
   caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
 	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
   gifPlayback: true,
