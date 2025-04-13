@@ -15623,6 +15623,56 @@ break;
            }
 			}
 			break;
+			case 'beta': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const data = await fetchJson(`https://api.nekorinn.my.id/nsfwhub/boobs`);
+	const fileRes = await fetch(data.url);
+	const buffer = await fileRes.buffer();
+	const type = await fileTypeFromBuffer(buffer);
+	const isGif = type && type.mime === 'image/gif';
+
+	let messageData;
+	if (isGif) {
+		messageData = {
+			document: buffer,
+			mimetype: 'image/gif',
+			fileName: 'hneko.gif',
+			caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		};
+	} else {
+		messageData = {
+			image: buffer,
+			caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+			footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+			buttons: [
+				{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } },
+			],
+			viewOnce: true,
+		};
+	}
+
+	await shoNhe.sendMessage(m.chat, messageData, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } },
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
 case 'rvo':
 case 'readviewonce':
 {
