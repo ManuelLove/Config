@@ -5757,21 +5757,32 @@ case 'casino': {
 
   db[m.sender].limit -= apuesta;
 
-  // Mensajes de suspenso
+  // Animación inicial
   const nombre = '@' + m.sender.split('@')[0];
   const animacion = [
-    `${nombre} *Girando la ruleta...* 🎰`,
-    `${nombre} *Reuniendo tus fichas...* 🎲`,
-    `${nombre} *El crupier baraja tus chances...* 🃏`,
-    `${nombre} *¡La suerte está echada! 🔮*`
+    `🎰 ${nombre} *Girando la ruleta...*`,
+    `🎲 ${nombre} *Reuniendo tus fichas...*`,
+    `🃏 ${nombre} *El crupier baraja tus chances...*`,
+    `🔮 ${nombre} *¡La suerte está echada!*`
   ];
 
-  for (let texto of animacion) {
-    await shoNhe.sendMessage(m.chat, { text: texto, mentions: [m.sender] }, { quoted: m });
+  // Enviar mensaje inicial
+  let animMsg = await shoNhe.sendMessage(m.chat, {
+    text: animacion[0],
+    mentions: [m.sender]
+  }, { quoted: m });
+
+  // Editar el mismo mensaje con cada frame
+  for (let i = 1; i < animacion.length; i++) {
     await new Promise(res => setTimeout(res, 1200));
+    await shoNhe.sendMessage(m.chat, {
+      text: animacion[i],
+      edit: animMsg.key,
+      mentions: [m.sender]
+    });
   }
 
-  // Resultado aleatorio
+  // Generar resultado
   let puntosJugador = crypto.randomInt(0, 101);
   let puntosNPC = crypto.randomInt(30, 101);
 
@@ -5795,7 +5806,13 @@ case 'casino': {
   }
 
   saveUserFire(db);
-  return shoNherly(resultado);
+  
+  // Editar mensaje final con resultado
+  await new Promise(res => setTimeout(res, 1000));
+  await shoNhe.sendMessage(m.chat, {
+    text: resultado,
+    edit: animMsg.key
+  });
 }
 break;
 case 'suitpvp': {
