@@ -5705,44 +5705,74 @@ break;
 			}
 			break;
 case 'joket': {
-    const db = loadUserFire();
+  const db = loadUserFire();
+  if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
 
-    if (!db[m.sender]) {
-        db[m.sender] = { limit: 0, role: 'user' };
-    }
+  let apuesta = parseInt(args[0]);
+  if (isNaN(apuesta) || apuesta <= 0) return shoNherly('❌ Ingresa una cantidad válida para apostar.');
+  if (apuesta < 100) return shoNherly('❌ La apuesta mínima es de 100 límite.');
+  if (apuesta > db[m.sender].limit) return shoNherly('❌ No tienes suficiente límite para apostar.');
+  if (db[m.sender].role === 'owner') return shoNherly('Eres owner, no puedes ganar ni perder límite en el casino.');
 
-    let apuesta = parseInt(args[0]);
-    if (isNaN(apuesta) || apuesta <= 0) return m.reply('❌ Ingresa una cantidad válida para apostar.');
-    
-if (apuesta < 100) return shoNherly('❌ La apuesta mínima es de 100 límite.');
+  db[m.sender].limit -= apuesta;
 
-    let puntosJugador = crypto.randomInt(0, 101); // 0 a 100 incluido
-let puntosComputadora = crypto.randomInt(0, 101);
+  // Animación de tragamonedas
+  const nombre = '@' + m.sender.split('@')[0];
+  const slots = ['🍒', '🍋', '🍊', '💎', '7️⃣', '🍉', '⭐'];
+  
+  const animarSlots = () => {
+    return [
+      slots[Math.floor(Math.random() * slots.length)],
+      slots[Math.floor(Math.random() * slots.length)],
+      slots[Math.floor(Math.random() * slots.length)]
+    ];
+  };
 
-    if (db[m.sender].role === 'owner') {
-        // Solo mostrar el resultado, sin modificar límite
-        let resultadoTexto = `🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*NPC:* ${puntosComputadora} puntos\n\n`;
-        if (puntosJugador > puntosComputadora) resultadoTexto += '*¡Ganaste!* Recibes +0 límite';
-        else if (puntosJugador < puntosComputadora) resultadoTexto += '*¡Perdiste!* Recibes -0 límite';
-        else resultadoTexto += '*¡Empate!* Recibes +0 límite';
-        return m.reply(resultadoTexto);
-    }
+  let animMsg = await shoNhe.sendMessage(m.chat, {
+    text: `🎰 ${nombre} está apostando...\n\n[ ❔ ❔ ❔ ]`,
+    mentions: [m.sender]
+  }, { quoted: m });
 
-    if (apuesta > db[m.sender].limit) return m.reply('❌ No tienes suficiente límite para apostar.');
-    db[m.sender].limit -= apuesta;
+  for (let i = 0; i < 5; i++) {
+    await new Promise(res => setTimeout(res, 800));
+    let spin = animarSlots();
+    await shoNhe.sendMessage(m.chat, {
+      text: `🎰 ${nombre} está apostando...\n\n[ ${spin[0]} ${spin[1]} ${spin[2]} ]`,
+      edit: animMsg.key,
+      mentions: [m.sender]
+    });
+  }
 
-    if (puntosJugador > puntosComputadora) {
-        let recompensa = apuesta * 2;
-        db[m.sender].limit += recompensa;
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*NPC:* ${puntosComputadora} puntos\n\n*¡Ganaste!* Recibes +${recompensa} límite`);
-    } else if (puntosJugador < puntosComputadora) {
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*NPC:* ${puntosComputadora} puntos\n\n*¡Perdiste!* Recibes -${apuesta} límite`);
-    } else {
-        db[m.sender].limit += apuesta;
-        m.reply(`🎰 *Casino* 🎰\n\n*Tú:* ${puntosJugador} puntos\n*NPC:* ${puntosComputadora} puntos\n\n*¡Empate!* Recibes +${apuesta} límite`);
-    }
+  // Puntos reales
+  let puntosJugador = crypto.randomInt(0, 101);
+  let puntosNPC = crypto.randomInt(30, 101);
 
-    saveUserFire(db);
+  let resultado = '';
+  let ganancia = 0;
+  const chance = Math.random();
+  let mult = 1.2;
+  if (chance > 0.95) mult = 5;
+  else if (chance > 0.8) mult = 2;
+  else if (chance > 0.5) mult = 1.5;
+
+  if (puntosJugador > puntosNPC + 5) {
+    ganancia = Math.floor(apuesta * mult);
+    db[m.sender].limit += ganancia;
+    resultado = `✨ *¡Ganaste!* x${mult}\n\n*Tú:* ${puntosJugador} pts\n*NPC:* ${puntosNPC} pts\n\n*Ganaste +${ganancia} límite*`;
+  } else if (puntosJugador < puntosNPC) {
+    resultado = `☠️ *Perdiste* -${apuesta} límite\n\n*Tú:* ${puntosJugador} pts\n*NPC:* ${puntosNPC} pts\n\nMejor suerte la próxima...`;
+  } else {
+    db[m.sender].limit += apuesta;
+    resultado = `🤝 *Empate*\n\n*Tú:* ${puntosJugador} pts\n*NPC:* ${puntosNPC} pts\n\nRecuperas tu apuesta (+${apuesta} límite)`;
+  }
+
+  saveUserFire(db);
+
+  await new Promise(res => setTimeout(res, 1000));
+  await shoNhe.sendMessage(m.chat, {
+    text: resultado,
+    edit: animMsg.key
+  });
 }
 break;
 case 'casino': {
@@ -5802,7 +5832,7 @@ case 'casino': {
     resultado = `☠️ *Perdiste* -${apuesta} límite\n\n*Tú:* ${puntosJugador} pts\n*NPC:* ${puntosNPC} pts\n\nMejor suerte la próxima...`;
   } else {
     db[m.sender].limit += apuesta;
-    resultado = `🤝 *Empate*\n\n*Tú:* ${puntosJugador} pts\n*NPC:* ${puntosNPC} pts\n\nRecuperas tu apuesta (+${apuesta} límite)`;
+    resultado = `🤝 *Empate*\n\n*Tú:* ${puntosJugador} pts\n*NPC:* ${puntosNPC} pts\n\nRecibes +${apuesta} límite`;
   }
 
   saveUserFire(db);
