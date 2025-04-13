@@ -15640,7 +15640,7 @@ const gif = await shoNhe.sendMessage(m.chat, {
   video: buffer, // resultado.url es la URL que te da la API
   caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
 	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
-  gifPlayback: true, gifAttribution: 0 },
+  gifPlayback: true, gifAttribution: 0,
   mimetype: 'video/mp4',
 	buttons: [
 		{
