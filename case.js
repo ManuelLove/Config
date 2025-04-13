@@ -15623,32 +15623,29 @@ break;
            }
 			}
 			break;
-			case 'beta': {
+		case 'beta': {
   if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
   updatePopularCommand(command);
   const levelUpMessage = levelUpdate(command, m.sender);
   if (!isVip) return shoNherly(mess.vips);
   if (!(await firely(m, mess.waits))) return;
 
-  const res = await fetch(`https://api.nekorinn.my.id/nsfwhub/boobs`);
-  const data = await res.json();
-
-  if (!data?.url) return shoNhe.sendMessage(m.chat, { text: 'Error al obtener la imagen.' }, { quoted: m });
-
-  const filePath = './tmp/neko.gif'; // Puedes usar Date.now() para evitar conflictos
-  const buffer = await fetch(data.url).then(r => r.buffer());
+  // Descargar imagen directamente desde la API
+  const response = await fetch('https://api.nekorinn.my.id/nsfwhub/boobs');
+  const buffer = await response.buffer();
+  const filePath = `./tmp/boobs_${Date.now()}.gif`;
   await fs.promises.writeFile(filePath, buffer);
 
+  // Enviar como GIF o como documento si pesa mucho
   await shoNhe.sendMessage(m.chat, {
-    video: { url: filePath },
-    caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+    video: fs.readFileSync(filePath),
     mimetype: 'image/gif',
     gifPlayback: true,
+    caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
     viewOnce: true,
   }, { quoted: m });
 
-  // Borra archivo temporal después de enviar
-  fs.unlinkSync(filePath);
+  fs.unlinkSync(filePath); // eliminar archivo temporal
 
   if (levelUpMessage) {
     await shoNhe.sendMessage(m.chat, {
