@@ -15623,48 +15623,37 @@ break;
            }
 			}
 			break;
-			case 'tetas': {
+			case 'tetas':
+{
 	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
 	updatePopularCommand(command);
 	const levelUpMessage = levelUpdate(command, m.sender);
 	if (!isVip) return shoNherly(mess.vips);
 	if (!(await firely(m, mess.waits))) return;
 
-	const { spawn } = require('child_process');
-	const { writeFileSync, unlinkSync, existsSync } = require('fs');
-	const path = require('path');
-	const fetch = require('node-fetch');
+	const fetch = require('node-fetch'); // si no lo tienes arriba
 
-	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/boobs');
-	const gifBuffer = await res.buffer();
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/boobs');
+const buffer = await res.buffer();
 
-	const gifPath = path.join(__dirname, 'temp.gif');
-	const mp4Path = path.join(__dirname, 'temp.mp4');
-	writeFileSync(gifPath, gifBuffer);
-
-	await new Promise((resolve, reject) => {
-		const ffmpeg = spawn('ffmpeg', ['-y', '-i', gifPath, '-movflags', 'faststart', '-pix_fmt', 'yuv420p', '-vf', 'scale=320:-1', mp4Path]);
-		ffmpeg.stderr.on('data', data => console.log(data.toString()));
-		ffmpeg.on('close', code => {
-			if (code === 0) resolve();
-			else reject(new Error('Error al convertir GIF a MP4'));
-		});
-	});
-
-	await shoNhe.sendMessage(m.chat, {
-		video: { url: mp4Path },
-		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
-		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
-		buttons: [
-			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
-			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
-		],
-		viewOnce: true,
-		gifPlayback: true
-	}, { quoted: hw });
-
-	if (existsSync(gifPath)) unlinkSync(gifPath);
-	if (existsSync(mp4Path)) unlinkSync(mp4Path);
+await conn.sendMessage(m.chat, {
+  video: { url: resultado.url }, // resultado.url es la URL que te da la API
+  caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+  gifPlayback: true,
+  mimetype: 'video/mp4',
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 
 	if (levelUpMessage) {
 		await shoNhe.sendMessage(m.chat, {
