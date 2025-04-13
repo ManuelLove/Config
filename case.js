@@ -15630,13 +15630,12 @@ break;
   if (!isVip) return shoNherly(mess.vips);
   if (!(await firely(m, mess.waits))) return;
 
-  // Descargar imagen directamente desde la API
-  const response = await fetch('https://api.nekorinn.my.id/nsfwhub/boobs');
-  const buffer = await response.buffer();
+  const res = await fetch('https://api.nekorinn.my.id/nsfwhub/boobs');
+  const arrayBuffer = await res.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
   const filePath = `./tmp/boobs_${Date.now()}.gif`;
   await fs.promises.writeFile(filePath, buffer);
 
-  // Enviar como GIF o como documento si pesa mucho
   await shoNhe.sendMessage(m.chat, {
     video: fs.readFileSync(filePath),
     mimetype: 'image/gif',
@@ -15645,7 +15644,7 @@ break;
     viewOnce: true,
   }, { quoted: m });
 
-  fs.unlinkSync(filePath); // eliminar archivo temporal
+  fs.unlinkSync(filePath);
 
   if (levelUpMessage) {
     await shoNhe.sendMessage(m.chat, {
