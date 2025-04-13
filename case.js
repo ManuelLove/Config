@@ -15631,27 +15631,41 @@ break;
 	if (!(await firely(m, mess.waits))) return;
 
 	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
 
 	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/boobs');
 	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
 
 	await shoNhe.sendMessage(m.chat, {
-		video: buffer,
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
 		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
 		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
 		buttons: [
-			{
-				buttonId: prefix + command,
-				buttonText: { displayText: "🔄 Continuar de nuevo" }
-			},
-			{
-				buttonId: `${prefix}menu`,
-				buttonText: { displayText: "📜 Volver al menú" }
-			}
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
 		],
-		mimetype: 'video/mp4',
 		viewOnce: true
 	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
 
 	if (levelUpMessage) {
 		await shoNhe.sendMessage(m.chat, {
