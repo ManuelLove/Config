@@ -5953,7 +5953,8 @@ case 'carrera': {
 
         let texto = `*Ronda ${ronda}*\n\n`
         for (let j of jugadores) {
-          let barra = '┃' + '■'.repeat(j.avance) + '─'.repeat(15 - j.avance)
+          let progreso = Math.min(j.avance, 15)
+let barra = '┃' + '■'.repeat(progreso) + '─'.repeat(15 - progreso)
           let emoji = obtenerEmojiAnimal(j.animal)
           texto += `${emoji} ${j.animal} ${barra}\n`
         }
@@ -5967,7 +5968,8 @@ case 'carrera': {
 
       let textoFinal = `*Ronda ${ronda}*\n\n`
       for (let j of jugadores) {
-        let barra = '┃' + '■'.repeat(j.avance) + '─'.repeat(15 - j.avance)
+        let progreso = Math.min(j.avance, 15)
+let barra = '┃' + '■'.repeat(progreso) + '─'.repeat(15 - progreso)
         let emoji = obtenerEmojiAnimal(j.animal)
         textoFinal += `${emoji} ${j.animal} ${barra}\n`
       }
