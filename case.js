@@ -18501,42 +18501,51 @@ break;
            }
 			}
 			break;
-			case 'cekfireios': {
-	if (!isRegistered(m)) {
-		return sendRegister(shoNhe, m, prefix, namabot);
-	}
+		case 'cekfire': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
 	updatePopularCommand(command);
-	const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+
+	const levelUpMessage = levelUpdate(command, m.sender);
 	const db = loadUserFire();
 	let target;
 
-	if (m.mentionedJid[0]) {
+	if (m.mentionedJid && m.mentionedJid[0]) {
 		target = m.mentionedJid[0];
 	} else if (args[0]) {
-		target = args[0].replace(/[^0-9]/g, '') + '@s.whatsapp.net';
+		let number = args[0].replace(/[^0-9]/g, '');
+		if (number.length < 5) return m.reply('Número inválido.');
+		target = number + '@s.whatsapp.net';
 	} else {
 		target = m.sender;
 	}
 
-	await shoNhe.sendMessage(m.chat, {
-	text: `🔥 User @${target.split('@')[0]} aún no tiene límite.`,
-	contextInfo: {
-		mentionedJid: [target]
+	if (!target || !target.includes('@s.whatsapp.net')) {
+		return m.reply('Error: JID no válido.');
 	}
-}, { quoted: m });
+
+	if (!db[target]) {
+		return shoNhe.sendMessage(m.chat, {
+			text: `🔥 User @${target.split('@')[0]} aún no tiene límite.`,
+			contextInfo: {
+				mentionedJid: [target]
+			}
+		}, { quoted: m });
+	}
 
 	let role = db[target].role;
 	let limit = db[target].limit;
+
 	let message = `🔥 *Cek Fuego Límite*\n\n`;
 	message += `👤 User: @${target.split('@')[0]}\n`;
 	message += `📛 Rol: ${role}\n`;
 	message += `🔥 Límite restante: ${limit === -1 ? '∞' : limit}\n`;
 
-	m.reply(message, {
+	await shoNhe.sendMessage(m.chat, {
+		text: message,
 		contextInfo: {
 			mentionedJid: [target]
 		}
-	});
+	}, { quoted: m });
 
 	if (levelUpMessage) {
 		await shoNhe.sendMessage(m.chat, {
@@ -18554,9 +18563,7 @@ break;
 				}
 			],
 			viewOnce: true,
-		}, {
-			quoted: m
-		});
+		}, { quoted: m });
 	}
 }
 break;
