@@ -5799,6 +5799,7 @@ case 'roletarusa': {
     let jugadores = [{ id: m.sender, nombre: m.pushName }];
     let mensajeInicio = await shoNhe.sendMessage(m.chat, { text: `🎯 *Ruleta Rusa* 🎯\n\n@${m.sender.split('@')[0]} ha iniciado una ruleta rusa.\nEscribe *unirme* para participar. Tienes 10 segundos...`, mentions: [m.sender] });
 
+{
         if (jugadores.find(j => j.id === m2.sender)) return;
         if (!db[m2.sender]) db[m2.sender] = { limit: 0, role: 'user' };
         if (db[m2.sender].limit < 20 || db[m2.sender].role === 'owner') return;
