@@ -5824,6 +5824,8 @@ case 'roletarusa': {
     saveUserFire(db);
 
     let jugadores = [{ id: m.sender, nombre: m.pushName }];
+global.partidasRoleta = global.partidasRoleta || {};
+global.partidasRoleta[m.chat] = [];
     let mensajeInicio = await shoNhe.sendMessage(m.chat, { text: `🎯 *Ruleta Rusa* 🎯\n\n@${m.sender.split('@')[0]} ha iniciado una ruleta rusa.\nEscribe *unirme* para participar. Tienes 10 segundos...`, mentions: [m.sender] });
 
     // Aquí no usamos el createMessageCollector, sino el sistema que ya tienes afuera del switch
@@ -5919,7 +5921,7 @@ case 'carrera': {
     }
 
     shoNhe.sendMessage(m.chat, {
-      text: `🏁 *¡Carrera de animales iniciada!* 🏁\n\nEscribe *elegir [animal]* para participar. Animales disponibles:\n${global.partidaCarrera[m.chat].animalesDisponibles.map(a => `• ${a}`).join('\n')}\n\nTienes 30 segundos...`,
+      text: `🏁 *¡Carrera de animales* 🏁\n\nEscribe *elegir [animal]* para participar. Animales disponibles:\n${global.partidaCarrera[m.chat].animalesDisponibles.map(a => `• ${a}`).join('\n')}\n\nTienes 30 segundos...`,
       mentions: [m.sender]
     })
 
