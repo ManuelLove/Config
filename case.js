@@ -5967,7 +5967,7 @@ case 'carrera': {
 
       let textoFinal = `*Ronda ${ronda}*\n\n`
       for (let j of jugadores) {
-        let barra = '┃' + '■'.repeat(j.avance) + '─'.repeat(20 - j.avance)
+        let barra = '┃' + '■'.repeat(j.avance) + '─'.repeat(15 - j.avance)
         let emoji = obtenerEmojiAnimal(j.animal)
         textoFinal += `${emoji} ${j.animal} ${barra}\n`
       }
