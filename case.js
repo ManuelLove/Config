@@ -5789,78 +5789,77 @@ case 'joket': {
 break;
 case 'roletarusa': {
   const db = loadUserFire();
-  if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
-  if (db[m.sender].limit < 20) return m.reply('❌ Necesitas al menos 20 límite para entrar en la ruleta rusa.');
+
+  if (!db[m.sender]) {
+    db[m.sender] = { limit: 0, role: 'user' };
+  }
+
+  let apuesta = 20;  // Costo de entrada
+  if (db[m.sender].limit < apuesta) {
+    return shoNherly('❌ No tienes suficiente límite para unirte a la ruleta rusa.');
+  }
+
+  db[m.sender].limit -= apuesta;
 
   if (!global.partidasRoleta) global.partidasRoleta = {};
-  if (global.partidasRoleta[m.chat]) return m.reply('⚠️ Ya hay una partida en curso. Escribe *unirme* para participar.');
+  if (!global.partidasRoleta[m.chat]) {
+    global.partidasRoleta[m.chat] = [];
+  }
 
-  global.partidasRoleta[m.chat] = [{ id: m.sender, nombre: m.pushName }];
+  let lista = global.partidasRoleta[m.chat];
 
-  shoNhe.sendMessage(m.chat, {
-    text: `🎯 *Ruleta Rusa* 🎯\n\n@${m.sender.split("@")[0]} ha iniciado una partida.\n\nEscribe *unirme* para participar (10 segundos).\n\nCosto de entrada: *20 límite*`,
-    mentions: [m.sender]
-  });
+  // Si el usuario no está en la lista, se une
+  if (!lista.find(p => p.id === m.sender)) {
+    lista.push({ id: m.sender, nombre: m.pushName });
+    shoNhe.sendMessage(m.chat, { text: `✅ ${m.pushName} se ha unido a la ruleta rusa.` });
+  }
 
-  setTimeout(async () => {
-    let participantes = global.partidasRoleta[m.chat];
-    if (!participantes || participantes.length === 0) {
+  // Verificamos si el número de jugadores es suficiente (mínimo 1 jugador + 4 NPCs)
+  if (lista.length >= 1) {
+    let participantes = lista.length;
+    let jugadoresRestantes = 5 - participantes;  // 5 jugadores en total (1 humano + 4 NPCs)
+    let jugadoresNPC = [];
+
+    // Si hay menos de 5 jugadores, completamos con NPCs
+    for (let i = 0; i < jugadoresRestantes; i++) {
+      jugadoresNPC.push(`NPC${i + 1}`);
+    }
+
+    // Comienza la partida si hay 5 jugadores en total
+    if (participantes + jugadoresNPC.length >= 5) {
+      shoNhe.sendMessage(m.chat, { text: `🎰 *Ruleta Rusa* 🎰\n\n*La partida ha comenzado*\n\nJugadores: ${lista.map(p => p.nombre).join(', ')} + ${jugadoresNPC.join(', ')}` });
+
+      // Simulación del resultado, randomizamos quien muere y quien sobrevive
+      let muertos = [];
+      let vivos = [];
+
+      // Simulamos 5 rondas de disparos, un NPC o jugador muere aleatoriamente
+      for (let i = 0; i < 5; i++) {
+        let muerto = lista[Math.floor(Math.random() * lista.length)];
+        muertos.push(muerto.nombre);
+        vivos = lista.filter(p => p.nombre !== muerto.nombre);
+        lista = vivos; // Reducimos la lista de jugadores vivos
+      }
+
+      // Resultados
+      let resultadoTexto = `🎰 *Ruleta Rusa* 🎰\n\n*Jugadores eliminados:* ${muertos.join(', ')}\n\n*Sobrevivientes:* ${vivos.map(v => v.nombre).join(', ')}`;
+      shoNhe.sendMessage(m.chat, { text: resultadoTexto });
+
+      // Recompensa al sobreviviente
+      let ganador = vivos[0];
+      let recompensa = 50;  // Premio por sobrevivir
+      db[m.sender].limit += recompensa;
+      shoNhe.sendMessage(m.chat, { text: `🎉 *Felicidades* ${ganador}! Has ganado *50 límite* por sobrevivir a la ruleta rusa.` });
+
+      // Limpiar la partida
       delete global.partidasRoleta[m.chat];
-      return shoNhe.sendMessage(m.chat, { text: '❌ La partida fue cancelada por falta de participantes.' });
+      saveUserFire(db);
+    } else {
+      shoNhe.sendMessage(m.chat, { text: `🕒 *Esperando más jugadores...*\n\nQuedan ${jugadoresRestantes} para completar la partida.` });
     }
+  }
 
-    // Rellenar con NPCs
-    let npcs = ['Vladimir', 'Sasha', 'Mikhail', 'Igno', 'Ivan', 'Sergei', 'Alexei'];
-    while (participantes.length < 5) {
-      let npc = npcs[Math.floor(Math.random() * npcs.length)];
-      participantes.push({ id: 'npc', nombre: `NPC: ${npc}` });
-    }
-
-    // Cobrar entrada a jugadores reales
-    for (let p of participantes) {
-      if (p.id !== 'npc' && db[p.id] && db[p.id].limit >= 20) {
-        db[p.id].limit -= 20;
-      }
-    }
-
-    await shoNhe.sendMessage(m.chat, { text: '🎮 Entrando a la sala...' });
-    await delay(1500);
-    await shoNhe.sendMessage(m.chat, { text: '🔫 Cargando el revólver...' });
-    await delay(1500);
-    await shoNhe.sendMessage(m.chat, { text: '🎲 Decidiendo el orden...' });
-    await delay(1500);
-
-    let vivos = [...participantes];
-    let ronda = 1;
-
-    while (vivos.length > 1) {
-      let mensaje = `*Ronda ${ronda} - Disparando...*\n\n`;
-      let eliminado = vivos[Math.floor(Math.random() * vivos.length)];
-      eliminado.muerto = true;
-
-      for (let p of participantes) {
-        if (p.id === eliminado.id) mensaje += `• ☠️ ${p.nombre}\n`;
-        else mensaje += `• 🟢 ${p.nombre}\n`;
-      }
-
-      await shoNhe.sendMessage(m.chat, { text: mensaje });
-      vivos = vivos.filter(p => !p.muerto);
-      ronda++;
-      await delay(2000);
-    }
-
-    let ganador = vivos[0];
-    if (ganador.id !== 'npc') {
-      db[ganador.id].limit += 50;
-    }
-
-    await shoNhe.sendMessage(m.chat, {
-      text: `🏆 *¡La ruleta ha terminado!* 🏆\n\n*Ganador:* ${ganador.nombre}\n*Premio:* +50 límite`,
-    });
-
-    saveUserFire(db);
-    delete global.partidasRoleta[m.chat];
-  }, 10000);
+  saveUserFire(db);
 }
 break;
 case 'casino': {
