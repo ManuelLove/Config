@@ -5871,8 +5871,6 @@ case 'roletarusa': {
     // Limpia la partida
     delete global.partidasRoleta[m.chat];
 }, 10000); // Espera 10 segundos para unirse
-    }
-
 }
 break;
 case 'casino': {
