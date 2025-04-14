@@ -3387,6 +3387,19 @@ if (global.partidasRoleta && global.partidasRoleta[m.chat]) {
     }
   }
 }
+// Fuera del switch (solo se define una vez, fuera del case)
+global.partidasCarrera = global.partidasCarrera || {}
+
+if (global.partidasCarrera[m.chat] && m.text?.toLowerCase().startsWith('elegir ')) {
+  let eleccion = m.text.toLowerCase().split(' ')[1];
+  let animalesValidos = ['tigre', 'elefante', 'conejo', 'caballo', 'perro'];
+  if (!animalesValidos.includes(eleccion)) return m.reply(`❌ Animal no válido. Elige entre: ${animalesValidos.join(', ')}`);
+
+  let partida = global.partidasCarrera[m.chat];
+  if (partida.find(p => p.id === m.sender)) return m.reply('❌ Ya elegiste un animal.');
+  partida.push({ id: m.sender, nombre: m.pushName, animal: eleccion });
+  shoNhe.sendMessage(m.chat, { text: `✅ ${m.pushName} eligió *${eleccion}* para la carrera.` });
+}
 		async function cekgame(gamejid)
 		{
 			if (tekateki[gamejid])
@@ -5873,54 +5886,65 @@ case 'roletarusa': {
 }, 10000); // Espera 10 segundos para unirse
 }
 break;
-case 'carreraanimales': {
+case 'carrera': {
   const db = loadUserFire();
   if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
-  if (db[m.sender].limit < 20) return m.reply('❌ Necesitas al menos 20 límite para unirte a la carrera de animales.');
+  if (db[m.sender].limit < 15) return m.reply('❌ Necesitas al menos 15 límite para participar.');
+  if (db[m.sender].role === 'owner') return m.reply('❌ Los owners no pueden participar en la carrera.');
 
-  db[m.sender].limit -= 20;
+  db[m.sender].limit -= 15;
   saveUserFire(db);
 
-  let animales = [
-    { nombre: '🐢 Tortuga', avance: 0 },
-    { nombre: '🐇 Conejo', avance: 0 },
-    { nombre: '🐎 Caballo', avance: 0 },
-    { nombre: '🦘 Canguro', avance: 0 },
-    { nombre: '🦥 Perezoso', avance: 0 }
-  ];
+  global.partidasCarrera[m.chat] = [{ id: m.sender, nombre: m.pushName, animal: null }];
+  let msg = await shoNhe.sendMessage(m.chat, {
+    text: `🏁 *Carrera de Animales* 🏁\n\n@${m.sender.split('@')[0]} ha iniciado una carrera.\n\nEscribe *elegir [animal]* para participar. Animales disponibles:\n*tigre, elefante, conejo, caballo, perro*\n\nTienes 30 segundos...`,
+    mentions: [m.sender]
+  });
 
-  let texto = `🏁 *¡Carrera de Animales!* 🏁\n\n`;
-  texto += 'Los participantes están calentando motores...\n';
-  let mensajeCarrera = await shoNhe.sendMessage(m.chat, { text: texto });
+  await new Promise(r => setTimeout(r, 30000));
 
-  await new Promise(r => setTimeout(r, 2000));
+  let jugadores = global.partidasCarrera[m.chat];
+  delete global.partidasCarrera[m.chat];
 
-  let ganador = null;
-  let ronda = 1;
-  while (!ganador) {
-    texto = `*Ronda ${ronda}*\n\n`;
-    for (let animal of animales) {
-      animal.avance += Math.floor(Math.random() * 10) + 1;
-      let barra = '■'.repeat(Math.floor(animal.avance / 5)).padEnd(20, '─');
-      texto += `${animal.nombre} ┃${barra}\n`;
-      if (animal.avance >= 100 && !ganador) {
-        ganador = animal;
-      }
-    }
-
-    texto += `\n⏱️ Esperando siguiente ronda...`;
-
-    await shoNhe.sendMessage(m.chat, { edit: mensajeCarrera.key, text: texto });
-    await new Promise(r => setTimeout(r, 1500));
-    ronda++;
+  let npcs = ['Vladimir', 'Tanya', 'Sasha', 'Leonid', 'Igor'];
+  let animales = ['tigre', 'elefante', 'conejo', 'caballo', 'perro'];
+  while (jugadores.length < 5) {
+    let npc = npcs[Math.floor(Math.random() * npcs.length)];
+    let animal = animales.find(a => !jugadores.find(p => p.animal === a));
+    if (!animal) break;
+    jugadores.push({ id: null, nombre: `NPC: ${npc}`, animal });
   }
 
-  let recompensa = 50;
-  db[m.sender].limit += recompensa;
-  saveUserFire(db);
+  let textoAnimado = `⏳ *Preparando carrera...*\n`;
+  let msgAnimado = await shoNhe.sendMessage(m.chat, { text: textoAnimado });
 
-  texto += `\n\n🏆 *¡${ganador.nombre} gana la carrera!* +${recompensa} límite para ti`;
-  await shoNhe.sendMessage(m.chat, { edit: mensajeCarrera.key, text: texto });
+  const etapas = [
+    '🏁 ¡Comienza la carrera!',
+    '🏃‍♂️ Avanzando por la primera curva...',
+    '⛰️ Subiendo la colina...',
+    '⚡ ¡Último tramo a toda velocidad!',
+  ];
+  for (let etapa of etapas) {
+    await new Promise(r => setTimeout(r, 1000));
+    textoAnimado += '\n' + etapa;
+    await shoNhe.sendMessage(m.chat, { edit: msgAnimado.key, text: textoAnimado });
+  }
+
+  // Seleccionar ganador
+  let ganadorReal = jugadores.filter(j => j.id)[Math.floor(Math.random() * jugadores.filter(j => j.id).length)];
+  let ganador = ganadorReal || jugadores[Math.floor(Math.random() * jugadores.length)];
+
+  textoAnimado += `\n\n🥇 *Ganador: ${ganador.animal.toUpperCase()} - ${ganador.nombre}*`;
+  if (ganador.id) {
+    db[ganador.id].limit += 50;
+    textoAnimado += `\n\n🎉 +50 límite para ${ganador.nombre}`;
+    saveUserFire(db);
+  } else {
+    textoAnimado += `\n\n(NPC sin recompensa)`;
+  }
+
+  await new Promise(r => setTimeout(r, 1500));
+  await shoNhe.sendMessage(m.chat, { edit: msgAnimado.key, text: textoAnimado });
 }
 break;
 case 'casino': {
