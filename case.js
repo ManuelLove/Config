@@ -18501,7 +18501,7 @@ break;
            }
 			}
 			break;
-		case 'cekfire': {
+		case 'cekfireios': {
 	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
 	updatePopularCommand(command);
 
