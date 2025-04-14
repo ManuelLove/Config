@@ -3378,6 +3378,15 @@ if (db.data.chats[m.chat]?.antispam) {
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
+if (global.partidasRoleta && global.partidasRoleta[m.chat]) {
+  if (m.text && m.text.toLowerCase() === 'unirme') {
+    let lista = global.partidasRoleta[m.chat];
+    if (!lista.find(p => p.id === m.sender)) {
+      lista.push({ id: m.sender, nombre: m.pushName });
+      shoNhe.sendMessage(m.chat, { text: `✅ ${m.pushName} se ha unido a la ruleta rusa.` });
+    }
+  }
+}
 		async function cekgame(gamejid)
 		{
 			if (tekateki[gamejid])
