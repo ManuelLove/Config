@@ -5908,6 +5908,8 @@ case 'carrera': {
 
   let npcs = ['Vladimir', 'Tanya', 'Sasha', 'Leonid', 'Igor'];
   let animales = ['tigre', 'elefante', 'conejo', 'caballo', 'perro'];
+
+  // Asignar NPCs con animales únicos restantes
   while (jugadores.length < 5) {
     let npc = npcs[Math.floor(Math.random() * npcs.length)];
     let animal = animales.find(a => !jugadores.find(p => p.animal === a));
@@ -5915,26 +5917,33 @@ case 'carrera': {
     jugadores.push({ id: null, nombre: `NPC: ${npc}`, animal });
   }
 
-  let textoAnimado = `⏳ *Preparando carrera...*\n`;
+  // Animación inicial de carrera
+  let textoAnimado = `*Preparando carrera de animales...*\n`;
   let msgAnimado = await shoNhe.sendMessage(m.chat, { text: textoAnimado });
 
-  const etapas = [
-    '🏁 ¡Comienza la carrera!',
-    '🏃‍♂️ Avanzando por la primera curva...',
-    '⛰️ Subiendo la colina...',
-    '⚡ ¡Último tramo a toda velocidad!',
+  const frames = [
+    '🐅🐘🐇🐎🐕\n⬛⬛⬛⬛⬛',
+    '⬛🐅⬛⬛⬛',
+    '⬛⬛🐘⬛⬛',
+    '⬛⬛⬛🐇⬛',
+    '⬛⬛⬛⬛🐎',
+    '⬛⬛⬛⬛⬛🐕',
+    '🏁 Llegando a la meta...'
   ];
-  for (let etapa of etapas) {
+  for (let i = 0; i < frames.length; i++) {
     await new Promise(r => setTimeout(r, 1000));
-    textoAnimado += '\n' + etapa;
+    textoAnimado += `\n${frames[i]}`;
     await shoNhe.sendMessage(m.chat, { edit: msgAnimado.key, text: textoAnimado });
   }
 
-  // Seleccionar ganador
-  let ganadorReal = jugadores.filter(j => j.id)[Math.floor(Math.random() * jugadores.filter(j => j.id).length)];
-  let ganador = ganadorReal || jugadores[Math.floor(Math.random() * jugadores.length)];
+  // Elegir ganador real si existe, si no, NPC
+  let jugadoresConAnimal = jugadores.filter(j => j.animal);
+  let jugadoresReales = jugadoresConAnimal.filter(j => j.id);
+  let ganador = jugadoresReales.length > 0
+    ? jugadoresReales[Math.floor(Math.random() * jugadoresReales.length)]
+    : jugadoresConAnimal[Math.floor(Math.random() * jugadoresConAnimal.length)];
 
-  textoAnimado += `\n\n🥇 *Ganador: ${ganador.animal.toUpperCase()} - ${ganador.nombre}*`;
+  textoAnimado += `\n\n🥇 *Ganador: ${(ganador.animal || '???').toUpperCase()} - ${ganador.nombre}*`;
   if (ganador.id) {
     db[ganador.id].limit += 50;
     textoAnimado += `\n\n🎉 +50 límite para ${ganador.nombre}`;
