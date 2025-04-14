@@ -18518,12 +18518,12 @@ break;
 		target = m.sender;
 	}
 
-	if (!db[target]) {
-		return m.reply(`🔥 User @${target.split('@')[0]} aún no tiene límite.`, {
-			contextInfo: {
-				mentionedJid: [target]
-			}
-		});
+	await shoNhe.sendMessage(m.chat, {
+	text: `🔥 User @${target.split('@')[0]} aún no tiene límite.`,
+	contextInfo: {
+		mentionedJid: [target]
+	}
+}, { quoted: m });
 	}
 
 	let role = db[target].role;
