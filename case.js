@@ -15029,10 +15029,6 @@ await shoNhe.sendMessage(m.chat, {
 	],
 	viewOnce: true
 }, { quoted: hw });
-				catch (error)
-				{
-					shoNherly('No se pudo tomar la foto de loli. Inténtelo de nuevo más tarde.');
-				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
