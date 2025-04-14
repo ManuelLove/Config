@@ -5904,10 +5904,10 @@ case 'carrera': {
   const db = loadUserFire()
   if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' }
 
-  if (db[m.sender].limit < 15) return m.reply('❌ Necesitas al menos 15 límite para unirte a la carrera.')
+  if (db[m.sender].limit < 20) return m.reply('❌ Necesitas al menos 20 límite para unirte a la carrera.')
   if (db[m.sender].role === 'owner') return m.reply('Los owners no pueden participar en la carrera.')
 
-  db[m.sender].limit -= 15
+  db[m.sender].limit -= 20
   saveUserFire(db)
 
   if (!global.partidaCarrera) global.partidaCarrera = {}
