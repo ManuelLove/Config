@@ -18524,7 +18524,6 @@ break;
 		mentionedJid: [target]
 	}
 }, { quoted: m });
-	}
 
 	let role = db[target].role;
 	let limit = db[target].limit;
