@@ -3387,18 +3387,32 @@ if (global.partidasRoleta && global.partidasRoleta[m.chat]) {
     }
   }
 }
-// Fuera del switch (solo se define una vez, fuera del case)
-global.partidasCarrera = global.partidasCarrera || {}
+// Fuera del switch:
+if (global.partidaCarrera && global.partidaCarrera[m.chat] && m.text?.toLowerCase().startsWith('elegir ')) {
+  let animal = m.text.slice(7).trim().toLowerCase()
+  let partida = global.partidaCarrera[m.chat]
+  let disponible = partida.animalesDisponibles.find(a => a.toLowerCase() === animal)
 
-if (global.partidasCarrera[m.chat] && m.text?.toLowerCase().startsWith('elegir ')) {
-  let eleccion = m.text.toLowerCase().split(' ')[1];
-  let animalesValidos = ['tigre', 'elefante', 'conejo', 'caballo', 'perro'];
-  if (!animalesValidos.includes(eleccion)) return m.reply(`❌ Animal no válido. Elige entre: ${animalesValidos.join(', ')}`);
+  if (!disponible) return m.reply('❌ Animal no disponible o ya elegido.')
 
-  let partida = global.partidasCarrera[m.chat];
-  if (partida.find(p => p.id === m.sender)) return m.reply('❌ Ya elegiste un animal.');
-  partida.push({ id: m.sender, nombre: m.pushName, animal: eleccion });
-  shoNhe.sendMessage(m.chat, { text: `✅ ${m.pushName} eligió *${eleccion}* para la carrera.` });
+  if (partida.jugadores.find(j => j.id === m.sender)) return m.reply('❌ Ya elegiste un animal.')
+
+  partida.animalesDisponibles = partida.animalesDisponibles.filter(a => a.toLowerCase() !== animal)
+  partida.jugadores.push({ nombre: m.pushName, animal: disponible, avance: 0, id: m.sender })
+
+  m.reply(`✅ Elegiste *${disponible}* para la carrera.`)
+}
+
+// Utilidad para obtener emoji
+function obtenerEmojiAnimal(nombre) {
+  let emojis = {
+    'Tortuga': '🐢',
+    'Conejo': '🐇',
+    'Caballo': '🐎',
+    'Canguro': '🦘',
+    'Perezoso': '🦥'
+  }
+  return emojis[nombre] || ''
 }
 		async function cekgame(gamejid)
 		{
@@ -5887,75 +5901,93 @@ case 'roletarusa': {
 }
 break;
 case 'carrera': {
-  const db = loadUserFire();
-  if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
-  if (db[m.sender].limit < 15) return m.reply('❌ Necesitas al menos 15 límite para participar.');
-  if (db[m.sender].role === 'owner') return m.reply('❌ Los owners no pueden participar en la carrera.');
+  const db = loadUserFire()
+  if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' }
 
-  db[m.sender].limit -= 15;
-  saveUserFire(db);
+  if (db[m.sender].limit < 15) return m.reply('❌ Necesitas al menos 15 límite para unirte a la carrera.')
+  if (db[m.sender].role === 'owner') return m.reply('Los owners no pueden participar en la carrera.')
 
-  global.partidasCarrera[m.chat] = [{ id: m.sender, nombre: m.pushName, animal: null }];
-  let msg = await shoNhe.sendMessage(m.chat, {
-    text: `🏁 *Carrera de Animales* 🏁\n\n@${m.sender.split('@')[0]} ha iniciado una carrera.\n\nEscribe *elegir [animal]* para participar. Animales disponibles:\n*tigre, elefante, conejo, caballo, perro*\n\nTienes 30 segundos...`,
-    mentions: [m.sender]
-  });
+  db[m.sender].limit -= 15
+  saveUserFire(db)
 
-  await new Promise(r => setTimeout(r, 30000));
+  if (!global.partidaCarrera) global.partidaCarrera = {}
+  if (!global.partidaCarrera[m.chat]) {
+    global.partidaCarrera[m.chat] = {
+      jugadores: [],
+      animalesDisponibles: ['Tortuga', 'Conejo', 'Caballo', 'Canguro', 'Perezoso'],
+      enCurso: true
+    }
 
-  let jugadores = global.partidasCarrera[m.chat];
-  delete global.partidasCarrera[m.chat];
+    shoNhe.sendMessage(m.chat, {
+      text: `🏁 *¡Carrera de animales iniciada!* 🏁\n\nEscribe *elegir [animal]* para participar. Animales disponibles:\n${global.partidaCarrera[m.chat].animalesDisponibles.map(a => `• ${a}`).join('\n')}\n\nTienes 30 segundos...`,
+      mentions: [m.sender]
+    })
 
-  let npcs = ['Vladimir', 'Tanya', 'Sasha', 'Leonid', 'Igor'];
-  let animales = ['tigre', 'elefante', 'conejo', 'caballo', 'perro'];
+    setTimeout(async () => {
+      let partida = global.partidaCarrera[m.chat]
+      let jugadores = partida.jugadores
+      let restantes = partida.animalesDisponibles
 
-  // Asignar NPCs con animales únicos restantes
-  while (jugadores.length < 5) {
-    let npc = npcs[Math.floor(Math.random() * npcs.length)];
-    let animal = animales.find(a => !jugadores.find(p => p.animal === a));
-    if (!animal) break;
-    jugadores.push({ id: null, nombre: `NPC: ${npc}`, animal });
-  }
+      // Llenar con NPCs si faltan
+      let npcs = ['Vladimir', 'Sasha', 'Mikhail', 'Olga', 'Tanya']
+      while (jugadores.length < 5 && restantes.length > 0) {
+        let npc = npcs[Math.floor(Math.random() * npcs.length)]
+        let animal = restantes.shift()
+        jugadores.push({ nombre: `NPC: ${npc}`, animal, avance: 0, id: null })
+      }
 
-  // Animación inicial de carrera
-  let textoAnimado = `*Preparando carrera de animales...*\n`;
-  let msgAnimado = await shoNhe.sendMessage(m.chat, { text: textoAnimado });
+      let msg = await shoNhe.sendMessage(m.chat, { text: '*Preparando la carrera...*' })
+      await new Promise(r => setTimeout(r, 2000))
 
-  const frames = [
-    '🐅🐘🐇🐎🐕\n⬛⬛⬛⬛⬛',
-    '⬛🐅⬛⬛⬛',
-    '⬛⬛🐘⬛⬛',
-    '⬛⬛⬛🐇⬛',
-    '⬛⬛⬛⬛🐎',
-    '⬛⬛⬛⬛⬛🐕',
-    '🏁 Llegando a la meta...'
-  ];
-  for (let i = 0; i < frames.length; i++) {
-    await new Promise(r => setTimeout(r, 1000));
-    textoAnimado += `\n${frames[i]}`;
-    await shoNhe.sendMessage(m.chat, { edit: msgAnimado.key, text: textoAnimado });
-  }
+      let ronda = 1
+      let ganador = null
 
-  // Elegir ganador real si existe, si no, NPC
-  let jugadoresConAnimal = jugadores.filter(j => j.animal);
-  let jugadoresReales = jugadoresConAnimal.filter(j => j.id);
-  let ganador = jugadoresReales.length > 0
-    ? jugadoresReales[Math.floor(Math.random() * jugadoresReales.length)]
-    : jugadoresConAnimal[Math.floor(Math.random() * jugadoresConAnimal.length)];
+      while (!ganador) {
+        for (let j of jugadores) {
+          j.avance += Math.floor(Math.random() * 5) + 1
+          if (j.avance >= 20) {
+            ganador = j
+            break
+          }
+        }
 
-  textoAnimado += `\n\n🥇 *Ganador: ${(ganador.animal || '???').toUpperCase()} - ${ganador.nombre}*`;
-  if (ganador.id) {
-    db[ganador.id].limit += 50;
-    textoAnimado += `\n\n🎉 +50 límite para ${ganador.nombre}`;
-    saveUserFire(db);
+        let texto = `*Ronda ${ronda}*\n\n`
+        for (let j of jugadores) {
+          let barra = '┃' + '■'.repeat(j.avance) + '─'.repeat(20 - j.avance)
+          let emoji = obtenerEmojiAnimal(j.animal)
+          texto += `${emoji} ${j.animal} ${barra}\n`
+        }
+
+        texto += `\n⏱️ Esperando siguiente ronda...`
+
+        await shoNhe.sendMessage(m.chat, { edit: msg.key, text: texto })
+        ronda++
+        await new Promise(r => setTimeout(r, 2000))
+      }
+
+      let textoFinal = `*Ronda ${ronda}*\n\n`
+      for (let j of jugadores) {
+        let barra = '┃' + '■'.repeat(j.avance) + '─'.repeat(20 - j.avance)
+        let emoji = obtenerEmojiAnimal(j.animal)
+        textoFinal += `${emoji} ${j.animal} ${barra}\n`
+      }
+
+      if (ganador.id) {
+        db[ganador.id].limit += 50
+        saveUserFire(db)
+        textoFinal += `\n🏆 *¡${obtenerEmojiAnimal(ganador.animal)} ${ganador.animal} gana la carrera!* +50 límite para ti`
+      } else {
+        textoFinal += `\n🏆 *¡${obtenerEmojiAnimal(ganador.animal)} ${ganador.animal} gana la carrera!* (NPC sin recompensa)`
+      }
+
+      await shoNhe.sendMessage(m.chat, { edit: msg.key, text: textoFinal })
+      delete global.partidaCarrera[m.chat]
+    }, 30000)
   } else {
-    textoAnimado += `\n\n(NPC sin recompensa)`;
+    m.reply('⏳ Ya hay una carrera en curso en este chat.')
   }
-
-  await new Promise(r => setTimeout(r, 1500));
-  await shoNhe.sendMessage(m.chat, { edit: msgAnimado.key, text: textoAnimado });
 }
-break;
+break
 case 'casino': {
   const db = loadUserFire();
   if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
