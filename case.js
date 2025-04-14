@@ -15008,21 +15008,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.hiuraa.my.id/random/loli',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Aquí hay una foto de loli'
-					},
-					{
-						quoted: hw
-					});
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.hiuraa.my.id/random/loli');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu loli 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				catch (error)
 				{
 					shoNherly('No se pudo tomar la foto de loli. Inténtelo de nuevo más tarde.');
