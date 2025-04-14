@@ -5873,6 +5873,56 @@ case 'roletarusa': {
 }, 10000); // Espera 10 segundos para unirse
 }
 break;
+case 'carreraanimales': {
+  const db = loadUserFire();
+  if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
+  if (db[m.sender].limit < 20) return m.reply('❌ Necesitas al menos 20 límite para unirte a la carrera de animales.');
+
+  db[m.sender].limit -= 20;
+  saveUserFire(db);
+
+  let animales = [
+    { nombre: '🐢 Tortuga', avance: 0 },
+    { nombre: '🐇 Conejo', avance: 0 },
+    { nombre: '🐎 Caballo', avance: 0 },
+    { nombre: '🦘 Canguro', avance: 0 },
+    { nombre: '🦥 Perezoso', avance: 0 }
+  ];
+
+  let texto = `🏁 *¡Carrera de Animales!* 🏁\n\n`;
+  texto += 'Los participantes están calentando motores...\n';
+  let mensajeCarrera = await shoNhe.sendMessage(m.chat, { text: texto });
+
+  await new Promise(r => setTimeout(r, 2000));
+
+  let ganador = null;
+  let ronda = 1;
+  while (!ganador) {
+    texto = `*Ronda ${ronda}*\n\n`;
+    for (let animal of animales) {
+      animal.avance += Math.floor(Math.random() * 10) + 1;
+      let barra = '■'.repeat(Math.floor(animal.avance / 5)).padEnd(20, '─');
+      texto += `${animal.nombre} ┃${barra}\n`;
+      if (animal.avance >= 100 && !ganador) {
+        ganador = animal;
+      }
+    }
+
+    texto += `\n⏱️ Esperando siguiente ronda...`;
+
+    await shoNhe.sendMessage(m.chat, { edit: mensajeCarrera.key, text: texto });
+    await new Promise(r => setTimeout(r, 1500));
+    ronda++;
+  }
+
+  let recompensa = 50;
+  db[m.sender].limit += recompensa;
+  saveUserFire(db);
+
+  texto += `\n\n🏆 *¡${ganador.nombre} gana la carrera!* +${recompensa} límite para ti`;
+  await shoNhe.sendMessage(m.chat, { edit: mensajeCarrera.key, text: texto });
+}
+break;
 case 'casino': {
   const db = loadUserFire();
   if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
