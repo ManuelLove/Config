@@ -10728,8 +10728,8 @@ break;
 ├────────────────
 ┞ᗛ ${simbols} ${prefix}loli
 ┞ᗛ ${simbols} ${prefix}waifu
+┞ᗛ ${simbols} ${prefix}waifuv2
 ┞ᗛ ${simbols} ${prefix}neko
-┞ᗛ ${simbols} ${prefix}nekov2
 ┞ᗛ ${simbols} ${prefix}cats
 ┞ᗛ ${simbols} ${prefix}cecanindo
 ┞ᗛ ${simbols} ${prefix}cecanchina
@@ -11045,8 +11045,8 @@ ${formattedCommandList}
 ├────────────────
 ┞ᗛ ${simbols} ${prefix}loli
 ┞ᗛ ${simbols} ${prefix}waifu
+┞ᗛ ${simbols} ${prefix}waifuv2
 ┞ᗛ ${simbols} ${prefix}neko
-┞ᗛ ${simbols} ${prefix}nekov2
 ┞ᗛ ${simbols} ${prefix}cats
 ┞ᗛ ${simbols} ${prefix}cecanindo
 ┞ᗛ ${simbols} ${prefix}cecanchina
@@ -14320,25 +14320,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/cecan/indonesia',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'La siguiente es una imagen de Cecan Indonesia'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('No se pudo tomar una fotografía de Cecan Indonesia. Inténtelo de nuevo más tarde.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/cecan/indonesia');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta Cecan Indonesia 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -14434,25 +14436,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/blue-archive',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'La siguiente es una imagen del Archivo Azul'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('No se pudo recuperar la imagen de Blue Archive. Inténtelo de nuevo más tarde.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/blue-archive');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta anime 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -14552,25 +14556,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/cecan/china',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'La siguiente es una imagen de Cecan China'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('No se pudo tomar una fotografía de Cecan China. Inténtelo de nuevo más tarde.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/cecan/china');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta Cecan China 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -14609,25 +14615,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/cecan/japan',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'La siguiente es una imagen de Cecan Japón'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('No se pudo tomar una fotografía de Cecan Japón. Inténtelo de nuevo más tarde.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/cecan/japan');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta Cecan Japón 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -14666,25 +14674,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/cecan/korea',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'La siguiente es una imagen del Cecan coreano'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('No se pudo tomar una fotografía del Cecan coreano. Inténtelo de nuevo más tarde.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/cecan/korea');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta Cecan corea 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -14723,25 +14733,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/cecan/thailand',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'La siguiente es una imagen de Cecan Tailandia'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('No se pudo tomar una fotografía de Cecan Tailandia. Inténtelo de nuevo más tarde.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/cecan/thailand');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta Cecan Tailandia 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -14780,25 +14792,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/cecan/vietnam',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'La siguiente es una imagen del Cecan vietnamita'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('No se pudo tomar una fotografía de Cecan Vietnam. Inténtelo de nuevo más tarde.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/cecan/vietnam');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta Cecan vietnamita 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -14837,25 +14851,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/cats',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Aquí hay una foto de un lindo gato.'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('No se pudo tomar una fotografía del gato. Inténtelo de nuevo más tarde.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/cats');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu lindo gato 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -14894,25 +14910,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/neko',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Aquí hay una foto de Neko'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('No se pudo tomar la foto de Neko. Inténtelo de nuevo más tarde.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/neko');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu Neko 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -14942,7 +14960,7 @@ await shoNhe.sendMessage(m.chat, {
            }
 			}
 			break
-			case 'nekov2':
+			case 'waifuv2':
 			{
 				if (!isRegistered(m))
 				{
@@ -14951,25 +14969,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.nekorinn.my.id/waifuim/waifu',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Aquí hay una foto de Neko'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('No se pudo tomar la foto de Neko. Inténtelo de nuevo más tarde.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/waifu');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu waifu 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -15067,25 +15087,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.nekorinn.my.id/waifuim/selfies',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Aquí hay una foto de animeselfi'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('No se pudo tomar la foto de animeselfi. Inténtelo de nuevo más tarde.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/selfies');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu animeselfi 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -15124,25 +15146,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.nekorinn.my.id/waifuim/uniform',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Aquí hay una foto de animeuniforme'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('No se pudo tomar la foto de animeuniforme. Inténtelo de nuevo más tarde.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/uniform');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu animeuniforme 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -15181,25 +15205,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.nekorinn.my.id/waifuim/oppai',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Aquí hay una foto de animepechos'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('No se pudo tomar la foto de animepechos. Inténtelo de nuevo más tarde.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/oppai');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu animepechos 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -15238,25 +15264,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.nekorinn.my.id/waifuim/maid',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Aquí hay una foto de sirvienta'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('No se pudo tomar la foto de sirvienta. Inténtelo de nuevo más tarde.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/maid');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu sirvienta 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -15295,25 +15323,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.nekorinn.my.id/random/bluearchive',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Aquí hay una foto de anime'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('No se pudo tomar la foto de anime. Inténtelo de nuevo más tarde.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/random/bluearchive');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu anime 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -15352,25 +15382,27 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/waifu',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Aquí hay una foto de Waifu'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('No se pudo tomar la foto de Waifu. Inténtelo de nuevo más tarde.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/waifu');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu Waifu 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -18469,6 +18501,66 @@ break;
            }
 			}
 			break;
+			case 'cekfireios': {
+	if (!isRegistered(m)) {
+		return sendRegister(shoNhe, m, prefix, namabot);
+	}
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+	const db = loadUserFire();
+	let target;
+
+	if (m.mentionedJid[0]) {
+		target = m.mentionedJid[0];
+	} else if (args[0]) {
+		target = args[0].replace(/[^0-9]/g, '') + '@s.whatsapp.net';
+	} else {
+		target = m.sender;
+	}
+
+	if (!db[target]) {
+		return m.reply(`🔥 User @${target.split('@')[0]} aún no tiene límite.`, {
+			contextInfo: {
+				mentionedJid: [target]
+			}
+		});
+	}
+
+	let role = db[target].role;
+	let limit = db[target].limit;
+	let message = `🔥 *Cek Fuego Límite*\n\n`;
+	message += `👤 User: @${target.split('@')[0]}\n`;
+	message += `📛 Rol: ${role}\n`;
+	message += `🔥 Límite restante: ${limit === -1 ? '∞' : limit}\n`;
+
+	m.reply(message, {
+		contextInfo: {
+			mentionedJid: [target]
+		}
+	});
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{
+					buttonId: `${prefix}tqto`,
+					buttonText: { displayText: "TQTO 💡" }
+				},
+				{
+					buttonId: `${prefix}menu`,
+					buttonText: { displayText: "MENU 🍄" }
+				}
+			],
+			viewOnce: true,
+		}, {
+			quoted: m
+		});
+	}
+}
+break;
 			case 'cyus':
 			{
 				if (!isRegistered(m))
