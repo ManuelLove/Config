@@ -5799,7 +5799,6 @@ case 'roletarusa': {
     let jugadores = [{ id: m.sender, nombre: m.pushName }];
     let mensajeInicio = await shoNhe.sendMessage(m.chat, { text: `🎯 *Ruleta Rusa* 🎯\n\n@${m.sender.split('@')[0]} ha iniciado una ruleta rusa.\nEscribe *unirme* para participar. Tienes 10 segundos...`, mentions: [m.sender] });
 
-    const recolector = shoNhe.createMessageCollector(m.chat, m => m.body?.toLowerCase() === 'unirme', 10000);
     recolector.on('collect', m2 => {
         if (jugadores.find(j => j.id === m2.sender)) return;
         if (!db[m2.sender]) db[m2.sender] = { limit: 0, role: 'user' };
