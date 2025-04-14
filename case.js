@@ -5945,7 +5945,7 @@ case 'carrera': {
       while (!ganador) {
         for (let j of jugadores) {
           j.avance += Math.floor(Math.random() * 5) + 1
-          if (j.avance >= 20) {
+          if (j.avance >= 15) {
             ganador = j
             break
           }
@@ -5953,7 +5953,7 @@ case 'carrera': {
 
         let texto = `*Ronda ${ronda}*\n\n`
         for (let j of jugadores) {
-          let barra = '┃' + '■'.repeat(j.avance) + '─'.repeat(20 - j.avance)
+          let barra = '┃' + '■'.repeat(j.avance) + '─'.repeat(15 - j.avance)
           let emoji = obtenerEmojiAnimal(j.animal)
           texto += `${emoji} ${j.animal} ${barra}\n`
         }
