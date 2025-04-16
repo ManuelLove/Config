@@ -6078,7 +6078,7 @@ case 'suitpvp': {
     let name1 = m.pushName || 'Desconocido';
     let name2 = await shoNhe.getName(m.mentionedJid[0]) || 'Desconocido';
 if (!(await firely(m, mess.waits))) return;
-    let caption = `🤜 *SUIT PvP* 🤛\n\n${name1} ha desafiado a ${name2} a un duelo.\n\n${name2}, responde con "aceptar" o "rechazar".`;
+    let caption = `🎮👾 𝙂𝘼𝙈𝙀𝙎 - 𝙋𝙑𝙋 - 𝙂𝘼𝙈𝙀𝙎 🎮👾\n\n${name1} 𝘿𝙀𝙎𝘼𝙁𝙄𝘼 𝘼 ${name2} 𝘼 𝙐𝙉 (𝙋𝙑𝙋) 𝘿𝙀 𝙋𝙄𝙀𝘿𝙍𝘼, 𝙋𝘼𝙋𝙀𝙇 𝙊 𝙏𝙄𝙅𝙀𝙍𝘼\n\n${name2}, _*Escribe (aceptar) para aceptar*_\n_*Escribe (rechazar) para rechazar*_`;
     shoNherly(caption);
 
     suitpvp[id] = {
@@ -6091,7 +6091,7 @@ if (!(await firely(m, mess.waits))) return;
         poin: 0,
         waktu: setTimeout(() => {
             if (suitpvp[id]) {
-                shoNherly(`⏳ Tiempo agotado, juego cancelado.`);
+                shoNherly(`⏳ 𝙏𝙄𝙀𝙈𝙋𝙊 𝘿𝙀 𝙀𝙎𝙋𝙀𝙍𝘼 𝙁𝙄𝙉𝘼𝙇𝙄𝙕𝘼𝘿𝙊, 𝙀𝙇 𝙋𝙑𝙋 𝙎𝙀 𝘾𝘼𝙉𝘾𝙀𝙇𝘼 𝙋𝙊𝙍 𝙁𝘼𝙇𝙏𝘼 𝘿𝙀 𝙍𝙀𝙎𝙋𝙐𝙀𝙎𝙏𝘼`);
                 delete suitpvp[id];
             }
         }, 60000)
