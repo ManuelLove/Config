@@ -6078,7 +6078,7 @@ case 'suitpvp': {
     let name1 = m.pushName || 'Desconocido';
     let name2 = await shoNhe.getName(m.mentionedJid[0]) || 'Desconocido';
 if (!(await firely(m, mess.waits))) return;
-    let caption = `🎮👾 𝙂𝘼𝙈𝙀𝙎 - 𝙋𝙑𝙋 - 𝙂𝘼𝙈𝙀𝙎 🎮👾\n\n${name1} 𝘿𝙀𝙎𝘼𝙁𝙄𝘼 𝘼 ${name2} 𝘼 𝙐𝙉 (𝙋𝙑𝙋) 𝘿𝙀 𝙋𝙄𝙀𝘿𝙍𝘼, 𝙋𝘼𝙋𝙀𝙇 𝙊 𝙏𝙄𝙅𝙀𝙍𝘼\n\n${name2},\n_*Escribe (aceptar) para aceptar*_\n_*Escribe (rechazar) para rechazar*_`;
+    let caption = `🎮𝙂𝘼𝙈𝙀𝙎 - 𝙋𝙑𝙋 - 𝙂𝘼𝙈𝙀𝙎🎮\n\n${name1} 𝘿𝙀𝙎𝘼𝙁𝙄𝘼 𝘼 ${name2} 𝘼 𝙐𝙉 (𝙋𝙑𝙋) 𝘿𝙀 𝙋𝙄𝙀𝘿𝙍𝘼, 𝙋𝘼𝙋𝙀𝙇 𝙊 𝙏𝙄𝙅𝙀𝙍𝘼\n\n${name2},\n_*Escribe (aceptar) para aceptar*_\n_*Escribe (rechazar) para rechazar*_`;
     shoNherly(caption);
 
     suitpvp[id] = {
