@@ -6083,7 +6083,7 @@ case 'sopa': {
 				}
 
   let user = await loadUserFire(m.sender)
-  if (!user.registro) return reply('❌ Debes estar registrado para jugar. Usa el comando .verificar')
+ 
 
   const LADO = 16
   const LETRAS_POSIBLES = "ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓜⓝⓞⓟⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ"
