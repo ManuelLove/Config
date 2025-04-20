@@ -6078,7 +6078,7 @@ case 'casino': {
 break;
 case 'sopa': {
     if (db.data.chats[m.chat].gameActive) {
-        return shoNhe(m.chat, 'Ya hay una sopa activa en este chat. Espera a que termine.', m);
+        return m.reply(m.chat, 'Ya hay una sopa activa en este chat. Espera a que termine.', m);
     }
 
     // Activamos el juego
