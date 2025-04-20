@@ -6078,7 +6078,7 @@ case 'casino': {
 break;
 case 'sopa': {
   if (!db.data.users[m.sender].registered) return reply(lenguajeGB.smsRG(m, prefix))
-  if (!global.db.data.chats[m.chat].juegos) return reply(lenguajeGB.smsJuegosOFF(m, prefix))
+  if (!global.db.data.chats[m.chat].juegos) return reply('Ya hay una sopa activa en este chat. Espera a que termine.'(m, prefix))
   if (global.partidaSopa[m.chat]) return reply('*Ya hay una sopa de letras en curso aquí. Espera que termine.*')
   
   const palabras = ['JAPON', 'NARUTO', 'CPU', 'BOT', 'JAVASCRIPT', 'EINSTEIN', 'PALEONTOLOGIA', 'MINECRAFT', 'AMERICA', 'GOKU', 'NUBE', 'FISICA', 'YOUTUBE', 'CELULAR', 'ANDROID', 'DISCORD', 'NETFLIX', 'PAISES', 'ARTE', 'CIENCIA']
