@@ -6081,7 +6081,6 @@ case 'sopa': {
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
-if (!global.db.data.chats[m.chat].juegos) return reply('Los juegos están desactivados en este chat. Usa el comando .juegos activar')
   if (global.partidaSopa[m.chat]) return reply('*Ya hay una sopa de letras en curso aquí. Espera que termine.*')
   
   const palabras = ['JAPON', 'NARUTO', 'CPU', 'BOT', 'JAVASCRIPT', 'EINSTEIN', 'PALEONTOLOGIA', 'MINECRAFT', 'AMERICA', 'GOKU', 'NUBE', 'FISICA', 'YOUTUBE', 'CELULAR', 'ANDROID', 'DISCORD', 'NETFLIX', 'PAISES', 'ARTE', 'CIENCIA']
