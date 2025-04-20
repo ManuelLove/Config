@@ -6081,71 +6081,111 @@ case 'sopa': {
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
-  
-  const palabras = ['JAPON', 'NARUTO', 'CPU', 'BOT', 'JAVASCRIPT', 'EINSTEIN', 'PALEONTOLOGIA', 'MINECRAFT', 'AMERICA', 'GOKU', 'NUBE', 'FISICA', 'YOUTUBE', 'CELULAR', 'ANDROID', 'DISCORD', 'NETFLIX', 'PAISES', 'ARTE', 'CIENCIA']
-  const palabrasSeleccionadas = palabras.sort(() => 0.5 - Math.random()).slice(0, 8)
+
+  let user = await loadUserFire(m.sender)
+  if (!user.registro) return reply('❌ Debes estar registrado para jugar. Usa el comando .verificar')
+
   const LADO = 16
-  let sopaDeLetras = Array.from({ length: LADO }, () => Array(LADO).fill(''))
-
-  for (let palabra of palabrasSeleccionadas) {
-    let colocada = false
-    let intentos = 0
-    while (!colocada && intentos < 100) {
-      intentos++
-      let direccion = Math.floor(Math.random() * 2) // 0 horizontal, 1 vertical
-      let x = Math.floor(Math.random() * (direccion ? LADO : LADO - palabra.length))
-      let y = Math.floor(Math.random() * (direccion ? LADO - palabra.length : LADO))
-
-      let cabe = true
-      for (let i = 0; i < palabra.length; i++) {
-        let letraActual = sopaDeLetras[y + (direccion ? i : 0)][x + (direccion ? 0 : i)]
-        if (letraActual && letraActual !== palabra[i]) {
-          cabe = false
-          break
-        }
-      }
-
-      if (cabe) {
-        for (let i = 0; i < palabra.length; i++) {
-          sopaDeLetras[y + (direccion ? i : 0)][x + (direccion ? 0 : i)] = palabra[i]
-        }
-        colocada = true
-      }
-    }
-  }
-
-  // Diseño visual
   const LETRAS_POSIBLES = "ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓜⓝⓞⓟⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ"
   const numerosUni = ["⓿", "❶", "❷", "❸", "❹", "❺", "❻", "❼", "❽", "❾", "❿", "⓫", "⓬", "⓭", "⓮", "⓯", "⓰", "⓱", "⓲", "⓳", "⓴"]
-  let sopaDeLetrasConBordes = "\n     " + [...Array(LADO).keys()].map(num => numerosUni[num]).join(" ") + "\n"
+
+  const listaPalabras = ["javascript", "python", "anime", "argentina", "mario", "celular", "naruto", "waifus", "luffy", "dios", "sakura", "robot", "amongus", "bot", "goku", "rusia", "colombia", "peru", "eeuu", "canada", "metal", "dragon", "avatar", "musica", "carro"]
+  const palabrasSeleccionadas = []
+
+  while (palabrasSeleccionadas.length < 5) {
+    const palabra = listaPalabras[Math.floor(Math.random() * listaPalabras.length)]
+    if (!palabrasSeleccionadas.includes(palabra)) palabrasSeleccionadas.push(palabra)
+  }
+
+  const sopaDeLetras = Array.from({ length: LADO }, () => Array(LADO).fill(""))
+
+  const colocarPalabra = (palabra) => {
+    const vertical = Math.random() > 0.5
+    const i = Math.floor(Math.random() * (vertical ? LADO - palabra.length : LADO))
+    const j = Math.floor(Math.random() * (vertical ? LADO : LADO - palabra.length))
+
+    for (let k = 0; k < palabra.length; k++) {
+      const letra = palabra[k].toUpperCase()
+      const x = vertical ? i + k : i
+      const y = vertical ? j : j + k
+      if (sopaDeLetras[x][y] !== "" && sopaDeLetras[x][y] !== letra) return false
+    }
+
+    for (let k = 0; k < palabra.length; k++) {
+      const letra = palabra[k].toUpperCase()
+      const x = vertical ? i + k : i
+      const y = vertical ? j : j + k
+      sopaDeLetras[x][y] = letra
+    }
+
+    return true
+  }
+
+  for (const palabra of palabrasSeleccionadas) {
+    let intentos = 0
+    while (!colocarPalabra(palabra) && intentos < 10) intentos++
+  }
+
+  let sopaDeLetrasConBordes = "     " + [...Array(LADO).keys()].map(num => numerosUni[num]).join(" ") + "\n"
 
   for (let i = 0; i < LADO; i++) {
     let fila = numerosUni[i] + " "
     for (let j = 0; j < LADO; j++) {
-      if (sopaDeLetras[i][j]) {
-        fila += LETRAS_POSIBLES[sopaDeLetras[i][j].charCodeAt() - 65] + " "
+      let letra = sopaDeLetras[i][j]
+      if (!letra) {
+        letra = LETRAS_POSIBLES[Math.floor(Math.random() * LETRAS_POSIBLES.length)]
       } else {
-        let letraAleatoria = LETRAS_POSIBLES.charAt(Math.floor(Math.random() * LETRAS_POSIBLES.length))
-        fila += letraAleatoria + " "
+        letra = LETRAS_POSIBLES[letra.charCodeAt() - 65] || letra
       }
+      fila += letra + " "
     }
     sopaDeLetrasConBordes += fila + "\n"
   }
 
-  let mensaje = `*🧩 Sopa de Letras Individual*\n\n*Encuentra las siguientes palabras:*\n${palabrasSeleccionadas.map(p => `- ${p}`).join('\n')}\n\n*Responde con:* sopa número\n_Ejemplo:_ *sopa 28*\n_Tienes 60 segundos para responder._\n${sopaDeLetrasConBordes}`
+  let index = Math.floor(Math.random() * palabrasSeleccionadas.length)
+  let palabraGanadora = palabrasSeleccionadas[index]
 
-  await reply(mensaje)
+  let mensaje = `*SOPA DE LETRAS INDIVIDUAL*\n\nEncuentra la palabra secreta entre las siguientes:\n\n*${palabrasSeleccionadas.join(", ")}*\n\n*Escribe:* _sopa ${index + 1}_ para elegir.\n\n${sopaDeLetrasConBordes}`
 
+  await shoNhe.sendMessage(m.chat, { text: mensaje }, { quoted: m })
+
+  global.partidaSopa = global.partidaSopa || {}
   global.partidaSopa[m.chat] = {
-    usuario: m.sender,
-    palabras: palabrasSeleccionadas,
-    tiempo: setTimeout(() => {
-      if (global.partidaSopa[m.chat]) {
-        shoNhe.sendMessage(m.chat, { text: `*⏰ Se acabó el tiempo!*\nNo lograste resolver la sopa.` }, { quoted: m })
-        delete global.partidaSopa[m.chat]
-      }
-    }, 60000)
+    palabraGanadora: palabraGanadora,
+    indexGanador: index,
+    jugador: m.sender,
+    activo: true
   }
+
+  setTimeout(() => {
+    if (global.partidaSopa[m.chat]?.activo) {
+      delete global.partidaSopa[m.chat]
+      shoNhe.sendMessage(m.chat, { text: `⏰ Se acabó el tiempo. Nadie resolvió la sopa de letras.` }, { quoted: m })
+    }
+  }, 30000)
+}
+break
+
+case 'sopa1': case 'sopa2': case 'sopa3': case 'sopa4': case 'sopa5': {
+  let partida = global.partidaSopa?.[m.chat]
+  if (!partida || !partida.activo) return reply('❌ No hay una sopa de letras activa.')
+
+  if (m.sender !== partida.jugador) return reply('❌ Solo quien inició el juego puede responder.')
+
+  const eleccion = parseInt(command.slice(4)) - 1
+  if (eleccion === partida.indexGanador) {
+    let user = await loadUserFire(m.sender)
+    if (!user.registro) return reply('❌ No estás registrado.')
+
+    user.limit += 20
+    await saveUserFire(m.sender, user)
+
+    reply(`✅ ¡Correcto! La palabra era *${partida.palabraGanadora}*.\nGanaste +20 límite.`)
+  } else {
+    reply(`❌ Incorrecto. La palabra era *${partida.palabraGanadora}*.`)
+  }
+
+  delete global.partidaSopa[m.chat]
 }
 break
 case 'suitpvp': {
