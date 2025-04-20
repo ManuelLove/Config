@@ -6077,56 +6077,76 @@ case 'casino': {
 }
 break;
 case 'sopa': {
-    if (db.data.chats[m.chat].gameActive) {
-        return shoNherly(m.chat, 'Ya hay una sopa activa en este chat. Espera a que termine.', m);
+  if (!db.data.users[m.sender].registered) return reply(lenguajeGB.smsRG(m, prefix))
+  if (!global.db.data.chats[m.chat].juegos) return reply(lenguajeGB.smsJuegosOFF(m, prefix))
+  if (global.partidaSopa[m.chat]) return reply('*Ya hay una sopa de letras en curso aquí. Espera que termine.*')
+  
+  const palabras = ['JAPON', 'NARUTO', 'CPU', 'BOT', 'JAVASCRIPT', 'EINSTEIN', 'PALEONTOLOGIA', 'MINECRAFT', 'AMERICA', 'GOKU', 'NUBE', 'FISICA', 'YOUTUBE', 'CELULAR', 'ANDROID', 'DISCORD', 'NETFLIX', 'PAISES', 'ARTE', 'CIENCIA']
+  const palabrasSeleccionadas = palabras.sort(() => 0.5 - Math.random()).slice(0, 8)
+  const LADO = 16
+  let sopaDeLetras = Array.from({ length: LADO }, () => Array(LADO).fill(''))
+
+  for (let palabra of palabrasSeleccionadas) {
+    let colocada = false
+    let intentos = 0
+    while (!colocada && intentos < 100) {
+      intentos++
+      let direccion = Math.floor(Math.random() * 2) // 0 horizontal, 1 vertical
+      let x = Math.floor(Math.random() * (direccion ? LADO : LADO - palabra.length))
+      let y = Math.floor(Math.random() * (direccion ? LADO - palabra.length : LADO))
+
+      let cabe = true
+      for (let i = 0; i < palabra.length; i++) {
+        let letraActual = sopaDeLetras[y + (direccion ? i : 0)][x + (direccion ? 0 : i)]
+        if (letraActual && letraActual !== palabra[i]) {
+          cabe = false
+          break
+        }
+      }
+
+      if (cabe) {
+        for (let i = 0; i < palabra.length; i++) {
+          sopaDeLetras[y + (direccion ? i : 0)][x + (direccion ? 0 : i)] = palabra[i]
+        }
+        colocada = true
+      }
     }
+  }
 
-    // Activamos el juego
-    db.data.chats[m.chat].gameActive = true;
-    let word = 'ESCENOGRA'; // Palabra a encontrar
-    let attempts = 3; // Intentos
-    let timeLimit = 3 * 60 * 1000; // 3 minutos
-    let board = generateSopa(); // Función para generar el tablero
-    let startPos = { fila: 5, columna: 3 }; // Coordenadas de inicio de la palabra
+  // Diseño visual
+  const LETRAS_POSIBLES = "ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓜⓝⓞⓟⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ"
+  const numerosUni = ["⓿", "❶", "❷", "❸", "❹", "❺", "❻", "❼", "❽", "❾", "❿", "⓫", "⓬", "⓭", "⓮", "⓯", "⓰", "⓱", "⓲", "⓳", "⓴"]
+  let sopaDeLetrasConBordes = "\n     " + [...Array(LADO).keys()].map(num => numerosUni[num]).join(" ") + "\n"
 
-    // Enviamos la sopa de letras al usuario
-    shoNherly(m.chat, `🔠 *SOPA DE LETRAS* 🔠\n\n*PALABRA:* \`\`\`${word}\`\`\n*Tiene 3 minutos para encontrar la respuesta correcta!!*\n\n*Escribe el número de fila y columna del comienzo de la primera letra "E" de la palabra.*\n\n*Ejemplo:*\n❇️ \`.sopa 28\`\n➡️ \`FILA 2\` ⬇️ \`COLUMNA 8\``, board, { quoted: m });
+  for (let i = 0; i < LADO; i++) {
+    let fila = numerosUni[i] + " "
+    for (let j = 0; j < LADO; j++) {
+      if (sopaDeLetras[i][j]) {
+        fila += LETRAS_POSIBLES[sopaDeLetras[i][j].charCodeAt() - 65] + " "
+      } else {
+        let letraAleatoria = LETRAS_POSIBLES.charAt(Math.floor(Math.random() * LETRAS_POSIBLES.length))
+        fila += letraAleatoria + " "
+      }
+    }
+    sopaDeLetrasConBordes += fila + "\n"
+  }
 
-    // Iniciar el temporizador
-    setTimeout(() => {
-        db.data.chats[m.chat].gameActive = false; // Desactivar el juego después de que pase el tiempo
-        shoNherly(m.chat, `*EL TIEMPO SE HA ACABADO!!* 😧\n\n*La palabra "${word}" se encontraba en la dirección Diagonal derecha de la fila ${startPos.fila} y columna ${startPos.columna}.`, m);
-    }, timeLimit);
+  let mensaje = `*🧩 Sopa de Letras Individual*\n\n*Encuentra las siguientes palabras:*\n${palabrasSeleccionadas.map(p => `- ${p}`).join('\n')}\n\n*Responde con:* sopa número\n_Ejemplo:_ *sopa 28*\n_Tienes 60 segundos para responder._\n${sopaDeLetrasConBordes}`
 
-    // Función para manejar la respuesta
-    const responseHandler = (text) => {
-        if (text === `${startPos.fila}${startPos.columna}`) {
-            shoNherly(m.chat, `🎉 ¡Has encontrado la palabra correctamente! 🎉`, m);
-            db.data.chats[m.chat].gameActive = false; // Finaliza el juego
-            // Aquí podrías agregar las recompensas por haber ganado
-        } else {
-            attempts--;
-            if (attempts <= 0) {
-                shoNherly(m.chat, `*Te has quedado sin intentos!!* 😞`, m);
-                db.data.chats[m.chat].gameActive = false; // Finaliza el juego
-            } else {
-                shoNherly(m.chat, `*INCORRECTO. Te quedan ${attempts} intentos!!*`, m);
-            }
-        }
-    };
+  await reply(mensaje)
 
-    // Escuchar las respuestas del jugador
-    shoNhe.on('message', (msg) => {
-        if (msg.body.startsWith('.sopa')) {
-            const response = msg.body.split(' ')[1];
-            if (response) {
-                responseHandler(response);
-            }
-        }
-    });
-
-    break;
+  global.partidaSopa[m.chat] = {
+    usuario: m.sender,
+    palabras: palabrasSeleccionadas,
+    tiempo: setTimeout(() => {
+      if (global.partidaSopa[m.chat]) {
+        shoNhe.sendMessage(m.chat, { text: `*⏰ Se acabó el tiempo!*\nNo lograste resolver la sopa.` }, { quoted: m })
+        delete global.partidaSopa[m.chat]
+      }
+    }, 60000)
+  }
 }
+break
 case 'suitpvp': {
     let db = loadUserFire();
 
