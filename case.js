@@ -6078,7 +6078,7 @@ case 'casino': {
 break;
 case 'sopa': {
     if (db.data.chats[m.chat].gameActive) {
-        return shoNhe.reply(m.chat, 'Ya hay una sopa activa en este chat. Espera a que termine.', m);
+        return m.reply(m.chat, 'Ya hay una sopa activa en este chat. Espera a que termine.', m);
     }
 
     // Activamos el juego
@@ -6090,27 +6090,27 @@ case 'sopa': {
     let startPos = { fila: 5, columna: 3 }; // Coordenadas de inicio de la palabra
 
     // Enviamos la sopa de letras al usuario
-    shoNhe.reply(m.chat, `🔠 *SOPA DE LETRAS* 🔠\n\n*PALABRA:* \`\`\`${word}\`\`\n*Tiene 3 minutos para encontrar la respuesta correcta!!*\n\n*Escribe el número de fila y columna del comienzo de la primera letra "E" de la palabra.*\n\n*Ejemplo:*\n❇️ \`.sopa 28\`\n➡️ \`FILA 2\` ⬇️ \`COLUMNA 8\``, board, { quoted: m });
+    m.reply(m.chat, `🔠 *SOPA DE LETRAS* 🔠\n\n*PALABRA:* \`\`\`${word}\`\`\n*Tiene 3 minutos para encontrar la respuesta correcta!!*\n\n*Escribe el número de fila y columna del comienzo de la primera letra "E" de la palabra.*\n\n*Ejemplo:*\n❇️ \`.sopa 28\`\n➡️ \`FILA 2\` ⬇️ \`COLUMNA 8\``, board, { quoted: m });
 
     // Iniciar el temporizador
     setTimeout(() => {
         db.data.chats[m.chat].gameActive = false; // Desactivar el juego después de que pase el tiempo
-        shoNhe.reply(m.chat, `*EL TIEMPO SE HA ACABADO!!* 😧\n\n*La palabra "${word}" se encontraba en la dirección Diagonal derecha de la fila ${startPos.fila} y columna ${startPos.columna}.`, m);
+        m.reply(m.chat, `*EL TIEMPO SE HA ACABADO!!* 😧\n\n*La palabra "${word}" se encontraba en la dirección Diagonal derecha de la fila ${startPos.fila} y columna ${startPos.columna}.`, m);
     }, timeLimit);
 
     // Función para manejar la respuesta
     const responseHandler = (text) => {
         if (text === `${startPos.fila}${startPos.columna}`) {
-            shoNhe.reply(m.chat, `🎉 ¡Has encontrado la palabra correctamente! 🎉`, m);
+            m.reply(m.chat, `🎉 ¡Has encontrado la palabra correctamente! 🎉`, m);
             db.data.chats[m.chat].gameActive = false; // Finaliza el juego
             // Aquí podrías agregar las recompensas por haber ganado
         } else {
             attempts--;
             if (attempts <= 0) {
-                shoNhe.reply(m.chat, `*Te has quedado sin intentos!!* 😞`, m);
+                m.reply(m.chat, `*Te has quedado sin intentos!!* 😞`, m);
                 db.data.chats[m.chat].gameActive = false; // Finaliza el juego
             } else {
-                shoNhe.reply(m.chat, `*INCORRECTO. Te quedan ${attempts} intentos!!*`, m);
+                m.reply(m.chat, `*INCORRECTO. Te quedan ${attempts} intentos!!*`, m);
             }
         }
     };
