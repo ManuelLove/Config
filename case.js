@@ -6077,7 +6077,10 @@ case 'casino': {
 }
 break;
 case 'sopa': {
-  if (!db.data.users[m.sender].registered) return reply('Debes estar registrado para jugar. Usa el comando .verificar')
+  if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
 if (!global.db.data.chats[m.chat].juegos) return reply('Los juegos están desactivados en este chat. Usa el comando .juegos activar')
   if (global.partidaSopa[m.chat]) return reply('*Ya hay una sopa de letras en curso aquí. Espera que termine.*')
   
