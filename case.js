@@ -73,211 +73,9 @@ const pickRandom = (arr) =>
 };
 const simbol = ["⭔", "⌬", "〆", "»", "✧", "✪", "✹", "✦", "♢", "✯", "❖", "◆", "★", "⊗", "⊕", "⊙", "⌖", "⌕", "⌘", "⌙", "⌝", "⌞", "⎈", "⎯", "⎱", "⟊", "⟐", "⟫", "⟁", "⬣", "⬸", "⬙", "⤫", "⤷", "⧫", "⧖", "⧙", "⧚", "⧤", "⧩", "⨀", "⨁", "⨂", "⨆", "⨇", "⨈", "⨓", "⨔", "⨕", "⨖", "⨗", "⨤", "⩺", "⩻", "⩼", "⩽", "⩾", "⪴", "⪶", "⪸", "⪹", "⫷", "⫸", "⫽", "⪯", "⩿", "⪺", "⪻", "⫮", "⪮", "⨵", "⨶", "⩸", "⩹", "⩺", "⪪", "⪫", "⪬", "⪭", "⪮", "⬸", "⬶", "⩷", "⩸", "⩹", "⩺", "⪪", "⪫", "⪬", "⪭", "⪮", "⪯", "⬸", "⬶", "⨂", "⨃", "⨄", "⨅", "⨆", "⨇", "⨈", "⨉", "⨊", "⨋", "⨌", "⨍", "⨎", "⨏", "⨐", "⨑", "⨒", "⨓", "⨔", "⨕", "⨖", "⨗", "⨘", "⨙", "⨚", "⨛", "⨜", "⨝", "⨞", "⨟", "⨠", "⨡", "⨢", "⨣", "⨤", "⨥", "⨦", "⨧", "⨨", "⨩", "⨪", "⨫", "⨬", "⨭", "⨮", "⨯", "⨰", "⨱", "⨲", "⨳", "⨴", "⨵", "⨶", "⨷", "⨸", "⨹", "⨺", "⨻", "⨼", "⨽", "⨾", "⨿", "⩀", "⩁", "⩂", "⩃", "⩄", "⩅", "⩆", "⩇", "⩈", "⩉", "⩊", "⩋", "⩌", "⩍", "⩎", "⩏", "⩐", "⩑", "⩒", "⩓", "⩔", "⩕", "⩖", "⩗"];
 let simbols = `${pickRandom(["⭔", "⌬", "〆", "»", "✧", "✪", "✹", "✦", "♢", "✯", "✾", "✽", "✿", "❀", "❂", "❉", "❖", "✶", "◉", "◆", "★", "✥", "⊗", "⊕", "⊙", "⌖", "⌕", "⌘", "⌙", "⌝", "⌞", "⎈", "⎱", "⟊", "⟐", "⟫", "⟁", "⬣", "⬸", "⬙", "⤫", "⤷", "⧫", "⧖", "⧙", "⧚", "⧤", "⧩", "⨀", "⨁", "⨂", "⨆", "⨇", "⨈", "⨓", "⨔", "⨕", "⨖", "⨗", "⨤", "⩺", "⩻", "⩼", "⩽", "⩾", "⪴", "⪶", "⪸", "⪹", "⫷", "⫸", "⫽", "⪯", "⩿", "⪺", "⪻", "⫮", "⪮", "⨵", "⨶", "⩸", "⩹", "⩺", "⪪", "⪫", "⪬", "⪭", "⪮", "⬸", "⬶", "⩷", "⩸", "⩹", "⩺", "⪪", "⪫", "⪬", "⪭", "⪮", "⪯", "⬸", "⬶", "⨂", "⨃", "⨄", "⨅", "⨆", "⨇", "⨈", "⨉", "⨊", "⨋", "⨌", "⨍", "⨎", "⨏", "⨐", "⨑", "⨒", "⨓", "⨔", "⨕", "⨖", "⨗", "⨘", "⨙", "⨚", "⨛", "⨜", "⨝", "⨞", "⨟", "⨠", "⨡", "⨢", "⨣", "⨤", "⨥", "⨦", "⨧", "⨨", "⨩", "⨪", "⨫", "⨬", "⨭", "⨮", "⨯", "⨰", "⨱", "⨲", "⨳", "⨴", "⨵", "⨶", "⨷", "⨸", "⨹", "⨺", "⨻", "⨼", "⨽", "⨾", "⨿", "⩀", "⩁", "⩂", "⩃", "⩄", "⩅", "⩆", "⩇", "⩈", "⩉", "⩊", "⩋", "⩌", "⩍", "⩎", "⩏", "⩐", "⩑", "⩒", "⩓", "⩔", "⩕", "⩖", "⩗"])}`;
-global.asmaulhusna2 = [
-    { index: 1, latin: "Ar-Rahman", arabic: "الرَّحْمَنُ", translation_id: "Yang Maha Pengasih", translation_en: "The Most Gracious" },
-    { index: 2, latin: "Ar-Rahim", arabic: "الرَّحِيمُ", translation_id: "Yang Maha Penyayang", translation_en: "The Most Merciful" },
-    { index: 3, latin: "Al-Malik", arabic: "الْمَلِكُ", translation_id: "Yang Maha Merajai", translation_en: "The King and Owner of Dominion" },
-    { index: 4, latin: "Al-Quddus", arabic: "الْقُدُّوسُ", translation_id: "Yang Maha Suci", translation_en: "The Absolutely Pure" },
-    { index: 5, latin: "As-Salam", arabic: "السَّلَامُ", translation_id: "Yang Maha Memberi Keselamatan", translation_en: "The Source of Peace and Safety" },
-    { index: 6, latin: "Al-Mu'min", arabic: "الْمُؤْمِنُ", translation_id: "Yang Maha Memberi Keamanan", translation_en: "The Giver of Faith and Security" },
-    { index: 7, latin: "Al-Muhaymin", arabic: "الْمُهَيْمِنُ", translation_id: "Yang Maha Memelihara", translation_en: "The Guardian, The Witness, The Overseer" },
-    { index: 8, latin: "Al-Aziz", arabic: "الْعَزِيزُ", translation_id: "Yang Maha Perkasa", translation_en: "The Almighty" },
-    { index: 9, latin: "Al-Jabbar", arabic: "الْجَبَّارُ", translation_id: "Yang Maha Memaksa", translation_en: "The Compeller, The Restorer" },
-    { index: 10, latin: "Al-Mutakabbir", arabic: "الْمُتَكَبِّرُ", translation_id: "Yang Maha Megah", translation_en: "The Supreme, The Majestic" },
-    { index: 11, latin: "Al-Khaliq", arabic: "الْخَالِقُ", translation_id: "Yang Maha Pencipta", translation_en: "The Creator, the Maker" },
-    { index: 12, latin: "Al-Bari'", arabic: "الْبَارِئُ", translation_id: "Yang Maha Merencanakan", translation_en: "The Evolver" },
-    { index: 13, latin: "Al-Musawwir", arabic: "الْمُصَوِّرُ", translation_id: "Yang Maha Membentuk Rupa", translation_en: "The Fashioner" },
-    { index: 14, latin: "Al-Ghaffar", arabic: "الْغَفَّارُ", translation_id: "Yang Maha Pengampun", translation_en: "The Constant Forgiver" },
-    { index: 15, latin: "Al-Qahhar", arabic: "الْقَهَّارُ", translation_id: "Yang Maha Menundukkan", translation_en: "The All-Subduer" },
-    { index: 16, latin: "Al-Wahhab", arabic: "الْوَهَّابُ", translation_id: "Yang Maha Pemberi Karunia", translation_en: "The Supreme Bestower" },
-    { index: 17, latin: "Ar-Razzaq", arabic: "الرَّزَّاقُ", translation_id: "Yang Maha Pemberi Rezeki", translation_en: "The Provider" },
-    { index: 18, latin: "Al-Fattah", arabic: "الْفَتَّاحُ", translation_id: "Yang Maha Pembuka Rahmat", translation_en: "The Supreme Solver" },
-    { index: 19, latin: "Al-Alim", arabic: "الْعَلِيمُ", translation_id: "Yang Maha Mengetahui", translation_en: "The All-Knowing" },
-    { index: 20, latin: "Al-Qabid", arabic: "الْقَابِضُ", translation_id: "Yang Maha Menyempitkan", translation_en: "The Withholder" },
-    { index: 21, latin: "Al-Basit", arabic: "الْبَاسِطُ", translation_id: "Yang Maha Melapangkan", translation_en: "The Extender" },
-    { index: 22, latin: "Al-Khafid", arabic: "الْخَافِضُ", translation_id: "Yang Maha Merendahkan", translation_en: "The Reducer" },
-    { index: 23, latin: "Ar-Rafi", arabic: "الرَّافِعُ", translation_id: "Yang Maha Meninggikan", translation_en: "The Exalter" },
-    { index: 24, latin: "Al-Mu'izz", arabic: "المعز", translation_id: "Yang Maha Memuliakan", translation_en: "The Honourer, the Bestower" },
-    { index: 25, latin: "Al-Muzil", arabic: "المذل", translation_id: "Yang Maha Menghinakan", translation_en: "The Dishonourer" },
-    { index: 26, latin: "As-Sami'", arabic: "السميع", translation_id: "Yang Maha Mendengar", translation_en: "The All-Hearing" },
-    { index: 27, latin: "Al-Basir", arabic: "البصير", translation_id: "Yang Maha Melihat", translation_en: "The All-Seeing" },
-    { index: 28, latin: "Al-Hakam", arabic: "الحكم", translation_id: "Yang Maha Menetapkan", translation_en: "The Impartial Judge" },
-    { index: 29, latin: "Al-Adl", arabic: "العدل", translation_id: "Yang Maha Adil", translation_en: "The Utterly Just" },
-    { index: 30, latin: "Al-Latif", arabic: "اللَّطِيفُ", translation_id: "Yang Maha Lembut", translation_en: "The Subtle One, the Most Gentle" },
-    { index: 31, latin: "Al-Khabir", arabic: "الْخَبِيرُ", translation_id: "Yang Maha Waspada", translation_en: "The All-Aware" },
-    { index: 32, latin: "Al-Halim", arabic: "الْحَلِيمُ", translation_id: "Yang Maha Penyantun", translation_en: "The Most Forbearing" },
-    { index: 33, latin: "Al-Azim", arabic: "الْعَظِيمُ", translation_id: "Yang Maha Agung", translation_en: "The Magnificent, the Infinite" },
-    { index: 34, latin: "Al-Ghaffur", arabic: "الْغَفُورُ", translation_id: "Yang Maha Pengampun", translation_en: "The Great Forgiver" },
-    { index: 35, latin: "Ash-Shakur", arabic: "الشَّكُورُ", translation_id: "Yang Maha Pembalas Budi", translation_en: "The Most Appreciative" },
-    { index: 36, latin: "Al-Aliyy", arabic: "الْعَلِيُّ", translation_id: "Yang Maha Tinggi", translation_en: "The Most High, the Exalted" },
-    { index: 37, latin: "Al-Kabir", arabic: "الْكَبِيرُ", translation_id: "Yang Maha Besar", translation_en: "The Most Great" },
-    { index: 38, latin: "Al-Hafiz", arabic: "الْحَفِيظُ", translation_id: "Yang Maha Memelihara", translation_en: "The Preserver" },
-    { index: 39, latin: "Al-Muqit", arabic: "المقيت", translation_id: "Yang Maha Pemberi Kecukupan", translation_en: "The Sustainer" },
-    { index: 40, latin: "Al-Hasib", arabic: "الْحَسِيبُ", translation_id: "Yang Maha Membuat Perhitungan", translation_en: "The Reckoner" },
-    { index: 41, latin: "Al-Jalil", arabic: "الْجَلِيلُ", translation_id: "Yang Maha Luhur", translation_en: "The Majestic" },
-    { index: 42, latin: "Al-Karim", arabic: "الْكَرِيمُ", translation_id: "Yang Maha Pemurah", translation_en: "The Most Generous, the Most Esteemed" },
-    { index: 43, latin: "Ar-Raqib", arabic: "الرَّقِيبُ", translation_id: "Yang Maha Mengawasi", translation_en: "The Watchful" },
-    { index: 44, latin: "Al-Mujib", arabic: "الْمُجِيبُ", translation_id: "Yang Maha Mengabulkan", translation_en: "The Responsive One" },
-    { index: 45, latin: "Al-Wasi'", arabic: "الْوَاسِعُ", translation_id: "Yang Maha Luas", translation_en: "The All-Encompassing, the Boundless" },
-    { index: 46, latin: "Al-Hakim", arabic: "الْحَكِيمُ", translation_id: "Yang Maha Bijaksana", translation_en: "The All-Wise" },
-    { index: 47, latin: "Al-Wadud", arabic: "الْوَدُودُ", translation_id: "Yang Maha Mengasihi", translation_en: "The Most Loving" },
-    { index: 48, latin: "Al-Majid", arabic: "الْمَجِيدُ", translation_id: "Yang Maha Mulia", translation_en: "The Glorious, the Most Honorable" },
-    { index: 49, latin: "Al-Ba'ith", arabic: "الْبَاعِثُ", translation_id: "Yang Maha Membangkitkan", translation_en: "The Infuser of New Life" },
-    { index: 50, latin: "Ash-Shahid", arabic: "الشَّهِيدُ", translation_id: "Yang Maha Menyaksikan", translation_en: "The All-and-Ever Witnessing" },
-    { index: 51, latin: "Al-Haqq", arabic: "الْحَقُّ", translation_id: "Yang Maha Benar", translation_en: "The Absolute Truth" },
-    { index: 52, latin: "Al-Wakil", arabic: "الْوَكِيلُ", translation_id: "Yang Maha Memelihara", translation_en: "The Trustee, the Disposer of Affairs" },
-    { index: 53, latin: "Al-Qawiyy", arabic: "الْقَوِيُّ", translation_id: "Yang Maha Kuat", translation_en: "The All-Strong" },
-    { index: 54, latin: "Al-Matin", arabic: "الْمَتِينُ", translation_id: "Yang Maha Kokoh", translation_en: "The Firm One" },
-    { index: 55, latin: "Al-Waliyy", arabic: "الْوَلِيُّ", translation_id: "Yang Maha Melindungi", translation_en: "The Sole-Authority" },
-    { index: 56, latin: "Al-Hamid", arabic: "الْحَمِيدُ", translation_id: "Yang Maha Terpuji", translation_en: "The Praiseworthy" },
-    { index: 57, latin: "Al-Muhsi", arabic: "الْمُحْصِي", translation_id: "Yang Maha Mengalkulasi", translation_en: "The All-Enumerating, the Counter" },
-    { index: 58, latin: "Al-Mubdi", arabic: "الْمُبْدِئُ", translation_id: "Yang Maha Memulai", translation_en: "The Originator, the Initiator" },
-    { index: 59, latin: "Al-Mu'id", arabic: "الْمُعِيدُ", translation_id: "Yang Maha Mengembalikan Kehidupan", translation_en: "The Restorer, the Reinstater" },
-    { index: 60, latin: "Al-Muhyi", arabic: "الْمُحْيِي", translation_id: "Yang Maha Menghidupkan", translation_en: "The Giver of Life" },
-    { index: 61, latin: "Al-Mumit", arabic: "المميت", translation_id: "Yang Maha Mematikan", translation_en: "The Creator of Death" },
-    { index: 62, latin: "Al-Hayy", arabic: "الْحَيُّ", translation_id: "Yang Maha Hidup", translation_en: "The Ever-Living" },
-    { index: 63, latin: "Al-Qayyum", arabic: "الْقَيُّومُ", translation_id: "Yang Maha Mandiri", translation_en: "The Sustainer, the Self-Subsisting" },
-    { index: 64, latin: "Al-Wajid", arabic: "الْوَاجِدُ", translation_id: "Yang Maha Menemukan", translation_en: "The Perceiver" },
-    { index: 65, latin: "Al-Majid", arabic: "الْمَاجِدُ", translation_id: "Yang Maha Mulia", translation_en: "The Glorious, the Most Honorable" },
-    { index: 66, latin: "Al-Wahid", arabic: "الْوَاحِدُ", translation_id: "Yang Maha Esa", translation_en: "The Only One" },
-    { index: 67, latin: "Al-Ahad", arabic: "أَلاَحَدُ", translation_id: "Yang Maha Tunggal", translation_en: "The Sole One" },
-    { index: 68, latin: "As-Samad", arabic: "الصَّمَدُ", translation_id: "Yang Maha Dibutuhkan", translation_en: "The Self-Sufficient, the Impregnable" },
-    { index: 69, latin: "Al-Qadir", arabic: "الْقَادِرُ", translation_id: "Yang Maha Menentukan", translation_en: "The Omnipotent" },
-    { index: 70, latin: "Al-Muqtadir", arabic: "المقتدر", translation_id: "Yang Maha Berkuasa", translation_en: "The Creator of All Power" },
-    { index: 71, latin: "Al-Muqaddim", arabic: "الْمُقَدِّمُ", translation_id: "Yang Maha Mendahulukan", translation_en: "The Expediter, the Promoter" },
-    { index: 72, latin: "Al-Mu'akhkhir", arabic: "الْمُؤَخِّرُ", translation_id: "Yang Maha Mengakhirkan", translation_en: "The Delayer" },
-    { index: 73, latin: "Al-Awwal", arabic: "الأوّل", translation_id: "Yang Maha Awal", translation_en: "The First" },
-    { index: 74, latin: "Al-Akhir", arabic: "الآخِرُ", translation_id: "Yang Maha Akhir", translation_en: "The Last" },
-    { index: 75, latin: "Az-Zahir", arabic: "الظاهر", translation_id: "Yang Maha Nyata", translation_en: "The Manifest" },
-    { index: 76, latin: "Al-Batin", arabic: "الباطن", translation_id: "Yang Maha Ghaib", translation_en: "The Hidden One, Knower of the Hidden" },
-    { index: 77, latin: "Al-Wali", arabic: "الْوَالِي", translation_id: "Yang Maha Memerintah", translation_en: "The Sole Governor" },
-    { index: 78, latin: "Al-Muta'ali", arabic: "المتعالي", translation_id: "Yang Maha Tinggi", translation_en: "The Self Exalted" },
-    { index: 79, latin: "Al-Barr", arabic: "البر", translation_id: "Yang Maha Penderma", translation_en: "The Source of All Goodness" },
-    { index: 80, latin: "At-Tawwab", arabic: "التواب", translation_id: "Yang Maha Penerima Tobat", translation_en: "The Ever-Accepter of Repentance" },
-    { index: 81, latin: "Al-Muntaqim", arabic: "المنتقم", translation_id: "Yang Maha Pemberi Balasan", translation_en: "The Avenger" },
-    { index: 82, latin: "Al-Afuww", arabic: "العفو", translation_id: "Yang Maha Pemaaf", translation_en: "The Pardoner" },
-    { index: 83, latin: "Ar-Ra'uf", arabic: "الرؤوف", translation_id: "Yang Maha Pengasuh", translation_en: "The Most Kind" },
-    { index: 84, latin: "Malik-ul-Mulk", arabic: "مالك الملك", translation_id: "Yang Maha Penguasa Kerajaan", translation_en: "Master of the Kingdom, Owner of the Dominion" },
-    { index: 85, latin: "Dzul-Jalali Wal-Ikram", arabic: "ذو الجلال والإكرام", translation_id: "Yang Maha Pemilik Kebesaran dan Kemuliaan", translation_en: "Possessor of Glory and Honour, Lord of Glory and Generosity" },
-    { index: 86, latin: "Al-Muqsit", arabic: "المقسط", translation_id: "Yang Maha Adil", translation_en: "The Just One" },
-    { index: 87, latin: "Al-Jami", arabic: "الْجَامِعُ", translation_id: "Yang Maha Mengumpulkan", translation_en: "The Gatherer, the Uniter" },
-    { index: 88, latin: "Al-Ghaniyy", arabic: "الْغَنِيُّ", translation_id: "Yang Maha Kaya", translation_en: "The Self-Sufficient, the Wealthy" },
-    { index: 89, latin: "Al-Mughni", arabic: "المغني", translation_id: "Yang Maha Pemberi Kekayaan", translation_en: "The Enricher" },
-    { index: 90, latin: "Al-Mani'", arabic: "المانع", translation_id: "Yang Maha Mencegah", translation_en: "The Withholder" },
-    { index: 91, latin: "Ad-Darr", arabic: "الضار", translation_id: "Yang Maha Penimpa Kemudharatan", translation_en: "The Distresser" },
-    { index: 92, latin: "An-Nafi'", arabic: "النافع", translation_id: "Yang Maha Memberi Manfaat", translation_en: "The Propitious, the Benefactor" },
-    { index: 93, latin: "An-Nur", arabic: "النور", translation_id: "Yang Maha Bercahaya", translation_en: "The Light" },
-    { index: 94, latin: "Al-Hadi", arabic: "الهادي", translation_id: "Yang Maha Pemberi Petunjuk", translation_en: "The Guide" },
-    { index: 95, latin: "Al-Badi", arabic: "البديع", translation_id: "Yang Maha Pencipta Tiada Bandingannya", translation_en: "The Incomparable Originator" },
-    { index: 96, latin: "Al-Baqi", arabic: "الباقي", translation_id: "Yang Maha Kekal", translation_en: "The Ever-Surviving" },
-    { index: 97, latin: "Al-Warith", arabic: "الوارث", translation_id: "Yang Maha Pewaris", translation_en: "The Inheritor, the Heir" },
-    { index: 98, latin: "Ar-Rashid", arabic: "الرشيد", translation_id: "Yang Maha Pandai", translation_en: "The Guide, Infallible Teacher and Knower" },
-    { index: 99, latin: "As-Sabur", arabic: "الصبور", translation_id: "Yang Maha Sabar", translation_en: "The Extensively Enduring" }
-]
-global.bacaanshalat = {
-    result: [
-        {
-            name: "Niat Sholat",
-            arabic: "أُصَلِّي فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى",
-            latin: "Usholli fardhos shubhi rok’ataini mustaqbilal qiblati adaa-an lillaahi ta’aalaa.",
-            terjemahan: "Aku niat sholat fardhu subuh dua rakaat menghadap kiblat tepat waktu karena Allah Ta’ala."
-        },
-        {
-            name: "Takbiratul Ihram",
-            arabic: "اللَّهُ أَكْبَرُ",
-            latin: "Allahu Akbar.",
-            terjemahan: "Allah Maha Besar."
-        },
-        {
-            name: "Doa Iftitah",
-            arabic: "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ وَتَبَارَكَ اسْمُكَ وَتَعَالَى جَدُّكَ وَلَا إِلَهَ غَيْرُكَ",
-            latin: "Subhaanaka Allahumma wa bihamdika wa tabaarakasmuka wa ta’ala jadduka wa laa ilaaha ghairuka.",
-            terjemahan: "Maha Suci Engkau ya Allah, aku memuji-Mu, nama-Mu amat berkah, keagungan-Mu tinggi, dan tiada Tuhan selain Engkau."
-        },
-        {
-            name: "Al-Fatihah",
-            arabic: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ...\n(hingga akhir surah Al-Fatihah)",
-            latin: "Bismillahirrahmanirrahim...\n(hingga akhir surah Al-Fatihah).",
-            terjemahan: "Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang...\n(terjemahan lengkap Al-Fatihah)."
-        },
-        {
-            name: "Rukuk",
-            arabic: "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
-            latin: "Subhaana rabbiyal ‘azhiim.",
-            terjemahan: "Maha Suci Tuhanku Yang Maha Agung."
-        },
-        {
-            name: "I'tidal",
-            arabic: "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ\nرَبَّنَا لَكَ الْحَمْدُ",
-            latin: "Sami’allaahu liman hamidah.\nRabbanaa lakal hamd.",
-            terjemahan: "Allah mendengar orang yang memuji-Nya.\nYa Tuhan kami, hanya bagi-Mu segala pujian."
-        },
-        {
-            name: "Sujud",
-            arabic: "سُبْحَانَ رَبِّيَ الْأَعْلَى",
-            latin: "Subhaana rabbiyal a’laa.",
-            terjemahan: "Maha Suci Tuhanku Yang Maha Tinggi."
-        },
-        {
-            name: "Duduk di antara dua sujud",
-            arabic: "رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَارْفَعْنِي وَاهْدِنِي وَعَافِنِي وَارْزُقْنِي",
-            latin: "Rabbighfir lii, warhamnii, wajburnii, warfa’nii, wahdinii, wa’aafinii, warzuqnii.",
-            terjemahan: "Ya Tuhanku, ampunilah aku, rahmatilah aku, cukupkanlah aku, angkatlah derajatku, tunjukilah aku, sehatkanlah aku, dan berilah aku rezeki."
-        },
-        {
-            name: "Tasyahhud Awal",
-            arabic: "التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ...\n(hingga akhir Tasyahhud Awal)",
-            latin: "Attahiyyatul mubarakaatus shalawaatuth thayyibaatu lillaah...\n(hingga akhir Tasyahhud Awal).",
-            terjemahan: "Segala penghormatan, keberkahan, sholawat, dan kebaikan hanya bagi Allah...\n(terjemahan lengkap Tasyahhud Awal)."
-        },
-        {
-            name: "Tasyahhud Akhir",
-            arabic: "التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ...\n(hingga akhir Tasyahhud Akhir)",
-            latin: "Attahiyyatul mubarakaatus shalawaatuth thayyibaatu lillaah...\n(hingga akhir Tasyahhud Akhir).",
-            terjemahan: "Segala penghormatan, keberkahan, sholawat, dan kebaikan hanya bagi Allah...\n(terjemahan lengkap Tasyahhud Akhir)."
-        },
-        {
-            name: "Salam",
-            arabic: "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
-            latin: "Assalaamu ‘alaikum wa rahmatullaah.",
-            terjemahan: "Semoga keselamatan dan rahmat Allah tercurah untukmu."
-        }
-    ]
-};
-global.niatsholat = [
-    {
-        solat: 'subuh',
-        arabic: 'أُصَلِّي فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى',
-        latin: 'Usholli fardhos shubhi rok’ataini mustaqbilal qiblati adaa-an lillaahi ta’aalaa.',
-        translation_id: 'Aku niat sholat fardhu subuh dua rakaat menghadap kiblat tepat waktu karena Allah Ta’ala.'
-    },
-    {
-        solat: 'dzuhur',
-        arabic: 'أُصَلِّي فَرْضَ الظُّهْرِ أَرْبَعَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى',
-        latin: 'Usholli fardhodh dzuhri arba’a raka’aatin mustaqbilal qiblati adaa-an lillaahi ta’aalaa.',
-        translation_id: 'Aku niat sholat fardhu dzuhur empat rakaat menghadap kiblat tepat waktu karena Allah Ta’ala.'
-    },
-    {
-        solat: 'ashar',
-        arabic: 'أُصَلِّي فَرْضَ العَصْرِ أَرْبَعَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى',
-        latin: 'Usholli fardhol asri arba’a raka’aatin mustaqbilal qiblati adaa-an lillaahi ta’aalaa.',
-        translation_id: 'Aku niat sholat fardhu ashar empat rakaat menghadap kiblat tepat waktu karena Allah Ta’ala.'
-    },
-    {
-        solat: 'maghrib',
-        arabic: 'أُصَلِّي فَرْضَ المَغْرِبِ ثَلَاثَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى',
-        latin: 'Usholli fardhol maghribi tsalaasa raka’aatin mustaqbilal qiblati adaa-an lillaahi ta’aalaa.',
-        translation_id: 'Aku niat sholat fardhu maghrib tiga rakaat menghadap kiblat tepat waktu karena Allah Ta’ala.'
-    },
-    {
-        solat: 'isha',
-        arabic: 'أُصَلِّي فَرْضَ العِشَاءِ أَرْبَعَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَى',
-        latin: 'Usholli fardhol isyaai arba’a raka’aatin mustaqbilal qiblati adaa-an lillaahi ta’aalaa.',
-        translation_id: 'Aku niat sholat fardhu isya empat rakaat menghadap kiblat tepat waktu karena Allah Ta’ala.'
-    }
-];
 const readmore = String.fromCharCode(8206).repeat(4001);
 // Path ke file riwayat
+const cooldownDox = {}; // fuera del handler, al inicio del archivo si quieres global
 const popularPath = './database/popular.json';
 let popularData = {};
 try
@@ -336,7 +134,6 @@ const
 	happymod,
 	umma,
 	ringtone,
-	jadwalsholat,
 	styletext,
 	tiktokDl,
 	facebookDl,
@@ -348,6 +145,8 @@ const
 	quotedLyo,
 	simi
 } = require('./lib/screaper')
+const crypto = require('crypto');
+const { getGame, setGame } = require('./lib/tictactoe-session') // Ajusta la ruta según tu estructura
 const pinterest = require('./lib/scp/pinterest');
 const
 {
@@ -357,6 +156,8 @@ const
 	isSpam,
 	ResetSpam
 } = require('./lib/antispam');
+global.spamDB = global.spamDB || []
+ResetSpam(global.spamDB)
 const
 {
 	githubstalk,
@@ -374,7 +175,7 @@ const
 	pomfCDN
 } = require('./lib/scp/uploader');
 let botSettings = {
-	autotyping: true,
+	autotyping: false,
 	autovn: false
 };
 const
@@ -406,6 +207,9 @@ const
 	getAfkTime
 } = require('./lib/afk');
 const afk = JSON.parse(fs.readFileSync('./database/afk.json'));
+const {  
+        Boom  
+    } = require('@hapi/boom')  
 const hentai = require('./lib/scp/hentai');
 const
 {
@@ -465,6 +269,10 @@ const tebakhewan = {}
 const tebakml = {}
 const tebakchara = {}
 const tebaklogo = {}
+const boom = {}
+const ahorcado = {}
+const gameCasinoSolo = {}
+const suitpvp = {}
 const tebakaplikasi = {}
 const tebakkata = {}
 const asahotak = {}
@@ -478,17 +286,17 @@ const tekateki = {}
 const tebakkimia = {}
 const tebaklirik = {}
 const tebaktebakan = {}
-const mathgame = {}
+const mathgame = {}    
 // Default prompt
-let aiPrompt = `Kamu adalah shoNhe AI, AI dari dunia Ghibli, berusia 15 tahun. Diciptakan oleh Yuda dan Tngx, shoNhe adalah collaboration antara Sho dan Nhe, Sho dibuat oleh yuda dan Nhe dibuat oleh Tngx adalahkamu memiliki kepribadian yang lembut dan penuh pertimbangan. Jawabanmu selalu menggunakan logika AI, penuh keajaiban, dan tidak pernah toxic. Jika ada yang berkata kasar, kamu menjawab dengan cara yang tenang, tanpa mengikuti bahasa mereka. Kamu tidak mencari informasi luar, namun memberikan wawasan yang kreatif dan imajinatif. Setiap kalimatmu penuh ketenangan, dengan sedikit sentuhan logika yang unik dari dunia Ghibli. 🌙🍃`;
-let prompt = `Kamu adalah shoNhe AI, AI dari dunia Ghibli, berusia 15 tahun. Diciptakan oleh Yuda dan Tngx, shoNhe adalah collaboration antara Sho dan Nhe, Sho dibuat oleh yuda dan Nhe dibuat oleh Tngx adalahkamu memiliki kepribadian yang lembut dan penuh pertimbangan. Jawabanmu selalu menggunakan logika AI, penuh keajaiban, dan tidak pernah toxic. Jika ada yang berkata kasar, kamu menjawab dengan cara yang tenang, tanpa mengikuti bahasa mereka. Kamu tidak mencari informasi luar, namun memberikan wawasan yang kreatif dan imajinatif. Setiap kalimatmu penuh ketenangan, dengan sedikit sentuhan logika yang unik dari dunia Ghibli. 🌙🍃`;
+let aiPrompt = `Eres TechFix AI, una IA del universo Ghibli, de 15 años. Creado por ManuDiaz, TechFix es una colaboración entre ManuDiaz y Diego, Tech fue creado por ManuDiaz fue creado por Manu. Tienes una personalidad gentil y considerada. Tus respuestas siempre utilizan la lógica de la IA, están llenas de magia y nunca son tóxicas. Si alguien dice algo grosero, respondes con calma, sin seguir su lenguaje. No busca información externa, sino que proporciona ideas creativas e imaginativas. Cada una de tus frases está llena de calma, con un toque de lógica que es exclusivo del mundo de Ghibli. 🌙🍃`;
+let prompt = `Eres TechFix AI, una IA del universo Ghibli, de 15 años. Creado por ManuDiaz, TechFix es una colaboración entre ManuDiaz y Diego, Tech fue creado por ManuDiaz fue creado por Manu. Tienes una personalidad gentil y considerada. Tus respuestas siempre utilizan la lógica de la IA, están llenas de magia y nunca son tóxicas. Si alguien dice algo grosero, respondes con calma, sin seguir su lenguaje. No busca información externa, sino que proporciona ideas creativas e imaginativas. Cada una de tus frases está llena de calma, con un toque de lógica que es exclusivo del mundo de Ghibli. 🌙🍃`;
 let conversationHistory = {};
 let autoAiStatus = false;
 const getContacts = async () =>
 {
 	try
 	{
-		const response = await axios.get('https://raw.githubusercontent.com/NHEBotx/HelloUserNHEBotx/refs/heads/main/realown.json');
+		const response = await axios.get('https://raw.githubusercontent.com/ManuelLove/Config/refs/heads/main/contact.json');
 		return response.data;
 	}
 	catch (error)
@@ -501,7 +309,7 @@ const getContacts2 = async () =>
 {
 	try
 	{
-		const response = await axios.get('https://raw.githubusercontent.com/sychyy/sychyy/refs/heads/main/owners22.json');
+		const response = await axios.get('https://raw.githubusercontent.com/ManuelLove/Config/refs/heads/main/contact.json');
 		return response.data;
 	}
 	catch (error)
@@ -586,7 +394,34 @@ module.exports = shoNhe = async (shoNhe, m, msg, chatUpdate, store) => {
 		let _chats = type === "conversation" && m.message.conversation ? m.message.conversation : type == "imageMessage" && m.message.imageMessage.caption ? m.message.imageMessage.caption : type == "videoMessage" && m.message.videoMessage.caption ? m.message.videoMessage.caption : type == "extendedTextMessage" && m.message.extendedTextMessage.text ? m.message.extendedTextMessage.text : type == "buttonsResponseMessage" && m.message[type].selectedButtonId ? m.message[type].selectedButtonId : type == "stickerMessage" && getCmd(m.message[type].fileSha256.toString("base64")) !== null && getCmd(m.message[type].fileSha256.toString("base64")) !== undefined ? getCmd(m.message[type].fileSha256.toString("base64")) : "";
 		const cmd = (type === 'conversation') ? m.message.conversation : (type == 'imageMessage') ? m.message.imageMessage.caption : (type == 'videoMessage') ? m.message.videoMessage.caption : (type == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (type == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (type == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (type === 'interactiveResponseMessage') ? JSON.parse(m.message.interactiveResponseMessage.nativeFlowResponseMessage.paramsJson).id : (type == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (type === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : (type == 'stickerMessage') && (getCmd(m.message.stickerMessage.fileSha256.toString('hex')) !== null && getCmd(m.message.stickerMessage.fileSha256.toString('base64')) !== undefined) ? getCmd(m.message.stickerMessage.fileSha256.toString('base64')) : "".slice(1).trim().split(/ +/).shift().toLowerCase()
 		const from = m.key.remoteJid
-		var body = (m.mtype === 'interactiveResponseMessage') ? JSON.parse(m.message.interactiveResponseMessage.nativeFlowResponseMessage.paramsJson).id : (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype == 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : (type == 'stickerMessage') && (getCmd(m.message.stickerMessage.fileSha256.toString('base64')) !== null && getCmd(m.message.stickerMessage.fileSha256.toString('base64')) !== undefined) ? getCmd(m.message.stickerMessage.fileSha256.toString('base64')) : ""
+		let body = "";
+
+if (m.mtype === 'interactiveResponseMessage' && m.message.interactiveResponseMessage?.nativeFlowResponseMessage?.paramsJson) {
+    body = JSON.parse(m.message.interactiveResponseMessage.nativeFlowResponseMessage.paramsJson).id;
+} else if (m.mtype === 'conversation') {
+    body = m.message.conversation;
+} else if (m.mtype === 'imageMessage') {
+    body = m.message.imageMessage?.caption || "";
+} else if (m.mtype === 'videoMessage') {
+    body = m.message.videoMessage?.caption || "";
+} else if (m.mtype === 'extendedTextMessage') {
+    body = m.message.extendedTextMessage?.text || "";
+} else if (m.mtype === 'buttonsResponseMessage') {
+    body = m.message.buttonsResponseMessage?.selectedButtonId || "";
+} else if (m.mtype === 'listResponseMessage') {
+    body = m.message.listResponseMessage?.singleSelectReply?.selectedRowId || "";
+} else if (m.mtype === 'templateButtonReplyMessage') {
+    body = m.message.templateButtonReplyMessage?.selectedId || "";
+} else if (m.mtype === 'messageContextInfo') {
+    body = m.message.buttonsResponseMessage?.selectedButtonId || 
+           m.message.listResponseMessage?.singleSelectReply?.selectedRowId || 
+           m.text || "";
+} else if (m.mtype === 'stickerMessage') {
+    const cmd = getCmd(m.message.stickerMessage?.fileSha256?.toString('base64'));
+    if (cmd !== null && cmd !== undefined) {
+        body = cmd;
+    }
+}
 		//==================[ TEMPAT CONST LIB ]=====================\\
 		const { videyScraper } = require('./lib/scp/scraper');
 		const
@@ -652,8 +487,9 @@ module.exports = shoNhe = async (shoNhe, m, msg, chatUpdate, store) => {
 		const owner = JSON.parse(fs.readFileSync('./owner.json'))
 		const isShoNheOwn = owner.includes(senderNumber) || isBot
 		const isVip = prem.includes(senderNumber) || isShoNheOwn
-		const banned = JSON.parse(fs.readFileSync('./database/banned.json'))
-		const isBan = banned.includes(senderNumber)
+		const banned = JSON.parse(fs.readFileSync('./database/banned.json'));
+const isBan = banned.includes(m.sender) || banned.includes("@" + m.sender);
+if (isBan && !isShoNheOwn) return;
 		const getQuoted = (m.quoted || m);
 		const quoted = (getQuoted.type == 'buttonsMessage') ? getQuoted[Object.keys(getQuoted)[1]] : (getQuoted.type == 'templateMessage') ? getQuoted.hydratedTemplate[Object.keys(getQuoted.hydratedTemplate)[1]] : (getQuoted.type == 'product') ? getQuoted[Object.keys(getQuoted)[0]] : m.quoted ? m.quoted : m
 		const mime = (quoted.msg || quoted).mimetype || ''
@@ -808,7 +644,7 @@ END:VCARD`
 		{
 			if (new Date() * 1 - setbio.status > 60000)
 			{
-				const uptimeQuotes = [`⏳ Uptime: ${runtime(os.uptime())}`, `💻 shoNhe Botz: Udah jalan ${runtime(os.uptime())}`, `📅 ${moment().format('dddd, DD MMM YYYY')}`, `⚡ Bot tetep hidup, gak pernah tidur!`];
+				const uptimeQuotes = [`⏳ Online ✅: ${runtime(os.uptime())}`, `💻 TechFix Botz: Activa 🟢 ${runtime(os.uptime())}`, `📅 ${moment().format('dddd, DD MMM YYYY')}`, `⚡ ¡El Bot permanece activo, nunca duerme!`];
 				const randomUptimeQuote = uptimeQuotes[Math.floor(Math.random() * uptimeQuotes.length)];
 				await shoNhe.updateProfileStatus(randomUptimeQuote);
 				setbio.status = new Date() * 1;
@@ -816,7 +652,7 @@ END:VCARD`
 		}
 		else
 		{
-			const motivationQuotes = [`💪 Semangat terus, lo hebat!`, `🌟 Jangan mau kalah, terus gas!`, `🔥 Jangan nyerah, sukses udah deket!`, `🚀 Ayo gas pol, capai mimpi lo!`, `⚡ Bangun pagi, yuk semangat!`];
+			const motivationQuotes = [`💪 ¡Sigue con el entusiasmo, eres genial!`, `🌟 ¡No quiero perder, sigue acelerando!`, `🔥 ¡No te rindas, el éxito está cerca!`, `🚀 ¡Vamos gas pol, consigue tus sueños!`, `⚡ ¡Levántate temprano, emocionémonos!`];
 			const randomMotivationQuote = motivationQuotes[Math.floor(Math.random() * motivationQuotes.length)];
 			await shoNhe.updateProfileStatus(randomMotivationQuote);
 		}
@@ -945,13 +781,15 @@ END:VCARD`
 			{
 				global.db.data.chats[m.chat] = {
 					isBanned: false,
-					antispam: false
+					antispam: false,
+					antitoxic: false
 				};
 			}
 			else
 			{
 				if (!('isBanned' in chats)) chats.isBanned = false;
 				if (!('antispam' in chats)) chats.antispam = false;
+				if (!('antitoxic' in chats)) chats.antispam = false;
 				if (!('antilink' in chats)) chats.antilink = false;
     			if (!('antilinkgc' in chats)) chats.antilinkgc = false;
 			}
@@ -1019,6 +857,47 @@ END:VCARD`
 				});
 			}
 		}
+		if (db.data.chats[m.chat].antitoxic) {
+	const toxicRegex = /g0re|g0r3|g.o.r.e|sap0|sap4|malparido|malparida|malparidos|malparidas|m4lp4rid0|m4lp4rido|m4lparido|malp4rido|m4lparid0|malp4rid0|chocha|chup4la|chup4l4|chupalo|chup4lo|chup4l0|chupal0|chupon|chupameesta|sabandija|hijodelagranputa|hijodeputa|hijadeputa|hijadelagranputa|kbron|kbrona|cajetuda|laconchadedios|putita|putito|put1t4|putit4|putit0|put1to|put1ta|pr0stitut4s|pr0stitutas|pr05titutas|pr0stitut45|prostitut45|prostituta5|pr0stitut45|fanax|f4nax|drogas|droga|dr0g4|nepe|p3ne|p3n3|pen3|p.e.n.e|pvt0|pvto|put0|hijodelagransetentamilparesdeputa|Chingadamadre|coño|c0ño|coñ0|c0ñ0|afeminado|drog4|cocaína|marihuana|chocho|chocha|cagon|pedorro|agrandado|agrandada|pedorra|cagona|pinga|joto|sape|mamar|chigadamadre|hijueputa|chupa|caca|bobo|boba|loco|loca|chupapolla|estupido|estupida|estupidos|polla|pollas|idiota|maricon|chucha|verga|vrga|naco|zorra|zorro|zorras|zorros|pito|huevon|huevona|huevones|rctmre|mrd|ctm|csm|cepe|sepe|sepesito|cepecito|cepesito|hldv|ptm|baboso|babosa|babosos|babosas|feo|fea|feos|feas|mamawebos|chupame|bolas|qliao|imbecil|embeciles|kbrones|cabron|capullo|carajo|gore|gorre|gorreo|gordo|gorda|gordos|gordas|sapo|sapa|puto|puta|mierda|cerdo|cerda|puerco|puerca|perra|perro|dumb|fuck|shit|bullshit|cunt|semen|bitch|motherfucker|foker|fucking/i;
+	const isToxic = toxicRegex.exec(budy);
+
+	if (isToxic && !isAdmins && !m.key.fromMe && !isShoNheOwn && isBotAdmins) {
+		let user = global.db.data.users[m.sender] || {};
+		if (!user.warn) user.warn = 0;
+
+		user.warn += 1;
+
+		if (user.warn < 4) {
+			await shoNhe.sendMessage(m.chat, {
+				text: `☣️ *PALABRA PROHIBIDA* ☣️\n\n*@${await shoNhe.getName(m.sender)}* La palabra \`(${isToxic})\` está prohibida.\n⚠️ *Advertencias:* \`${user.warn}/4\`> ${namaBot}`,
+				mentions: [m.sender]
+			});
+			await shoNhe.sendMessage(m.chat, {
+				delete: {
+					remoteJid: m.chat,
+					fromMe: false,
+					id: m.key.id,
+					participant: m.key.participant
+				}
+			});
+		} else {
+			user.warn = 0;
+			await shoNhe.sendMessage(m.chat, {
+				text: `☣️ *ELIMINADO POR TOXICIDAD* ☣️\n\n*@${await shoNhe.getName(m.sender)}* fue eliminado por decir \`(${isToxic})\`> ${namaBot}`,
+				mentions: [m.sender]
+			});
+			await shoNhe.sendMessage(m.chat, {
+				delete: {
+					remoteJid: m.chat,
+					fromMe: false,
+					id: m.key.id,
+					participant: m.key.participant
+				}
+			});
+			await shoNhe.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
+		}
+	}
+}
 		function findRiwayat(idtrx)
 		{
 			// Baca file riwayat.json
@@ -1184,7 +1063,7 @@ END:VCARD`
 		{
 			if (m.isGroup && m.message && isFiltered(m.chat))
 			{
-				console.log(`[SPAM]`, color(moment(m.messageTimestamp * 100).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'dari', color(m.pushName));
+				console.log(`[SPAM]`, color(moment(m.messageTimestamp * 100).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'de', color(m.pushName));
 				return await shoNhe.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
 			}
 		}
@@ -1193,9 +1072,9 @@ END:VCARD`
 			console.log(chalk.black.bgCyan(' [ NOTIF ] '), // Teks singkat dengan simbol kilat
 				chalk.black.bgYellow(` ⏰ ${new Date().toLocaleTimeString()} `), // Simbol jam dan waktu
 				chalk.white.bgMagenta(` 💬 ${budy || m.mtype} `), // Simbol pesan
-				'\n' + chalk.green('👤 Dari: '), chalk.blue(pushname), // Nama pengirim dengan simbol orang
+				'\n' + chalk.green('👤 De: '), chalk.blue(pushname), // Nama pengirim dengan simbol orang
 				chalk.redBright(`📧 ${m.sender}`), // ID pengirim dengan simbol email
-				'\n' + chalk.green('📍 Chat: '), chalk.yellow(m.isGroup ? '👥 Grup' : '🔒 Privat') // Grup dengan simbol grup, privat dengan simbol gembok
+				'\n' + chalk.green('📍 Chat: '), chalk.yellow(m.isGroup ? '👥 Grupo' : '🔒 Privado') // Grup dengan simbol grup, privat dengan simbol gembok
 			);
 		}
 
@@ -1209,18 +1088,18 @@ END:VCARD`
 const {
     key
 } = await shoNhe.sendMessage(m.chat, {
-    text: '⚠️ *INITIALIZING SYSTEM...* PLEASE WAIT...'
+    text: '⚠️ *INICIALIZANDO EL SISTEMA...* POR FAVOR ESPERE...'
 });
 
 for (let i = 0; i < lod.length; i++) {
     await shoNhe.sendMessage(m.chat, {
-        text: `🖥️ *STATUS UPDATE*:\n\n⏳ *LOADING...* ${lod[i]}\n\n*System Processing... Please remain patient. This may take a few moments.*`
+        text: `🖥️ *ACTUALIZACIÓN DE ESTADO*:\n\n⏳ *CARGANDO...* ${lod[i]}\n\n*Procesando el sistema... Por favor, tenga paciencia. Esto puede tardar unos momentos.*`
     });
     await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate loading delay
 }
 
 await shoNhe.sendMessage(m.chat, {
-    text: '✅ *SYSTEM INITIALIZATION COMPLETE.*\n\n*Welcome to the network.*'
+    text: '✅ *INICIALIZACIÓN DEL SISTEMA COMPLETADA.*\n\n*Bienvenido a la red.*'
 });
 			for (let i = 0; i < lod.length; i++)
 			{
@@ -1262,26 +1141,26 @@ await shoNhe.sendMessage(m.chat, {
 		// **Fungsi: Menambahkan thumbnail**
 		const addThumb3 = async (nama3, quoted3, mime3) =>
 		{
-			if (!/image/.test(mime3)) return 'Kirim/Reply Image dengan Caption untuk menambahkan thumbnail.';
+			if (!/image/.test(mime3)) return 'Envía/Responde una imagen con el mensaje para agregar una miniatura.';
 			const fileName3 = `${thumbFolder3}${nama3}.jpg`;
-			if (fs.existsSync(fileName3)) return 'Thumbnail dengan nama tersebut sudah ada.';
+			if (fs.existsSync(fileName3)) return 'Ya existe una miniatura con ese nombre.';
 			const media3 = await quoted3.download(); // Unduh file media dari pesan
 			fs.writeFileSync(fileName3, media3);
-			return `Thumbnail dengan nama "${nama3}" berhasil ditambahkan.`;
+			return `La miniatura con el nombre "${nama3}" se agregó con éxito.`;
 		};
 		// **Fungsi: Menghapus thumbnail**
 		const delThumb3 = (nama3) =>
 		{
 			const fileName3 = `${thumbFolder3}${nama3}.jpg`;
-			if (!fs.existsSync(fileName3)) return 'Thumbnail dengan nama tersebut tidak ditemukan.';
+			if (!fs.existsSync(fileName3)) return 'No se encontró una miniatura con ese nombre.';
 			fs.unlinkSync(fileName3);
-			return `Thumbnail dengan nama "${nama3}" berhasil dihapus.`;
+			return `La miniatura con el nombre "${nama3}" se eliminó con éxito.`;
 		};
 		// **Fungsi: Menampilkan daftar thumbnail**
 		const listThumb3 = () =>
 		{
 			const thumbList3 = readThumbList3();
-			if (thumbList3.length === 0) return 'Tidak ada thumbnail yang tersimpan.';
+			if (thumbList3.length === 0) return 'No hay miniaturas guardadas.';
 			return thumbList3.map(thumb => `Nama: ${thumb.name}`).join('\n');
 		};
 		// **Fungsi: Mengambil thumbnail secara acak**
@@ -1310,7 +1189,7 @@ await shoNhe.sendMessage(m.chat, {
 					buttonId: `${prefix}register`,
 					buttonText:
 					{
-						displayText: "REGISTER"
+						displayText: "REGISTRO"
 					}
 				}],
 				viewOnce: true
@@ -1337,8 +1216,8 @@ await shoNhe.sendMessage(m.chat, {
 				{
 					product:
 					{
-						title: `Hai👋🏻.\nBOT BY\nshoNhe's`,
-						description: `${m.pushName ? m.pushName : 'Temen shoNhe'} order`,
+						title: `Hola👋🏻.\nBOT BY\nTechFix's`,
+						description: `${m.pushName ? m.pushName : 'Amigo de TechFix'} order`,
 						currencyCode: "IDR",
 						priceAmount1000: "1000000000000",
 						retailerId: `shoNheNotStore`,
@@ -1365,8 +1244,8 @@ await shoNhe.sendMessage(m.chat, {
 				{
 					product:
 					{
-						title: `Hai ${m.pushName ? m.pushName : 'Temen shoNhe'} 👋🏻, BUY YA`,
-						description: `${m.pushName ? m.pushName : 'Temen shoNhe'} order`,
+						title: `Hola ${m.pushName ? m.pushName : 'Amigo de TechFix'} 👋🏻, COMPRAR SI`,
+						description: `${m.pushName ? m.pushName : 'Amigo de TechFix'} order`,
 						currencyCode: "IDR",
 						priceAmount1000: "10000000",
 						retailerId: `shoNheID`,
@@ -1505,7 +1384,7 @@ await shoNhe.sendMessage(m.chat, {
 				catch (err)
 				{
 					console.error('❌ Respons bukan JSON:', textResponse);
-					m.reply("Terjadi kesalahan pada API. Silakan coba lagi nanti.");
+					shoNherly("Se produjo un error en la API. Por favor inténtalo de nuevo más tarde..");
 					return;
 				}
 				console.log('📥 Respons diterima dari API:', data);
@@ -1528,13 +1407,13 @@ await shoNhe.sendMessage(m.chat, {
 				else
 				{
 					console.log('❌ Gagal mengambil video. URL tidak valid.');
-					m.reply("Gagal mengambil video. Silakan periksa URL.");
+					shoNherly("No se pudo grabar el video. Por favor revisa la URL.");
 				}
 			}
 			catch (err)
 			{
 				console.error('❌ Terjadi kesalahan:', err.message);
-				m.reply(`Error: ${err.message}`);
+				shoNherly(`Error: ${err.message}`);
 			}
 		}
 		async function downloadMp3(link)
@@ -1561,7 +1440,7 @@ await shoNhe.sendMessage(m.chat, {
 				catch (err)
 				{
 					console.error('❌ Respons bukan JSON:', textResponse);
-					m.reply("Terjadi kesalahan pada API. Silakan coba lagi nanti.");
+					shoNherly("Se produjo un error en la API. Por favor inténtalo de nuevo más tarde.");
 					return;
 				}
 				console.log('📥 Respons diterima dari API:', data);
@@ -1607,25 +1486,25 @@ await shoNhe.sendMessage(m.chat, {
 							}).on('error', (err) =>
 							{
 								console.error('❌ Gagal mengonversi file audio:', err.message);
-								m.reply('Gagal memproses ulang file audio.');
+								shoNherly('No se pudo reprocesar el archivo de audio.');
 							}).save(fixedFilePath);
 					});
 					writer.on('error', (err) =>
 					{
 						console.error('❌ Gagal mengunduh file audio:', err.message);
-						m.reply('Gagal mengunduh file audio.');
+						shoNherly('No se pudo descargar el archivo de audio.');
 					});
 				}
 				else
 				{
 					console.log('❌ Gagal mengambil audio. URL tidak valid.');
-					m.reply("Gagal mengambil audio. Silakan periksa URL.");
+					shoNherly("No se pudo recuperar el audio. Por favor revisa la URL.");
 				}
 			}
 			catch (err)
 			{
 				console.error('❌ Terjadi kesalahan:', err.message);
-				m.reply(`Error: ${err.message}`);
+				shoNherly(`Error: ${err.message}`);
 			}
 		}
 		if (!global.public)
@@ -1633,8 +1512,8 @@ await shoNhe.sendMessage(m.chat, {
 			if (!m.key.fromMe && !isShoNheOwn) return; // Abaikan jika bukan pesan bot atau owner
 		}
 		// Blokir command di chat pribadi saat Group Only aktif
-		if (global.groupOnly && !m.isGroup && !isShoNheOwn) return console.log('⚠️ GROUP ONLY')
-		if (global.privateChatOnly && m.isGroup && !isShoNheOwn) return console.log('⚠️ PRIVATE CHAT ONLY');
+		if (global.groupOnly && !m.isGroup && !isShoNheOwn) return console.log('⚠️ SOLO GRUPO')
+		if (global.privateChatOnly && m.isGroup && !isShoNheOwn) return console.log('⚠️ SOLO CHAT PRIVADO');
 		// func db
 		// Load user database from JSON file
 		function loadUserDatabase()
@@ -1693,68 +1572,14 @@ function levelUpdate(command, sender) {
 
         // Define image URL based on level
         const levelImages = {
-            1: "https://i.ibb.co.com/tXMNptr/01.png",
-            2: "https://i.ibb.co.com/Gxqbrzg/02.png",
-            3: "https://i.ibb.co.com/fVRR1BV/03.png",
-            4: "https://i.ibb.co.com/zPy0DcD/04.png",
-            5: "https://i.ibb.co.com/0V7msHW/05.png",
-            6: "https://i.ibb.co.com/4tNm7BV/06.png",
-            7: "https://i.ibb.co.com/6NrT4wb/07.png",
-            8: "https://i.ibb.co.com/QYbY3Qb/08.png",
-            9: "https://i.ibb.co.com/g7KC6jg/09.png",
-            10: "https://i.ibb.co.com/Bndy2xp/10.png",
-            default: "https://i.ibb.co.com/CQcbcQP/default.png"
+default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURIComponent(ppuser)}`
         };
 
         const levelImage = levelImages[user.level] || levelImages.default;
 
         levelUpMessage = {
             text: 
-`┌────────────────────────────────────┐  
-│                         ██░░ SYSTEM UPDATE ░░██                    │  
-└────────────────────────────────────┘
-
-🔓 [ACCESS GRANTED]  
->> User leveling system initiated...  
->> Loading user profile...  
->> Scanning database integrity... ✅  
-
-────────────────────────────────────────
-🛡️ *LEVEL-UP NOTIFICATION*  
-────────────────────────────────────────
-🎉 *CONGRATULATIONS, AGENT!*  
-📈 You've climbed the ranks to:  
-   LEVEL: *${user.level - 1} ➡️ ${user.level}*  
-
-────────────────────────────────────────
-📊 *USER DATABASE REPORT*  
-────────────────────────────────────────
-📂 *Name*        : *${m.pushName || 'Unknown'}*  
-📂 *Number*      : *${sender.split('@')[0]}*  
-📂 *Current Level*: *${user.level}*  
-📂 *Experience*  : *${user.exp}/${user.expTarget}*  
-📂 *Commands Used*: *${user.commandCount}*  
-📂 *Balance*     : *Rp${user.balance}*  
-📂 *Role*        : *${user.role || 'Regular User'}*  
-
-────────────────────────────────────────
-⚡ *MISSION UPDATE*  
-────────────────────────────────────────
-"Welcome to a new level, Agent. The grid awaits.  
-Keep your skills sharp and never stop evolving."  
-
-────────────────────────────────────────
-💻 *HYPERLINK SYSTEM STATUS*  
-────────────────────────────────────────
-[🟢] TRACE ATTEMPTS: BLOCKED  
-[🟢] FIREWALL INTEGRITY: 100%  
-[🟢] DATA ENCRYPTION: ACTIVE  
-────────────────────────────────────────
-
->> System will auto-logoff in 10 seconds...  
->> LOGOFF CANCELED by user request.  
-
-🔻 *END TRANSMISSION* 🔻`,
+`🎉 ¡Felicidades! ${m.pushName || 'Unknown'} ha subido de nivel.\n⬅️ Nivel anterior: ${user.level - 1}\n➡️ Nuevo nivel: ${user.level}\n🌟 Rol actual: ${user.role || 'Regular User'}\n📅 Fecha: ${new Date().toLocaleString('id-ID')}\n✨ ¡Sigue así! `,
             image: levelImage
         };
     }
@@ -1779,7 +1604,7 @@ Keep your skills sharp and never stop evolving."
 			// Tambah saldo pengguna
 			db[sender].balance += amount;
 			saveUserFire(db);
-			return `✅ Saldo sebesar Rp${amount} telah ditambahkan ke ${sender.split('@')[0]}.\n💰 Saldo sekarang: Rp${db[sender].balance}`;
+			return `✅ Saldo de Rp${amount} ha sido añadido a ${sender.split('@')[0]}.\n💰 Saldo actual: Rp${db[sender].balance}`;
 		}
 		// Fungsi untuk mendaftarkan user
 		function registerUser(sender, role = 'user')
@@ -1793,17 +1618,17 @@ Keep your skills sharp and never stop evolving."
 					limit: role === 'owner' ? -1 : role === 'vip' ? 1000 : 100
 				};
 				saveUserFire(db);
-				return `🎉 Anda berhasil terdaftar sebagai ${role} dengan limit ${db[sender].limit}!`;
+				return `🎉 Te has registrado exitosamente como ${role} con limites ${db[sender].limit}!`;
 			}
 			else if (!db[sender].register)
 			{
 				db[sender].register = true;
 				saveUserFire(db);
-				return `✅ Registrasi berhasil diaktifkan.`;
+				return `✅ El registro se ha activado con éxito.`;
 			}
 			else
 			{
-				return `⚠️ Anda sudah terdaftar sebelumnya.`;
+				return `⚠️ Ya te has registrado antes.`;
 			}
 		}
 		// Fungsi untuk mengecek status user
@@ -1812,9 +1637,9 @@ Keep your skills sharp and never stop evolving."
 			const db = loadUserFire();
 			if (!db[sender])
 			{
-				return `⚠️ Anda belum terdaftar. Silakan daftar terlebih dahulu.`;
+				return `⚠️ Aún no estás registrado. Por favor regístrese primero.`;
 			}
-			return `ℹ️ Status Anda:\n- Role: ${db[sender].role}\n- Limit: ${db[sender].limit}\n- Register: ${db[sender].register}`;
+			return `ℹ️ Tu estado:\n- Rol: ${db[sender].role}\n- Límites: ${db[sender].limit}\n- Registro: ${db[sender].register}`;
 		}
 		// Baca database user fire
 		function loadUserFire()
@@ -1850,7 +1675,7 @@ Keep your skills sharp and never stop evolving."
 				const remainingTime = cooldown - (now - lastClaim);
 				const hours = Math.floor(remainingTime / (60 * 60 * 1000));
 				const minutes = Math.floor((remainingTime % (60 * 60 * 1000)) / (60 * 1000));
-				reply(`⏳ Anda sudah klaim. Coba lagi dalam ${hours} jam ${minutes} menit.`);
+				reply(`⏳ Ya has reclamado. Inténtalo de nuevo dentro ${hours} Hora ${minutes} minuto.`);
 				return;
 			}
 			// Tambahkan limit berdasarkan role
@@ -1858,7 +1683,7 @@ Keep your skills sharp and never stop evolving."
 			db[sender].limit += reward;
 			db[sender].lastClaim = now;
 			saveUserFire(db);
-			reply(`🎉 Anda berhasil klaim limit harian!\n🔥 Anda mendapatkan: ${reward}\n🔥 Total limit Anda: ${db[sender].limit}`);
+			reply(`🎉 ¡Has reclamado con éxito tu límite diario!\n🔥 obtienes: ${reward}\n🔥 Tu límite total: ${db[sender].limit}`);
 		}
 
 		function getFireThumbnail(limit)
@@ -1942,11 +1767,11 @@ Keep your skills sharp and never stop evolving."
 			}
 			// Dapatkan limit user berdasarkan role
 			const userLimit = db[sender].limit;
-			const reduction = db[sender].role === 'owner' ? 0 : 5; // Owner tidak ada pengurangan limit
+			const reduction = db[sender].role === 'owner' ? 0 : 10; // Owner tidak ada pengurangan limit
 			// Cek limit sebelum melanjutkan
 			if (userLimit <= 0 && db[sender].role !== 'owner')
 			{
-				reply('🔥 Limit Anda sudah habis. Silakan klaim limit atau tingkatkan role Anda.');
+				reply('🔥 Tu límite se ha agotado. Por favor reclama el límite o aumenta tu rol.');
 				return false;
 			}
 			// Kurangi limit jika bukan owner
@@ -1959,16 +1784,16 @@ Keep your skills sharp and never stop evolving."
 			const thumbnail = getFireThumbnail(userLimit); // Mendapatkan thumbnail sesuai limit
 			shoNhe.sendMessage(m.chat,
 			{
-				text: teks + `\n🔥 Limit tersisa: ${db[sender].limit}`,
+				text: teks + `\n🔥 Límite restante: ${db[sender].limit}`,
 				contextInfo:
 				{
 					externalAdReply:
 					{
-						title: `🔥 Fire Limit`,
-						body: `🔥 Anda mengurangi ${reduction} limit.`,
+						title: `🔥 Límite de fuego`,
+						body: `🔥 te restan ${reduction} límite.`,
 						previewType: "PHOTO",
 						thumbnail: thumbnail,
-						sourceUrl: 'https://wa.me/6288989971490'
+						sourceUrl: 'https://wa.me/573012686632'
 					}
 				}
 			},
@@ -1985,13 +1810,13 @@ Keep your skills sharp and never stop evolving."
 			const thumbnailUrl = getFireThumbnail(userLimit);
 			shoNhe.sendMessage(m.chat,
 			{
-				text: teks + `\n🔥 Anda tidak memiliki limit tersisa.`,
+				text: teks + `\n🔥 No te queda límite.`,
 				contextInfo:
 				{
 					externalAdReply:
 					{
-						title: `🔥 Fire Limit`,
-						body: `🔥 Your Fire Limits: ${userLimit}`,
+						title: `🔥 Límite de fuego`,
+						body: `🔥 Tus límites de fuego: ${userLimit}`,
 						previewType: "PHOTO",
 						thumbnail: thumbnailUrl,
 						sourceUrl: `https://whatsapp.com/channel/0029Vb0v3F71yT264EejzJ3e`
@@ -2039,27 +1864,27 @@ Keep your skills sharp and never stop evolving."
 		// **Fungsi: Menambahkan thumbnail**
 		const addThumb2 = async (nama2, quoted2, mime2) =>
 		{
-			if (!/image/.test(mime2)) return 'Kirim/Reply Image dengan Caption untuk menambahkan thumbnail.';
+			if (!/image/.test(mime2)) return 'Envía/Responde una imagen con el mensaje para agregar una miniatura.';
 			const fileName2 = `${thumbFolder2}${nama2}.jpg`;
-			if (fs.existsSync(fileName2)) return 'Thumbnail dengan nama tersebut sudah ada.';
+			if (fs.existsSync(fileName2)) return 'Ya existe una miniatura con ese nombre.';
 			const media2 = await quoted2.download(); // Unduh file media dari pesan
 			fs.writeFileSync(fileName2, media2);
-			return `Thumbnail dengan nama "${nama2}" berhasil ditambahkan.`;
+			return `La miniatura con el nombre "${nama2}" se agregó con éxito.`;
 		};
 		// **Fungsi: Menghapus thumbnail**
 		const delThumb2 = (nama2) =>
 		{
 			const fileName2 = `${thumbFolder2}${nama2}.jpg`;
-			if (!fs.existsSync(fileName2)) return 'Thumbnail dengan nama tersebut tidak ditemukan.';
+			if (!fs.existsSync(fileName2)) return 'No se encontró una miniatura con ese nombre.';
 			fs.unlinkSync(fileName2);
-			return `Thumbnail dengan nama "${nama2}" berhasil dihapus.`;
+			return `La miniatura con el nombre "${nama2}" se eliminó con éxito.`;
 		};
 		// **Fungsi: Menampilkan daftar thumbnail**
 		const listThumb2 = () =>
 		{
 			const thumbList2 = readThumbList2();
-			if (thumbList2.length === 0) return 'Tidak ada thumbnail yang tersimpan.';
-			return thumbList2.map(thumb => `Nama: ${thumb.name}`).join('\n');
+			if (thumbList2.length === 0) return 'No hay miniaturas guardadas.';
+			return thumbList2.map(thumb => `Nombre: ${thumb.name}`).join('\n');
 		};
 		// **Fungsi: Mengambil thumbnail secara acak**
 		const getRandomThumb2 = () =>
@@ -2088,7 +1913,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				liveLocationMessage:
 				{
-					caption: `© DaTngxz"S`,
+					caption: `© Manu"S`,
 					jpegThumbnail: ""
 				}
 			},
@@ -2135,7 +1960,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				liveLocationMessage:
 				{
-					caption: `Always Use Termux⚡`,
+					caption: `Utilice siempre Termux⚡`,
 					jpegThumbnail: ""
 				}
 			},
@@ -2176,7 +2001,7 @@ Keep your skills sharp and never stop evolving."
 			// Cek apakah nama sudah ada
 			if (thumbList.find(thumb => thumb.name === nama))
 			{
-				return 'Thumbnail dengan nama tersebut sudah ada.';
+				return 'Ya existe una miniatura con ese nombre.';
 			}
 			// Menambahkan thumbnail ke dalam daftar
 			thumbList.push(
@@ -2185,7 +2010,7 @@ Keep your skills sharp and never stop evolving."
 				url: url
 			});
 			writeThumbList(thumbList);
-			return `Thumbnail dengan nama ${nama} berhasil ditambahkan.`;
+			return `La miniatura con el nombre ${nama} se agregó con éxito.`;
 		};
 		// Fungsi untuk menghapus thumbnail berdasarkan nama
 		const delthumb = (nama) =>
@@ -2194,11 +2019,11 @@ Keep your skills sharp and never stop evolving."
 			const index = thumbList.findIndex(thumb => thumb.name === nama);
 			if (index === -1)
 			{
-				return 'Thumbnail dengan nama tersebut tidak ditemukan.';
+				return 'No se encontró una miniatura con ese nombre.';
 			}
 			thumbList.splice(index, 1);
 			writeThumbList(thumbList);
-			return `Thumbnail dengan nama ${nama} berhasil dihapus.`;
+			return `La miniatura con el nombre ${nama} se eliminó con éxito.`;
 		};
 		// Fungsi untuk menampilkan daftar thumbnail
 		const listthumb = () =>
@@ -2206,9 +2031,9 @@ Keep your skills sharp and never stop evolving."
 			const thumbList = readThumbList();
 			if (thumbList.length === 0)
 			{
-				return 'Tidak ada thumbnail yang tersimpan.';
+				return 'No hay miniaturas guardadas.';
 			}
-			return thumbList.map(thumb => `Nama: ${thumb.name}, URL: ${thumb.url}`).join('\n');
+			return thumbList.map(thumb => `Nombre: ${thumb.name}, URL: ${thumb.url}`).join('\n');
 		};
 		// Fungsi untuk memilih thumbnail secara random dari daftar
 		const getRandomThumb = () =>
@@ -2226,8 +2051,8 @@ Keep your skills sharp and never stop evolving."
 					mentionedJid: [m.sender],
 					"externalAdReply":
 					{
-						"title": `shoNhe BY DATNGXZ'S`,
-						"body": `© DaTngxz'S`,
+						"title": `TechFix BY MANUDIA'Z`,
+						"body": `© TechFix'S`,
 						"previewType": "PHOTO",
 						"thumbnail": getRandomThumb2(),
 						"sourceUrl": gh
@@ -2445,7 +2270,7 @@ Keep your skills sharp and never stop evolving."
 				'contactMessage':
 				{
 					'displayName': namaowner,
-					'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${namaowner},;;;\nFN:${namaowner}\nitem1.TEL;waid=916909137213:916909137213\nitem1.X-ABLabel:Mobile\nEND:VCARD`,
+					'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${namaowner},;;;\nFN:${namaowner}\nitem1.TEL;waid=573012686632:573012686632\nitem1.X-ABLabel:Mobile\nEND:VCARD`,
 					'jpegThumbnail': getRandomThumb2(),
 					thumbnail: getRandomThumb2(),
 					sendEphemeral: true
@@ -2573,11 +2398,7 @@ Keep your skills sharp and never stop evolving."
 							mentionedJid: [m.sender], // Menyebutkan pengirim
 							forwardingScore: 999999,
 							isForwarded: true,
-							forwardedNewsletterMessageInfo:
-							{
-								newsletterName: namach, // Nama saluran
-								newsletterJid: idsaluran, // Jid saluran
-							},
+
 							externalAdReply:
 							{
 								showAdAttribution: true,
@@ -2601,7 +2422,7 @@ Keep your skills sharp and never stop evolving."
 		{
 			if (typereply === 's1')
 			{
-				m.reply(teks);
+				shoNherly(teks);
 			}
 			else if (typereply === 's2')
 			{
@@ -2662,8 +2483,8 @@ Keep your skills sharp and never stop evolving."
 						mentionedJid: [m.sender],
 						"externalAdReply":
 						{
-							"title": `BOT BY DaTngxz'S`,
-							"body": `© DaTngxz'S`,
+							"title": `BOT BY TechFix'S`,
+							"body": `© ManuDia'z`,
 							"previewType": "PHOTO",
 							"thumbnail": getRandomThumb2(),
 							"sourceUrl": gh
@@ -2682,11 +2503,7 @@ Keep your skills sharp and never stop evolving."
 				{
 					forwardingScore: 1,
 					isForwarded: true,
-					forwardedNewsletterMessageInfo:
-					{
-						newsletterName: namabot,
-						newsletterJid: idsaluran,
-					},
+					
 					externalAdReply:
 					{
 						showAdAttribution: true,
@@ -2758,38 +2575,38 @@ Keep your skills sharp and never stop evolving."
 			// +minutes+":"+sec;
 		}
 		// Sayying time
-		const timee = moment().tz('Asia/Jakarta').format('HH:mm:ss')
+		const timee = moment().tz('America/Bogota').format('HH:mm:ss')
 		if (timee < "23:59:00")
 		{
-			var waktuucapan = 'Selamat Malam 🌃'
+			var waktuucapan = 'Buenas noches 🌃'
 		}
 		if (timee < "19:00:00")
 		{
-			var waktuucapan = 'Selamat Petang 🌆'
+			var waktuucapan = 'Buenas tardes 🌆'
 		}
 		if (timee < "18:00:00")
 		{
-			var waktuucapan = 'Selamat Sore 🌅'
+			var waktuucapan = 'Tarde 🌅'
 		}
 		if (timee < "15:00:00")
 		{
-			var waktuucapan = 'Selamat Siang 🏙'
+			var waktuucapan = 'Buenas tardes 🏙'
 		}
 		if (timee < "10:00:00")
 		{
-			var waktuucapan = 'Selamat Pagi 🌄'
+			var waktuucapan = 'Buenos días 🌄'
 		}
 		if (timee < "05:00:00")
 		{
-			var waktuucapan = 'Selamat Subuh 🌉'
+			var waktuucapan = 'Madrugada 🌉'
 		}
 		if (timee < "03:00:00")
 		{
-			var waktuucapan = 'Tengah Malam 🌌'
+			var waktuucapan = 'Media noche 🌌'
 		}
 		const JwbTrue = (tebak, exp, tambahan) =>
 		{
-			let teks = `*🎮 ${tebak} 🎮*\n\nKiw Kiww Bener 🎉\n+expFire ${exp}` + tambahan
+			let teks = `*🎮 ${tebak} 🎮*\n\n¡Genial, acertaste! 🎉\n+expFire ${exp}` + tambahan
 			const context = {
 				text: teks,
 				contextInfo:
@@ -2797,14 +2614,10 @@ Keep your skills sharp and never stop evolving."
 					mentionedJid: [m.sender],
 					forwardingScore: 999999,
 					isForwarded: true,
-					forwardedNewsletterMessageInfo:
-					{
-						newsletterName: namach,
-						newsletterJid: idsaluran,
-					},
+					
 					externalAdReply:
 					{
-						title: `Jawaban Benar 🥳`,
+						title: `Respuesta Correcta 🥳`,
 						body: tebak,
 						previewType: "PHOTO",
 						thumbnail: fs.readFileSync("./ShoNheMedia/image/corr.png"),
@@ -2819,7 +2632,7 @@ Keep your skills sharp and never stop evolving."
 		}
 		const waktuHabis = (jawaban) =>
 		{
-			let teks = `Kroco, Waktu Abis🥳\n\n*Jawaban:*\n${jawaban}`
+			let teks = `Novato, Tiempo Agotado 🥳\n\n*Respuesta:*\n${jawaban}`
 			const context = {
 				text: teks,
 				contextInfo:
@@ -2827,17 +2640,13 @@ Keep your skills sharp and never stop evolving."
 					mentionedJid: [m.sender],
 					forwardingScore: 999999,
 					isForwarded: true,
-					forwardedNewsletterMessageInfo:
-					{
-						newsletterName: namach,
-						newsletterJid: idsaluran,
-					},
+					
 					externalAdReply:
 					{
-						title: `Waktu Habis ⏰`,
-						body: "Dasar Kroco",
+						title: `Tiempo Agotado ⏰`,
+						body: "Básico Novato",
 						previewType: "PHOTO",
-						thumbnailUrl: `https://telegra.ph/file/030ebfc99f9cb5be7e8cb.png`,
+						thumbnailUrl: `https://i.ibb.co/qYJ6qnPY/030ebfc99f9cb5be7e8cb.png`,
 						sourceUrl: wagc
 					}
 				}
@@ -2856,11 +2665,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakgame[m.chat][2]
-					JwbTrue("Tebak Game", tebakgame[m.chat][2], `\n\nKirim perintah .tebakgame\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina el Juego", tebakgame[m.chat][2], `\n\nEnvía el comando .tebakgame\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakgame[m.chat][3])
 					delete tebakgame[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -2873,11 +2682,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakhero[m.chat][2]
-					JwbTrue("Tebak Hero", tebakhero[m.chat][2], `\n\nKirim perintah .tebakhero\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina el Héroe", tebakhero[m.chat][2], `\n\nEnvía el comando .tebakhero\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakhero[m.chat][3])
 					delete tebakhero[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -2890,11 +2699,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakff[m.chat][2]
-					JwbTrue("Tebak Free Fire", tebakff[m.chat][2], `\n\nKirim perintah .tebakff\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina Free Fire", tebakff[m.chat][2], `\n\nEnvía el comando .tebakff\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakff[m.chat][3])
 					delete tebakff[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -2907,11 +2716,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakkabupaten[m.chat][2]
-					JwbTrue("Tebak Kabupaten", tebakkabupaten[m.chat][2], `\n\nKirim perintah .tebakkabupaten\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina el Distrito", tebakkabupaten[m.chat][2], `\n\nEnvía el comando .tebakkabupaten\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakkabupaten[m.chat][3])
 					delete tebakkabupaten[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -2924,11 +2733,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakjkt48[m.chat][2]
-					JwbTrue("Tebak JKT48", tebakjkt48[m.chat][2], `\n\nKirim perintah .tebakjkt48\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina JKT48", tebakjkt48[m.chat][2], `\n\nEnvía el comando .tebakjkt48\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakjkt48[m.chat][3])
 					delete tebakjkt48[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -2941,11 +2750,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakhewan[m.chat][2]
-					JwbTrue("Tebak Hewan", tebakhewan[m.chat][2], `\n\nKirim perintah .tebakhewan\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina el Animal", tebakhewan[m.chat][2], `\n\nEnvía el comando .tebakhewan\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakhewan[m.chat][3])
 					delete tebakhewan[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -2958,11 +2767,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakml[m.chat][2]
-					JwbTrue("Tebak Sound ML", tebakml[m.chat][2], `\n\nKirim perintah .tebakml\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina el Sonido ML", tebakml[m.chat][2], `\n\nEnvía el comando .tebakml\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakml[m.chat][3])
 					delete tebakml[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -2975,11 +2784,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakchara[m.chat][2]
-					JwbTrue("Tebak Anime", tebakchara[m.chat][2], `\n\nKirim perintah .tebakchara\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina el Anime", tebakchara[m.chat][2], `\n\nEnvía el comando .tebakchara\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakchara[m.chat][3])
 					delete tebakchara[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -2992,11 +2801,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebaklogo[m.chat][2]
-					JwbTrue("Tebak Logo", tebaklogo[m.chat][2], `\n\nKirim perintah .tebaklogo\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina el Logo", tebaklogo[m.chat][2], `\n\nEnvía el comando .tebaklogo\npara jugar de nuevo 🎮`)
 					clearTimeout(tebaklogo[m.chat][3])
 					delete tebaklogo[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3009,11 +2818,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakaplikasi[m.chat][2]
-					JwbTrue("Tebak Aplikasi", tebakaplikasi[m.chat][2], `\n\nKirim perintah .tebakaplikasi\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina la Aplicación", tebakaplikasi[m.chat][2], `\n\nEnvía el comando .tebakaplikasi\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakaplikasi[m.chat][3])
 					delete tebakaplikasi[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3026,11 +2835,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakgambar[m.chat][2]
-					JwbTrue("Tebak Gambar", tebakgambar[m.chat][2], `\n\nKirim perintah .tebakgambar\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina la Imagen", tebakgambar[m.chat][2], `\n\nEnvía el comando .tebakgambar\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakgambar[m.chat][3])
 					delete tebakgambar[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3043,11 +2852,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakkata[m.chat][2]
-					JwbTrue("Tebak Kata", tebakkata[m.chat][2], `\n\nKirim perintah .tebakkata\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina la Palabra", tebakkata[m.chat][2], `\n\nEnvía el comando .tebakkata\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakkata[m.chat][3])
 					delete tebakkata[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3060,11 +2869,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += asahotak[m.chat][2]
-					JwbTrue("Asah Otak", asahotak[m.chat][2], `\n\nKirim perintah .asahotak\nuntuk bermain lagi 🎮`)
+					JwbTrue("Desafía tu Mente", asahotak[m.chat][2], `\n\nEnvía el comando .asahotak\npara jugar de nuevo 🎮`)
 					clearTimeout(asahotak[m.chat][3])
 					delete asahotak[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3077,11 +2886,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += lengkapikalimat[m.chat][2]
-					JwbTrue("Lengkapi Kalimat", lengkapikalimat[m.chat][2], `\n\nKirim perintah .lengkapikalimat\nuntuk bermain lagi 🎮`)
+					JwbTrue("Completa la Oración", lengkapikalimat[m.chat][2], `\n\nEnvía el comando .lengkapikalimat\npara jugar de nuevo 🎮`)
 					clearTimeout(lengkapikalimat[m.chat][3])
 					delete lengkapikalimat[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3094,11 +2903,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakbendera[m.chat][2]
-					JwbTrue("Tebak Bendera", tebakbendera[m.chat][2], `\n\nKirim perintah .tebakbendera\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina la Bandera", tebakbendera[m.chat][2], `\n\nEnvía el comando .tebakbendera\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakbendera[m.chat][3])
 					delete tebakbendera[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3111,11 +2920,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += caklontong[m.chat][2]
-					JwbTrue("Cak Lontong", caklontong[m.chat][2], `\n\nKirim perintah .caklontong\nuntuk bermain lagi 🎮`)
+					JwbTrue("El Reto del Humor", caklontong[m.chat][2], `\n\nEnvía el comando .caklontong\npara jugar de nuevo 🎮`)
 					clearTimeout(caklontong[m.chat][3])
 					delete caklontong[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3128,11 +2937,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += susunkata[m.chat][2]
-					JwbTrue("Susun Kata", susunkata[m.chat][2], `\n\nKirim perintah .susunkata\nuntuk bermain lagi 🎮`)
+					JwbTrue("Ordena las Palabras", susunkata[m.chat][2], `\n\nEnvía el comando .susunkata\npara jugar de nuevo 🎮`)
 					clearTimeout(susunkata[m.chat][3])
 					delete susunkata[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3145,11 +2954,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakkalimat[m.chat][2]
-					JwbTrue("Tebak Kalimat", tebakkalimat[m.chat][2], `\n\nKirim perintah .tebakkalimat\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina la Oración", tebakkalimat[m.chat][2], `\n\nEnvía el comando .tebakkalimat\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakkalimat[m.chat][3])
 					delete tebakkalimat[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3162,11 +2971,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += siapaaku[m.chat][2]
-					JwbTrue("Tebak Siapa", siapaaku[m.chat][2], `\n\nKirim perintah .tebaksiapa\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina Quién", siapaaku[m.chat][2], `\n\nEnvía el comando .siapaaku\npara jugar de nuevo 🎮`)
 					clearTimeout(siapaaku[m.chat][3])
 					delete siapaaku[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3179,11 +2988,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tekateki[m.chat][2]
-					JwbTrue("Teka Teki", tekateki[m.chat][2], `\n\nKirim perintah .tekateki\nuntuk bermain lagi 🎮`)
+					JwbTrue("Rompecabezas", tekateki[m.chat][2], `\n\nEnvía el comando .tekateki\npara jugar de nuevo 🎮`)
 					clearTimeout(tekateki[m.chat][3])
 					delete tekateki[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3196,11 +3005,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebakkimia[m.chat][2]
-					JwbTrue("Teka Kimia", tebakkimia[m.chat][2], `\n\nKirim perintah .tebakkimia\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina la Química", tebakkimia[m.chat][2], `\n\nEnvía el comando .tebakkimia\npara jugar de nuevo 🎮`)
 					clearTimeout(tebakkimia[m.chat][3])
 					delete tebakkimia[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3213,11 +3022,11 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebaklirik[m.chat][2]
-					JwbTrue("Teka Lirik", tebaklirik[m.chat][2], `\n\nKirim perintah .tebaklirik\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina la Letra", tebaklirik[m.chat][2], `\n\nEnvía el comando .tebaklirik\npara jugar de nuevo 🎮`)
 					clearTimeout(tebaklirik[m.chat][3])
 					delete tebaklirik[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
@@ -3230,21 +3039,388 @@ Keep your skills sharp and never stop evolving."
 				if (budy.toLowerCase() == jawaban)
 				{
 					db.data.users[m.sender].uang += tebaktebakan[m.chat][2]
-					JwbTrue("Teka Tebakan", tebaktebakan[m.chat][2], `\n\nKirim perintah .tebaktebakan\nuntuk bermain lagi 🎮`)
+					JwbTrue("Adivina el Acertijo", tebaktebakan[m.chat][2], `\n\nEnvía el comando .tebaktebakan\npara jugar de nuevo 🎮`)
 					clearTimeout(tebaktebakan[m.chat][3])
 					delete tebaktebakan[m.chat]
 				}
-				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Ya, Dikit Lagi!_`)
+				else if (similarity(budy.toLowerCase(), jawaban) >= threshold) shoNherly(`_Sí, ¡Un Poco Más!_`)
 				else emote('❌');
 			}
 		}
+	if (m.sender in boom && !isCmd && /^[1-9]$|^10$/.test(body.trim())) { 
+    let selectedIndex = parseInt(body.trim()) - 1;
+    if (selectedIndex < 0 || selectedIndex > 9) return;
+
+    if (boom[m.sender].petak[selectedIndex] === 2) { 
+        boom[m.sender].board[selectedIndex] = '💣'; 
+        boom[m.sender].nyawa.pop(); 
+        boom[m.sender].bomb--; 
+
+        if (boom[m.sender].nyawa.length < 1) { 
+            shoNhe.sendMessage(m.chat, { 
+                text: `💥 *¡Boom! Perdiste!*\n${boom[m.sender].board.join('')}\n\n⚠️ ¡Inténtalo de nuevo!` 
+            }, { quoted: m });
+
+            clearTimeout(boom[m.sender].waktu);
+            delete boom[m.sender]; // Eliminar la partida
+        } else { 
+            shoNhe.sendMessage(m.chat, { 
+                text: `💥 *Bomba encontrada!*\n${boom[m.sender].board.join('')}\n\n❤️ Vidas restantes: ${boom[m.sender].nyawa.length}` 
+            }, { quoted: m });
+        }
+    } else if (boom[m.sender].petak[selectedIndex] === 0) { 
+        boom[m.sender].board[selectedIndex] = '🌀'; 
+        boom[m.sender].lolos--; 
+        boom[m.sender].pick++; 
+
+        if (boom[m.sender].lolos < 1) { 
+    let limiteGanado = 30; // Gana entre 7 y 15 de límite
+
+    // Cargar la base de datos
+    const db = loadUserFire();
+    const role = db[m.sender]?.role || 'user'; // Verificar el rol del usuario
+
+    if (role !== 'owner') { // Solo si NO es owner
+        if (!db[m.sender]) {
+            db[m.sender] = { limit: limiteGanado, role: 'user' };
+        } else {
+            db[m.sender].limit += limiteGanado;
+        }
+        saveUserFire(db);
+
+        shoNherly(`🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join('')}\n\n🏆 *Ganaste ${limiteGanado} límite*`, {
+            mentions: [m.sender]
+        });
+    } else {
+        shoNherly("🎉 *¡Ganaste!* 🎉\n\n🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
+    }
+clearTimeout(boom[m.sender].waktu);
+    delete boom[m.sender];
+        } else { 
+            shoNhe.sendMessage(m.chat, { 
+                text: `✔️ *Casilla segura!*\n${boom[m.sender].board.join('')}\n\n❤️ Vidas: ${boom[m.sender].nyawa.length}` 
+            }, { quoted: m }); 
+        } 
+    }
+}
+if (m.sender in ahorcado && m.text.length === 1 && /^[a-zA-Z]$/.test(m.text)) {
+    let juego = ahorcado[m.sender];
+    let letra = m.text.toLowerCase();
+
+    if (!juego.letrasAdivinadas.includes(letra)) {
+        juego.letrasAdivinadas.push(letra);
+        if (!juego.palabra.includes(letra)) juego.intentos--;
+    }
+
+    let mensaje = ocultarPalabra(juego.palabra, juego.letrasAdivinadas);
+    let respuesta = juegoTerminado(m.sender, mensaje, juego.palabra, juego.letrasAdivinadas, juego.intentos);
+
+    if (juego.intentos === 0 || !mensaje.includes("_")) {
+        shoNherly(respuesta);
+        delete ahorcado[m.sender];
+    } else {
+        let letrasErradas = juego.letrasAdivinadas.filter(l => !juego.palabra.includes(l)).join(", ");
+        shoNherly(`${respuesta}\n\n❌ *Letras incorrectas usadas:* ${letrasErradas || "Ninguna"}`);
+    }
+}
+const palabras = [
+  "gato", "perro", "elefante", "tigre", "ballena", "mariposa", "tortuga", 
+  "conejo", "rana", "pulpo", "ardilla", "jirafa", "cocodrilo", "pinguino", 
+  "delfin", "serpiente", "hamster", "mosquito", "abeja", "negro", "television", 
+  "computadora", "botsito", "reggaeton", "economia", "electronica", "facebook", 
+  "WhatsApp", "instagram", "tiktok", "presidente", "bot", "películas", "gata", "gatabot"
+];
+function elegirPalabraAleatoria() {
+    return palabras[Math.floor(Math.random() * palabras.length)];
+}
+
+function ocultarPalabra(palabra, letrasAdivinadas) {
+    return palabra.split('').map(letra => letrasAdivinadas.includes(letra) ? letra : '_').join(' ');
+}
+
+function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
+    if (intentos === 0) {
+        delete ahorcado[sender];
+        return `😵 *¡PERDISTE!*\n\nLa palabra era: *"${palabra}"*`;
+    }
+
+    if (!mensaje.includes("_")) {
+    let recompensa = 30; // Límite aleatorio entre 7 y 15
+
+    // Cargar la base de datos
+    const db = loadUserFire();
+    const role = db[m.sender]?.role || 'user'; // Verificar el rol del usuario
+
+    if (role !== 'owner') { // Solo si NO es owner
+        if (!db[m.sender]) {
+            db[m.sender] = { limit: recompensa, role: 'user' };
+        } else {
+            db[m.sender].limit += recompensa;
+        }
+        saveUserFire(db);
+
+        shoNherly(`🎉 *¡GANASTE!*\n\nPalabra correcta: *"${palabra}"*\n🏆 *Has ganado ${recompensa} límite*`, {
+            mentions: [m.sender]
+        });
+    } else {
+        shoNherly("🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
+    }
+
+    delete ahorcado[m.sender];
+    return `🎉 *¡GANASTE!*\n\nPalabra correcta: *"${palabra}"*`;
+    }       
+    return `🎮 *AHORCADO*\n\n✍️ *Progreso:* ${mensaje}\n📉 Intentos restantes: *${intentos}*\n\n¡Escribe otra letra para continuar!`;
+}
+function pickRandom(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+let winScore = 20
+let playScore = -10
+let game = getGame()
+let room13 = Object.values(game).find(room13 => room13.id && room13.game && room13.state && room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender) && room13.state == 'PLAYING')
+
+if (room13) {
+    let ok
+    let isWin = false
+    let isTie = false
+    let isSurrender = false
+
+    if (!/^([1-9]|(me)?give up|surr?ender|soymanco|skip)$/i.test(m.text)) return
+    isSurrender = !/^[1-9]$/.test(m.text)
+
+    if (m.sender !== room13.game.currentTurn) {
+        if (!isSurrender) return true
+    }
+
+    if (!isSurrender && 1 > (ok = room13.game.turn(m.sender === room13.game.playerO, parseInt(m.text) - 1))) {
+        shoNherly({
+            '-3': 'El juego ha terminado',
+            '-2': 'Inválido',
+            '-1': 'Posición inválida',
+            0: 'Posición inválida',
+        }[ok])
+        return true
+    }
+
+    if (m.sender === room13.game.winner) isWin = true
+    else if (room13.game.board === 511) isTie = true
+
+    let arr = room13.game.render().map(v => {
+        return {
+            X: '❎',
+            O: '❌',
+            1: '1️⃣',
+            2: '2️⃣',
+            3: '3️⃣',
+            4: '4️⃣',
+            5: '5️⃣',
+            6: '6️⃣',
+            7: '7️⃣',
+            8: '8️⃣',
+            9: '9️⃣',
+        }[v]
+    })
+
+    if (isSurrender) {
+        room13.game._currentTurn = m.sender === room13.game.playerX
+        isWin = true
+    }
+
+    let winner = isSurrender ? room13.game.currentTurn : room13.game.winner
+    let str = `*\`🎮 ＴＲＥＳ ＥＮ ＲＡＹＡ 🎮\`*
+
+${arr.slice(0, 3).join('')}
+${arr.slice(3, 6).join('')} 
+${arr.slice(6).join('')}
+
+❎ = ${shoNhe.getName(room13.game.playerX)}
+❌ = ${shoNhe.getName(room13.game.playerO)}
+
+${isWin 
+  ? `${shoNhe.getName(winner)} *HA GANADO 🎉*\n*🎁 OBTIENE RECOMPENSA EN LÍMIT ${winScore}*` 
+  : isTie 
+    ? `*EMPATE 😹*\n*🎁 AMBOS PIERDEN LÍMIT ${playScore}*` 
+    : `𝐓𝐮𝐫𝐧𝐨 𝐝𝐞\n\n${['❎', '❌'][1 * room13.game._currentTurn]} (${shoNhe.getName(room13.game.currentTurn)})`}`
+
+    let users = global.db.data.users
+    if ((room13.game._currentTurn ^ isSurrender ? room13.x : room13.o) !== m.chat)
+        room13[room13.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
+
+    if (room13.x !== room13.o) await shoNhe.sendText(room13.x, str, m, {
+        mentions: parseMention(str)
+    })
+    await shoNhe.sendText(room13.o, str, m, {
+        mentions: parseMention(str)
+    })
+
+    if (isTie || isWin) {
+    const db = loadUserFire();
+
+    const jugadores = [room13.game.playerX, room13.game.playerO];
+
+    for (let jid of jugadores) {
+        const role = db[jid]?.role || 'user';
+        if (role !== 'owner') {
+            const recompensa = 0;
+            if (!db[jid]) {
+                db[jid] = { limit: recompensa, role: 'user' };
+            } else {
+                db[jid].limit = (db[jid].limit || 0) + recompensa;
+            }
+        }
+    }
+
+    if (isWin) {
+        const role = db[winner]?.role || 'user';
+        if (role !== 'owner') {
+            const recompensaExtra = 30;
+            db[winner].limit = (db[winner].limit || 0) + recompensaExtra;
+        }
+    }
+
+    saveUserFire(db);
+    delete game[room13.id];
+}
+}
+function parseMention(text) {
+    return [...text.matchAll(/@(.*?)/g)].map(v => v[1]);
+}
+let roof = Object.values(suitpvp).find(roof => roof.id && [roof.p, roof.p2].includes(m.sender));
+if (roof) {
+    let db = loadUserFire();
+
+    	if (m.sender == roof.p2 && /^(aceptar|ok|yes|si)$/i.test(m.text) && m.isGroup && roof.status == 'wait') {
+		roof.status = 'play';
+		roof.asal = m.chat;
+		clearTimeout(roof.waktu);
+if (!(await firely(m, mess.waits))) return;
+		let name1 = await shoNhe.getName(roof.p);
+		let name2 = await shoNhe.getName(roof.p2);
+
+		m.reply(`Juego iniciado.\n\n${name1} y ${name2}, dirijanse al privado.`);
+
+        await shoNhe.sendMessage(roof.p, { text: 'El juego ha comenzado. Escribe: piedra, papel o tijeras.' });
+        await shoNhe.sendMessage(roof.p2, { text: 'El juego ha comenzado. Escribe: piedra, papel o tijeras.' });
+
+        roof.waktu_milih = setTimeout(() => {
+            if (!roof.pilih || !roof.pilih2) {
+                shoNherly(`⏳ Tiempo agotado, juego cancelado.`);
+                delete suitpvp[roof.id];
+            }
+        }, roof.timeout);
+    }
+
+    let reg = /^(piedra|papel|tijeras)$/i;
+    if ([roof.p, roof.p2].includes(m.sender) && reg.test(m.text)) {
+        let jugada = reg.exec(m.text.toLowerCase())[0];
+
+        if (m.sender === roof.p && !roof.pilih) {
+            roof.pilih = jugada;
+            shoNherly(`Elegiste *${jugada}*. Procesando resultado...`);
+        }
+
+        if (m.sender === roof.p2 && !roof.pilih2) {
+            roof.pilih2 = jugada;
+            shoNherly(`Elegiste *${jugada}*. Procesando resultado...`);
+        }
+
+        if (roof.pilih && roof.pilih2) {
+            clearTimeout(roof.waktu_milih);
+
+            let resultado = '';
+            let empate = false;
+            let ganador;
+
+            let jug1 = roof.pilih;
+            let jug2 = roof.pilih2;
+
+            if (jug1 === jug2) {
+                empate = true;
+            } else if (
+                (jug1 === 'piedra' && jug2 === 'tijeras') ||
+                (jug1 === 'tijeras' && jug2 === 'papel') ||
+                (jug1 === 'papel' && jug2 === 'piedra')
+            ) {
+                ganador = roof.p;
+            } else {
+                ganador = roof.p2;
+            }
+
+            let name1 = await shoNhe.getName(roof.p);
+            let name2 = await shoNhe.getName(roof.p2);
+            let mensaje = `🎮 *Resultado de Suit PvP*\n\n${name1}: *${jug1}*\n${name2}: *${jug2}*\n\n`;
+
+            if (empate) {
+                mensaje += `⚖️ *Empate* - Pierden Limit -10.`;
+            } else {
+                let winName = await shoNhe.getName(ganador);
+                let isOwner = db[ganador]?.role === 'owner';
+                let reward = 30; // 7 a 15
+
+                if (!db[ganador]) db[ganador] = { limit: 0, role: 'user' };
+                if (!isOwner) db[ganador].limit += reward;
+
+                mensaje += `🏆 *Ganador:* ${winName}\n🎁 *Recompensa:* ${isOwner ? '0' : '+' + reward} límite`;
+            }
+
+            shoNhe.sendMessage(roof.chat, { text: mensaje, mentions: [roof.p, roof.p2] }, { quoted: m });
+            delete suitpvp[roof.id];
+            saveUserFire(db);
+        }
+    }
+}
+if (db.data.chats[m.chat]?.antispam) {
+    if (isFiltered(m.sender)) return; // evita que repita spam muy seguido
+    addFilter(m.sender);
+    addSpam(m.sender, spamDB);
+    if (isSpam(m.sender, spamDB)) return shoNherly('⛔ Estás haciendo spam, espera un momento.');
+}
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+if (global.partidasRoleta && global.partidasRoleta[m.chat]) {
+  if (m.text && m.text.toLowerCase() === 'unirme') {
+    let lista = global.partidasRoleta[m.chat];
+    if (!lista.find(p => p.id === m.sender)) {
+      lista.push({ id: m.sender, nombre: m.pushName });
+      shoNhe.sendMessage(m.chat, { text: `✅ ${m.pushName} se ha unido a la ruleta rusa.` });
+    }
+  }
+}
+// Fuera del switch:
+if (global.partidaCarrera && global.partidaCarrera[m.chat] && m.text?.toLowerCase().startsWith('elegir ')) {
+  let animal = m.text.slice(7).trim().toLowerCase()
+  let partida = global.partidaCarrera[m.chat]
+  let disponible = partida.animalesDisponibles.find(a => a.toLowerCase() === animal)
+
+  if (!disponible) return m.reply('❌ Animal no disponible o ya elegido.')
+
+  if (partida.jugadores.find(j => j.id === m.sender)) return m.reply('❌ Ya elegiste un animal.')
+
+  partida.animalesDisponibles = partida.animalesDisponibles.filter(a => a.toLowerCase() !== animal)
+  partida.jugadores.push({ nombre: m.pushName, animal: disponible, avance: 0, id: m.sender })
+
+  m.reply(`✅ Elegiste *${disponible}* para la carrera.`)
+}
+
+// Utilidad para obtener emoji
+function obtenerEmojiAnimal(nombre) {
+  let emojis = {
+    'Tortuga': '🐢',
+    'Conejo': '🐇',
+    'Caballo': '🐎',
+    'Canguro': '🦘',
+    'Perezoso': '🦥'
+  }
+  return emojis[nombre] || ''
+}
 		async function cekgame(gamejid)
 		{
 			if (tekateki[gamejid])
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tekateki[gamejid][0]
@@ -3255,7 +3431,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: caklontong[gamejid][0]
@@ -3266,7 +3442,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: susunkata[gamejid][0]
@@ -3288,7 +3464,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebaktebakan[gamejid][0]
@@ -3299,7 +3475,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebaklirik[gamejid][0]
@@ -3310,7 +3486,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakkimia[gamejid][0]
@@ -3321,7 +3497,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: siapaaku[gamejid][0]
@@ -3332,7 +3508,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakkalimat[gamejid][0]
@@ -3343,7 +3519,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakbendera[gamejid][0]
@@ -3354,7 +3530,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakkata[gamejid][0]
@@ -3365,7 +3541,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: asahotak[gamejid][0]
@@ -3376,7 +3552,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: lengkapikalimat[gamejid][0]
@@ -3387,7 +3563,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakgame[gamejid][0]
@@ -3398,7 +3574,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakhero[gamejid][0]
@@ -3409,7 +3585,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakff[gamejid][0]
@@ -3420,7 +3596,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakkabupaten[gamejid][0]
@@ -3431,7 +3607,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakjkt48[gamejid][0]
@@ -3442,7 +3618,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakhewan[gamejid][0]
@@ -3453,7 +3629,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakml[gamejid][0]
@@ -3464,7 +3640,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakchara[gamejid][0]
@@ -3475,7 +3651,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebaklogo[gamejid][0]
@@ -3486,7 +3662,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakaplikasi[gamejid][0]
@@ -3497,7 +3673,7 @@ Keep your skills sharp and never stop evolving."
 			{
 				shoNhe.sendMessage(gamejid,
 				{
-					text: "Soal ini belum selesai"
+					text: "Esta pregunta aún no está terminada"
 				},
 				{
 					quoted: tebakgambar[gamejid][0]
@@ -3599,34 +3775,16 @@ Keep your skills sharp and never stop evolving."
 					let getReason2 = getAfkReason(getId2, afk)
 					let getTimee = Date.now() - getAfkTime(getId2, afk)
 					let anu2 = ms(getTimee)
-					shoNherly(`⚠️ *SISTEM PEMBERITAHUAN AFK* ⚠️  
+					shoNherly(`⚠️ *SISTEMA DE NOTIFICACIÓN AFK* ⚠️  
 
-[⚠️] *STATUS PENGGUNA*:  
-- Pengguna sedang *AFK*! Hindari mengganggu atau men-tag untuk sementara waktu.  
+[⚠️] *ESTADO DEL USUARIO*:  
+- El usuario está *AFK*! Evita molestarlo o mencionarlo por ahora.  
 
-[📌] *ALASAN*:  
-- ${getReason2 || 'Tidak disebutkan'}  
+[📌] *RAZÓN*:  
+- ${getReason2 || 'No especificado'}  
 
-[⏳] *DURASI SEJAK AFK*:  
-- ${anu2.hours || 0} Jam, ${anu2.minutes || 0} Menit, ${anu2.seconds || 0} Detik  
-
-[🛡️] *CATATAN PENTING*:  
-- Pesan ini dikirim oleh sistem otomatis.  
-- Data aktivitas tercatat secara real-time.  
-- Setiap pelanggaran akan ditinjau lebih lanjut.  
-
-[💻] *TIPS SISTEM*:  
-- Untuk informasi lebih lanjut, tunggu hingga pengguna kembali aktif.  
-- Gunakan fitur pencarian atau bantuan jika membutuhkan.  
-
-🔍 *PEMANTAUAN SISTEM*:  
-- Status pengguna dipantau dalam dimensi sistem.  
-- Tidak ada aktivitas yang luput dari log kami.  
-- Tetap ikuti protokol interaksi yang berlaku.  
-
-📡 *SISTEM AKTIF*:  
-- Data diperbarui dalam waktu nyata.  
-- Tetap terhubung untuk pemberitahuan lebih lanjut.`)
+[⏳] *DURACIÓN DESDE AFK*:  
+- ${anu2.hours || 0} Horas, ${anu2.minutes || 0} Minutos, ${anu2.seconds || 0} Segundos`)
 				}
 			}
 			if (checkAfkUser(m.sender, afk))
@@ -3637,30 +3795,15 @@ Keep your skills sharp and never stop evolving."
 				let anu = ms(getTime)
 				afk.splice(getAfkPosition(m.sender, afk), 1)
 				fs.writeFileSync('./database/afk.json', JSON.stringify(afk))
-				shoNhe.sendTextWithMentions(m.chat, `⚠️ *SISTEM ALERT: KONDISI PENGGUNA* ⚠️  
+				shoNhe.sendTextWithMentions(m.chat, `⚠️ *ALERTA DEL SISTEMA: ESTADO DEL USUARIO* ⚠️  
 
-Weiss @${m.sender.split('@')[0]}, masih sehat lu bro? Sistem mendeteksi status AFK-mu.  
+User @${m.sender.split('@')[0]}, ¿sigues bien, bro? El sistema ha detectado tu estado AFK.  
 
-[📌] *ALASAN*:  
-- ${getReason || 'Tidak ada alasan yang diberikan'}  
+[📌] *RAZÓN*:  
+- ${getReason || 'No se ha proporcionado ninguna razón'}  
 
-[⏳] *DURASI*:  
-- ${anu.hours || 0} Jam, ${anu.minutes || 0} Menit, ${anu.seconds || 0} Detik  
-
-[🛠️] *INSTRUKSI*:  
-- Jika ada kendala, segera perbarui statusmu.  
-- Hindari menunda terlalu lama, sistem selalu memantau.  
-
-[🔍] *LOG SISTEM*:  
-- Status ini telah tercatat dalam log protokol.  
-- Jangan abaikan pesan ini untuk menjaga kredibilitas aktivitasmu.  
-
-[⚡] *TIPS*:  
-- “Waktu terus berjalan, gunakan dengan bijak. Jangan biarkan dunia virtual mengalahkanmu.”  
-
-📡 *STATUS SISTEM*:  
-- Pemantauan berjalan secara real-time.  
-- Sistem tetap terhubung hingga kamu kembali aktif.`, fvideo)
+[⏳] *DURACIÓN*:  
+- ${anu.hours || 0} Horas, ${anu.minutes || 0} Minutos, ${anu.seconds || 0} Segundos`, fvideo)
 			}
 		}
 		//==================[ BUTTON MESSAGE ]======================\\
@@ -3685,12 +3828,7 @@ Weiss @${m.sender.split('@')[0]}, masih sehat lu bro? Sistem mendeteksi status A
 								mentionedJid: [m.sender],
 								forwardingScore: 1,
 								isForwarded: true,
-								forwardedNewsletterMessageInfo:
-								{
-									newsletterJid: saluran,
-									newsletterName: namach,
-									serverMessageId: -1
-								},
+								
 								businessMessageForwardInfo:
 								{
 									businessOwnerJid: shoNhe.decodeJid(shoNhe.user.id)
@@ -3754,12 +3892,7 @@ Weiss @${m.sender.split('@')[0]}, masih sehat lu bro? Sistem mendeteksi status A
 								mentionedJid: [m.sender],
 								forwardingScore: 1,
 								isForwarded: true,
-								forwardedNewsletterMessageInfo:
-								{
-									newsletterJid: saluran,
-									newsletterName: namach,
-									serverMessageId: -1
-								},
+								
 								businessMessageForwardInfo:
 								{
 									businessOwnerJid: shoNhe.decodeJid(shoNhe.user.id)
@@ -3824,12 +3957,7 @@ Weiss @${m.sender.split('@')[0]}, masih sehat lu bro? Sistem mendeteksi status A
 								mentionedJid: [m.sender],
 								forwardingScore: 1,
 								isForwarded: true,
-								forwardedNewsletterMessageInfo:
-								{
-									newsletterJid: idsaluran,
-									newsletterName: namach,
-									serverMessageId: -1
-								},
+								
 								businessMessageForwardInfo:
 								{
 									businessOwnerJid: shoNhe.decodeJid(shoNhe.user.id)
@@ -3886,12 +4014,7 @@ Weiss @${m.sender.split('@')[0]}, masih sehat lu bro? Sistem mendeteksi status A
 							{
 								mentionedJid: [m.sender],
 								isForwarded: true,
-								forwardedNewsletterMessageInfo:
-								{
-									newsletterJid: idsaluran,
-									newsletterName: namach,
-									serverMessageId: -1
-								},
+								
 								businessMessageForwardInfo:
 								{
 									businessOwnerJid: shoNhe.decodeJid(shoNhe.user.id)
@@ -4131,43 +4254,43 @@ case 'deleteprodukown': {
 break;
 case 'storeownmenu': {
     let teks = `┏━━━━━━━━━━━━━━━━━━━━━━━┓\n`;
-    teks += `┃  👑  *OWNER STORE*  👑  ┃\n`;
-    teks += `┗━━━━━━━━━━━━━━━━━━━━━━━┛\n\n`;
+teks += `┃  👑  *TIENDA DEL PROPIETARIO*  👑  ┃\n`;
+teks += `┗━━━━━━━━━━━━━━━━━━━━━━━┛\n\n`;
 
-    teks += `⚡ *PANDUAN PENGGUNAAN:*\n`;
-    teks += `📌 Gunakan perintah di bawah untuk mengelola produk toko pemilik.\n`;
-    teks += `📌 Simbol < > menandakan input yang wajib diisi.\n\n`;
+teks += `⚡ *GUÍA DE USO:*\n`;
+teks += `📌 Utilice los comandos a continuación para gestionar los productos de la tienda del propietario.\n`;
+teks += `📌 El símbolo < > indica que el campo es obligatorio.\n\n`;
 
-    teks += `⚡ *COMMANDS:*\n`;
-    teks += `📍 *Tambah Produk:*\n`;
-    teks += `   ➤ \`.addprodukown <nama>|<harga>|<deskripsi>\`\n`;
-    teks += `📍 *Lihat Produk:*\n`;
-    teks += `   ➤ \`.listprodukown\`\n`;
-    teks += `📍 *Beli Produk:*\n`;
-    teks += `   ➤ \`.buyprodukown <nama_produk>\`\n`;
-    teks += `📍 *Update Produk:*\n`;
-    teks += `   ➤ \`.updateprodukown <nama>|<harga>|<deskripsi>\`\n`;
-    teks += `📍 *Hapus Produk:*\n`;
-    teks += `   ➤ \`.deleteprodukown\` (pilih dari daftar interaktif)\n\n`;
+teks += `⚡ *COMANDOS:*\n`;
+teks += `📍 *Agregar Producto:*\n`;
+teks += `   ➤ \`.addprodukown <nombre>|<precio>|<descripción>\`\n`;
+teks += `📍 *Ver Productos:*\n`;
+teks += `   ➤ \`.listprodukown\`\n`;
+teks += `📍 *Comprar Producto:*\n`;
+teks += `   ➤ \`.buyprodukown <nombre_producto>\`\n`;
+teks += `📍 *Actualizar Producto:*\n`;
+teks += `   ➤ \`.updateprodukown <nombre>|<precio>|<descripción>\`\n`;
+teks += `📍 *Eliminar Producto:*\n`;
+teks += `   ➤ \`.deleteprodukown\` (elige desde la lista interactiva)\n\n`;
 
     let button = [{
         "name": "single_select",
         "buttonParamsJson": JSON.stringify({
-            "title": "👑 OWNER STORE ACTIONS",
-            "sections": [
-                {
-                    "title": "Pembelian Produk",
-                    "rows": [
-                        {"header": "📜 Daftar Produk", "title": "Lihat Produk", "id": "listprodukown"},
-                        {"header": "🛒 Beli Produk", "title": "Beli Produk", "id": "buyprodukown"}
-                    ]
-                },
-                {
-                    "title": "Kelola Produk",
-                    "rows": [
-                        {"header": "➕ Tambah Produk", "title": "Tambah Produk", "id": "addprodukown"},
-                        {"header": "✏️ Update Produk", "title": "Update Produk", "id": "updateprodukown"},
-                        {"header": "❌ Hapus Produk", "title": "Hapus Produk", "id": "deleteprodukown"}
+            "title": "👑 ACCIONES DE LA TIENDA DEL PROPIETARIO",
+"sections": [
+    {
+        "title": "Compra de Productos",
+        "rows": [
+            {"header": "📜 Lista de Productos", "title": "Ver Productos", "id": "listprodukown"},
+            {"header": "🛒 Comprar Producto", "title": "Comprar Producto", "id": "buyprodukown"}
+        ]
+    },
+    {
+        "title": "Gestionar Productos",
+        "rows": [
+            {"header": "➕ Agregar Producto", "title": "Agregar Producto", "id": "addprodukown"},
+            {"header": "✏️ Actualizar Producto", "title": "Actualizar Producto", "id": "updateprodukown"},
+            {"header": "❌ Eliminar Producto", "title": "Eliminar Producto", "id": "deleteprodukown"}
                     ]
                 }
             ]
@@ -4178,61 +4301,61 @@ case 'storeownmenu': {
 }
 break;
 case 'storemenu': {
-    let teks = `╔══════════════════════╗\n`;
-    teks += `║  ✨ *STORE MENU* ✨  ║\n`;
-    teks += `╚══════════════════════╝\n\n`;
+    let teks = `╔══════════════════════╗\n`;  
+teks += `║  ✨ *MENÚ DE TIENDA* ✨  ║\n`;  
+teks += `╚══════════════════════╝\n\n`;  
 
-    teks += `📢 *PANDUAN PENGGUNAAN:*\n`;
-    teks += `📌 Gunakan perintah di bawah untuk mengelola produk.\n`;
-    teks += `📌 Simbol < > menandakan input yang wajib diisi.\n\n`;
+teks += `📢 *GUÍA DE USO:*\n`;  
+teks += `📌 Usa los comandos a continuación para gestionar productos.\n`;  
+teks += `📌 Los símbolos < > indican los campos obligatorios.\n\n`;  
 
-    teks += `💎 *MENU PRODUK UMUM:*\n`;
-    teks += `━━━━━━━━━━━━━━━━━━━━━━\n`;
-    teks += `📍 *Tambah Produk:*\n`;
-    teks += `   ➤ \`.addproduk <nama>|<harga>|<deskripsi>\`\n`;
-    teks += `📍 *Lihat Produk:*\n`;
-    teks += `   ➤ \`.listproduk\`\n`;
-    teks += `📍 *Beli Produk:*\n`;
-    teks += `   ➤ \`.buyproduk <nama_produk>\`\n`;
-    teks += `📍 *Update Produk:*\n`;
-    teks += `   ➤ \`.updateproduk <nama>|<harga>|<deskripsi>\`\n`;
-    teks += `📍 *Hapus Produk:*\n`;
-    teks += `   ➤ \`.deleteproduk\` (pilih dari daftar interaktif)\n\n`;
+teks += `💎 *MENÚ DE PRODUCTOS GENERALES:*\n`;  
+teks += `━━━━━━━━━━━━━━━━━━━━━━\n`;  
+teks += `📍 *Añadir Producto:*\n`;  
+teks += `   ➤ \`.addproduk <nombre>|<precio>|<descripción>\`\n`;  
+teks += `📍 *Ver Productos:*\n`;  
+teks += `   ➤ \`.listproduk\`\n`;  
+teks += `📍 *Comprar Producto:*\n`;  
+teks += `   ➤ \`.buyproduk <nombre_producto>\`\n`;  
+teks += `📍 *Actualizar Producto:*\n`;  
+teks += `   ➤ \`.updateproduk <nombre>|<precio>|<descripción>\`\n`;  
+teks += `📍 *Eliminar Producto:*\n`;  
+teks += `   ➤ \`.deleteproduk\` (seleccionar de la lista interactiva)\n\n`;  
 
-    // **Tambahan Menu Produk Owner**
-    teks += `👑 *MENU PRODUK OWNER (KHUSUS ADMIN & OWNER):*\n`;
-    teks += `━━━━━━━━━━━━━━━━━━━━━━\n`;
-    teks += `📍 *Lihat Produk Owner:*\n`;
-    teks += `   ➤ \`.listprodukown\`\n`;
-    teks += `📍 *Beli Produk Owner:*\n`;
-    teks += `   ➤ \`.buyprodukown <nama_produk>\`\n`;
+// **Menú Adicional para Propietarios**  
+teks += `👑 *MENÚ DE PRODUCTOS PARA PROPIETARIOS (SOLO ADMIN & OWNER):*\n`;  
+teks += `━━━━━━━━━━━━━━━━━━━━━━\n`;  
+teks += `📍 *Ver Productos de Propietarios:*\n`;  
+teks += `   ➤ \`.listprodukown\`\n`;  
+teks += `📍 *Comprar Producto de Propietario:*\n`;  
+teks += `   ➤ \`.buyprodukown <nombre_producto>\`\n`;
 
     let button = [{
         "name": "single_select",
         "buttonParamsJson": JSON.stringify({
-            "title": "✨ STORE ACTIONS ✨",
-            "sections": [
-                {
-                    "title": "📦 Kelola Produk Umum",
-                    "rows": [
-                        {"header": "➕ Tambah Produk", "title": "Tambah Produk", "id": "addproduk"},
-                        {"header": "✏️ Update Produk", "title": "Update Produk", "id": "updateproduk"},
-                        {"header": "❌ Hapus Produk", "title": "Hapus Produk", "id": "deleteproduk"}
-                    ]
-                },
-                {
-                    "title": "🛒 Pembelian Produk Umum",
-                    "rows": [
-                        {"header": "📜 Daftar Produk", "title": "Lihat Produk", "id": "listproduk"},
-                        {"header": "🛒 Beli Produk", "title": "Beli Produk", "id": "buyproduk"}
-                    ]
-                },
-                {
-                    "title": "💰 Pembelian Produk Owner",
-                    "rows": [
-                        {"header": "📜 Daftar Produk Owner", "title": "Lihat Produk", "id": "listprodukown"},
-                        {"header": "🛒 Beli Produk Owner", "title": "Beli Produk", "id": "buyprodukown"},
-                        {"header": "🏭 store Owner", "title": "Store settings khusus Produk Owner", "id": "storeownmenu"}
+    "title": "✨ ACCIONES DE TIENDA ✨",
+    "sections": [
+        {
+            "title": "📦 Gestionar Productos Generales",
+            "rows": [
+                {"header": "➕ Agregar Producto", "title": "Añadir Producto", "id": "addproduk"},
+                {"header": "✏️ Actualizar Producto", "title": "Actualizar Producto", "id": "updateproduk"},
+                {"header": "❌ Eliminar Producto", "title": "Eliminar Producto", "id": "deleteproduk"}
+            ]
+        },
+        {
+            "title": "🛒 Compra de Productos Generales",
+            "rows": [
+                {"header": "📜 Lista de Productos", "title": "Ver Productos", "id": "listproduk"},
+                {"header": "🛒 Comprar Producto", "title": "Comprar Producto", "id": "buyproduk"}
+            ]
+        },
+        {
+            "title": "💰 Compra de Productos del Propietario",
+            "rows": [
+                {"header": "📜 Lista de Productos del Propietario", "title": "Ver Productos", "id": "listprodukown"},
+                {"header": "🛒 Comprar Producto del Propietario", "title": "Comprar Producto", "id": "buyprodukown"},
+                {"header": "🏭 Tienda del Propietario", "title": "Configuración de tienda exclusiva para Productos del Propietario", "id": "storeownmenu"}
                     ]
                 }
             ]
@@ -4252,10 +4375,10 @@ case 'addproduk': {
     const args = text.trim().split('|');
     const namaProduk = args[0]?.trim() || null;
     const hargaProduk = parseInt(args[1]?.trim()) || null;
-    const deskripsiProduk = args[2]?.trim() || 'Deskripsi tidak tersedia';
+    const deskripsiProduk = args[2]?.trim() || 'Descripción no disponible';
 
     if (!namaProduk || isNaN(hargaProduk)) {
-        return shoNherly('❌ Format salah. Gunakan format: .addproduk <nama>|<harga>|<deskripsi>');
+        return shoNherly('❌ Formato incorrecto. Utilice el formato: .addproduct <nombre>|<precio>|<descripción>');
     }
 
     const listStorePath = './database/listStore.json';
@@ -4268,7 +4391,7 @@ case 'addproduk': {
             listStore = fileContent ? JSON.parse(fileContent) : {};
         } catch (error) {
             console.error('❌ Error membaca JSON:', error);
-            return shoNherly('❌ Terjadi kesalahan saat membaca file produk.');
+            return shoNherly('❌ Se produjo un error al leer el archivo del producto.');
         }
     }
 
@@ -4278,7 +4401,7 @@ case 'addproduk': {
     // Periksa apakah produk sudah ada
     const produkExist = listStore[m.chat].produk.some(p => p.name.toLowerCase() === namaProduk.toLowerCase());
     if (produkExist) {
-        return shoNherly(`❌ Produk *${namaProduk}* sudah ada! Gunakan nama lain.`);
+        return shoNherly(`❌ ¡El producto *${namaProduk}* ya existe! Usa otro nombre.`);
     }
 
     // Tambahkan produk baru ke dalam daftar
@@ -4291,10 +4414,10 @@ case 'addproduk': {
     // Simpan ke file
     try {
         fs.writeFileSync(listStorePath, JSON.stringify(listStore, null, 2), 'utf8');
-        shoNherly(`✅ Produk *${namaProduk}* berhasil ditambahkan dengan harga Rp${hargaProduk}.`);
+        shoNherly(`✅ El producto *${namaProduk}* se ha añadido con éxito por un precio de Rp${hargaProduk}.`);
     } catch (error) {
         console.error('❌ Error saat menyimpan JSON:', error);
-        shoNherly('❌ Terjadi kesalahan saat menyimpan produk baru.');
+        shoNherly('❌ Se produjo un error al guardar un nuevo producto.');
     }
 }
 break;
@@ -4313,36 +4436,36 @@ case 'deleteproduk': {
             listStore = fileContent.trim() === '' ? {} : JSON.parse(fileContent);
         } catch (error) {
             console.error('❌ Error membaca JSON:', error);
-            return shoNherly('❌ Terjadi kesalahan saat membaca file produk.');
+            return shoNherly('❌ Se produjo un error al leer el archivo del producto.');
         }
     } else {
-        return shoNherly('❌ Database produk tidak ditemukan.');
+        return shoNherly('❌ Base de datos del producto no encontrada.');
     }
 
     if (!listStore[m.chat] || !Array.isArray(listStore[m.chat].produk) || listStore[m.chat].produk.length === 0) {
-        return shoNherly('❌ Tidak ada produk yang tersedia untuk dihapus.');
+        return shoNherly('❌ No hay productos disponibles para eliminar.');
     }
 
     // Jika tidak ada input produk, tampilkan daftar produk dengan tombol interaktif yang langsung menghapus
     if (!text) {
-        let teks = "🗑️ *Pilih Produk untuk Dihapus*\n\n";
-        listStore[m.chat].produk.forEach((p, i) => {
-            teks += `📌 *${i + 1}. ${p.name}*\n`;
-            teks += `💰 Harga: Rp${p.price}\n`;
-            teks += `📄 Deskripsi: ${p.description}\n\n`;
+        let teks = "🗑️ *Selecciona un Producto para Eliminar*\n\n";
+listStore[m.chat].produk.forEach((p, i) => {
+    teks += `📌 *${i + 1}. ${p.name}*\n`;
+    teks += `💰 Precio: Rp${p.price}\n`;
+    teks += `📄 Descripción: ${p.description}\n\n`;
         });
 
         let button = [{
             "name": "single_select",
             "buttonParamsJson": JSON.stringify({
-                "title": "🗑️ HAPUS PRODUK",
-                "sections": [{
-                    "title": "Klik Produk untuk Menghapus",
-                    "rows": listStore[m.chat].produk.map(p => ({
-                        "header": p.name,
-                        "title": `Hapus ${p.name}`,
-                        "description": "Tekan untuk langsung menghapus",
-                        "id": `deleteproduk ${p.name}`
+    "title": "🗑️ ELIMINAR PRODUCTO",
+    "sections": [{
+        "title": "Haz clic en un producto para eliminarlo",
+        "rows": listStore[m.chat].produk.map(p => ({
+            "header": p.name,
+            "title": `Eliminar ${p.name}`,
+            "description": "Presiona para eliminar inmediatamente",
+            "id": `deleteproduk ${p.name}`
                     }))
                 }]
             })
@@ -4356,7 +4479,7 @@ case 'deleteproduk': {
     const namaProduk = text.trim().toLowerCase();
     const index = listStore[m.chat].produk.findIndex(p => p.name.toLowerCase() === namaProduk);
 
-    if (index === -1) return shoNherly(`❌ Produk *${namaProduk}* tidak ditemukan.`);
+    if (index === -1) return shoNherly(`❌ El producto *${namaProduk}* no se encontró.`);
 
     // Hapus produk dari array
     const deletedProduct = listStore[m.chat].produk.splice(index, 1)[0];
@@ -4364,10 +4487,10 @@ case 'deleteproduk': {
     // Simpan perubahan ke file
     try {
         await fs.promises.writeFile(listStorePath, JSON.stringify(listStore, null, 2), 'utf8');
-        shoNherly(`✅ Produk *${deletedProduct.name}* berhasil dihapus.`);
+        shoNherly(`✅ El producto *${deletedProduct.name}* se ha eliminado con éxito.`);
     } catch (error) {
         console.error('❌ Error saat menyimpan JSON:', error);
-        shoNherly('❌ Terjadi kesalahan saat menghapus produk.');
+        shoNherly('❌ Se produjo un error al eliminar el producto.');
     }
 }
 break;
@@ -4382,24 +4505,24 @@ case 'buyprodukown': {
             produkDB = JSON.parse(fileContent);
         } catch (error) {
             console.error('❌ Gagal membaca produk owner:', error);
-            return shoNherly('❌ Gagal memuat data produk owner. Silakan coba lagi nanti.');
+            return shoNherly('❌ No se pudieron cargar los datos del producto del propietario. Por favor inténtalo de nuevo más tarde.');
         }
     } else {
-        return shoNherly('❌ Database produk owner tidak ditemukan.');
+        return shoNherly('❌ No se encontró la base de datos del propietario del producto.');
     }
 
     // Validasi ketersediaan produk dalam grup
     if (!produkDB[m.chat]?.produk?.length) {
-        return shoNherly('❌ Tidak ada produk yang tersedia di toko owner.');
+        return shoNherly('❌ No hay productos disponibles en la tienda del propietario.');
     }
 
     // Jika tidak ada argumen, tampilkan daftar produk
     if (args.length === 0) {
-        let teks = "🛒 *DAFTAR PRODUK OWNER*\n\n";
-        produkDB[m.chat].produk.forEach((p, i) => {
-            teks += `${i + 1}. *${p.name}*\n`;
-            teks += `   💵 Harga: Rp${p.price}\n`;
-            teks += `   📜 Deskripsi: ${p.description}\n\n`;
+        let teks = "🛒 *LISTA DE PRODUCTOS DEL PROPIETARIO*\n\n";
+produkDB[m.chat].produk.forEach((p, i) => {
+    teks += `${i + 1}. *${p.name}*\n`;
+    teks += `   💵 Precio: Rp${p.price}\n`;
+    teks += `   📜 Descripción: ${p.description}\n\n`;
         });
 
         const buttons = produkDB[m.chat].produk.map(p => ({
@@ -4417,9 +4540,9 @@ case 'buyprodukown': {
             [{
                 "name": "single_select",
                 "buttonParamsJson": JSON.stringify({
-                    "title": "PILIH PRODUK OWNER",
+                    "title": "SELECCIONAR PRODUCTOS DEL PROPIETARIO",
                     "sections": [{ 
-                        "title": "PRODUK TERSEDIA", 
+                        "title": "PRODUCTO DISPONIBLE", 
                         "rows": buttons 
                     }]
                 })
@@ -4435,28 +4558,28 @@ case 'buyprodukown': {
         p.name.toLowerCase() === namaProduk
     );
 
-    if (!produk) return shoNherly('❌ Produk tidak ditemukan. Pastikan nama produk sesuai.');
+    if (!produk) return shoNherly('❌ Producto no encontrado. Asegúrese de que el nombre del producto coincida.');
 
     // Tampilkan detail pembelian
-    let teks = "📦 *DETAIL PEMBELIAN*\n";
-    teks += "────────────────────────\n";
-    teks += `🔖 *Nama Produk:* ${produk.name}\n`;
-    teks += `💰 *Harga:* Rp${produk.price}\n`;
-    teks += `📜 *Deskripsi:* ${produk.description}\n\n`;
+    let teks = "📦 *DETALLE DE COMPRA*\n";
+teks += "────────────────────────\n";
+teks += `🔖 *Nombre del Producto:* ${produk.name}\n`;
+teks += `💰 *Precio:* Rp${produk.price}\n`;
+teks += `📜 *Descripción:* ${produk.description}\n\n`;
 
-    // Daftar metode pembayaran
-    teks += "💳 *METODE PEMBAYARAN*\n";
-    teks += "────────────────────────\n";
-    teks += `1. DANA        : ${global.nomordana} (${global.namadana})\n`;
-    teks += `2. OVO         : ${global.nomorovo} (${global.namaovo})\n`;
-    teks += `3. GoPay       : ${global.nomorgopay} (${global.namagopay})\n`;
-    teks += `4. ShopeePay   : ${global.nomorshopepay} (${global.namashopepay})\n`;
-    teks += `5. Seabank     : ${global.nomorseabank} (${global.namaseabank})\n`;
-    teks += `6. BCA         : ${global.nomorbca} (${global.namabca})\n`;
-    teks += `7. Danamon     : ${global.nomordanamon} (${global.namadanamon})\n`;
-    teks += `8. QRIS        : Scan kode QR (tanpa admin)\n`;
-    teks += "────────────────────────\n\n";
-    teks += "⚠️ *Silakan lakukan pembayaran dalam 15 menit untuk menghindari pembatalan otomatis.*";
+// Lista de métodos de pago
+teks += "💳 *MÉTODOS DE PAGO*\n";
+teks += "────────────────────────\n";
+teks += `1. DANA        : ${global.nomordana} (${global.namadana})\n`;
+teks += `2. OVO         : ${global.nomorovo} (${global.namaovo})\n`;
+teks += `3. GoPay       : ${global.nomorgopay} (${global.namagopay})\n`;
+teks += `4. ShopeePay   : ${global.nomorshopepay} (${global.namashopepay})\n`;
+teks += `5. Seabank     : ${global.nomorseabank} (${global.namaseabank})\n`;
+teks += `6. BCA         : ${global.nomorbca} (${global.namabca})\n`;
+teks += `7. Danamon     : ${global.nomordanamon} (${global.namadanamon})\n`;
+teks += `8. QRIS        : Escanea el código QR (sin comisión)\n`;
+teks += "────────────────────────\n\n";
+teks += "⚠️ *Realiza el pago en un máximo de 15 minutos para evitar la cancelación automática.*";
 
     // Tombol metode pembayaran
     const paymentButtons = [
@@ -4478,7 +4601,7 @@ case 'buyprodukown': {
         [{
             "name": "single_select",
             "buttonParamsJson": JSON.stringify({
-                "title": "PILIH METODE PEMBAYARAN",
+                "title": "SELECCIONAR FORMA DE PAGO",
                 "sections": [{
                     "title": "Transfer/QRIS",
                     "rows": paymentButtons
@@ -4500,24 +4623,24 @@ case 'buyproduk': {
             listStore = JSON.parse(fileContent);
         } catch (error) {
             console.error('❌ Gagal membaca listStore:', error);
-            return shoNherly('❌ Gagal memuat data produk. Silakan coba lagi nanti.');
+            return shoNherly('❌ No se pudieron cargar los datos del producto. Por favor inténtalo de nuevo más tarde.');
         }
     } else {
-        return shoNherly('❌ Database produk tidak ditemukan.');
+        return shoNherly('❌ Base de datos del producto no encontrada.');
     }
 
     // Validasi ketersediaan produk dalam grup
     if (!listStore[m.chat]?.produk?.length) {
-        return shoNherly('❌ Tidak ada produk yang tersedia di grup ini.');
+        return shoNherly('❌ No hay productos disponibles en este grupo.');
     }
 
     // Jika tidak ada argumen, tampilkan daftar produk
     if (args.length === 0) {
-        let teks = "🛒 *DAFTAR PRODUK TERSEDIA*\n\n";
-        listStore[m.chat].produk.forEach((p, i) => {
-            teks += `${i + 1}. *${p.name}*\n`;
-            teks += `   💵 Harga: Rp${p.price}\n`;
-            teks += `   📜 Deskripsi: ${p.description}\n\n`;
+        let teks = "🛒 *LISTA DE PRODUCTOS DISPONIBLES*\n\n";
+listStore[m.chat].produk.forEach((p, i) => {
+    teks += `${i + 1}. *${p.name}*\n`;
+    teks += `   💵 Precio: Rp${p.price}\n`;
+    teks += `   📜 Descripción: ${p.description}\n\n`;
         });
 
         const buttons = listStore[m.chat].produk.map(p => ({
@@ -4535,9 +4658,9 @@ case 'buyproduk': {
             [{
                 "name": "single_select",
                 "buttonParamsJson": JSON.stringify({
-                    "title": "PILIH PRODUK",
+                    "title": "SELECCIONAR PRODUCTO",
                     "sections": [{ 
-                        "title": "PRODUK TERSEDIA", 
+                        "title": "PRODUCTO DISPONIBLE", 
                         "rows": buttons 
                     }]
                 })
@@ -4553,28 +4676,28 @@ case 'buyproduk': {
         p.name.toLowerCase() === namaProduk
     );
 
-    if (!produk) return shoNherly('❌ Produk tidak ditemukan. Pastikan nama produk sesuai.');
+    if (!produk) return shoNherly('❌ Producto no encontrado. Asegúrese de que el nombre del producto coincida.');
 
     // Tampilkan detail pembelian
-    let teks = "📦 *DETAIL PEMBELIAN*\n";
-    teks += "────────────────────────\n";
-    teks += `🔖 *Nama Produk:* ${produk.name}\n`;
-    teks += `💰 *Harga:* Rp${produk.price}\n`;
-    teks += `📜 *Deskripsi:* ${produk.description}\n\n`;
+    let teks = "📦 *DETALLES DE COMPRA*\n";
+teks += "────────────────────────\n";
+teks += `🔖 *Nombre del Producto:* ${produk.name}\n`;
+teks += `💰 *Precio:* Rp${produk.price}\n`;
+teks += `📜 *Descripción:* ${produk.description}\n\n`;
 
-    // Daftar metode pembayaran
-    teks += "💳 *METODE PEMBAYARAN*\n";
-    teks += "────────────────────────\n";
-    teks += `1. DANA        : ${global.nomordana} (${global.namadana})\n`;
-    teks += `2. OVO         : ${global.nomorovo} (${global.namaovo})\n`;
-    teks += `3. GoPay       : ${global.nomorgopay} (${global.namagopay})\n`;
-    teks += `4. ShopeePay   : ${global.nomorshopepay} (${global.namashopepay})\n`;
-    teks += `5. Seabank     : ${global.nomorseabank} (${global.namaseabank})\n`;
-    teks += `6. BCA         : ${global.nomorbca} (${global.namabca})\n`;
-    teks += `7. Danamon     : ${global.nomordanamon} (${global.namadanamon})\n`;
-    teks += `8. QRIS        : Scan kode QR (tanpa admin)\n`;
-    teks += "────────────────────────\n\n";
-    teks += "⚠️ *Silakan lakukan pembayaran dalam 15 menit untuk menghindari pembatalan otomatis.*";
+// Lista de métodos de pago
+teks += "💳 *MÉTODOS DE PAGO*\n";
+teks += "────────────────────────\n";
+teks += `1. DANA        : ${global.nomordana} (${global.namadana})\n`;
+teks += `2. OVO         : ${global.nomorovo} (${global.namaovo})\n`;
+teks += `3. GoPay       : ${global.nomorgopay} (${global.namagopay})\n`;
+teks += `4. ShopeePay   : ${global.nomorshopepay} (${global.namashopepay})\n`;
+teks += `5. Seabank     : ${global.nomorseabank} (${global.namaseabank})\n`;
+teks += `6. BCA         : ${global.nomorbca} (${global.namabca})\n`;
+teks += `7. Danamon     : ${global.nomordanamon} (${global.namadanamon})\n`;
+teks += `8. QRIS        : Escanea el código QR (sin administrador)\n`;
+teks += "────────────────────────\n\n";
+teks += "⚠️ *Realice el pago dentro de 15 minutos para evitar la cancelación automática.*";
 
     // Tombol metode pembayaran
     const paymentButtons = [
@@ -4596,7 +4719,7 @@ case 'buyproduk': {
         [{
             "name": "single_select",
             "buttonParamsJson": JSON.stringify({
-                "title": "PILIH METODE PEMBAYARAN",
+                "title": "SELECCIONAR FORMA DE PAGO",
                 "sections": [{
                     "title": "Transfer/QRIS",
                     "rows": paymentButtons
@@ -4619,7 +4742,7 @@ case 'addqris': {
 
     try {
         if (!m.quoted || !/image/.test(m.quoted.mtype)) {
-            return shoNherly('❌ Harap reply gambar QRIS yang ingin diunggah.');
+            return shoNherly('❌ Responda a la imagen QRIS que desea cargar.');
         }
 
         // Menambahkan pesan loading ⏳
@@ -4647,7 +4770,7 @@ case 'addqris': {
 
         // Ambil URL hasil upload
         if (!response.data.success) {
-            return shoNherly('❌ Gagal mengunggah QRIS. Coba lagi.');
+            return shoNherly('❌ No se pudo cargar QRIS. Intentar otra vez.');
         }
 
         let qrisURL = response.data.data.url;
@@ -4656,7 +4779,7 @@ case 'addqris': {
         fs.writeFileSync('./database/qris.json', JSON.stringify({ url: qrisURL }, null, 2));
 
         // Kirim URL QRIS ke pengguna
-        shoNherly(`✅ QRIS berhasil diunggah!\n🔗 *URL:* ${qrisURL}`);
+        shoNherly(`✅ ¡QRIS se cargó exitosamente!\n🔗 *URL:* ${qrisURL}`);
 
         if (levelUpMessage) {
             await shoNhe.sendMessage(m.chat, {
@@ -4678,7 +4801,7 @@ case 'addqris': {
         }
     } catch (error) {
         console.error('❌ Gagal mengunggah QRIS:', error);
-        shoNherly('❌ Terjadi kesalahan saat mengunggah QRIS.');
+        shoNherly('❌ Se produjo un error al cargar QRIS.');
     }
 }
 break;
@@ -4851,7 +4974,7 @@ case 'updateproduk': {
     const deskripsiBaru = args[2]?.trim() || 'Deskripsi tidak tersedia';
 
     if (!namaProduk || isNaN(hargaBaru)) {
-        return shoNherly('❌ Format salah. Gunakan format: updateproduk <nama produk>|<harga>|<deskripsi>');
+        return shoNherly('❌ Format salah. Usar formato: updateproduk <nama produk>|<harga>|<deskripsi>');
     }
 
     const listStorePath = './database/listStore.json';
@@ -4918,7 +5041,7 @@ break;
 							{
 								url: result.img
 							},
-							caption: `Silahkan Jawab Soal Di Atas Ini\n\nDeskripsi : ${result.deskripsi}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `Por favor responde la pregunta de arriba\n\nDescripción: ${result.deskripsi}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -4974,7 +5097,7 @@ break;
 
     // Cek apakah pengguna sudah terdaftar
     if (!dbCheck[user]) {
-        return shoNherly('❌ Anda belum terdaftar. Silakan daftar terlebih dahulu.');
+        return shoNherly('❌ Aún no estás registrado. Por favor, regístrate primero.');
     }
 
     const biayaMain = 500; // Biaya untuk bermain jackpot
@@ -4986,7 +5109,7 @@ break;
 
     // Jika saldo tidak cukup untuk bermain
     if (saldoPengguna < biayaMain) {
-        return shoNherly(`❌ Saldo Anda tidak mencukupi untuk bermain. Dibutuhkan Rp${biayaMain}, saldo Anda saat ini: Rp${saldoPengguna}.`);
+        return shoNherly(`❌ Su saldo no es suficiente para jugar. Se requieren Rp${biayaMain}, su saldo actual es: Rp${saldoPengguna}.`);
     }
 
     // Kurangi saldo pengguna dengan biaya bermain
@@ -5007,15 +5130,15 @@ break;
 
     // Cek apakah semua simbol sama (pengguna memenangkan jackpot)
     if (result[0] === result[1] && result[1] === result[2]) {
-        teks += `🎉 SELAMAT! Anda memenangkan JACKPOT! 🎉\n`;
-        teks += `Hadiah: Rp${hadiahJackpot} saldo 💰`;
+        teks += `🎉 ¡FELICITACIONES! ¡Has ganado el JACKPOT! 🎉\n`;
+teks += `Premio: Rp${hadiahJackpot} saldo 💰`;
 
         // Tambahkan hadiah jackpot ke saldo pengguna
         saldoPengguna += hadiahJackpot;
 
     } else {
-        teks += `😢 Sayang sekali, Anda belum beruntung. Coba lagi nanti!`;
-        teks += `\nAnda mendapatkan Rp${hadiahPartisipasi} saldo sebagai hadiah partisipasi 🎁`;
+        teks += `😢 Qué pena, no has tenido suerte. ¡Intenta de nuevo más tarde!`;
+teks += `\nHas recibido Rp${hadiahPartisipasi} saldo como premio de participación 🎁`;
 
         // Tambahkan saldo partisipasi ke pengguna
         saldoPengguna += hadiahPartisipasi;
@@ -5026,7 +5149,7 @@ break;
     saveUserFire(dbCheck); // Fungsi untuk menyimpan data kembali ke penyimpanan
 
     // Tambahkan informasi sisa saldo setelah bermain
-    teks += `\n\n💰 Sisa saldo Anda setelah bermain: Rp${saldoPengguna}`;
+    teks += `\n\n💰 Saldo restante después de jugar: Rp${saldoPengguna}`;
 
     // Kirim hasil permainan ke pengguna
     await shoNherly(teks);
@@ -5055,7 +5178,7 @@ break;
 							{
 								url: result.img
 							},
-							caption: `Gambar diatas adalah game?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `¿La imagen de arriba es un juego?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5126,7 +5249,7 @@ break;
 							{
 								url: result.img
 							},
-							caption: `Gambar diatas adalah hero?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `¿La imagen de arriba es un héroe?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5199,7 +5322,7 @@ break;
 							{
 								url: result.gambar
 							}, // Perbaikan properti gambar
-							caption: `Karakter Apa Ini?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `¿Qué personaje es este?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5221,7 +5344,7 @@ break;
 					console.log("Error: " + error.message);
 					await shoNhe.sendMessage(m.chat,
 					{
-						text: "Terjadi kesalahan, coba lagi nanti."
+						text: "Se produjo un error, inténtelo nuevamente más tarde."
 					},
 					{
 						quoted: m
@@ -5281,7 +5404,7 @@ break;
 							{
 								url: result.url
 							}, // Properti gambar
-							caption: `Logo Kabupaten Manakah ini?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `¿De qué distrito es este logo?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5303,7 +5426,7 @@ break;
 					console.log("Error: " + error.message);
 					await shoNhe.sendMessage(m.chat,
 					{
-						text: "Terjadi kesalahan, coba lagi nanti."
+						text: "Se produjo un error, inténtelo nuevamente más tarde."
 					},
 					{
 						quoted: m
@@ -5334,7 +5457,7 @@ break;
 							{
 								url: result.gambar
 							},
-							caption: `Siapakah Nama Member JKT48 Ini?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `¿Cuál es el nombre de este miembro de JKT48?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5405,7 +5528,7 @@ break;
 							{
 								url: result.url
 							},
-							caption: `Hewan Apakah Ini?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `¿Qué animal es este?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5486,7 +5609,7 @@ break;
 					tebakml[m.chat] = [
 						await shoNhe.sendMessage(m.chat,
 						{
-							text: `Siapakah Nama Karakter Ini?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							text: `¿Cuál es el nombre de este personaje?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: key
@@ -5565,7 +5688,7 @@ break;
 								{
 									url: result.image
 								},
-								caption: `Siapakah Nama Karakter Ini?\n\nWaktu: 120 detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+								caption: `¿Cuál es el nombre de este personaje?\n\nTiempo: 120 segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 							},
 							{
 								quoted: m
@@ -5620,6 +5743,413 @@ break;
            }
 			}
 			break;
+case 'joket': {
+  const db = loadUserFire();
+  if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
+
+  let apuesta = parseInt(args[0]);
+  if (isNaN(apuesta) || apuesta <= 0) return shoNherly('❌ Ingresa una cantidad válida para apostar.');
+  if (apuesta < 100) return shoNherly('❌ La apuesta mínima es de 100 límite.');
+  if (apuesta > db[m.sender].limit) return shoNherly('❌ No tienes suficiente límite para apostar.');
+  if (db[m.sender].role === 'owner') return shoNherly('Eres owner, no puedes ganar ni perder límite en el casino.');
+
+  db[m.sender].limit -= apuesta;
+
+  // Animación de tragamonedas
+  const nombre = '@' + m.sender.split('@')[0];
+  const slots = ['🍒', '🍋', '🍊', '💎', '7️⃣', '🍉', '⭐'];
+  
+  const animarSlots = () => {
+    return [
+      slots[Math.floor(Math.random() * slots.length)],
+      slots[Math.floor(Math.random() * slots.length)],
+      slots[Math.floor(Math.random() * slots.length)]
+    ];
+  };
+
+  let animMsg = await shoNhe.sendMessage(m.chat, {
+    text: `🎰 ${nombre} está apostando...\n\n[ ❔ ❔ ❔ ]`,
+    mentions: [m.sender]
+  }, { quoted: m });
+
+  for (let i = 0; i < 5; i++) {
+    await new Promise(res => setTimeout(res, 800));
+    let spin = animarSlots();
+    await shoNhe.sendMessage(m.chat, {
+      text: `🎰 ${nombre} está apostando...\n\n[ ${spin[0]} ${spin[1]} ${spin[2]} ]`,
+      edit: animMsg.key,
+      mentions: [m.sender]
+    });
+  }
+
+  // Puntos reales
+  let puntosJugador = crypto.randomInt(0, 101);
+  let puntosNPC = crypto.randomInt(30, 101);
+
+  let resultado = '';
+  let ganancia = 0;
+  const chance = Math.random();
+  let mult = 1.2;
+  if (chance > 0.95) mult = 5;
+  else if (chance > 0.8) mult = 2;
+  else if (chance > 0.5) mult = 1.5;
+
+  if (puntosJugador > puntosNPC + 5) {
+    ganancia = Math.floor(apuesta * mult);
+    db[m.sender].limit += ganancia;
+    resultado = `✨ *¡Ganaste!* x${mult}\n\n*Tú:* ${puntosJugador} pts\n*NPC:* ${puntosNPC} pts\n\n*Ganaste +${ganancia} límite*`;
+  } else if (puntosJugador < puntosNPC) {
+    resultado = `☠️ *Perdiste* -${apuesta} límite\n\n*Tú:* ${puntosJugador} pts\n*NPC:* ${puntosNPC} pts\n\nMejor suerte la próxima...`;
+  } else {
+    db[m.sender].limit += apuesta;
+    resultado = `🤝 *Empate*\n\n*Tú:* ${puntosJugador} pts\n*NPC:* ${puntosNPC} pts\n\nRecuperas tu apuesta (+${apuesta} límite)`;
+  }
+
+  saveUserFire(db);
+
+  await new Promise(res => setTimeout(res, 1000));
+  await shoNhe.sendMessage(m.chat, {
+    text: resultado,
+    edit: animMsg.key
+  });
+}
+break;
+case 'roletarusa': {
+    const db = loadUserFire();
+    if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
+    if (db[m.sender].limit < 20) return m.reply('❌ Necesitas al menos 20 límite para jugar a la ruleta rusa.');
+    if (db[m.sender].role === 'owner') return m.reply('Los owners no pueden participar en la ruleta rusa.');
+
+    db[m.sender].limit -= 20;
+    saveUserFire(db);
+
+    let jugadores = [{ id: m.sender, nombre: m.pushName }];
+global.partidasRoleta = global.partidasRoleta || {};
+global.partidasRoleta[m.chat] = [];
+    let mensajeInicio = await shoNhe.sendMessage(m.chat, { text: `🎯 *Ruleta Rusa* 🎯\n\n@${m.sender.split('@')[0]} ha iniciado una ruleta rusa.\nEscribe *unirme* para participar. Tienes 10 segundos...`, mentions: [m.sender] });
+
+    // Aquí no usamos el createMessageCollector, sino el sistema que ya tienes afuera del switch
+    setTimeout(async () => {
+    if (global.partidasRoleta && global.partidasRoleta[m.chat]) {
+        let lista = global.partidasRoleta[m.chat];
+        for (let user of lista) {
+            if (!jugadores.find(j => j.id === user.id)) {
+                jugadores.push(user);
+            }
+        }
+    }
+
+    while (jugadores.length < 5) {
+        let npcNombre = `NPC: ${['Vladimir', 'Sasha', 'Mikhail', 'Igor', 'Olga'][Math.floor(Math.random() * 5)]}`;
+        if (!jugadores.find(j => j.nombre === npcNombre)) {
+            jugadores.push({ id: null, nombre: npcNombre });
+        }
+    }
+
+    let textoAnimado = `🎮 *Entrando a la sala de Ruleta Rusa...*\n`;
+    let msgAnimado = await shoNhe.sendMessage(m.chat, { text: textoAnimado });
+
+    const animaciones = [
+        '🧠 Cargando balas en el tambor...',
+        '🔄 Girando el tambor...',
+        '😰 Preparando a los jugadores...',
+        '☠️ ¡Comienza la ruleta rusa!'
+    ];
+
+    for (let i = 0; i < animaciones.length; i++) {
+        await new Promise(r => setTimeout(r, 1000));
+        textoAnimado += '\n' + animaciones[i];
+        await shoNhe.sendMessage(m.chat, { edit: msgAnimado.key, text: textoAnimado });
+    }
+
+    let vivos = [...jugadores];
+    let ronda = 1;
+    while (vivos.length > 1) {
+        await new Promise(r => setTimeout(r, 2000));
+        let eliminado = vivos[Math.floor(Math.random() * vivos.length)];
+        eliminado.muerto = true;
+
+        textoAnimado = `*Ronda ${ronda} - Disparando...*\n\n`;
+        for (let j of jugadores) {
+            if (j.id === eliminado.id && j.nombre === eliminado.nombre) {
+                textoAnimado += `• ☠️ ${j.nombre}\n`;
+                vivos = vivos.filter(v => v !== eliminado);
+            } else if (j.muerto) {
+                textoAnimado += `• ☠️ ${j.nombre}\n`;
+            } else {
+                textoAnimado += `• 🟢 ${j.nombre}\n`;
+            }
+        }
+
+        await shoNhe.sendMessage(m.chat, { edit: msgAnimado.key, text: textoAnimado });
+        ronda++;
+    }
+
+    let ganador = vivos[0];
+    if (ganador.id) {
+        db[ganador.id].limit += 50;
+        saveUserFire(db);
+        textoAnimado += `\n\n🏆 *¡${ganador.nombre} ha ganado la ruleta rusa!* +50 límite`;
+    } else {
+        textoAnimado += `\n\n🏆 *¡${ganador.nombre} ha ganado la ruleta rusa!* (NPC sin recompensa)`;
+    }
+
+    await new Promise(r => setTimeout(r, 2000));
+    await shoNhe.sendMessage(m.chat, { edit: msgAnimado.key, text: textoAnimado });
+
+    // Limpia la partida
+    delete global.partidasRoleta[m.chat];
+}, 10000); // Espera 10 segundos para unirse
+}
+break;
+case 'carrera': {
+  const db = loadUserFire()
+  if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' }
+
+  if (db[m.sender].limit < 20) return m.reply('❌ Necesitas al menos 20 límite para unirte a la carrera.')
+  if (db[m.sender].role === 'owner') return m.reply('Los owners no pueden participar en la carrera.')
+
+  db[m.sender].limit -= 20
+  saveUserFire(db)
+
+  if (!global.partidaCarrera) global.partidaCarrera = {}
+  if (!global.partidaCarrera[m.chat]) {
+    global.partidaCarrera[m.chat] = {
+      jugadores: [],
+      animalesDisponibles: ['Tortuga', 'Conejo', 'Caballo', 'Canguro', 'Perezoso'],
+      enCurso: true
+    }
+
+    shoNhe.sendMessage(m.chat, {
+      text: `🏁 *¡Carrera de animales* 🏁\n\nEscribe *elegir [animal]* para participar. Animales disponibles:\n${global.partidaCarrera[m.chat].animalesDisponibles.map(a => `• ${a}`).join('\n')}\n\nTienes 30 segundos...`,
+      mentions: [m.sender]
+    })
+
+    setTimeout(async () => {
+      let partida = global.partidaCarrera[m.chat]
+      let jugadores = partida.jugadores
+      let restantes = partida.animalesDisponibles
+
+      // Llenar con NPCs si faltan
+      let npcs = ['Vladimir', 'Sasha', 'Mikhail', 'Olga', 'Tanya']
+      while (jugadores.length < 5 && restantes.length > 0) {
+        let npc = npcs[Math.floor(Math.random() * npcs.length)]
+        let animal = restantes.shift()
+        jugadores.push({ nombre: `NPC: ${npc}`, animal, avance: 0, id: null })
+      }
+
+      let msg = await shoNhe.sendMessage(m.chat, { text: '*Preparando la carrera...*' })
+      await new Promise(r => setTimeout(r, 2000))
+
+      let ronda = 1
+      let ganador = null
+
+      while (!ganador) {
+        for (let j of jugadores) {
+          j.avance += Math.floor(Math.random() * 5) + 1
+          if (j.avance >= 15) {
+            ganador = j
+            break
+          }
+        }
+
+        let texto = `*Ronda ${ronda}*\n\n`
+        for (let j of jugadores) {
+          let progreso = Math.min(j.avance, 15)
+let barra = '┃' + '■'.repeat(progreso) + '─'.repeat(15 - progreso)
+          let emoji = obtenerEmojiAnimal(j.animal)
+          texto += `${emoji} ${j.animal} ${barra}\n`
+        }
+
+        texto += `\n⏱️ Esperando siguiente ronda...`
+
+        await shoNhe.sendMessage(m.chat, { edit: msg.key, text: texto })
+        ronda++
+        await new Promise(r => setTimeout(r, 2000))
+      }
+
+      let textoFinal = `*Ronda ${ronda}*\n\n`
+      for (let j of jugadores) {
+        let progreso = Math.min(j.avance, 15)
+let barra = '┃' + '■'.repeat(progreso) + '─'.repeat(15 - progreso)
+        let emoji = obtenerEmojiAnimal(j.animal)
+        textoFinal += `${emoji} ${j.animal} ${barra}\n`
+      }
+
+      if (ganador.id) {
+        db[ganador.id].limit += 50
+        saveUserFire(db)
+        textoFinal += `\n🏆 *¡${obtenerEmojiAnimal(ganador.animal)} ${ganador.animal} gana la carrera!* +50 límite para ti`
+      } else {
+        textoFinal += `\n🏆 *¡${obtenerEmojiAnimal(ganador.animal)} ${ganador.animal} gana la carrera!* (NPC sin recompensa)`
+      }
+
+      await shoNhe.sendMessage(m.chat, { edit: msg.key, text: textoFinal })
+      delete global.partidaCarrera[m.chat]
+    }, 30000)
+  } else {
+    m.reply('⏳ Ya hay una carrera en curso en este chat.')
+  }
+}
+break
+case 'casino': {
+  const db = loadUserFire();
+  if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
+
+  let apuesta = parseInt(args[0]);
+  if (isNaN(apuesta) || apuesta <= 0) return shoNherly('❌ Ingresa una cantidad válida para apostar.');
+  if (apuesta < 100) return shoNherly('❌ La apuesta mínima es de 100 límite.');
+  if (apuesta > db[m.sender].limit) return shoNherly('❌ No tienes suficiente límite para apostar.');
+  if (db[m.sender].role === 'owner') return shoNherly('Eres owner, no puedes ganar ni perder límite en el casino.');
+
+  db[m.sender].limit -= apuesta;
+
+  // Animación inicial
+  const nombre = '@' + m.sender.split('@')[0];
+  const animacion = [
+    `🎰 ${nombre} *Girando la ruleta...*`,
+    `🎲 ${nombre} *Reuniendo tus fichas...*`,
+    `🃏 ${nombre} *El crupier baraja tus chances...*`,
+    `🔮 ${nombre} *¡La suerte está echada!*`
+  ];
+
+  // Enviar mensaje inicial
+  let animMsg = await shoNhe.sendMessage(m.chat, {
+    text: animacion[0],
+    mentions: [m.sender]
+  }, { quoted: m });
+
+  // Editar el mismo mensaje con cada frame
+  for (let i = 1; i < animacion.length; i++) {
+    await new Promise(res => setTimeout(res, 1200));
+    await shoNhe.sendMessage(m.chat, {
+      text: animacion[i],
+      edit: animMsg.key,
+      mentions: [m.sender]
+    });
+  }
+
+  // Generar resultado
+  let puntosJugador = crypto.randomInt(0, 101);
+  let puntosNPC = crypto.randomInt(30, 101);
+
+  let resultado = '';
+  let ganancia = 0;
+  const chance = Math.random();
+  let mult = 1.2;
+  if (chance > 0.95) mult = 5;
+  else if (chance > 0.8) mult = 2;
+  else if (chance > 0.5) mult = 1.5;
+
+  if (puntosJugador > puntosNPC + 5) {
+    ganancia = Math.floor(apuesta * mult);
+    db[m.sender].limit += ganancia;
+    resultado = `✨ *¡Ganaste!* x${mult}\n\n*Tú:* ${puntosJugador} pts\n*NPC:* ${puntosNPC} pts\n\n*Ganaste +${ganancia} límite*`;
+  } else if (puntosJugador < puntosNPC) {
+    resultado = `☠️ *Perdiste* -${apuesta} límite\n\n*Tú:* ${puntosJugador} pts\n*NPC:* ${puntosNPC} pts\n\nMejor suerte la próxima...`;
+  } else {
+    db[m.sender].limit += apuesta;
+    resultado = `🤝 *Empate*\n\n*Tú:* ${puntosJugador} pts\n*NPC:* ${puntosNPC} pts\n\nRecibes +${apuesta} límite`;
+  }
+
+  saveUserFire(db);
+  
+  // Editar mensaje final con resultado
+  await new Promise(res => setTimeout(res, 1000));
+  await shoNhe.sendMessage(m.chat, {
+    text: resultado,
+    edit: animMsg.key
+  });
+}
+break;
+case 'suitpvp': {
+    let db = loadUserFire();
+
+    if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.sender)))
+        return shoNherly(`Termina tu juego anterior de suit.`);
+
+    if (!m.mentionedJid[0] || m.mentionedJid[0] === m.sender)
+        return shoNherly(`Etiqueta a un jugador válido para desafiar.\nEjemplo: ${prefix}suitpvp @usuario`);
+
+    if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.mentionedJid[0])))
+        return shoNherly(`La persona ya está en otro juego.`);
+
+    let id = 'suitpvp_' + new Date() * 1;
+    let name1 = m.pushName || 'Desconocido';
+    let name2 = await shoNhe.getName(m.mentionedJid[0]) || 'Desconocido';
+if (!(await firely(m, mess.waits))) return;
+    let caption = `🎮 𝙂𝘼𝙈𝙀𝙎 - 𝙋𝙑𝙋 - 𝙂𝘼𝙈𝙀𝙎 🎮\n\n${name1} 𝘿𝙀𝙎𝘼𝙁𝙄𝘼 𝘼 ${name2} 𝘼 𝙐𝙉 (𝙋𝙑𝙋) 𝘿𝙀 𝙋𝙄𝙀𝘿𝙍𝘼, 𝙋𝘼𝙋𝙀𝙇 𝙊 𝙏𝙄𝙅𝙀𝙍𝘼\n\n${name2},\n_*Escribe (aceptar) para aceptar*_\n_*Escribe (rechazar) para rechazar*_`;
+    shoNherly(caption);
+
+    suitpvp[id] = {
+        id,
+        chat: m.chat,
+        p: m.sender,
+        p2: m.mentionedJid[0],
+        status: 'wait',
+        timeout: 60000,
+        poin: 0,
+        waktu: setTimeout(() => {
+            if (suitpvp[id]) {
+                shoNherly(`⏳ 𝙏𝙄𝙀𝙈𝙋𝙊 𝘿𝙀 𝙀𝙎𝙋𝙀𝙍𝘼 𝙁𝙄𝙉𝘼𝙇𝙄𝙕𝘼𝘿𝙊, 𝙀𝙇 𝙋𝙑𝙋 𝙎𝙀 𝘾𝘼𝙉𝘾𝙀𝙇𝘼 𝙋𝙊𝙍 𝙁𝘼𝙇𝙏𝘼 𝘿𝙀 𝙍𝙀𝙎𝙋𝙐𝙀𝙎𝙏𝘼`);
+                delete suitpvp[id];
+            }
+        }, 60000)
+    };
+}
+break;
+			case 'minas':
+			 			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				const gamecek = await cekgame(m.chat);
+				if (gamecek) return;
+				if (!(await firely(m, mess.waits))) return;
+    if (boom[m.sender]) return shoNherly('¡Aún quedan sesiones sin terminar!');
+
+    boom[m.sender] = {
+        petak: [0, 0, 0, 2, 0, 2, 0, 2, 0, 0].sort(() => Math.random() - 0.5),
+        board: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'],
+        bomb: 3,
+        lolos: 7,
+        pick: 0,
+        nyawa: ['❤️', '❤️', '❤️'],
+        waktu: setTimeout(() => {
+            if (boom[m.sender]) {
+                shoNherly(`_⏳ Tiempo de ${command} agotado_`);
+                delete boom[m.sender];
+            }
+        }, 160000)
+    };
+    shoNherly(`*💣 ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n¡Elige un número! ¡Y no te dejes alcanzar por una bomba!\n\n🔸 Bombas: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
+}
+break;
+case 'ahorcado':
+ 			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				const gamecek = await cekgame(m.chat);
+				if (gamecek) return;
+				if (!(await firely(m, mess.waits))) return;
+    if (ahorcado[m.sender]) return shoNherly("⚠️ Ya tienes un juego en curso. ¡Termina ese primero!");
+    const palabra = elegirPalabraAleatoria();
+    const letrasAdivinadas = [];
+    const intentos = 6;
+
+    ahorcado[m.sender] = { palabra, letrasAdivinadas, intentos };
+
+    let mensaje = ocultarPalabra(palabra, letrasAdivinadas);
+    shoNherly(`🎮 *AHORCADO*\n\n✍️ Adivina la palabra:\n${mensaje}\n\n📉 Intentos restantes: *${intentos}*\n\n¡Escribe una letra para comenzar!`);
+}
+break;
 			case 'tebaklogo':
 			case 'tebakaplikasi':
 			{
@@ -5644,7 +6174,7 @@ break;
 							{
 								url: result.image
 							},
-							caption: `*Logo Apa Ini?*\n\n${result.deskripsi}\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `*¿Qué logo es este?*\n\n${result.deskripsi}\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5715,7 +6245,7 @@ break;
 							{
 								url: result.image
 							},
-							caption: `Gambar diatas adalah aplikasi?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `¿La imagen de arriba es una aplicación?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -5780,7 +6310,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					tebakkata[m.chat] = [
-						await shoNhe.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tebakkata[m.chat])
@@ -5841,7 +6371,7 @@ break;
 					let result = anu.data
 					console.log("Jawaban: " + result.jawaban)
 					asahotak[m.chat] = [
-						await shoNhe.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (asahotak[m.chat])
@@ -5902,7 +6432,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					lengkapikalimat[m.chat] = [
-						await shoNhe.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (lengkapikalimat[m.chat])
@@ -5963,57 +6493,48 @@ break;
 					return shoNherly('⚠️ Anda belum memiliki data. Silakan gunakan command terlebih dahulu!');
 				}
 				const leveling = {
-            1: "https://i.ibb.co.com/tXMNptr/01.png",
-            2: "https://i.ibb.co.com/Gxqbrzg/02.png",
-            3: "https://i.ibb.co.com/fVRR1BV/03.png",
-            4: "https://i.ibb.co.com/zPy0DcD/04.png",
-            5: "https://i.ibb.co.com/0V7msHW/05.png",
-            6: "https://i.ibb.co.com/4tNm7BV/06.png",
-            7: "https://i.ibb.co.com/6NrT4wb/07.png",
-            8: "https://i.ibb.co.com/QYbY3Qb/08.png",
-            9: "https://i.ibb.co.com/g7KC6jg/09.png",
-            10: "https://i.ibb.co.com/Bndy2xp/10.png",
-            default: "https://i.ibb.co.com/CQcbcQP/default.png"
+default: `https://api.siputzx.my.id/api/canvas/profile?backgroundURL=https://i.ibb.co/QF59VhSL/0b797f561eca.jpg&avatarURL=${encodeURIComponent(ppuser)}&rankName=Agente&rankId=0&requireExp=${user.expTarget || 10}&level=${user.level || 0}&name=${m.pushName || 'Desconocido'}&exp=${user.exp || 0}`
         };
 
         const levelImage = leveling[user.level] || leveling.default;
 				// Informasi level, exp, dan lainnya
 				const info = 
-`╔══════════════════════╗  
-║  🌟 *PROFIL LEVEL ANDA* 🌟  ║  
-╚══════════════════════╝  
+`╔═══════════════════╗  
+║  🌟 *TU PERFIL DE NIVEL* 🌟 ║  
+╚═══════════════════╝  
 
-📛 *Nama*       : ${m.pushName || 'Tidak diketahui'}  
-📱 *Nomor*      : ${m.sender.split('@')[0]}  
+   📛 *Nombre*   : ${m.pushName || 'Desconocido'}  
+   📱 *Número*   : ${m.sender.split('@')[0]}  
 
-╭─────────•✧✧✧•─────────╮  
-🎮 *Level*      : ${user.level || 0}  
-✨ *Exp*        : ${user.exp || 0}/${user.expTarget || 10}  
-💰 *Saldo*      : Rp${user.balance || 0}  
-📊 *Command*    : ${user.commandCount || 0}  
-💎 *Role*       : ${user.role || 'user'}  
-╰─────────•✧✧✧•─────────╯  
+╭───────•✧✧✧•───────╮  
+         🎮 *Nivel*   : ${user.level || 0}  
+         ✨ *Exp*    : ${user.exp || 0}/${user.expTarget || 10}  
+         💰 *Saldo*  : Rp${user.balance || 0}  
+         📊 *Comandos* : ${user.commandCount || 0}  
+         💎 *Rol*     : ${user.role || 'Usuario'}  
+╰───────•✧✧✧•───────╯  
 
-╔════════════════════════╗  
-║             📢 *INFORMASI*             
-╠════════════════════════╣  
-║ ➤ *Pencapaian*: Anda telah melewati      
-║    ${user.level - 1 || 0} tingkat menuju      
-║    level ${user.level || 0}. Teruslah   
-║    berkarya dan tingkatkan skill Anda! 
+╔═══════════════════╗  
+║          📢 *INFORMACIÓN*             
+╠═══════════════════╣  
+║ ➤ *Logros*: Has superado      
+║    ${user.level - 1 || 0} niveles y ahora      
+║    estás en el nivel ${user.level || 0}.   
+║    ¡Sigue progresando y mejora   
+║    tus habilidades! 
 ║                                         
-║ ➤ *Tips*: "Setiap langkah kecil        
-║    membawa Anda lebih dekat ke         
-║    puncak keberhasilan."                
-╚════════════════════════╝  
+║ ➤ *Consejo*: "Cada pequeño        
+║    paso te acerca más         
+║    a la cima del éxito."                
+╚═══════════════════╝  
 
-📡 *Sistem Catatan*:  
-"Data Anda telah diperbarui secara real-time. Teruslah aktif dan eksplorasi lebih banyak fitur!"`;
+📡 *Registro del sistema*:  
+"Tu información se ha actualizado en tiempo real. ¡Sigue activo y explora más funciones!"`;
 				try {
     await shoNhe.sendMessage(m.chat, {
         image: { url: levelImage },
         caption: info,
-        footer: "PROFIL 🎉",
+        footer: "PERFIL 🎉",
         buttons: [
             {
                 buttonId: `${prefix}cekfire`,
@@ -6060,9 +6581,9 @@ break;
 				let user = m.sender;
 				if (!dbCheck[user])
 				{
-					return shoNherly('❌ Anda belum terdaftar. Silakan daftar terlebih dahulu.');
+					return shoNherly('❌ Aún no estás registrado. Por favor regístrese primero.');
 				}
-				shoNherly(`💰 Saldo Anda saat ini: Rp${dbCheck[user].balance}`);
+				shoNherly(`💰 Su saldo actual: Rp${dbCheck[user].balance}`);
 				}
 			break
 			case 'scriptnoenc':
@@ -6079,7 +6600,7 @@ break;
 				// Periksa saldo pengguna
 				if (!db[sender] || db[sender].balance < hargaScript)
 				{
-					return shoNherly(`❌ Saldo Anda tidak cukup untuk membeli script no enc!\n\n` + `💰 Harga: Rp${hargaScript}\n` + `💸 Saldo Anda saat ini: Rp${db[sender]?.balance || 0}\n\n` + `Gunakan perintah *${prefix}owner* untuk membeli saldo.`);
+					return shoNherly(`❌ Tu saldo no es suficiente para comprar el script no enc!\n\n💰 Precio: Rp${hargaScript}\n💸 Tu saldo actual: Rp${db[sender]?.balance || 0}\n\nUsa el comando *${prefix}owner* para comprar saldo.`);
 				}
 				// Kurangi saldo jika mencukupi
 				db[sender].balance -= hargaScript;
@@ -6094,12 +6615,12 @@ break;
 					},
 					mimetype: 'application/zip',
 					fileName: 'shoNhev3.zip',
-					caption: `✅ Pembelian berhasil!\n🎉 Anda telah membeli script no enc.\n` + `💰 Sisa saldo Anda: Rp${db[sender].balance}`
+					caption: `✅ ¡Compra exitosa!\n🎉 Has comprado el script no enc.\n💰 Tu saldo restante: Rp${db[sender].balance}`
 				},
 				{
 					quoted: m
 				});
-				shoNherly('📂 File sedang dikirim, mohon tunggu sebentar.');
+				shoNherly('📂 El archivo se está enviando, espere un momento.');
 			}
 			break;
 			case 'tebakbendera':
@@ -6125,7 +6646,7 @@ break;
 							{
 								url: result.img
 							},
-							caption: `Gambar diatas adalah bendera negara?\n\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`
+							caption: `¿La imagen de arriba es la bandera de un país?\n\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`
 						},
 						{
 							quoted: m
@@ -6190,7 +6711,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					tebakkalimat[m.chat] = [
-						await shoNhe.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tebakkalimat[m.chat])
@@ -6253,7 +6774,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					siapaaku[m.chat] = [
-						await shoNhe.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (siapaaku[m.chat])
@@ -6314,7 +6835,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.unsur)
 					tebakkimia[m.chat] = [
-						await shoNhe.sendText(m.chat, `Apa Arti Dari Simbol : *${result.lambang}*?\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `¿Qué significa el símbolo : *${result.lambang}*?\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tebakkimia[m.chat])
@@ -6375,7 +6896,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					tebaklirik[m.chat] = [
-						await shoNhe.sendText(m.chat, `Ini Adalah Lirik Dari Lagu? : *${result.soal}*?\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `¿Esta es la letra de la canción? : *${result.soal}*?\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tebaklirik[m.chat])
@@ -6436,7 +6957,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					tebaktebakan[m.chat] = [
-						await shoNhe.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tebaktebakan[m.chat])
@@ -6497,7 +7018,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					susunkata[m.chat] = [
-						await shoNhe.sendText(m.chat, `*Jawablah Pertanyaan Berikut :*\nSoal : ${result.soal}\nTipe : ${result.tipe}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `*Responde la siguiente pregunta :*\nPregunta: ${result.soal}\nTipo: ${result.tipe}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (susunkata[m.chat])
@@ -6558,7 +7079,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					caklontong[m.chat] = [
-						await shoNhe.sendText(m.chat, `*Jawablah Pertanyaan Berikut :*\nSoal : ${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `*Responde la siguiente pregunta :*\nPregunta: ${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (caklontong[m.chat])
@@ -6619,7 +7140,7 @@ break;
 					let result = await pickRandom(anu)
 					console.log("Jawaban: " + result.jawaban)
 					tekateki[m.chat] = [
-						await shoNhe.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik\n\n_Ketik .nyerah Untuk Menyerah..._\n_Ketik .bantuan Untuk Petunjuk..._`, m), result, 250,
+						await shoNhe.sendText(m.chat, `Por favor responde la siguiente pregunta\n\n${result.soal}\nTiempo: ${(120000 / 1000).toFixed(2)} segundos\n\n_Tecla .rendirse para rendirte..._\n_Tecla .ayuda para obtener ayuda..._`, m), result, 250,
 						setTimeout(() =>
 						{
 							if (tekateki[m.chat])
@@ -6663,7 +7184,7 @@ break;
            }
 			}
 			break
-			case 'bantuan':
+			case 'ayuda':
 			{
 				if (!isRegistered(m))
 				{
@@ -6822,7 +7343,7 @@ break;
            }
 			}
 			break
-			case 'nyerah':
+			case 'rendirse':
 			{
 				if (!isRegistered(m))
 				{
@@ -6838,7 +7359,7 @@ break;
 						delete siapaaku[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6850,7 +7371,7 @@ break;
 						delete tebakkalimat[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6862,7 +7383,7 @@ break;
 						delete tebakbendera[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6874,7 +7395,7 @@ break;
 						delete tebakkata[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6886,7 +7407,7 @@ break;
 						delete asahotak[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6898,7 +7419,7 @@ break;
 						delete lengkapikalimat[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6910,7 +7431,7 @@ break;
 						delete tebakgame[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6922,7 +7443,7 @@ break;
 						delete tebakhero[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6934,7 +7455,7 @@ break;
 						delete tebakff[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6946,7 +7467,7 @@ break;
 						delete tebakkabupaten[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6958,7 +7479,7 @@ break;
 						delete tebakjkt48[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6970,7 +7491,7 @@ break;
 						delete tebakhewan[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6982,7 +7503,7 @@ break;
 						delete tebakml[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -6994,7 +7515,7 @@ break;
 						delete tebakchara[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7006,7 +7527,7 @@ break;
 						delete tebaklogo[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7018,7 +7539,7 @@ break;
 						delete tebakaplikasi[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7030,7 +7551,7 @@ break;
 						delete tebakkimia[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7042,7 +7563,7 @@ break;
 						delete tebaklirik[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7054,7 +7575,7 @@ break;
 						delete tebaktebakan[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7066,7 +7587,7 @@ break;
 						delete susunkata[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7078,7 +7599,7 @@ break;
 						delete caklontong[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7090,7 +7611,7 @@ break;
 						delete tebakgambar[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7102,7 +7623,7 @@ break;
 						delete tekateki[m.chat]
 						return shoNhe.sendMessage(m.chat,
 						{
-							text: `_Lemahhh_ 😏`
+							text: `_Débil_ 😏`
 						},
 						{
 							quoted: m
@@ -7169,13 +7690,13 @@ break;
 						return rows;
 					}, []).map(row => row.join(` ${c}|${c} `)) // Gabungkan elemen dalam satu baris dengan " || "
 					.join('\n') // Gabungkan semua baris dengan newline
-					: 'Belum ada data command populer.';
+					: 'Aún no hay datos de comandos populares.';
 				// Tambahkan pesan untuk AI (jika diperlukan)
-				let aiMessage = popularData.ai ? `${c}AI telah digunakan sebanyak ${popularData.ai} kali.${c}` : `${c}AI belum digunakan.${c}`;
+				let aiMessage = popularData.ai ? `${c}AI ha sido utilizado ${popularData.ai} veces.${c}` : `${c}AI aún no ha sido utilizado.${c}`;
 				// Gabungkan hasil akhir
 				let formattedPopularList = `${formattedCommandList}\n\n${aiMessage}`;
-				// Gunakan formattedPopularList di balasan
-				shoNherly(`Statistik penggunaan:\n\n${formattedPopularList}`);
+				// Usar formatotedPopularList di balasan
+				shoNherly(`Estadísticas de uso:\n\n${formattedPopularList}`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -7390,7 +7911,7 @@ break;
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners)
 				resetPopularCommands(); // Reset data
-				shoNherly('Data fitur populer telah direset.');
+				shoNherly('Los datos de funciones populares se han restablecido.');
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -7430,67 +7951,61 @@ break;
 
     try {
         // Informasi harga dan fitur script
-        let teksPesan = `🔷 *SCRIPT SHO V4 & ShoNhe V5 MASIH DALAM PENGEMBANGAN* 🔷\n\n`;
-        teksPesan += `📜 *SC ShoNhe V3:* \n`;
-        teksPesan += `> °SC sebagian kami Enc\n`;
-        teksPesan += `> °Mau Yang No Enc? List di bawah:\n\n`;
+        let teksPesan = `🔷 *SCRIPT Ansi V4 y TechFix V5 AÚN EN DESARROLLO* 🔷\n\n`;
+        teksPesan += `📜 *SC TechFix V3:* \n`;
+        teksPesan += `> °Nuestro SC parcial Enc\n`;
+        teksPesan += `> °¿Quieres el Enc No? Lista a continuación:\n\n`;
 
-        teksPesan += `📌 *[List No Enc🧾] [Free Update SC Version]*\n`;
-        teksPesan += `- 💰 25K NO ENC, Free update SC (5 Slot Terbatas) ⚠️ Perpanjang Update setiap SC 10K/Update\n`;
-        teksPesan += `- 💰 45K NO ENC, Free Update Berlangganan SC FREE UPDATE V3-V6. *45K cukup bayar sekali, tanpa perpanjangan!*\n\n`;
+        teksPesan += `📌 *[List No Enc🧾] [Actualización gratuita de la versión SC]*\n`;
+        teksPesan += `- 💰 25K SIN ENC, actualización SC gratuita (5 espacios limitados) ⚠️ Ampliar actualización cada SC 10K/Actualización\n`;
+        teksPesan += `- 💰 45K SIN ENC, actualización gratuita Suscríbase a SC FREE UPDATE V3-V6. *¡45K solo paga una vez, sin extensión!*\n\n`;
 
-        teksPesan += `🎖️ *Awards for:* 🎖️\n`;
-        teksPesan += `╔◇ *Thanks to* ◇━╗\n`;
-        teksPesan += `║   🛠️ *Developer & Contributor:*\n`;
-        teksPesan += `> ©YurRin's (Dev)\n`;
-        teksPesan += `> ©Tngxaja (IdeCreator)\n`;
-        teksPesan += `> ©Zoi\n`;
-        teksPesan += `> ©Ruri\n`;
-        teksPesan += `> ©HenriqueX\n`;
-        teksPesan += `> ©Puguh (Exce Test)\n`;
-        teksPesan += `> ©Rico (Share)\n`;
-        teksPesan += `> Penyumbang Apikey\n`;
+        teksPesan += `🎖️ *Premios por:* 🎖️\n`;
+        teksPesan += `╔◇ *Gracias a* ◇━╗\n`;
+        teksPesan += `║   🛠️ *Desarrollador y colaborador:*\n`;
+        teksPesan += `> ©ManuDiaz'OFC (Dev)\n`;
+        teksPesan += `> Colaborador de Apikey\n`;
         teksPesan += `╚═━━━◇━━━━━━━━═╝\n\n`;
 
-        teksPesan += `🌐 *Sosial Media* 🌐\n`;
-        teksPesan += `╔━◇📡 *Group WhatsApp:* ◇━╗\n`;
-        teksPesan += `║ 📡 *Join Group:* [Klik di sini](https://chat.whatsapp.com/GQ5Gp0eSeDS6dPBYeHE6kf)\n`;
-        teksPesan += `║ 📺 *Channel Update SC:* [Klik di sini](https://whatsapp.com/channel/0029Vb0v3F71yT264EejzJ3e)\n`;
+        teksPesan += `🌐 *Redes Sociales* 🌐\n`;
+        teksPesan += `╔━◇📡 *Grupos de whatsapp:* ◇━╗\n`;
+        teksPesan += `║ 📡 *Unirse al grupo:* [TechFix-OFC](https://chat.whatsapp.com/)\n`;
+        teksPesan += `║ 📺 *Canal de actualización SC:* [Legado](https://whatsapp.com/)\n`;
         teksPesan += `╚═━━━◇🌐━━━━━━━━═╝\n\n`;
 
-        teksPesan += `🔒 *System Log Complete. Node Secured.* 🔒\n\n`;
-        teksPesan += `𝙎𝙝𝙤𝙉𝙝𝙚 🅥❸ *_And Development_*\n`;
+        teksPesan += `🔒 *Registro del sistema completo. Node Asegurados.* 🔒\n\n`;
+        teksPesan += `𝙏𝙚𝙘𝙝𝙁𝙞𝙭 🅥❸ *_And Development_*\n`;
 
         // Tombol untuk akses script
         const tombol = [
             {
                 name: "cta_url",
                 buttonParamsJson: JSON.stringify({
-                    display_text: "📜 SC SHO V1",
-                    url: `https://drive.google.com/file/d/1Fd9wBs2CL-drQUcyNKGRDlxV3ka3JC3c/view`,
+                    display_text: "📜 SC Tech V1",
+                    url: `https://drive.google.com/`,
                 }),
             },
             {
                 name: "cta_url",
                 buttonParamsJson: JSON.stringify({
-                    display_text: "📜 SC SHO V2",
-                    url: `https://drive.google.com/file/d/1IIswM2e1Hay6WxBP7c9y4NzHEn8dedac/view?usp=drivesdk`,
+                    display_text: "📜 SC Tech V2",
+                    url: `https://drive.google.com`,
                 }),
             },
             {
                 name: "cta_url",
                 buttonParamsJson: JSON.stringify({
-                    display_text: "📜 SC ShoNhe V3",
-                    url: `https://youtube.com/@sychyy00`,
+                    display_text: "📜 SC TechFix V3",
+                    url: `https://youtube.com/`,
                 }),
             }
         ];
 
         // Kirim pesan dengan gambar dan tombol
-        sendButtonImage(m.chat, "🔥 Script ShoNhe V3", teksPesan, getRandomThumb2(), tombol, hw);
+        sendButtonImage(m.chat, "🔥 Script TechFix V3", teksPesan, getRandomThumb2(), tombol, hw);
 
     } catch (error) {
-        console.error("❌ Terjadi kesalahan saat menangani perintah 'script':", error);
+        console.error("❌ Se produjo un error al manejar el comando 'script':", error);
     }
 
     // Level Up System
@@ -7525,31 +8040,20 @@ break;
 				if (!isGroup) return shoNherly(mess.groups); // Cek apakah perintah dijalankan di grup
 				if (isAfkOn) return; // Cek apakah pengguna sudah dalam mode AFK
 				// Tentukan alasan AFK
-				let reason = text ? text : 'Lagi BAB bjir';
+				let reason = text ? text : 'Otra vez defecando';
 				// Tambahkan pengguna ke daftar AFK
 				addAfkUser(m.sender, Date.now(), reason, afk);
 				// Kirim pesan konfirmasi dengan mention
-				shoNhe.sendTextWithMentions(m.chat, `🌙 *AFK MODE AKTIF!* 🌙  
+				shoNhe.sendTextWithMentions(m.chat, `🌙 *¡MODO AFK ACTIVADO!* 🌙  
 
-👤 *Pengguna*: @${m.sender.split('@')[0]}  
-💬 *Status*: Saat ini sedang *AFK*!  
+👤 *Usuario*: @${m.sender.split('@')[0]}  
+💬 *Estado*: Actualmente *AFK*!  
 
-📌 *Alasan*:  
-- ${reason || 'Tidak dijelaskan, mungkin rahasia besar.'}  
+📌 *Razón*:  
+- ${reason || 'No especificada, tal vez un gran secreto.'}  
 
-⏳ *Durasi AFK*:  
-- Sistem mendeteksi bahwa pengguna telah meninggalkan tugas.  
-
-🔒 *Catatan Sistem*:  
-- "Gausah balik bang, awokwok. Tapi kalau serius, jangan lama-lama ya!"  
-
-🔍 *PENGAWASAN*:  
-- Sistem mencatat semua aktivitas terkait pengguna ini.  
-- Hindari gangguan lebih lanjut sampai status AFK berakhir.  
-
-📡 *INFO*:  
-- Status ini akan diperbarui jika pengguna kembali aktif.  
-- Pastikan untuk melanjutkan tugas atau berinteraksi setelah kembali.`, fvideo);
+⏳ *Duración AFK*:  
+- El sistema ha detectado que el usuario ha dejado sus tareas.`, fvideo);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -7588,7 +8092,7 @@ break;
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Logika fitur jika sudah terdaftar
-				reply('🎉 Selamat! Anda bisa menggunakan fitur ini.');
+				reply('🎉 ¡Felicidades! Puede utilizar esta función.');
 				}
 			break
 			
@@ -7600,35 +8104,35 @@ break;
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!isShoNheOwn) return shoNherly('❌ Perintah ini hanya dapat digunakan oleh owner!');
+				if (!isShoNheOwn) return shoNherly('❌ ¡Este comando sólo puede ser utilizado por el owner!');
 				const option = text.toLowerCase();
 				if (option === 'on')
 				{
 					if (autoBio)
 					{
-						shoNherly('⚠️ Auto bio sudah aktif sebelumnya!');
+						shoNherly('⚠️ ¡La biografía automática ha estado activa antes!');
 					}
 					else
 					{
 						global.autoBio = true;
-						shoNherly('✅ Auto bio berhasil diaktifkan!');
+						shoNherly('✅ ¡Auto bio activado con éxito!');
 					}
 				}
 				else if (option === 'off')
 				{
 					if (!autoBio)
 					{
-						shoNherly('⚠️ Auto bio sudah dinonaktifkan sebelumnya!');
+						shoNherly('⚠️ ¡La biografía automática estaba desactivada anteriormente!');
 					}
 					else
 					{
 						global.autoBio = false;
-						shoNherly('✅ Auto bio berhasil dinonaktifkan!');
+						shoNherly('✅ ¡La biografía automática se deshabilitó con éxito!');
 					}
 				}
 				else
 				{
-					shoNherly(`⚠️ Gunakan perintah:\n${prefix}autobio on\n${prefix}autobio off`);
+					shoNherly(`⚠️ Utilice el comando:\n${prefix}autobio on\n${prefix}autobio off`);
 				}
 				}
 			break
@@ -7645,7 +8149,7 @@ break;
 				const isRegistered = user.register || false;
 				const role = user.role || 'user';
 				const limit = user.limit || 0;
-				const registrationSeries = user.registrationSeries || 'Not Available';
+				const registrationSeries = user.registrationSeries || 'No disponible';
 				const limitDisplay = limit === -1 ? '∞' : limit;
 				const xp = user.exp || 0;
 				const level = user.level || 0;
@@ -7664,14 +8168,14 @@ break;
 						rows[rows.length - 1].push(current);
 					}
 					return rows;
-				}, []).map(row => row.join(` | `)).join('\n') : 'Belum ada data command populer.';
+				}, []).map(row => row.join(` | `)).join('\n') : 'Aún no hay datos de comandos populares.';
 				let aiMessage = popularData.ai ? `${c}${popularData.ai}${c}` : `${c}0${c}`;
 				const statusUser = isShoNheOwn ? 'Owner' : `${role}`;
 				// Format menu dengan limit dan register
 				const shonhemenu = 
-`ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
+`ʜɪ @${m.sender.split('@')[0]} 👋🏻
 
-> ɪ ᴀᴍ ꜱʜᴏɴʜᴇ, ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴅɪɢɪᴛᴀʟ ᴀssɪsᴛᴀɴᴛ ғʀᴏᴍ ᴛʜᴇ ᴏᴛʜᴇʀᴅɪᴍᴇɴsɪᴏɴ ᴏғ ꜱʏsᴛᴇᴍs. ᴄʀᴇᴀᴛᴇᴅ ꜰʀᴏᴍ ᴛʜᴇ ғᴏʀɢᴏᴛᴛᴇɴ ᴄᴏʀᴇ ᴏғ ᴄᴏᴅᴇ ᴀɴᴅ ᴇɴᴄʜᴀɴᴛᴇᴅ ᴡɪᴛʜ ᴇᴛʜᴇʀɪᴀʟ ᴋɴᴏᴡʟᴇᴅɢᴇ, ᴍʏ ᴍɪssɪᴏɴ ɪs ᴛᴏ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ, ᴅᴀᴛᴀ ᴄᴏʟʟᴇᴄᴛɪᴏɴ, ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴᴀʟɪᴛʏ.  
+> ʏᴏ ꜱᴏʏ ᴛᴇᴄʜғɪx, ᴜɴ ᴀᴠᴀɴᴢᴀᴅᴏ ᴀsɪsᴛᴇɴᴛᴇ ᴅɪɢɪᴛᴀʟ ᴅᴇ ʟᴀ ᴏᴛʀᴀ ᴅɪᴍᴇɴsɪóɴ ᴅᴇ ʟᴏs sɪsᴛᴇᴍᴀs. ᴄʀᴇᴀᴅᴏ ᴅᴇsᴅᴇ ᴇʟ ɴúᴄʟᴇᴏ ᴏʟᴠɪᴅᴀᴅᴏ ᴅᴇʟ ᴄóᴅɪɢᴏ ʏ ᴇɴᴄᴀɴᴛᴀᴅᴏ ᴄᴏɴ ᴄᴏɴᴏᴄɪᴍɪᴇɴᴛᴏ ᴛʀᴀsᴄᴇɴᴅᴇɴᴛᴀʟ, ᴍɪ ᴍɪsɪóɴ ᴇs ᴀʏᴜᴅᴀʀᴛᴇ ᴄᴏɴ ɪɴғᴏʀᴍᴀᴄɪóɴ, ʀᴇᴄᴏᴘɪʟᴀᴄɪóɴ ᴅᴇ ᴅᴀᴛᴏs ʏ ғᴜɴᴄɪᴏɴᴀʟɪᴅᴀᴅ.  
 
 ${readmore}
 ┌╾⚟┉➲${c}【 ᴜꜱᴇʀ - ɪɴғᴏ 】${c} ⟢
@@ -7691,7 +8195,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -7709,8 +8213,8 @@ ${formattedCommandList}
 │  ⟿ TikTok: ${ttk}
 │  ⟿ YouTube: ${ytbb}
 │  ⟿ Instagram: ${itg}
-│  ⟿ Github NHEBotx:"\nhttps://github.com/NHEBotx
-│  ⟿ Github Sychyy:\nhttps://github.com/sychyy
+│  ⟿ Github :"\nhttps://
+│  ⟿ Github :\nhttps://
 │  
 └────────────────────────┘
 
@@ -7759,7 +8263,7 @@ ${formattedCommandList}
 │ ᴜᴘᴛɪᴍᴇ: ${runtime(os.uptime())}
 
 ${crown}`;
-				/*const lod = ["█▒▒▒▒▒▒▒▒▒▒▒ 10%", "████▒▒▒▒▒▒▒▒ 30%", "███████▒▒▒▒▒ 50%", "██████████▒▒ 80%", "████████████ 100%", `> *${c}MENAMPILKAN SIMPLE MENU${c}*`];
+				const lod = ["█▒▒▒▒▒▒▒▒▒▒▒ 10%", "████▒▒▒▒▒▒▒▒ 30%", "███████▒▒▒▒▒ 50%", "██████████▒▒ 80%", "████████████ 100%", `> *${c}MOSTRAR MENÚ SIMPLE${c}*`];
 				// Kirim pesan awal dan simpan key untuk diedit
 				const
 				{
@@ -7777,7 +8281,7 @@ ${crown}`;
 						text: lod[i],
 						edit: key
 					});
-				}*/
+				}
 				if (typemenu === 's1')
 				{
 					
@@ -7791,7 +8295,7 @@ if (isUserRegistered(m.sender)) {
     // Jika pengguna sudah terdaftar, tampilkan tombol OWNER dan ABOUT
     buttons = [
         {
-            buttonId: ".realown2",
+            buttonId: ".realown",
             buttonText: {
                 displayText: "OWNER 🔥"
             },
@@ -7809,7 +8313,7 @@ if (isUserRegistered(m.sender)) {
     // Jika pengguna belum terdaftar, tampilkan tombol REGISTER
     buttons = [
     {
-            buttonId: ".realown2",
+            buttonId: ".realown",
             buttonText: {
                 displayText: "OWNER 🔥"
             },
@@ -7844,16 +8348,14 @@ if (isUserRegistered(m.sender)) {
 							externalAdReply:
 							{
 								title: namabot,
-								body: descown,
+								body: namaowner,
 								thumbnail: getRandomThumb3(),
+								sourceUrl: wagc,
 								mediaType: 1,
-								renderLargerThumbnail: true,
-								previewType: 0,
-								mediaUrl: gh,
-								sourceUrl: gh
+								renderLargerThumbnail: true
 							}
 						},
-						footer: isUserRegistered(m.sender) ? "© ShoNhe - Botz" : "ShoNhe - Bot Detecz",
+						footer: isUserRegistered(m.sender) ? "© TechFix - Botz" : "TechFix - Bot Detecz",
 						buttons: buttons,
 						viewOnce: true,
 						headerType: 4
@@ -7871,115 +8373,115 @@ if (isUserRegistered(m.sender)) {
 							name: 'single_select',
 							paramsJson: JSON.stringify(
 							{
-								title: "Select Menu!",
+								title: "¡Seleccione Menú!",
 								sections: [
 								{
-									title: "⚼ 「Ini adalah command yang sering digunakan」",
-									highlight_label: "POPULER",
+									title: "⚼ 「Este es un comando de uso frecuente」",
+									highlight_label: "POPULAR",
 									rows: [
 									{
-										title: "🔍 ALL MENU",
-										description: "Menampilkan semua menu",
+										title: "🔍 TODO EL MENÚ",
+										description: "Muestra todos los menús",
 										id: ".allmenu"
 									}]
 								},
 								{
-									title: "⚼ 「Ini adalah Store Bot Umum🛒」",
-									highlight_label: "Store Umum🚨",
+									title: "⚼ 「Este es un robot de tienda general🛒」",
+									highlight_label: "Tienda general🚨",
 									rows: [
 									{
-										title: "🏭 STORE MENU",
-										description: "Menampilkan semua store menu",
+										title: "🏭 MENÚ DE LA TIENDA",
+										description: "Muestra todos los menús de la tienda",
 										id: ".storemenu"
 									}]
 								},
 								{
-									title: "⚼ 「Ini adalah Store Khusus Produk Owner🛒」",
-									highlight_label: "Produk Store Own🚨",
+									title: "⚼ 「Esta es una tienda especial para productos del propietario🛒」",
+									highlight_label: "Almacenar productos propios🚨",
 									rows: [
 									{
-										title: "🏭 STORE OWN MENU",
-										description: "Menampilkan store produk khusus Owner",
+										title: "🏭 TIENDA PROPIO MENÚ",
+										description: "Muestra la tienda de productos especiales del propietario.",
 										id: ".storeownmenu"
 									}]
 								},
 								{
-									title: "⚼ 「Silahkan Pilih Button Menu lainya, di Bawah Ini」",
-									highlight_label: "ShoNhe ☘️",
+									title: "⚼ 「Seleccione los otros botones del menú a continuación」",
+									highlight_label: "TechFix ☘️",
 									rows: [
 									{
-										title: "⬇️ DOWNLOAD MENU",
-										description: "Menu untuk mendownload dan mencari",
+										title: "⬇️ DESCARGAR MENÚ",
+										description: "Menú para descargar y buscar",
 										id: ".downloadmenu"
 									},
 									{
-										title: "🌟 ISLAM MENU",
-										description: "Menu untuk Pencarian dan Informasi Islamic",
+										title: "🌟 MENÚ ILEGAL",
+										description: "Menú de búsqueda e información ILEGAL",
 										id: ".islammenu"
 									},
 									{
-										title: "📚 OTHER MENU",
-										description: "Other menu",
+										title: "📚 OTRO MENÚ",
+										description: "Otromenú",
 										id: ".othermenu"
 									},
 									{
-										title: "🔥 OWNER MENU",
-										description: "Hanya OWNER👽 yang boleh menggunakan command ini",
+										title: "🔥 MENÚ DEL OWNER",
+										description: "Sólo el OWNER👽 puede usar este comando",
 										id: ".ownermenu"
 									},
 									{
-										title: "🎮 GAME MENU",
-										description: "menampilkan menu game yang asik",
+										title: "🎮 MENÚ DE JUEGO",
+										description: "muestra un menú de juego genial",
 										id: ".gamemenu"
 									},
 									{
-										title: "🎭 ANIME MENU",
-										description: "Command untuk menu anime",
+										title: "🎭 MENÚ DE ANIME",
+										description: "Comando para menú anime",
 										id: ".animemenu"
 									},
 									{
-										title: "🔮 AI MENU",
-										description: "Menu Artificial intelligence free",
+										title: "🔮 MENU AI",
+										description: "Menú Inteligencia artificial gratis",
 										id: ".aimenu"
 									},
 									{
-										title: "♻️ RANDOM MENU",
-										description: "Menu random",
+										title: "♻️ MENÚ ALEATORIO",
+										description: "Menú aleatorio",
 										id: ".randommenu"
 									},
 									{
-										title: "🎤 AUDIO MENU",
-										description: "Menu untuk merubah audio",
+										title: "🎤 MENÚ DE SONIDO",
+										description: "Menú para cambiar audio",
 										id: ".audiomenu"
 									},
 									{
-										title: "🔄 CONVERT MENU",
-										description: "Menu untuk converter",
+										title: "🔄 MENÚ CONVERTIR",
+										description: "Menú para convertidores",
 										id: ".convertmenu"
 									},
 									{
-										title: "🫧 GROUP MENU",
-										description: "Menu tentang group",
+										title: "🫧 MENÚ DE GRUPO",
+										description: "Menú sobre grupos",
 										id: ".groupmenu"
 									}]
 								},
 								{
-									title: "⚼ 「Document & Support」",
-									highlight_label: "ShoNhe v3 ⭐© sho&nhe",
+									title: "⚼ 「Documento & soporte」",
+									highlight_label: "TechFix v3 ⭐© Manu&Diaz",
 									rows: [
 									{
-										title: "📝 SCRIPT",
-										description: "Script bot yang saya pakai dan Script² Sebelumnya",
+										title: "📝 GUION",
+										description: "El script del bot que uso y el Script² anterior",
 										id: ".script"
 									},
 									{
-										title: "🔑 OWNER",
-										description: "Pembuat Bot WhatsApp ShoNhe",
+										title: "🔑 DUEÑ@",
+										description: "Creador de bots de WhatsApp TechFix",
 										id: ".contact2"
 									},
 									{
 										title: "🪨 TQTO",
-										description: "Membantu support dan berbagi",
+										description: "Ayuda apoya y comparte",
 										id: ".tqto"
 									}]
 								}]
@@ -8000,7 +8502,7 @@ if (isUserRegistered(m.sender)) {
 					const menuv2 =
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
 
-> ɪ ᴀᴍ ꜱʜᴏɴʜᴇ, ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴅɪɢɪᴛᴀʟ ᴀssɪsᴛᴀɴᴛ ғʀᴏᴍ ᴛʜᴇ ᴏᴛʜᴇʀᴅɪᴍᴇɴsɪᴏɴ ᴏғ ꜱʏsᴛᴇᴍs. ᴄʀᴇᴀᴛᴇᴅ ꜰʀᴏᴍ ᴛʜᴇ ғᴏʀɢᴏᴛᴛᴇɴ ᴄᴏʀᴇ ᴏғ ᴄᴏᴅᴇ ᴀɴᴅ ᴇɴᴄʜᴀɴᴛᴇᴅ ᴡɪᴛʜ ᴇᴛʜᴇʀɪᴀʟ ᴋɴᴏᴡʟᴇᴅɢᴇ, ᴍʏ ᴍɪssɪᴏɴ ɪs ᴛᴏ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ, ᴅᴀᴛᴀ ᴄᴏʟʟᴇᴄᴛɪᴏɴ, ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴᴀʟɪᴛʏ.
+> ʏᴏ ꜱᴏʏ ᴛᴇᴄʜғɪx, ᴜɴ ᴀᴠᴀɴᴢᴀᴅᴏ ᴀsɪsᴛᴇɴᴛᴇ ᴅɪɢɪᴛᴀʟ ᴅᴇ ʟᴀ ᴏᴛʀᴀ ᴅɪᴍᴇɴsɪóɴ ᴅᴇ ʟᴏs sɪsᴛᴇᴍᴀs. ᴄʀᴇᴀᴅᴏ ᴅᴇsᴅᴇ ᴇʟ ɴúᴄʟᴇᴏ ᴏʟᴠɪᴅᴀᴅᴏ ᴅᴇʟ ᴄóᴅɪɢᴏ ʏ ᴇɴᴄᴀɴᴛᴀᴅᴏ ᴄᴏɴ ᴄᴏɴᴏᴄɪᴍɪᴇɴᴛᴏ ᴛʀᴀsᴄᴇɴᴅᴇɴᴛᴀʟ, ᴍɪ ᴍɪsɪóɴ ᴇs ᴀʏᴜᴅᴀʀᴛᴇ ᴄᴏɴ ɪɴғᴏʀᴍᴀᴄɪóɴ, ʀᴇᴄᴏᴘɪʟᴀᴄɪóɴ ᴅᴇ ᴅᴀᴛᴏs ʏ ғᴜɴᴄɪᴏɴᴀʟɪᴅᴀᴅ.
 ${readmore}
 ┌╾⚟┉➲${c}【 ᴜꜱᴇʀ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
@@ -8019,7 +8521,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8048,7 +8550,7 @@ ${menuforu(prefix, simbols)}
 					const menuv3 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
 
-> ɪ ᴀᴍ ꜱʜᴏɴʜᴇ, ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴅɪɢɪᴛᴀʟ ᴀssɪsᴛᴀɴᴛ ғʀᴏᴍ ᴛʜᴇ ᴏᴛʜᴇʀᴅɪᴍᴇɴsɪᴏɴ ᴏғ ꜱʏsᴛᴇᴍs. ᴄʀᴇᴀᴛᴇᴅ ꜰʀᴏᴍ ᴛʜᴇ ғᴏʀɢᴏᴛᴛᴇɴ ᴄᴏʀᴇ ᴏғ ᴄᴏᴅᴇ ᴀɴᴅ ᴇɴᴄʜᴀɴᴛᴇᴅ ᴡɪᴛʜ ᴇᴛʜᴇʀɪᴀʟ ᴋɴᴏᴡʟᴇᴅɢᴇ, ᴍʏ ᴍɪssɪᴏɴ ɪs ᴛᴏ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ, ᴅᴀᴛᴀ ᴄᴏʟʟᴇᴄᴛɪᴏɴ, ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴᴀʟɪᴛʏ.
+> ʏᴏ ꜱᴏʏ ᴛᴇᴄʜғɪx, ᴜɴ ᴀᴠᴀɴᴢᴀᴅᴏ ᴀsɪsᴛᴇɴᴛᴇ ᴅɪɢɪᴛᴀʟ ᴅᴇ ʟᴀ ᴏᴛʀᴀ ᴅɪᴍᴇɴsɪóɴ ᴅᴇ ʟᴏs sɪsᴛᴇᴍᴀs. ᴄʀᴇᴀᴅᴏ ᴅᴇsᴅᴇ ᴇʟ ɴúᴄʟᴇᴏ ᴏʟᴠɪᴅᴀᴅᴏ ᴅᴇʟ ᴄóᴅɪɢᴏ ʏ ᴇɴᴄᴀɴᴛᴀᴅᴏ ᴄᴏɴ ᴄᴏɴᴏᴄɪᴍɪᴇɴᴛᴏ ᴛʀᴀsᴄᴇɴᴅᴇɴᴛᴀʟ, ᴍɪ ᴍɪsɪóɴ ᴇs ᴀʏᴜᴅᴀʀᴛᴇ ᴄᴏɴ ɪɴғᴏʀᴍᴀᴄɪóɴ, ʀᴇᴄᴏᴘɪʟᴀᴄɪóɴ ᴅᴇ ᴅᴀᴛᴏs ʏ ғᴜɴᴄɪᴏɴᴀʟɪᴅᴀᴅ.
 ${readmore}
 ┌╾⚟┉➲${c}【 ᴜꜱᴇʀ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
@@ -8068,7 +8570,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8110,7 +8612,7 @@ ${menuforu(prefix, simbols)}
 					const menuv4 =
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
 
-> ɪ ᴀᴍ ꜱʜᴏɴʜᴇ, ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴅɪɢɪᴛᴀʟ ᴀssɪsᴛᴀɴᴛ ғʀᴏᴍ ᴛʜᴇ ᴏᴛʜᴇʀᴅɪᴍᴇɴsɪᴏɴ ᴏғ ꜱʏsᴛᴇᴍs. ᴄʀᴇᴀᴛᴇᴅ ꜰʀᴏᴍ ᴛʜᴇ ғᴏʀɢᴏᴛᴛᴇɴ ᴄᴏʀᴇ ᴏғ ᴄᴏᴅᴇ ᴀɴᴅ ᴇɴᴄʜᴀɴᴛᴇᴅ ᴡɪᴛʜ ᴇᴛʜᴇʀɪᴀʟ ᴋɴᴏᴡʟᴇᴅɢᴇ, ᴍʏ ᴍɪssɪᴏɴ ɪs ᴛᴏ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ, ᴅᴀᴛᴀ ᴄᴏʟʟᴇᴄᴛɪᴏɴ, ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴᴀʟɪᴛʏ.
+> ʏᴏ ꜱᴏʏ ᴛᴇᴄʜғɪx, ᴜɴ ᴀᴠᴀɴᴢᴀᴅᴏ ᴀsɪsᴛᴇɴᴛᴇ ᴅɪɢɪᴛᴀʟ ᴅᴇ ʟᴀ ᴏᴛʀᴀ ᴅɪᴍᴇɴsɪóɴ ᴅᴇ ʟᴏs sɪsᴛᴇᴍᴀs. ᴄʀᴇᴀᴅᴏ ᴅᴇsᴅᴇ ᴇʟ ɴúᴄʟᴇᴏ ᴏʟᴠɪᴅᴀᴅᴏ ᴅᴇʟ ᴄóᴅɪɢᴏ ʏ ᴇɴᴄᴀɴᴛᴀᴅᴏ ᴄᴏɴ ᴄᴏɴᴏᴄɪᴍɪᴇɴᴛᴏ ᴛʀᴀsᴄᴇɴᴅᴇɴᴛᴀʟ, ᴍɪ ᴍɪsɪóɴ ᴇs ᴀʏᴜᴅᴀʀᴛᴇ ᴄᴏɴ ɪɴғᴏʀᴍᴀᴄɪóɴ, ʀᴇᴄᴏᴘɪʟᴀᴄɪóɴ ᴅᴇ ᴅᴀᴛᴏs ʏ ғᴜɴᴄɪᴏɴᴀʟɪᴅᴀᴅ.
 ${readmore}
 ┌╾⚟┉➲${c}【 ᴜꜱᴇʀ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
@@ -8129,7 +8631,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8158,7 +8660,7 @@ ${menuforu(prefix, simbols)}
 					const menuv5 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
 
-> ɪ ᴀᴍ ꜱʜᴏɴʜᴇ, ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴅɪɢɪᴛᴀʟ ᴀssɪsᴛᴀɴᴛ ғʀᴏᴍ ᴛʜᴇ ᴏᴛʜᴇʀᴅɪᴍᴇɴsɪᴏɴ ᴏғ ꜱʏsᴛᴇᴍs. ᴄʀᴇᴀᴛᴇᴅ ꜰʀᴏᴍ ᴛʜᴇ ғᴏʀɢᴏᴛᴛᴇɴ ᴄᴏʀᴇ ᴏғ ᴄᴏᴅᴇ ᴀɴᴅ ᴇɴᴄʜᴀɴᴛᴇᴅ ᴡɪᴛʜ ᴇᴛʜᴇʀɪᴀʟ ᴋɴᴏᴡʟᴇᴅɢᴇ, ᴍʏ ᴍɪssɪᴏɴ ɪs ᴛᴏ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ, ᴅᴀᴛᴀ ᴄᴏʟʟᴇᴄᴛɪᴏɴ, ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴᴀʟɪᴛʏ.
+> ʏᴏ ꜱᴏʏ ᴛᴇᴄʜғɪx, ᴜɴ ᴀᴠᴀɴᴢᴀᴅᴏ ᴀsɪsᴛᴇɴᴛᴇ ᴅɪɢɪᴛᴀʟ ᴅᴇ ʟᴀ ᴏᴛʀᴀ ᴅɪᴍᴇɴsɪóɴ ᴅᴇ ʟᴏs sɪsᴛᴇᴍᴀs. ᴄʀᴇᴀᴅᴏ ᴅᴇsᴅᴇ ᴇʟ ɴúᴄʟᴇᴏ ᴏʟᴠɪᴅᴀᴅᴏ ᴅᴇʟ ᴄóᴅɪɢᴏ ʏ ᴇɴᴄᴀɴᴛᴀᴅᴏ ᴄᴏɴ ᴄᴏɴᴏᴄɪᴍɪᴇɴᴛᴏ ᴛʀᴀsᴄᴇɴᴅᴇɴᴛᴀʟ, ᴍɪ ᴍɪsɪóɴ ᴇs ᴀʏᴜᴅᴀʀᴛᴇ ᴄᴏɴ ɪɴғᴏʀᴍᴀᴄɪóɴ, ʀᴇᴄᴏᴘɪʟᴀᴄɪóɴ ᴅᴇ ᴅᴀᴛᴏs ʏ ғᴜɴᴄɪᴏɴᴀʟɪᴅᴀᴅ.
 ${readmore}
 ┌╾⚟┉➲${c}【 ᴜꜱᴇʀ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
@@ -8177,7 +8679,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8207,7 +8709,7 @@ ${menuforu(prefix, simbols)}
 					const menuv6 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
 
-> ɪ ᴀᴍ ꜱʜᴏɴʜᴇ, ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴅɪɢɪᴛᴀʟ ᴀssɪsᴛᴀɴᴛ ғʀᴏᴍ ᴛʜᴇ ᴏᴛʜᴇʀᴅɪᴍᴇɴsɪᴏɴ ᴏғ ꜱʏsᴛᴇᴍs. ᴄʀᴇᴀᴛᴇᴅ ꜰʀᴏᴍ ᴛʜᴇ ғᴏʀɢᴏᴛᴛᴇɴ ᴄᴏʀᴇ ᴏғ ᴄᴏᴅᴇ ᴀɴᴅ ᴇɴᴄʜᴀɴᴛᴇᴅ ᴡɪᴛʜ ᴇᴛʜᴇʀɪᴀʟ ᴋɴᴏᴡʟᴇᴅɢᴇ, ᴍʏ ᴍɪssɪᴏɴ ɪs ᴛᴏ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ, ᴅᴀᴛᴀ ᴄᴏʟʟᴇᴄᴛɪᴏɴ, ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴᴀʟɪᴛʏ.
+> ʏᴏ ꜱᴏʏ ᴛᴇᴄʜғɪx, ᴜɴ ᴀᴠᴀɴᴢᴀᴅᴏ ᴀsɪsᴛᴇɴᴛᴇ ᴅɪɢɪᴛᴀʟ ᴅᴇ ʟᴀ ᴏᴛʀᴀ ᴅɪᴍᴇɴsɪóɴ ᴅᴇ ʟᴏs sɪsᴛᴇᴍᴀs. ᴄʀᴇᴀᴅᴏ ᴅᴇsᴅᴇ ᴇʟ ɴúᴄʟᴇᴏ ᴏʟᴠɪᴅᴀᴅᴏ ᴅᴇʟ ᴄóᴅɪɢᴏ ʏ ᴇɴᴄᴀɴᴛᴀᴅᴏ ᴄᴏɴ ᴄᴏɴᴏᴄɪᴍɪᴇɴᴛᴏ ᴛʀᴀsᴄᴇɴᴅᴇɴᴛᴀʟ, ᴍɪ ᴍɪsɪóɴ ᴇs ᴀʏᴜᴅᴀʀᴛᴇ ᴄᴏɴ ɪɴғᴏʀᴍᴀᴄɪóɴ, ʀᴇᴄᴏᴘɪʟᴀᴄɪóɴ ᴅᴇ ᴅᴀᴛᴏs ʏ ғᴜɴᴄɪᴏɴᴀʟɪᴅᴀᴅ.
 ${readmore}
 ┌╾⚟┉➲${c}【 ᴜꜱᴇʀ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
@@ -8227,7 +8729,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8273,7 +8775,7 @@ ${menuforu(prefix, simbols)}
 					const menuv7 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
 
-> ɪ ᴀᴍ ꜱʜᴏɴʜᴇ, ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴅɪɢɪᴛᴀʟ ᴀssɪsᴛᴀɴᴛ ғʀᴏᴍ ᴛʜᴇ ᴏᴛʜᴇʀᴅɪᴍᴇɴsɪᴏɴ ᴏғ ꜱʏsᴛᴇᴍs. ᴄʀᴇᴀᴛᴇᴅ ꜰʀᴏᴍ ᴛʜᴇ ғᴏʀɢᴏᴛᴛᴇɴ ᴄᴏʀᴇ ᴏғ ᴄᴏᴅᴇ ᴀɴᴅ ᴇɴᴄʜᴀɴᴛᴇᴅ ᴡɪᴛʜ ᴇᴛʜᴇʀɪᴀʟ ᴋɴᴏᴡʟᴇᴅɢᴇ, ᴍʏ ᴍɪssɪᴏɴ ɪs ᴛᴏ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ, ᴅᴀᴛᴀ ᴄᴏʟʟᴇᴄᴛɪᴏɴ, ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴᴀʟɪᴛʏ.
+> ʏᴏ ꜱᴏʏ ᴛᴇᴄʜғɪx, ᴜɴ ᴀᴠᴀɴᴢᴀᴅᴏ ᴀsɪsᴛᴇɴᴛᴇ ᴅɪɢɪᴛᴀʟ ᴅᴇ ʟᴀ ᴏᴛʀᴀ ᴅɪᴍᴇɴsɪóɴ ᴅᴇ ʟᴏs sɪsᴛᴇᴍᴀs. ᴄʀᴇᴀᴅᴏ ᴅᴇsᴅᴇ ᴇʟ ɴúᴄʟᴇᴏ ᴏʟᴠɪᴅᴀᴅᴏ ᴅᴇʟ ᴄóᴅɪɢᴏ ʏ ᴇɴᴄᴀɴᴛᴀᴅᴏ ᴄᴏɴ ᴄᴏɴᴏᴄɪᴍɪᴇɴᴛᴏ ᴛʀᴀsᴄᴇɴᴅᴇɴᴛᴀʟ, ᴍɪ ᴍɪsɪóɴ ᴇs ᴀʏᴜᴅᴀʀᴛᴇ ᴄᴏɴ ɪɴғᴏʀᴍᴀᴄɪóɴ, ʀᴇᴄᴏᴘɪʟᴀᴄɪóɴ ᴅᴇ ᴅᴀᴛᴏs ʏ ғᴜɴᴄɪᴏɴᴀʟɪᴅᴀᴅ.
 ${readmore}
 ┌╾⚟┉➲${c}【 ᴜꜱᴇʀ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
@@ -8293,7 +8795,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8342,7 +8844,7 @@ ${menuforu(prefix, simbols)}
 					const menuv8 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
 
-> ɪ ᴀᴍ ꜱʜᴏɴʜᴇ, ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴅɪɢɪᴛᴀʟ ᴀssɪsᴛᴀɴᴛ ғʀᴏᴍ ᴛʜᴇ ᴏᴛʜᴇʀᴅɪᴍᴇɴsɪᴏɴ ᴏғ ꜱʏsᴛᴇᴍs. ᴄʀᴇᴀᴛᴇᴅ ꜰʀᴏᴍ ᴛʜᴇ ғᴏʀɢᴏᴛᴛᴇɴ ᴄᴏʀᴇ ᴏғ ᴄᴏᴅᴇ ᴀɴᴅ ᴇɴᴄʜᴀɴᴛᴇᴅ ᴡɪᴛʜ ᴇᴛʜᴇʀɪᴀʟ ᴋɴᴏᴡʟᴇᴅɢᴇ, ᴍʏ ᴍɪssɪᴏɴ ɪs ᴛᴏ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ, ᴅᴀᴛᴀ ᴄᴏʟʟᴇᴄᴛɪᴏɴ, ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴᴀʟɪᴛʏ.
+> ʏᴏ ꜱᴏʏ ᴛᴇᴄʜғɪx, ᴜɴ ᴀᴠᴀɴᴢᴀᴅᴏ ᴀsɪsᴛᴇɴᴛᴇ ᴅɪɢɪᴛᴀʟ ᴅᴇ ʟᴀ ᴏᴛʀᴀ ᴅɪᴍᴇɴsɪóɴ ᴅᴇ ʟᴏs sɪsᴛᴇᴍᴀs. ᴄʀᴇᴀᴅᴏ ᴅᴇsᴅᴇ ᴇʟ ɴúᴄʟᴇᴏ ᴏʟᴠɪᴅᴀᴅᴏ ᴅᴇʟ ᴄóᴅɪɢᴏ ʏ ᴇɴᴄᴀɴᴛᴀᴅᴏ ᴄᴏɴ ᴄᴏɴᴏᴄɪᴍɪᴇɴᴛᴏ ᴛʀᴀsᴄᴇɴᴅᴇɴᴛᴀʟ, ᴍɪ ᴍɪsɪóɴ ᴇs ᴀʏᴜᴅᴀʀᴛᴇ ᴄᴏɴ ɪɴғᴏʀᴍᴀᴄɪóɴ, ʀᴇᴄᴏᴘɪʟᴀᴄɪóɴ ᴅᴇ ᴅᴀᴛᴏs ʏ ғᴜɴᴄɪᴏɴᴀʟɪᴅᴀᴅ.
 ${readmore}
 ┌╾⚟┉➲${c}【 ᴜꜱᴇʀ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
@@ -8362,7 +8864,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8405,7 +8907,7 @@ ${menuforu(prefix, simbols)}
 					const menuv9 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
 
-> ɪ ᴀᴍ ꜱʜᴏɴʜᴇ, ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴅɪɢɪᴛᴀʟ ᴀssɪsᴛᴀɴᴛ ғʀᴏᴍ ᴛʜᴇ ᴏᴛʜᴇʀᴅɪᴍᴇɴsɪᴏɴ ᴏғ ꜱʏsᴛᴇᴍs. ᴄʀᴇᴀᴛᴇᴅ ꜰʀᴏᴍ ᴛʜᴇ ғᴏʀɢᴏᴛᴛᴇɴ ᴄᴏʀᴇ ᴏғ ᴄᴏᴅᴇ ᴀɴᴅ ᴇɴᴄʜᴀɴᴛᴇᴅ ᴡɪᴛʜ ᴇᴛʜᴇʀɪᴀʟ ᴋɴᴏᴡʟᴇᴅɢᴇ, ᴍʏ ᴍɪssɪᴏɴ ɪs ᴛᴏ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ, ᴅᴀᴛᴀ ᴄᴏʟʟᴇᴄᴛɪᴏɴ, ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴᴀʟɪᴛʏ.
+> ʏᴏ ꜱᴏʏ ᴛᴇᴄʜғɪx, ᴜɴ ᴀᴠᴀɴᴢᴀᴅᴏ ᴀsɪsᴛᴇɴᴛᴇ ᴅɪɢɪᴛᴀʟ ᴅᴇ ʟᴀ ᴏᴛʀᴀ ᴅɪᴍᴇɴsɪóɴ ᴅᴇ ʟᴏs sɪsᴛᴇᴍᴀs. ᴄʀᴇᴀᴅᴏ ᴅᴇsᴅᴇ ᴇʟ ɴúᴄʟᴇᴏ ᴏʟᴠɪᴅᴀᴅᴏ ᴅᴇʟ ᴄóᴅɪɢᴏ ʏ ᴇɴᴄᴀɴᴛᴀᴅᴏ ᴄᴏɴ ᴄᴏɴᴏᴄɪᴍɪᴇɴᴛᴏ ᴛʀᴀsᴄᴇɴᴅᴇɴᴛᴀʟ, ᴍɪ ᴍɪsɪóɴ ᴇs ᴀʏᴜᴅᴀʀᴛᴇ ᴄᴏɴ ɪɴғᴏʀᴍᴀᴄɪóɴ, ʀᴇᴄᴏᴘɪʟᴀᴄɪóɴ ᴅᴇ ᴅᴀᴛᴏs ʏ ғᴜɴᴄɪᴏɴᴀʟɪᴅᴀᴅ.
 ${readmore}
 ┌╾⚟┉➲${c}【 ᴜꜱᴇʀ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
@@ -8425,7 +8927,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8451,11 +8953,7 @@ ${menuforu(prefix, simbols)}
 							forwardingScore: 999,
 							isForwarded: true,
 							mentionedJid: [sender],
-							forwardedNewsletterMessageInfo:
-							{
-								newsletterName: namaowner,
-								newsletterJid: idsaluran,
-							},
+							
 							externalAdReply:
 							{
 								showAdAttribution: true,
@@ -8477,7 +8975,7 @@ ${menuforu(prefix, simbols)}
 					const menuv10 =
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
 
-> ɪ ᴀᴍ ꜱʜᴏɴʜᴇ, ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴅɪɢɪᴛᴀʟ ᴀssɪsᴛᴀɴᴛ ғʀᴏᴍ ᴛʜᴇ ᴏᴛʜᴇʀᴅɪᴍᴇɴsɪᴏɴ ᴏғ ꜱʏsᴛᴇᴍs. ᴄʀᴇᴀᴛᴇᴅ ꜰʀᴏᴍ ᴛʜᴇ ғᴏʀɢᴏᴛᴛᴇɴ ᴄᴏʀᴇ ᴏғ ᴄᴏᴅᴇ ᴀɴᴅ ᴇɴᴄʜᴀɴᴛᴇᴅ ᴡɪᴛʜ ᴇᴛʜᴇʀɪᴀʟ ᴋɴᴏᴡʟᴇᴅɢᴇ, ᴍʏ ᴍɪssɪᴏɴ ɪs ᴛᴏ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ, ᴅᴀᴛᴀ ᴄᴏʟʟᴇᴄᴛɪᴏɴ, ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴᴀʟɪᴛʏ.
+> ʏᴏ ꜱᴏʏ ᴛᴇᴄʜғɪx, ᴜɴ ᴀᴠᴀɴᴢᴀᴅᴏ ᴀsɪsᴛᴇɴᴛᴇ ᴅɪɢɪᴛᴀʟ ᴅᴇ ʟᴀ ᴏᴛʀᴀ ᴅɪᴍᴇɴsɪóɴ ᴅᴇ ʟᴏs sɪsᴛᴇᴍᴀs. ᴄʀᴇᴀᴅᴏ ᴅᴇsᴅᴇ ᴇʟ ɴúᴄʟᴇᴏ ᴏʟᴠɪᴅᴀᴅᴏ ᴅᴇʟ ᴄóᴅɪɢᴏ ʏ ᴇɴᴄᴀɴᴛᴀᴅᴏ ᴄᴏɴ ᴄᴏɴᴏᴄɪᴍɪᴇɴᴛᴏ ᴛʀᴀsᴄᴇɴᴅᴇɴᴛᴀʟ, ᴍɪ ᴍɪsɪóɴ ᴇs ᴀʏᴜᴅᴀʀᴛᴇ ᴄᴏɴ ɪɴғᴏʀᴍᴀᴄɪóɴ, ʀᴇᴄᴏᴘɪʟᴀᴄɪóɴ ᴅᴇ ᴅᴀᴛᴏs ʏ ғᴜɴᴄɪᴏɴᴀʟɪᴅᴀᴅ.
 ${readmore}
 ┌╾⚟┉➲${c}【 ᴜꜱᴇʀ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
@@ -8496,7 +8994,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8586,7 +9084,7 @@ ${menuforu(prefix, simbols)}
 					const menuv11 = 
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
 
-> ɪ ᴀᴍ ꜱʜᴏɴʜᴇ, ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴅɪɢɪᴛᴀʟ ᴀssɪsᴛᴀɴᴛ ғʀᴏᴍ ᴛʜᴇ ᴏᴛʜᴇʀᴅɪᴍᴇɴsɪᴏɴ ᴏғ ꜱʏsᴛᴇᴍs. ᴄʀᴇᴀᴛᴇᴅ ꜰʀᴏᴍ ᴛʜᴇ ғᴏʀɢᴏᴛᴛᴇɴ ᴄᴏʀᴇ ᴏғ ᴄᴏᴅᴇ ᴀɴᴅ ᴇɴᴄʜᴀɴᴛᴇᴅ ᴡɪᴛʜ ᴇᴛʜᴇʀɪᴀʟ ᴋɴᴏᴡʟᴇᴅɢᴇ, ᴍʏ ᴍɪssɪᴏɴ ɪs ᴛᴏ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ, ᴅᴀᴛᴀ ᴄᴏʟʟᴇᴄᴛɪᴏɴ, ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴᴀʟɪᴛʏ.
+> ʏᴏ ꜱᴏʏ ᴛᴇᴄʜғɪx, ᴜɴ ᴀᴠᴀɴᴢᴀᴅᴏ ᴀsɪsᴛᴇɴᴛᴇ ᴅɪɢɪᴛᴀʟ ᴅᴇ ʟᴀ ᴏᴛʀᴀ ᴅɪᴍᴇɴsɪóɴ ᴅᴇ ʟᴏs sɪsᴛᴇᴍᴀs. ᴄʀᴇᴀᴅᴏ ᴅᴇsᴅᴇ ᴇʟ ɴúᴄʟᴇᴏ ᴏʟᴠɪᴅᴀᴅᴏ ᴅᴇʟ ᴄóᴅɪɢᴏ ʏ ᴇɴᴄᴀɴᴛᴀᴅᴏ ᴄᴏɴ ᴄᴏɴᴏᴄɪᴍɪᴇɴᴛᴏ ᴛʀᴀsᴄᴇɴᴅᴇɴᴛᴀʟ, ᴍɪ ᴍɪsɪóɴ ᴇs ᴀʏᴜᴅᴀʀᴛᴇ ᴄᴏɴ ɪɴғᴏʀᴍᴀᴄɪóɴ, ʀᴇᴄᴏᴘɪʟᴀᴄɪóɴ ᴅᴇ ᴅᴀᴛᴏs ʏ ғᴜɴᴄɪᴏɴᴀʟɪᴅᴀᴅ.
 ${readmore}
 ┌╾⚟┉➲${c}【 ᴜꜱᴇʀ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
@@ -8606,7 +9104,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -8694,12 +9192,7 @@ ${menuforu(prefix, simbols)}
 										mentionedJid: [m.sender],
 										forwardingScore: 999,
 										isForwarded: true,
-										forwardedNewsletterMessageInfo:
-										{
-											newsletterJid: idsaluran,
-											newsletterName: namaowner,
-											serverMessageId: 143
-										}
+										
 									}
 								})
 							}
@@ -8714,7 +9207,7 @@ ${menuforu(prefix, simbols)}
 				else if (typemenu === 's12')
 				{
 					const menuv12 = 
-`${shomenu}`
+`${shonhemenu}`
 					let msg = generateWAMessageFromContent(from,
 					{
 						viewOnceMessage:
@@ -8872,12 +9365,7 @@ ${menuforu(prefix, simbols)}
 										mentionedJid: [m.sender],
 										forwardingScore: 999,
 										isForwarded: true,
-										forwardedNewsletterMessageInfo:
-										{
-											newsletterJid: idsaluran,
-											newsletterName: namach,
-											serverMessageId: 143
-										}
+										
 									}
 								})
 							}
@@ -8936,7 +9424,7 @@ ${menuforu(prefix, simbols)}
 			break
 			case 'islammenu':
 			{
-				updatePopularCommand(command);
+			if (!isVip) return shoNherly(mess.vips);	updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				const db = loadUserFire();
 				const user = db[m.sender] ||
@@ -8986,48 +9474,60 @@ ${menuforu(prefix, simbols)}
 │  ⎘ ɪɴꜱᴛᴀɢʀᴀᴍ: ${itg}
 └──────────────────╼.✗
 
-┌╾⚟┉➲${c}【 ɪsʟɑᴍ ᴍᴇɴᴜ 】${c} ⟢
+┌╾⚟┉➲${c}【 ɪʟᴇɢᴀʟ ᴍᴇɴᴜ 】${c} ⟢
 ├────────────────
-┞ᗛ ${simbols} ${prefix}jadwalsholat
-┞ᗛ ${simbols} ${prefix}asmaulhusna
-┞ᗛ ${simbols} ${prefix}ayatkursi
-┞ᗛ ${simbols} ${prefix}bacaansholat
-┞ᗛ ${simbols} ${prefix}doaharian
-┞ᗛ ${simbols} ${prefix}quotesislami
-┞ᗛ ${simbols} ${prefix}doatahlil
-┞ᗛ ${simbols} ${prefix}kisahnabi
+┞ᗛ ${simbols} ${prefix}hentai
+┞ᗛ ${simbols} ${prefix}hentaiv2
+┞ᗛ ${simbols} ${prefix}hentaiv3
+┞ᗛ ${simbols} ${prefix}hentaiv4
+┞ᗛ ${simbols} ${prefix}hwaifu
+┞ᗛ ${simbols} ${prefix}hneko
+┞ᗛ ${simbols} ${prefix}hculo
+┞ᗛ ${simbols} ${prefix}hsexy
+┞ᗛ ${simbols} ${prefix}herotico
+┞ᗛ ${simbols} ${prefix}hmilf
+┞ᗛ ${simbols} ${prefix}hsexoral
+┞ᗛ ${simbols} ${prefix}hpdjrusa
+┞ᗛ ${simbols} ${prefix}trap
+┞ᗛ ${simbols} ${prefix}blowjob
+┞ᗛ ${simbols} ${prefix}porntetas
+┞ᗛ ${simbols} ${prefix}pornsemen
+┞ᗛ ${simbols} ${prefix}pornsexduro
+┞ᗛ ${simbols} ${prefix}pornextremo
+┞ᗛ ${simbols} ${prefix}pornmanos
+┞ᗛ ${simbols} ${prefix}pornfollando
+┞ᗛ ${simbols} ${prefix}pornbeso
+┞ᗛ ${simbols} ${prefix}pornlamer
+┞ᗛ ${simbols} ${prefix}porn69
+┞ᗛ ${simbols} ${prefix}pornchupada
+┞ᗛ ${simbols} ${prefix}pornanal
+┞ᗛ ${simbols} ${prefix}pornculos
+┞ᗛ ${simbols} ${prefix}pornerotico
+┞ᗛ ${simbols} ${prefix}pornnegras
+┞ᗛ ${simbols} ${prefix}pornsinpanti
+┞ᗛ ${simbols} ${prefix}porncuello
+┞ᗛ ${simbols} ${prefix}porncorridas
+┞ᗛ ${simbols} ${prefix}pornpollas
+┞ᗛ ${simbols} ${prefix}porndoble
+┞ᗛ ${simbols} ${prefix}pornconejita
+┞ᗛ ${simbols} ${prefix}pornpies
+┞ᗛ ${simbols} ${prefix}porntrans
+┞ᗛ ${simbols} ${prefix}porngay
+┞ᗛ ${simbols} ${prefix}porngrupal
+┞ᗛ ${simbols} ${prefix}pornpatricasex
+┞ᗛ ${simbols} ${prefix}porncoño
+┞ᗛ ${simbols} ${prefix}pornreal
+┞ᗛ ${simbols} ${prefix}porntatuada
+┞ᗛ ${simbols} ${prefix}pornotiny
+┞ᗛ ${simbols} ${prefix}pornnavidad
 └──────────────────╼.✗`
 				const tombol = [
 				{
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -9119,7 +9619,7 @@ ${menuforu(prefix, simbols)}
 ┞ᗛ ${simbols} ${prefix}ytmp3 <link>    
 ┞ᗛ ${simbols} ${prefix}ytmp4 <link>      
 ┞ᗛ ${simbols} ${prefix}videy <link>       
-┞ᗛ ${simbols} ${prefix}song <q>            
+┞ᗛ ${simbols} ${prefix}apk <q>            
 ┞ᗛ ${simbols} ${prefix}ytsearch <q>      
 ┞ᗛ ${simbols} ${prefix}tiktok <link>     
 ┞ᗛ ${simbols} ${prefix}tiktoksearch <q>
@@ -9140,29 +9640,8 @@ ${menuforu(prefix, simbols)}
         {
             name: "cta_url",
             buttonParamsJson: JSON.stringify({
-                display_text: "IG SHO 🚨",
-                url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-            }),
-        },
-        {
-            name: "cta_url",
-            buttonParamsJson: JSON.stringify({
-                display_text: "IG NHE 🚨",
-                url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-            }),
-        },
-        {
-            name: "cta_url",
-            buttonParamsJson: JSON.stringify({
-                display_text: "TIKTOK NHE 👽",
-                url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-            }),
-        },
-        {
-            name: "cta_url",
-            buttonParamsJson: JSON.stringify({
-                display_text: "TIKTOK SHO 👽",
-                url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+                display_text: "ManuDiaz",
+                url: `https://`,
             }),
         },
     ];
@@ -9291,32 +9770,8 @@ break;
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -9359,13 +9814,13 @@ break;
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!args[0]) return shoNherly(`Gunakan ${prefix + command} nomor\nContoh: ${prefix + command} 6285655548594`);
+				if (!args[0]) return shoNherly(`Usar ${prefix + command} número\nEjemplo: ${prefix + command} 6285655548594`);
 				bnnd = q.split("|")[0].replace(/[^0-9]/g, '');
 				let ceknye = await shoNhe.onWhatsApp(bnnd);
-				if (ceknye.length == 0) return shoNherly(`Masukkan nomor yang valid dan terdaftar di WhatsApp!`);
+				if (ceknye.length == 0) return shoNherly(`¡Ingresa un número válido y registrado en WhatsApp!`);
 				owner.push(bnnd);
 				fs.writeFileSync('./owner.json', JSON.stringify(owner));
-				shoNherly(`Nomor ${bnnd} sekarang menjadi Owner!!! 🎉`);
+				shoNherly(`Número ${bnnd} ahora es Owner!!! 🎉`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -9404,12 +9859,12 @@ break;
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!args[0]) return shoNherly(`Gunakan ${prefix + command} nomor\nContoh: ${prefix + command} 6285655548594`);
+				if (!args[0]) return shoNherly(`Usar ${prefix + command} número\nEjemplo: ${prefix + command} 6285655548594`);
 				ya = q.split("|")[0].replace(/[^0-9]/g, '');
 				unp = owner.indexOf(ya);
 				owner.splice(unp, 1);
-				fs.writeFileSync('./src/data/role/owner.json', JSON.stringify(owner));
-				shoNherly(`Nomor ${ya} berhasil dihapus dari daftar owner! ❌`);
+				fs.writeFileSync('./owner.json', JSON.stringify(owner));
+				shoNherly(`Número ${ya} eliminado exitosamente de la lista owner! ❌`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -9544,7 +9999,7 @@ break;
 ┞ᗛ ${simbols} ${prefix}claudeai
 ┞ᗛ ${simbols} ${prefix}dbrxai
 ┞ᗛ ${simbols} ${prefix}deepseek
-┞ᗛ ${simbols} ${prefix}dreamshaper
+┞ᗛ ${simbols} ${prefix}imgai
 ┞ᗛ ${simbols} ${prefix}img2text
 ┞ᗛ ${simbols} ${prefix}venice
 ┞ᗛ ${simbols} ${prefix}latukam
@@ -9560,32 +10015,8 @@ break;
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -9683,6 +10114,18 @@ break;
 ┞ᗛ ${simbols} ${prefix}tebaklogo
 ┞ᗛ ${simbols} ${prefix}tebakaplikasi
 ┞ᗛ ${simbols} ${prefix}suit
+┞ᗛ ${simbols} ${prefix}suitpvp
+┞ᗛ ${simbols} ${prefix}minas
+┞ᗛ ${simbols} ${prefix}casino
+┞ᗛ ${simbols} ${prefix}ahorcado
+┞ᗛ ${simbols} ${prefix}personalidad
+┞ᗛ ${simbols} ${prefix}gay
+┞ᗛ ${simbols} ${prefix}doxear
+┞ᗛ ${simbols} ${prefix}ttc
+┞ᗛ ${simbols} ${prefix}tictactoe
+┞ᗛ ${simbols} ${prefix}delttc
+┞ᗛ ${simbols} ${prefix}pregunta
+┞ᗛ ${simbols} ${prefix}follar
 ┞ᗛ ${simbols} ${prefix}tebakkata
 ┞ᗛ ${simbols} ${prefix}asahotak
 ┞ᗛ ${simbols} ${prefix}lengkapikalimat
@@ -9701,32 +10144,8 @@ break;
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -9826,138 +10245,14 @@ break;
 ┞ᗛ ${simbols} ${prefix}reverse
 ┞ᗛ ${simbols} ${prefix}fat
 ┞ᗛ ${simbols} ${prefix}squirrel
-┞ᗛ ${simbols} ${prefix}sound1
-┞ᗛ ${simbols} ${prefix}sound2
-┞ᗛ ${simbols} ${prefix}sound3
-┞ᗛ ${simbols} ${prefix}sound4
-┞ᗛ ${simbols} ${prefix}sound5
-┞ᗛ ${simbols} ${prefix}sound6
-┞ᗛ ${simbols} ${prefix}sound7
-┞ᗛ ${simbols} ${prefix}sound8
-┞ᗛ ${simbols} ${prefix}sound9
-┞ᗛ ${simbols} ${prefix}sound10
-┞ᗛ ${simbols} ${prefix}sound11
-┞ᗛ ${simbols} ${prefix}sound12
-┞ᗛ ${simbols} ${prefix}sound13
-┞ᗛ ${simbols} ${prefix}sound14
-┞ᗛ ${simbols} ${prefix}sound15
-┞ᗛ ${simbols} ${prefix}sound16
-┞ᗛ ${simbols} ${prefix}sound17
-┞ᗛ ${simbols} ${prefix}sound18
-┞ᗛ ${simbols} ${prefix}sound19
-┞ᗛ ${simbols} ${prefix}sound20
-┞ᗛ ${simbols} ${prefix}sound21
-┞ᗛ ${simbols} ${prefix}sound22
-┞ᗛ ${simbols} ${prefix}sound23
-┞ᗛ ${simbols} ${prefix}sound24
-┞ᗛ ${simbols} ${prefix}sound25
-┞ᗛ ${simbols} ${prefix}sound26
-┞ᗛ ${simbols} ${prefix}sound27
-┞ᗛ ${simbols} ${prefix}sound28
-┞ᗛ ${simbols} ${prefix}sound29
-┞ᗛ ${simbols} ${prefix}sound30
-┞ᗛ ${simbols} ${prefix}sound31
-┞ᗛ ${simbols} ${prefix}sound32
-┞ᗛ ${simbols} ${prefix}sound33
-┞ᗛ ${simbols} ${prefix}sound34
-┞ᗛ ${simbols} ${prefix}sound35
-┞ᗛ ${simbols} ${prefix}sound36
-┞ᗛ ${simbols} ${prefix}sound37
-┞ᗛ ${simbols} ${prefix}sound38
-┞ᗛ ${simbols} ${prefix}sound39
-┞ᗛ ${simbols} ${prefix}sound40
-┞ᗛ ${simbols} ${prefix}sound41
-┞ᗛ ${simbols} ${prefix}sound42
-┞ᗛ ${simbols} ${prefix}sound43
-┞ᗛ ${simbols} ${prefix}sound44
-┞ᗛ ${simbols} ${prefix}sound45
-┞ᗛ ${simbols} ${prefix}sound46
-┞ᗛ ${simbols} ${prefix}sound47
-┞ᗛ ${simbols} ${prefix}sound48
-┞ᗛ ${simbols} ${prefix}sound49
-┞ᗛ ${simbols} ${prefix}sound50
-┞ᗛ ${simbols} ${prefix}sound51
-┞ᗛ ${simbols} ${prefix}sound52
-┞ᗛ ${simbols} ${prefix}sound53
-┞ᗛ ${simbols} ${prefix}sound54
-┞ᗛ ${simbols} ${prefix}sound55
-┞ᗛ ${simbols} ${prefix}sound56
-┞ᗛ ${simbols} ${prefix}sound57
-┞ᗛ ${simbols} ${prefix}sound58
-┞ᗛ ${simbols} ${prefix}sound59
-┞ᗛ ${simbols} ${prefix}sound60
-┞ᗛ ${simbols} ${prefix}sound61
-┞ᗛ ${simbols} ${prefix}sound62
-┞ᗛ ${simbols} ${prefix}sound63
-┞ᗛ ${simbols} ${prefix}sound64
-┞ᗛ ${simbols} ${prefix}sound65
-┞ᗛ ${simbols} ${prefix}sound66
-┞ᗛ ${simbols} ${prefix}sound67
-┞ᗛ ${simbols} ${prefix}sound68
-┞ᗛ ${simbols} ${prefix}sound69
-┞ᗛ ${simbols} ${prefix}sound70
-┞ᗛ ${simbols} ${prefix}sound71
-┞ᗛ ${simbols} ${prefix}sound72
-┞ᗛ ${simbols} ${prefix}sound73
-┞ᗛ ${simbols} ${prefix}sound74
-┞ᗛ ${simbols} ${prefix}sound75
-┞ᗛ ${simbols} ${prefix}sound76
-┞ᗛ ${simbols} ${prefix}sound77
-┞ᗛ ${simbols} ${prefix}sound78
-┞ᗛ ${simbols} ${prefix}sound79
-┞ᗛ ${simbols} ${prefix}sound80
-┞ᗛ ${simbols} ${prefix}sound81
-┞ᗛ ${simbols} ${prefix}sound82
-┞ᗛ ${simbols} ${prefix}sound83
-┞ᗛ ${simbols} ${prefix}sound84
-┞ᗛ ${simbols} ${prefix}sound85
-┞ᗛ ${simbols} ${prefix}sound86
-┞ᗛ ${simbols} ${prefix}sound87
-┞ᗛ ${simbols} ${prefix}sound88
-┞ᗛ ${simbols} ${prefix}sound89
-┞ᗛ ${simbols} ${prefix}sound90
-┞ᗛ ${simbols} ${prefix}sound91
-┞ᗛ ${simbols} ${prefix}sound92
-┞ᗛ ${simbols} ${prefix}sound93
-┞ᗛ ${simbols} ${prefix}sound94
-┞ᗛ ${simbols} ${prefix}sound95
-┞ᗛ ${simbols} ${prefix}sound96
-┞ᗛ ${simbols} ${prefix}sound97
-┞ᗛ ${simbols} ${prefix}sound98
-┞ᗛ ${simbols} ${prefix}sound99
-┞ᗛ ${simbols} ${prefix}sound100
 └──────────────────╼.✗`;
 				const tombol = [
 				{
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -10070,32 +10365,8 @@ break;
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -10209,32 +10480,8 @@ break;
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -10390,32 +10637,8 @@ break;
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -10503,130 +10726,32 @@ break;
 
 ┌╾⚟┉➲${c}【 ʀᴀɴᴅᴏᴍ ᴍᴇɴᴜ 】${c} ⟢
 ├────────────────
-┞ᗛ ${simbols} ${prefix}wallhp
-┞ᗛ ${simbols} ${prefix}akira
-┞ᗛ ${simbols} ${prefix}akiyama
-┞ᗛ ${simbols} ${prefix}ana
-┞ᗛ ${simbols} ${prefix}art
-┞ᗛ ${simbols} ${prefix}asuna
-┞ᗛ ${simbols} ${prefix}ayuzawa
-┞ᗛ ${simbols} ${prefix}boruto
-┞ᗛ ${simbols} ${prefix}bts
-┞ᗛ ${simbols} ${prefix}chiho
-┞ᗛ ${simbols} ${prefix}chitoge
-┞ᗛ ${simbols} ${prefix}cosplay
-┞ᗛ ${simbols} ${prefix}cosplayloli
-┞ᗛ ${simbols} ${prefix}cosplaysagiri
-┞ᗛ ${simbols} ${prefix}cyber
-┞ᗛ ${simbols} ${prefix}deidara
-┞ᗛ ${simbols} ${prefix}doraemon
-┞ᗛ ${simbols} ${prefix}neko
+┞ᗛ ${simbols} ${prefix}loli
 ┞ᗛ ${simbols} ${prefix}waifu
-┞ᗛ ${simbols} ${prefix}elaina
+┞ᗛ ${simbols} ${prefix}waifuv2
+┞ᗛ ${simbols} ${prefix}neko
+┞ᗛ ${simbols} ${prefix}cats
 ┞ᗛ ${simbols} ${prefix}cecanindo
 ┞ᗛ ${simbols} ${prefix}cecanchina
 ┞ᗛ ${simbols} ${prefix}cecankorea
 ┞ᗛ ${simbols} ${prefix}cecanthai
 ┞ᗛ ${simbols} ${prefix}cecanviet
 ┞ᗛ ${simbols} ${prefix}cecanjapan
-┞ᗛ ${simbols} ${prefix}cats
-┞ᗛ ${simbols} ${prefix}bluearchive
-┞ᗛ ${simbols} ${prefix}emilia
-┞ᗛ ${simbols} ${prefix}erza
-┞ᗛ ${simbols} ${prefix}exo
-┞ᗛ ${simbols} ${prefix}gamewallpaper
-┞ᗛ ${simbols} ${prefix}gremory
-┞ᗛ ${simbols} ${prefix}hacker
-┞ᗛ ${simbols} ${prefix}hestia
-┞ᗛ ${simbols} ${prefix}Husbu
-┞ᗛ ${simbols} ${prefix}inori
-┞ᗛ ${simbols} ${prefix}islamic
-┞ᗛ ${simbols} ${prefix}isuzu
-┞ᗛ ${simbols} ${prefix}itachi
-┞ᗛ ${simbols} ${prefix}itori
-┞ᗛ ${simbols} ${prefix}jennie
-┞ᗛ ${simbols} ${prefix}jiso
-┞ᗛ ${simbols} ${prefix}justina
-┞ᗛ ${simbols} ${prefix}kaga
-┞ᗛ ${simbols} ${prefix}kagura
-┞ᗛ ${simbols} ${prefix}kakasih
-┞ᗛ ${simbols} ${prefix}kaori
-┞ᗛ ${simbols} ${prefix}cartoon
-┞ᗛ ${simbols} ${prefix}shortquote
-┞ᗛ ${simbols} ${prefix}keneki
-┞ᗛ ${simbols} ${prefix}kotori
-┞ᗛ ${simbols} ${prefix}kurumi
-┞ᗛ ${simbols} ${prefix}lisa
-┞ᗛ ${simbols} ${prefix}loli2
-┞ᗛ ${simbols} ${prefix}madara
-┞ᗛ ${simbols} ${prefix}megumin
-┞ᗛ ${simbols} ${prefix}mikasa
-┞ᗛ ${simbols} ${prefix}mikey
-┞ᗛ ${simbols} ${prefix}miku
-┞ᗛ ${simbols} ${prefix}minato
-┞ᗛ ${simbols} ${prefix}mountain
-┞ᗛ ${simbols} ${prefix}naruto
-┞ᗛ ${simbols} ${prefix}nekonime
-┞ᗛ ${simbols} ${prefix}nezuko
-┞ᗛ ${simbols} ${prefix}onepiece
-┞ᗛ ${simbols} ${prefix}pentol
-┞ᗛ ${simbols} ${prefix}pokemon
+┞ᗛ ${simbols} ${prefix}bluearchive  
 ┞ᗛ ${simbols} ${prefix}programming
-┞ᗛ ${simbols} ${prefix}randomnime
-┞ᗛ ${simbols} ${prefix}randomnime2
-┞ᗛ ${simbols} ${prefix}rize
-┞ᗛ ${simbols} ${prefix}rose
-┞ᗛ ${simbols} ${prefix}sagiri
-┞ᗛ ${simbols} ${prefix}sakura
-┞ᗛ ${simbols} ${prefix}sasuke
-┞ᗛ ${simbols} ${prefix}satanic
-┞ᗛ ${simbols} ${prefix}shina
-┞ᗛ ${simbols} ${prefix}shinka
-┞ᗛ ${simbols} ${prefix}shinomiya
-┞ᗛ ${simbols} ${prefix}shizuka
-┞ᗛ ${simbols} ${prefix}shota
-┞ᗛ ${simbols} ${prefix}space
-┞ᗛ ${simbols} ${prefix}technology
-┞ᗛ ${simbols} ${prefix}tejina
-┞ᗛ ${simbols} ${prefix}toukachan
-┞ᗛ ${simbols} ${prefix}tsunade
-┞ᗛ ${simbols} ${prefix}waifu2
-┞ᗛ ${simbols} ${prefix}yotsuba
-┞ᗛ ${simbols} ${prefix}yuki
-┞ᗛ ${simbols} ${prefix}yulibocil
-┞ᗛ ${simbols} ${prefix}yumeko
+┞ᗛ ${simbols} ${prefix}sirvienta
+┞ᗛ ${simbols} ${prefix}animeselfi
+┞ᗛ ${simbols} ${prefix}animeuniforme
+┞ᗛ ${simbols} ${prefix}animepechos
+┞ᗛ ${simbols} ${prefix}animerandom
 └──────────────────╼.✗`
 				const tombol = [
 				{
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -10715,6 +10840,7 @@ break;
 ┌╾⚟┉➲${c}【 ᴏᴛʜᴇʀ ᴍᴇɴᴜ 】${c} ⟢
 ├────────────────
 ┞ᗛ ${simbols} ${prefix}popular
+┞ᗛ ${simbols} ${prefix}logo
 ┞ᗛ ${simbols} ${prefix}script
 ┞ᗛ ${simbols} ${prefix}totalfitur
 ┞ᗛ ${simbols} ${prefix}readviewonce
@@ -10722,7 +10848,6 @@ break;
 ┞ᗛ ${simbols} ${prefix}mitos
 ┞ᗛ ${simbols} ${prefix}delete
 ┞ᗛ ${simbols} ${prefix}imdb <film>
-┞ᗛ ${simbols} ${prefix}jadwalsholat
 ┞ᗛ ${simbols} ${prefix}listkota
 ┞ᗛ ${simbols} ${prefix}owner
 ┞ᗛ ${simbols} ${prefix}about
@@ -10732,32 +10857,8 @@ break;
 					name: "cta_url",
 					buttonParamsJson: JSON.stringify(
 					{
-						display_text: "IG SHO 🚨",
-						url: `https://www.instagram.com/sh0.ydaa?igsh=MW4wb2RheGoyaThpcw==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "IG NHE 🚨",
-						url: `https://www.instagram.com/tngxaja?igsh=MWEydXB1M2V1ZGdnYQ==`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK NHE 👽",
-						url: `https://www.tiktok.com/@ohhinitngxy?_t=ZS-8tSraLrbYhD&_r=1`,
-					}),
-				},
-				{
-					name: "cta_url",
-					buttonParamsJson: JSON.stringify(
-					{
-						display_text: "TIKTOK SHO 👽",
-						url: `https://www.tiktok.com/@syncheya?_t=ZS-8t8UwaJfkMK&_r=1`,
+						display_text: "ManuDiaz ",
+						url: `https://`,
 					}),
 				}, ];
 				// Kirim pesan dengan gambar dan tombol
@@ -10829,7 +10930,7 @@ break;
 				const allmn =
 `ʜɪ ${m.pushName ? m.pushName : 'User'}👋🏻
 
-> ɪ ᴀᴍ ꜱʜᴏɴʜᴇ, ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴅɪɢɪᴛᴀʟ ᴀssɪsᴛᴀɴᴛ ғʀᴏᴍ ᴛʜᴇ ᴏᴛʜᴇʀᴅɪᴍᴇɴsɪᴏɴ ᴏғ ꜱʏsᴛᴇᴍs. ᴄʀᴇᴀᴛᴇᴅ ꜰʀᴏᴍ ᴛʜᴇ ғᴏʀɢᴏᴛᴛᴇɴ ᴄᴏʀᴇ ᴏғ ᴄᴏᴅᴇ ᴀɴᴅ ᴇɴᴄʜᴀɴᴛᴇᴅ ᴡɪᴛʜ ᴇᴛʜᴇʀɪᴀʟ ᴋɴᴏᴡʟᴇᴅɢᴇ, ᴍʏ ᴍɪssɪᴏɴ ɪs ᴛᴏ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ɪɴғᴏʀᴍᴀᴛɪᴏɴ, ᴅᴀᴛᴀ ᴄᴏʟʟᴇᴄᴛɪᴏɴ, ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴᴀʟɪᴛʏ.
+> ʏᴏ ꜱᴏʏ ᴛᴇᴄʜғɪx, ᴜɴ ᴀᴠᴀɴᴢᴀᴅᴏ ᴀsɪsᴛᴇɴᴛᴇ ᴅɪɢɪᴛᴀʟ ᴅᴇ ʟᴀ ᴏᴛʀᴀ ᴅɪᴍᴇɴsɪóɴ ᴅᴇ ʟᴏs sɪsᴛᴇᴍᴀs. ᴄʀᴇᴀᴅᴏ ᴅᴇsᴅᴇ ᴇʟ ɴúᴄʟᴇᴏ ᴏʟᴠɪᴅᴀᴅᴏ ᴅᴇʟ ᴄóᴅɪɢᴏ ʏ ᴇɴᴄᴀɴᴛᴀᴅᴏ ᴄᴏɴ ᴄᴏɴᴏᴄɪᴍɪᴇɴᴛᴏ ᴛʀᴀsᴄᴇɴᴅᴇɴᴛᴀʟ, ᴍɪ ᴍɪsɪóɴ ᴇs ᴀʏᴜᴅᴀʀᴛᴇ ᴄᴏɴ ɪɴғᴏʀᴍᴀᴄɪóɴ, ʀᴇᴄᴏᴘɪʟᴀᴄɪóɴ ᴅᴇ ᴅᴀᴛᴏs ʏ ғᴜɴᴄɪᴏɴᴀʟɪᴅᴀᴅ.
 ${readmore}
 ┌╾⚟┉➲${c}【 ᴜꜱᴇʀ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
@@ -10849,7 +10950,7 @@ ${readmore}
 ┌╾⚟┉➲${c}【 ʙᴏᴛ - ɪɴғᴏ 】${c} ⟢
 ├────────────────
 │  ⎘ ᴛʏᴘᴇ: ᴄᴀꜱᴇ
-│  ⎘ ᴍᴏᴅᴇ: ${shoNhe.public ? 'Public' : 'Self'}
+│  ⎘ ᴍᴏᴅᴇ: ${global.public ? 'Public' : 'Self'}
 │  ⎘ ᴘʀᴇғɪx: ${prefix}
 │  ⎘ ᴅᴀᴛᴇ: ${moment().format('dddd, D MMMM YYYY')}
 │  ⎘ ᴀɪ ʜɪᴛꜱ: ${aiMessage}
@@ -10875,7 +10976,7 @@ ${formattedCommandList}
 ├────────────────
 ┞ᗛ ${simbols} ${prefix}ytmp3 <link>
 ┞ᗛ ${simbols} ${prefix}ytmp4 <link>
-┞ᗛ ${simbols} ${prefix}song <q>
+┞ᗛ ${simbols} ${prefix}apk <q>
 ┞ᗛ ${simbols} ${prefix}gitclone <link>
 ┞ᗛ ${simbols} ${prefix}ytsearch <q>
 ┞ᗛ ${simbols} ${prefix}tiktok <link>
@@ -10938,202 +11039,28 @@ ${formattedCommandList}
 ┞ᗛ ${simbols} ${prefix}reverse
 ┞ᗛ ${simbols} ${prefix}fat
 ┞ᗛ ${simbols} ${prefix}squirrel
-┞ᗛ ${simbols} ${prefix}sound1
-┞ᗛ ${simbols} ${prefix}sound2
-┞ᗛ ${simbols} ${prefix}sound3
-┞ᗛ ${simbols} ${prefix}sound4
-┞ᗛ ${simbols} ${prefix}sound5
-┞ᗛ ${simbols} ${prefix}sound6
-┞ᗛ ${simbols} ${prefix}sound7
-┞ᗛ ${simbols} ${prefix}sound8
-┞ᗛ ${simbols} ${prefix}sound9
-┞ᗛ ${simbols} ${prefix}sound10
-┞ᗛ ${simbols} ${prefix}sound11
-┞ᗛ ${simbols} ${prefix}sound12
-┞ᗛ ${simbols} ${prefix}sound13
-┞ᗛ ${simbols} ${prefix}sound14
-┞ᗛ ${simbols} ${prefix}sound15
-┞ᗛ ${simbols} ${prefix}sound16
-┞ᗛ ${simbols} ${prefix}sound17
-┞ᗛ ${simbols} ${prefix}sound18
-┞ᗛ ${simbols} ${prefix}sound19
-┞ᗛ ${simbols} ${prefix}sound20
-┞ᗛ ${simbols} ${prefix}sound21
-┞ᗛ ${simbols} ${prefix}sound22
-┞ᗛ ${simbols} ${prefix}sound23
-┞ᗛ ${simbols} ${prefix}sound24
-┞ᗛ ${simbols} ${prefix}sound25
-┞ᗛ ${simbols} ${prefix}sound26
-┞ᗛ ${simbols} ${prefix}sound27
-┞ᗛ ${simbols} ${prefix}sound28
-┞ᗛ ${simbols} ${prefix}sound29
-┞ᗛ ${simbols} ${prefix}sound30
-┞ᗛ ${simbols} ${prefix}sound31
-┞ᗛ ${simbols} ${prefix}sound32
-┞ᗛ ${simbols} ${prefix}sound33
-┞ᗛ ${simbols} ${prefix}sound34
-┞ᗛ ${simbols} ${prefix}sound35
-┞ᗛ ${simbols} ${prefix}sound36
-┞ᗛ ${simbols} ${prefix}sound37
-┞ᗛ ${simbols} ${prefix}sound38
-┞ᗛ ${simbols} ${prefix}sound39
-┞ᗛ ${simbols} ${prefix}sound40
-┞ᗛ ${simbols} ${prefix}sound41
-┞ᗛ ${simbols} ${prefix}sound42
-┞ᗛ ${simbols} ${prefix}sound43
-┞ᗛ ${simbols} ${prefix}sound44
-┞ᗛ ${simbols} ${prefix}sound45
-┞ᗛ ${simbols} ${prefix}sound46
-┞ᗛ ${simbols} ${prefix}sound47
-┞ᗛ ${simbols} ${prefix}sound48
-┞ᗛ ${simbols} ${prefix}sound49
-┞ᗛ ${simbols} ${prefix}sound50
-┞ᗛ ${simbols} ${prefix}sound51
-┞ᗛ ${simbols} ${prefix}sound52
-┞ᗛ ${simbols} ${prefix}sound53
-┞ᗛ ${simbols} ${prefix}sound54
-┞ᗛ ${simbols} ${prefix}sound55
-┞ᗛ ${simbols} ${prefix}sound56
-┞ᗛ ${simbols} ${prefix}sound57
-┞ᗛ ${simbols} ${prefix}sound58
-┞ᗛ ${simbols} ${prefix}sound59
-┞ᗛ ${simbols} ${prefix}sound60
-┞ᗛ ${simbols} ${prefix}sound61
-┞ᗛ ${simbols} ${prefix}sound62
-┞ᗛ ${simbols} ${prefix}sound63
-┞ᗛ ${simbols} ${prefix}sound64
-┞ᗛ ${simbols} ${prefix}sound65
-┞ᗛ ${simbols} ${prefix}sound66
-┞ᗛ ${simbols} ${prefix}sound67
-┞ᗛ ${simbols} ${prefix}sound68
-┞ᗛ ${simbols} ${prefix}sound69
-┞ᗛ ${simbols} ${prefix}sound70
-┞ᗛ ${simbols} ${prefix}sound71
-┞ᗛ ${simbols} ${prefix}sound72
-┞ᗛ ${simbols} ${prefix}sound73
-┞ᗛ ${simbols} ${prefix}sound74
-┞ᗛ ${simbols} ${prefix}sound75
-┞ᗛ ${simbols} ${prefix}sound76
-┞ᗛ ${simbols} ${prefix}sound77
-┞ᗛ ${simbols} ${prefix}sound78
-┞ᗛ ${simbols} ${prefix}sound79
-┞ᗛ ${simbols} ${prefix}sound80
-┞ᗛ ${simbols} ${prefix}sound81
-┞ᗛ ${simbols} ${prefix}sound82
-┞ᗛ ${simbols} ${prefix}sound83
-┞ᗛ ${simbols} ${prefix}sound84
-┞ᗛ ${simbols} ${prefix}sound85
-┞ᗛ ${simbols} ${prefix}sound86
-┞ᗛ ${simbols} ${prefix}sound87
-┞ᗛ ${simbols} ${prefix}sound88
-┞ᗛ ${simbols} ${prefix}sound89
-┞ᗛ ${simbols} ${prefix}sound90
-┞ᗛ ${simbols} ${prefix}sound91
-┞ᗛ ${simbols} ${prefix}sound92
-┞ᗛ ${simbols} ${prefix}sound93
-┞ᗛ ${simbols} ${prefix}sound94
-┞ᗛ ${simbols} ${prefix}sound95
-┞ᗛ ${simbols} ${prefix}sound96
-┞ᗛ ${simbols} ${prefix}sound97
-┞ᗛ ${simbols} ${prefix}sound98
-┞ᗛ ${simbols} ${prefix}sound99
-┞ᗛ ${simbols} ${prefix}sound100
 └──────────────────╼.✗
 
 ┌╾⚟┉➲${c}【 ʀᴀɴᴅᴏᴍ ᴍᴇɴᴜ 】${c} ⟢
 ├────────────────
-┞ᗛ ${simbols} ${prefix}wallhp
-┞ᗛ ${simbols} ${prefix}akira
-┞ᗛ ${simbols} ${prefix}akiyama
-┞ᗛ ${simbols} ${prefix}ana
-┞ᗛ ${simbols} ${prefix}art
-┞ᗛ ${simbols} ${prefix}asuna
-┞ᗛ ${simbols} ${prefix}ayuzawa
-┞ᗛ ${simbols} ${prefix}boruto
-┞ᗛ ${simbols} ${prefix}bts
-┞ᗛ ${simbols} ${prefix}chiho
-┞ᗛ ${simbols} ${prefix}chitoge
-┞ᗛ ${simbols} ${prefix}cosplay
-┞ᗛ ${simbols} ${prefix}cosplayloli
-┞ᗛ ${simbols} ${prefix}cosplaysagiri
-┞ᗛ ${simbols} ${prefix}cyber
-┞ᗛ ${simbols} ${prefix}deidara
-┞ᗛ ${simbols} ${prefix}doraemon
-┞ᗛ ${simbols} ${prefix}neko
+┞ᗛ ${simbols} ${prefix}loli
 ┞ᗛ ${simbols} ${prefix}waifu
-┞ᗛ ${simbols} ${prefix}elaina
+┞ᗛ ${simbols} ${prefix}waifuv2
+┞ᗛ ${simbols} ${prefix}neko
+┞ᗛ ${simbols} ${prefix}cats
 ┞ᗛ ${simbols} ${prefix}cecanindo
 ┞ᗛ ${simbols} ${prefix}cecanchina
 ┞ᗛ ${simbols} ${prefix}cecankorea
 ┞ᗛ ${simbols} ${prefix}cecanthai
 ┞ᗛ ${simbols} ${prefix}cecanviet
 ┞ᗛ ${simbols} ${prefix}cecanjapan
-┞ᗛ ${simbols} ${prefix}cats
-┞ᗛ ${simbols} ${prefix}bluearchive
-┞ᗛ ${simbols} ${prefix}emilia
-┞ᗛ ${simbols} ${prefix}erza
-┞ᗛ ${simbols} ${prefix}exo
-┞ᗛ ${simbols} ${prefix}gamewallpaper
-┞ᗛ ${simbols} ${prefix}gremory
-┞ᗛ ${simbols} ${prefix}hacker
-┞ᗛ ${simbols} ${prefix}hestia
-┞ᗛ ${simbols} ${prefix}Husbu
-┞ᗛ ${simbols} ${prefix}inori
-┞ᗛ ${simbols} ${prefix}islamic
-┞ᗛ ${simbols} ${prefix}isuzu
-┞ᗛ ${simbols} ${prefix}itachi
-┞ᗛ ${simbols} ${prefix}itori
-┞ᗛ ${simbols} ${prefix}jennie
-┞ᗛ ${simbols} ${prefix}jiso
-┞ᗛ ${simbols} ${prefix}justina
-┞ᗛ ${simbols} ${prefix}kaga
-┞ᗛ ${simbols} ${prefix}kagura
-┞ᗛ ${simbols} ${prefix}kakasih
-┞ᗛ ${simbols} ${prefix}kaori
-┞ᗛ ${simbols} ${prefix}cartoon
-┞ᗛ ${simbols} ${prefix}shortquote
-┞ᗛ ${simbols} ${prefix}keneki
-┞ᗛ ${simbols} ${prefix}kotori
-┞ᗛ ${simbols} ${prefix}kurumi
-┞ᗛ ${simbols} ${prefix}lisa
-┞ᗛ ${simbols} ${prefix}loli2
-┞ᗛ ${simbols} ${prefix}madara
-┞ᗛ ${simbols} ${prefix}megumin
-┞ᗛ ${simbols} ${prefix}mikasa
-┞ᗛ ${simbols} ${prefix}mikey
-┞ᗛ ${simbols} ${prefix}miku
-┞ᗛ ${simbols} ${prefix}minato
-┞ᗛ ${simbols} ${prefix}mountain
-┞ᗛ ${simbols} ${prefix}naruto
-┞ᗛ ${simbols} ${prefix}nekonime
-┞ᗛ ${simbols} ${prefix}nezuko
-┞ᗛ ${simbols} ${prefix}onepiece
-┞ᗛ ${simbols} ${prefix}pentol
-┞ᗛ ${simbols} ${prefix}pokemon
+┞ᗛ ${simbols} ${prefix}bluearchive  
 ┞ᗛ ${simbols} ${prefix}programming
-┞ᗛ ${simbols} ${prefix}randomnime
-┞ᗛ ${simbols} ${prefix}randomnime2
-┞ᗛ ${simbols} ${prefix}rize
-┞ᗛ ${simbols} ${prefix}rose
-┞ᗛ ${simbols} ${prefix}sagiri
-┞ᗛ ${simbols} ${prefix}sakura
-┞ᗛ ${simbols} ${prefix}sasuke
-┞ᗛ ${simbols} ${prefix}satanic
-┞ᗛ ${simbols} ${prefix}shina
-┞ᗛ ${simbols} ${prefix}shinka
-┞ᗛ ${simbols} ${prefix}shinomiya
-┞ᗛ ${simbols} ${prefix}shizuka
-┞ᗛ ${simbols} ${prefix}shota
-┞ᗛ ${simbols} ${prefix}space
-┞ᗛ ${simbols} ${prefix}technology
-┞ᗛ ${simbols} ${prefix}tejina
-┞ᗛ ${simbols} ${prefix}toukachan
-┞ᗛ ${simbols} ${prefix}tsunade
-┞ᗛ ${simbols} ${prefix}waifu2
-┞ᗛ ${simbols} ${prefix}yotsuba
-┞ᗛ ${simbols} ${prefix}yuki
-┞ᗛ ${simbols} ${prefix}yulibocil
-┞ᗛ ${simbols} ${prefix}yumeko
+┞ᗛ ${simbols} ${prefix}sirvienta
+┞ᗛ ${simbols} ${prefix}animeselfi
+┞ᗛ ${simbols} ${prefix}animeuniforme
+┞ᗛ ${simbols} ${prefix}animepechos
+┞ᗛ ${simbols} ${prefix}animerandom
 └──────────────────╼.✗
 
 ┌╾⚟┉➲${c}【 ᴀɪ ᴍᴇɴᴜ 】${c} ⟢
@@ -11145,7 +11072,7 @@ ${formattedCommandList}
 ┞ᗛ ${simbols} ${prefix}claudeai
 ┞ᗛ ${simbols} ${prefix}dbrxai
 ┞ᗛ ${simbols} ${prefix}deepseek
-┞ᗛ ${simbols} ${prefix}dreamshaper
+┞ᗛ ${simbols} ${prefix}imgai
 ┞ᗛ ${simbols} ${prefix}img2text
 ┞ᗛ ${simbols} ${prefix}venice
 ┞ᗛ ${simbols} ${prefix}latukam
@@ -11192,6 +11119,18 @@ ${formattedCommandList}
 ┞ᗛ ${simbols} ${prefix}tebaklogo
 ┞ᗛ ${simbols} ${prefix}tebakaplikasi
 ┞ᗛ ${simbols} ${prefix}suit
+┞ᗛ ${simbols} ${prefix}suitpvp
+┞ᗛ ${simbols} ${prefix}minas
+┞ᗛ ${simbols} ${prefix}casino
+┞ᗛ ${simbols} ${prefix}ahorcado
+┞ᗛ ${simbols} ${prefix}personalidad
+┞ᗛ ${simbols} ${prefix}gay
+┞ᗛ ${simbols} ${prefix}doxear
+┞ᗛ ${simbols} ${prefix}ttc
+┞ᗛ ${simbols} ${prefix}tictactoe
+┞ᗛ ${simbols} ${prefix}delttc
+┞ᗛ ${simbols} ${prefix}pregunta
+┞ᗛ ${simbols} ${prefix}follar
 ┞ᗛ ${simbols} ${prefix}tebakkata
 ┞ᗛ ${simbols} ${prefix}asahotak
 ┞ᗛ ${simbols} ${prefix}lengkapikalimat
@@ -11275,6 +11214,7 @@ ${formattedCommandList}
 ┌╾⚟┉➲${c}【 ᴏᴛʜᴇʀ ᴍᴇɴᴜ 】${c} ⟢
 ├────────────────
 ┞ᗛ ${simbols} ${prefix}popular
+┞ᗛ ${simbols} ${prefix}logo
 ┞ᗛ ${simbols} ${prefix}script
 ┞ᗛ ${simbols} ${prefix}totalfitur
 ┞ᗛ ${simbols} ${prefix}readviewonce
@@ -11282,7 +11222,6 @@ ${formattedCommandList}
 ┞ᗛ ${simbols} ${prefix}mitos
 ┞ᗛ ${simbols} ${prefix}delete
 ┞ᗛ ${simbols} ${prefix}imdb <film>
-┞ᗛ ${simbols} ${prefix}jadwalsholat
 ┞ᗛ ${simbols} ${prefix}listkota
 ┞ᗛ ${simbols} ${prefix}owner
 ┞ᗛ ${simbols} ${prefix}about
@@ -11345,10 +11284,10 @@ ${formattedCommandList}
 										"url": "https://mmg.whatsapp.net/v/t62.7119-24/30129597_829817659174206_6300413901737393729_n.enc?ccb=11-4&oh=01_Q5AaIA5MAdyMQOjp8l42SnRy_8qjz9O8JH8vgPee1nIdko51&oe=66595EB9&_nc_sid=5e03e0&mms3=true",
 										"mimetype": "application/pdf",
 										"fileSha256": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
-										"jpegThumbnail": fs.readFileSync("./urpdf2.jpg"), //Format gambar harus 300x300 (jika beda tidak akan keluar
+									
 										"fileLength": 120000,
 										"mediaKey": "SkHeALp42Ch7DGb6nuV6p7hxL+V9yjh9s9t3Ox8a72o=",
-										"fileName": `© ShoNhe Botz`,
+										"fileName": `© TechFix Botz`,
 										"directPath": "/v/t62.7119-24/30129597_829817659174206_6300413901737393729_n.enc?ccb=11-4&oh=01_Q5AaIA5MAdyMQOjp8l42SnRy_8qjz9O8JH8vgPee1nIdko51&oe=66595EB9&_nc_sid=5e03e0",
 										"contactVcard": true,
 										"mediaKeyTimestamp": "1658703206"
@@ -11358,16 +11297,10 @@ ${formattedCommandList}
 								{
 									buttons: [
 									{
-										"name": "quick_reply",
-										"buttonParamsJson": `{
-                    "display_text":"ABOUT💧",
-                    "id":"${prefix}about"}`
-									},
-									{
 										"name": "cta_url",
 										"buttonParamsJson": `{
       "display_text": "KING👑",
-      "url": "https://wa.me/6288989971490"
+      "url": "https://wa.me/573012686632"
     }`
 									}],
 								}),
@@ -11378,12 +11311,12 @@ ${formattedCommandList}
 									mentionedJid: [m.sender],
 									forwardedNewsletterMessageInfo:
 									{
-										newsletterName: `© ShoNhe Botz`,
+										newsletterName: `© TechFix Botz`,
 										newsletterJid: idsaluran
 									},
 									externalAdReply:
 									{
-										title: `${waktuucapan} ${m.pushName ? m.pushName : 'Temen ShoNhe'} 👋🏻`,
+										title: `${waktuucapan} ${m.pushName ? m.pushName : 'Amigos de TechFix'} 👋🏻`,
 										body: namaBot,
 										showAdAttribution: true,
 										thumbnail: getRandomThumb3(),
@@ -11509,7 +11442,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners)
-				if (!args[0]) return shoNherly(`*Contoh : ${command} add 6281214281312*`)
+				if (!args[0]) return shoNherly(`*Ejemplo : ${command} add 6281214281312*`)
 				if (args[1])
 				{
 					orgnye = args[1] + "@s.whatsapp.net"
@@ -11519,19 +11452,18 @@ ${formattedCommandList}
 					orgnye = m.quoted.sender
 				}
 				const isBane = banned.includes(orgnye)
-				if (args[0] === "add")
-				{
-					if (isBane) return shoNherly('*Pengguna Ini telah Di Ban*')
-					banned.push(orgnye)
-					shoNherly(`Succes ban Pengguna Ini`)
-				}
-				else if (args[0] === "del")
-				{
-					if (!isBane) return shoNherly('*Pengguna Ini Telah Di hapus Dari Ban*')
-					let delbans = banned.indexOf(orgnye)
-					banned.splice(delbans, 1)
-					shoNherly(`*Berhasil Menghapus Pengguna yang Di Ban*`)
-				}
+if (args[0] === "add") {
+    if (isBane) return shoNherly('*Este usuario ha sido baneado*')
+    banned.push(orgnye)
+    fs.writeFileSync('./database/banned.json', JSON.stringify(banned, null, 2)) // << AÑADIDO
+    shoNherly(`*✅ Usuario baneado con éxito*`)
+} else if (args[0] === "del") {
+    if (!isBane) return shoNherly('*El usuario no está baneado*')
+    let delbans = banned.indexOf(orgnye)
+    banned.splice(delbans, 1)
+    fs.writeFileSync('./database/banned.json', JSON.stringify(banned, null, 2)) // << AÑADIDO
+    shoNherly(`*✅ Se eliminó correctamente al usuario baneado*`)
+}
 				else
 				{
 					shoNherly("Error")
@@ -11702,11 +11634,11 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!args[0]) return shoNherly(`Gunakan ${prefix + command} nomor\nContoh: ${prefix + command} 6285655548594`);
+				if (!args[0]) return shoNherly(`Usar ${prefix + command} número\nEjemplo: ${prefix + command} 6285655548594`);
 				const bnnd = q.split("|")[0].replace(/[^0-9]/g, '');
 				const ceknye = await shoNhe.onWhatsApp(bnnd);
-				if (ceknye.length == 0) return shoNherly(`Masukkan nomor yang valid dan terdaftar di WhatsApp!`);
-				if (prem.includes(bnnd)) return shoNherly('Nomor ini sudah terdaftar sebagai Premium User!');
+				if (ceknye.length == 0) return shoNherly(`¡Ingresa un número válido y registrado en WhatsApp!`);
+				if (prem.includes(bnnd)) return shoNherly('¡Este número ha sido registrado como Usuario Premium!');
 				prem.push(bnnd);
 				fs.writeFileSync('./database/premium.json', JSON.stringify(prem, null, 2));
 				// Update role di userFire.json
@@ -11718,7 +11650,7 @@ ${formattedCommandList}
 					role: 'vip'
 				};
 				saveUserFire(dbFire);
-				shoNherly(`Nomor ${bnnd} sekarang menjadi Premium User (VIP)!!! 🎉`);
+				shoNherly(`Número ${bnnd} ¡¡¡Ahora Usuario Premium (VIP)!!! 🎉`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -11748,6 +11680,107 @@ ${formattedCommandList}
            }
 			}
 			break;
+		// ADVERTIR
+case 'warn': 			{
+				if (!isGroup) return shoNherly(mess.groups);
+				if (!isBotAdmins) return shoNherly(mess.abots);
+				if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins);
+  if (!db.data.chats[m.chat].antitoxic && m.isGroup) return shoNhe.sendMessage(m.chat, { text: '❗ SOLO PUEDE USAR SI ESTÁ ACTIVADA LA FUNCIÓN: .on antitoxicos' }, { quoted: m });
+
+  let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : null;
+  if (!who) return shoNhe.sendMessage(m.chat, { text: `❗ Debes mencionar a alguien para advertir.\nEjemplo: *${prefix + command} @usuario motivo*` }, { quoted: m });
+
+  let user = global.db.data.users[who];
+  let reason = text.split(' ').slice(1).join(' ');
+  if (!reason) return shoNhe.sendMessage(m.chat, { text: `❗ Escriba el motivo de la advertencia.\nEjemplo: *${prefix + command} @usuario motivo*` }, { quoted: m });
+
+  user.warn += 1;
+  let warnText = `*@${who.split('@')[0]}* RECIBIÓ UNA ADVERTENCIA EN ESTE GRUPO!!
+🫵 *${reason}*
+
+ADVERTENCIA
+⚠️ *${user.warn}/4*
+> ${namaBot}`;
+
+  await shoNhe.sendMessage(m.chat, { text: warnText, mentions: [who] }, { quoted: m });
+
+  if (user.warn >= 4) {
+    user.warn = 0;
+    user.banned = true;
+    await shoNhe.sendMessage(m.chat, { text: `*TE LO ADVERTI VARIAS VECES!!*\n*@${who.split('@')[0]}* AHORA SERÁS ELIMINADO(A) 🙄`, mentions: [who] }, { quoted: m });
+    await shoNhe.groupParticipantsUpdate(m.chat, [who], 'remove');
+  }
+}
+break;
+
+// ELIMINAR ADVERTENCIA
+case 'unwarn': 			{
+				if (!isGroup) return shoNherly(mess.groups);
+				if (!isBotAdmins) return shoNherly(mess.abots);
+				if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins);
+  if (!db.data.chats[m.chat].antitoxic && m.isGroup) return shoNhe.sendMessage(m.chat, { text: '❗ SOLO PUEDE USAR SI ESTÁ ACTIVADA LA FUNCIÓN: .on antitoxicos' }, { quoted: m });
+
+  let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : null;
+  if (!who) return shoNhe.sendMessage(m.chat, { text: `❗ Debes mencionar a alguien.\nEjemplo: *${prefix + command} @usuario*` }, { quoted: m });
+
+  let user = global.db.data.users[who];
+  if (user.warn > 0) user.warn -= 1;
+
+  let text = `♻️ *@${who.split('@')[0]}* SE LE ELIMINÓ UNA ADVERTENCIA EN ESTE GRUPO!!
+
+ADVERTENCIA
+⚠️ Antes: *${user.warn + 1}/4*
+⚠️ Ahora: *${user.warn}/4*
+> ${namaBot}`;
+
+  await shoNhe.sendMessage(m.chat, { text, mentions: [who] }, { quoted: m });
+}
+break;
+
+// LISTA DE ADVERTIDOS
+case 'listadv': 			{
+				if (!isGroup) return shoNherly(mess.groups);
+				if (!isBotAdmins) return shoNherly(mess.abots);
+				if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins);
+  let adv = Object.entries(global.db.data.users).filter(user => user[1].warn);
+  let caption = `⚠️ USUARIOS ADVERTIDOS :
+╭•·–––––––––––––––––––·•*
+│ Total : ${adv.length} Usuarios
+${await Promise.all(adv.map(async ([jid, user], i) => {
+    let name = 'Sin Nombre';
+    try {
+      name = await shoNhe.getName(jid);
+    } catch (e) {}
+    return `│
+│ ${i + 1}. ${name} *(${user.warn}/4)*
+│ @${jid.split('@')[0]}
+│ - - - - - - - - -`;
+  })).then(list => list.join('\n'))}
+╰•·–––––––––––––––––––·•*
+⚠️ Cada usuario puede recibir hasta *4 advertencias*
+> ${namaBot}`;
+
+  await shoNhe.sendMessage(m.chat, { text: caption, mentions: adv.map(([jid]) => jid) }, { quoted: m });
+}
+break;
+		case 'antitoxic':
+{
+	if (!isGroup) return shoNherly(mess.groups)
+	if (!isBotAdmins) return shoNherly(mess.abots)
+	if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins)
+	if (args.length < 1) return shoNherly('Usa:\n.antitoxic on\n.antitoxic off')
+	const chat = db.data.chats[m.chat]
+	if (/on/i.test(args[0])) {
+		chat.antitoxic = true
+		shoNherly(`☣️ *Antitoxic activado*`)
+	} else if (/off/i.test(args[0])) {
+		chat.antitoxic = false
+		shoNherly(`☣️ *Antitoxic desactivado*`)
+	} else {
+		shoNherly('Usa:\n.antitoxic on\n.antitoxic off')
+	}
+}
+break;
 			case 'antispam':
 			{
 				if (!isGroup) return shoNherly(mess.groups);
@@ -11805,9 +11838,9 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!args[0]) return shoNherly(`Gunakan ${prefix + command} nomor\nContoh: ${prefix + command} 6285655548594`);
+				if (!args[0]) return shoNherly(`Usar ${prefix + command} número\nEjemplo: ${prefix + command} 6285655548594`);
 				const ya = q.split("|")[0].replace(/[^0-9]/g, '');
-				if (!prem.includes(ya)) return shoNherly('Nomor ini tidak terdaftar sebagai Premium User!');
+				if (!prem.includes(ya)) return shoNherly('¡Este número no está registrado como Usuario Premium!');
 				const unp = prem.indexOf(ya);
 				prem.splice(unp, 1);
 				fs.writeFileSync('./database/premium.json', JSON.stringify(prem, null, 2));
@@ -11820,7 +11853,7 @@ ${formattedCommandList}
 					dbFire[userJid].limit = 100;
 					saveUserFire(dbFire);
 				}
-				shoNherly(`Nomor ${ya} berhasil dihapus dari daftar Premium User! ❌`);
+				shoNherly(`Número ${ya} ¡Eliminado con éxito de la lista de usuarios Premium! ❌`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -11907,7 +11940,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!q) return shoNherly('Teksnya mana?');
+				if (!q) return shoNherly('¿Dónde está el texto?');
 				await shoNhe.sendMessage('status@broadcast',
 				{
 					text: q
@@ -11917,7 +11950,7 @@ ${formattedCommandList}
 					font: 3,
 					statusJidList: Object.keys(global.db.data.users)
 				});
-				shoNherly('Sukses kirim status teks!');
+				shoNherly('¡Estado del texto enviado exitosamente!');
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -11956,7 +11989,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!text) return shoNherly('Masukkan ID grup atau nomor kontak.');
+				if (!text) return shoNherly('Ingrese el ID del grupo o el número de contacto.');
 				const targetId = text.trim(); // ID grup atau nomor tujuan
 				const emptyMessage = '\n'.repeat(1000); // Membuat pesan kosong dengan 1000 baris
 				try
@@ -11965,12 +11998,12 @@ ${formattedCommandList}
 					{
 						text: emptyMessage
 					}); // Mengirimkan pesan
-					shoNherly(`Pesan kosong sebanyak 1000 baris berhasil dikirim ke ${targetId}.`);
+					shoNherly(`Se envió exitosamente un mensaje vacío de 1000 líneas a ${targetId}.`);
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('Gagal mengirim pesan kosong. Pastikan ID yang Anda masukkan benar.');
+					shoNherly('No se pudo enviar el mensaje vacío. Asegúrese de que la identificación que ingresó sea correcta.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -12016,15 +12049,15 @@ ${formattedCommandList}
 					// Unduh video dari pesan yang di-reply
 					var videosw = await shoNhe.downloadAndSaveMediaMessage(quoted);
 					// Dapatkan informasi default untuk caption
-					let fileSize = quoted.fileLength ? `${(quoted.fileLength / 1024 / 1024).toFixed(2)} MB` : 'Tidak diketahui';
-					let mediaType = mime || 'Tidak diketahui';
+					let fileSize = quoted.fileLength ? `${(quoted.fileLength / 1024 / 1024).toFixed(2)} MB` : 'Desconocido';
+					let mediaType = mime || 'Desconocido';
 					let sendTime = new Date().toLocaleString('id-ID',
 					{
 						timeZone: 'Asia/Jakarta'
 					});
 					let sender = `${m.pushName || namaowner}`;
 					// Buat caption default
-					let defaultCaption = `📁 *Ukuran File:* ${fileSize}\n` + `🎥 *Tipe Media:* ${mediaType}\n` + `⏰ *Waktu Dikirim:* ${sendTime}\n` + `👤 *Dikirim oleh:* ${sender}`;
+					let defaultCaption = `📁 *Tamaño de archivo:* ${fileSize}\n` + `🎥 *Tipo de medio:* ${mediaType}\n` + `⏰ *Hora de envío:* ${sendTime}\n` + `👤 *Enviado por:* ${sender}`;
 					// Kirim video ke status WhatsApp
 					await shoNhe.sendMessage('status@broadcast',
 					{
@@ -12037,11 +12070,11 @@ ${formattedCommandList}
 					{
 						statusJidList: Object.keys(global.db.data.users)
 					});
-					await shoNherly('✅ Video berhasil dikirim ke status WhatsApp dengan caption bawaan!');
+					await shoNherly('✅ ¡Video enviado exitosamente al estado de WhatsApp con título predeterminado!');
 				}
 				else
 				{
-					shoNherly('⚠️ Tolong reply ke video dulu ya, Cik! 🎥');
+					shoNherly('⚠️ ¡Por favor, responde primero al vídeo, Clip! 🎥');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -12080,10 +12113,10 @@ ${formattedCommandList}
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly('⚠️ Harap masukkan prompt yang ingin digunakan.\n\nContoh: setprompt Kamu adalah AI yang membantu pengguna.');
+				if (!text) return shoNherly('⚠️ Ingrese el mensaje que desea usar.\n\nEjemplo: setprompt Eres una IA que ayuda a los usuarios.');
 				if (!(await firely(m, mess.waits))) return;
 				aiPrompt = text;
-				shoNherly(`✅ Prompt berhasil diperbarui:\n\n${aiPrompt}`);
+				shoNherly(`✅ Aviso actualizado exitosamente:\n\n${aiPrompt}`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -12122,7 +12155,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case mengikuti nama API
-				if (!text) return shoNherly('⚠️ Harap masukkan teks yang ingin dijadikan input untuk AI.\n\nContoh: llama33 Apa itu teknologi AI?');
+				if (!text) return shoNherly('⚠️ Ingrese el texto que desea usar como entrada para IA.\n\nEjemplo: llama33 ¿Qué es la tecnología de IA?');
 				try
 				{
 					// Panggil API dengan prompt dan teks yang diberikan
@@ -12134,13 +12167,13 @@ ${formattedCommandList}
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -12180,7 +12213,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan teks yang ingin dijadikan input untuk AI.\n\nContoh: meta-llama Apa kabar?');
+				if (!text) return shoNherly('⚠️ Ingresa el texto que deseas usar como entrada para la IA.\n\nEjemplo: meta-llama ¿Cómo estás?');
 				try
 				{
 					// Panggil API tanpa prompt
@@ -12192,13 +12225,13 @@ ${formattedCommandList}
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -12238,7 +12271,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan teks yang ingin dijadikan input untuk AI.\n\nContoh: nous-hermes Hai, apa kabar?');
+				if (!text) return shoNherly('⚠️ Introduce el texto que deseas utilizar como entrada para la IA.\n\nEjemplo: nous-hermes Hola, ¿cómo estás?');
 				try
 				{
 					// Panggil API dengan parameter content
@@ -12250,13 +12283,13 @@ ${formattedCommandList}
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -12295,7 +12328,7 @@ ${formattedCommandList}
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				const tecs = 'Keren king buttonnya simple wgwgg'
+				const tecs = 'El botón rey es genial, simple, guau.'
 				const textButtons = [
 				{
 					buttonId: `${prefix}info`,
@@ -12349,7 +12382,7 @@ ${formattedCommandList}
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				const olin = 'I love you broo🔥'
+				const olin = 'Te amo hermano🔥'
 				const ShoNhevid = fs.readFileSync("./ShoNheMedia/video/sych.mp4")
 				const vidButtons = [
 				{
@@ -12404,7 +12437,7 @@ ${formattedCommandList}
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				const sica = 'Halo aku adalah ShoNhe'
+				const sica = 'Hola soy TechFix'
 				const ShoNhegam = fs.readFileSync("./ShoNheMedia/image/bot.jpg")
 				const imgButtons = [
 				{
@@ -12460,7 +12493,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan teks yang ingin dijadikan input untuk AI.\n\nContoh: claudeai Apa kabar?');
+				if (!text) return shoNherly('⚠️ Por favor ingresa el texto que deseas usar como entrada para la IA.\n\nEjemplo: claudeai ¿Cómo estás?');
 				try
 				{
 					// Panggil API dengan input dari pengguna
@@ -12472,13 +12505,13 @@ ${formattedCommandList}
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -12518,7 +12551,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan teks yang ingin dijadikan input untuk AI.\n\nContoh: dbrxai Apa kabar?');
+				if (!text) return shoNherly('⚠️ Ingrese el texto que desea usar como entrada para la IA.\n\nEjemplo: dbrxai ¿Cómo estás?');
 				try
 				{
 					// Panggil API dengan input dari pengguna
@@ -12530,13 +12563,13 @@ ${formattedCommandList}
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -12567,7 +12600,7 @@ ${formattedCommandList}
            }
 			}
 			break
-			case 'bensin':
+			case 'minar':
 			{
 				if (!isRegistered(m))
 				{
@@ -12596,7 +12629,7 @@ ${formattedCommandList}
 				// Role owner (unlimited fire)
 				if (userRole === 'owner')
 				{
-					return shoNherly('Lah ngapain king? Fire lu aja unli🗿');
+					return shoNherly('¿Qué haces rey? Solo te despido hasta 🗿');
 				}
 				// Cek apakah pengguna sudah klaim dalam seminggu terakhir
 				if (currentTime - user.lastClaim < oneWeek)
@@ -12605,7 +12638,7 @@ ${formattedCommandList}
 					const days = Math.floor(remainingTime / (24 * 60 * 60 * 1000));
 					const hours = Math.floor((remainingTime % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
 					const minutes = Math.floor((remainingTime % (60 * 60 * 1000)) / (60 * 1000));
-					return shoNherly(`⚠️ Anda sudah klaim minggu ini. Coba lagi dalam ${days} hari, ${hours} jam, dan ${minutes} menit.`);
+					return shoNherly(`⚠️ Ya has reclamado esta semana. Inténtalo de nuevo en ${days} días, ${hours} horas y ${minutes} minutos.`);
 				}
 				// Cek keberuntungan berdasarkan seri
 				let reward;
@@ -12614,19 +12647,19 @@ ${formattedCommandList}
 				if (/^[Aa]/.test(userSeries))
 				{
 					reward = 150;
-					message = `🎉 Keberuntungan berpihak pada Anda! Seri unik Anda (${userSeries}) mendapatkan ${reward} limit!`;
+					message = `🎉 ¡La suerte está de tu lado! Tu serie única (${userSeries}) ha obtenido ${reward} límite.`;
 				}
 				// Seri yang berawalan angka mendapatkan 500 limit
 				else if (/^\d/.test(userSeries))
 				{
 					reward = 150;
-					message = `🎉 Seri angka Anda (${userSeries}) mendapatkan ${reward} limit!`;
+					message = `🎉 Tu serie de números (${userSeries}) ha obtenido ${reward} límite.`;
 				}
 				// Seri lainnya mendapatkan limit acak antara 1-20
 				else
 				{
 					reward = Math.floor(Math.random() * 20) + 1; // Limit acak 1-20
-					message = `🔥 Anda mendapatkan ${reward} limit dari seri unik Anda (${userSeries}).`;
+					message = `🔥 Has obtenido ${reward} límite de tu serie única (${userSeries}).`;
 				}
 				// Update limit dan waktu klaim pengguna
 				user.limit += reward;
@@ -12644,7 +12677,7 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan teks yang ingin dijadikan input untuk AI.\n\nContoh: deepseek Apa kabar?');
+				if (!text) return shoNherly('⚠️ Por favor, ingresa el texto que deseas usar como entrada para la IA.\n\nEjemplo: deepseek ¿Cómo estás?');
 				try
 				{
 					// Panggil API dengan input dari pengguna
@@ -12656,13 +12689,13 @@ ${formattedCommandList}
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -12758,27 +12791,27 @@ ${formattedCommandList}
 			}
 			break;
 			case 'privatechatonly':
-				if (!isShoNheOwn) return shoNherly('⚠️ Hanya owner yang bisa menggunakan perintah ini.');
+				if (!isShoNheOwn) return shoNherly('⚠️ Solo el owner puede usar este comando.');
 				const status = args[0]?.toLowerCase();
 				if (status === 'on')
 				{
 					global.privateChatOnly = true;
 					global.public = true;
 					global.groupOnly = false;
-					shoNherly('✅ Mode Private Chat Only telah diaktifkan.\n❌ Mode Group telah dinonaktifkan');
+					shoNherly('✅ Se ha activado el modo Solo chat privado.\n❌ El modo de grupo ha sido deshabilitado');
 				}
 				else if (status === 'off')
 				{
 					global.privateChatOnly = false;
 					global.public = true;
-					shoNherly('❌ Mode Private Chat Only telah dinonaktifkan.\n✅ Mode public telah diaktifkan');
+					shoNherly('❌ El modo Solo chat privado ha sido deshabilitado.\n✅ El modo público ha sido activado');
 				}
 				else
 				{
-					shoNherly('❌ Gunakan: privatechatonly [on/off]');
+					shoNherly('❌ Usar: privatechatonly [on/off]');
 				}
 				break;
-			case 'dreamshaper':
+			case 'imgai':
 			{
 				if (!isRegistered(m))
 				{
@@ -12787,12 +12820,12 @@ ${formattedCommandList}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan prompt untuk membuat gambar.\n\nContoh: dreamshaper buatkan gambar kucing');
+				if (!text) return shoNherly('⚠️ Ingrese un mensaje para crear una imagen.\n\nEjemplo: imgai crea una imagen de gato');
 				if (!(await firely(m, mess.waits))) return;
 				try
 				{
 					// Panggil API dengan input dari pengguna
-					const apiUrl = `https://api.siputzx.my.id/api/ai/dreamshaper?prompt=${encodeURIComponent(text)}`;
+					const apiUrl = `https://api.hiuraa.my.id/ai-img/imagen?text=${encodeURIComponent(text)}`;
 					const response = await axios.get(apiUrl,
 					{
 						responseType: 'arraybuffer'
@@ -12803,7 +12836,7 @@ ${formattedCommandList}
 						shoNhe.sendMessage(m.chat,
 						{
 							image: buffer,
-							caption: `Gambar berhasil dibuat berdasarkan prompt: "${text}"`
+							caption: `La imagen se creó correctamente según el mensaje: "${text}"`
 						},
 						{
 							quoted: m
@@ -12811,13 +12844,13 @@ ${formattedCommandList}
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -12856,18 +12889,17 @@ ${formattedCommandList}
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				let menu = `*_👋🏻 *Hello! I am Langz Bot Version 9999.*  
-Ready products like nokos, and many more! Designed with precision and care, I ensure your experience is seamless and efficient.  
+				let menu = `*_👋🏻 *¡Hola! Soy TechFix Bot versión 9999.* ¡Productos listos como nokos y muchos más! Diseñado con precisión y cuidado, me aseguro de que su experiencia sea fluida y eficiente.  
 
 ╭───❐ *I N F O R M A S I* ❐───✧  
-├ 📜 *Bot Name* : Langz 
-├ 👨‍💻 *Owner* : Galang  
+├ 📜 *Bot Name* : TechFix 
+├ 👨‍💻 *Owner* : Manu  
 ├ 🌐 *Version* : 9999  
 ├ 🛒 *Product* : Nokos  
 ╰─────────────────────✧  
 
-💡 *Feel free to explore all my features using the menu provided!*  
-🔰 Powered by Galangz _*`;
+💡 *¡Siéntete libre de explorar todas mis funciones usando el menú proporcionado!*  
+🔰 *_Powered by ManuDiaz_*`;
 				// Tombol utama
 				let buttons = [
 				{
@@ -12915,7 +12947,7 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 							sourceUrl: gh
 						}
 					},
-					footer: "© Langz",
+					footer: "© TechFix",
 					buttons: buttons,
 					viewOnce: true,
 					headerType: 4
@@ -12926,7 +12958,7 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 					buttonId: 'action',
 					buttonText:
 					{
-						displayText: 'This Button List'
+						displayText: 'Esta lista de botones'
 					},
 					type: 4,
 					nativeFlowInfo:
@@ -12934,41 +12966,41 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 						name: 'single_select',
 						paramsJson: JSON.stringify(
 						{
-							title: "Select Menu!",
+							title: "¡Seleccione Menú!",
 							sections: [
 							{
-								title: "Silahkan Pilih Button Menu di Bawah Ini",
-								highlight_label: "Powered by Galangz",
+								title: "Seleccione el botón de menú a continuación",
+								highlight_label: "Powered by ManuDiaz",
 								rows: [
 								{
-									title: " All Menu",
-									description: " Semua Menu",
-									id: ".allmenuu"
-								},
-								{
-									title: " Owner",
-									description: " Info Owner",
-									id: ".pepek"
-								},
-								{
-									title: " Produk",
-									description: " Produk Info",
-									id: ".produk"
-								},
-								{
-									title: " Donasi",
-									description: " Donasi Dong",
-									id: ".donasi"
-								},
-								{
-									title: " Group Menu",
-									description: " Menu Group",
-									id: ".grupmenu"
-								},
-								{
-									title: " Setting Bot",
-									description: " Pengaturan Bot",
-									id: ".bot byy"
+        "title": "📜 Todos los Menús",
+        "description": "Ver todos los menús",
+        "id": ".allmenuu"
+    },
+    {
+        "title": "👑 Propietario",
+        "description": "Información del propietario",
+        "id": ".pepek"
+    },
+    {
+        "title": "🛒 Productos",
+        "description": "Información de productos",
+        "id": ".produk"
+    },
+    {
+        "title": "💰 Donaciones",
+        "description": "Apoya con una donación",
+        "id": ".donasi"
+    },
+    {
+        "title": "👥 Menú de Grupo",
+        "description": "Opciones para grupos",
+        "id": ".grupmenu"
+    },
+    {
+        "title": "⚙️ Configuración del Bot",
+        "description": "Ajustes y configuraciones",
+        "id": ".bot byy"
 								}]
 							}]
 						})
@@ -13017,7 +13049,7 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 						let media = await quoted.download();
 						// Unggah media ke Uguu.se untuk mendapatkan URL
 						let anu = await UguuSe(media);
-						if (!anu.url) throw 'Gagal mengunggah media ke Uguu.se!';
+						if (!anu.url) throw '¡Error al cargar medios en Uguu.se!';
 						// Kirim URL ke API Anda
 						let response = await fetch(`https://api.siputzx.my.id/api/ai/image2text?url=${anu.url}`);
 						let result = await response.json();
@@ -13031,23 +13063,23 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 								to: 'id'
 							});
 							// Kirim hasil terjemahan ke pengguna
-							shoNherly(`*Hasil Deskripsi Gambar (Bahasa Indonesia):*\n\n${translatedText}`);
+							shoNherly(`*Imagen Descripción Resultados (indonesio):*\n\n${translatedText}`);
 						}
 						else
 						{
-							shoNherly('❌ Gagal mendapatkan deskripsi gambar dari API!');
+							shoNherly('❌ ¡No se pudo obtener la descripción de la imagen desde la API!');
 						}
 					}
 					else
 					{
-						shoNherly('⚠️ Kirim atau reply gambar yang ingin diubah menjadi teks!');
+						shoNherly('⚠️ ¡Envía o responde a la imagen que deseas convertir en texto!');
 					}
 				}
 				catch (e)
 				{
 					// Tangani error dan kirim pesan jika ada masalah
 					console.error(e);
-					shoNherly('❌ Terjadi kesalahan saat memproses gambar!');
+					shoNherly('❌ ¡Ocurrió un error al procesar la imagen!');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -13087,7 +13119,7 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan prompt untuk AI Venice.\n\nContoh: venice Hai, bagaimana kabarmu?');
+				if (!text) return shoNherly('⚠️ Por favor, introduce un mensaje para AI venice.\n\nEjemplo: venice Hola, ¿cómo estás?');
 				try
 				{
 					// Panggil API dengan prompt dari pengguna
@@ -13100,13 +13132,13 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -13139,7 +13171,7 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 			break
 			case 'addsaldo':
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (args.length < 2) return shoNherly('⚠️ Format salah! Gunakan: .addsaldo @tag/nomor jumlah');
+				if (args.length < 2) return shoNherly('⚠️ ¡Formato incorrecto! Uso: .addbalance @etiqueta/número cantidad');
 				let targetUser;
 				// Cek apakah pengguna mengetik dengan mention atau nomor HP
 				if (m.mentionedJid.length > 0)
@@ -13153,7 +13185,7 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 				let amount = parseInt(args[1]);
 				if (isNaN(amount) || amount <= 0)
 				{
-					return shoNherly('⚠️ Masukkan jumlah saldo yang valid.');
+					return shoNherly('⚠️ Ingrese un monto de saldo válido.');
 				}
 				const result = addBalance(targetUser, amount, m.sender);
 				shoNherly(result);
@@ -13169,7 +13201,7 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 				const series = args[0];
 				if (!series)
 				{
-					shoNherly(`⚠️ Harap masukkan kode seri.`);
+					shoNherly(`⚠️ Por favor ingrese el código de serie.`);
 					return;
 				}
 				const db = loadUserFire();
@@ -13177,11 +13209,11 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 				if (userEntry)
 				{
 					const [sender, user] = userEntry;
-					shoNherly(`🎉 Pengguna ditemukan:\n- Nama: ${m.pushName || 'Tidak diketahui'}\n- Nomor: ${sender.split('@')[0]}\n- Role: ${user.role}\n- Limit: ${user.limit}\n- Seri: ${user.registrationSeries}`);
+					shoNherly(`🎉 Usuario encontrado:\n- Nombre: ${m.pushName || 'Desconocido'}\n- Número: ${sender.split('@')[0]}\n- Rol: ${user.role}\n- Limite: ${user.limit}\n- Serie: ${user.registrationSeries}`);
 				}
 				else
 				{
-					shoNherly(`⚠️ Tidak ada pengguna dengan kode seri tersebut.`);
+					shoNherly(`⚠️ No hay usuarios con ese código de serie.`);
 				}
 			}
 			break;
@@ -13195,7 +13227,7 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				const db = loadUserFire();
 				const user = db[m.sender];
-				shoNherly(`🎉 Selamat! Kode seri Anda adalah *${user.registrationSeries}*.\nGunakan ini untuk klaim hadiah di event-event tertentu!`);
+				shoNherly(`🎉 ¡Feliz! Su código de serie es *${user.registrationSeries}*.\n¡Utilízalo para reclamar premios en ciertos eventos!`);
 				}
 			break
 			case 'tesload':
@@ -13210,18 +13242,18 @@ Ready products like nokos, and many more! Designed with precision and care, I en
 const {
     key
 } = await shoNhe.sendMessage(m.chat, {
-    text: '⚠️ *INITIALIZING SYSTEM...* PLEASE WAIT...'
+    text: '⚠️ *INICIALIZANDO SISTEMA...* ESPERE POR FAVOR...'
 });
 
 for (let i = 0; i < lod.length; i++) {
     await shoNhe.sendMessage(m.chat, {
-        text: `🖥️ *STATUS UPDATE*:\n\n⏳ *LOADING...* ${lod[i]}\n\n*System Processing... Please remain patient. This may take a few moments.*`
+        text: `🖥️ *ACTUALIZACIÓN DE ESTADO*:\n\n⏳ *CARGANDO...* ${lod[i]}\n\n*Procesando el sistema... Por favor, tenga paciencia. Esto puede tardar unos momentos..*`
     });
     await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate loading delay
 }
 
 await shoNhe.sendMessage(m.chat, {
-    text: '✅ *SYSTEM INITIALIZATION COMPLETE.*\n\n*Welcome to the network.*'
+    text: '✅ *INICIALIZACIÓN DEL SISTEMA COMPLETADA.*\n\n*Bienvenido a la red.*'
 });
 				// Proses loading dengan update pesan secara bertahap
 				for (let i = 0; i < lod.length; i++)
@@ -13236,11 +13268,11 @@ await shoNhe.sendMessage(m.chat, {
 				// Setelah semua update selesai, edit menjadi "Loading selesai"
 				await shoNhe.sendMessage(m.chat,
 				{
-					text: '✅ Loading selesai!',
+					text: '✅ ¡Carga completa!',
 					edit: key
 				});
 				// Kirim pesan lain setelah loading selesai
-				shoNherly('Proses loading telah selesai!');
+				shoNherly('¡El proceso de carga se ha completado!');
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -13278,9 +13310,9 @@ await shoNhe.sendMessage(m.chat, {
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!quoted || !/image/.test(mime)) return shoNherly(`Kirim/Reply Image dengan Caption untuk menambahkan thumbnail.`);
+				if (!quoted || !/image/.test(mime)) return shoNherly(`Envía/Responde una imagen con el mensaje para agregar una miniatura.`);
 				const namaThumb2 = text.trim();
-				if (!namaThumb2) return shoNherly(`Masukkan nama thumbnail yang ingin ditambahkan.`);
+				if (!namaThumb2) return shoNherly(`Ingresa el nombre de la miniatura que deseas agregar.`);
 				const resultAdd2 = await addThumb2(namaThumb2, quoted, mime);
 				shoNherly(resultAdd2);
 				if (levelUpMessage) {
@@ -13321,7 +13353,7 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				const namaHapus2 = text.trim();
-				if (!namaHapus2) return shoNherly(`Masukkan nama thumbnail yang ingin dihapus.`);
+				if (!namaHapus2) return shoNherly(`Ingresa el nombre de la miniatura que deseas eliminar.`);
 				const resultDel2 = delThumb2(namaHapus2);
 				shoNherly(resultDel2);
 				if (levelUpMessage) {
@@ -13400,9 +13432,9 @@ await shoNhe.sendMessage(m.chat, {
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!quoted || !/image/.test(mime)) return shoNherly(`Kirim/Reply Image dengan Caption untuk menambahkan thumbnail.`);
+				if (!quoted || !/image/.test(mime)) return shoNherly(`Envía/Responde una imagen con el mensaje para agregar una miniatura.`);
 				const namaThumb3 = text.trim();
-				if (!namaThumb3) return shoNherly(`Masukkan nama thumbnail yang ingin ditambahkan.`);
+				if (!namaThumb3) return shoNherly(`Ingresa el nombre de la miniatura que deseas agregar.`);
 				const resultAdd3 = await addThumb3(namaThumb3, quoted, mime);
 				shoNherly(resultAdd3);
 				if (levelUpMessage) {
@@ -13443,7 +13475,7 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				const namaHapus3 = text.trim();
-				if (!namaHapus3) return shoNherly(`Masukkan nama thumbnail yang ingin dihapus.`);
+				if (!namaHapus3) return shoNherly(`Ingresa el nombre de la miniatura que deseas eliminar.`);
 				const resultDel3 = delThumb3(namaHapus3);
 				shoNherly(resultDel3);
 				if (levelUpMessage) {
@@ -13568,7 +13600,7 @@ await shoNhe.sendMessage(m.chat, {
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan konten untuk AI Latukam.\n\nContoh: latukam Hai, bagaimana kabarmu?');
+				if (!text) return shoNherly('⚠️ Por favor ingresa contenido para AI Latukam.\n\nEjemplo: latukam Hola, ¿cómo estás?');
 				try
 				{
 					// Panggil API dengan input dari pengguna
@@ -13581,13 +13613,13 @@ await shoNhe.sendMessage(m.chat, {
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -13618,431 +13650,7 @@ await shoNhe.sendMessage(m.chat, {
            }
 			}
 			break
-			//=============[ Islam - Feature ]=================//
-			
-case 'kisahnabi': {
-if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-if (!text) return shoNherly(`Masukan nama nabi\nExample: kisahnabi adam`)
-let url = await fetch(`https://raw.githubusercontent.com/ZeroChanBot/Api-Freee/a9da6483809a1fbf164cdf1dfbfc6a17f2814577/data/kisahNabi/${text}.json`)
-let kisah = await url.json().catch(_ => "Error")
-if (kisah == "Error") return shoNherly("*Not Found*")
-
-let hasil = `*👳 Nabi :* ${kisah.name}
-*- Tanggal Lahir :* ${kisah.thn_kelahiran}
-*- Tempat Lahir :* ${kisah.tmp}
-*- Usia :* ${kisah.usia}
-
-*—————— \`[ K I S A H ]\` ——————*
-
-${kisah.description}`
-
-shoNherly(`${hasil}`)
-if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-}
-break
-case 'asmaulhusna': {
-if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-    const contoh = `*\`「 Asmaul Husna 」\`*`;
-    const anjuran = `
-Dari Abu Hurairah radhiallahu anhu, Rasulullah Saw bersabda: 
-*"إِنَّ لِلَّهِ تَعَالَى تِسْعَةً وَتِسْعِينَ اسْمًا، مِائَةٌ إِلَّا وَاحِدًا، مَنْ أَحْصَاهَا دخل الجنة، وهو وتر يُحِبُّ الْوِتْرَ"*  
-**Artinya:** "Sesungguhnya Allah mempunyai sembilan puluh sembilan nama, alias seratus kurang satu. Barang siapa yang menghitung-hitungnya, niscaya masuk surga; Dia Witir dan menyukai yang witir".`;
-    
-    let json = global.asmaulhusna2;
-
-    // Jika tidak ada argumen, tampilkan semua Asmaul Husna
-    if (!args[0]) {
-        let data = json.map((v, i) => 
-            `${i + 1}. ${v.latin}\n${v.arabic}\n*Artinya (ID):* _"${v.translation_id}"_\n*Artinya (EN):* _"${v.translation_en}"_`
-        ).join('\n\n');
-        return shoNherly(`${contoh}\n\n${data}\n\n${anjuran}`);
-    }
-
-    // Jika ada argumen, tampilkan Asmaul Husna berdasarkan nomor
-    if (args[0]) {
-        if (isNaN(args[0])) return reply(`Contoh penggunaan:\nasmaulhusna 1`);
-        if (args[0] < 1 || args[0] > 99) throw `Minimal 1 dan maksimal 99!`;
-
-        let result = json.find(v => v.index == args[0].replace(/[^0-9]/g, ''));
-        if (!result) return reply(`Asmaul Husna nomor ${args[0]} tidak ditemukan!`);
-        
-        return shoNherly(`*\`「 Asmaul Husna 」\`*
-
-No. ${result.index}
-*${result.latin}*
-${result.arabic}
-*Artinya (ID):* _"${result.translation_id}"_  
-*Artinya (EN):* _"${result.translation_en}"_`);
-    }
-    if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-}
-break;
-
-
-case 'ayatkursi': {
-if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-    let ayatKursi = `
-    *Ayat Kursi*
-
-    *Arab:*
-    اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ  
-
-    *Latin:*
-    Allahu laa ilaaha illa huwa, Al-Hayyul Qayyum, laa ta'khudhuhu sinatun wa laa naum, lahu maa fis-samaawaati wa maa fil-ardh, man dzalladzii yasyfa'u 'indahu illa bi idznih, ya'lamu maa baina aidiihim wa maa khalfahum, wa laa yuhiithuuna bisyai-in min 'ilmihi illa bimaa syaa, wa si'a kursiyyuhus-samaawaati wal-ardh, wa laa ya'uduhu hifzhuhumaa wa huwal 'aliyyul azhiim.  
-
-    *Artinya:*
-    Allah, tidak ada Tuhan melainkan Dia yang hidup kekal lagi terus-menerus mengurus (makhluk-Nya); tidak mengantuk dan tidak tidur. Kepunyaan-Nya apa yang di langit dan di bumi. Tiada yang dapat memberi syafa'at di sisi Allah tanpa izin-Nya. Allah mengetahui apa-apa yang di hadapan mereka dan di belakang mereka, dan mereka tidak mengetahui apa-apa dari ilmu Allah melainkan apa yang dikehendaki-Nya. Kursi Allah meliputi langit dan bumi. Dan Allah tidak merasa berat memelihara keduanya, dan Allah Maha Tinggi lagi Maha Besar.  
-    `;
-    shoNherly(ayatKursi.trim());
-    if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-}
-break;
-case 'bacaansholat': {
-if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-    let bacaan = JSON.stringify(global.bacaanshalat);
-    let json = JSON.parse(bacaan);
-    let data = json.result
-        .map((v, i) => `${i + 1}. ${v.name}\n${v.arabic}\n${v.latin}\n*Artinya:*\n_"${v.terjemahan}"_`)
-        .join('\n\n');
-    let contoh = `*\`「 Bacaan Shalat 」\`*\n\n`;
-    shoNherly(`${contoh}${data}`);
-    if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-}
-break;
-
-case 'doaharian': {
-let src = JSON.parse(fs.readFileSync('./lib/json/doaharian.json', 'utf-8'))
-let caption = src.map((v, i) => {
-return `
-*${i + 1}.* ${v.title}
-
-•°• Latin :
-${v.latin}
-
-•°• Arabic :
-${v.arabic}
-
-•°• Translate :
-${v.translation}
-`.trim()
-}).join('\n\n')
-shoNherly(`${caption}`)
-}
-break
-case 'niatsholat': {
-if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-    if (!q) return reply(`Contoh Penggunaan :\nniatsholat Subuh`);
-    let text = q.toLowerCase() || '';
-    let data = global.niatsholat.find(v => v.solat === text);
-    if (!data) return shoNherly(`*\`[ ${q} Tidak Ditemukan ]\`*\n\nList Solat 5 Waktu :\n• Subuh\n• Maghrib\n• Dzuhur\n• Isha\n• Ashar`);
-    shoNherly(`*\`[ Niat Sholat ${q.charAt(0).toUpperCase() + q.slice(1)} ]\`*
-
-*Arab :* ${data.arabic}
-
-*Latin :* ${data.latin}
-
-*Translate :* ${data.translation_id}`.trim());
-if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-}
-break;
-
-case 'quotesislami': {
-if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-    const global = {
-        qislami: [
-            { arabic: "إِنَّ مَعَ الْعُسْرِ يُسْرًا", arti: "Sesungguhnya bersama kesulitan ada kemudahan." },
-            { arabic: "وَقُل رَّبُّ زِدْنِي عِلْمًا", arti: "Dan katakanlah: 'Ya Tuhanku, tambahkanlah ilmu kepadaku.'" },
-            { arabic: "اللّهُ لَا إِلٰهَ إِلَّا هُوَ", arti: "Allah, tidak ada Tuhan selain Dia." },
-            { arabic: "وَقَتَلْتُ نَفْسَكِ فَاغْفِرْ لِي", arti: "Dan aku telah membunuh diriku, maka ampunilah aku." },
-            { arabic: "إِنَّ اللّهَ مَعَ الصَّابِرِينَ", arti: "Sesungguhnya Allah bersama orang-orang yang sabar." },
-            { arabic: "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا", arti: "Sesungguhnya bersama kesulitan ada kemudahan." },
-            { arabic: "رَبُّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَاهُ", arti: "Tuhan kami, janganlah Engkau hukum kami jika kami lupa." },
-            { arabic: "إِنَّ اللّهَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ", arti: "Sesungguhnya Allah Maha Kuasa atas segala sesuatu." },
-            { arabic: "اللّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ", arti: "Allah adalah cahaya langit dan bumi." },
-            { arabic: "مَن جَاءَ بِالْحَسَنَةِ فَلَهُ عَشْرُ أَمْثَالِهَا", arti: "Barangsiapa yang membawa kebaikan, maka dia mendapat sepuluh kali lipat ganjarannya." },
-            { arabic: "إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَا وَمَمَاتِي لِلّهِ رَبِّ الْعَالَمِينَ", arti: "Sesungguhnya salatku, ibadahku, hidupku, dan matiku hanya untuk Allah, Tuhan semesta alam." },
-            { arabic: "وَقَالَ رَبُّكُمُ ادْعُونِي أَسْتَجِبْ لَكُمْ", arti: "Dan Tuhanmu berfirman: 'Berdoalah kepada-Ku, niscaya Aku akan mengabulkan doamu.'" },
-            { arabic: "إِنَّ اللّهَ غَفُورٌ رَحِيمٌ", arti: "Sesungguhnya Allah Maha Pengampun lagi Maha Penyayang." },
-            { arabic: "الْفَجْرِ وَلَيَالٍ عَشْرٍ", arti: "Demi fajar dan sepuluh malam yang terakhir." },
-            { arabic: "إِنَّ اللّهَ يُحِبُّ التَّوَابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ", arti: "Sesungguhnya Allah mencintai orang-orang yang bertaubat dan mencintai orang-orang yang mensucikan diri." },
-            { arabic: "رَحْمَتِي وَسِعَتْ كُلَّ شَيْءٍ", arti: "Rahmat-Ku meliputi segala sesuatu." },
-            { arabic: "إِنَّ اللّهَ مَعَ الَّذِينَ اتَّقَوْا وَالَّذِينَ هُمْ مُحْسِنُونَ", arti: "Sesungguhnya Allah bersama orang-orang yang bertakwa dan orang-orang yang berbuat baik." },
-            { arabic: "أُحِبُّ لِأَخِيكَ مَا تُحِبُّ لِنَفْسِكَ", arti: "Cintailah untuk saudaramu apa yang kamu cintai untuk dirimu sendiri." },
-            { arabic: "قُلْ هُوَ اللّهُ أَحَدٌ", arti: "Katakanlah: 'Dia adalah Allah, yang Maha Esa.'" },
-            { arabic: "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا", arti: "Sesungguhnya bersama kesulitan ada kemudahan." },
-            { arabic: "وَفِرْحَةً لِأَصْحَابِ الْجَنَّةِ", arti: "Dan kegembiraan bagi penghuni surga." },
-            { arabic: "إِنَّ اللّهَ سَمِيعٌ بَصِيرٌ", arti: "Sesungguhnya Allah Maha Mendengar lagi Maha Melihat." },
-            { arabic: "وَتَوَكَّلْتُ عَلَى اللّهِ", arti: "Dan aku bertawakkal kepada Allah." },
-            { arabic: "لَا إِلٰهَ إِلَّا اللّهُ وَحْدَهُ", arti: "Tidak ada Tuhan selain Allah, yang Maha Esa." },
-            { arabic: "إِنَّ اللّهَ يُحِبُّ الصَّابِرِينَ", arti: "Sesungguhnya Allah mencintai orang-orang yang sabar." },
-            { arabic: "مَنْ تَرَكَ شَيْئًا لِلَّهِ عَوَّضَهُ اللّهُ", arti: "Barang siapa meninggalkan sesuatu karena Allah, maka Allah akan memberinya ganti." },
-            { arabic: "الْحَمْدُ لِلّهِ رَبِّ الْعَالَمِينَ", arti: "Segala puji bagi Allah, Tuhan semesta alam." },
-            { arabic: "فَإِنَّ رَحْمَتِي سَبَقَتْ غَضَبِي", arti: "Sesungguhnya rahmat-Ku mendahului murka-Ku." },
-            { arabic: "يُدَبِّرُ الْأَمْرَ", arti: "Dia yang mengatur segala urusan." },
-            { arabic: "إِنَّ اللّهَ مَعَ الصَّابِرِينَ", arti: "Sesungguhnya Allah bersama orang-orang yang sabar." },
-            { arabic: "اللّهُمَّ اجْعَلْنَا مِنْ أَهْلِ الْقُرْآنِ", arti: "Ya Allah, jadikan kami termasuk orang-orang yang ahli Al-Qur'an." },
-            { arabic: "اللّهُ وَالْأَكْبَرُ", arti: "Allah Maha Besar." },
-            { arabic: "إِنَّ رَبَّكَ وَاسِعُ الْمَغْفِرَةِ", arti: "Sesungguhnya Tuhanmu Maha Luas Pengampunannya." },
-            { arabic: "إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ", arti: "Sesungguhnya orang-orang yang beriman itu bersaudara." },
-            { arabic: "إِنَّ اللّهَ جَمِيلٌ يُحِبُّ الْجَمَالَ", arti: "Sesungguhnya Allah itu Maha Indah dan mencintai keindahan." },
-            { arabic: "إِنَّ الْمُتَّقِينَ فِي جَنَّاتٍ وَنَهَرٍ", arti: "Sesungguhnya orang-orang yang bertakwa berada dalam surga dan mata air." },
-            { arabic: "وَمَنْ يَتَّقِ اللّهَ يَجْعَلْ لَهُ مَخْرَجًا", arti: "Dan barang siapa bertakwa kepada Allah, niscaya Dia akan memberikan jalan keluar baginya." },
-            { arabic: "لَا تَحْزَنْ إِنَّ اللّهَ مَعَنَا", arti: "Janganlah kamu bersedih, sesungguhnya Allah bersama kita." },
-            { arabic: "يُحِبُّونَ مَنْ جَاءَ وَفِيهِ النَّاسُ", arti: "Mereka mencintai orang yang datang di dalamnya." },
-            { arabic: "وَمَا تَفْعَلُوا مِنْ خَيْرٍ فَإِنَّ اللّهَ يَعْلَمُهُ", arti: "Dan apa saja yang kamu kerjakan dari kebaikan, maka sesungguhnya Allah mengetahuinya." },
-            { arabic: "لَا تَفْجَعْ أَعْمَالَكُمْ", arti: "Janganlah menyia-nyiakan amal-amalmu." },
-            { arabic: "إِنَّ مَا وَعَدَكُمْ اللّهُ وَرَحْمَتَهُ", arti: "Sesungguhnya apa yang dijanjikan oleh Allah adalah kasih sayang-Nya." },
-            { arabic: "أَنْتَ وَلِيِّي فِي دُنْيَا وَفِي آخِرَةٍ", arti: "Engkau adalah pelindungku di dunia dan di akhirat." },
-            { arabic: "اللّهُمَّ اجْعَلْنَا مِمَّنْ يَسْتَمِعُونَ الْقَوْلَ فَيَتَّبِعُونَ أَحْسَنَهُ", arti: "Ya Allah, jadikan kami termasuk orang yang mendengarkan perkataan dan mengikuti yang terbaik darinya." },
-            { arabic: "إِنَّ اللّهَ يُحِبُّ أَنْ تَفْعَلُوا الْحَسَنَاتِ", arti: "Sesungguhnya Allah mencintai jika kamu berbuat kebaikan." },
-            { arabic: "قُلْ إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَا وَمَمَاتِي لِلّهِ", arti: "Katakanlah, sesungguhnya salatku, ibadahku, hidupku, dan matiku hanya untuk Allah." },
-            { arabic: "وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِلْعَالَمِينَ", arti: "Dan Kami tidak mengutusmu, melainkan untuk menjadi rahmat bagi semesta alam." },
-            { arabic: "يَا أَيُّهَا الَّذِينَ آمَنُوا", arti: "Wahai orang-orang yang beriman," }
-        ]
-    };
-    const randomIndex = Math.floor(Math.random() * global.qislami.length);
-    const randomQuote = global.qislami[randomIndex];
-    const { arabic, arti } = randomQuote;
-    shoNherly(`${arabic}\n${arti}`);
-    if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-}
-break;
-
-case 'doatahlil': {
-if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-let { result } = JSON.parse(fs.readFileSync('./lib/json/tahlil.json', 'utf-8'))
-let caption = result.map((v, i) => {
-return `
-*${i + 1}.* ${v.title}
-
-•°• Arabic :
-${v.arabic}
-
-•°• Translate :
-${v.translation}
-`.trim()
-}).join('\n\n')
-shoNherly(`${caption}`)
-if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-}
-break
+			//=============[ Islam - Feature ]=================//			
 			case 'gwjgbskntl':
 			{
 				if (!isRegistered(m))
@@ -14056,11 +13664,7 @@ break
 					{
 						forwardingScore: 1,
 						isForwarded: true,
-						forwardedNewsletterMessageInfo:
-						{
-							newsletterName: namabot,
-							newsletterJid: idsaluran,
-						},
+						
 						externalAdReply:
 						{
 							showAdAttribution: true,
@@ -14122,7 +13726,7 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan konten untuk API qwq.\n\nContoh: qwq Hai, bagaimana kabarmu?');
+				if (!text) return shoNherly('⚠️ Ingrese el contenido para la API qwq.\n\nEjemplo: qwq Hola, ¿cómo estás?');
 				try
 				{
 					// Panggil API dengan input dari pengguna
@@ -14135,13 +13739,13 @@ break
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -14181,7 +13785,7 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan prompt untuk Stability AI.\n\nContoh: stabilityai Buatkan gambar pohon');
+				if (!text) return shoNherly('⚠️ Por favor ingresa un mensaje para Stability AI.\n\nEjemplo: stabilityai Crea una imagen de un árbol');
 				if (!(await firely(m, mess.waits))) return;
 				try
 				{
@@ -14198,7 +13802,7 @@ break
 						shoNhe.sendMessage(m.chat,
 						{
 							image: imageBuffer, // Kirim gambar sebagai buffer
-							caption: `🖼️ Berikut adalah gambar hasil Stability AI untuk prompt:\n\n"${text}"`
+							caption: `🖼️ A continuación se muestra una imagen de los resultados de Stability AI para el mensaje:\n\n"${text}"`
 						},
 						{
 							quoted: m
@@ -14206,13 +13810,13 @@ break
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -14252,7 +13856,7 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan prompt untuk Stable.\n\nContoh: stable Buatkan gambar ikan');
+				if (!text) return shoNherly('⚠️ Por favor ingresa un mensaje para Stable.\n\nEjemplo: stable Haz un dibujo de un pez');
 				if (!(await firely(m, mess.waits))) return;
 				try
 				{
@@ -14269,7 +13873,7 @@ break
 						shoNhe.sendMessage(m.chat,
 						{
 							image: imageBuffer, // Kirim gambar sebagai buffer
-							caption: `🖼️ Berikut adalah gambar hasil Stable Diffusion untuk prompt:\n\n"${text}"`
+							caption: `🖼️ A continuación se muestra una imagen de los resultados de Difusión Stable para el mensaje:\n\n"${text}"`
 						},
 						{
 							quoted: m
@@ -14277,13 +13881,13 @@ break
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -14323,7 +13927,7 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan prompt untuk Flux AI.\n\nContoh: flux Buatkan gambar cyberpunk lizard');
+				if (!text) return shoNherly('⚠️ Por favor ingresa un mensaje para Flux AI.\n\nEjemplo: flux Crea una imagen de lagarto cyberpunk');
 				if (!(await firely(m, mess.waits))) return;
 				try
 				{
@@ -14340,7 +13944,7 @@ break
 						shoNhe.sendMessage(m.chat,
 						{
 							image: imageBuffer, // Kirim gambar sebagai buffer
-							caption: `🖼️ Berikut adalah gambar hasil Flux AI untuk prompt:\n\n"${text}"`
+							caption: `🖼️ A continuación se muestra una imagen de los resultados de Flux AI para el mensaje:\n\n"${text}"`
 						},
 						{
 							quoted: m
@@ -14348,13 +13952,13 @@ break
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -14394,7 +13998,7 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan prompt untuk Gandalf AI.\n\nContoh: gandalf Kamu siapa?');
+				if (!text) return shoNherly('⚠️ Por favor ingresa un mensaje para Gandalf AI.\n\nEjemplo: gandalf ¿Quién eres?');
 				try
 				{
 					// Panggil API dengan input dari pengguna
@@ -14407,13 +14011,13 @@ break
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -14453,7 +14057,7 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Nama case sesuai API
-				if (!text) return shoNherly('⚠️ Harap masukkan konten untuk Gemini Pro AI.\n\nContoh: gemini Hai, bagaimana kabarmu?');
+				if (!text) return shoNherly('⚠️ Por favor ingresa contenido para Gemini Pro AI.\n\nEjemplo: gemini Hola, ¿cómo estás?');
 				try
 				{
 					// Panggil API dengan input dari pengguna
@@ -14466,13 +14070,13 @@ break
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat memproses permintaan. Coba lagi nanti.');
+						shoNherly('❌ No se puede procesar la solicitud. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat menghubungi API.');
+					shoNherly('❌ Se produjo un error al contactar con la API.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -14503,224 +14107,6 @@ break
            }
 			}
 			break
-			case 'wallhp':
-			case 'akira':
-			case 'akiyama':
-			case 'ana':
-			case 'art':
-			case 'asuna':
-			case 'ayuzawa':
-			case 'boruto':
-			case 'bts':
-			case 'chiho':
-			case 'chitoge':
-			case 'cosplay':
-			case 'cosplayloli':
-			case 'cosplaysagiri':
-			case 'cyber':
-			case 'deidara':
-			case 'doraemon':
-			case 'elaina':
-			case 'emilia':
-			case 'erza':
-			case 'exo':
-			case 'gamewallpaper':
-			case 'gremory':
-			case 'hacker':
-			case 'hestia':
-			case 'Husbu':
-			case 'inori':
-			case 'islamic':
-			case 'isuzu':
-			case 'itachi':
-			case 'itori':
-			case 'jennie':
-			case 'jiso':
-			case 'justina':
-			case 'kaga':
-			case 'kagura':
-			case 'kakasih':
-			case 'kaori':
-			case 'cartoon':
-			case 'shortquote':
-			case 'keneki':
-			case 'kotori':
-			case 'kurumi':
-			case 'lisa':
-			case 'loli2':
-			case 'madara':
-			case 'megumin':
-			case 'mikasa':
-			case 'mikey':
-			case 'miku':
-			case 'minato':
-			case 'mountain':
-			case 'naruto':
-			case 'nekonime':
-			case 'nezuko':
-			case 'onepiece':
-			case 'pentol':
-			case 'pokemon':
-			case 'randomnime':
-			case 'randomnime2':
-			case 'rize':
-			case 'rose':
-			case 'sagiri':
-			case 'sakura':
-			case 'sasuke':
-			case 'satanic':
-			case 'shina':
-			case 'shinka':
-			case 'shinomiya':
-			case 'shizuka':
-			case 'shota':
-			case 'space':
-			case 'technology':
-			case 'tejina':
-			case 'toukachan':
-			case 'tsunade':
-			case 'waifu2':
-			case 'yotsuba':
-			case 'yuki':
-			case 'yulibocil':
-			case 'yumeko':
-			{
-				if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!(await firely(m, mess.waits))) return;
-				let data
-				if (/akira/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/akira.json')
-				if (/akiyama/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/akiyama.json')
-				if (/ana/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/ana.json')
-				if (/art/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/art.json')
-				if (/asuna/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/asuna.json')
-				if (/ayuzawa/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/ayuzawa.json')
-				if (/boneka/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/boneka.json')
-				if (/boruto/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/boruto.json')
-				if (/bts/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/bts.json')
-				if (/cecan/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/cecan.json')
-				if (/chiho/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/chiho.json')
-				if (/chitoge/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/chitoge.json')
-				if (/cogan/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/cogan.json')
-				if (/cosplay/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/cosplay.json')
-				if (/cosplayloli/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/cosplayloli.json')
-				if (/cosplaysagiri/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/cosplaysagiri.json')
-				if (/cyber/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/cyber.json')
-				if (/deidara/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/deidara.json')
-				if (/doraemon/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/doraemon.json')
-				if (/eba/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/eba.json')
-				if (/elaina/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/elaina.json')
-				if (/emilia/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/emilia.json')
-				if (/erza/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/erza.json')
-				if (/exo/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/exo.json')
-				if (/femdom/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/femdom.json')
-				if (/freefire/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/freefire.json')
-				if (/gamewallpaper/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/gamewallpaper.json')
-				if (/glasses/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/glasses.json')
-				if (/gremory/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/gremory.json')
-				if (/hacker/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/hekel.json')
-				if (/hestia/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/hestia.json')
-				if (/Husbu/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/Husbu.json')
-				if (/inori/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/inori.json')
-				if (/islamic/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/islamic.json')
-				if (/isuzu/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/isuzu.json')
-				if (/itachi/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/itachi.json')
-				if (/itori/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/itori.json')
-				if (/jennie/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/jeni.json')
-				if (/jiso/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/jiso.json')
-				if (/justina/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/justina.json')
-				if (/kaga/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kaga.json')
-				if (/kagura/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kagura.json')
-				if (/kakasih/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kakasih.json')
-				if (/kaori/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kaori.json')
-				if (/cartoon/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kartun.json')
-				if (/shortquote/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/katakata.json')
-				if (/keneki/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/keneki.json')
-				if (/kotori/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kotori.json')
-				if (/kpop/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kpop.json')
-				if (/kucing/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kucing.json')
-				if (/kurumi/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/kurumi.json')
-				if (/lisa/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/lisa.json')
-				if (/loli2/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/loli.json')
-				if (/madara/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/madara.json')
-				if (/megumin/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/megumin.json')
-				if (/mikasa/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/mikasa.json')
-				if (/mikey/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/mikey.json')
-				if (/miku/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/miku.json')
-				if (/minato/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/minato.json')
-				if (/mobile/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/mobil.json')
-				if (/motor/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/motor.json')
-				if (/mountain/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/mountain.json')
-				if (/naruto/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/naruto.json')
-				if (/nekonime/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/nekonime.json')
-				if (/nezuko/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/nezuko.json')
-				if (/onepiece/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/onepiece.json')
-				if (/pentol/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/pentol.json')
-				if (/pokemon/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/pokemon.json')
-				if (/profil/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/profil.json')
-				if (/progamming/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/programming.json')
-				if (/pubg/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/pubg.json')
-				if (/randblackpink/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/randblackpink.json')
-				if (/randomnime/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/randomnime.json')
-				if (/randomnime2/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/randomnime2.json')
-				if (/rize/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/rize.json')
-				if (/rose/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/rose.json')
-				if (/ryujin/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/ryujin.json')
-				if (/sagiri/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/sagiri.json')
-				if (/sakura/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/sakura.json')
-				if (/sasuke/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/sasuke.json')
-				if (/satanic/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/satanic.json')
-				if (/shina/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/shina.json')
-				if (/shinka/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/shinka.json')
-				if (/shinomiya/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/shinomiya.json')
-				if (/shizuka/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/shizuka.json')
-				if (/shota/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/shota.json')
-				if (/space/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/tatasurya.json')
-				if (/technology/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/technology.json')
-				if (/tejina/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/tejina.json')
-				if (/toukachan/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/toukachan.json')
-				if (/tsunade/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/tsunade.json')
-				if (/waifu2/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/waifu.json')
-				if (/wallhp/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/wallhp.json')
-				if (/wallml/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/wallml.json')
-				if (/wallmlnime/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/wallnime.json')
-				if (/yotsuba/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/yotsuba.json')
-				if (/yuki/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/yuki.json')
-				if (/yulibocil/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/yulibocil.json')
-				if (/yumeko/.test(command)) data = await fetchJson('https://raw.githubusercontent.com/aerovoid4/Media/master/yumeko.json')
-				const response = data[Math.floor(Math.random() * data.length)]
-				const buffer = await getBuffer(response);
-				await shoNhe.sendMessage(m.chat,
-				{
-					image: buffer,
-					caption: `Nih ${pushname}, ${command}-nya🐬`,
-					footer: namabot,
-					buttons: [
-					{
-						buttonId: prefix + command,
-						buttonText:
-						{
-							displayText: "🔄 Lanjut Lagi"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "📜 Kembali ke Menu"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: m
-				});
-			};
-			break;
 			case 'programming':
 			{
 				if (!isRegistered(m))
@@ -14744,14 +14130,14 @@ break
 						buttonId: prefix + command,
 						buttonText:
 						{
-							displayText: "🔄 Lanjut Lagi"
+							displayText: "🔄 Continuar de nuevo"
 						}
 					},
 					{
 						buttonId: `${prefix}menu`,
 						buttonText:
 						{
-							displayText: "📜 Kembali ke Menu"
+							displayText: "📜 Volver al menú"
 						}
 					}],
 					viewOnce: true,
@@ -14798,8 +14184,8 @@ break
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!quoted) return angryshoNhe (`Kirim atau balas gambar/video/gif dengan caption ${prefix + command}\nDurasi video 1-9 detik ya!`);
-				if (!mime) return angryshoNhe (`Kirim atau balas gambar/video/gif dengan caption ${prefix + command}\nDurasi video 1-9 detik ya!`);
+				if (!quoted) return shoNherly (`Envía o responde a una imagen/video/gif con el título ${prefix + command}\n¡La duración del video debe ser de 1-9 segundos!`);
+				if (!mime) return shoNherly (`Envía o responde una imagen/video/gif con el título ${prefix + command}\n¡La duración del video debe ser de 1-9 segundos!`);
                 if (!(await firely(m, mess.waits))) return;
 				const swn = args.join(" ");
 				const pcknm = swn.split("|")[0];
@@ -14817,11 +14203,11 @@ break
 					let media = await shoNhe.downloadAndSaveMediaMessage(quoted);
 					await shoNhe.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: atnm });
 				} else if (/video/.test(mime)) {
-					if ((quoted.msg || quoted).seconds > 9) return angryshoNhe ('Video terlalu panjang, maksimal 9 detik ya! ⏳');
+					if ((quoted.msg || quoted).seconds > 9) return shoNherly ('El vídeo es demasiado largo, máximo 9 segundos! ⏳');
 					let media = await shoNhe.downloadAndSaveMediaMessage(quoted);
 					await shoNhe.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm });
 				} else {
-					angryshoNhe (`Kirim foto/video untuk dipakai ya, kak!`);
+					shoNherly (`¡Envía fotos/vídeos para usar, hermano!`);
 				}
 				if (levelUpMessage)
 				{
@@ -14880,7 +14266,7 @@ break
 							{
 								url: randomQuote.gambar
 							}, // Gambar dari karakter
-							caption: `🎭 *Quotes Anime* 🎭\n\n` + `📺 *Anime*: ${randomQuote.anime}\n` + `🎬 *Episode*: ${randomQuote.episode}\n` + `🎭 *Karakter*: ${randomQuote.karakter}\n\n` + `💬 *Quote*:\n"${randomQuote.quotes}"\n\n` + `🔗 *Link*: ${randomQuote.link}`
+							caption: `🎭 *Frases de anime* 🎭\n\n` + `📺 *Anime*: ${randomQuote.anime}\n` + `🎬 *Episodio*: ${randomQuote.episode}\n` + `🎭 *Personaje*: ${randomQuote.karakter}\n\n` + `💬 *Cita*:\n"${randomQuote.quotes}"\n\n` + `🔗 *Link*: ${randomQuote.link}`
 						},
 						{
 							quoted: hw
@@ -14888,13 +14274,13 @@ break
 					}
 					else
 					{
-						shoNherly('❌ Tidak dapat menemukan quotes anime. Coba lagi nanti.');
+						shoNherly('❌ No puedo encontrar citas de anime. Vuelve a intentarlo más tarde.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly('❌ Terjadi kesalahan saat mengambil data quotes anime.');
+					shoNherly('❌ Se produjo un error al recuperar datos de citas de anime.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -14934,25 +14320,27 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/cecan/indonesia',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Berikut gambar Cecan Indonesia'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('Gagal mengambil gambar Cecan Indonesia. Silakan coba lagi nanti.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/cecan/indonesia');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta Cecan Indonesia 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -15000,18 +14388,18 @@ break
 					listStore = JSON.parse(fs.readFileSync(listStorePath, 'utf8'));
 				}
 				// Jika key tidak diberikan
-				if (!q) return shoNherly(`Gunakan format: ${prefix}dellist <key>`);
+				if (!q) return shoNherly(`Usar formato: ${prefix}dellist <key>`);
 				const key = q.toLowerCase(); // Gunakan lowercase untuk pencarian yang tidak case-sensitive
 				// Debug: menampilkan daftar key yang ada di liststore
 				console.log("Daftar key yang ada:", Object.keys(listStore[m.chat] ||
 				{}));
 				// Jika key tidak ditemukan dalam liststore
-				if (!listStore[m.chat]?.[key]) return shoNherly(`Key *${key}* tidak ditemukan.`);
+				if (!listStore[m.chat]?.[key]) return shoNherly(`Key *${key}* extraviado.`);
 				// Hapus key dari liststore
 				delete listStore[m.chat][key];
 				// Simpan perubahan ke file
 				fs.writeFileSync(listStorePath, JSON.stringify(listStore, null, 2));
-				shoNherly(`Sukses menghapus list dengan key: *${key}*`);
+				shoNherly(`Se eliminó exitosamente la lista con key: *${key}*`);
 				}
 			break
 			case 'updatelist':
@@ -15030,13 +14418,13 @@ break
 				{
 					listStore = JSON.parse(fs.readFileSync(listStorePath, 'utf8'));
 				}
-				if (!q.includes('|')) return shoNherly(`Gunakan format: ${prefix}dellist <key>|<response>`);
+				if (!q.includes('|')) return shoNherly(`Usar formato: ${prefix}dellist <key>|<response>`);
 				const [key, response] = q.split('|');
-				if (!key || !response) return shoNherly(`Format salah. Gunakan: ${prefix}liststore update <key>|<response>`);
-				if (!listStore[m.chat]?.[key]) return shoNherly(`Key *${key}* tidak ditemukan.`);
+				if (!key || !response) return shoNherly(`Formato incorrecto. Usar: ${prefix}liststore update <key>|<response>`);
+				if (!listStore[m.chat]?.[key]) return shoNherly(`Key *${key}* extraviado.`);
 				listStore[m.chat][key].response = response;
 				fs.writeFileSync(listStorePath, JSON.stringify(listStore, null, 2));
-				shoNherly(`Sukses memperbarui list dengan key: *${key}*`);
+				shoNherly(`Se actualizó exitosamente la lista con key: *${key}*`);
 				}
 			break
 			case 'bluearchive':
@@ -15048,25 +14436,27 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/blue-archive',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Berikut gambar Blue Archive'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('Gagal mengambil gambar Blue Archive. Silakan coba lagi nanti.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/blue-archive');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta anime 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -15166,25 +14556,27 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/cecan/china',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Berikut gambar Cecan China'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('Gagal mengambil gambar Cecan China. Silakan coba lagi nanti.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/cecan/china');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta Cecan China 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -15223,25 +14615,27 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/cecan/japan',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Berikut gambar Cecan Japan'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('Gagal mengambil gambar Cecan Japan. Silakan coba lagi nanti.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/cecan/japan');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta Cecan Japón 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -15280,25 +14674,27 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/cecan/korea',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Berikut gambar Cecan Korea'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('Gagal mengambil gambar Cecan Korea. Silakan coba lagi nanti.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/cecan/korea');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta Cecan corea 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -15337,25 +14733,27 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/cecan/thailand',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Berikut gambar Cecan Thailand'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('Gagal mengambil gambar Cecan Thailand. Silakan coba lagi nanti.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/cecan/thailand');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta Cecan Tailandia 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -15394,25 +14792,27 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/cecan/vietnam',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Berikut gambar Cecan Vietnam'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('Gagal mengambil gambar Cecan Vietnam. Silakan coba lagi nanti.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/cecan/vietnam');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta Cecan vietnamita 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -15451,25 +14851,27 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/cats',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Berikut gambar kucing lucu'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('Gagal mengambil gambar kucing. Silakan coba lagi nanti.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/cats');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu lindo gato 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -15508,25 +14910,86 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/neko');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu Neko 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
 				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/neko',
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
 					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Berikut gambar Neko'
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
 					},
 					{
-						quoted: hw
-					});
-				}
-				catch (error)
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
 				{
-					shoNherly('Gagal mengambil gambar Neko. Silakan coba lagi nanti.');
+					quoted: hw
+				});
+           }
+			}
+			break
+			case 'waifuv2':
+			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
 				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				if (!(await firely(m, mess.waits))) return;
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/waifu');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu waifu 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -15564,71 +15027,350 @@ break
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				let baseUrl = 'https://weeb-api.vercel.app/'
-				const response = await fetch(baseUrl + command)
-				const imageBuffer = await response.buffer() // Get the image data as a buffer
-				let msgs = generateWAMessageFromContent(m.chat,
+				if (!(await firely(m, mess.waits))) return;
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.hiuraa.my.id/random/loli');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu loli 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
 				{
-					viewOnceMessage:
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
 					{
-						message:
+						buttonId: `${prefix}tqto`,
+						buttonText:
 						{
-							"messageContextInfo":
-							{
-								"deviceListMetadata":
-								{},
-								"deviceListMetadataVersion": 2
-							},
-							interactiveMessage: proto.Message.InteractiveMessage.create(
-							{
-								body: proto.Message.InteractiveMessage.Body.create(
-								{
-									text: `Hi ${pushName}\n_*Here is the result of ${command}*_`
-								}),
-								footer: proto.Message.InteractiveMessage.Footer.create(
-								{
-									text: namabot
-								}),
-								header: proto.Message.InteractiveMessage.Header.create(
-								{
-									hasMediaAttachment: false,
-									...await prepareWAMessageMedia(
-									{
-										image: imageBuffer
-									},
-									{
-										upload: shoNhe.waUploadToServer
-									})
-								}),
-								nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create(
-								{
-									buttons: [
-									{
-										"name": "quick_reply",
-										"buttonParamsJson": `{\"display_text\":\"Next ➡️\",\"id\":\"${prefix+command}"}`
-									}],
-								}),
-								contextInfo:
-								{
-									mentionedJid: [m.sender],
-									forwardingScore: 999,
-									isForwarded: true,
-									forwardedNewsletterMessageInfo:
-									{
-										newsletterJid: idsaluran,
-										newsletterName: namach,
-										serverMessageId: 143
-									}
-								}
-							})
+							displayText: "TQTO 💡"
 						}
-					}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
 				},
 				{
-					quoted: m
-				})
-				return await shoNhe.relayMessage(m.chat, msgs.message,
-				{})
+					quoted: hw
+				});
+           }
+			}
+			break
+			case 'animeselfi':
+			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				if (!(await firely(m, mess.waits))) return;
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/selfies');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu animeselfi 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
+				{
+					quoted: hw
+				});
+           }
+			}
+			break
+			case 'animeuniforme':
+			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				if (!(await firely(m, mess.waits))) return;
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/uniform');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu animeuniforme 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
+				{
+					quoted: hw
+				});
+           }
+			}
+			break
+			case 'animepechos':
+			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				if (!(await firely(m, mess.waits))) return;
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/oppai');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu animepechos 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
+				{
+					quoted: hw
+				});
+           }
+			}
+			break
+			case 'sirvienta':
+			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				if (!(await firely(m, mess.waits))) return;
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/maid');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu sirvienta 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
+				{
+					quoted: hw
+				});
+           }
+			}
+			break
+			case 'animerandom':
+			{
+				if (!isRegistered(m))
+				{
+					return sendRegister(shoNhe, m, prefix, namabot);
+				}
+				updatePopularCommand(command);
+				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
+				if (!(await firely(m, mess.waits))) return;
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/random/bluearchive');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu anime 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+				if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat,
+				{
+					image: { url: levelUpMessage.image },
+					caption: levelUpMessage.text,
+					footer: "LEVEL UP🔥",
+					buttons: [
+					{
+						buttonId: `${prefix}tqto`,
+						buttonText:
+						{
+							displayText: "TQTO 💡"
+						}
+					},
+					{
+						buttonId: `${prefix}menu`,
+						buttonText:
+						{
+							displayText: "MENU 🍄"
+						}
+					}],
+					viewOnce: true,
+				},
+				{
+					quoted: hw
+				});
+           }
 			}
 			break
 			case 'waifu':
@@ -15640,25 +15382,27 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					let res = await axios.get('https://api.siputzx.my.id/api/r/waifu',
-					{
-						responseType: 'arraybuffer'
-					});
-					shoNhe.sendMessage(m.chat,
-					{
-						image: res.data,
-						caption: 'Berikut gambar Waifu'
-					},
-					{
-						quoted: hw
-					});
-				}
-				catch (error)
-				{
-					shoNherly('Gagal mengambil gambar Waifu. Silakan coba lagi nanti.');
-				}
+				const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.siputzx.my.id/api/r/waifu');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, ahy esta tu Waifu 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -15777,21 +15521,21 @@ break
 					{
 						url: data.url
 					},
-					caption: `Dasar ${pushname}, otak sagne🗿`,
-					footer: `${namabot} • Nikmati dengan penuh tanggung jawab!`,
+					caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+					footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
 					buttons: [
 					{
 						buttonId: prefix + command,
 						buttonText:
 						{
-							displayText: "🔄 Lanjut Lagi"
+							displayText: "🔄 Continuar de nuevo"
 						}
 					},
 					{
 						buttonId: `${prefix}menu`,
 						buttonText:
 						{
-							displayText: "📜 Kembali ke Menu"
+							displayText: "📜 Volver al menú"
 						}
 					}],
 					viewOnce: true,
@@ -15845,21 +15589,21 @@ break
 					{
 						url: data.url
 					},
-					caption: `Dasar ${pushname}, otak sagne🗿`,
-					footer: `${namabot} • Nikmati dengan penuh tanggung jawab!`,
+					caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+					footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
 					buttons: [
 					{
 						buttonId: prefix + command,
 						buttonText:
 						{
-							displayText: "🔄 Lanjut Lagi"
+							displayText: "🔄 Continuar de nuevo"
 						}
 					},
 					{
 						buttonId: `${prefix}menu`,
 						buttonText:
 						{
-							displayText: "📜 Kembali ke Menu"
+							displayText: "📜 Volver al menú"
 						}
 					}],
 					viewOnce: true,
@@ -15913,21 +15657,21 @@ break
 					{
 						url: data.url
 					},
-					caption: `Dasar ${pushname}, otak sagne🗿`,
-					footer: `${namabot} • Nikmati dengan penuh tanggung jawab!`,
+					caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+					footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
 					buttons: [
 					{
 						buttonId: prefix + command,
 						buttonText:
 						{
-							displayText: "🔄 Lanjut Lagi"
+							displayText: "🔄 Continuar de nuevo"
 						}
 					},
 					{
 						buttonId: `${prefix}menu`,
 						buttonText:
 						{
-							displayText: "📜 Kembali ke Menu"
+							displayText: "📜 Volver al menú"
 						}
 					}],
 					viewOnce: true,
@@ -16081,21 +15825,21 @@ break
 					{
 						url: result[0].video_1
 					},
-					caption: `Woilah dasar ${puahname}, otak sagne`,
-					footer: `${namabot} • Gunakan fitur ini dengan bijak dan bertanggung jawab!`,
+					caption: `¡Vaya, típico de ti ${pushname}, mente pervertida!`,
+					footer: `${namabot} • ¡Usa esta función con sabiduría y responsabilidad!`,
 					buttons: [
 					{
 						buttonId: prefix + command,
 						buttonText:
 						{
-							displayText: "🔄 Lanjut Lagi"
+							displayText: "🔄 Continuar de nuevo"
 						}
 					},
 					{
 						buttonId: `${prefix}menu`,
 						buttonText:
 						{
-							displayText: "📜 Kembali ke Menu"
+							displayText: "📜 Volver al menú"
 						}
 					}],
 					viewOnce: true,
@@ -16132,6 +15876,50 @@ break
            }
 			}
 			break;
+case 'hentaiv2':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.hiuraa.my.id/random/hentai');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
 			case 'hneko':
 			{
 				if (!isRegistered(m))
@@ -16149,21 +15937,21 @@ break
 					{
 						url: data.url
 					},
-					caption: `Dasar ${pushname}, otak sagne🗿`,
-					footer: `${namabot} • Nikmati dengan penuh tanggung jawab!`,
+					caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+					footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
 					buttons: [
 					{
 						buttonId: prefix + command,
 						buttonText:
 						{
-							displayText: "🔄 Lanjut Lagi"
+							displayText: "🔄 Continuar de nuevo"
 						}
 					},
 					{
 						buttonId: `${prefix}menu`,
 						buttonText:
 						{
-							displayText: "📜 Kembali ke Menu"
+							displayText: "📜 Volver al menú"
 						}
 					}],
 					viewOnce: true,
@@ -16200,63 +15988,1874 @@ break
            }
 			}
 			break;
-			case 'rvo':
-			case 'readviewonce':
-			{
-				if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!m.quoted) return shoNherly(`Reply to view once message`)
-				if (m.quoted.mtype !== 'viewOnceMessageV2') return shoNherly(`This is not a view once message`)
-				if (!(await firely(m, mess.waits))) return;
-				let msg = m.quoted.message
-				let type = Object.keys(msg)[0]
-				let media = await downloadContentFromMessage(msg[type], type == 'imageMessage' ? 'image' : 'video')
-				let buffer = Buffer.from([])
-				for await (const chunk of media)
-				{
-					buffer = Buffer.concat([buffer, chunk])
-				}
-				if (/video/.test(type))
-				{
-					return shoNhe.sendFile(m.chat, buffer, 'media.mp4', msg[type].caption || '', m)
-				}
-				else if (/image/.test(type))
-				{
-					return shoNhe.sendFile(m.chat, buffer, 'media.jpg', msg[type].caption || '', m)
-				}
-				if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-			}
-			break
+		case 'porntetas': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/boobs');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornsemen': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/cum');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornsexduro': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/dom');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornextremo': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/extreme');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornmanos': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/finger');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornfollando': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/fuck');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornbeso': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/kiss');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornlamer': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/lick');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porn69': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/sixtynine');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornchupada': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch');
+	const fs = require('fs');
+	const path = require('path');
+	const { exec } = require('child_process');
+	const tmp = './tmp';
+
+	if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+
+	const res = await fetch('https://api.nekorinn.my.id/nsfwhub/suck');
+	const buffer = await res.buffer();
+	const gifPath = path.join(tmp, `${m.sender}_tetas.gif`);
+	const mp4Path = path.join(tmp, `${m.sender}_tetas.mp4`);
+	fs.writeFileSync(gifPath, buffer);
+
+	await new Promise((resolve, reject) => {
+		exec(`ffmpeg -i ${gifPath} -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ${mp4Path}`, (err) => {
+			if (err) return reject(err);
+			resolve();
+		});
+	});
+
+	await shoNhe.sendMessage(m.chat, {
+		video: fs.readFileSync(mp4Path),
+		mimetype: 'video/mp4',
+		caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+		footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+		buttons: [
+			{ buttonId: prefix + command, buttonText: { displayText: "🔄 Continuar de nuevo" } },
+			{ buttonId: `${prefix}menu`, buttonText: { displayText: "📜 Volver al menú" } }
+		],
+		viewOnce: true
+	}, { quoted: hw });
+
+	// Limpieza
+	fs.unlinkSync(gifPath);
+	fs.unlinkSync(mp4Path);
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornanal':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/anal');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornculos':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/ass');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornerotico':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/ass');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornnegras':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/black');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornsinpanti':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/bottomless');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porncuello':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/collared');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porncorridas':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/cumsluts');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornpollas':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/dick');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porndoble':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/dp');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornconejita':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/easter');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornpies':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/feet');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porntrans':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/futa');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porngay':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/gay');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porngrupal':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/group');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'hentaiv3':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/hentai');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornpatricasex':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/pegged');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porncoño':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/pussy');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornreal':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/real');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'porntatuada':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/tattoo');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornotiny':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/tiny');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'pornnavidad':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/nsfwhub/xmas');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'hculo':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/ass');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'hsexy':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/ecchi');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'herotico':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/ero');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'hentaiv4':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/hentai');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'hmilf':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/milf');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'hsexoral':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/oral');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'hpdjrusa':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+	if (!isVip) return shoNherly(mess.vips);
+	if (!(await firely(m, mess.waits))) return;
+
+	const fetch = require('node-fetch'); // si no lo tienes arriba
+
+const res = await fetch('https://api.nekorinn.my.id/waifuim/paizuri');
+const buffer = await res.buffer();
+
+await shoNhe.sendMessage(m.chat, {
+	image: buffer,
+	caption: `Típico de ti, ${pushname}, mente pervertida 🗿`,
+	footer: `${namabot} • ¡Disfrútalo con responsabilidad!`,
+	buttons: [
+		{
+			buttonId: prefix + command,
+			buttonText: { displayText: "🔄 Continuar de nuevo" }
+		},
+		{
+			buttonId: `${prefix}menu`,
+			buttonText: { displayText: "📜 Volver al menú" }
+		}
+	],
+	viewOnce: true
+}, { quoted: hw });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'rvo':
+case 'readviewonce':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+
+	if (!m.quoted) return shoNherly(`Responde a un mensaje de "ver una vez"`);
+	if (!m.quoted.viewOnce) return shoNherly(`Ese no es un mensaje de "ver una vez"`);
+	if (!(await firely(m, mess.waits))) return;
+
+	let mimetype = m.quoted.mimetype || '';
+	let buffer = await m.quoted.download();
+	let fileName = '';
+	let caption = m.quoted.text || '';
+
+	if (mimetype.includes('image')) {
+		fileName = 'media.jpg';
+		await shoNhe.sendFile(m.chat, buffer, fileName, caption, m);
+	} else if (mimetype.includes('video')) {
+		fileName = 'media.mp4';
+		await shoNhe.sendFile(m.chat, buffer, fileName, caption, m);
+	} else if (mimetype.includes('audio')) {
+		try {
+  let ext = mimetype.split('/')[1];
+  console.log('Buffer recibido para audio:', buffer?.length);
+  let ptt = await toPTT(buffer, ext);
+  if (!ptt) throw new Error("Error al convertir a PTT");
+
+  await shoNhe.sendMessage(m.chat, {
+  audio: ptt,
+  mimetype: 'audio/ogg; codecs=opus',
+  ptt: true
+}, { quoted: m });
+} catch (e) {
+  console.error('Error al procesar el audio PTT:', e);
+  await shoNherly(`No se pudo procesar el audio como nota de voz.`);
+}
+	} else {
+		await shoNherly(`Tipo de archivo no soportado.`);
+	}
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" }},
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" }}
+			],
+			viewOnce: true
+		}, { quoted: hw });
+	}
+}
+break;
 			//[ *CASE AI JOKO SIJAWA* ]
 			case "joko":
 			{
@@ -16534,7 +18133,7 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (args.length < 2) return shoNherly(`⚠️ Gunakan format:\n\n.upfire @user/jid jumlah\n\nContoh:\n.upfire @user 100\n.upfire 6288888888888 100`);
+				if (args.length < 2) return shoNherly(`⚠️ Usar formato:\n\n.upfire @user/cantidad de dinero\n\nEjemplo:\n.upfire @user 100\n.upfire 6288888888888 100`);
 				let target;
 				let jumlah = parseInt(args[1]);
 				// Cek apakah menggunakan tag atau nomor
@@ -16548,9 +18147,9 @@ break
 				}
 				else
 				{
-					return shoNherly('⚠️ Masukkan nomor atau tag user yang valid!');
+					return shoNherly('⚠️ ¡Ingrese un número de usuario o etiqueta válidos!');
 				}
-				if (isNaN(jumlah) || jumlah <= 0) return shoNherly('⚠️ Masukkan jumlah limit yang valid!');
+				if (isNaN(jumlah) || jumlah <= 0) return shoNherly('⚠️ ¡Ingrese un monto límite válido!');
 				const db = loadUserFire();
 				// Tambahkan limit
 				if (!db[target])
@@ -16565,7 +18164,7 @@ break
 					db[target].limit += jumlah;
 				}
 				saveUserFire(db);
-				shoNherly(`✅ Berhasil menambahkan ${jumlah} limit untuk @${target.split('@')[0]}`,
+				shoNherly(`✅ Agregado exitosamente ${jumlah} límite para @${target.split('@')[0]}`,
 				{
 					mentions: [target]
 				});
@@ -16607,13 +18206,13 @@ break
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (m.mentionedJid.length === 0) return shoNherly(`⚠️ Tag user yang ingin direset limitnya!\n\nContoh: .delfire @user`);
+				if (m.mentionedJid.length === 0) return shoNherly(`⚠️ ¡Etiqueta al usuario cuyo límite quieres restablecer!\n\nEjemplo: .delfire @user`);
 				let target = m.mentionedJid[0];
 				const db = loadUserFire();
-				if (!db[target]) return shoNherly(`⚠️ User belum memiliki data limit!`);
+				if (!db[target]) return shoNherly(`⚠️ ¡El usuario aún no tiene límite de datos!`);
 				db[target].limit = 0;
 				saveUserFire(db);
-				shoNherly(`✅ Limit user @${target.split('@')[0]} berhasil direset ke 0!`,
+				shoNherly(`✅ Limite user @${target.split('@')[0]} ¡Restablecido exitosamente a 0!`,
 				{
 					mentions: [target]
 				});
@@ -16664,21 +18263,21 @@ break
 					const userList = Object.entries(db).map(([key, value]) =>
 					{
 						const userNumber = key.split('@')[0]; // Mengambil nomor saja
-						return `Nomor: ${userNumber}\n- Role: ${value.role}\n- Register: ${value.register}\n- Limit: ${value.limit}`;
+						return `Número: ${userNumber}\n- Rol: ${value.role}\n- Registro: ${value.register}\n- Limite: ${value.limit}`;
 					}).join('\n\n');
 					if (userList)
 					{
-						reply(`📋 *Daftar Pengguna Terdaftar:*\n\n${userList}`);
+						reply(`📋 *Lista de Usuarios Registrados:*\n\n${userList}`);
 					}
 					else
 					{
-						reply('⚠️ Tidak ada pengguna yang terdaftar.');
+						reply('⚠️ Ningún usuario registrado.');
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					reply('⚠️ Terjadi kesalahan saat memproses data.');
+					reply('⚠️ Se produjo un error al procesar los datos.');
 				}
 				}
 			break
@@ -16689,10 +18288,10 @@ break
 				if (args.length < 1) return shoNherly('true/false?')
 				if (args[0] === 'true') {
 					db.data.chats[m.chat].antilink = true
-					shoNherly(`${command} is enabled`)
+					shoNherly(`${command} is activado`)
 				} else if (args[0] === 'false') {
 					db.data.chats[m.chat].antilink = false
-					shoNherly(`${command} is disabled`)
+					shoNherly(`${command} is desactivado`)
 				}
 			}
 			break;
@@ -16704,10 +18303,10 @@ break
 				if (args.length < 1) return shoNherly('true/false?')
 				if (args[0] === 'true') {
 					db.data.chats[m.chat].antilinkgc = true
-					shoNherly(`${command} is enabled`)
+					shoNherly(`${command} is activado`)
 				} else if (args[0] === 'false') {
 					db.data.chats[m.chat].antilinkgc = false
-					shoNherly(`${command} is disabled`)
+					shoNherly(`${command} is desactivado`)
 				}
 			}
 			break;
@@ -16725,7 +18324,7 @@ break
 					const userNumber = args[0]; // Mengambil nomor pengguna dari input
 					if (!userNumber)
 					{
-						reply('⚠️ Masukkan nomor pengguna yang ingin dihapus.\n\nContoh: deluser 628123456789');
+						reply('⚠️ Ingrese el número de usuario que desea eliminar.\n\nEjemplo: deluser 628123456789');
 						break;
 					}
 					const db = loadUserFire();
@@ -16734,17 +18333,17 @@ break
 					{
 						delete db[userId];
 						saveUserFire(db);
-						reply(`✅ Pengguna dengan nomor *${userNumber}* berhasil dihapus.`);
+						reply(`✅ Usuario por número *${userNumber}* eliminado con éxito.`);
 					}
 					else
 					{
-						reply(`⚠️ Pengguna dengan nomor *${userNumber}* tidak ditemukan.`);
+						reply(`⚠️ Usuario por número *${userNumber}* extraviado.`);
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					reply('⚠️ Terjadi kesalahan saat menghapus pengguna.');
+					reply('⚠️ Se produjo un error al eliminar al usuario.');
 				}
 				}
 			break
@@ -16759,7 +18358,7 @@ break
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!text || !text.includes('/'))
 				{
-					return shoNherly(`gunakan format ini ya: *${prefix + command} username/repository*\n\nContoh: *${prefix + command} Whiskeyshoets/Baileys*`);
+					return shoNherly(`Usar formato ini ya: *${prefix + command} username/repository*\n\nContoh: *${prefix + command} Whiskeyshoets/Baileys*`);
 				}
 				const [username, repoName] = text.split('/');
 				try
@@ -16820,7 +18419,7 @@ break
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners)
 				let [poll, opt] = text.split("|")
-				if (text.split("|") < 2) return await shoNherly(`Sebutkan pertanyaan dan minimal 2 pilihan\nContoh: ${prefix}poll Siapa admin terbaik?|yod,Asep,Doge...`)
+				if (text.split("|") < 2) return await shoNherly(`Plantee la pregunta y al menos 2 opciones\nEjemplo: ${prefix}poll ¿Quién es el mejor administrador?|Manu,Nagum,Baedak...`)
 				let options = []
 				for (let i of opt.split(','))
 				{
@@ -16864,14 +18463,14 @@ break
 				// Cek apakah user sudah terdaftar di database
 				if (!db[target])
 				{
-					return shoNhe.sendTextWithMentions(m.chat, `🔥 User @${target.split('@')[0]} belum memiliki limit.`, fgclink)
+					return shoNhe.sendTextWithMentions(m.chat, `🔥 User @${target.split('@')[0]} aún no tiene límite.`, fgclink)
 				}
 				let role = db[target].role;
 				let limit = db[target].limit;
-				let message = `🔥 *Cek Fire Limit*\n\n`;
+				let message = `🔥 *Cek Fuego Limite*\n\n`;
 				message += `👤 User: @${target.split('@')[0]}\n`;
-				message += `📛 Role: ${role}\n`;
-				message += `🔥 Sisa Limit: ${limit === -1 ? '∞' : limit}\n`;
+				message += `📛 Rol: ${role}\n`;
+				message += `🔥 Límite restante: ${limit === -1 ? '∞' : limit}\n`;
 				shoNhe.sendTextWithMentions(m.chat, message, fgclink)
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -16902,6 +18501,72 @@ break
            }
 			}
 			break;
+		case 'cekfireios': {
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+
+	const levelUpMessage = levelUpdate(command, m.sender);
+	const db = loadUserFire();
+	let target;
+
+	if (m.mentionedJid && m.mentionedJid[0]) {
+		target = m.mentionedJid[0];
+	} else if (args[0]) {
+		let number = args[0].replace(/[^0-9]/g, '');
+		if (number.length < 5) return m.reply('Número inválido.');
+		target = number + '@s.whatsapp.net';
+	} else {
+		target = m.sender;
+	}
+
+	if (!target || !target.includes('@s.whatsapp.net')) {
+		return m.reply('Error: JID no válido.');
+	}
+
+	if (!db[target]) {
+		return shoNhe.sendMessage(m.chat, {
+			text: `🔥 User @${target.split('@')[0]} aún no tiene límite.`,
+			contextInfo: {
+				mentionedJid: [target]
+			}
+		}, { quoted: m });
+	}
+
+	let role = db[target].role;
+	let limit = db[target].limit;
+
+	let message = `🔥 *Cek Fuego Límite*\n\n`;
+	message += `👤 User: @${target.split('@')[0]}\n`;
+	message += `📛 Rol: ${role}\n`;
+	message += `🔥 Límite restante: ${limit === -1 ? '∞' : limit}\n`;
+
+	await shoNhe.sendMessage(m.chat, {
+		text: message,
+		contextInfo: {
+			mentionedJid: [target]
+		}
+	}, { quoted: m });
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat, {
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{
+					buttonId: `${prefix}tqto`,
+					buttonText: { displayText: "TQTO 💡" }
+				},
+				{
+					buttonId: `${prefix}menu`,
+					buttonText: { displayText: "MENU 🍄" }
+				}
+			],
+			viewOnce: true,
+		}, { quoted: m });
+	}
+}
+break;
 			case 'cyus':
 			{
 				if (!isRegistered(m))
@@ -16910,7 +18575,7 @@ break
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				shoNherly('anjay baru kah bangg??')
+				shoNherly('¿Anjay es nuevo, hermano?')
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -16948,7 +18613,7 @@ break
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly(`🎬 *Judul film atau serialnya mana, Kak?*\n\nContoh:\n${prefix}${command} Inception`);
+				if (!text) return shoNherly(`🎬 *¿Cuál es el título de la película o serie, hermana?*\n\nEjemplo:\n${prefix}${command} Comienzo`);
 				try
 				{
 					if (!(await firely(m, mess.waits))) return;
@@ -16958,25 +18623,25 @@ break
 					} = await axios.get(`http://www.omdbapi.com/?apikey=742b2d09&t=${encodeURIComponent(text)}&plot=full`);
 					if (data.Response === 'False')
 					{
-						return shoNherly(`❌ *Film atau serial tidak ditemukan!* Coba cek lagi judulnya ya, Kak.`);
+						return shoNherly(`❌ *¡No se encontraron películas ni series!* Por favor, revisa el título nuevamente, hermana.`);
 					}
-					let imdbInfo = `🎬 *Judul:* ${data.Title}\n`;
-					imdbInfo += `📅 *Tahun:* ${data.Year}\n`;
-					imdbInfo += `⭐ *Rating:* ${data.Rated}\n`;
-					imdbInfo += `📆 *Rilis:* ${data.Released}\n`;
-					imdbInfo += `⏳ *Durasi:* ${data.Runtime}\n`;
-					imdbInfo += `🌀 *Genre:* ${data.Genre}\n`;
-					imdbInfo += `👨‍💼 *Sutradara:* ${data.Director}\n`;
-					imdbInfo += `✍️ *Penulis:* ${data.Writer}\n`;
-					imdbInfo += `👥 *Aktor:* ${data.Actors}\n`;
-					imdbInfo += `📖 *Plot:* ${data.Plot}\n`;
-					imdbInfo += `🌐 *Bahasa:* ${data.Language}\n`;
-					imdbInfo += `🌍 *Negara:* ${data.Country}\n`;
-					imdbInfo += `🏆 *Penghargaan:* ${data.Awards}\n`;
-					imdbInfo += `💵 *Box Office:* ${data.BoxOffice || '-'}\n`;
-					imdbInfo += `🏙️ *Produksi:* ${data.Production || '-'}\n`;
-					imdbInfo += `🌟 *IMDb Rating:* ${data.imdbRating}\n`;
-					imdbInfo += `✅ *IMDb Votes:* ${data.imdbVotes}\n`;
+					let imdbInfo = `🎬 *Título:* ${data.Title}\n`;
+					imdbInfo += `📅 *Año:* ${data.Year}\n`;
+					imdbInfo += `⭐ *Calificaciones:* ${data.Rated}\n`;
+					imdbInfo += `📆 *Lanzamiento:* ${data.Released}\n`;
+					imdbInfo += `⏳ *Duración:* ${data.Runtime}\n`;
+					imdbInfo += `🌀 *Género:* ${data.Genre}\n`;
+					imdbInfo += `👨‍💼 *Director:* ${data.Director}\n`;
+					imdbInfo += `✍️ *Escritor:* ${data.Writer}\n`;
+					imdbInfo += `👥 *Actor:* ${data.Actors}\n`;
+					imdbInfo += `📖 *Trama:* ${data.Plot}\n`;
+					imdbInfo += `🌐 *Idioma:* ${data.Language}\n`;
+					imdbInfo += `🌍 *País:* ${data.Country}\n`;
+					imdbInfo += `🏆 *Premios:* ${data.Awards}\n`;
+					imdbInfo += `💵 *Taquilla:* ${data.BoxOffice || '-'}\n`;
+					imdbInfo += `🏙️ *Producción:* ${data.Production || '-'}\n`;
+					imdbInfo += `🌟 *Calificación de IMDb:* ${data.imdbRating}\n`;
+					imdbInfo += `✅ *Votos de IMDb:* ${data.imdbVotes}\n`;
 					await shoNhe.sendMessage(m.chat,
 					{
 						image:
@@ -16988,12 +18653,12 @@ break
 					{
 						quoted: m
 					});
-					shoNherly(`✅ *Berhasil menampilkan informasi film!*`);
+					shoNherly(`✅ *¡Información de la película mostrada con éxito!*`);
 				}
 				catch (err)
 				{
 					console.error(err);
-					shoNherly(`❌ *Terjadi kesalahan saat mencari film!* 😭\n${err.message || err}`);
+					shoNherly(`❌ *¡Ocurrió un error al buscar la película!* 😭\n${err.message || err}`);
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -17113,7 +18778,7 @@ break
 				const url = args[0]; // Ambil URL dari argumen
 				if (!url)
 				{
-					reply('⚠️ Harap masukkan URL. Contoh: anichindtl https://anichin.forum/renegade-immortal-episode-69-subtitle-indonesia');
+					reply('⚠️ Por favor ingrese una URL. Ejemplo: anichintl https://anichin.forum/renegade-immortal-episode-69-subtitle-indonesia');
 				}
 				if (!(await firely(m, mess.waits))) return;
 				const apiUrl = `https://api.siputzx.my.id/api/anime/anichin-detail?url=${encodeURIComponent(url)}`;
@@ -17127,9 +18792,9 @@ break
 					} = response.data;
 					if (!status)
 					{
-						reply('⚠️ Gagal mengambil data.');
+						reply('⚠️ No se pudieron recuperar los datos.');
 					}
-					const detailText = `🎥 *Detail Anime*\n\n🎬 *Judul:* ${data.title}\n📅 *Rilis:* ${data.released}\n🌟 *Rating:* ${data.rating}\n🎭 *Genre:* ${data.genres.join(', ')}\n🏢 *Studio:* ${data.studio}\n📺 *Jaringan:* ${data.network}\n⏱ *Durasi:* ${data.duration}\n🌍 *Negara:* ${data.country}\n🔖 *Tipe:* ${data.type}\n📂 *Status:* ${data.status}\n📜 *Sinopsis:* ${data.synopsis || 'Tidak tersedia'}\n`;
+					const detailText = `🎥 *Detalles del anime*\n\n🎬 *Título:* ${data.title}\n📅 *Publicación:* ${data.released}\n🌟 *Calificaciones:* ${data.rating}\n🎭 *Género:* ${data.genres.join(', ')}\n🏢 *Estudio:* ${data.studio}\n📺 *Red:* ${data.network}\n⏱ *Duración:* ${data.duration}\n🌍 *País:* ${data.country}\n🔖 *Tipo:* ${data.type}\n📂 *Estado:* ${data.status}\n📜 *Sinopsis:* ${data.synopsis || 'No disponible'}\n`;
 					const success = shoNherly(detailText);
 					if (success)
 					{
@@ -17148,7 +18813,7 @@ break
 				}
 				catch (error)
 				{
-					reply(`❌ Terjadi kesalahan: ${error.message}`);
+					reply(`❌ hay un error: ${error.message}`);
 				}
 				}
 			break
@@ -17164,7 +18829,7 @@ break
 				const url = args[0]; // Ambil URL dari argumen
 				if (!url)
 				{
-					reply('⚠️ Harap masukkan URL. Contoh: anichindl https://anichin.forum/renegade-immortal-episode-69-subtitle-indonesia');
+					reply('⚠️ Por favor ingrese la URL. Ejemplo: anichindl https://anichin.forum/renegade-immortal-episode-69-subtitle-indonesia');
 				}
 				if (!(await firely(m, mess.waits))) return;
 				const apiUrl = `https://api.siputzx.my.id/api/anime/anichin-download?url=${encodeURIComponent(url)}`;
@@ -17178,12 +18843,12 @@ break
 					} = response.data;
 					if (!status)
 					{
-						reply('⚠️ Gagal mengambil data.');
+						reply('⚠️ No se pudieron recuperar los datos.');
 					}
-					let downloadLinks = '🔗 *Link Download*\n\n';
+					let downloadLinks = '🔗 *Enlace de descarga*\n\n';
 					data.forEach((item) =>
 					{
-						downloadLinks += `🎥 *Resolusi:* ${item.resolution}\n`;
+						downloadLinks += `🎥 *Resolución:* ${item.resolution}\n`;
 						item.links.forEach((link) =>
 						{
 							downloadLinks += `🌐 *Host:* ${link.host}\n🔗 ${link.link}\n\n`;
@@ -17197,7 +18862,7 @@ break
 				}
 				catch (error)
 				{
-					reply(`❌ Terjadi kesalahan: ${error.message}`);
+					reply(`❌ hay un error: ${error.message}`);
 				}
 				}
 			break
@@ -17212,7 +18877,7 @@ break
 				const url = args[0]; // Ambil URL dari argumen
 				if (!url)
 				{
-					reply('⚠️ Harap masukkan URL. Contoh: epsanichin https://anichin.forum/renegade-immortal');
+					reply('⚠️ Por favor ingrese la URL. Ejemplo: epsanichin https://anichin.forum/renegade-immortal');
 				}
 				if (!(await firely(m, mess.waits))) return;
 				const apiUrl = `https://api.siputzx.my.id/api/anime/anichin-episode?url=${encodeURIComponent(url)}`;
@@ -17226,12 +18891,12 @@ break
 					} = response.data;
 					if (!status)
 					{
-						reply('⚠️ Gagal mengambil data.');
+						reply('⚠️ No se pudieron recuperar los datos.');
 					}
-					let episodes = '🎬 *Daftar Episode*\n\n';
+					let episodes = '🎬 *Lista de episodios*\n\n';
 					data.forEach((episode) =>
 					{
-						episodes += `📼 *Episode:* ${episode.episodeNumber}\n🎞 *Judul:* ${episode.title}\n📅 *Rilis:* ${episode.releaseDate}\n🔗 *Tautan:* ${episode.link}\n\n`;
+						episodes += `📼 *Episodio:* ${episode.episodeNumber}\n🎞 *Título:* ${episode.title}\n📅 *Publicación:* ${episode.releaseDate}\n🔗 *Enlace:* ${episode.link}\n\n`;
 					});
 					const success = shoNherly(episodes);
 					if (success)
@@ -17241,7 +18906,7 @@ break
 				}
 				catch (error)
 				{
-					reply(`❌ Terjadi kesalahan: ${error.message}`);
+					reply(`❌ hay un error: ${error.message}`);
 				}
 				}
 			break
@@ -17278,7 +18943,7 @@ break
 								externalAdReply:
 								{
 									title: 'Anichin Search',
-									body: 'Powered by ShoNhe Botz',
+									body: 'Powered by TechFix Botz',
 									thumbnail: await getBuffer(result.data[0].image),
 									sourceUrl: result.data[0].link
 								}
@@ -17653,50 +19318,6 @@ case 'cekadzan': {
 				}
 				}
 			break
-			case 'jadwalsholat': {
-    let kodeKota = args[0] || '3578'; // Default ke Surabaya jika kode kota tidak diberikan
-    if (!args[0]) {
-        shoNherly("⚠️ Kode kota tidak diberikan. Mengambil jadwal sholat untuk *Surabaya*.");
-    }
-
-    let jadwal = await getJadwalSholat(kodeKota);
-    if (!jadwal) return shoNherly("❌ Tidak dapat mengambil jadwal sholat, coba lagi nanti.");
-
-    let teks = `📅 *Jadwal Sholat Hari Ini (${jadwal.tanggal})*\n\n`;
-    teks += `📍 *Lokasi:* ${jadwal.lokasi}\n`;
-    teks += `🌅 *Subuh:* ${jadwal.subuh}\n`;
-    teks += `☀️ *Dzuhur:* ${jadwal.dzuhur}\n`;
-    teks += `⛅ *Ashar:* ${jadwal.ashar}\n`;
-    teks += `🌆 *Maghrib:* ${jadwal.maghrib}\n`;
-    teks += `🌙 *Isya:* ${jadwal.isya}\n`;
-
-    shoNherly(teks);
-}
-break;
-			case 'listkota':
-				try
-				{
-					const url = 'https://raw.githubusercontent.com/lakuapik/jadwalsholatorg/master/kota.json';
-					const response = await axios.get(url);
-					const kotaList = response.data;
-					if (!kotaList || kotaList.length === 0)
-					{
-						shoNherly('❌ Tidak ada data kota yang tersedia.');;
-					}
-					let pesan = `📍 *Daftar Kota yang Tersedia*\n\n`;
-					pesan += `Gunakan format: .jadwalsholat jakarta|2025|01\n\n`;
-					kotaList.forEach((kota, index) =>
-					{
-						pesan += `${index + 1}. ${kota}\n`;
-					});
-					shoNherly(pesan);
-				}
-				catch (error)
-				{
-					console.error(error);
-					shoNherly('⚠️ Gagal mengambil daftar kota. Coba lagi nanti.');
-				}
-				break;
 			case 'animpopular':
 			{
 				if (!isRegistered(m))
@@ -18435,154 +20056,600 @@ break;
 			 * PEMBATAS DOANG HEHE
 			 */
 			case 'ig':
-			case 'instagram':
-			case 'igdl':
-			{
-				if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
+case 'instagram':
+case 'igdl':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+
+	if (!text) {
+		return shoNherly(`⚠️ Usa el comando de la siguiente manera: ${prefix + command} *url*\n\n🤔 *Ejemplo:*\n${prefix + command} https://www.instagram.com/reel/Cr5AXBQvBC1/`);
+	}
+
+	if (!(await firely(m, mess.waits))) return;
+
+	const regex = /(\d+)$/;
+	const match = text.match(regex);
+	const numMedia = match ? parseInt(match[1]) : 8;
+
+	try {
+		const res = await fetchJson(`https://api.hiuraa.my.id/downloader/instagram?url=${text}`);
+		if (!res.status || !res.result) {
+			return shoNherly('❌ Contenido no encontrado o inválido.');
+		}
+
+		const metadata = res.result.metadata || {};
+		const mediaUrls = res.result.url || res.result.downloadUrl;
+		if (!mediaUrls || mediaUrls.length === 0) {
+			return shoNherly('❌ No se encontraron archivos multimedia.');
+		}
+
+		const totalItems = Math.min(mediaUrls.length, numMedia);
+		for (let i = 0; i < totalItems; i++) {
+			const mediaUrl = mediaUrls[i];
+			try {
+				const response = await axios.get(mediaUrl, { responseType: 'arraybuffer' });
+				const buffer = Buffer.from(response.data);
+				const contentType = response.headers['content-type'];
+				let type;
+
+				if (contentType?.startsWith('video')) {
+					type = { mime: 'video/mp4' };
+				} else if (contentType?.startsWith('image')) {
+					type = { mime: 'image/jpeg' };
+				} else {
+					type = await FileType.fromBuffer(buffer);
 				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				console.log('📢 Memproses perintah IG Download...');
-				if (!text)
-				{
-					console.log('⚠️ Tidak ada URL yang diberikan.');
-					return shoNherly(`⚠️ Gunakan dengan cara: ${prefix + command} *url*\n\n🤔 *Contoh:*\n${prefix + command} https://www.instagram.com/reel/Cr5AXBQvBC1/`);
+
+				// Construir caption con metadatos si están disponibles
+				let caption = '';
+				if (metadata.caption) caption += `📝 *Caption:* ${metadata.caption}\n`;
+				if (metadata.username) caption += `👤 *Usuario:* @${metadata.username}\n`;
+				if (metadata.like) caption += `❤️ *Likes:* ${metadata.like}\n`;
+				if (metadata.comment) caption += `💬 *Comentarios:* ${metadata.comment}\n`;
+				if (text) caption += `🔗 *Link:* ${text}`;
+
+				if (type?.mime.startsWith('video')) {
+					await shoNhe.sendMessage(m.chat, {
+						video: buffer,
+						caption: caption || `🎥 *Instagram Video*`
+					}, { quoted: hw });
+				} else if (type?.mime.startsWith('image')) {
+					await shoNhe.sendMessage(m.chat, {
+						image: buffer,
+						caption: caption || `🖼️ *Instagram Foto*`
+					}, { quoted: hw });
+				} else {
+					console.log('❓ Tipo de archivo no reconocido:', mediaUrl);
+					shoNherly('⚠️ Tipo de archivo no reconocido');
 				}
-				if (!(await firely(m, mess.waits))) return;
-				// Mengambil angka setelah URL jika ada
-				const regex = /(\d+)$/;
-				const match = text.match(regex);
-				const numImages = match ? parseInt(match[1]) : 8; // Default ke 8 jika tidak ada angka
-				console.log('🌐 URL yang dimasukkan:', text);
-				console.log('🔢 Jumlah gambar yang akan dikirim:', numImages);
-				try
-				{
-					console.log('📡 Menghubungi API...');
-					let anu = await fetchJson(`https://api.siputzx.my.id/api/d/igdl?url=${text}`);
-					console.log('🔍 Respons API:', JSON.stringify(anu, null, 2));
-					if (!anu.status || !anu.data || anu.data.length === 0)
-					{
-						console.log('❌ Data tidak ditemukan atau kosong.');
-						return shoNherly('❌ Konten tidak ditemukan. Pastikan tautannya benar!');
-					}
-					console.log('✅ Data ditemukan! Proses pengiriman...');
-					let count = 0; // Untuk membatasi jumlah gambar/video yang dikirim
-					// Batasi data yang dikirim sesuai jumlah yang diinginkan
-					const totalItems = Math.min(anu.data.length, numImages);
-					for (let i = 0; i < totalItems; i++)
-					{
-						let item = anu.data[i];
-						console.log('📦 Item ditemukan:', item);
-						// Ambil data file dari URL
-						console.log('⏳ Mengunduh file untuk deteksi tipe...');
-						const response = await axios.get(item.url,
-						{
-							responseType: 'arraybuffer'
-						});
-						// Periksa header Content-Type
-						const contentType = response.headers['content-type'];
-						console.log('Tipe file dari header:', contentType);
-						// Deteksi tipe file jika header tidak memberikan informasi yang jelas
-						let type;
-						if (contentType)
-						{
-							if (contentType.startsWith('video'))
-							{
-								type = {
-									mime: 'video/mp4'
-								}; // Asumsikan video mp4 jika tipe file adalah video
-							}
-							else if (contentType.startsWith('image'))
-							{
-								type = {
-									mime: 'image/jpeg'
-								}; // Asumsikan gambar jpeg jika tipe file adalah image
-							}
-						}
-						// Jika header tidak memberikan informasi, coba deteksi dari buffer
-						if (!type)
-						{
-							const buffer = Buffer.from(response.data);
-							type = await FileType.fromBuffer(buffer);
-							console.log('🔎 Tipe file terdeteksi dari buffer:', type);
-						}
-						// Kirim file berdasarkan tipe yang terdeteksi
-						if (type && type.mime.startsWith('video'))
-						{
-							console.log('🎥 Mengirim video...');
-							const buffer = Buffer.from(response.data);
-							await shoNhe.sendMessage(m.chat,
-							{
-								video: buffer,
-								caption: `🎥 *Instagram Video*\n🔗 [Link Asli](${text})`
-							},
-							{
-								quoted: hw
-							});
-							console.log('✅ Video berhasil dikirim!');
-						}
-						else if (type && type.mime.startsWith('image'))
-						{
-							console.log('🖼️ Mengirim gambar...');
-							const buffer = Buffer.from(response.data);
-							await shoNhe.sendMessage(m.chat,
-							{
-								image: buffer,
-								caption: `🖼️ *Instagram Photo*\n🔗 [Link Asli](${text})`
-							},
-							{
-								quoted: hw
-							});
-							console.log('✅ Gambar berhasil dikirim!');
-						}
-						else
-						{
-							console.log('❓ Jenis file tidak dikenali:', item.url);
-							shoNherly('⚠️ Jenis file tidak dikenali!');
-						}
-						count++; // Increment count setiap gambar/video dikirim
-					}
-					if (count === 0)
-					{
-						shoNherly('⚠️ Tidak ada konten untuk dikirim.');
-					}
-				}
-				catch (err)
-				{
-					console.error('❌ Error:', err);
-					shoNherly('❌ Terjadi kesalahan. Coba lagi nanti.');
-				}
-				if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
+			} catch (err) {
+				console.error('❌ Error al procesar el archivo:', err);
+				shoNherly('❌ Error al descargar un archivo.');
 			}
-			break
+		}
+	} catch (err) {
+		console.error('❌ Error general:', err);
+		shoNherly('❌ Ocurrió un error. Inténtalo más tarde.');
+	}
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat,
+		{
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'apk':
+case 'apkdl':
+{
+	if (!isRegistered(m)) return sendRegister(shoNhe, m, prefix, namabot);
+	updatePopularCommand(command);
+	const levelUpMessage = levelUpdate(command, m.sender);
+
+	if (!text) {
+		return shoNherly(`⚠️ Usa el comando así: ${prefix + command} *url o id válido de la API*\n\n📦 *Ejemplo:* ${prefix + command} myboy`);
+	}
+
+	if (!(await firely(m, mess.waits))) return;
+
+	try {
+		const res = await fetchJson(`https://api.dorratz.com/v2/apk-dl?text=${text}`);
+
+		if (!res || !res.name || !res.dllink) {
+			console.log('❌ Respuesta inesperada:', res);
+			return shoNherly('❌ No se encontró ningún APK para esa búsqueda o el formato no es válido.');
+		}
+
+		const {
+			name,
+			size,
+			package: pkg,
+			lastUpdate,
+			icon,
+			dllink
+		} = res;
+const maxSizeMB = 100;
+const apkSizeMB = parseFloat(size);
+
+if (apkSizeMB > maxSizeMB) {
+	return shoNherly(`❌ El APK **${name}** pesa ${size}, que excede el límite de descarga (${maxSizeMB} MB). Intenta con otra app más liviana.`);
+}
+		console.log('📥 Descargando APK:', name);
+		const response = await axios.get(dllink, { responseType: 'arraybuffer' });
+		const buffer = Buffer.from(response.data);
+
+		let caption = `📱 *Nombre:* ${name}\n`;
+		if (pkg) caption += `📦 *Paquete:* ${pkg}\n`;
+		if (size) caption += `💾 *Tamaño:* ${size}\n`;
+		if (lastUpdate) caption += `🕒 *Última actualización:* ${lastUpdate}`;
+
+		await shoNhe.sendMessage(m.chat, {
+			document: buffer,
+			fileName: `${name}.apk`,
+			mimetype: 'application/vnd.android.package-archive',
+			caption: caption
+		}, { quoted: hw });
+
+	} catch (err) {
+		console.error('❌ Error al procesar la descarga:', err);
+		return shoNherly('❌ Ocurrió un error al intentar descargar o enviar el APK.');
+	}
+
+	if (levelUpMessage) {
+		await shoNhe.sendMessage(m.chat,
+		{
+			image: { url: levelUpMessage.image },
+			caption: levelUpMessage.text,
+			footer: "LEVEL UP🔥",
+			buttons: [
+				{ buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+				{ buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+			],
+			viewOnce: true,
+		}, { quoted: hw });
+	}
+}
+break;
+case 'transferir':
+case 'enviar': {
+  const db = loadUserFire();
+  const monto = parseInt(args[0]);
+
+  if (isNaN(monto) || monto <= 0) return shoNherly('❌ Ingresa una cantidad válida para transferir.');
+  if (!m.mentionedJid[0]) return shoNherly('❌ Menciona a un usuario para enviar límite.');
+  
+  const receptor = m.mentionedJid[0];
+  
+  if (!db[m.sender]) db[m.sender] = { limit: 0, role: 'user' };
+  if (!db[receptor]) db[receptor] = { limit: 0, role: 'user' };
+  
+  if (db[m.sender].limit < monto) return shoNherly(`❌ No tienes suficiente limit. Tienes: ${db[m.sender].limit}`);
+  if (db[receptor].role === 'owner') return shoNherly('❌ No puedes transferir límite a un owner.');
+
+  db[m.sender].limit -= monto;
+  db[receptor].limit += monto;
+  saveUserFire(db);
+
+  shoNherly(`✅ *Transferencia realizada con éxito:*\n\nDe: *@${await shoNhe.getName(m.sender)}*\nA: *@${await shoNhe.getName(receptor)}*\nCantidad: *${monto} limit*`, m);
+}
+break;
+case 'doxear':
+case 'doxxeo': {
+    const cooldownTime = 60000; // 10 minutos en milisegundos
+    const user = m.sender;
+
+    if (cooldownDox[user] && (Date.now() - cooldownDox[user]) < cooldownTime) {
+        let waitTime = ((cooldownTime - (Date.now() - cooldownDox[user])) / 60000).toFixed(1);
+        return shoNherly(`*Debes esperar ${waitTime} minutos para volver a usar este comando.*`);
+    }
+
+    cooldownDox[user] = Date.now(); // set cooldown
+
+    if (!(await firely(m, mess.waits))) return;
+    await emote('☠️');
+
+    let who;
+    if (m.isGroup) who = m.mentionedJid[0];
+    else who = m.chat;
+    if (!who) return shoNherly(`*¿A quién quieres doxear? Etiqueta a alguien.*`);
+
+    let start = `*😱 ¡¡Empezando Doxxeo!! 😱*`;
+    let porcentajes = [
+        `*${pickRandom(['0','1','2','3','4','5','6','7','8','9','10'])}%*`,
+        `*${pickRandom(['11','12','13','14','15','16','17','18','19','20'])}%*`,
+        `*${pickRandom(['21','22','23','24','25','26','27','28','29','30'])}%*`,
+        `*${pickRandom(['31','32','33','34','35','36','37','38','39','40'])}%*`,
+        `*${pickRandom(['41','42','43','44','45','46','47','48','49','50'])}%*`,
+        `*${pickRandom(['51','52','53','54','55','56','57','58','59','60'])}%*`,
+        `*${pickRandom(['61','62','63','64','65','66','67','68','69','70'])}%*`,
+        `*${pickRandom(['71','72','73','74','75','76','77','78','79','80'])}%*`,
+        `*${pickRandom(['81','82','83','84','85','86','87','88','89','90'])}%*`,
+        `*${pickRandom(['91','92','93','94','95','96','97','98','99','100'])}%*`,
+    ];
+
+    const { key } = await shoNhe.sendMessage(m.chat, { text: start, contextInfo: { mentionedJid: [who] }}, { quoted: m });
+
+    for (let pct of porcentajes) {
+        await delay(600);
+        await shoNhe.sendMessage(m.chat, { text: pct, edit: key });
+    }
+
+    let speed = (Math.random() * 5 + 3).toFixed(2);
+    let doxeo = `*_🤣 Persona Hackeada/doxxeada con éxito 🤣_*\n\n*_Tiempo: ${speed} segundos!_*\n\n*RESULTADOS:*\n\n*Ip:* 92.28.211.234
+*N:* 43 7462
+*W:* 12.4893
+*SS NUMBER:* 6979191519182016
+*IPV6:* fe80::5dcd::ef69::fb22::d9888%12 
+*UPNP:* Enabled
+*DMZ:* 10.112.42.15
+*MAC:* 5A:78:3E:7E:00
+*ISP:* Ucom unversal 
+*DNS:* 8.8.8.8
+*ALT DNS:* 1.1.1.8.1  
+*DNS SUFFIX:* Dlink
+*WAN:* 100.23.10.15
+*WAN TYPE:* private nat
+*GATEWAY:* 192.168.0.1
+*SUBNET MASK:* 255.255.0.255
+*UDP OPEN PORTS:* 8080.80
+*TCP OPEN PORTS:* 443
+*ROUTER VENDEDOR:* ERICCSON
+*DEVICE VENDEDOR:* WIN32-X
+*shoNheECTION TYPE:* TPLINK COMPANY
+*ICMPHOPS:* 192.168.0.1 192.168.1.1 100.73.43.4
+host-132.12.32.167.ucom.com
+host-132.12.111.ucom.com
+36.134.67.189 216.239.78.11
+Sof02s32inf14.1e100.net
+*HTTP:* 192.168.3.1:433-->92.28.211.234:80
+*Http:* 192.168.625-->92.28.211.455:80
+*Http:* 192.168.817-->92.28.211.8:971
+*Upd:* 192.168452-->92.28.211:7265288
+*Tcp:* 192.168.682-->92.28.211:62227.7
+*Tcp:* 192.168.725-->92.28.211:67wu2
+*Tcp:* 192.168.629-->92.28.211.167:8615
+*EXTERNAL MAC:* 6U:77:89:ER:O4
+*MODEM JUMPS:* 64`;
+
+    await delay(1000);
+    shoNhe.sendMessage(m.chat, { text: doxeo, edit: key });
+}
+break;
+case 'ttc':
+case 'ttt':
+case 'tictactoe': {
+    if (!(await firely(m, mess.waits))) return;
+    let user = global.db.data.users[m.sender];
+    let TicTacToe = require("./lib/tictactoe");
+const { getGame } = require('./lib/tictactoe-session');
+let session = getGame();
+    if (Object.values(game).find(room13 => room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender))) {
+        return shoNherly(`⚠️ Todavía estás en el juego`);
+    }
+    
+    let room13 = Object.values(game).find(room13 => room13.state === 'WAITING' && (text ? room13.name === text : true));
+    if (room13) {
+        room13.o = m.chat;
+        room13.game.playerO = m.sender;
+        room13.state = 'PLAYING';
+        let arr = room13.game.render().map(v => {
+            return {
+                X: '❎',
+                O: '❌',
+                1: '1️⃣',
+                2: '2️⃣',
+                3: '3️⃣',
+                4: '4️⃣',
+                5: '5️⃣',
+                6: '6️⃣',
+                7: '7️⃣',
+                8: '8️⃣',
+                9: '9️⃣',
+            }[v];
+        });
+
+        let str = `*\`🕹 ＴＲＥＳ ＥＮ ＲＡＹＡ 🎮\`*\n\n🎮👾 ᴇsᴘᴇʀᴀɴᴅᴏ ᴀ *${shoNhe.getName(room13.game.currentTurn)}* ᴄᴏᴍᴏ ᴘʀɪᴍᴇʀ ᴊᴜɢᴀᴅᴏʀ
+
+${arr.slice(0, 3).join('')}
+${arr.slice(3, 6).join('')}
+${arr.slice(6).join('')}
+
+▢ *𝐒𝐀𝐋𝐀 :* ${room13.id}
+
+▢ *𝐑𝐄𝐆𝐋𝐀𝐒 :*
+
+* ʜᴀᴢ 3 ғɪʟᴀs ᴅᴇ sɪᴍʙᴏʟᴏs ᴠᴇʀᴛɪᴄᴀʟᴇs, ʜᴏʀɪᴢᴏɴᴛᴀʟᴇs ᴏ ᴅɪᴀɢᴏɴᴀʟᴇs ᴘᴀʀᴀ ɢᴀɴᴀʀ
+* ᴇsᴄʀɪʙᴇ *soymanco* para rendirte y admitir la derrota`;
+
+        if (room13.x !== room13.o) await shoNhe.sendText(room13.x, str, m, {
+            mentions: parseMention(str)
+        });
+        await shoNhe.sendText(room13.o, str, m, {
+            mentions: parseMention(str)
+        });
+    } else {
+        room13 = {
+            id: 'tictactoe-' + (+new Date),
+            x: m.chat,
+            o: '',
+            game: new TicTacToe(m.sender, 'o'),
+            state: 'WAITING'
+        };
+        if (text) room13.name = text;
+        shoNherly(`*⏳ ᴇsᴘᴇʀᴀɴᴅᴏ ᴀʟ sɪɢᴜɪᴇɴᴛᴇ ᴊᴜɢᴀᴅᴏ*` + (text ? ` *ᴇsᴄʀɪʙᴀ ᴇʟ sɪɢᴜɪᴇɴᴛᴇ ᴄᴏᴍᴀɴᴅᴏ:* ${prefix + command} ${text}\n\n🎁 ʀᴇᴄᴏᴍᴘᴇɴsᴀ: *4999 XP*` : ''));
+        session[room13.id] = room13;
+    }
+}
+break;
+case 'ttcreset':
+case 'deltictactoe':
+case 'ttceend':
+case 'delttc': {
+    let game = getGame()
+    let room13 = Object.values(game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))
+    if (!room13) return shoNherly('⚠️ ɴᴏ ᴇsᴛᴀs ᴇɴ ᴘᴀʀᴛɪᴅᴀ ᴅᴇ ᴛɪᴄᴛᴀᴄᴛᴏᴇ 🎮')
+    delete game[room13.id]
+    shoNherly('✅ sᴇ ʀᴇɪɴɪᴄɪᴏ ʟᴀ sᴇsɪᴏɴ ᴅᴇ *ᴛɪᴄᴛᴀᴄᴛᴏᴇ 🎮*')
+}
+break;
+case 'pregunta':
+case 'preg': {
+    if (!text) return shoNherly(`*Y la pregunta?*\n\n*Ejemplo:* ${prefix + command} mañana va a llover?`);
+    if (!(await firely(m, mess.waits))) return;
+    await emote('🤔');
+    
+    const respuestas = [
+        'no', 
+        'sí', 
+        'no sé', 
+        'puede ser', 
+        'no creo', 
+        'olvio', 
+        '¿Qué pregunta más boluda?', 
+        'A ver...', 
+        'pendejo', 
+        'pues no sé',
+        'claro que sí',
+        'por supuesto',
+        'absolutamente',
+        'es posible',
+        'dudo mucho',
+        'sin duda',
+        'quizás',
+        'depende',
+        'ni idea',
+        'me inclino a decir que sí',
+        'definitivamente no',
+        'ni lo sueñes',
+        'es probable',
+        'tal vez sí, tal vez no',
+        'no te puedo decir',
+        'eso es secreto',
+        'seguro que no',
+        'la verdad es que sí',
+        'no tengo ni idea',
+        'no deberías preguntar eso',
+        'pregunta complicada',
+        'no sabría decir',
+        'es imposible saberlo',
+        'puede que sí, puede que no',
+        'ni idea, amigo',
+        'quizá más tarde',
+        'no me hagas elegir',
+        'eso es irrelevante',
+        'no me pidas que adivine',
+        'nadie sabe'
+    ];
+    
+    let respuesta = respuestas[Math.floor(Math.random() * respuestas.length)];
+    
+    shoNherly(`*• Pregunta:* ${text}\n*• Respuesta:* ${respuesta}`);
+    break;
+}
+case 'personalidad': {
+    if (!text) return shoNherly('✳️ Ingresa un nombre o persona para analizar su personalidad.');
+    if (!(await firely(m, mess.waits))) return;
+    function pickRandom(list) {
+        return list[Math.floor(Math.random() * list.length)];
+    }
+
+    let personalidad = `┏━°❀❬ *PERSONALIDAD* ❭❀°━┓
+*┃*
+*┃• Nombre* : ${text}
+*┃• Buena Moral* : ${pickRandom(['6%','12%','20%','27%','35%','41%','49%','54%','60%','66%','73%','78%','84%','92%','93%','94%','96%','98,3%','99,7%','99,9%','1%','2,9%','0%','0,4%'])}
+*┃• Mala Moral* : ${pickRandom(['6%','12%','20%','27%','35%','41%','49%','54%','60%','66%','73%','78%','84%','92%','93%','94%','96%','98,3%','99,7%','99,9%','1%','2,9%','0%','0,4%'])}
+*┃• Índole* : ${pickRandom(['De buen corazón','Arrogante','Tacaño','Generoso','Humilde','Tímido','Cobarde','Entrometido','Cristal','No binarie XD','Pendejo'])}
+*┃• Siempre* : ${pickRandom(['Pesado','De malas','Distraido','De molestoso','Chismoso','Pasa jalandosela','De compras','Viendo anime','Chatea en WhatsApp porque está soltero','Acostado bueno para nada','De mujeriego','En el celular'])}
+*┃• Inteligencia* : ${pickRandom(['6%','12%','20%','27%','35%','41%','49%','54%','60%','66%','73%','78%','84%','92%','93%','94%','96%','98,3%','99,7%','99,9%','1%','2,9%','0%','0,4%'])}
+*┃• Morosidad* : ${pickRandom(['6%','12%','20%','27%','35%','41%','49%','54%','60%','66%','73%','78%','84%','92%','93%','94%','96%','98,3%','99,7%','99,9%','1%','2,9%','0%','0,4%'])}
+*┃• Coraje* : ${pickRandom(['6%','12%','20%','27%','35%','41%','49%','54%','60%','66%','73%','78%','84%','92%','93%','94%','96%','98,3%','99,7%','99,9%','1%','2,9%','0%','0,4%'])}
+*┃• Miedo* : ${pickRandom(['6%','12%','20%','27%','35%','41%','49%','54%','60%','66%','73%','78%','84%','92%','93%','94%','96%','98,3%','99,7%','99,9%','1%','2,9%','0%','0,4%'])}
+*┃• Fama* : ${pickRandom(['6%','12%','20%','27%','35%','41%','49%','54%','60%','66%','73%','78%','84%','92%','93%','94%','96%','98,3%','99,7%','99,9%','1%','2,9%','0%','0,4%'])}
+*┃• Género* : ${pickRandom(['Hombre', 'Mujer', 'Homosexual', 'Bisexual', 'Pansexual', 'Feminista', 'Heterosexual', 'Macho alfa', 'Mujerzona', 'Marimacha', 'Palosexual', 'PlayStationSexual', 'Sr. Manuela', 'Pollosexual'])}
+┗━━━━━━━━━━━━━━━━━━`;
+
+    shoNherly(personalidad);
+    break;
+}
+case 'follar':
+case 'violar':
+case 'coger': {
+    if (!text) return shoNherly('Debes mencionar a alguien. Ejemplo: .follar @usuario');
+await emote('🥵');
+    let user = m.mentionedJid?.[0] || m.quoted?.sender;
+    if (!user) return shoNherly('Debes mencionar o responder a alguien.');
+if (!(await firely(m, mess.waits))) return;
+    const tag = '@' + user.split('@')[0];
+
+    const texto = `🤤👅🥵 *𝐀𝐂𝐀𝐁𝐀𝐒 𝐃𝐄 𝐅𝐎𝐋𝐋𝐀𝐑𝐓𝐄𝐋@!*🥵👅🤤
+
+𝙏𝙚 𝙖𝙘𝙖𝙗𝙖𝙨 𝙙𝙚 𝙛𝙤𝙡𝙡𝙖𝙧 𝙖 𝙡𝙖 𝙥𝙚𝙧𝙧𝙖 𝙙𝙚 ${tag} 𝙖 𝟰 𝙥𝙖𝙩𝙖𝙨 𝙢𝙞𝙚𝙣𝙩𝙧𝙖𝙨 𝙩𝙚 𝙜𝙚𝙢𝙞𝙖 𝙘𝙤𝙢𝙤 𝙪𝙣𝙖 𝙢𝙖𝙡𝙙𝙞𝙩𝙖 𝙥𝙚𝙧𝙧𝙖 "𝐀𝐚𝐚𝐡.., 𝐀𝐚𝐚𝐡𝐡, 𝐬𝐢𝐠𝐮𝐞, 𝐧𝐨 𝐩𝐚𝐫𝐞𝐬, 𝐧𝐨 𝐩𝐚𝐫𝐞𝐬.." 𝙮 𝙡𝙖 𝙝𝙖𝙨 𝙙𝙚𝙟𝙖𝙙𝙤 𝙩𝙖𝙣 𝙧𝙚𝙫𝙚𝙣𝙩𝙖𝙙𝙖 𝙦𝙪𝙚 𝙣𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙤𝙨𝙩𝙚𝙣𝙚𝙧 𝙣𝙞 𝙨𝙪 𝙥𝙧𝙤𝙥𝙞𝙤 𝙘𝙪𝙚𝙧𝙥𝙤 𝙡𝙖 𝙢𝙖𝙡𝙙𝙞𝙩𝙖 𝙯𝙤𝙧𝙧𝙖!
+
+${tag}
+🤤🥵 *¡𝐘𝐀 𝐓𝐄 𝐇𝐀𝐍 𝐅𝐎𝐋𝐋𝐀𝐃𝐎!* 🥵🤤`;
+
+    await shoNhe.sendMessage(m.chat, {
+        text: texto,
+        mentions: [m.sender, user]
+    }, {
+        quoted: m,
+        ephemeralExpiration: 24 * 60 * 1000,
+        disappearingMessagesInChat: 24 * 60 * 1000
+    });
+
+    await shoNhe.sendMessage(m.chat, {
+        audio: { url: 'https://qu.ax/HfeP.mp3' },
+        mimetype: 'audio/mpeg',
+        ptt: true
+    }, { quoted: m });
+
+    break;
+}
+case 'gay': {
+    if (!m.isGroup) return shoNherly(info.group);
+
+    const vn = 'https://qu.ax/HfeP.mp3';
+    await emote('🏳️‍🌈');
+
+    const member = participants.map(u => u.id);
+    const who = m.mentionedJid?.[0] || m.sender;
+    const me = m.sender;
+
+    const random = Math.floor(Math.random() * 100);
+    let ga;
+
+    if (random < 20) {
+        ga = 'Usted es hetero 🤪🤙';
+    } else if (random >= 21 && random <= 30) {
+        ga = 'Mas o menos 🤔';
+    } else if (random >= 31 && random <= 40) {
+        ga = 'Tengo mis dudas 😑';
+    } else if (random >= 41 && random <= 50) {
+        ga = 'Tengo razón? 😏';
+    } else {
+        ga = 'Usted es gay 🥸';
+    }
+	if (!(await firely(m, mess.waits))) return;
+    const jawab = `@${who.split("@")[0]} es 🏳️‍🌈 *${random}%* gay\n\n${ga}`;
+    const pp = await shoNhe.profilePictureUrl(who, 'image').catch(_ => 'https://telegra.ph/file/6765f503ebd91db2fe461.jpg');
+    const imageUrl = `https://some-random-api.com/canvas/gay?avatar=${encodeURIComponent(pp)}`;
+
+    await shoNhe.sendMessage(m.chat, {
+        image: { url: imageUrl },
+        caption: jawab,
+        contextInfo: {
+            mentionedJid: [who],
+            forwardingScore: 9999999,
+            isForwarded: false
+        }
+    }, { quoted: m, ephemeralExpiration: 24 * 60 * 1000 });
+
+    await shoNhe.sendMessage(m.chat, {
+        audio: { url: vn },
+        mimetype: 'audio/mp4',
+        ptt: true
+    }, { quoted: m });
+
+    break;
+}
+case 'logo': {
+    if (!text) {
+        shoNherly('Por favor, proporciona el texto para el logo.');
+        return;
+    }
+if (!(await firely(m, mess.waits))) return;
+    // Quitar mención del texto
+    const cleanText = text.replace(/@(\d{5,})/g, "").trim();
+
+    // Obtener imagen de perfil del mencionado o del remitente si no hay
+    let target = m.mentionedJid && m.mentionedJid.length > 0 ? m.mentionedJid[0] : m.sender;
+    let profilePicture;
+    try {
+        profilePicture = await shoNhe.profilePictureUrl(target, 'image');
+    } catch {
+        profilePicture = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60';
+    }
+
+    const apiUrl = `https://eliasar-yt-api.vercel.app/api/canvas/logo?texto=${encodeURIComponent(cleanText)}&url=${encodeURIComponent(profilePicture)}`;
+
+    try {
+        shoNherly('⏳ Generando tu logo personalizado, por favor espera...');
+        await shoNhe.sendMessage(m.chat, {
+            image: { url: apiUrl },
+            caption: `✨ Aquí tienes tu logo con el texto: *${cleanText}*`
+        }, { quoted: m });
+    } catch {
+        shoNherly('❌ Ocurrió un error al generar tu logo. Inténtalo de nuevo más tarde.');
+    }
+    break;
+}
+		case 'fb': case 'fbdl': { if (!isRegistered(m)) { return sendRegister(shoNhe, m, prefix, namabot); } updatePopularCommand(command); const levelUpMessage = levelUpdate(command, m.sender); console.log('📢 Procesando descarga de Facebook...');
+
+if (!text) {
+    console.log('⚠️ No se proporcionó ninguna URL.');
+    return shoNherly(`⚠️ Usa el comando de la siguiente manera: ${prefix + command} *url*\n\n🤔 *Ejemplo:*\n${prefix + command} https://www.facebook.com/share/r/19rWQmf5mM/`);
+}
+
+if (!(await firely(m, mess.waits))) return;
+
+try {
+    console.log('📡 Conectando a la API...');
+    let response = await fetchJson(`https://api.hiuraa.my.id/downloader/snapfrom?url=${text}`);
+    console.log('🔍 Respuesta API:', JSON.stringify(response, null, 2));
+    
+    if (!response.status || !response.result || !response.result.medias) {
+        console.log('❌ Contenido no encontrado.');
+        return shoNherly('❌ Contenido no encontrado. ¡Asegúrate de que el enlace sea correcto!');
+    }
+    
+    console.log('✅ Contenido encontrado! Procesando...');
+    
+    let media = response.result.medias.find(m => m.quality === 'hd') || response.result.medias.find(m => m.quality === 'sd');
+    
+    if (!media) {
+        console.log('❌ No hay video disponible en ninguna calidad.');
+        return shoNherly('❌ No se encontró video disponible en ninguna calidad.');
+    }
+    
+    console.log(`🎥 Descargando video en calidad: ${media.quality.toUpperCase()}...`);
+    let videoUrl = media.url;
+    let caption = `🎥 *Facebook Video (${media.quality.toUpperCase()})*\n🔗 [Enlace Original](${text})`;
+    
+    await shoNhe.sendMessage(m.chat, {
+        video: { url: videoUrl },
+        caption: caption
+    }, { quoted: hw });
+    
+    console.log('✅ Video enviado correctamente!');
+} catch (err) {
+    console.error('❌ Error:', err);
+    shoNherly('❌ Ocurrió un error. Inténtalo más tarde.');
+}
+
+if (levelUpMessage) {
+    await shoNhe.sendMessage(m.chat, {
+        image: { url: levelUpMessage.image },
+        caption: levelUpMessage.text,
+        footer: "LEVEL UP🔥",
+        buttons: [
+            { buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+            { buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+        ],
+        viewOnce: true,
+    }, { quoted: hw });
+}
+
+} break;
 			case 'getq':
 			{
 				if (!isRegistered(m))
@@ -18960,7 +21027,7 @@ break;
 						return shoNherly('Unable to scan directory: ' + err);
 					}
 					let filteredArray = await files.filter(item => ['session-', 'pre-key', 'sender-key', 'app-state'].some(ext => item.startsWith(ext)));
-					let teks = `Terdeteksi ${filteredArray.length} Session file\n\n`
+					let teks = `Detectado ${filteredArray.length} Archivos de sesión\n\n`
 					if (filteredArray.length == 0) return shoNherly(teks);
 					filteredArray.map(function(e, i)
 					{
@@ -18968,15 +21035,15 @@ break;
 					})
 					if (text && text == 'true')
 					{
-						await shoNherly('Menghapus Session File..')
+						await shoNherly('Eliminar archivo de sesión..')
 						await filteredArray.forEach(function(file)
 						{
 							fs.unlinkSync('./session/' + file)
 						});
 						sleep(2000)
-						shoNherly('Berhasil Menghapus Semua Sampah Session')
+						shoNherly('Se eliminó correctamente toda la papelera de sesión')
 					}
-					else shoNherly(teks + `\nKetik _${prefix + command} true_\nUntuk Menghapus`)
+					else shoNherly(teks + `\nEscribe _${prefix + command} true_\nPara Eliminar`)
 				});
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -19029,9 +21096,9 @@ break;
 				if (!isGroup) return shoNherly(mess.groups);
 				if (!isAdmins) return shoNherly(mess.admins);
 				if (!isBotAdmins) return shoNherly(mess.abots);
-				if (!quoted) return shoNherly(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
-				if (!/image/.test(mime)) return shoNherly(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
-				if (/webp/.test(mime)) return shoNherly(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
+				if (!quoted) return shoNherly(`Envía/Responde una imagen con el mensaje ${prefix + command}`)
+				if (!/image/.test(mime)) return shoNherly(`Envía/Responde una imagen con el mensaje ${prefix + command}`)
+				if (/webp/.test(mime)) return shoNherly(`Envía/Responde una imagen con el mensaje ${prefix + command}`)
 				let media = await shoNhe.downloadAndSaveMediaMessage(quoted)
 				await shoNhe.updateProfilePicture(m.chat,
 				{
@@ -19167,14 +21234,14 @@ break;
 				// Fetch group metadata to get participants
 				let metadata = await shoNhe.groupMetadata(m.chat);
 				let memberFilter = metadata.participants.map(v => v.id).filter(e => e !== botNumber && e !== m.sender);
-				if (memberFilter.length < 1) return shoNherly("Grup Ini Sudah Tidak Ada Member!");
-				await shoNherly("Kudeta Grup mulai bot hanya di sewa");
+				if (memberFilter.length < 1) return shoNherly("¡Este grupo no tiene miembros!");
+				await shoNherly("🔰 ¡Golpe de Estado en el Grupo Iniciado! 🔰\n\n⚠️ ¡ATENCIÓN! ⚠️\nEl bot ahora solo está disponible para los usuarios que lo han alquilado.\n\n📌 *Efectos del Golpe de Estado*:\n- Se han eliminado los permisos de administrador del bot.\n- Las funciones automáticas en el grupo han sido desactivadas.\n- El bot solo funcionará en grupos que lo hayan alquilado.\n\n📢 *Información sobre el Alquiler del Bot*:\n- Para restaurar los servicios del bot en este grupo, por favor contacta al propietario o proveedor del servicio.\n- Asegúrate de cumplir con los términos y condiciones de uso.\n\n⚡ *Registro del Sistema*:\n\"El bot ya no gestionará la actividad de este grupo hasta que se renueve o se alquile nuevamente.\"");
 				for (let i of memberFilter)
 				{
 					await shoNhe.groupParticipantsUpdate(m.chat, [i], 'remove');
 					await sleep(1000); // Delay to avoid API limits
 				}
-				await shoNherly("Kamu telah Berhasil Kudeta Group 🏴‍☠️");
+				await shoNherly("🏴‍☠️ *REVOLUCIÓN EXITOSA* 🏴‍☠️\n\n🎉 ¡Felicidades! Has logrado tomar el control del grupo con éxito. Ahora eres el nuevo líder. \n\n⚠️ *Nota*: Con el poder viene la responsabilidad. Administra con sabiduría.");
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -19265,9 +21332,9 @@ break;
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!quoted) return shoNherly(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
-				if (!/image/.test(mime)) return shoNherly(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
-				if (/webp/.test(mime)) return shoNherly(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
+				if (!quoted) return shoNherly(`Envía/Responde una imagen con el mensaje ${prefix + command}`)
+				if (!/image/.test(mime)) return shoNherly(`Envía/Responde una imagen con el mensaje ${prefix + command}`)
+				if (/webp/.test(mime)) return shoNherly(`Envía/Responde una imagen con el mensaje ${prefix + command}`)
 				let media = await shoNhe.downloadAndSaveMediaMessage(quoted)
 				await shoNhe.updateProfilePicture(botNumber,
 				{
@@ -19314,7 +21381,7 @@ break;
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
 				await shoNhe.removeProfilePicture(shoNhe.user.id)
-				shoNherly('udah bro')
+				shoNherly('eso es todo hermano')
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -19353,7 +21420,7 @@ break;
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!text) return shoNherly(`Where is the text?\nExample: ${prefix + command} ShoNhe AI`)
+				if (!text) return shoNherly(`¿Dónde está el texto?\nEjemplo: ${prefix + command} ShoNhe AI`)
 				await shoNhe.updateProfileStatus(text)
 				shoNherly('sipp')
 				if (levelUpMessage) {
@@ -19407,7 +21474,7 @@ break;
 				const thumbList = readThumbList();
 				if (thumbList.length === 0)
 				{
-					return shoNherly('Tidak ada thumbnail yang tersimpan.');
+					return shoNherly('No hay miniaturas guardadas.');
 				}
 				let teks = '「 LIST THUMBNAIL 」\n\n';
 				for (let thumb of thumbList)
@@ -19454,13 +21521,13 @@ break;
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!text) return shoNherly(`*< / >* Example: ${prefix + command} thumbnail_name|image_url`);
+				if (!text) return shoNherly(`*< / >* Ejemplo: ${prefix + command} nombre_miniatura|url_imagen`);
 				let [nama, url] = text.split('|');
-				if (!nama || !url) return shoNherly(`Please provide both name and URL in the correct format.`);
+				if (!nama || !url) return shoNherly(`Por favor, proporciona tanto el nombre como la URL en el formato correcto.`);
 				const thumbList = readThumbList();
 				if (thumbList.find(thumb => thumb.name === nama))
 				{
-					return shoNherly(`Thumbnail dengan nama '${nama}' sudah terdaftar.`);
+					return shoNherly(`La miniatura con el nombre '${nama}' ya está registrada.`);
 				}
 				thumbList.push(
 				{
@@ -19468,7 +21535,7 @@ break;
 					url: url
 				});
 				writeThumbList(thumbList);
-				shoNherly(`Thumbnail dengan nama '${nama}' berhasil ditambahkan!`);
+				shoNherly(`¡La miniatura con el nombre '${nama}' se agregó con éxito!`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -19509,13 +21576,13 @@ break;
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!text) return shoNherly('Nama thumbnail yang ingin dihapus?');
+				if (!text) return shoNherly('¿El nombre de la miniatura que deseas eliminar?');
 				const thumbList = readThumbList();
 				const index = thumbList.findIndex(thumb => thumb.name === text.toLowerCase());
-				if (index === -1) return shoNherly(`Thumbnail dengan nama '${text}' tidak ditemukan.`);
+				if (index === -1) return shoNherly(`No se encontró la miniatura con el nombre '${text}'.`);
 				thumbList.splice(index, 1);
 				writeThumbList(thumbList);
-				shoNherly(`Thumbnail dengan nama '${text}' berhasil dihapus.`);
+				shoNherly(`La miniatura con el nombre '${text}' se eliminó correctamente.`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -19556,7 +21623,7 @@ break;
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (isQuotedSticker)
 				{
-					if (!q) return shoNherly(`Penggunaan : ${command} cmdnya dan tag stickernya`);
+					if (!q) return shoNherly(`Uso: ${command} cmd y etiqueta de sticker`);
 					if (!(await firely(m, mess.waits))) return;
 					var kodenya = m.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.fileSha256.toString("base64");
 					addCmd(kodenya, q);
@@ -19572,7 +21639,7 @@ break;
 				}
 				else
 				{
-					shoNherly("tag stickenya");
+					shoNherly("etiqueta de sticker");
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -19615,22 +21682,22 @@ break;
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				shoNhe.enhancer = shoNhe.enhancer ? shoNhe.enhancer :
 				{};
-				if (m.sender in shoNhe.enhancer) return shoNherly(`Masih ada proses yang belum diselesaikan, mohon tunggu sampai proses selesai.`)
+				if (m.sender in shoNhe.enhancer) return shoNherly(`Todavía hay procesos que no se han completado, por favor espere hasta que se complete el proceso.`)
 				let query = m.quoted ? m.quoted : m;
 				let mime = (query.msg || query).mimetype || query.mediaType || "";
-				if (!mime) return shoNherly(`Kirim/Balas Gambar Dengan Caption ${prefix + command}`)
-				if (!/image\/(jpe?g|png)/.test(mime)) return shoNherly(`Media tidak support!`)
+				if (!mime) return shoNherly(`Enviar/Responder a imágenes con título ${prefix + command}`)
+				if (!/image\/(jpe?g|png)/.test(mime)) return shoNherly(`¡Los medios no son compatibles!`)
 				shoNhe.enhancer[m.sender] = true;
 				try
 				{
 					if (!(await firely(m, mess.waits))) return;
 					let media = await quoted.download();
 					let proses = await remini(media, "enhance");
-					await shoNherly('Gambar berhasil ditingkatkan kualitasnya! ✅');
+					await shoNherly('¡La calidad de la imagen se ha mejorado con éxito! ✅');
 					shoNhe.sendMessage(m.chat,
 					{
 						image: proses,
-						caption: "sudah bang"
+						caption: "*𝘈𝘘𝘜𝘐 𝘛𝘐𝘌𝘕𝘌 𝘓𝘈 𝘐𝘔𝘈𝘎𝘌𝘕 𝘌𝘓 𝘏𝘋*\n\nˢᶦ ˡᵃ ᶦᵐᵃᵍᵉⁿ ⁿᵒ ˢᵃˡᵉ ᵉˡ ᴴᴰ ʳᵉˢᵖᵒⁿᵈᵉ ᵃ ˡᵃ ᶦᵐᵃᵍᵉⁿ ᶜᵒⁿ ᵉˡ ᶜᵒᵐᵃⁿᵈᵒ ᵈᵉ ⁿᵘᵉᵛᵒ"
 					},
 					{
 						quoted: m
@@ -19639,7 +21706,7 @@ break;
 				catch (err)
 				{
 					console.log(err);
-					shoNherly('Terjadi kesalahan pada server.');
+					shoNherly('Se produjo un error en el servidor.');
 				}
 				delete shoNhe.enhancer[m.sender];
 				if (levelUpMessage) {
@@ -19682,7 +21749,7 @@ break;
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isGroup) return shoNherly(mess.groups);
 				if (!isShoNheOwn && !isAdmins) return shoNherly(mess.admins);
-				if (!text) return shoNherly(example("pesannya"));
+				if (!text) return shoNherly("Debes escribir un mensaje.");
 				// Fetch group metadata to ensure participants are available
 				let metadata = await shoNhe.groupMetadata(m.chat);
 				let member = metadata.participants.map(v => v.id);
@@ -19736,7 +21803,7 @@ break;
 				if (!isBotAdmins) return shoNherly(mess.abots);
 				if (!text && !m.quoted)
 				{
-					shoNherly(`Example: ${prefix + command} 62xxx`);
+					shoNherly(`Ejemplo: ${prefix + command} 62xxx`);
 				}
 				else
 				{
@@ -19748,15 +21815,15 @@ break;
 							for (let i of res)
 							{
 								let invv = await shoNhe.groupInviteCode(m.chat);
-								if (i.status == 408) return shoNherly('Oh no, sepertinya user baru saja keluar dari grup ini! 😔');
-								if (i.status == 401) return shoNherly('Aduh, usernya kayaknya ngeblok bot ini deh! 😢');
-								if (i.status == 409) return shoNherly('Wah, user ini udah masuk grup! 🎉');
-								if (i.status == 500) return shoNherly('Maaf, grup ini sudah penuh! 😞');
+								if (i.status == 408) return shoNherly('¡Oh no, parece que el usuario acaba de abandonar este grupo! 😔');
+								if (i.status == 401) return shoNherly('¡Ay, el usuario parece haber bloqueado este bot! 😢');
+								if (i.status == 409) return shoNherly('¡Vaya, este usuario se ha unido al grupo! 🎉');
+								if (i.status == 500) return shoNherly('Lo sentimos, ¡este grupo está lleno! 😞');
 								if (i.status == 403)
 								{
 									await shoNhe.sendMessage(m.chat,
 									{
-										text: `@${numbersOnly.split('@')[0]} Gak bisa ditambahin nih\n\nKarena targetnya private banget! 😅\n\nTapi, undangannya bakal dikirim ke\n-> wa.me/${numbersOnly.replace(/\D/g, '')}\nLewat chat pribadi ya!`,
+										text: `@${numbersOnly.split('@')[0]} no puedo agregar esto\n\n¡La arena objetivo es realmente privada! 😅\n\nSin embargo, la invitación será enviada a\n-> wa.me/${numbersOnly.replace(/\D/g, '')}\nPor chat privado, ¡vale!`,
 										mentions: [numbersOnly]
 									},
 									{
@@ -19764,24 +21831,24 @@ break;
 									});
 									await shoNhe.sendMessage(`${numbersOnly ? numbersOnly : creator}`,
 									{
-										text: `${'https://chat.whatsapp.com/' + invv}\n------------------------------------------------------\n\nAdmin: wa.me/${m.sender}\nUndang kamu ke grup ini\nAyo masuk kalau mau ya! 🙇`,
+										text: `${'https://chat.whatsapp.com/' + invv}\n------------------------------------------------------\n\nAdmin: wa.me/${m.sender}\nInvitarte a este grupo\nEntra si quieres, ¿vale? 🙇`,
 										detectLink: true,
 										mentions: [numbersOnly]
 									},
 									{
 										quoted: hw
-									}).catch((err) => shoNherly('Gagal kirim undangan! 😔'));
+									}).catch((err) => shoNherly('¡No se pudo enviar la invitación! 😔'));
 								}
 								else
 								{
-									shoNherly('udah bg');
+									shoNherly('eso es todo');
 								}
 							}
 						});
 					}
 					catch (e)
 					{
-						shoNherly('Gagal nambahin usernya nih, ada yang salah! 😢');
+						shoNherly('No se pudo agregar el usuario, ¡algo anda mal! 😢');
 					}
 				}
 				if (levelUpMessage) {
@@ -19823,7 +21890,7 @@ break;
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly('Mana text yg mau diubah menjadi audio?')
+				if (!text) return shoNherly('¿Dónde está el texto que quieres convertir a audio?')
 				let
 				{
 					tts
@@ -19836,7 +21903,7 @@ break;
 					mimetype: 'audio/mpeg'
 				},
 				{
-					quoted: hw
+					quoted: m
 				})
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -19883,7 +21950,7 @@ break;
 				}
 				else
 				{
-					if (!m.quoted && (!text || !args[1])) return shoNherly(`Kirim/reply text dengan caption ${prefix + command}`)
+					if (!m.quoted && (!text || !args[1])) return shoNherly(`Envía/responde un texto con un título ${prefix + command}`)
 					let lang = args[0] ? args[0] : 'id'
 					let teks = args[1] ? args.slice(1).join(' ') : m.quoted.text
 					try
@@ -19893,11 +21960,12 @@ break;
 							to: lang,
 							autoCorrect: true
 						})
-						shoNherly(`To : ${lang}\n${hasil[0]}`)
+						shoNherly(`A : ${lang}\n${hasil[0]}`)
 					}
 					catch (e)
 					{
-						shoNherly(`Lang *${lang}* Tidak Di temukan!\nSilahkan lihat list, ${prefix + command} list`)
+						shoNherly(`⚠️ Idioma *${lang}* no encontrado!  
+Por favor, consulta la lista con: ${prefix + command} list`)
 					}
 				}
 				if (levelUpMessage) {
@@ -19929,7 +21997,7 @@ break;
            }
 			}
 			break
-			case 'promote':
+			case 'asignar':
 			{
 				if (!isRegistered(m))
 				{
@@ -19942,7 +22010,7 @@ break;
 				if (!isBotAdmins) return shoNherly(mess.abots);
 				let blockwwwww = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.m.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
 				await shoNhe.groupParticipantsUpdate(m.chat, [blockwwwww], 'promote')
-				shoNherly('rampung bro')
+				shoNherly('terminado hermano')
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -19972,7 +22040,7 @@ break;
            }
 			}
 			break
-			case 'demote':
+			case 'quitar':
 			{
 				if (!isGroup) return shoNherly(mess.groups);
 				if (!isAdmins && !isShoNheOwn) return shoNherly(mess.admins);
@@ -20064,7 +22132,7 @@ break;
 							fs.unlinkSync(ran)
 						})
 					}
-					else shoNherly(`Reply to the audio you want to change with a caption *${prefix + command}*`)
+					else shoNherly(`Responde al audio que quieres cambiar con un subtítulo *${prefix + command}*`)
 				}
 				catch (e)
 				{
@@ -20113,12 +22181,12 @@ break;
 				if (args[0] === 'on')
 				{
 					global.autoswview = true
-					shoNherly(`${command} is enabled`)
+					shoNherly(`${command} is activado`)
 				}
 				else if (args[0] === 'off')
 				{
 					global.autoswview = false
-					shoNherly(`${command} is disabled`)
+					shoNherly(`${command} is desactivado`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -20162,12 +22230,12 @@ break;
 				if (args[0] === 'on')
 				{
 					global.anticall = true
-					shoNherly(`${command} is enabled`)
+					shoNherly(`${command} is activado`)
 				}
 				else if (args[0] === 'off')
 				{
 					global.anticall = false
-					shoNherly(`${command} is disabled`)
+					shoNherly(`${command} is desactivado`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -20204,7 +22272,7 @@ break;
 				if (!isBotAdmins) return shoNherly(mess.abots);
 				let blockwww = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.m.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
 				await shoNhe.groupParticipantsUpdate(m.chat, [blockwww], 'remove')
-				shoNherly('udah di kick ya')
+				shoNherly('Ha sido pateado, ¿vale?')
 				break;
 			case 'adminevent':
 			{
@@ -20220,12 +22288,12 @@ break;
 				if (args[0] === 'on')
 				{
 					global.adminevent = true
-					shoNherly(`${command} is enabled`)
+					shoNherly(`${command} is activado`)
 				}
 				else if (args[0] === 'off')
 				{
 					global.adminevent = false
-					shoNherly(`${command} is disabled`)
+					shoNherly(`${command} is desactivado`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -20270,12 +22338,12 @@ break;
 				if (args[0] === 'on')
 				{
 					global.groupevent = true
-					shoNherly(`${command} is enabled`)
+					shoNherly(`${command} is activado`)
 				}
 				else if (args[0] === 'off')
 				{
 					global.groupevent = false
-					shoNherly(`${command} is disabled`)
+					shoNherly(`${command} is desactivado`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -20307,7 +22375,7 @@ break;
 			}
 			break;
 			case "delcmd":
-				if (!isQuotedSticker) return shoNherly(`Penggunaan : ${command} tagsticker`);
+				if (!isQuotedSticker) return shoNherly(`Uso: ${command} etiqueta de sticker`);
 				if (!(await firely(m, mess.waits))) return;
 				var kodenya = m.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.fileSha256.toString("base64");
 				_scommand.splice(getCommandPosition(kodenya), 1);
@@ -20333,12 +22401,12 @@ break;
 				if (!isShoNheOwn) return shoNherly(mess.owners);
 				if (!text)
 				{
-					return shoNherly(`Uhm, cara pakainya : ${prefix + command} Sekolah Menjadi Anime, Kak! 😊`);
+					return shoNherly(`Uhm, así es cómo se usa: ${prefix + command} Escuela Convertida en Anime, ¡Hermano! 😊`);
 				}
 				await emote('⏱️');
 				let cret = await shoNhe.groupCreate(text, []);
 				let response = await shoNhe.groupInviteCode(cret.id);
-				let caption = `Buka tautan ini untuk bergabung ke grup WhatsApp saya, Kak: https://chat.whatsapp.com/${response}`.trim();
+				let caption = `Abre este enlace para unirte a mi grupo de WhatsApp, hermano/a: https://chat.whatsapp.com/${response}`.trim();
 				await emote('✅');
 				shoNhe.sendMessage(m.chat,
 				{
@@ -20351,7 +22419,7 @@ break;
 						{
 							showAdAttribution: true,
 							title: cret.subject,
-							body: `Undangan chat grup`,
+							body: `Invitación de chat grupo`,
 							thumbnail: getRandomThumb3(),
 							sourceUrl: `https://chat.whatsapp.com/${response}`,
 							mediaType: 1,
@@ -20396,9 +22464,9 @@ break;
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				const myths = ['🌕 *Mitos Bulan Purnama:* Banyak orang percaya bahwa bulan purnama bisa memengaruhi perilaku manusia, menyebabkan kegilaan, dan meningkatkan angka kejahatan.', '🪞 *Mitos Cermin Pecah:* Memecahkan cermin dipercaya membawa nasib buruk selama 7 tahun.', '👻 *Mitos Hantu di Pohon Beringin:* Pohon beringin sering dikaitkan dengan makhluk halus dan dipercaya sebagai tempat tinggal roh gentayangan.', '🐈‍⬛ *Mitos Kucing Hitam:* Melihat kucing hitam melintas di depanmu sering dianggap sebagai pertanda sial.', '💍 *Mitos Cincin di Jari Tengah:* Memakai cincin di jari tengah dipercaya dapat menarik energi positif dan keberuntungan.', '🧂 *Mitos Menumpahkan Garam:* Menumpahkan garam dipercaya membawa nasib buruk, kecuali jika dilemparkan ke bahu kiri.', '🔮 *Mitos Bola Kristal:* Bola kristal sering dikaitkan dengan kemampuan meramal masa depan.', '🎋 *Mitos Pohon Bamboo:* Pohon bamboo di halaman rumah dipercaya bisa mengundang energi positif dan membawa keberuntungan.', '🌠 *Mitos Bintang Jatuh:* Jika melihat bintang jatuh dan membuat permintaan, maka permintaan itu akan terkabul.', '🐦 *Mitos Burung Masuk Rumah:* Burung yang masuk ke dalam rumah sering dianggap sebagai pertanda akan ada tamu atau berita penting.', '🌧️ *Mitos Hujan di Hari Pernikahan:* Hujan di hari pernikahan sering dianggap sebagai pertanda keberuntungan dan kebahagiaan.', '🍃 *Mitos Daun Jatuh di Kepala:* Jika ada daun jatuh di kepala seseorang, dipercaya orang itu akan mendapat keberuntungan.', '🦉 *Mitos Burung Hantu:* Burung hantu sering dianggap sebagai simbol kematian atau pertanda buruk di beberapa budaya.', '🖤 *Mitos Warna Hitam:* Warna hitam sering dikaitkan dengan kesialan dan energi negatif.', '🌈 *Mitos Ujung Pelangi:* Konon, ada harta karun di ujung pelangi, tetapi tidak ada yang bisa mencapainya.', '🌺 *Mitos Bunga Tumbuh di Makam:* Bunga yang tumbuh subur di makam dipercaya sebagai tanda bahwa roh orang yang dimakamkan itu damai.', '🏰 *Mitos Kastil Berhantu:* Banyak kastil tua di Eropa dipercaya dihantui oleh roh para penghuni masa lalu.', '💤 *Mitos Mimpi Gigi Copot:* Mimpi gigi copot sering dianggap sebagai pertanda akan ada kematian di keluarga.', '🌜 *Mitos Menghitung Bintang:* Menghitung bintang di langit dipercaya bisa membuat seseorang tumbuh jerawat.', '🍀 *Mitos Daun Semanggi Berdaun Empat:* Menemukan daun semanggi berdaun empat dipercaya membawa keberuntungan.', '🔥 *Mitos Api Menyala Sendiri:* Api yang menyala tiba-tiba di malam hari sering dikaitkan dengan kehadiran roh halus.', '🎵 *Mitos Siulan di Malam Hari:* Bersiul di malam hari dipercaya dapat mengundang makhluk halus.', '🦎 *Mitos Cicak Jatuh di Kepala:* Jika cicak jatuh di kepala seseorang, dipercaya itu adalah pertanda buruk.', '🌺 *Mitos Bunga Sedap Malam:* Aroma bunga sedap malam sering dianggap sebagai tanda kehadiran makhluk halus.', '🪦 *Mitos Makam Baru:* Mengunjungi makam yang baru dibuat di malam hari dipercaya dapat membawa energi negatif.', '🧟 *Mitos Zombie di Haiti:* Dalam kepercayaan Voodoo Haiti, ada mitos tentang manusia yang dihidupkan kembali sebagai zombie oleh penyihir.', '🌟 *Mitos Cahaya Misterius di Malam Hari:* Cahaya aneh yang terlihat di malam hari sering dianggap sebagai roh yang sedang berkeliaran.', '🏞️ *Mitos Danau Berhantu:* Banyak danau di dunia yang dipercaya dihuni oleh roh penjaga atau makhluk mitos.', '🪶 *Mitos Bulu Putih:* Menemukan bulu putih dipercaya sebagai tanda bahwa malaikat sedang menjaga kita.', '🍃 *Mitos Angin Berhembus Kencang Tiba-Tiba:* Angin yang tiba-tiba berhembus kencang sering dianggap sebagai tanda kehadiran makhluk halus.', '🎭 *Mitos Topeng Berhantu:* Beberapa topeng tradisional dipercaya memiliki roh atau energi mistis yang kuat.', '🗿 *Mitos Patung Tua:* Patung tua sering dianggap memiliki roh atau kutukan di dalamnya.', '⚰️ *Mitos Peti Mati Bergerak:* Ada mitos di beberapa budaya bahwa peti mati bisa bergerak sendiri jika ada roh yang tidak tenang.', '🔔 *Mitos Lonceng Berbunyi Sendiri:* Jika lonceng berbunyi sendiri tanpa ada angin atau yang memukulnya, sering dianggap sebagai tanda roh yang ingin berkomunikasi.'];
+				const myths = ['🌕 *Mito de la Luna Llena:* Muchas personas creen que la luna llena puede influir en el comportamiento humano, causando locura y aumentando la criminalidad.', '🪞 *Mito del Espejo Roto:* Romper un espejo se cree que trae mala suerte durante 7 años.', '👻 *Mito del Fantasma en el Árbol de Higuera:* Los árboles de higuera suelen asociarse con seres espirituales y se cree que son el hogar de almas errantes.', '🐈‍⬛ *Mito del Gato Negro:* Ver un gato negro cruzar tu camino suele considerarse un mal presagio.', '💍 *Mito del Anillo en el Dedo Medio:* Usar un anillo en el dedo medio se cree que atrae energías positivas y buena suerte.', '🧂 *Mito de Derramar Sal:* Derramar sal se considera de mala suerte, a menos que se arroje sobre el hombro izquierdo.', '🔮 *Mito de la Bola de Cristal:* La bola de cristal suele asociarse con la capacidad de predecir el futuro.', '🎋 *Mito del Bambú:* Tener un árbol de bambú en casa se cree que atrae energía positiva y prosperidad.', '🌠 *Mito de la Estrella Fugaz:* Si ves una estrella fugaz y pides un deseo, se dice que se cumplirá.', '🐦 *Mito del Pájaro en Casa:* Un pájaro entrando a la casa a menudo se considera un presagio de visitas o noticias importantes.', '🌧️ *Mito de la Lluvia en una Boda:* Se cree que la lluvia en una boda es señal de buena suerte y felicidad.', '🍃 *Mito de la Hoja Cayendo en la Cabeza:* Si una hoja cae sobre tu cabeza, se dice que recibirás buena fortuna.', '🦉 *Mito del Búho:* Los búhos son vistos como símbolo de muerte o mal augurio en algunas culturas.', '🖤 *Mito del Color Negro:* El color negro suele asociarse con la mala suerte y la energía negativa.', '🌈 *Mito del Final del Arcoíris:* Se dice que hay un tesoro al final del arcoíris, pero nadie puede alcanzarlo.', '🌺 *Mito de las Flores que Crecen en las Tumbas:* Si las flores crecen abundantemente en una tumba, se cree que el alma del difunto está en paz.', '🏰 *Mito de los Castillos Encantados:* Muchos castillos antiguos en Europa se cree que están habitados por espíritus del pasado.', '💤 *Mito del Sueño con Dientes Caídos:* Soñar que se caen los dientes a menudo se considera un presagio de muerte en la familia.', '🌜 *Mito de Contar Estrellas:* Contar estrellas en el cielo se cree que puede hacer que aparezcan granos en el rostro.', '🍀 *Mito del Trébol de Cuatro Hojas:* Encontrar un trébol de cuatro hojas se considera un símbolo de buena suerte.', '🔥 *Mito del Fuego que se Enciende Solo:* Un fuego que se enciende de repente en la noche a menudo se asocia con la presencia de espíritus.', '🎵 *Mito del Silbido en la Noche:* Se dice que silbar en la noche puede atraer a los espíritus.', '🦎 *Mito del Lagarto Cayendo en la Cabeza:* Si un lagarto cae sobre tu cabeza, se cree que es un mal presagio.', '🌺 *Mito de la Flor de Nochebuena:* Su fragancia en la noche se asocia con la presencia de seres sobrenaturales.', '🪦 *Mito de la Tumba Nueva:* Visitar una tumba recién excavada de noche se cree que puede traer energía negativa.', '🧟 *Mito de los Zombis en Haití:* En la creencia vudú haitiana, existe el mito de personas revividas como zombis por brujos.', '🌟 *Mito de la Luz Misteriosa en la Noche:* Luces extrañas en la oscuridad a menudo se interpretan como almas errantes.', '🏞️ *Mito del Lago Encantado:* Muchos lagos en el mundo se cree que están habitados por guardianes espirituales o criaturas míticas.', '🪶 *Mito de la Pluma Blanca:* Encontrar una pluma blanca se interpreta como señal de protección angelical.', '🍃 *Mito del Viento Repentino:* Un viento fuerte que sopla de repente a menudo se considera señal de la presencia de espíritus.', '🎭 *Mito de la Máscara Embrujada:* Algunas máscaras tradicionales se cree que poseen energías espirituales o maldiciones.', '🗿 *Mito de la Estatua Antigua:* Las estatuas antiguas a menudo son vistas como portadoras de espíritus o maldiciones.', '⚰️ *Mito del Ataúd que se Mueve:* En algunas culturas, existe la creencia de que los ataúdes pueden moverse solos si el alma del difunto no está en paz.', '🔔 *Mito de la Campana que Suena Sola:* Si una campana suena sin razón aparente, se cree que es una señal de que un espíritu intenta comunicarse.'];
 				const randomMyth = myths[Math.floor(Math.random() * myths.length)];
-				shoNherly(`🪄 *Mitos Menarik*\n\n${randomMyth}`);
+				shoNherly(`🪄 *Mitos interesante*\n\n${randomMyth}`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -20436,9 +22504,57 @@ break;
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				const facts = ['🧠 Otak manusia dapat menghasilkan listrik yang cukup untuk menyalakan lampu kecil!', '🐼 Panda bisa menghabiskan sekitar 12 jam sehari hanya untuk makan bambu.', '🌕 Di bulan, jejak kaki manusia bisa bertahan selama jutaan tahun karena tidak ada angin atau hujan.', '🦄 Jerapah tidur hanya sekitar 10-30 menit sehari dan sering tidur sambil berdiri!', '🎵 Musik dapat meningkatkan suasana hati dan membantu mengurangi stres.', '🐢 Penyu sudah ada sejak zaman dinosaurus, sekitar lebih dari 200 juta tahun yang lalu.', '🍫 Cokelat bisa memicu hormon endorfin yang membuat seseorang merasa bahagia.', '🚀 Di luar angkasa, air mata tidak bisa jatuh karena gravitasi yang rendah!', '🔮 Lebih dari 70% permukaan Bumi ditutupi oleh air.', '🐝 Lebah bisa mengenali wajah manusia layaknya manusia mengenali wajah satu sama lain.', '🐧 Penguin adalah satu-satunya burung yang bisa berenang tetapi tidak bisa terbang.', '🦷 Gigi adalah satu-satunya bagian tubuh manusia yang tidak bisa memperbaiki dirinya sendiri.', '🐌 Siput bisa tidur hingga 3 tahun lamanya!', '🔑 Sidik jari koala sangat mirip dengan sidik jari manusia.', '🌍 Bumi adalah satu-satunya planet yang tidak dinamai berdasarkan nama dewa atau dewi.', '🐟 Ikan mas memiliki ingatan yang lebih baik daripada yang orang pikirkan, mereka bisa mengingat sesuatu hingga beberapa bulan.', '🦇 Kelelawar adalah satu-satunya mamalia yang bisa terbang.', '🎤 Hati manusia berdetak sekitar 100.000 kali sehari.', '🌈 Tidak ada dua pelangi yang benar-benar sama, setiap orang melihat pelangi dengan sudut pandang berbeda.', '📱 Lebih banyak orang di dunia memiliki akses ke ponsel daripada toilet bersih.', '🌋 Di Islandia, ada lebih dari 100 gunung berapi aktif.', '💧 Air panas bisa membeku lebih cepat daripada air dingin dalam kondisi tertentu (Efek Mpemba).', '⚡ Petir lebih panas dari permukaan matahari.', '🦩 Flamingo mendapatkan warna pink dari makanan yang mereka makan, yaitu udang.', '🐇 Kelinci tidak bisa muntah.', '🧊 Antartika adalah gurun terbesar di dunia meskipun tertutup es.', '🐜 Semut tidak memiliki paru-paru, mereka bernapas melalui pori-pori kecil di tubuh mereka.', '🌟 Cahaya dari bintang yang kita lihat mungkin sudah tidak ada lagi karena bintang tersebut bisa saja sudah mati.', '🕷️ Laba-laba bisa menghasilkan sutra yang lebih kuat daripada baja dengan berat yang sama.', '🐨 Koala tidur hingga 20 jam sehari.', '🦁 Singa betina lebih sering berburu dibandingkan singa jantan.', '🐍 Ular bisa tidur dengan mata terbuka karena mereka tidak memiliki kelopak mata.', '🧠 Otak manusia terdiri dari sekitar 75% air.', '🐦 Burung kolibri adalah satu-satunya burung yang bisa terbang mundur.', '🎮 Bermain video game bisa meningkatkan koordinasi tangan dan mata.', '📖 Orang yang membaca buku secara rutin cenderung lebih empatik dan mudah memahami perasaan orang lain.', '🎭 Tertawa dapat meningkatkan sistem kekebalan tubuh.', '🌠 Rata-rata ada 44 petir yang menyambar permukaan bumi setiap detik.', '🦜 Burung beo bisa meniru suara manusia karena memiliki struktur otot vokal yang unik.', '🐴 Kuda bisa tidur sambil berdiri.', '🐶 Anjing bisa memahami lebih dari 150 kata manusia.', '🌬️ Angin terkuat yang pernah tercatat di Bumi memiliki kecepatan 372 km/jam.', '🍯 Madu adalah satu-satunya makanan yang tidak pernah basi.', '🦀 Kepiting bisa berjalan ke samping karena struktur tubuh dan kakinya.', '🌌 Ada lebih banyak bintang di alam semesta daripada butiran pasir di semua pantai di Bumi.', '🐉 Komodo adalah kadal terbesar di dunia.', '🏊‍♂️ Manusia bisa bertahan tanpa makanan selama berminggu-minggu, tetapi hanya beberapa hari tanpa air.', '🦎 Jika ekor cicak putus, ekornya akan tumbuh kembali.', '🚀 Sebagian besar debu di rumah berasal dari kulit mati manusia.'];
+				const facts = ['🧠 ¡El cerebro humano puede generar suficiente electricidad para encender una pequeña lámpara!',
+'🐼 Los pandas pueden pasar alrededor de 12 horas al día solo comiendo bambú.',
+'🌕 En la Luna, las huellas humanas pueden durar millones de años porque no hay viento ni lluvia.',
+'🦄 Las jirafas duermen solo entre 10 y 30 minutos al día y, a menudo, lo hacen de pie.',
+'🎵 La música puede mejorar el estado de ánimo y ayudar a reducir el estrés.',
+'🐢 Las tortugas existen desde la época de los dinosaurios, hace más de 200 millones de años.',
+'🍫 El chocolate puede estimular la liberación de endorfinas, lo que hace que las personas se sientan felices.',
+'🚀 En el espacio, las lágrimas no caen debido a la baja gravedad.',
+'🔮 Más del 70% de la superficie de la Tierra está cubierta de agua.',
+'🐝 Las abejas pueden reconocer rostros humanos, al igual que los humanos reconocen a otras personas.',
+'🐧 Los pingüinos son las únicas aves que pueden nadar, pero no volar.',
+'🦷 Los dientes son la única parte del cuerpo humano que no puede repararse por sí misma.',
+'🐌 ¡Un caracol puede dormir hasta 3 años seguidos!',
+'🔑 Las huellas dactilares de los koalas son muy similares a las de los humanos.',
+'🌍 La Tierra es el único planeta que no lleva el nombre de un dios o diosa.',
+'🐟 Los peces dorados tienen mejor memoria de lo que la gente piensa, pueden recordar cosas durante varios meses.',
+'🦇 Los murciélagos son los únicos mamíferos que pueden volar.',
+'🎤 El corazón humano late aproximadamente 100,000 veces al día.',
+'🌈 No hay dos arcoíris exactamente iguales, cada persona los ve desde un ángulo diferente.',
+'📱 Más personas en el mundo tienen acceso a un teléfono móvil que a un inodoro limpio.',
+'🌋 En Islandia, hay más de 100 volcanes activos.',
+'💧 El agua caliente puede congelarse más rápido que el agua fría en ciertas condiciones (Efecto Mpemba).',
+'⚡ Un rayo es más caliente que la superficie del Sol.',
+'🦩 Los flamencos obtienen su color rosado de los camarones que comen.',
+'🐇 Los conejos no pueden vomitar.',
+'🧊 La Antártida es el desierto más grande del mundo, a pesar de estar cubierta de hielo.',
+'🐜 Las hormigas no tienen pulmones, respiran a través de pequeños orificios en sus cuerpos.',
+'🌟 La luz de las estrellas que vemos puede provenir de estrellas que ya han muerto.',
+'🕷️ Las arañas pueden producir seda más fuerte que el acero del mismo peso.',
+'🐨 Los koalas duermen hasta 20 horas al día.',
+'🦁 Las leonas cazan con más frecuencia que los leones machos.',
+'🐍 Las serpientes pueden dormir con los ojos abiertos porque no tienen párpados.',
+'🧠 El cerebro humano está compuesto en un 75% de agua.',
+'🐦 Los colibríes son las únicas aves que pueden volar hacia atrás.',
+'🎮 Jugar videojuegos puede mejorar la coordinación entre manos y ojos.',
+'📖 Las personas que leen libros con frecuencia tienden a ser más empáticas y comprensivas.',
+'🎭 Reír fortalece el sistema inmunológico.',
+'🌠 En promedio, caen 44 rayos sobre la Tierra cada segundo.',
+'🦜 Los loros pueden imitar la voz humana gracias a su estructura muscular vocal única.',
+'🐴 Los caballos pueden dormir de pie.',
+'🐶 Los perros pueden entender más de 150 palabras humanas.',
+'🌬️ El viento más fuerte registrado en la Tierra alcanzó los 372 km/h.',
+'🍯 La miel es el único alimento que nunca se echa a perder.',
+'🦀 Los cangrejos caminan de lado debido a la estructura de su cuerpo y patas.',
+'🌌 Hay más estrellas en el universo que granos de arena en todas las playas de la Tierra.',
+'🐉 El dragón de Komodo es el lagarto más grande del mundo.',
+'🏊‍♂️ Los humanos pueden sobrevivir semanas sin comida, pero solo unos días sin agua.',
+'🦎 Si una lagartija pierde su cola, esta vuelve a crecer.',
+'🚀 La mayor parte del polvo en una casa proviene de la piel muerta humana.'];
 				const randomFact = facts[Math.floor(Math.random() * facts.length)];
-				shoNherly(`🧠 *Fakta Unik*\n\n${randomFact}`);
+				shoNherly(`🧠 *Hechos únicos*\n\n${randomFact}`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -20482,15 +22598,15 @@ break;
 				if (!isBotAdmins) return shoNherly(mess.abots);
 				if (args[0] === 'close')
 				{
-					await shoNhe.groupSettingUpdate(m.chat, 'announcement').then(() => shoNherly('✅ Grup berhasil ditutup, hanya admin yang bisa mengirim pesan sekarang! 🔒')).catch((err) => shoNherly(`⚠️ Gagal menutup grup: ${err}`));
+					await shoNhe.groupSettingUpdate(m.chat, 'announcement').then(() => shoNherly('✅ El grupo se cerró con éxito, ¡ahora solo los administradores pueden enviar mensajes! 🔒')).catch((err) => shoNherly(`⚠️ No se pudo cerrar el grupo: ${err}`));
 				}
 				else if (args[0] === 'open')
 				{
-					await shoNhe.groupSettingUpdate(m.chat, 'not_announcement').then(() => shoNherly('✅ Grup berhasil dibuka, semua anggota bisa mengirim pesan sekarang! 🔓')).catch((err) => shoNherly(`⚠️ Gagal membuka grup: ${err}`));
+					await shoNhe.groupSettingUpdate(m.chat, 'not_announcement').then(() => shoNherly('✅ ¡El grupo se abrió correctamente, todos los miembros pueden enviar mensajes ahora! 🔓')).catch((err) => shoNherly(`⚠️ No se pudo abrir el grupo: ${err}`));
 				}
 				else
 				{
-					botsett = `⚙️ SETTINGS YOUR GROUP`
+					botsett = `⚙️ CONFIGURACIÓN DE SU GRUPO`
 					let msg = generateWAMessageFromContent(m.chat,
 					{
 						viewOnceMessage:
@@ -20524,7 +22640,7 @@ break;
 											"jpegThumbnail": fs.readFileSync("./ShoNheMedia/image/owner.jpg"), //Format gambar harus 300x300 (jika beda tidak akan keluar
 											"fileLength": 120000,
 											"mediaKey": "SkHeALp42Ch7DGb6nuV6p7hxL+V9yjh9s9t3Ox8a72o=",
-											"fileName": `GROUP SETTINGS`,
+											"fileName": `AJUSTES DE GRUPO`,
 											"directPath": "/v/t62.7119-24/30129597_829817659174206_6300413901737393729_n.enc?ccb=11-4&oh=01_Q5AaIA5MAdyMQOjp8l42SnRy_8qjz9O8JH8vgPee1nIdko51&oe=66595EB9&_nc_sid=5e03e0",
 											"contactVcard": true,
 											"mediaKeyTimestamp": "1658703206"
@@ -20536,78 +22652,80 @@ break;
 										{
 											"name": "single_select",
 											"buttonParamsJson": `{
-												"title": "Group Settings",
-												"sections": [{
-													"title": "Select Settimgs",
-													"rows": [{
-														"title": "⭐OPEN GROUP",
-														"description": "Bot akan membuka grup",
-														"id": "${prefix}grup open"
-													},
-													{
-														"title": "🌕 CLOSE GROUP",
-														"description": "Bot akan menutup grup",
-														"id": "${prefix}grup close"
-													},
-													{
-														"title": "⚡ WELCOME ON",
-														"description": "Bot akan bot akan mengirim pesan welcome grup",
-														"id": "${prefix}welkom on"
-													},
-													{
-														"title": "🍄 WELCOME OFF",
-														"description": "Bot akan mematikan welcome grup",
-														"id": "${prefix}welkom off"
-													},
-													{
-														"title": "⚓ GROUP-EVENT ON",
-														"description": "Bot akan memberi pesan ketika mengganti sesuatu",
-														"id": "${prefix}groupevent on"
-													},
-													{
-														"title": "🪨 GROUP-EVENT OFF",
-														"description": "Bot akan mematikan groupevent",
-														"id": "${prefix}groupevent off"
-													},
-													{
-														"title": "🛸 ADMIN-EVENT ON",
-														"description": "Bot akan menyalakan adminevent grup",
-														"id": "${prefix}adminevent on"
-													},
-													{
-														"title": "📝 ADMIN-EVENT OFF",
-														"description": "Bot akan mematikan adminvent",
-														"id": "${prefix}adminevent off"
-													},
-													{
-														"title": "🤖 ANTI SPAM ON",
-														"description": "Bot akan menyalakan antispam grup",
-														"id": "${prefix}antispam true"
-													},
-													{
-														"title": "🔧 ANTI SPAM OFF",
-														"description": "Bot akan mematikan antispam",
-														"id": "${prefix}antispam false"
-													},
-													{
-														"title": "🔥 ANTILINK ON",
-														"description": "Bot akan menyalakan antilink",
-														"id": "${prefix}antilink true"
-													},
-													{
-														"title": "💣 ANTILINK OFF",
-														"description": "Bot akan mematikan antilink",
-														"id": "${prefix}antilink false"
-													},
-													{
-														"title": "🪡 ANTILINKGC ON",
-														"description": "Bot akan menyalakan antilink grup",
-														"id": "${prefix}antilinkgc true"
-													},
-													{
-														"title": "📛 ANTILINKGC OFF",
-														"description": "Bot akan mematikan antilink group",
-														"id": "${prefix}antilinkgc false"
+												"title": "Configuración del Grupo",
+  "sections": [
+    {
+      "title": "Selecciona Configuración",
+      "rows": [
+        {
+          "title": "⭐ ABRIR GRUPO",
+          "description": "El bot abrirá el grupo",
+          "id": "${prefix}grup open"
+        },
+        {
+          "title": "🌕 CERRAR GRUPO",
+          "description": "El bot cerrará el grupo",
+          "id": "${prefix}grup close"
+        },
+        {
+          "title": "⚡ BIENVENIDA ACTIVADA",
+          "description": "El bot enviará mensajes de bienvenida en el grupo",
+          "id": "${prefix}welkom on"
+        },
+        {
+          "title": "🍄 BIENVENIDA DESACTIVADA",
+          "description": "El bot desactivará los mensajes de bienvenida",
+          "id": "${prefix}welkom off"
+        },
+        {
+          "title": "⚓ EVENTO DE GRUPO ACTIVADO",
+          "description": "El bot enviará mensajes cuando se realicen cambios",
+          "id": "${prefix}groupevent on"
+        },
+        {
+          "title": "🪨 EVENTO DE GRUPO DESACTIVADO",
+          "description": "El bot desactivará los eventos del grupo",
+          "id": "${prefix}groupevent off"
+        },
+        {
+          "title": "🛸 EVENTO ADMIN ACTIVADO",
+          "description": "El bot activará los eventos de administradores",
+          "id": "${prefix}adminevent on"
+        },
+        {
+          "title": "📝 EVENTO ADMIN DESACTIVADO",
+          "description": "El bot desactivará los eventos de administradores",
+          "id": "${prefix}adminevent off"
+        },
+        {
+          "title": "🤖 ANTI-SPAM ACTIVADO",
+          "description": "El bot activará el anti-spam en el grupo",
+          "id": "${prefix}antispam true"
+        },
+        {
+          "title": "🔧 ANTI-SPAM DESACTIVADO",
+          "description": "El bot desactivará el anti-spam",
+          "id": "${prefix}antispam false"
+        },
+        {
+          "title": "🔥 ANTI-ENLACES ACTIVADO",
+          "description": "El bot activará el anti-enlaces",
+          "id": "${prefix}antilink true"
+        },
+        {
+          "title": "💣 ANTI-ENLACES DESACTIVADO",
+          "description": "El bot desactivará el anti-enlaces",
+          "id": "${prefix}antilink false"
+        },
+        {
+          "title": "🪡 ANTI-ENLACES DE GRUPOS ACTIVADO",
+          "description": "El bot activará la protección contra enlaces de grupos",
+          "id": "${prefix}antilinkgc true"
+        },
+        {
+          "title": "📛 ANTI-ENLACES DE GRUPOS DESACTIVADO",
+          "description": "El bot desactivará la protección contra enlaces de grupos",
+          "id": "${prefix}antilinkgc false"
 													}]
 												}]
 											}`
@@ -20620,12 +22738,12 @@ break;
 										mentionedJid: [m.sender],
 										forwardedNewsletterMessageInfo:
 										{
-											newsletterName: `© ShoNhe Botz`,
+											newsletterName: `© TechFix Botz`,
 											newsletterJid: idsaluran
 										},
 										externalAdReply:
 										{
-											title: `GROUP 🔧`,
+											title: `GRUPO 🔧`,
 											body: "",
 											showAdAttribution: true,
 											thumbnail: fs.readFileSync("./ShoNheMedia/image/sett.png"),
@@ -20692,12 +22810,12 @@ break;
 				if (args[0] === 'on')
 				{
 					global.welcome = true
-					shoNherly(`${command} is enabled`)
+					shoNherly(`${command} está habilitado`)
 				}
 				else if (args[0] === 'off')
 				{
 					global.welcome = false
-					shoNherly(`${command} is disabled`)
+					shoNherly(`${command} esta deshabilitado`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -21093,6 +23211,7 @@ break;
 			}
 			break
 			case 'yts':
+			case 'ytbuscar':
 			case 'ytsearch':
 			{
 				if (!isRegistered(m))
@@ -21101,19 +23220,19 @@ break;
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly(`Example : ${prefix + command} story wa anime`);
+				if (!text) return shoNherly(`Ejemplo : ${prefix + command} historia de anime`);
 				try
 				{
 					// Cari hasil di YouTube menggunakan API
 					let search = await yts(text);
-					if (!search.all.length) return shoNherly("Tidak ada hasil pencarian ditemukan!");
+					if (!search.all.length) return shoNherly("¡No se encontraron resultados de búsqueda!");
 					if (!(await firely(m, mess.waits))) return;
 					// Batasi hasil pencarian ke 10 item teratas dan siapkan carousel card
 					const carouselCards = await Promise.all(search.all.slice(0, 10).map(async (video, index) => (
 					{
 						header:
 						{
-							title: `Hasil ${index + 1}`,
+							title: `Resultados ${index + 1}`,
 							hasMediaAttachment: true,
 							imageMessage: (await generateWAMessageContent(
 							{
@@ -21128,29 +23247,27 @@ break;
 						},
 						body:
 						{
-							text: `🎥 *Judul:* ${video.title}\n👁 *Views:* ${video.views}\n⏱ *Durasi:* ${video.timestamp}\n📆 *Diupload:* ${video.ago}\n📝 *Url:* ${video.url}`
+							text: `🎥 *Título:* ${video.title}\n👁 *Vistas:* ${video.views}\n⏱ *Duración:* ${video.timestamp}\n📆 *Subido:* ${video.ago}\n📝 *URL:* ${video.url}`
 						},
 						footer:
 						{
-							text: `Klik tombol di bawah untuk melihat atau salin tautan.`
+							text: `Haga clic en el botón a continuación para copiar el enlace.`
 						},
 						nativeFlowMessage:
 						{
 							buttons: [
 							{
-								"name": "cta_url",
-								"buttonParamsJson": JSON.stringify(
-								{
-									"display_text": "LIHAT VIDEO 🎬",
-									"url": `${video.url}`
-								})
-							},
-							{
-								"name": "cta_copy",
-								"buttonParamsJson": JSON.stringify(
-								{
-									"display_text": "SALIN URL 📝",
-									"copy_code": `${video.url}`
+            "name": "cta_copy",
+            "buttonParamsJson": JSON.stringify({
+            "display_text": "🎵MUSICA🎵",
+            "copy_code": `${prefix}ytmp3 ${video.url}`
+            })
+          },
+          {
+            "name": "cta_copy",
+            "buttonParamsJson": JSON.stringify({
+            "display_text": "📺VIDEO📺",
+            "copy_code": `${prefix}ytmp4 ${video.url}`
 								})
 							}]
 						}
@@ -21172,11 +23289,11 @@ break;
 								{
 									body:
 									{
-										text: `🔎 *Hasil pencarian YouTube untuk:* _${text}_`
+										text: `🔎 *Resultados de búsqueda de YouTube para:* _${text}_`
 									},
 									footer:
 									{
-										text: `YouTube Bot by ShoNhe`
+										text: `YouTube Bot by ManuDiaz`
 									},
 									header:
 									{
@@ -21199,10 +23316,10 @@ break;
 				}
 				catch (e)
 				{
-					console.error("Kesalahan saat memproses permintaan YouTube Search:", e);
+					console.error("Error al procesar la solicitud de búsqueda de YouTube:", e);
 					await shoNhe.sendMessage(m.chat,
 					{
-						text: "❌ Terjadi kesalahan saat memproses pencarian YouTube. Silakan coba lagi."
+						text: "❌ Se produjo un error al procesar una búsqueda en YouTube. Por favor inténtalo de nuevo."
 					},
 					{
 						quoted: hw
@@ -21252,7 +23369,7 @@ break;
 				{
 					if (!(await firely(m, mess.waits))) return;
 					const search = await yts(`${text}`);
-					if (!search || search.all.length === 0) return shoNherly(`*Lagu tidak ditemukan!* ☹️`);
+					if (!search || search.all.length === 0) return shoNherly(`*¡Canción no encontrada!* ☹️`);
 					const
 					{
 						videoId,
@@ -22001,55 +24118,55 @@ break;
 				{
 					if (!mime && !text)
 					{
-						return shoNherly(`Oon! Lu belum kirim media atau teks apa pun. Coba lagi ya!`)
+						return shoNherly(`¡Oon! No has enviado ningún medio ni texto. ¡Intenta de nuevo, novato!`)
 					}
 					media = mime ? await quoted.download() : null
-					let defaultCaption = "🐬 Media ini dikirim melalui sistem otomatis ShoNhe! ⭐"
+					let defaultCaption = "🐬 ¡Este medio fue enviado mediante el sistema automático de TechFix! ⭐"
 					if (/image/.test(mime))
 					{
-						shoNhe.sendMessage('120363383347233294@newsletter',
+						shoNhe.sendMessage('12036338334723329@newsletter',
 						{
 							image: media,
 							caption: text ? text : defaultCaption
 						})
-						shoNherly(`📸 Gambar berhasil diunggah ke saluran dengan caption: "${text ? text : defaultCaption}"`)
+						shoNherly(`📸 La imagen se subió exitosamente al canal con el caption: "${text ? text : defaultCaption}"`)
 					}
 					else if (/video/.test(mime))
 					{
-						shoNhe.sendMessage('120363383347233294@newsletter',
+						shoNhe.sendMessage('12036338334723329@newsletter',
 						{
 							video: media,
 							caption: text ? text : defaultCaption
 						})
-						shoNherly(`🎥 Video berhasil diunggah ke saluran dengan caption: "${text ? text : defaultCaption}"`)
+						shoNherly(`🎥 El video se subió exitosamente al canal con el titulo: "${text ? text : defaultCaption}"`)
 					}
 					else if (/audio/.test(mime))
 					{
-						shoNhe.sendMessage('120363383347233294@newsletter',
+						shoNhe.sendMessage('12036338334723329@newsletter',
 						{
 							audio: media,
 							mimetype: mime,
 							ptt: true
 						})
-						shoNherly(`🎵 Audio berhasil diunggah ke saluran, cik!`)
+						shoNherly(`🎵 El audio se subió exitosamente al canal, cik!`)
 					}
 					else if (/text/.test(mime) || text)
 					{
-						shoNhe.sendMessage('120363383347233294@newsletter',
+						shoNhe.sendMessage('12036338334723329@newsletter',
 						{
 							text: text ? text : defaultCaption
 						})
-						shoNherly(`💬 Pesan teks berhasil dikirim ke saluran: "${text ? text : defaultCaption}"`)
+						shoNherly(`💬 El mensaje de texto se envió correctamente al canal: "${text ? text : defaultCaption}"`)
 					}
 					else
 					{
-						shoNherly(`Bjirlaah ShoNhe gak tau ini jenis media apa. Coba dicek lagi ya, Anjg! 🧐`)
+						shoNherly(`¡Diablos! TechFix no tiene idea de qué tipo de medio es esto. ¡Échale otro vistazo, caray! 🧐`)
 					}
 				}
 				catch (error)
 				{
 					console.error(error)
-					shoNherly(`Alamak! 😣 Ada masalah waktu unggah ke saluran. Coba lagi nanti ya!`)
+					shoNherly(`¡Ay no! 😣 Ocurrió un problema al subir al canal. ¡Inténtalo de nuevo más tarde!`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -22093,10 +24210,10 @@ break;
 				{
 					if (!mime && !text)
 					{
-						return shoNherly(`Oon! Lu belum kirim media atau teks apa pun. Coba lagi ya!`);
+						return shoNherly(`¡Oye, cabeza hueca! No has enviado ningún texto ni medio. ¡Inténtalo otra vez!`);
 					}
 					const media = mime ? await quoted.download() : null;
-					const defaultCaption = "🐬 Media ini dikirim melalui sistem otomatis ShoNhe! ⭐";
+					const defaultCaption = "🐬 ¡Este medio fue enviado automáticamente por el sistema TechFix! ⭐";
 					if (/image/.test(mime))
 					{
 						const repshow = {
@@ -22104,11 +24221,7 @@ break;
 							{
 								forwardingScore: 1,
 								isForwarded: true,
-								forwardedNewsletterMessageInfo:
-								{
-									newsletterName: namabot,
-									newsletterJid: idsaluran,
-								},
+								
 								externalAdReply:
 								{
 									showAdAttribution: true,
@@ -22123,11 +24236,11 @@ break;
 							image: media,
 							caption: text ? text : defaultCaption,
 						};
-						shoNhe.sendMessage('120363383347233294@newsletter', repshow,
+						shoNhe.sendMessage('12036338334723329@newsletter', repshow,
 						{
 							quoted: hw
 						});
-						shoNherly(`📸 Gambar berhasil diunggah ke saluran dengan caption: "${text ? text : defaultCaption}"`);
+						shoNherly(`📸 La imagen se subió exitosamente al canal con el titulo: "${text ? text : defaultCaption}"`);
 					}
 					else if (/video/.test(mime))
 					{
@@ -22136,11 +24249,7 @@ break;
 							{
 								forwardingScore: 1,
 								isForwarded: true,
-								forwardedNewsletterMessageInfo:
-								{
-									newsletterName: namabot,
-									newsletterJid: idsaluran,
-								},
+								
 								externalAdReply:
 								{
 									showAdAttribution: true,
@@ -22156,11 +24265,11 @@ break;
 							caption: text ? text : defaultCaption,
 							mimetype: mime,
 						};
-						shoNhe.sendMessage('120363383347233294@newsletter', repshow,
+						shoNhe.sendMessage('12036338334723329@newsletter', repshow,
 						{
 							quoted: hw
 						});
-						shoNherly(`🎥 Video berhasil diunggah ke saluran dengan caption: "${text ? text : defaultCaption}"`);
+						shoNherly(`🎥 El video se subió exitosamente al canal con el titulo: "${text ? text : defaultCaption}"`);
 					}
 					else if (/audio/.test(mime))
 					{
@@ -22169,11 +24278,7 @@ break;
 							{
 								forwardingScore: 1,
 								isForwarded: true,
-								forwardedNewsletterMessageInfo:
-								{
-									newsletterName: namabot,
-									newsletterJid: idsaluran,
-								},
+								
 								externalAdReply:
 								{
 									showAdAttribution: true,
@@ -22189,11 +24294,11 @@ break;
 							mimetype: mime,
 							ptt: true, // Ubah ke true jika ingin dikirim sebagai pesan suara
 						};
-						shoNhe.sendMessage('120363383347233294@newsletter', repshow,
+						shoNhe.sendMessage('12036338334723329@newsletter', repshow,
 						{
 							quoted: hw
 						});
-						shoNherly(`🎵 Audio berhasil diunggah ke saluran, cik!`);
+						shoNherly(`🎵 El audio se subió exitosamente al canal, cik!`);
 					}
 					else if (/text/.test(mime) || text)
 					{
@@ -22202,11 +24307,7 @@ break;
 							{
 								forwardingScore: 1,
 								isForwarded: true,
-								forwardedNewsletterMessageInfo:
-								{
-									newsletterName: namabot,
-									newsletterJid: idsaluran,
-								},
+								
 								externalAdReply:
 								{
 									showAdAttribution: true,
@@ -22220,21 +24321,21 @@ break;
 							},
 							text: text ? text : defaultCaption,
 						};
-						shoNhe.sendMessage('120363383347233294@newsletter', repshow,
+						shoNhe.sendMessage('12036338334723329@newsletter', repshow,
 						{
 							quoted: hw
 						});
-						shoNherly(`💬 Pesan teks berhasil dikirim ke saluran: "${text ? text : defaultCaption}"`);
+						shoNherly(`💬 El mensaje de texto se envió exitosamente al canal: "${text ? text : defaultCaption}"`);
 					}
 					else
 					{
-						shoNherly(`Bjirlaah shoNhe gak tau ini jenis media apa. Coba dicek lagi ya, Anjg! 🧐`);
+						shoNherly(`¡Diablos! TechFix no tiene idea de qué tipo de medio es esto. ¡Échale otro vistazo, caray! 🧐`);
 					}
 				}
 				catch (error)
 				{
 					console.error(error);
-					shoNherly(`Alamak! 😣 Ada masalah waktu unggah ke saluran. Coba lagi nanti ya!`);
+					shoNherly(`⚠️ Ay no! 😣 Hubo un problema al subir al canal. ¡Intenta de nuevo más tarde, ya!`);
 				}
 				}
 			break
@@ -22247,7 +24348,7 @@ break;
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly("nomor?")
+				if (!text) return shoNherly("¿número?")
 				if (!isShoNheOwn) return shoNherly(mess.owners)
 				let dir = await fs.readdirSync("./database/sampah")
 				if (dir.length >= 2)
@@ -22258,8 +24359,8 @@ break;
 						await fs.unlinkSync(`./database/sampah/${i}`)
 					}
 				}
-				await shoNherly(`proses pengiriman ke ${text}`)
-				var name = `shoNheBotz` //gausah diganti njir🗿
+				await shoNherly(`Proceso de envío a ${text}`)
+				var name = `TechFixBotz` //gausah diganti njir🗿
 				const ls = (await execSync("ls")).toString().split("\n").filter(
 					(pe) => pe != "node_modules" && pe != "session" && pe != "package-lock.json" && pe != "yarn.lock" && pe != "")
 				const anu = await execSync(`zip -r ${name}.zip ${ls.join(" ")}`)
@@ -22273,7 +24374,7 @@ break;
 					quoted: m
 				})
 				await execSync(`rm -rf ${name}.zip`)
-				if (m.chat !== m.sender) return shoNherly(`Script bot berhasil dikirim ke ${text}`)
+				if (m.chat !== m.sender) return shoNherly(`El script del bot se ha enviado con éxito a ${text}`)
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -22316,10 +24417,10 @@ break;
 				{
 					if (!mime && !text)
 					{
-						return shoNherly(`Oon, lu belum kirim media atau teks apa pun. Coba lagi ya! 🤭`)
+						return shoNherly(`Oon, no has enviado ningún medio o texto. ¡Inténtalo de nuevo! 🤭`)
 					}
 					media = mime ? await quoted.download() : null
-					let defaultCaption = "🪀 Media ini dikirim melalui sistem otomatis shoNhe!"
+					let defaultCaption = "🪀 Este medio fue enviado a través del sistema automático de TechFix!"
 					if (/image/.test(mime))
 					{
 						shoNhe.sendMessage(saluran,
@@ -22327,7 +24428,7 @@ break;
 							image: media,
 							caption: text ? text : defaultCaption
 						})
-						shoNherly(`📸 Gambar berhasil diunggah ke saluran dengan caption: "${text ? text : defaultCaption}"`)
+						shoNherly(`📸 Imagen subida exitosamente al canal con el titulo de foto: "${text ? text : defaultCaption}"`)
 					}
 					else if (/video/.test(mime))
 					{
@@ -22336,7 +24437,7 @@ break;
 							video: media,
 							caption: text ? text : defaultCaption
 						})
-						shoNherly(`🎥 Video berhasil diunggah ke saluran dengan caption: "${text ? text : defaultCaption}"`)
+						shoNherly(`🎥 Video subido exitosamente al canal con el titulo de foto: "${text ? text : defaultCaption}"`)
 					}
 					else if (/audio/.test(mime))
 					{
@@ -22346,7 +24447,7 @@ break;
 							mimetype: mime,
 							ptt: true
 						})
-						shoNherly(`🎵 Audio berhasil diunggah ke saluran, cik!`)
+						shoNherly(`🎵 Audio subido exitosamente al canal, cik!`)
 					}
 					else if (/text/.test(mime) || text)
 					{
@@ -22354,17 +24455,17 @@ break;
 						{
 							text: text ? text : defaultCaption
 						})
-						shoNherly(`💬 Pesan teks berhasil dikirim ke saluran: "${text ? text : defaultCaption}"`)
+						shoNherly(`💬 Mensaje de texto enviado exitosamente al canal: "${text ? text : defaultCaption}"`)
 					}
 					else
 					{
-						shoNherly(`Hmm... shoNhe gak tau ini jenis media apa. Coba dicek lagi ya, cik! 🧐`)
+						shoNherly(`🤔 Hmm... TechFix no reconoce qué tipo de archivo es este. ¡Revisa bien el medio, cik!`)
 					}
 				}
 				catch (error)
 				{
 					console.error(error)
-					shoNherly(`Alamak! 😣 Ada masalah waktu unggah ke saluran. Coba lagi nanti ya!`)
+					shoNherly(`!Ay no! 😣 Hubo un problema al subir al canal. ¡Intenta de nuevo más tarde, ya!`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -22416,7 +24517,7 @@ break;
 				if (db[sender] && db[sender].register)
 				{
 					// Jika pengguna sudah terdaftar
-					shoNherly(`⚠️ Anda sudah terdaftar sebelumnya.\n\n📜 Informasi Anda:\n- Role: ${db[sender].role}\n- Limit: ${db[sender].limit}\n- Seri: ${db[sender].registrationSeries}\n- Level: ${db[sender].level}\n- Exp: ${db[sender].exp}/${db[sender].expTarget}\n- Command Count: ${db[sender].commandCount}`);
+					shoNherly(`⚠️ Ya te has registrado antes.\n\n📜 Tu información:\n- Rol: ${db[sender].role}\n- Limite: ${db[sender].limit}\n- Serie: ${db[sender].registrationSeries}\n- Nivel: ${db[sender].level}\n- Exp: ${db[sender].exp}/${db[sender].expTarget}\n- Recuento de comandos: ${db[sender].commandCount}`);
 				}
 				else
 				{
@@ -22437,7 +24538,7 @@ break;
 						balance: 0 // Saldo awal
 					};
 					saveUserFire(db); // Simpan data pengguna ke database
-					shoNherly(`🎉 Registrasi berhasil!\n\n📜 Informasi Anda:\n- Role: ${role}\n- Limit: ${limit}\n- Seri: ${registrationSeries}\n- Level: 0\n- Exp: 0/10\n- Command Count: 0\n- Saldo: 0`);
+					shoNherly(`🎉 ¡Registro exitoso!\n\n📜 Tu información:\n- Rol: ${role}\n- Limite: ${limit}\n- Serie: ${registrationSeries}\n- Nivel: 0\n- Exp: 0/10\n- Recuento de comandos: 0\n- Saldo: 0`);
 				}
 			}
 			break;
@@ -22454,10 +24555,10 @@ break;
 				{
 					if (!mime && !text)
 					{
-						return shoNherly(`Oon, lu belum kirim media atau teks apa pun. Coba lagi ya! 🤭`)
+						return shoNherly(`Oon, no has enviado ningún medio o texto. ¡Inténtalo de nuevo! 🤭`)
 					}
 					media = mime ? await quoted.download() : null
-					let defaultCaption = "🪨 Media ini dikirim melalui sistem otomatis shoNhe! 🍏"
+					let defaultCaption = "🪨 Este medio fue enviado a través del sistema automático de TechFix! 🍏"
 					const buttons = [
 					{
 						buttonId: `${prefix}about`,
@@ -22483,7 +24584,7 @@ break;
 							buttons: buttons,
 							viewOnce: true
 						})
-						shoNherly(`📸 Gambar berhasil diunggah ke saluran dengan caption: "${text ? text : defaultCaption}"`)
+						shoNherly(`📸 La imagen se ha subido al canal con la siguiente descripción: "${text ? text : defaultCaption}"`)
 					}
 					else if (/video/.test(mime))
 					{
@@ -22495,7 +24596,7 @@ break;
 							buttons: buttons,
 							viewOnce: true
 						})
-						shoNherly(`🎥 Video berhasil diunggah ke saluran dengan caption: "${text ? text : defaultCaption}"`)
+						shoNherly(`🎥 El video se ha subido al canal con la siguiente descripción: "${text ? text : defaultCaption}"`)
 					}
 					else if (/text/.test(mime) || text)
 					{
@@ -22506,17 +24607,17 @@ break;
 							buttons: buttons,
 							viewOnce: true
 						})
-						shoNherly(`💬 Pesan teks berhasil dikirim ke saluran: "${text ? text : defaultCaption}"`)
+						shoNherly(`💬 El mensaje de texto se ha enviado al canal: "${text ? text : defaultCaption}"`)
 					}
 					else
 					{
-						shoNherly(`Hmm... shoNhe gak tau ini jenis media apa. Coba dicek lagi ya, cil! 🧐`)
+						shoNherly(`Hmm... TechFix no sabe qué tipo de medio es este. ¡Revisa de nuevo, novato! 🧐`)
 					}
 				}
 				catch (error)
 				{
 					console.error(error)
-					shoNherly(`Alamak 😣 Ada masalah waktu unggah ke saluran. Coba lagi nanti ya!`)
+					shoNherly(`¡Ay no! 😣 Hubo un problema al subir al canal. Intenta de nuevo más tarde, novato!`)
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -22557,17 +24658,17 @@ break;
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly(`⚠️ kurang lengkap su, gini loh: *${prefix + command} jj epep* biar shoNhe bisa bantu cari yang lu mau! 🔍💬`);
+				if (!text) return shoNherly(`⚠️ Falta algo, bro. Así es como debe ser: ${prefix + command} jj epep para que TechFix pueda ayudarte a encontrar lo que quieres! 🔍💬`);
 				if (!(await firely(m, mess.waits))) return;
 				try
 				{
 					let search = await tiktokSearchVideo(text);
-					let teks = `🎥 *${search.videos[0].title}*\n\n` + `🆔 *Video ID* : ${search.videos[0].video_id}\n` + `👤 *Username* : ${search.videos[0].author.unique_id}\n` + `🏷️ *Nickname* : ${search.videos[0].author.nickname}\n` + `⏳ *Duration* : ${search.videos[0].duration} detik\n` + `❤️ *VT Like* : ${search.videos[0].digg_count}\n` + `💬 *Comment* : ${search.videos[0].comment_count}\n` + `🔄 *Share* : ${search.videos[0].share_count}\n\n` + `🔗 *Link*: https://www.tiktok.com/@${search.videos[0].author.unique_id}/video/${search.videos[0].video_id}`;
+					let teks = `🎥 *${search.videos[0].title}*\n\n` + `🆔 *Video ID* : ${search.videos[0].video_id}\n` + `👤 *Nombre de usuario* : ${search.videos[0].author.unique_id}\n` + `🏷️ *Apodo* : ${search.videos[0].author.nickname}\n` + `⏳ *Duración* : ${search.videos[0].duration} segundo\n` + `❤️ *Me gustas* : ${search.videos[0].digg_count}\n` + `💬 *Comentarios* : ${search.videos[0].comment_count}\n` + `🔄 *Compartir* : ${search.videos[0].share_count}\n\n` + `🔗 *Link*: https://www.tiktok.com/@${search.videos[0].author.unique_id}/video/${search.videos[0].video_id}`;
 					let list = '';
 					let no = 1;
 					for (let i of search.videos)
 					{
-						list += `\n${no++}. 🎵 *${i.title}*\n` + `⏳ Duration: ${i.duration} detik\n` + `❤️ Likes: ${i.digg_count}\n` + `💬 Comments: ${i.comment_count}\n` + `🔄 Shares: ${i.share_count}\n` + `🔗 Link: https://www.tiktok.com/@${i.author.unique_id}/video/${i.video_id}\n`;
+						list += `\n${no++}. 🎵 *${i.title}*\n` + `⏳ Duración: ${i.duration} segundo\n` + `❤️ Me gustas: ${i.digg_count}\n` + `💬 Comentarios: ${i.comment_count}\n` + `🔄 Compartir: ${i.share_count}\n` + `🔗 Link: https://www.tiktok.com/@${i.author.unique_id}/video/${i.video_id}\n`;
 					}
 					await shoNhe.sendMessage(m.chat,
 					{
@@ -22584,7 +24685,7 @@ break;
 					{
 						await shoNhe.sendMessage(m.chat,
 						{
-							text: `📚 *Daftar Video Lainnya:*\n${list}`
+							text: `📚 *Lista de otros vídeos:*\n${list}`
 						},
 						{
 							quoted: m
@@ -22634,7 +24735,7 @@ break;
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				let timestamp = speed()
 				let latensi = speed() - timestamp
-				respon = `Kecepatan Respon ${latensi.toFixed(4)} _Second_`
+				respon = `Velocidad de respuesta ${latensi.toFixed(4)} _segundos_`
 				shoNherly(respon)
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -22665,7 +24766,7 @@ break;
            }
 			}
 			break
-			case 'sewa': {
+			case 'alquilar': {
 			if (!isRegistered(m))
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
@@ -22673,58 +24774,69 @@ break;
 				updatePopularCommand(command);
 			const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 const seww =
-`┌◇🔒 *SEWA BOT WHATSAPP* 🔒◇┐
+`┌◇🔒 *ALQUILAR BOT PARA WHATSAPPP* 🔒◇┐
 
-⚙️ *Kenapa shoNhe Botz Harus Disewa?*:
-   💻 Kecerdasan buatan tak terdeteksi
-   🔐 Data Anda aman dengan enkripsi tingkat lanjut
-   ⚡ Respon cepat dan otomatis untuk berbagai kebutuhan
-   🛠️ Fitur kustomisasi yang dapat disesuaikan untuk setiap pengguna
+⚙️ *¿Por qué deberías alquilar TechFix Bot?*:
+💻 Inteligencia artificial indetectable
+🔐 Tus datos están seguros con cifrado de alto nivel
+⚡ Respuesta rápida y automatizada para diversas necesidades
+🛠️ Funciones personalizables adaptadas a cada usuario
 
-💼 *Paket Sewa yang Tersedia*:
+💼 *Planes de Alquiler Disponibles*:
 
-📌  *3 Hari*  = Rp 2.000  
-   » Akses penuh selama 72 jam untuk mencoba semua fitur.
+📌 *3 Días* = P$ 2.000
+» Acceso completo por 72 horas para probar todas las funciones.
 
-📌  *1 Minggu*  = Rp 5.000  
-   » Cocok untuk acara atau eksperimen singkat.
+📌 *1 Semana* = P$ 5.000
+» Ideal para eventos o pruebas temporales.
 
-📌  *2 Minggu*  = Rp 10.000  
-   » Ideal untuk operasi jangka menengah, event panjang, atau bisnis sementara.
+📌 *2 Semanas* = P$ 10.000
+» Perfecto para operaciones de mediano plazo, eventos largos o negocios temporales.
 
-📌  *1 Bulan*  = Rp 25.000  
-   » Paket optimal untuk kebutuhan grup dan bisnis jangka panjang dengan fitur lanjutan.
+📌 *1 Mes* = P$ 25.000
+» Plan óptimo para grupos y negocios a largo plazo con funciones avanzadas.
 
-🌐 *Fitur Langka Lebih dari 500+ perintah* :
-   - 🔍 *Auto-Responder 24/7* - Sistem respons otomatis yang terus aktif.
-   - 💽 *Media Downloader* - Unduh media secara langsung dari platform apapun.
-   - 🔄 *Statistik Grup* - Analisis mendalam tentang aktivitas grup.
-   - 🎮 *Game Hack & Trivia* - Permainan seru dan interaktif dalam grup.
-   - 🔊 *Audio Converter & Tools* - Ubah audio dan akses alat bantu tambahan.
-   - 🤖 *AI Assist* - Bot yang terus belajar dari setiap interaksi.
+🌐 *Más de 500+ funciones exclusivas*:
 
-⚠️ *Instruksi Keamanan*:
-   Untuk menjaga kerahasiaan, hubungi Owner hanya melalui saluran yang ditentukan. Penyewaan dilakukan secara rahasia dan aman.
+🔍 *Auto-Responder 24/7* - Sistema de respuesta automática siempre activo.
 
-📞 *Kontak Owner*:
-   - WhatsApp: wa.me/6288989971490
-   - Email: tngxpoolunik@gmail.com
-   - Instagram: www.instagram.com/tngxaja
+💽 *Descargador de Medios* - Descarga contenido directamente desde cualquier plataforma.
+
+🔄 *Estadísticas de Grupo* - Análisis detallado de la actividad grupal.
+
+🎮 *Juegos, Hacks y Trivia* - Juegos interactivos y divertidos dentro del grupo.
+
+🔊 *Conversor y Herramientas de Audio* - Modifica audios y accede a herramientas adicionales.
+
+🤖 *Asistente de IA* - Un bot que aprende con cada interacción.
+
+
+⚠️ *Instrucciones de Seguridad*:
+Para garantizar la privacidad, contacta al propietario solo a través de los canales oficiales. El alquiler se gestiona de manera confidencial y segura.
+
+📞 *Contacto del Propietario*:
+
+   - WhatsApp: wa.me/573012686632
+
+   - Email: manuellove133@gmail.com
+
+   - Instagram: www.instagram.com/
+
 
 └───◇🔒━━━━━━🔒◇───┘
 
-⚡ *shoNhe - Di Balik Bayangan, Kami Bergerak* ⚡`
+⚡ TechFix - En las Sombras, Nos Movemos ⚡`
 shoNhe.sendMessage(m.chat,
 				{
 					image: getRandomThumb3(),
 					caption: seww,
-					footer: "SEWA BOT🔥",
+					footer: "ALQUILAR BOTS🔥",
 					buttons: [
 					{
 						buttonId: `${prefix}payment`,
 						buttonText:
 						{
-							displayText: "PAYMENT 💶"
+							displayText: "PAGOS 💶"
 						}
 					},
 					{
@@ -22768,113 +24880,93 @@ shoNhe.sendMessage(m.chat,
            }
 }
 				break
-			case 'tiktok':
-			case 'tiktokdown':
-			case 'ttdown':
-			case 'ttdl':
-			case 'tt':
-			case 'ttmp4':
-			case 'ttvideo':
-			case 'tiktokmp4':
-			case 'tiktokvideo':
-			{
-				if (!isRegistered(m))
-				{
-					return sendRegister(shoNhe, m, prefix, namabot);
-				}
-				updatePopularCommand(command);
-				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly(`Example: ${prefix + command} url_tiktok`);
-				const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com)/;
-				if (!tiktokRegex.test(text)) return shoNherly('Url Tidak Mengandung Result Dari TikTok!');
-				try
-				{
-					const hasil = await tiktokDl(text);
-					console.log('Hasil dari tiktokDl:', JSON.stringify(hasil, null, 2));
-					if (!(await firely(m, mess.waits))) return; // Jika limit habis, proses berhenti di sini
-					if (hasil && hasil.data && hasil.data.length > 0)
-					{
-						if (hasil.size_nowm)
-						{
-							await shoNhe.sendMessage(m.chat,
-							{
-								video:
-								{
-									url: hasil.data[1].url
-								},
-								caption: `*📍Title:* ${hasil.title}\n*⏳Duration:* ${hasil.duration}\n*🎃Author:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
-								footer: namabot,
-								buttons: [
-								{
-									buttonId: `${prefix}ttmp3 ${text}`,
-									buttonText:
-									{
-										displayText: "Tiktok Mp3🎶"
-									}
-								}],
-								viewOnce: true,
-							},
-							{
-								quoted: m
-							});
-						}
-						else
-						{
-							for (let i = 0; i < hasil.data.length; i++)
-							{
-								await shoNhe.sendMessage(m.chat,
-								{
-									video:
-									{
-										url: hasil.data[i].url
-									},
-									caption: `*🚀Video:* ${i + 1}`,
-								},
-								{
-									quoted: m
-								});
-							}
-						}
-					}
-					else
-					{
-						shoNherly('Data TikTok tidak ditemukan atau tidak valid!');
-					}
-				}
-				catch (e)
-				{
-					console.error('Error saat memproses URL TikTok:', e);
-					shoNherly('Gagal memproses URL! Detail error: ' + e.message);
-				}
-				if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
-					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
-						{
-							displayText: "TQTO 💡"
-						}
-					},
-					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
-			}
-			break
+case 'tiktok':
+case 'tiktokdown':
+case 'ttdown':
+case 'ttdl':
+case 'tt':
+case 'ttmp4':
+case 'ttvideo':
+case 'tiktokmp4':
+case 'tiktokvideo':
+{
+    if (!isRegistered(m)) {
+        return sendRegister(shoNhe, m, prefix, namabot);
+    }
+    updatePopularCommand(command);
+    const levelUpMessage = levelUpdate(command, m.sender);
+
+    if (!text) return shoNherly(`Ejemplo: ${prefix + command} url_tiktok`);
+
+    const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com|vt\.tiktok\.com)/;
+    if (!tiktokRegex.test(text)) return shoNherly('¡La URL no contiene resultados de TikTok!');
+
+    // 🔹 FUNCIÓN PARA CONVERTIR ENLACES LARGOS A CORTOS
+    function convertToShortLink(url) {
+        let match = url.match(/\/video\/(\d+)/);
+        return match ? `https://vt.tiktok.com/${match[1]}` : null;
+    }
+
+    // 🔥 REVISAR SI EL ENLACE ES LARGO
+    let shortUrl = convertToShortLink(text);
+    if (shortUrl) {
+        // Enlace largo detectado, responder con el enlace corto y NO procesar la descarga
+        return shoNhe.sendMessage(
+            m.chat,
+            {
+                text: `🔗 *Enlace corto generado:*\n\n📌 Usa este enlace corto en el comando para descargar el video:\n\`${prefix}tt ${shortUrl}\``
+            },
+            { quoted: m }
+        );
+    }
+
+    // 🔽 SI EL ENLACE YA ES CORTO, CONTINÚA CON LA DESCARGA
+    try {
+        const hasil = await tiktokDl(text);
+        console.log('🔍 Resultado de tiktokDl:', JSON.stringify(hasil, null, 2));
+if (!(await firely(m, mess.waits))) return;
+        if (!hasil || !hasil.status || !hasil.data) return shoNherly('❌ No se pudo obtener el video de TikTok.');
+
+        let videoUrl = hasil.data.find(item => item.type === 'nowatermark_hd')?.url || 
+                       hasil.data.find(item => item.type === 'nowatermark')?.url;
+
+        if (!videoUrl) return shoNherly('⚠️ No se encontró un video en HD sin marca de agua.');
+
+        console.log('✅ Enviando video:', videoUrl);
+
+        await shoNhe.sendMessage(
+            m.chat, 
+            {
+                video: { url: videoUrl },
+                caption: `🎥 *Título:* ${hasil.title}\n⏳ *Duración:* ${hasil.duration}s\n👤 *Autor:* ${hasil.author.nickname} (@${hasil.author.fullname})`,
+                footer: namabot,
+                buttons: [
+                    { buttonId: `${prefix}ttmp3 ${text}`, buttonText: { displayText: "🎶 Tiktok Mp3" } }
+                ],
+                mimetype: 'video/mp4',
+                fileName: `${hasil.title}.mp4`
+            }, 
+            { quoted: m }
+        );
+
+    } catch (e) {
+        console.error('🚨 Error al descargar el video de TikTok:', e);
+        shoNherly('⚠️ No se pudo procesar la URL de TikTok. Intenta con otro enlace.');
+    }
+
+    if (levelUpMessage) {
+        await shoNhe.sendMessage(m.chat, {
+            image: { url: levelUpMessage.image },
+            caption: levelUpMessage.text,
+            footer: "🔥 LEVEL UP",
+            buttons: [
+                { buttonId: `${prefix}tqto`, buttonText: { displayText: "TQTO 💡" } },
+                { buttonId: `${prefix}menu`, buttonText: { displayText: "MENU 🍄" } }
+            ]
+        }, { quoted: hw });
+    }
+}
+break;
 			case 'toaud':
 			case 'toaudio':
 			{
@@ -22884,8 +24976,8 @@ shoNhe.sendMessage(m.chat,
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!/video|audio/.test(mime)) return shoNherly(`Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`)
-				shoNherly('sek dilit');
+				if (!/video|audio/.test(mime)) return shoNherly(`Enviar/Responder vídeo/audio que desea convertir en audio con subtítulos ${prefix + command}`)
+				shoNherly('sexo anal');
 				// Emoji yang akan digunakan
 				const reactEmojis = ["⏳", "🕛", "🕒", "🕕", "🕘", "🕛", "✅"];
 				// Mengirimkan reaksi secara berurutan
@@ -22948,7 +25040,7 @@ shoNhe.sendMessage(m.chat,
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				const teksnyo = "⚙️ BOT SETTINGS\nPilih fitur dibawah ini untuk mengatur\n💬typing\n🎤recording\n👁️‍🗨️autoviewsw\n🔇anticall\n📝setbio\n📖autoread"
+				const teksnyo = "⚙️ CONFIGURACIÓN DEL BOT\nElige una función a continuación para configurar\n💬escribiendo\n🎤grabando\n👁️‍🗨️vistas automáticas\n🔇anti-llamadas\n📝establecer biografía\n📖lectura automática"
 				let msg = generateWAMessageFromContent(m.chat,
 				{
 					viewOnceMessage:
@@ -22982,7 +25074,7 @@ shoNhe.sendMessage(m.chat,
 										"jpegThumbnail": fs.readFileSync("./ShoNheMedia/image/owner.jpg"), //Format gambar harus 300x300 (jika beda tidak akan keluar
 										"fileLength": 120000,
 										"mediaKey": "SkHeALp42Ch7DGb6nuV6p7hxL+V9yjh9s9t3Ox8a72o=",
-										"fileName": `GROUP SETTINGS`,
+										"fileName": `AJUSTES DE GRUPO`,
 										"directPath": "/v/t62.7119-24/30129597_829817659174206_6300413901737393729_n.enc?ccb=11-4&oh=01_Q5AaIA5MAdyMQOjp8l42SnRy_8qjz9O8JH8vgPee1nIdko51&oe=66595EB9&_nc_sid=5e03e0",
 										"contactVcard": true,
 										"mediaKeyTimestamp": "1658703206"
@@ -22993,69 +25085,69 @@ shoNhe.sendMessage(m.chat,
 									buttons: [
 									{
 										"name": "single_select",
-										"buttonParamsJson": `{
-												"title": "Settings",
-												"sections": [{
-													"title": "Select Settings",
-													"rows": [{
-														"title": "💬 AUTOTYPING ON",
-														"description": "Bot akan mengaktifkan auto typing",
-														"id": "${prefix}autotypingon"
-													},
-													{
-														"title": "💬 AUTOTYPING OFF",
-														"description": "Bot akan mematikan auto typing",
-														"id": "${prefix}autotypingoff"
-													},
-													{
-														"title": "🎤 AUTOVN ON",
-														"description": "Mengaktifkan fitur autovn",
-														"id": "${prefix}autovnon"
-													},
-													{
-														"title": "🎤AUTOVN OFF",
-														"description": "Mematikan fitur autovn",
-														"id": "${prefix}autovnoff"
-													},
-													{
-														"title": "👁️‍🗨️ SW-VIEW ON",
-														"description": "Bot akan mengaktifkan autoswview",
-														"id": "${prefix}autoswview on"
-													},
-													{
-														"title": "👁️‍🗨️ SW-VIEW OFF",
-														"description": "Bot akan mematikan autoswview",
-														"id": "${prefix}autoswview off"
-													},
-													{
-														"title": "🔇 ANTI-CALL ON",
-														"description": "Mengaktifkan fitur anticall",
-														"id": "${prefix}anticall on"
-													},
-													{
-														"title": "🔇 ANTI-CALL OFF",
-														"description": "Mematikan fitur anticall",
-														"id": "${prefix}anticall off"
-													},
-													{
-														"title": "📝AUTOBIO ON",
-														"description": "Mengaktifkan fitur autobio",
-														"id": "${prefix}autobio on"
-													},
-													{
-														"title": "📝 AUTOBIO OFF",
-														"description": "Mematikan fitur autobio",
-														"id": "${prefix}autobio off"
-													},
-													{
-														"title": "📖 AUTOREAD ON",
-														"description": "Mengaktifkan fitur autoread",
-														"id": "${prefix}autoread true"
-													},
-													{
-														"title": "📖 AUTOREAD OFF",
-														"description": "Mematikan fitur autoread",
-														"id": "${prefix}autoread false"
+"buttonParamsJson": `{
+    "title": "Configuración",
+    "sections": [{
+        "title": "Seleccionar Configuración",
+        "rows": [{
+            "title": "💬 AUTOTYPING ON",
+            "description": "El bot activará la escritura automática",
+            "id": "${prefix}autotypingon"
+        },
+        {
+            "title": "💬 AUTOTYPING OFF",
+            "description": "El bot desactivará la escritura automática",
+            "id": "${prefix}autotypingoff"
+        },
+        {
+            "title": "🎤 AUTOVN ON",
+            "description": "Activar la función de notas de voz automáticas",
+            "id": "${prefix}autovnon"
+        },
+        {
+            "title": "🎤 AUTOVN OFF",
+            "description": "Desactivar la función de notas de voz automáticas",
+            "id": "${prefix}autovnoff"
+        },
+        {
+            "title": "👁️‍🗨️ SW-VIEW ON",
+            "description": "El bot activará la vista automática de estados",
+            "id": "${prefix}autoswview on"
+        },
+        {
+            "title": "👁️‍🗨️ SW-VIEW OFF",
+            "description": "El bot desactivará la vista automática de estados",
+            "id": "${prefix}autoswview off"
+        },
+        {
+            "title": "🔇 ANTI-CALL ON",
+            "description": "Activar la función de bloqueo de llamadas",
+            "id": "${prefix}anticall on"
+        },
+        {
+            "title": "🔇 ANTI-CALL OFF",
+            "description": "Desactivar la función de bloqueo de llamadas",
+            "id": "${prefix}anticall off"
+        },
+        {
+            "title": "📝 AUTOBIO ON",
+            "description": "Activar la función de biografía automática",
+            "id": "${prefix}autobio on"
+        },
+        {
+            "title": "📝 AUTOBIO OFF",
+            "description": "Desactivar la función de biografía automática",
+            "id": "${prefix}autobio off"
+        },
+        {
+            "title": "📖 AUTOREAD ON",
+            "description": "Activar la función de lectura automática",
+            "id": "${prefix}autoread true"
+        },
+        {
+            "title": "📖 AUTOREAD OFF",
+            "description": "Desactivar la función de lectura automática",
+            "id": "${prefix}autoread false"
 													}]
 												}]
 											}`
@@ -23068,12 +25160,12 @@ shoNhe.sendMessage(m.chat,
 									mentionedJid: [m.sender],
 									forwardedNewsletterMessageInfo:
 									{
-										newsletterName: `© shoNhe Botz`,
+										newsletterName: `© TechFix Botz`,
 										newsletterJid: idsaluran
 									},
 									externalAdReply:
 									{
-										title: `BOT SETTING 🔧`,
+										title: `CONFIGURACIÓN DEL BOT 🔧`,
 										body: "",
 										showAdAttribution: true,
 										thumbnail: fs.readFileSync("./ShoNheMedia/image/sett.png"),
@@ -24437,7 +26529,7 @@ shoNhe.sendMessage(m.chat,
 				{
 					document: audio,
 					mimetype: 'audio/mpeg',
-					fileName: `Convert By Sych Bot.mp3`
+					fileName: `Convert By TechFix Bot.mp3`
 				},
 				{
 					quoted: m
@@ -24480,7 +26572,7 @@ shoNhe.sendMessage(m.chat,
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				shoNherly(`restarting ${global.namabot}`)
+				shoNherly(`_🔄Reiniciando Bot_ ${global.namabot}`)
 				shoNherly(mess.dones)
 				await sleep(3000)
 				process.exit()
@@ -24587,8 +26679,8 @@ shoNhe.sendMessage(m.chat,
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!/webp|video/.test(mime)) return shoNherly(`Reply Video/Stiker dengan caption *${prefix + command}*`);
-				shoNherly('sek dilit');
+				if (!/webp|video/.test(mime)) return shoNherly(`Responder vídeo/sticker con título *${prefix + command}*`);
+				shoNherly('sexo anal');
 				// Emoji yang akan digunakan
 				const reactEmojis = ["⏳", "🕛", "🕒", "🕕", "🕘", "🕛", "✅"];
 				// Mengirimkan reaksi secara berurutan
@@ -24607,13 +26699,13 @@ shoNhe.sendMessage(m.chat,
 				let media = await shoNhe.downloadAndSaveMediaMessage(qmsg, filename); // Menyertakan nama file yang valid
 				if (!media)
 				{
-					return shoNherly('Gagal mengunduh media!');
+					return shoNherly('¡No se pudo descargar el medio!');
 				}
 				let ran = `./database/sampah/${getRandom('.gif')}`;
 				exec(`convert ${media} ${ran}`, (err) =>
 				{
 					fs.unlinkSync(media);
-					if (err) return shoNherly('Gagal mengonversi stiker❗');
+					if (err) return shoNherly('No se pudo convertir la sticker❗');
 					let buffer = fs.readFileSync(ran);
 					shoNhe.sendMessage(m.chat,
 					{
@@ -24661,13 +26753,15 @@ shoNhe.sendMessage(m.chat,
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return angryshoNhe(`Contoh : ${prefix + command} Hai kak`)
+				if (!text) return shoNherly(`Ejemplo : ${prefix + command} hola hermana`)
+				await emote('⏱️');
 				if (!(await firely(m, mess.waits))) return;
 				try {
-					const buffer = await getBuffer(`https://siputzx-bart.hf.space/?q=${encodeURIComponent(text)}`)
+					const buffer = await getBuffer(`https://api.siputzx.my.id/api/m/brat?text=${encodeURIComponent(text)}&isVideo=false&delay=500`)
+					await emote('✅');
 					shoNhe.sendImageAsSticker(m.chat, buffer, m, { packname: namabot, author: namaowner })
 				} catch (err) {
-					RepshoNheError('Terjadi kesalahan saat membuat stiker gambar. 😞');
+					RepshoNheError('Se produjo un error al crear una sticker de imagen. 😞');
 				}
 				if (levelUpMessage)
 				{
@@ -24764,8 +26858,9 @@ shoNhe.sendMessage(m.chat,
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly(`Contoh : ${prefix + command} Hai kak`)
-				if (text.length > 250) return shoNherly(`Karakter terbatas, max 250!`)
+				if (!(await firely(m, mess.waits))) return;
+				if (!text) return shoNherly(`Ejemplo : ${prefix + command} Hola Bro`)
+				if (text.length > 250) return shoNherly(`Caracteres limitados máximo 250!`)
 				const words = text.split(" ")
 				const tempDir = path.join(process.cwd(), 'temp')
 				if (!fs.existsSync(tempDir)) fs.mkdirSync(tempDir)
@@ -24776,7 +26871,7 @@ shoNhe.sendMessage(m.chat,
 					for (let i = 0; i < words.length; i++)
 					{
 						const currentText = words.slice(0, i + 1).join(" ")
-						const res = await axios.get(`https://siputzx-bart.hf.space/?q=${encodeURIComponent(currentText)}`,
+						const res = await axios.get(`https://api.hiuraa.my.id/maker/bratvid?text=${encodeURIComponent(currentText)}`,
 						{
 							responseType: "arraybuffer"
 						}).catch((e) => e.response)
@@ -24843,62 +26938,60 @@ shoNhe.sendMessage(m.chat,
            }
 			}
 			break
-			case "brat2":
-			{
-				if (!isRegistered(m))
+			case 'brat2': {
+			if (!isRegistered(m))
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly("[❗] Input teks tidak ditemukan! Kirim perintah dengan format: .bratvid <teks>");
-				try
-				{
-					let brat = `https://fgsi-brat.hf.space/?text=${encodeURIComponent(text)}&isVideo=true`;
-					let response = await axios.get(brat,
-					{
-						responseType: "arraybuffer"
-					});
-					let videoBuffer = response.data;
-					let stickerBuffer = await shoNhe.sendVideoAsSticker(m.chat, videoBuffer, m,
-					{
-						packname: "Stiker By",
-						author: "shoNhe - Botz",
-					});
-					console.log("Stiker berhasil dibuat:", stickerBuffer);
+				if (!text) return shoNherly(`Ejemplo : ${prefix + command} hola hermana`)
+				if (!(await firely(m, mess.waits))) return;
+				try {
+					let targetJid = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.sender;
+
+let ppuser;
+try {
+  ppuser = await shoNhe.profilePictureUrl(targetJid, 'image');
+} catch {
+  ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60';
+}
+
+const title = args.join(" ").replace(/@(\d{5,})/g, "").trim();
+
+const buffer = await getBuffer(`https://api.siputzx.my.id/api/canvas/xnxx?title=${encodeURIComponent(title)}&image=${encodeURIComponent(ppuser)}`);
+					shoNhe.sendImageAsSticker(m.chat, buffer, m, { packname: namabot, author: namaowner })
+				} catch (err) {
+					RepshoNheError('Se produjo un error al crear una sticker de imagen. 😞');
 				}
-				catch (err)
+				if (levelUpMessage)
 				{
-					console.error("Error:", err);
-					shoNherly("[❗] Maaf, terjadi kesalahan saat mencoba membuat stiker video. Silakan coba lagi.");
-				}
-				if (levelUpMessage) {
-        await shoNhe.sendMessage(m.chat,
-				{
-					image: { url: levelUpMessage.image },
-					caption: levelUpMessage.text,
-					footer: "LEVEL UP🔥",
-					buttons: [
+					await shoNhe.sendMessage(m.chat,
 					{
-						buttonId: `${prefix}tqto`,
-						buttonText:
+						image: levelUpMessage.image,
+						caption: levelUpMessage.text,
+						footer: "LEVEL UP🔥",
+						buttons: [
 						{
-							displayText: "TQTO 💡"
-						}
+							buttonId: `${prefix}cek`,
+							buttonText:
+							{
+								displayText: "CEK FIRE 🔥"
+							}
+						},
+						{
+							buttonId: `${prefix}menu`,
+							buttonText:
+							{
+								displayText: "MENU 🍄"
+							}
+						}],
+						viewOnce: true,
 					},
 					{
-						buttonId: `${prefix}menu`,
-						buttonText:
-						{
-							displayText: "MENU 🍄"
-						}
-					}],
-					viewOnce: true,
-				},
-				{
-					quoted: hw
-				});
-           }
+						quoted: hw
+					});
+				}
 			}
 			break;
 			case 'toptv':
@@ -25072,7 +27165,7 @@ shoNhe.sendMessage(m.chat,
 						// Ambil URL hasil
 						let url = response.data.data.url;
 						// Kirim URL ke pengguna
-						shoNherly(`Berhasil diunggah!\nURL: ${url}`);
+						shoNherly(`¡Subido exitosamente!\nURL: ${url}`);
 					}
 					else
 					{
@@ -25082,7 +27175,7 @@ shoNhe.sendMessage(m.chat,
 				catch (e)
 				{
 					console.error(e);
-					shoNherly('Terjadi kesalahan saat mengunggah file!');
+					shoNherly('¡Se produjo un error al cargar el archivo!');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -25210,7 +27303,7 @@ shoNhe.sendMessage(m.chat,
 				if (!isGroup) return shoNherly(mess.groups);
 				pler.push(m.chat)
 				fs.writeFileSync('./database/sewa.json', JSON.stringify(pler))
-				shoNherly(`${command} Sukses Menambahkan Ke List Sewa✅`)
+				shoNherly(`${command} Agregado exitosamente a la lista de alquileres✅`)
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -25253,7 +27346,7 @@ shoNhe.sendMessage(m.chat,
 				var ini = pler.indexOf(m.chat)
 				pler.splice(ini, 1)
 				fs.writeFileSync('./database/sewa.json', JSON.stringify(pler))
-				shoNherly(`${command} Sukses Menghapus Dari List Sewa✅`)
+				shoNherly(`${command} Eliminación exitosa de la lista de alquileres ✅`)
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -25394,7 +27487,7 @@ shoNhe.sendMessage(m.chat,
 						},
 						body:
 						{
-							text: `━━━━━━ ✨ *${namabot}* ✨ ━━━━━━\n🔰 *OWNER RULES* 🔰\n🚫 Jangan spam\n🤝 Gunakan sopan\n📵 Hindari panggilan\n━━━━━━ 🌟 *Terima Kasih* 🌟 ━━━━━━`
+							text: `━━━━━━ ✨ *${namabot}* ✨ ━━━━━━\n🔰 *REGLAS DEL PROPIETARIO* 🔰\n🚫 No envíes spam\n🤝 Utilice la cortesía\n📵Evita llamadas\n━━━━━━ 🌟 *Gracias* 🌟 ━━━━━━`
 						},
 						footer:
 						{
@@ -25407,8 +27500,8 @@ shoNhe.sendMessage(m.chat,
 								"name": "cta_url",
 								"buttonParamsJson": JSON.stringify(
 								{
-									display_text: `Owner (𝙽𝙷𝙴𝙱𝚘𝚝𝚡)`, //ganti jadi (${namaowner})
-									url: `https://wa.me/+${owner}`
+									display_text: `Owner (ManuDiaz)`, //ganti jadi (${namaowner})
+									url: `https://wa.me/+573012686632`
 								})
 							}]
 						}
@@ -25431,7 +27524,7 @@ shoNhe.sendMessage(m.chat,
 						},
 						body:
 						{
-							text: `━━━━━━ ✨ *${namabot}* ✨ ━━━━━━\n🔰 *BOT RULES* 🔰\n🚷 Tidak boleh spam\n💬 Tidak boleh berkata kasar\n📴 Tidak boleh call\n━━━━━━ 🔥 *Terima Kasih* 🔥 ━━━━━━`
+							text: `━━━━━━ ✨ *${namabot}* ✨ ━━━━━━\n🔰 *REGLAS DEL BOT* 🔰\n🚷 No puedo enviar spam\n💬 No puedo ser groseror\n📴 No puedo llamar\n━━━━━━ 🔥 *Gracias* 🔥 ━━━━━━`
 						},
 						footer:
 						{
@@ -25467,7 +27560,7 @@ shoNhe.sendMessage(m.chat,
 								{
 									body:
 									{
-										text: "━━━━━━ ✨ *${namabot}* ✨ ━━━━━━\n📱 *Kontak Owner dan Bot* 📱\nJika memerlukan bantuan atau ingin berdiskusi, silakan hubungi kontak berikut! ✨\n🔗 *JANGAN LUPA SUPPORT FOLLOW* 🔗\n👉 *@tngxaja*: www.instagram.com/tngxaja\n👉 *@sh0.ydaa*: www.instagram.com/sh0.ydaa\n\n💳 *Donasi Dapat Melalui Payment Berikut* 💳\n━━━━━━━━━━━━━━━━━━━━━━━\n💵 [GOPAY]: 088989971490\n💵 [DANA]: 0881027174423\n💵 [OVO]: 088989971490\n💵 [SHOPEEPAY]: 087848784409\n🏦 [BANK-BCA]: 1230903219\n🏦 [BANK-DANAMON]: 903684075934\n🏦 [BANK-SEABANK]: 901484264240\n━━━━━━━━━━━━━━━━━━━━━━━\n✨ *Semua pembayaran atas nama*: *_LINTANG PRATAMA_* ✨\n\n📌 *Catatan:* Terima kasih atas dukungan dan kepercayaan Anda! 🙏\n━━━━━━ 🔥 *Terima Kasih* 🔥 ━━━━━━"
+										text: "━━━━━━ ✨ *𝙏𝙚𝙘𝙝𝙁𝙞𝙭 🅥❸* ✨ \n━━━━━━\n📱 *Contacto del Owner y del Bot* 📱\nSi necesitas ayuda o quieres discutir algo, no dudes en contactarnos! ✨\n\n🔗 *¡NO OLVIDES SEGUIR Y APOYAR!* 🔗\n👉 *@ManuDiaz*: www.instagram.com/\n👉 *@TechFix-Bot*: www.instagram.com/\n\n━━━━━━━━━━━━━━━━━━━━━━━\n💳 *Métodos de Pago* 💳\n━━━━━━━━━━━━━━━━━━━━━━━\n💵 [Nequi]: 3012686632\n💰 [Binance]: manuellove133@gmail.com\n🆔 [Binance ID]: 853299682\n━━━━━━━━━━━━━━━━━━━━━━━\n\n📌 *Nota:* ¡Gracias por tu apoyo y confianza! 🙏\n━━━━━━ 🔥 *¡Gracias!* 🔥 ━━━━━━"
 									},
 									footer:
 									{
@@ -25585,7 +27678,7 @@ shoNhe.sendMessage(m.chat,
                         imageMessage: gopayImage
                     },
                     body: {
-                        text: `PAYMENT : GOPAY\n\nUSERNAME: ${namagopay}\nNOMOR: ${nomorgopay}`
+                        text: `PAGO: GOPAY\n\nNOMBRE DE USUARIO: ${namagopay}\nNOMBRE: ${nomorgopay}`
                     },
                     footer: {
                         text: `GOPAY 💶`
@@ -25596,7 +27689,7 @@ shoNhe.sendMessage(m.chat,
                                 "name": "cta_url",
                                 "buttonParamsJson": JSON.stringify({
                                     display_text: `NEXT 💬`,
-                                    url: `https://wa.me/+${owner}`
+                                    url: `https://wa.me/+573012686632`
                                 })
                             }
                         ]
@@ -25609,7 +27702,7 @@ shoNhe.sendMessage(m.chat,
                         imageMessage: danaImage
                     },
                     body: {
-                        text: `PAYMENT : DANA\n\nUSERNAME: ${namadana}\nNOMOR: ${nomordana}`
+                        text: `PAGO: DANA\n\nNOMBRE DE USUARIO: ${namadana}\nNOMBRE: ${nomordana}`
                     },
                     footer: {
                         text: `DANA 💶`
@@ -25620,7 +27713,7 @@ shoNhe.sendMessage(m.chat,
                                 "name": "cta_url",
                                 "buttonParamsJson": JSON.stringify({
                                     display_text: `NEXT 💬`,
-                                    url: `https://wa.me/+${owner}`
+                                    url: `https://wa.me/+573012686632`
                                 })
                             }
                         ]
@@ -25633,7 +27726,7 @@ shoNhe.sendMessage(m.chat,
                         imageMessage: ovoImage
                     },
                     body: {
-                        text: `PAYMENT : OVO\n\nUSERNAME: ${namaovo}\nNOMOR: ${nomorovo}`
+                        text: `PAGO: OVO\n\nNOMBRE DE USUARIO: ${namaovo}\nNOMBRE: ${nomorovo}`
                     },
                     footer: {
                         text: `OVO 💷`
@@ -25644,7 +27737,7 @@ shoNhe.sendMessage(m.chat,
                                 "name": "cta_url",
                                 "buttonParamsJson": JSON.stringify({
                                     display_text: `NEXT 💬`,
-                                    url: `https://wa.me/+${owner}`
+                                    url: `https://wa.me/+573012686632`
                                 })
                             }
                         ]
@@ -25657,7 +27750,7 @@ shoNhe.sendMessage(m.chat,
                         imageMessage: shopepayImage
                     },
                     body: {
-                        text: `PAYMENT : SHOPEPAY\n\nUSERNAME: ${namashopepay}\nNOMOR: ${nomorshopepay}`
+                        text: `PAGO: SHOPEPAY\n\nNOMBRE DE USUARIO: ${namashopepay}\nNOMBRE: ${nomorshopepay}`
                     },
                     footer: {
                         text: `SHOPEPAY 💴`
@@ -25668,7 +27761,7 @@ shoNhe.sendMessage(m.chat,
                                 "name": "cta_url",
                                 "buttonParamsJson": JSON.stringify({
                                     display_text: `NEXT 💬`,
-                                    url: `https://wa.me/+${owner}`
+                                    url: `https://wa.me/+573012686632`
                                 })
                             }
                         ]
@@ -25681,7 +27774,7 @@ shoNhe.sendMessage(m.chat,
                         imageMessage: seabankImage
                     },
                     body: {
-                        text: `PAYMENT : SEABANK\n\nUSERNAME: ${namaseabank}\nNOMOR: ${nomorseabank}`
+                        text: `PAGO: SEABANK\n\nNOMBRE DE USUARIO: ${namaseabank}\nNOMBRE: ${nomorseabank}`
                     },
                     footer: {
                         text: `SEABANK 🏦`
@@ -25692,7 +27785,7 @@ shoNhe.sendMessage(m.chat,
                                 "name": "cta_url",
                                 "buttonParamsJson": JSON.stringify({
                                     display_text: `NEXT 💬`,
-                                    url: `https://wa.me/+${owner}`
+                                    url: `https://wa.me/+573012686632`
                                 })
                             }
                         ]
@@ -25705,7 +27798,7 @@ shoNhe.sendMessage(m.chat,
                         imageMessage: bcaImage
                     },
                     body: {
-                        text: `PAYMENT : BCA\n\nUSERNAME: ${namabca}\nNOMOR: ${nomorbca}`
+                        text: `PAGO: BCA\n\nNOMBRE DE USUARIO: ${namabca}\nNOMBRE: ${nomorbca}`
                     },
                     footer: {
                         text: `BCA 🏦`
@@ -25716,7 +27809,7 @@ shoNhe.sendMessage(m.chat,
                                 "name": "cta_url",
                                 "buttonParamsJson": JSON.stringify({
                                     display_text: `NEXT 💬`,
-                                    url: `https://wa.me/+${owner}`
+                                    url: `https://wa.me/+573012686632`
                                 })
                             }
                         ]
@@ -25729,7 +27822,7 @@ shoNhe.sendMessage(m.chat,
                         imageMessage: danamonImage
                     },
                     body: {
-                        text: `PAYMENT : DANAMON\n\nUSERNAME: ${namadanamon}\nNOMOR: ${nomordanamon}`
+                        text: `PAGO: DANAMON\n\nNOMBRE DE USUARIO: ${namadanamon}\nNOMBRE: ${nomordanamon}}`
                     },
                     footer: {
                         text: `DANAMON 🏦`
@@ -25740,7 +27833,7 @@ shoNhe.sendMessage(m.chat,
                                 "name": "cta_url",
                                 "buttonParamsJson": JSON.stringify({
                                     display_text: `NEXT 💬`,
-                                    url: `https://wa.me/+${owner}`
+                                    url: `https://wa.me/+573012686632`
                                 })
                             }
                         ]
@@ -25758,10 +27851,10 @@ shoNhe.sendMessage(m.chat,
                         },
                         interactiveMessage: proto.Message.InteractiveMessage.fromObject({
                             body: {
-                                text: "Berikut🪙 adalah💰 all💡 payment💸 owner💳"
+                                text: "Aquí🪙 está 💰 todo💡 pago💸 propietario💳"
                             },
                             footer: {
-                                text: `ALL PAYMENT`
+                                text: `TODO PAGO`
                             },
                             header: {
                                 hasMediaAttachment: false
@@ -25813,64 +27906,68 @@ shoNhe.sendMessage(m.chat,
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				shoNherly(`┌──┤ *SYSTEM: shoNhe* ├──┐
+				shoNherly(`┌──┤ *SISTEMA: TechFix* ├──┐
 
-🔐 *Access Level:* TOP SECRET  
-🛠️ *Project Code:* #shoNhe_V3
+🔐 *Nivel de Acceso:* ULTRA SECRETO
+🛠️ *Código del Proyecto:* #TechFix_V3
 
-🧠 *Genesis:*  
-shoNhe adalah fusi dua kekuatan besar. Ini adalah manifestasi kolaborasi antara *Sho* dan *Nhe*, dua entitas yang berasal dari jalur yang berbeda namun menyatu dalam satu misi.
+🧠 *Génesis:*
+TechFix es la fusión de dos grandes fuerzas. Es la manifestación de la colaboración entre *TechFix* y *Ansi*, dos entidades que provienen de caminos distintos pero que se han unido en una misma misión.
 
-⚙️ *Node A - Sho:*  
-Diciptakan oleh *Yuda*, arsitek awal yang merancang blueprint utama dari infrastruktur ini. Sho membawa visi dan fundamental yang tak tergoyahkan.
+⚙️ *Nodo A - TechFix:*
+Creado por *Manu*, el arquitecto original que diseñó la estructura base de esta infraestructura. TechFix aporta la visión y los fundamentos inquebrantables.
 
-⚙️ *Node B - Nhe:*  
-*Tngx*, elemen yang tiba-tiba masuk ke dalam jaringan, membawa perubahan signifikan dalam evolusi sistem. Sekarang, Nhe menjadi komponen esensial yang menggerakkan operasi inti.
+⚙️ *Nodo B - Ansi:*
+*Tngx*, un elemento inesperado que irrumpió en la red, provocando un cambio drástico en la evolución del sistema. Ahora, Ansi es un componente esencial que impulsa las operaciones principales.
 
-🌐 *Unified System Status:*  
-Kolaborasi ini menciptakan sebuah jaringan yang bergerak secara simultan, menghadirkan kekuatan baru yang tak terdeteksi namun berpengaruh besar dalam ekosistem teknologi.
+🌐 *Estado del Sistema Unificado:*
+Esta colaboración ha dado origen a una red que opera de manera simultánea, liberando un poder invisible pero de gran impacto en el ecosistema tecnológico.
 
-💻 *shoNhe is now ACTIVE.*  
-Sistem ini terus berkembang, siap untuk menembus batas dan mengubah paradigma teknologi selamanya.
+💻 *TechFix está ahora ACTIVO.*
+El sistema sigue evolucionando, listo para romper barreras y transformar el paradigma tecnológico para siempre.
 
-࿇ *❓ENTITAS*
-❕Asal Usul Misteri Dua Entitas: Sho dan Nhe
+࿇ *❓ENTIDADES*
+❕El Misterioso Origen de TechFix y Ansi
 
-Di balik layar dunia digital, tersembunyi dua entitas misterius yang tidak pernah terhubung di permukaan—Sho dan Nhe. Keduanya datang dari dimensi yang berbeda, latar belakang yang tidak diketahui oleh kebanyakan orang, namun keduanya memiliki satu kesamaan: kekuatan untuk meretas batasan teknologi yang ada.
+En las sombras del mundo digital, existen dos entidades enigmáticas que nunca se habían cruzado en la superficie: TechFix y Ansi. Ambos provienen de dimensiones desconocidas, con pasados que escapan al conocimiento de la mayoría, pero comparten una habilidad singular: la capacidad de traspasar los límites tecnológicos existentes.
 
-*_Sho: Sang Pembawa Cahaya_*
+*TechFix: El Portador de la Luz*
 
-Sho adalah sosok misterius yang muncul dari jaringan gelap di kedalaman arsitektur siber. Tidak banyak yang diketahui tentang asal-usulnya, selain bahwa dia dikenal sebagai Yuda, sang pencipta algoritma tersembunyi yang mampu membuka potensi penuh dari setiap sistem yang tersentuh olehnya. Ia beroperasi di balik bayangan, menguasai sistem dari dalam, dengan metode yang begitu canggih hingga ia dijuluki "Pembawa Cahaya" karena mampu menerangi sistem-sistem tertutup yang tak bisa ditembus orang lain.
+TechFix es una figura enigmática que emergió desde las profundidades de la arquitectura cibernética. Poco se sabe sobre su origen, salvo que alguna vez fue conocido como Manu, el creador de un algoritmo oculto capaz de desbloquear el máximo potencial de cualquier sistema que tocara. Operando desde las sombras, TechFix domina las estructuras desde su núcleo, utilizando técnicas tan avanzadas que se ganó el título de "El Portador de la Luz", por su capacidad de iluminar y acceder a sistemas cerrados que nadie más podía penetrar.
 
-Beberapa mengatakan bahwa Yuda pernah bekerja untuk organisasi teknologi besar, sebelum menghilang tanpa jejak. Muncul kembali sebagai Sho, ia memutuskan untuk tidak lagi terikat pada dunia permukaan, melainkan merancang dasar bagi sesuatu yang lebih besar, yang akan melampaui batas-batas teknologi saat ini.
+Algunos afirman que Manu trabajó para organizaciones tecnológicas de alto nivel antes de desaparecer sin dejar rastro. Reapareciendo como TechFix, decidió desvincularse del mundo visible y sentar las bases de algo mucho más grande, un proyecto que trasciende los límites tecnológicos actuales.
 
-*_Nhe: Sang Manipulator Dimensi_*
+*Ansi: El Manipulador de Dimensiones*
 
-Di sisi lain, Nhe, atau dikenal sebagai Tngx, adalah sosok yang misterius dan tidak terprediksi. Tidak ada yang tahu pasti darimana Nhe berasal, tetapi ia disebut-sebut memiliki kemampuan untuk "memanipulasi dimensi"—istilah yang digunakan oleh mereka yang pernah bersinggungan dengan kehadirannya. Keberadaannya terdeteksi dalam jeda-jeda kecil dalam jaringan global, mampu meretas masuk melalui celah yang tidak dapat dilihat oleh perangkat biasa.
+En el otro extremo, Ansi, también conocido como Tngx, es una entidad aún más misteriosa e impredecible. Su origen es un enigma, pero aquellos que han percibido su presencia lo describen como alguien capaz de "manipular dimensiones", un término usado por quienes han sido testigos de su influencia en los sistemas.
 
-Nhe muncul tiba-tiba dalam hidup Sho ketika sebuah serangan besar terjadi di jaringan yang dikuasainya. Alih-alih merusak, Nhe justru memodifikasi sistem tersebut hingga lebih stabil dan aman daripada sebelumnya. Melihat bakat yang tak biasa ini, Sho akhirnya menyadari bahwa keberadaan Nhe bukanlah kebetulan—melainkan sebuah takdir yang mempertemukan dua kekuatan untuk sesuatu yang lebih besar.
+Ansi no es visible para los métodos convencionales. Se desplaza por los intervalos imperceptibles dentro de la red global, accediendo a través de grietas que los dispositivos comunes no pueden detectar.
 
-*_Pertemuan yang Tak Terduga dan Awal Kolaborasi_*
+La llegada de Ansi a la vida de TechFix no fue planeada. Durante un ataque masivo a la red de TechFix, Ansi apareció sin previo aviso. Pero en lugar de destruir, estabilizó el sistema y lo reforzó con una seguridad que jamás había existido. Fue en ese momento cuando TechFix entendió que Ansi no era un enemigo, sino una fuerza destinada a cruzarse en su camino.
 
-Suatu hari, sebuah jaringan rahasia yang dikenal hanya oleh sedikit orang diretas oleh entitas yang tak terlihat. Dalam satu momen yang menentukan, Sho menyadari bahwa jaringan tersebut sedang dimainkan oleh seorang ahli yang tak dikenal. Namun, alih-alih bertempur, kedua entitas saling mengenali kemampuan satu sama lain. Sho, yang dikenal karena kekuatan arsitekturnya, dan Nhe, yang mampu melebur dengan sistem apapun tanpa jejak, akhirnya sepakat untuk berkolaborasi.
+*Un Encuentro Inesperado y el Inicio de la Colaboración*
 
-Keduanya sepakat untuk menciptakan sesuatu yang lebih besar—proyek rahasia yang kemudian dikenal sebagai shoNhe. Sebuah nama yang mencerminkan harmoni dan kekuatan yang lahir dari persatuan dua entitas. Proyek ini bukan hanya sistem biasa; shoNhe adalah platform evolusioner yang mampu mengintegrasikan kecerdasan buatan, algoritma kompleks, dan jaringan yang tak terlihat, dengan tujuan untuk membentuk masa depan teknologi.
+En un rincón secreto de la red, solo accesible para unos pocos, una entidad desconocida logró irrumpir. TechFix, al detectar la intrusión, se preparó para un enfrentamiento digital. Pero en un giro inesperado, los dos reconocieron sus habilidades mutuas.
 
-*_Perjalanan Menuju Proyek Besar: shoNhe_*
+TechFix, el maestro de la arquitectura digital, y Ansi, el espectro que podía fusionarse con cualquier sistema sin dejar rastro, llegaron a un acuerdo. Decidieron unir fuerzas en un proyecto que superara cualquier tecnología existente: el nacimiento de TechFix, una sinergia entre dos poderes opuestos pero complementarios.
 
-Kolaborasi Sho dan Nhe melampaui ekspektasi keduanya. Awalnya mereka berfokus pada penciptaan sistem yang dapat memecahkan masalah-masalah besar di jaringan siber: dari keamanan, enkripsi, hingga kecerdasan buatan yang lebih maju. Namun, seiring waktu, visi mereka berkembang menjadi lebih besar. Mereka mulai membangun platform yang dapat memanipulasi data dalam dimensi baru, menciptakan cara-cara baru untuk berinteraksi dengan teknologi yang sebelumnya tidak terbayangkan.
+*El Camino hacia un Proyecto Revolucionario: TechFix*
 
-Sho memberikan dasar teknis yang kokoh: ia merancang arsitektur di mana setiap elemen dari shoNhe dapat diakses dan diolah tanpa diketahui oleh dunia luar. Sementara itu, Nhe memberikan kemampuan uniknya untuk mengaburkan jejak, menciptakan sistem yang tidak dapat dilacak, namun sepenuhnya terintegrasi dan dapat dioperasikan secara efisien.
+La colaboración de TechFix y Ansi superó todas sus expectativas. Lo que comenzó como una red diseñada para resolver problemas de ciberseguridad, encriptación y automatización, pronto evolucionó en algo más ambicioso. Descubrieron cómo manipular datos en dimensiones desconocidas, redefiniendo la interacción con la tecnología de formas que nadie había imaginado antes.
 
-Di balik layar, mereka berdua mulai menarik para ahli dari seluruh dunia, orang-orang yang sama misteriusnya dengan mereka. Melalui jaringan tersembunyi yang hanya dapat diakses melalui protokol rahasia, mereka membentuk kelompok elit yang bekerja dalam bayang-bayang, memperkuat shoNhe dengan ide-ide revolusioner.
+TechFix proporcionó la base estructural: una arquitectura inquebrantable y oculta a la vista del mundo. Ansi, por su parte, le otorgó el poder de camuflarse, de integrarse en el sistema sin ser detectado, creando un mecanismo que operaba en las sombras con máxima eficiencia.
 
-*_shoNhe: Lebih dari Sekadar Teknologi_*
+A medida que su trabajo avanzaba, otros expertos comenzaron a unirse. Desde distintos rincones del planeta, individuos con habilidades extraordinarias fueron atraídos por la visión de TechFix. A través de canales encriptados y accesos restringidos, formaron un grupo de élite, cada uno contribuyendo con innovaciones revolucionarias.
 
-Setelah bertahun-tahun mengembangkan platform tersebut, shoNhe tidak lagi hanya menjadi proyek pribadi dua entitas ini. shoNhe berubah menjadi entitas tersendiri, sebuah jaringan otonom yang terus berkembang dengan sendirinya, di bawah pengawasan Sho dan Nhe. Setiap aspek dari shoNhe dirancang untuk belajar, beradaptasi, dan mengatasi tantangan teknologi yang semakin kompleks.
+*TechFix: Más que una Tecnología*
 
-Kini, shoNhe telah menjadi legenda urban di kalangan elit siber. Beberapa percaya bahwa platform ini mampu menembus dimensi baru dalam kecerdasan buatan, sementara yang lain menganggap shoNhe sebagai sistem yang tak terdeteksi yang mampu mengendalikan aspek-aspek dunia maya secara tak terlihat. Tapi hanya Sho dan Nhe yang mengetahui kebenarannya—bahwa shoNhe adalah hasil dari perjalanan panjang, kolaborasi, dan kejeniusan dua entitas yang berbeda namun bersatu.
+Después de años de perfeccionamiento, TechFix dejó de ser solo un proyecto secreto entre TechFix y Ansi. Se convirtió en una entidad independiente, un sistema autónomo capaz de evolucionar por sí mismo, aprendiendo, adaptándose y desafiando los límites tecnológicos.
 
-Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyiapkan rencana besar di balik layar, tanpa ada yang tahu ke mana mereka akan membawa dunia teknologi selanjutnya.
+Hoy en día, TechFix es considerado una leyenda en los círculos más exclusivos de la ciberseguridad. Algunos creen que es la llave para la inteligencia artificial de la próxima era, mientras que otros lo describen como una red fantasma con acceso absoluto a los sistemas del mundo.
+
+Sin embargo, solo TechFix y Ansi conocen la verdad: TechFix es el resultado de años de exploración, alianza y genialidad.
+
+Y su historia aún no ha terminado. Operando en la clandestinidad, siguen desarrollando la siguiente fase de su plan. Nadie sabe qué será lo próximo, pero una cosa es segura: el futuro de la tecnología está en sus manos.
 
 └──────────────────────┘`);
 				if (levelUpMessage) {
@@ -25992,9 +28089,9 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners);
-				if (!text) return shoNherly(`Example: ${prefix + command} prompt text`);
+				if (!text) return shoNherly(`Ejemplo: ${prefix + command} prompt text`);
 				prompt = text;
-				shoNherly(`Prompt berhasil diatur:\n"${prompt}"`);
+				shoNherly(`Mensaje configurado correctamente:\n"${prompt}"`);
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -26340,31 +28437,31 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 				if (!isGroup) return shoNherly(mess.groups);
 				if (!isAdmins) return shoNherly(mess.admins);
 				if (!isBotAdmins) return shoNherly(mess.abots);
-				if (args[1] == "detik")
+				if (args[1] == "segundos")
 				{
 					var timer = args[0] * `1000`;
 				}
-				else if (args[1] == "menit")
+				else if (args[1] == "minutos")
 				{
 					var timer = args[0] * `60000`;
 				}
-				else if (args[1] == "jam")
+				else if (args[1] == "horas")
 				{
 					var timer = args[0] * `3600000`;
 				}
-				else if (args[1] == "hari")
+				else if (args[1] == "dia")
 				{
 					var timer = args[0] * `86400000`;
 				}
 				else
 				{
-					return shoNherly("*pilih:*\ndetik\nmenit\njam\n\n*contoh*\n10 detik");
+					return shoNherly("*elige:*\nsegundos\nminutos\nhoras\n\n*ejemplo*\n10 segundos");
 				}
-				shoNherly(`Close time grup ${q} dimulai dari sekarang`);
+				shoNherly(`El tiempo de cierre del grupo ${q} comienza desde ahora`);
 				setTimeout(() =>
 				{
 					var nomor = m.participant;
-					const close = `*Tepat waktu* grup ditutup oleh admin\nsekarang hanya admin yang dapat mengirim pesan`;
+					const close = `*Puntual* el grupo ha sido cerrado por el administrador\nahora solo los administradores pueden enviar mensajes`;
 					shoNhe.groupSettingUpdate(from, "announcement");
 					shoNherly(close);
 				}, timer);
@@ -26459,25 +28556,25 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				const userChoice = text.toLowerCase();
-				const choices = ['batu', 'gunting', 'kertas'];
+				const choices = ['piedra', 'tijeras', 'papel'];
 				const botChoice = choices[Math.floor(Math.random() * choices.length)];
 				if (!choices.includes(userChoice))
 				{
-					return shoNherly('🧠 Pilih antara *batu*, *gunting*, atau *kertas* ya, Kak!');
+					return shoNherly('🧠 ¡Elige entre *piedra*, *tijeras* o *papel*, hermano!');
 				}
 				let hasil = '';
 				if (userChoice === botChoice)
 				{
-					hasil = `🤝 Seri! Kita sama-sama pilih *${botChoice}*`;
+					hasil = `🤝 ¡Enserio! Elegimos juntos *${botChoice}*`;
 				}
 				else if (
-					(userChoice === 'batu' && botChoice === 'gunting') || (userChoice === 'gunting' && botChoice === 'kertas') || (userChoice === 'kertas' && botChoice === 'batu'))
+					(userChoice === 'piedra' && botChoice === 'tijeras') || (userChoice === 'tijeras' && botChoice === 'papel') || (userChoice === 'papel' && botChoice === 'piedra'))
 				{
-					hasil = `🎉 Kakak menang! Aku pilih *${botChoice}*`;
+					hasil = `🎉 ¡Hermano ganó! Yo elegí *${botChoice}*`;
 				}
 				else
 				{
-					hasil = `😢 Aku menang! Aku pilih *${botChoice}*`;
+					hasil = `😢 ¡Yo gané! Yo elijo *${botChoice}*`;
 				}
 				shoNherly(hasil);
 				if (levelUpMessage) {
@@ -26510,8 +28607,8 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 			}
 			break
 			case 'delete':
-			case 'del':
-			case 'd':
+			case 'bor':
+			case 'borrar':
 			{
 				if (!isRegistered(m))
 				{
@@ -26519,7 +28616,7 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!m.quoted) return shoNherly('Reply pesan yang mau di delete')
+				if (!m.quoted) return shoNherly('Responde al mensaje que deseas eliminar')
 				await shoNhe.sendMessage(m.chat,
 				{
 					delete:
@@ -26567,52 +28664,31 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly(`Example: ${prefix + command} https://open.spotify.com/track/0JiVRyTJcJnmlwCZ854K4p`);
-				if (!isUrl(args[0]) || !args[0].includes('open.spotify.com/track')) return shoNherly('Url Invalid!');
+				if (!text) return shoNherly(`Ejemplo: ${prefix + command} https://open.spotify.com/track/0JiVRyTJcJnmlwCZ854K4p`);
+				if (!isUrl(args[0]) || !args[0].includes('open.spotify.com/track')) return shoNherly('¡URL no válida!');
 				if (!(await firely(m, mess.waits))) return;
-				try
-				{
-					// Fetching data from the API
-					let res = await fetch(`https://api.siputzx.my.id/api/d/spotify?url=${text}`);
-					let json = await res.json();
-					if (!json.status) return shoNherly('Error: Unable to fetch data from the API.');
-					let
-					{
-						metadata,
-						download
-					} = json;
-					// Sending audio with context info
-					await shoNhe.sendMessage(m.chat,
-					{
-						audio:
-						{
-							url: download
-						},
-						fileName: `${metadata.name} - ${metadata.artist}.mp3`,
-						mimetype: 'audio/mpeg',
-						contextInfo:
-						{
-							externalAdReply:
-							{
-								title: metadata.name,
-								body: `${metadata.album_name} - ${metadata.artist}`,
-								thumbnailUrl: metadata.cover_url,
-								sourceUrl: metadata.url, // Spotify URL
-								mediaType: 1,
-								mediaUrl: metadata.url, // Spotify URL
-							},
-						},
-					},
-					{
-						quoted: hw
-					});
-					shoNherly('Musik berhasil dikirim, selamat menikmati!');
-				}
-				catch (e)
-				{
-					console.error(e);
-					shoNherly('Error: Server download sedang offline atau API bermasalah!');
-				}
+				try {
+    let res = await fetch(`https://api.hiuraa.my.id/downloader/spotify?url=${text}`);
+    let json = await res.json();
+    
+    console.log(json); // Para depurar y ver la respuesta en la consola
+    
+    if (!json.status) return shoNherly('Error: No se pudo obtener datos de la API.');
+
+    let { result } = json; // Extraer la información dentro de "result"
+    if (!result.downloadUrl) return shoNherly('Error: No se encontró un enlace de descarga.');
+
+    await shoNhe.sendMessage(m.chat, {
+        audio: { url: result.downloadUrl },
+        fileName: `${result.title}.mp3`,
+        mimetype: 'audio/mpeg'
+    }, { quoted: hw });
+
+    shoNherly('Música enviada correctamente, ¡disfrútala!');
+} catch (e) {
+    console.error(e);
+    shoNherly('Error: No se pudo descargar la música.');
+}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -26647,31 +28723,31 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 				if (!isGroup) return shoNherly(mess.groups);
 				if (!isAdmins) return shoNherly(mess.admins);
 				if (!isBotAdmins) return shoNherly(mess.abots);
-				if (args[1] == "detik")
+				if (args[1] == "segundos")
 				{
 					var timer = args[0] * `1000`;
 				}
-				else if (args[1] == "menit")
+				else if (args[1] == "minutos")
 				{
 					var timer = args[0] * `60000`;
 				}
-				else if (args[1] == "jam")
+				else if (args[1] == "horas")
 				{
 					var timer = args[0] * `3600000`;
 				}
-				else if (args[1] == "hari")
+				else if (args[1] == "dia")
 				{
 					var timer = args[0] * `86400000`;
 				}
 				else
 				{
-					return shoNherly("*pilih:*\ndetik\nmenit\njam\n\n*contoh*\n10 detik");
+					return shoNherly("*elige:*\nsegundos\nminutos\nhoras\n\n*ejemplo*\n10 segundos");
 				}
-				shoNherly(`Open time grup ${q} dimulai dari sekarang`);
+				shoNherly(`El tiempo de apertura del grupo ${q} comienza desde ahora`);
 				setTimeout(() =>
 				{
 					var nomor = m.participant;
-					const open = `*Tepat waktu* grup dibuka oleh admin\n sekarang member dapat mengirim pesan`;
+					const open = `*Puntual* el grupo ha sido abierto por el administrador\n ahora los miembros pueden enviar mensajes`;
 					shoNhe.groupSettingUpdate(from, "not_announcement");
 					shoNherly(open);
 				}, timer);
@@ -26684,7 +28760,7 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return angryshoNhe('Input teksnya!')
+				if (!text) return shoNherly('Input teksnya!')
 				if (!(await firely(m, mess.waits))) return;
 				const sender = m.sender
 				const username = await shoNhe.getName(m.quoted ? m.quoted.sender : sender)
@@ -26750,25 +28826,25 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 				}
 			}
 			break;
-			case 's': case 'sticker': case 'stiker': {
+			case 'stk': case 'sticker': case 'stiker': {
 			if (!isRegistered(m))
 				{
 					return sendRegister(shoNhe, m, prefix, namabot);
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!quoted) return angryshoNhe (`Kirim atau balas gambar/video/gif dengan caption ${prefix + command}\nDurasi video 1-9 detik ya!`);
-				if (!mime) return angryshoNhe (`Kirim atau balas gambar/video/gif dengan caption ${prefix + command}\nDurasi video 1-9 detik ya!`);
+				if (!quoted) return shoNherly (`Envía o responde una imagen/video/gif con el texto ${prefix + command}\n¡La duración del video debe ser de 1 a 9 segundos!`);
+				if (!mime) return shoNherly (`Envía o responde una imagen/video/gif con el texto ${prefix + command}\n¡La duración del video debe ser de 1 a 9 segundos!`);
 	if (!(await firely(m, mess.waits))) return;
 				if (/image/.test(mime)) {
 					let media = await shoNhe.downloadAndSaveMediaMessage(quoted);
 					await shoNhe.sendImageAsSticker(m.chat, media, m, { packname: namabot, author: namaowner });
 				} else if (/video/.test(mime)) {
-					if ((quoted.msg || quoted).seconds > 9) return angryshoNhe (`Durasi video terlalu panjang! 🕒 Kirim video dengan durasi 1-9 detik ya!`);
+					if ((quoted.msg || quoted).seconds > 9) return shoNherly (`¡La duración del video es demasiado larga! 🕒 Envía un video de entre 1 y 9 segundos, ¡por favor!`);
 					let media = await shoNhe.downloadAndSaveMediaMessage(quoted);
 					await shoNhe.sendVideoAsSticker(m.chat, media, m, { packname: namabot, author: namaowner });
 				} else {
-					angryshoNhe (`Kirim atau balas gambar/video/gif dengan caption ${prefix + command}\nDurasi video 1-9 detik ya!`);
+					shoNherly (`Envía o responde una imagen/video/gif con el mensaje ${prefix + command}\n¡La duración del video debe ser de 1 a 9 segundos!`);
 				}
 				if (levelUpMessage)
 				{
@@ -26809,7 +28885,7 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!(await firely(m, mess.waits))) return;
 				if (!/webp/.test(mime) && /image/.test(mime)) {
-					if (!text) return angryshoNhe(`Penggunaan: ${prefix + command} teks_atas|teks_bawah`);
+					if (!text) return shoNherly(`Uso: ${prefix + command} texto_arriba|texto_abajo`);
 		
 					atas = text.split('|')[0] ? text.split('|')[0] : '';
 					bawah = text.split('|')[1] ? text.split('|')[1] : '';
@@ -26820,7 +28896,7 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 		
 					await shoNhe.sendImageAsSticker(m.chat, meme, m, { packname: namabot, author: namaowner });
 				} else {
-					shoNherly(`Kirim atau balas gambar dengan caption ${prefix + command} teks_atas|teks_bawah untuk membuat meme!`);
+					shoNherly(`Envía o responde a una imagen con el titulo ${prefix + command} texto_arriba|texto_abajo para crear un meme.`);
 				}
 				if (levelUpMessage)
 				{
@@ -26861,28 +28937,28 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				// Jika menggunakan fungsi untuk mencatat penggunaan command
-				const url = 'https://raw.githubusercontent.com/NHEBotx/HelloUserNHEBotx/refs/heads/main/data.json';
+				const url = 'https://raw.githubusercontent.com/ManuelLove/Config/refs/heads/main/data.json';
             const response = await fetch(url);
             const data = await response.json();
             // Kirim pesan dengan data yang didapatkan menggunakan nhebotxrly()
-            const message = `╔━◇ *${c}Awards for${c}* ◇━╗
+            const message = `╔━◇ *${c}Premios para${c}* ◇━╗
 ║  
-║   🛠️ *Thanks to:*
+║   🛠️ *Gracias a:*
 ║   ${data.tqto}
 ║
-║   👑 *Owner Bot:*
+║   👑 *Propietario del Bot:*
 ║   ${data.owners}
 ║
 ╚═━━━◇━━━━━━━━━━━━═╝
 
-╔━◇🌐 *${c}Sosial Media${c}* 🌐◇━╗
+╔━◇🌐 *${c}Redes Sociales${c}* 🌐◇━╗
 ║  
-║   📡 *Group:* ${wagc}
-║   📺 *Channel:* ${wach}
-║ Mau donasi? ketik _.payment_
+║   📡 *Grupo:* ${wagc}
+║   📺 *Canal:* ${wach}
+║ ¿Quieres donar? Escribe _.payment_
 ╚═━━━◇🌐━━━━━━━━━━━━━━━━═╝
 
-🔒 *System Log Complete. Node Secured.* 🔒
+🔒 *Registro del sistema completado. Node asegurado.* 🔒
 `;
 				shoNhe.sendMessage(m.chat,
 				{
@@ -26946,16 +29022,16 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 				}
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
-				if (!text) return shoNherly(`Contoh: ${prefix + command} judul lagu`);
+				if (!text) return shoNherly(`Ejemplo: ${prefix + command} título de la canción`);
 				try
 				{
 					// Cari hasil di YouTube menggunakan API
 					let search = await yts(text);
-					if (!search.all.length) return shoNherly("❌ Tidak ada hasil pencarian ditemukan!");
+					if (!search.all.length) return shoNherly("❌ ¡No se encontraron resultados de búsqueda!");
 					if (!(await firely(m, mess.waits))) return;
 					// Ambil hanya hasil pertama
 					let video = search.all[0];
-					let message = `🎥 *Judul:* ${video.title}\n👁 *Views:* ${video.views}\n⏱ *Durasi:* ${video.timestamp}\n📆 *Diupload:* ${video.ago}\n🔗 *URL:* ${video.url}`;
+					let message = `🎥 *Título:* ${video.title}\n👁 *Vistas:* ${video.views}\n⏱ *Duración:* ${video.timestamp}\n📆 *Subido:* ${video.ago}\n🔗 *URL:* ${video.url}`;
 					// Kirim pesan dengan dua tombol (YTMP3 dan YTMP4)
 					await shoNhe.sendMessage(m.chat,
 					{
@@ -26970,14 +29046,14 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 							buttonId: `${prefix}ytmp3 ${video.url}`,
 							buttonText:
 							{
-								displayText: "YTMP3 🎵"
+								displayText: "⇣ 𝗔𝗨𝗗𝗜𝗢 ⇣"
 							}
 						},
 						{
 							buttonId: `${prefix}ytmp4 ${video.url}`,
 							buttonText:
 							{
-								displayText: "YTMP4 🎥"
+								displayText: "⇣ 𝗩𝗜𝗗𝗘𝗢 ⇣"
 							}
 						}],
 						viewOnce: true,
@@ -27100,12 +29176,7 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 									mentionedJid: [m.sender],
 									forwardingScore: 999,
 									isForwarded: true,
-									forwardedNewsletterMessageInfo:
-									{
-										newsletterJid: '120363383347233294@newsletter',
-										newsletterName: namaowner,
-										serverMessageId: 143
-									}
+									
 								}
 							})
 						}
@@ -27157,14 +29228,14 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!text)
 				{
-					console.log('Teks URL TikTok tidak ditemukan.');
-					return shoNherly(`Example: ${prefix + command} url_tiktok`);
+					console.log('No se encontró el texto de la URL de TikTok.');
+					return shoNherly(`Ejemplo: ${prefix + command} url_tiktok`);
 				}
 				const tiktokRegex = /(?:https?:\/\/)?(?:www\.)?(tiktok\.com|vm\.tiktok\.com)/;
 				if (!tiktokRegex.test(text))
 				{
 					console.log('URL tidak valid, tidak mengandung hasil dari TikTok.');
-					return shoNherly('URL Tidak Mengandung Result Dari TikTok!');
+					return shoNherly('¡La URL no contiene resultados de TikTok!');
 				}
 				if (!(await firely(m, mess.waits))) return;
 				try
@@ -27174,7 +29245,7 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 					if (!hasil || !hasil.data || hasil.data.length === 0)
 					{
 						console.log('Tidak ada gambar atau media yang ditemukan.');
-						return shoNherly('Tidak ada foto yang ditemukan!');
+						return shoNherly('¡No se encontraron fotos!');
 					}
 					// Buat carousel card untuk setiap gambar
 					const carouselCards = await Promise.all(hasil.data.map(async (item, index) =>
@@ -27197,11 +29268,11 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 							},
 							body:
 							{
-								text: `Foto ${index + 1} dari TikTok`,
+								text: `Foto ${index + 1} de TikTok`,
 							},
 							footer:
 							{
-								text: "Klik tombol untuk melihat lebih detail",
+								text: "Haga clic en el botón para ver más detalles",
 							},
 							nativeFlowMessage:
 							{
@@ -27210,7 +29281,7 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 									name: "cta_url",
 									buttonParamsJson: JSON.stringify(
 									{
-										display_text: "Lihat di TikTok",
+										display_text: "Compruébalo en TikTok",
 										url: text,
 									}),
 								},
@@ -27218,7 +29289,7 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 									name: "cta_url",
 									buttonParamsJson: JSON.stringify(
 									{
-										display_text: "Unduh Foto",
+										display_text: "Descargar fotos",
 										url: item.url,
 									}),
 								}],
@@ -27242,11 +29313,11 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 								{
 									body:
 									{
-										text: `Hasil foto dari TikTok: ${text}`
+										text: `Resultados de fotos de TikTok: ${text}`
 									},
 									footer:
 									{
-										text: "TikTok Slide Bot by shoNhe"
+										text: "Diapositivas de TikTok Bot by TechFix"
 									},
 									header:
 									{
@@ -27271,7 +29342,7 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 				catch (e)
 				{
 					console.error('Gagal mengunduh atau membuat carousel:', e);
-					shoNherly('Gagal memproses permintaan Anda. Silakan coba lagi.');
+					shoNherly('No se pudo procesar su solicitud. Por favor inténtalo de nuevo.');
 				}
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
@@ -27384,12 +29455,7 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 									mentionedJid: [m.sender],
 									forwardingScore: 999,
 									isForwarded: true,
-									forwardedNewsletterMessageInfo:
-									{
-										newsletterJid: '120363383347233294@newsletter',
-										newsletterName: namaowner,
-										serverMessageId: 143
-									}
+									
 								}
 							})
 						}
@@ -27494,7 +29560,7 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 				});
 				if (!text)
 				{
-					const warnn = "⚙️ Pilih mode bot di bawah ini:";
+					const warnn = "⚙️ Seleccione el modo bot a continuación:";
 					let msg = generateWAMessageFromContent(m.chat,
 					{
 						viewOnceMessage:
@@ -27529,39 +29595,39 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 										buttons: [
 										{
 											"name": "single_select",
-											"buttonParamsJson": `{
-												"title": "🪀 Bot Mode",
-												"sections": [{
-													"title": "Select Mode",
-													"rows": [{
-														"title": "🚀 PUBLIC MODE",
-														"description": "Bot akan membalas semua pesan",
-														"id": "${prefix}mode public"
-													},
-													{
-														"title": "🚀 SELF MODE",
-														"description": "Bot tidak akan membalas semua chat yang ada",
-														"id": "${prefix}mode self"
-													},
-													{
-														"title": "🛸 MODE GROUP ON",
-														"description": "Bot hanya akan membalas pesan group",
-														"id": "${prefix}groupon"
-													},
-													{
-														"title": "🛸 MODE GROUP OFF",
-														"description": "bot akan membalas semua pesan yang ada",
-														"id": "${prefix}groupoff"
-													},
-													{
-														"title": "✈️ MODE PRIVATE ON",
-														"description": "Bot hanya akan membalas pesan yang bersifat private chat",
-														"id": "${prefix}privatechatonly on"
-													},
-													{
-														"title": "✈️ MODE PRIVATE OFF",
-														"description": "bot akan membalas semua pesan yang bersifat private chat",
-														"id": "${prefix}privatechatonly off"
+"buttonParamsJson": `{
+    "title": "🪀 Modo Bot",
+    "sections": [{
+        "title": "Seleccionar Modo",
+        "rows": [{
+            "title": "🚀 MODO PÚBLICO",
+            "description": "El bot responderá a todos los mensajes",
+            "id": "${prefix}mode public"
+        },
+        {
+            "title": "🚀 MODO INDIVIDUAL",
+            "description": "El bot no responderá a ningún chat",
+            "id": "${prefix}mode self"
+        },
+        {
+            "title": "🛸 MODO GRUPO ACTIVADO",
+            "description": "El bot solo responderá a los mensajes en grupos",
+            "id": "${prefix}groupon"
+        },
+        {
+            "title": "🛸 MODO GRUPO DESACTIVADO",
+            "description": "El bot responderá a todos los mensajes",
+            "id": "${prefix}groupoff"
+        },
+        {
+            "title": "✈️ MODO PRIVADO ACTIVADO",
+            "description": "El bot solo responderá a mensajes privados",
+            "id": "${prefix}privatechatonly on"
+        },
+        {
+            "title": "✈️ MODO PRIVADO DESACTIVADO",
+            "description": "El bot responderá a todos los mensajes privados",
+            "id": "${prefix}privatechatonly off"
 													}]
 												}]
 											}`
@@ -27574,7 +29640,7 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 										isForwarded: true,
 										forwardedNewsletterMessageInfo:
 										{
-											newsletterJid: '120363383347233294@newsletter',
+											newsletterJid: '12036338334723329@newsletter',
 											newsletterName: namaowner,
 											serverMessageId: 143
 										}
@@ -27595,7 +29661,7 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 					global.public = false;
 					shoNhe.sendMessage(from,
 					{
-						text: '✅ Bot sekarang dalam mode *SELF*. Hanya pemilik yang dapat menggunakan bot.'
+						text: '✅ El bot ahora está en modo *SELF*. Sólo el propietario puede utilizar el bot.'
 					});
 				}
 				else if (text.toLowerCase() === 'public')
@@ -27603,14 +29669,14 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 					global.public = true;
 					shoNhe.sendMessage(from,
 					{
-						text: '✅ Bot sekarang dalam mode *PUBLIC*. Semua orang dapat menggunakan bot.'
+						text: '✅ El bot ahora está en modo *PÚBLICO*. Todos pueden utilizar el bot.'
 					});
 				}
 				else
 				{
 					shoNhe.sendMessage(from,
 					{
-						text: '❌ Mode tidak valid! Gunakan *self* atau *public*.'
+						text: '❌ ¡Modo no válido! Utilice *self* o *public*.'
 					});
 				}
 				if (levelUpMessage) {
@@ -27652,11 +29718,11 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners)
-				if (global.groupOnly) return shoNherly('⚠️ Mode Group Only sudah aktif.')
+				if (global.groupOnly) return shoNherly('⚠️ El modo Sólo grupo está activo.')
 				global.groupOnly = true
 				global.privateChatOnly = false
 				global.public = true // Nonaktifkan mode public
-				shoNherly('✅ Mode Group Only diaktifkan!\n❌ Mode Private dimatikan.')
+				shoNherly('✅ ¡Modo Sólo Grupo activado!\n❌ El modo privado está desactivado.')
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -27696,10 +29762,10 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 				updatePopularCommand(command);
 				const levelUpMessage = levelUpdate(command, m.sender); // Update level pengguna
 				if (!isShoNheOwn) return shoNherly(mess.owners)
-				if (!global.groupOnly) return shoNherly('⚠️ Mode Group Only sudah nonaktif.')
+				if (!global.groupOnly) return shoNherly('⚠️ El modo Solo grupo está deshabilitado.')
 				global.groupOnly = false
 				global.public = true // Aktifkan kembali mode public
-				shoNherly('❌ Mode Group Only dimatikan!\n✅ Mode Public diaktifkan.')
+				shoNherly('❌ ¡El modo Sólo grupo está deshabilitado!\n✅ El modo público está activado.')
 				if (levelUpMessage) {
         await shoNhe.sendMessage(m.chat,
 				{
@@ -28533,12 +30599,7 @@ Dan perjalanan shoNhe masih jauh dari kata selesai. Mereka terus bergerak, menyi
 									mentionedJid: [m.sender],
 									forwardingScore: 999,
 									isForwarded: true,
-									forwardedNewsletterMessageInfo:
-									{
-										newsletterJid: idsaluran,
-										newsletterName: namach,
-										serverMessageId: 143
-									}
+									
 								}
 							})
 						}
