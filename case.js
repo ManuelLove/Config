@@ -21692,7 +21692,7 @@ if (levelUpMessage) {
 				{
 					if (!(await firely(m, mess.waits))) return;
 					let media = await quoted.download();
-					let proses = await remini(media, "mejorar");
+					let proses = await remini(media, "enhance");
 					await shoNherly('¡La calidad de la imagen se ha mejorado con éxito! ✅');
 					shoNhe.sendMessage(m.chat,
 					{
