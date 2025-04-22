@@ -3088,11 +3088,11 @@ default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURICompon
         }
         saveUserFire(db);
 
-        shoNherly(`🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join('')}\n\n🏆 *Ganaste ${limiteGanado} límite*`, {
+        m.reply(`🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join('')}\n\n🏆 *Ganaste ${limiteGanado} límite*`, {
             mentions: [m.sender]
         });
     } else {
-        shoNherly("🎉 *¡Ganaste!* 🎉\n\n🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
+        m.reply("🎉 *¡Ganaste!* 🎉\n\n🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
     }
 clearTimeout(boom[m.sender].waktu);
     delete boom[m.sender];
@@ -3116,11 +3116,11 @@ if (m.sender in ahorcado && m.text.length === 1 && /^[a-zA-Z]$/.test(m.text)) {
     let respuesta = juegoTerminado(m.sender, mensaje, juego.palabra, juego.letrasAdivinadas, juego.intentos);
 
     if (juego.intentos === 0 || !mensaje.includes("_")) {
-        shoNherly(respuesta);
+        m.reply(respuesta);
         delete ahorcado[m.sender];
     } else {
         let letrasErradas = juego.letrasAdivinadas.filter(l => !juego.palabra.includes(l)).join(", ");
-        shoNherly(`${respuesta}\n\n❌ *Letras incorrectas usadas:* ${letrasErradas || "Ninguna"}`);
+        m.reply(`${respuesta}\n\n❌ *Letras incorrectas usadas:* ${letrasErradas || "Ninguna"}`);
     }
 }
 const palabras = [
@@ -3159,11 +3159,11 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
         }
         saveUserFire(db);
 
-        shoNherly(`🎉 *¡GANASTE!*\n\nPalabra correcta: *"${palabra}"*\n🏆 *Has ganado ${recompensa} límite*`, {
+        m.reply(`🎉 *¡GANASTE!*\n\nPalabra correcta: *"${palabra}"*\n🏆 *Has ganado ${recompensa} límite*`, {
             mentions: [m.sender]
         });
     } else {
-        shoNherly("🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
+        m.reply("🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
     }
 
     delete ahorcado[m.sender];
@@ -3193,7 +3193,7 @@ if (room13) {
     }
 
     if (!isSurrender && 1 > (ok = room13.game.turn(m.sender === room13.game.playerO, parseInt(m.text) - 1))) {
-        shoNherly({
+        m.reply({
             '-3': 'El juego ha terminado',
             '-2': 'Inválido',
             '-1': 'Posición inválida',
@@ -3304,7 +3304,7 @@ if (!(await firely(m, mess.waits))) return;
 
         roof.waktu_milih = setTimeout(() => {
             if (!roof.pilih || !roof.pilih2) {
-                shoNherly(`⏳ Tiempo agotado, juego cancelado.`);
+                m.reply(`⏳ Tiempo agotado, juego cancelado.`);
                 delete suitpvp[roof.id];
             }
         }, roof.timeout);
@@ -3316,12 +3316,12 @@ if (!(await firely(m, mess.waits))) return;
 
         if (m.sender === roof.p && !roof.pilih) {
             roof.pilih = jugada;
-            shoNherly(`Elegiste *${jugada}*. Procesando resultado...`);
+            m.reply(`Elegiste *${jugada}*. Procesando resultado...`);
         }
 
         if (m.sender === roof.p2 && !roof.pilih2) {
             roof.pilih2 = jugada;
-            shoNherly(`Elegiste *${jugada}*. Procesando resultado...`);
+            m.reply(`Elegiste *${jugada}*. Procesando resultado...`);
         }
 
         if (roof.pilih && roof.pilih2) {
@@ -3373,7 +3373,7 @@ if (db.data.chats[m.chat]?.antispam) {
     if (isFiltered(m.sender)) return; // evita que repita spam muy seguido
     addFilter(m.sender);
     addSpam(m.sender, spamDB);
-    if (isSpam(m.sender, spamDB)) return shoNherly('⛔ Estás haciendo spam, espera un momento.');
+    if (isSpam(m.sender, spamDB)) return m.reply('⛔ Estás haciendo spam, espera un momento.');
 }
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
