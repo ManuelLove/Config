@@ -6066,20 +6066,20 @@ case 'suitpvp': {
     let db = loadUserFire();
 
     if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.sender)))
-        return shoNherly(`Termina tu juego anterior de suit.`);
+        return m.reply(`Termina tu juego anterior de suit.`);
 
     if (!m.mentionedJid[0] || m.mentionedJid[0] === m.sender)
-        return shoNherly(`Etiqueta a un jugador válido para desafiar.\nEjemplo: ${prefix}suitpvp @usuario`);
+        return m.reply(`Etiqueta a un jugador válido para desafiar.\nEjemplo: ${prefix}suitpvp @usuario`);
 
     if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.mentionedJid[0])))
-        return shoNherly(`La persona ya está en otro juego.`);
+        return m.reply(`La persona ya está en otro juego.`);
 
     let id = 'suitpvp_' + new Date() * 1;
     let name1 = m.pushName || 'Desconocido';
     let name2 = await shoNhe.getName(m.mentionedJid[0]) || 'Desconocido';
 if (!(await firely(m, mess.waits))) return;
     let caption = `🎮 𝙂𝘼𝙈𝙀𝙎 - 𝙋𝙑𝙋 - 𝙂𝘼𝙈𝙀𝙎 🎮\n\n${name1} 𝘿𝙀𝙎𝘼𝙁𝙄𝘼 𝘼 ${name2} 𝘼 𝙐𝙉 (𝙋𝙑𝙋) 𝘿𝙀 𝙋𝙄𝙀𝘿𝙍𝘼, 𝙋𝘼𝙋𝙀𝙇 𝙊 𝙏𝙄𝙅𝙀𝙍𝘼\n\n${name2},\n_*Escribe (aceptar) para aceptar*_\n_*Escribe (rechazar) para rechazar*_`;
-    shoNherly(caption);
+    m.reply(caption);
 
     suitpvp[id] = {
         id,
@@ -6091,7 +6091,7 @@ if (!(await firely(m, mess.waits))) return;
         poin: 0,
         waktu: setTimeout(() => {
             if (suitpvp[id]) {
-                shoNherly(`⏳ 𝙏𝙄𝙀𝙈𝙋𝙊 𝘿𝙀 𝙀𝙎𝙋𝙀𝙍𝘼 𝙁𝙄𝙉𝘼𝙇𝙄𝙕𝘼𝘿𝙊, 𝙀𝙇 𝙋𝙑𝙋 𝙎𝙀 𝘾𝘼𝙉𝘾𝙀𝙇𝘼 𝙋𝙊𝙍 𝙁𝘼𝙇𝙏𝘼 𝘿𝙀 𝙍𝙀𝙎𝙋𝙐𝙀𝙎𝙏𝘼`);
+                m.reply(`⏳ 𝙏𝙄𝙀𝙈𝙋𝙊 𝘿𝙀 𝙀𝙎𝙋𝙀𝙍𝘼 𝙁𝙄𝙉𝘼𝙇𝙄𝙕𝘼𝘿𝙊, 𝙀𝙇 𝙋𝙑𝙋 𝙎𝙀 𝘾𝘼𝙉𝘾𝙀𝙇𝘼 𝙋𝙊𝙍 𝙁𝘼𝙇𝙏𝘼 𝘿𝙀 𝙍𝙀𝙎𝙋𝙐𝙀𝙎𝙏𝘼`);
                 delete suitpvp[id];
             }
         }, 60000)
@@ -6109,7 +6109,7 @@ break;
 				const gamecek = await cekgame(m.chat);
 				if (gamecek) return;
 				if (!(await firely(m, mess.waits))) return;
-    if (boom[m.sender]) return shoNherly('¡Aún quedan sesiones sin terminar!');
+    if (boom[m.sender]) return m.reply('¡Aún quedan sesiones sin terminar!');
 
     boom[m.sender] = {
         petak: [0, 0, 0, 2, 0, 2, 0, 2, 0, 0].sort(() => Math.random() - 0.5),
@@ -6120,12 +6120,12 @@ break;
         nyawa: ['❤️', '❤️', '❤️'],
         waktu: setTimeout(() => {
             if (boom[m.sender]) {
-                shoNherly(`_⏳ Tiempo de ${command} agotado_`);
+                m.reply(`_⏳ Tiempo de ${command} agotado_`);
                 delete boom[m.sender];
             }
         }, 160000)
     };
-    shoNherly(`*💣 ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n¡Elige un número! ¡Y no te dejes alcanzar por una bomba!\n\n🔸 Bombas: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
+    m.reply(`*💣 ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n¡Elige un número! ¡Y no te dejes alcanzar por una bomba!\n\n🔸 Bombas: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
 }
 break;
 case 'ahorcado':
@@ -6139,7 +6139,7 @@ case 'ahorcado':
 				const gamecek = await cekgame(m.chat);
 				if (gamecek) return;
 				if (!(await firely(m, mess.waits))) return;
-    if (ahorcado[m.sender]) return shoNherly("⚠️ Ya tienes un juego en curso. ¡Termina ese primero!");
+    if (ahorcado[m.sender]) return m.reply("⚠️ Ya tienes un juego en curso. ¡Termina ese primero!");
     const palabra = elegirPalabraAleatoria();
     const letrasAdivinadas = [];
     const intentos = 6;
@@ -6147,7 +6147,7 @@ case 'ahorcado':
     ahorcado[m.sender] = { palabra, letrasAdivinadas, intentos };
 
     let mensaje = ocultarPalabra(palabra, letrasAdivinadas);
-    shoNherly(`🎮 *AHORCADO*\n\n✍️ Adivina la palabra:\n${mensaje}\n\n📉 Intentos restantes: *${intentos}*\n\n¡Escribe una letra para comenzar!`);
+    m.reply(`🎮 *AHORCADO*\n\n✍️ Adivina la palabra:\n${mensaje}\n\n📉 Intentos restantes: *${intentos}*\n\n¡Escribe una letra para comenzar!`);
 }
 break;
 			case 'tebaklogo':
