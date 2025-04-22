@@ -3088,11 +3088,11 @@ default: `https://eliasar-yt-api.vercel.app/api/levelup?avatar=${encodeURICompon
         }
         saveUserFire(db);
 
-        m.reply(`🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join('')}\n\n🏆 *Ganaste ${limiteGanado} límite*`, {
+        shoNherly(`🎉 *¡Ganaste!* 🎉\n${boom[m.sender].board.join('')}\n\n🏆 *Ganaste ${limiteGanado} límite*`, {
             mentions: [m.sender]
         });
     } else {
-        m.reply("🎉 *¡Ganaste!* 🎉\n\n🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
+        shoNherly("🎉 *¡Ganaste!* 🎉\n\n🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
     }
 clearTimeout(boom[m.sender].waktu);
     delete boom[m.sender];
@@ -3116,11 +3116,11 @@ if (m.sender in ahorcado && m.text.length === 1 && /^[a-zA-Z]$/.test(m.text)) {
     let respuesta = juegoTerminado(m.sender, mensaje, juego.palabra, juego.letrasAdivinadas, juego.intentos);
 
     if (juego.intentos === 0 || !mensaje.includes("_")) {
-        m.reply(respuesta);
+        shoNherly(respuesta);
         delete ahorcado[m.sender];
     } else {
         let letrasErradas = juego.letrasAdivinadas.filter(l => !juego.palabra.includes(l)).join(", ");
-        m.reply(`${respuesta}\n\n❌ *Letras incorrectas usadas:* ${letrasErradas || "Ninguna"}`);
+        shoNherly(`${respuesta}\n\n❌ *Letras incorrectas usadas:* ${letrasErradas || "Ninguna"}`);
     }
 }
 const palabras = [
@@ -3159,11 +3159,11 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
         }
         saveUserFire(db);
 
-        m.reply(`🎉 *¡GANASTE!*\n\nPalabra correcta: *"${palabra}"*\n🏆 *Has ganado ${recompensa} límite*`, {
+        shoNherly(`🎉 *¡GANASTE!*\n\nPalabra correcta: *"${palabra}"*\n🏆 *Has ganado ${recompensa} límite*`, {
             mentions: [m.sender]
         });
     } else {
-        m.reply("🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
+        shoNherly("🌸 No puedes recibir recompensas por ser Owner", { mentions: [m.sender] });
     }
 
     delete ahorcado[m.sender];
@@ -3193,7 +3193,7 @@ if (room13) {
     }
 
     if (!isSurrender && 1 > (ok = room13.game.turn(m.sender === room13.game.playerO, parseInt(m.text) - 1))) {
-        m.reply({
+        shoNherly({
             '-3': 'El juego ha terminado',
             '-2': 'Inválido',
             '-1': 'Posición inválida',
@@ -3304,7 +3304,7 @@ if (!(await firely(m, mess.waits))) return;
 
         roof.waktu_milih = setTimeout(() => {
             if (!roof.pilih || !roof.pilih2) {
-                m.reply(`⏳ Tiempo agotado, juego cancelado.`);
+                shoNherly(`⏳ Tiempo agotado, juego cancelado.`);
                 delete suitpvp[roof.id];
             }
         }, roof.timeout);
@@ -3316,12 +3316,12 @@ if (!(await firely(m, mess.waits))) return;
 
         if (m.sender === roof.p && !roof.pilih) {
             roof.pilih = jugada;
-            m.reply(`Elegiste *${jugada}*. Procesando resultado...`);
+            shoNherly(`Elegiste *${jugada}*. Procesando resultado...`);
         }
 
         if (m.sender === roof.p2 && !roof.pilih2) {
             roof.pilih2 = jugada;
-            m.reply(`Elegiste *${jugada}*. Procesando resultado...`);
+            shoNherly(`Elegiste *${jugada}*. Procesando resultado...`);
         }
 
         if (roof.pilih && roof.pilih2) {
@@ -3373,7 +3373,7 @@ if (db.data.chats[m.chat]?.antispam) {
     if (isFiltered(m.sender)) return; // evita que repita spam muy seguido
     addFilter(m.sender);
     addSpam(m.sender, spamDB);
-    if (isSpam(m.sender, spamDB)) return m.reply('⛔ Estás haciendo spam, espera un momento.');
+    if (isSpam(m.sender, spamDB)) return shoNherly('⛔ Estás haciendo spam, espera un momento.');
 }
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
@@ -6066,20 +6066,20 @@ case 'suitpvp': {
     let db = loadUserFire();
 
     if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.sender)))
-        return m.reply(`Termina tu juego anterior de suit.`);
+        return shoNherly(`Termina tu juego anterior de suit.`);
 
     if (!m.mentionedJid[0] || m.mentionedJid[0] === m.sender)
-        return m.reply(`Etiqueta a un jugador válido para desafiar.\nEjemplo: ${prefix}suitpvp @usuario`);
+        return shoNherly(`Etiqueta a un jugador válido para desafiar.\nEjemplo: ${prefix}suitpvp @usuario`);
 
     if (Object.values(suitpvp).find(roof => roof.id.startsWith('suitpvp') && [roof.p, roof.p2].includes(m.mentionedJid[0])))
-        return m.reply(`La persona ya está en otro juego.`);
+        return shoNherly(`La persona ya está en otro juego.`);
 
     let id = 'suitpvp_' + new Date() * 1;
     let name1 = m.pushName || 'Desconocido';
     let name2 = await shoNhe.getName(m.mentionedJid[0]) || 'Desconocido';
 if (!(await firely(m, mess.waits))) return;
     let caption = `🎮 𝙂𝘼𝙈𝙀𝙎 - 𝙋𝙑𝙋 - 𝙂𝘼𝙈𝙀𝙎 🎮\n\n${name1} 𝘿𝙀𝙎𝘼𝙁𝙄𝘼 𝘼 ${name2} 𝘼 𝙐𝙉 (𝙋𝙑𝙋) 𝘿𝙀 𝙋𝙄𝙀𝘿𝙍𝘼, 𝙋𝘼𝙋𝙀𝙇 𝙊 𝙏𝙄𝙅𝙀𝙍𝘼\n\n${name2},\n_*Escribe (aceptar) para aceptar*_\n_*Escribe (rechazar) para rechazar*_`;
-    m.reply(caption);
+    shoNherly(caption);
 
     suitpvp[id] = {
         id,
@@ -6091,7 +6091,7 @@ if (!(await firely(m, mess.waits))) return;
         poin: 0,
         waktu: setTimeout(() => {
             if (suitpvp[id]) {
-                m.reply(`⏳ 𝙏𝙄𝙀𝙈𝙋𝙊 𝘿𝙀 𝙀𝙎𝙋𝙀𝙍𝘼 𝙁𝙄𝙉𝘼𝙇𝙄𝙕𝘼𝘿𝙊, 𝙀𝙇 𝙋𝙑𝙋 𝙎𝙀 𝘾𝘼𝙉𝘾𝙀𝙇𝘼 𝙋𝙊𝙍 𝙁𝘼𝙇𝙏𝘼 𝘿𝙀 𝙍𝙀𝙎𝙋𝙐𝙀𝙎𝙏𝘼`);
+                shoNherly(`⏳ 𝙏𝙄𝙀𝙈𝙋𝙊 𝘿𝙀 𝙀𝙎𝙋𝙀𝙍𝘼 𝙁𝙄𝙉𝘼𝙇𝙄𝙕𝘼𝘿𝙊, 𝙀𝙇 𝙋𝙑𝙋 𝙎𝙀 𝘾𝘼𝙉𝘾𝙀𝙇𝘼 𝙋𝙊𝙍 𝙁𝘼𝙇𝙏𝘼 𝘿𝙀 𝙍𝙀𝙎𝙋𝙐𝙀𝙎𝙏𝘼`);
                 delete suitpvp[id];
             }
         }, 60000)
@@ -6109,7 +6109,7 @@ break;
 				const gamecek = await cekgame(m.chat);
 				if (gamecek) return;
 				if (!(await firely(m, mess.waits))) return;
-    if (boom[m.sender]) return m.reply('¡Aún quedan sesiones sin terminar!');
+    if (boom[m.sender]) return shoNherly('¡Aún quedan sesiones sin terminar!');
 
     boom[m.sender] = {
         petak: [0, 0, 0, 2, 0, 2, 0, 2, 0, 0].sort(() => Math.random() - 0.5),
@@ -6120,12 +6120,12 @@ break;
         nyawa: ['❤️', '❤️', '❤️'],
         waktu: setTimeout(() => {
             if (boom[m.sender]) {
-                m.reply(`_⏳ Tiempo de ${command} agotado_`);
+                shoNherly(`_⏳ Tiempo de ${command} agotado_`);
                 delete boom[m.sender];
             }
         }, 160000)
     };
-    m.reply(`*💣 ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n¡Elige un número! ¡Y no te dejes alcanzar por una bomba!\n\n🔸 Bombas: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
+    shoNherly(`*💣 ADIVINA LA BOMBA 💣*\n\n${boom[m.sender].board.join("")}\n\n¡Elige un número! ¡Y no te dejes alcanzar por una bomba!\n\n🔸 Bombas: ${boom[m.sender].bomb}\n❤️ Vidas: ${boom[m.sender].nyawa.join("")}`);
 }
 break;
 case 'ahorcado':
@@ -6139,7 +6139,7 @@ case 'ahorcado':
 				const gamecek = await cekgame(m.chat);
 				if (gamecek) return;
 				if (!(await firely(m, mess.waits))) return;
-    if (ahorcado[m.sender]) return m.reply("⚠️ Ya tienes un juego en curso. ¡Termina ese primero!");
+    if (ahorcado[m.sender]) return shoNherly("⚠️ Ya tienes un juego en curso. ¡Termina ese primero!");
     const palabra = elegirPalabraAleatoria();
     const letrasAdivinadas = [];
     const intentos = 6;
@@ -6147,7 +6147,7 @@ case 'ahorcado':
     ahorcado[m.sender] = { palabra, letrasAdivinadas, intentos };
 
     let mensaje = ocultarPalabra(palabra, letrasAdivinadas);
-    m.reply(`🎮 *AHORCADO*\n\n✍️ Adivina la palabra:\n${mensaje}\n\n📉 Intentos restantes: *${intentos}*\n\n¡Escribe una letra para comenzar!`);
+    shoNherly(`🎮 *AHORCADO*\n\n✍️ Adivina la palabra:\n${mensaje}\n\n📉 Intentos restantes: *${intentos}*\n\n¡Escribe una letra para comenzar!`);
 }
 break;
 			case 'tebaklogo':
@@ -21692,7 +21692,7 @@ if (levelUpMessage) {
 				{
 					if (!(await firely(m, mess.waits))) return;
 					let media = await quoted.download();
-					let proses = await remini(media, "enhance");
+					let proses = await remini(media, "mejorar");
 					await shoNherly('¡La calidad de la imagen se ha mejorado con éxito! ✅');
 					shoNhe.sendMessage(m.chat,
 					{
